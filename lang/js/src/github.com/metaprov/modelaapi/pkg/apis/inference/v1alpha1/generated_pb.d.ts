@@ -1163,10 +1163,10 @@ export class PredictionRunStatus extends jspb.Message {
   hasFailuremessage(): boolean;
   clearFailuremessage(): PredictionRunStatus;
 
-  getLogs(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs | undefined;
-  setLogs(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs): PredictionRunStatus;
-  hasLogs(): boolean;
-  clearLogs(): PredictionRunStatus;
+  getLogsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ContainerLog>;
+  setLogsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ContainerLog>): PredictionRunStatus;
+  clearLogsList(): PredictionRunStatus;
+  addLogs(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ContainerLog, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ContainerLog;
 
   getForecast(): ForecastStatus | undefined;
   setForecast(value?: ForecastStatus): PredictionRunStatus;
@@ -1210,7 +1210,7 @@ export namespace PredictionRunStatus {
     phase?: string,
     unittestresults?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.AsObject,
     failuremessage?: string,
-    logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
+    logsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ContainerLog.AsObject>,
     forecast?: ForecastStatus.AsObject,
     usage?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceConsumption.AsObject,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
@@ -1328,11 +1328,6 @@ export class PredictionStatus extends jspb.Message {
   clearActiveList(): PredictionStatus;
   addActive(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference;
 
-  getVersion(): number;
-  setVersion(value: number): PredictionStatus;
-  hasVersion(): boolean;
-  clearVersion(): PredictionStatus;
-
   getLastrunversion(): number;
   setLastrunversion(value: number): PredictionStatus;
   hasLastrunversion(): boolean;
@@ -1380,7 +1375,6 @@ export namespace PredictionStatus {
   export type AsObject = {
     observedgeneration?: number,
     activeList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference.AsObject>,
-    version?: number,
     lastrunversion?: number,
     availablerunversionsList: Array<number>,
     lastrunat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,

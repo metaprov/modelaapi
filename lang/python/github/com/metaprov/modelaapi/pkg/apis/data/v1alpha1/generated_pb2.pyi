@@ -383,14 +383,14 @@ class DataPipelineRunStatus(_message.Message):
     conditions: _containers.RepeatedCompositeFieldContainer[_generated_pb2_1_1.Condition]
     failureMessage: str
     failureReason: str
-    logs: _generated_pb2.Logs
+    logs: _containers.RepeatedCompositeFieldContainer[_generated_pb2.ContainerLog]
     observedGeneration: int
     output: _generated_pb2.DataLocation
     phase: str
     progress: int
     recipeRuns: _containers.RepeatedScalarFieldContainer[str]
     updatedAt: _generated_pb2_1_1.Time
-    def __init__(self, recipeRuns: _Optional[_Iterable[str]] = ..., output: _Optional[_Union[_generated_pb2.DataLocation, _Mapping]] = ..., phase: _Optional[str] = ..., completedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., observedGeneration: _Optional[int] = ..., failureReason: _Optional[str] = ..., failureMessage: _Optional[str] = ..., progress: _Optional[int] = ..., logs: _Optional[_Union[_generated_pb2.Logs, _Mapping]] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1.Condition, _Mapping]]] = ...) -> None: ...
+    def __init__(self, recipeRuns: _Optional[_Iterable[str]] = ..., output: _Optional[_Union[_generated_pb2.DataLocation, _Mapping]] = ..., phase: _Optional[str] = ..., completedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., observedGeneration: _Optional[int] = ..., failureReason: _Optional[str] = ..., failureMessage: _Optional[str] = ..., progress: _Optional[int] = ..., logs: _Optional[_Iterable[_Union[_generated_pb2.ContainerLog, _Mapping]]] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1.Condition, _Mapping]]] = ...) -> None: ...
 
 class DataPipelineSpec(_message.Message):
     __slots__ = ["datasetSelector", "description", "modelClassName", "notification", "output", "owner", "paused", "priority", "recipes", "resources", "schedule", "ttl", "versionName"]
@@ -769,7 +769,7 @@ class DatasetSnapshotStatus(_message.Message):
     images: _generated_pb2.Images
     imbalanced: bool
     lastStudyAt: _generated_pb2_1_1.Time
-    logs: _generated_pb2.Logs
+    logs: _containers.RepeatedCompositeFieldContainer[_generated_pb2.ContainerLog]
     observedGeneration: int
     phase: str
     profileLocation: _generated_pb2.FileLocation
@@ -781,7 +781,7 @@ class DatasetSnapshotStatus(_message.Message):
     statistics: DatasetStatistics
     unitTestResults: _generated_pb2.TestSuiteResult
     updatedAt: _generated_pb2_1_1.Time
-    def __init__(self, observedGeneration: _Optional[int] = ..., datasetManifestLocation: _Optional[_Union[_generated_pb2.ManifestLocation, _Mapping]] = ..., dataSourceManifestLocation: _Optional[_Union[_generated_pb2.ManifestLocation, _Mapping]] = ..., snapshotVersion: _Optional[int] = ..., statistics: _Optional[_Union[DatasetStatistics, _Mapping]] = ..., phase: _Optional[str] = ..., reportName: _Optional[str] = ..., dataLocation: _Optional[_Union[_generated_pb2.FileLocation, _Mapping]] = ..., reportLocation: _Optional[_Union[_generated_pb2.FileLocation, _Mapping]] = ..., profileLocation: _Optional[_Union[_generated_pb2.FileLocation, _Mapping]] = ..., anomaliesLocation: _Optional[_Union[_generated_pb2.FileLocation, _Mapping]] = ..., sampleLocation: _Optional[_Union[_generated_pb2.FileLocation, _Mapping]] = ..., imbalanced: bool = ..., unitTestResults: _Optional[_Union[_generated_pb2.TestSuiteResult, _Mapping]] = ..., failureMessage: _Optional[str] = ..., progress: _Optional[int] = ..., logs: _Optional[_Union[_generated_pb2.Logs, _Mapping]] = ..., hash: _Optional[str] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., completedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., lastStudyAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., images: _Optional[_Union[_generated_pb2.Images, _Mapping]] = ..., featureHistogramRef: _Optional[_Union[_generated_pb2_1.ObjectReference, _Mapping]] = ..., groupBy: _Optional[_Union[DatasetGroupByStatus, _Mapping]] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1.Condition, _Mapping]]] = ...) -> None: ...
+    def __init__(self, observedGeneration: _Optional[int] = ..., datasetManifestLocation: _Optional[_Union[_generated_pb2.ManifestLocation, _Mapping]] = ..., dataSourceManifestLocation: _Optional[_Union[_generated_pb2.ManifestLocation, _Mapping]] = ..., snapshotVersion: _Optional[int] = ..., statistics: _Optional[_Union[DatasetStatistics, _Mapping]] = ..., phase: _Optional[str] = ..., reportName: _Optional[str] = ..., dataLocation: _Optional[_Union[_generated_pb2.FileLocation, _Mapping]] = ..., reportLocation: _Optional[_Union[_generated_pb2.FileLocation, _Mapping]] = ..., profileLocation: _Optional[_Union[_generated_pb2.FileLocation, _Mapping]] = ..., anomaliesLocation: _Optional[_Union[_generated_pb2.FileLocation, _Mapping]] = ..., sampleLocation: _Optional[_Union[_generated_pb2.FileLocation, _Mapping]] = ..., imbalanced: bool = ..., unitTestResults: _Optional[_Union[_generated_pb2.TestSuiteResult, _Mapping]] = ..., failureMessage: _Optional[str] = ..., progress: _Optional[int] = ..., logs: _Optional[_Iterable[_Union[_generated_pb2.ContainerLog, _Mapping]]] = ..., hash: _Optional[str] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., completedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., lastStudyAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., images: _Optional[_Union[_generated_pb2.Images, _Mapping]] = ..., featureHistogramRef: _Optional[_Union[_generated_pb2_1.ObjectReference, _Mapping]] = ..., groupBy: _Optional[_Union[DatasetGroupByStatus, _Mapping]] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1.Condition, _Mapping]]] = ...) -> None: ...
 
 class DatasetSpec(_message.Message):
     __slots__ = ["artifactBucketName", "correlation", "dataSourceName", "description", "fast", "featureGroupName", "generateFeatureHistogram", "groupBy", "key", "labRef", "modelClassName", "notification", "origin", "owner", "report", "resources", "role", "run", "sample", "schedule", "subtask", "synthetic", "task", "type", "unitTest", "unitTests"]
@@ -1115,13 +1115,13 @@ class FeatureHistogramStatus(_message.Message):
     errors: int
     failureMessage: str
     failureReason: str
-    logs: _generated_pb2.Logs
+    logs: _containers.RepeatedCompositeFieldContainer[_generated_pb2.ContainerLog]
     observedGeneration: int
     phase: str
     total: int
     unitTestsResult: _generated_pb2.TestSuiteResult
     updatedAt: _generated_pb2_1_1.Time
-    def __init__(self, observedGeneration: _Optional[int] = ..., columns: _Optional[_Iterable[_Union[ColumnHistogram, _Mapping]]] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., logs: _Optional[_Union[_generated_pb2.Logs, _Mapping]] = ..., phase: _Optional[str] = ..., failureReason: _Optional[str] = ..., failureMessage: _Optional[str] = ..., unitTestsResult: _Optional[_Union[_generated_pb2.TestSuiteResult, _Mapping]] = ..., total: _Optional[int] = ..., errors: _Optional[int] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1.Condition, _Mapping]]] = ...) -> None: ...
+    def __init__(self, observedGeneration: _Optional[int] = ..., columns: _Optional[_Iterable[_Union[ColumnHistogram, _Mapping]]] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., logs: _Optional[_Iterable[_Union[_generated_pb2.ContainerLog, _Mapping]]] = ..., phase: _Optional[str] = ..., failureReason: _Optional[str] = ..., failureMessage: _Optional[str] = ..., unitTestsResult: _Optional[_Union[_generated_pb2.TestSuiteResult, _Mapping]] = ..., total: _Optional[int] = ..., errors: _Optional[int] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1.Condition, _Mapping]]] = ...) -> None: ...
 
 class FeatureStatistics(_message.Message):
     __slots__ = ["completeness", "constant", "corrToTarget", "count", "datatype", "distinct", "distinctValueCount", "duplicate", "highCardinality", "highCorrWithOtherFeatures", "highMissingPct", "histogram", "ignore", "importance", "index", "invalid", "iqr", "kurtosis", "lowCorrWithTarget", "mad", "max", "mean", "min", "missing", "mode", "mostFreqValuesRatio", "name", "nullable", "outliers", "p25", "p50", "p75", "percentMissing", "reserved", "skewed", "skewness", "stddev", "sum", "target", "values", "variance", "zeros"]
@@ -1490,12 +1490,12 @@ class RecipeRunStatus(_message.Message):
     conditions: _containers.RepeatedCompositeFieldContainer[_generated_pb2_1_1.Condition]
     failureMessage: str
     failureReason: str
-    logs: _generated_pb2.Logs
+    logs: _containers.RepeatedCompositeFieldContainer[_generated_pb2.ContainerLog]
     observedGeneration: int
     phase: str
     triggeredBy: str
     updatedAt: _generated_pb2_1_1.Time
-    def __init__(self, completedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., phase: _Optional[str] = ..., observedGeneration: _Optional[int] = ..., failureReason: _Optional[str] = ..., failureMessage: _Optional[str] = ..., triggeredBy: _Optional[str] = ..., logs: _Optional[_Union[_generated_pb2.Logs, _Mapping]] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1.Condition, _Mapping]]] = ...) -> None: ...
+    def __init__(self, completedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., phase: _Optional[str] = ..., observedGeneration: _Optional[int] = ..., failureReason: _Optional[str] = ..., failureMessage: _Optional[str] = ..., triggeredBy: _Optional[str] = ..., logs: _Optional[_Iterable[_Union[_generated_pb2.ContainerLog, _Mapping]]] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1.Condition, _Mapping]]] = ...) -> None: ...
 
 class RecipeSpec(_message.Message):
     __slots__ = ["description", "input", "output", "owner", "resources", "sample", "steps", "timeout", "ttl", "unitTestsTemplate", "versionName"]

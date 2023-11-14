@@ -1,0 +1,634 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.10.0
+  creationTimestamp: null
+  name: knowledgebases.llm.modela.ai
+spec:
+  group: llm.modela.ai
+  names:
+    categories:
+    - llm
+    - modela
+    kind: KnowledgeBase
+    listKind: KnowledgeBaseList
+    plural: knowledgebases
+    shortNames:
+    - kb
+    singular: knowledgebase
+  scope: Namespaced
+  versions:
+  - additionalPrinterColumns:
+    - jsonPath: .spec.owner
+      name: Owner
+      priority: 1
+      type: string
+    - jsonPath: .status.lastSyncAt
+      name: Last Sync
+      type: date
+    - jsonPath: .metadata.creationTimestamp
+      name: Age
+      type: date
+    name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: KnowledgeBase represents a collection of documents that can be
+          queried with retrieval-augmented generation
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            properties:
+              description:
+                default: ""
+                description: The user-provided description of the Knowledge Base
+                maxLength: 512
+                type: string
+              documentStoreConnectionName:
+                description: DocumentStoreConnectionName specifies the name of a Connection
+                  resource to use as a document store
+                type: string
+              documents:
+                description: Documents specifies the collection of documents included
+                  in the Knowledge Base
+                items:
+                  description: DocumentSpec defines the specification of a single
+                    document
+                  properties:
+                    database:
+                      description: Database specifies the configuration to read text
+                        from a database query
+                      properties:
+                        connectionName:
+                          description: The name of the connection to the database
+                          type: string
+                        options:
+                          additionalProperties:
+                            type: string
+                          description: Reader-specific options
+                          type: object
+                        query:
+                          description: The query to execute on the database
+                          type: string
+                        type:
+                          description: The type of database reader
+                          type: string
+                      type: object
+                    description:
+                      description: Description specifies an optional description for
+                        the document
+                      type: string
+                    embeddingModel:
+                      description: EmbeddingModel specifies a document-specific embedding
+                        model
+                      properties:
+                        connectionName:
+                          description: ConnectionName specifies the name of a connection
+                            to a foundational model provider
+                          type: string
+                        model:
+                          description: Model specifies the vendor-specific model type
+                          type: string
+                      type: object
+                    file:
+                      description: File specifies the configuration to read text from
+                        a file
+                      properties:
+                        location:
+                          description: The location of the file
+                          properties:
+                            bucketName:
+                              type: string
+                            path:
+                              type: string
+                          type: object
+                        options:
+                          additionalProperties:
+                            type: string
+                          description: Reader-specific options
+                          type: object
+                        type:
+                          description: The type of file reader
+                          type: string
+                      type: object
+                    metadata:
+                      additionalProperties:
+                        type: string
+                      description: Metadata contains user-specified metadata about
+                        the document
+                      type: object
+                    name:
+                      description: The unique name of the document
+                      type: string
+                    nodeParser:
+                      description: NodeParser specifies document-specific options
+                        for breaking up the document into nodes
+                      properties:
+                        includeMetadata:
+                          description: Indicate if metadata should be included in
+                            the nodes. When unspecified, default to true
+                          type: boolean
+                        includeOrderRelationship:
+                          description: Indicate if previous/next relationships should
+                            be included between nodes. When unspecified, default to
+                            true
+                          type: boolean
+                        sentence:
+                          description: The specification for the sentence window node
+                            parser
+                          properties:
+                            splitter:
+                              description: The function to split documents into sentences.
+                                When unspecified, default to the Punkt tokenizer
+                              properties:
+                                separator:
+                                  description: The separator character or regex pattern,
+                                    required when the tokenizer type is `regex` or
+                                    `separator`
+                                  type: string
+                                type:
+                                  type: string
+                              type: object
+                            windowSize:
+                              description: The number of sentences to capture on each
+                                side of the node. When unspecified, default to 3
+                              format: int32
+                              type: integer
+                          type: object
+                        text:
+                          description: The specification for the text splitter to
+                            use as a node parser
+                          properties:
+                            code:
+                              description: Code splits code documents
+                              properties:
+                                chunkLines:
+                                  description: The number of code lines in each chunk.
+                                    When unspecified, default to 40
+                                  format: int32
+                                  type: integer
+                                chunkLinesOverlap:
+                                  description: The amount of code lines that will
+                                    be captured on each side of the node. When unspecified,
+                                    default to 15
+                                  format: int32
+                                  type: integer
+                                language:
+                                  description: The language of the document(s). When
+                                    set to `infer`, the language of the document will
+                                    be inferred using the name and extension of the
+                                    original file. Documents that cannot be parsed
+                                    using the specified language will be skipped
+                                  type: string
+                                maxChars:
+                                  description: The maximum amount of characters in
+                                    each chunk. When unspecified, default to 1500
+                                  format: int32
+                                  type: integer
+                              type: object
+                            sentence:
+                              description: Sentence splits the document by sentence
+                              properties:
+                                chunkOverlap:
+                                  description: The amount of tokens that will be captured
+                                    on each side of the node. When unspecified, default
+                                    to 200
+                                  format: int32
+                                  type: integer
+                                chunkSize:
+                                  description: The chunk size, in tokens, for each
+                                    chunk. When unspecified, default to 1024
+                                  format: int32
+                                  type: integer
+                                paragraphSeparator:
+                                  description: The separator character for paragraphs.
+                                    When unspecified, default to newline
+                                  type: string
+                                splitter:
+                                  description: The function to split documents into
+                                    sentences. When unspecified, default to the Punkt
+                                    tokenizer
+                                  properties:
+                                    separator:
+                                      description: The separator character or regex
+                                        pattern, required when the tokenizer type
+                                        is `regex` or `separator`
+                                      type: string
+                                    type:
+                                      type: string
+                                  type: object
+                                wordSeparator:
+                                  description: The separator character for words.
+                                    When unspecified, default to the space character
+                                  type: string
+                              type: object
+                            token:
+                              description: Token splits the document by tokens
+                              properties:
+                                chunkOverlap:
+                                  description: The amount of tokens that will be captured
+                                    on each side of the node. When unspecified, default
+                                    to 200
+                                  format: int32
+                                  type: integer
+                                chunkSize:
+                                  description: The chunk size, in tokens, for each
+                                    chunk. When unspecified, default to 1024
+                                  format: int32
+                                  type: integer
+                                wordSeparator:
+                                  description: The separator character for words.
+                                    When unspecified, default to the space character
+                                  type: string
+                              type: object
+                            type:
+                              description: The type of text splitter. When a specification
+                                for a text splitter is provided, this field may be
+                                omitted. When not provided, the defaults for the type
+                                of text splitter will be used
+                              type: string
+                          type: object
+                        type:
+                          description: The type of node parser. When a specification
+                            for a text or sentence window node parser is provided,
+                            this field may be omitted. When not provided, the defaults
+                            for the type of node parser will be used
+                          type: string
+                      type: object
+                    refreshPeriod:
+                      description: RefreshPeriod specifies the time, in seconds, at
+                        which the document must be refreshed If unspecified or zero,
+                        the document will be refreshed on each sync. When set to -1,
+                        the document will only refresh once
+                      format: int32
+                      type: integer
+                    web:
+                      description: Web specifies the configuration to read text from
+                        an external web-based source
+                      properties:
+                        connectionName:
+                          description: The name of the connection that provides authorization
+                            details to the reader, if applicable
+                          type: string
+                        options:
+                          additionalProperties:
+                            type: string
+                          description: Reader-specific options
+                          type: object
+                        type:
+                          description: The type of web reader
+                          type: string
+                      type: object
+                  type: object
+                type: array
+              embeddingModel:
+                description: EmbeddingModel specifies the embedding model to use when
+                  ingesting documents
+                properties:
+                  connectionName:
+                    description: ConnectionName specifies the name of a connection
+                      to a foundational model provider
+                    type: string
+                  model:
+                    description: Model specifies the vendor-specific model type
+                    type: string
+                type: object
+              metadataDatabase:
+                description: MetadataDatabase specifies the location of a database
+                  table used to store document metadata and statuses. When specified,
+                  any document metadata specified by Documents will be cleared and
+                  migrated to the table
+                properties:
+                  connection:
+                    default: ""
+                    description: ConnectionName specifies the name of the Connection
+                      resource containing the credentials to connect to the database
+                    type: string
+                  sql:
+                    default: ""
+                    description: The SQL statement which will be executed to query
+                      data from the table specified by Table
+                    type: string
+                  table:
+                    default: ""
+                    description: The name of a table inside a database, if applicable
+                    type: string
+                type: object
+              nodeParser:
+                description: NodeParser specifies the default node parser for all
+                  documents. The node parser defines how to split up documents into
+                  individual chunks of text
+                properties:
+                  includeMetadata:
+                    description: Indicate if metadata should be included in the nodes.
+                      When unspecified, default to true
+                    type: boolean
+                  includeOrderRelationship:
+                    description: Indicate if previous/next relationships should be
+                      included between nodes. When unspecified, default to true
+                    type: boolean
+                  sentence:
+                    description: The specification for the sentence window node parser
+                    properties:
+                      splitter:
+                        description: The function to split documents into sentences.
+                          When unspecified, default to the Punkt tokenizer
+                        properties:
+                          separator:
+                            description: The separator character or regex pattern,
+                              required when the tokenizer type is `regex` or `separator`
+                            type: string
+                          type:
+                            type: string
+                        type: object
+                      windowSize:
+                        description: The number of sentences to capture on each side
+                          of the node. When unspecified, default to 3
+                        format: int32
+                        type: integer
+                    type: object
+                  text:
+                    description: The specification for the text splitter to use as
+                      a node parser
+                    properties:
+                      code:
+                        description: Code splits code documents
+                        properties:
+                          chunkLines:
+                            description: The number of code lines in each chunk. When
+                              unspecified, default to 40
+                            format: int32
+                            type: integer
+                          chunkLinesOverlap:
+                            description: The amount of code lines that will be captured
+                              on each side of the node. When unspecified, default
+                              to 15
+                            format: int32
+                            type: integer
+                          language:
+                            description: The language of the document(s). When set
+                              to `infer`, the language of the document will be inferred
+                              using the name and extension of the original file. Documents
+                              that cannot be parsed using the specified language will
+                              be skipped
+                            type: string
+                          maxChars:
+                            description: The maximum amount of characters in each
+                              chunk. When unspecified, default to 1500
+                            format: int32
+                            type: integer
+                        type: object
+                      sentence:
+                        description: Sentence splits the document by sentence
+                        properties:
+                          chunkOverlap:
+                            description: The amount of tokens that will be captured
+                              on each side of the node. When unspecified, default
+                              to 200
+                            format: int32
+                            type: integer
+                          chunkSize:
+                            description: The chunk size, in tokens, for each chunk.
+                              When unspecified, default to 1024
+                            format: int32
+                            type: integer
+                          paragraphSeparator:
+                            description: The separator character for paragraphs. When
+                              unspecified, default to newline
+                            type: string
+                          splitter:
+                            description: The function to split documents into sentences.
+                              When unspecified, default to the Punkt tokenizer
+                            properties:
+                              separator:
+                                description: The separator character or regex pattern,
+                                  required when the tokenizer type is `regex` or `separator`
+                                type: string
+                              type:
+                                type: string
+                            type: object
+                          wordSeparator:
+                            description: The separator character for words. When unspecified,
+                              default to the space character
+                            type: string
+                        type: object
+                      token:
+                        description: Token splits the document by tokens
+                        properties:
+                          chunkOverlap:
+                            description: The amount of tokens that will be captured
+                              on each side of the node. When unspecified, default
+                              to 200
+                            format: int32
+                            type: integer
+                          chunkSize:
+                            description: The chunk size, in tokens, for each chunk.
+                              When unspecified, default to 1024
+                            format: int32
+                            type: integer
+                          wordSeparator:
+                            description: The separator character for words. When unspecified,
+                              default to the space character
+                            type: string
+                        type: object
+                      type:
+                        description: The type of text splitter. When a specification
+                          for a text splitter is provided, this field may be omitted.
+                          When not provided, the defaults for the type of text splitter
+                          will be used
+                        type: string
+                    type: object
+                  type:
+                    description: The type of node parser. When a specification for
+                      a text or sentence window node parser is provided, this field
+                      may be omitted. When not provided, the defaults for the type
+                      of node parser will be used
+                    type: string
+                type: object
+              owner:
+                default: no-one
+                description: Owner specifies the name of the Account which the object
+                  belongs to
+                type: string
+              refreshSchedule:
+                description: RefreshSchedule specifies the schedule for Modela to
+                  refresh all documents specified by the Knowledge Base
+                properties:
+                  cron:
+                    description: The cron string for the schedule, applicable if the
+                      trigger type is Cron. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
+                      for more information
+                    type: string
+                  enabled:
+                    default: false
+                    description: Enabled indicates if the schedule is enabled. When
+                      enabled, a CronJob will be created which when triggered will
+                      initiate the creation of a run for the resource that specifies
+                      the schedule
+                    type: boolean
+                  type:
+                    description: The type of schedule, which can be a frequency interval
+                      or a cron expression
+                    enum:
+                    - now
+                    - once
+                    - hourly
+                    - daily
+                    - weekly
+                    - monthly
+                    - yearly
+                    - cron
+                    type: string
+                type: object
+              vectorStoreConnectionName:
+                description: VectorStoreConnectionName specifies the name of a Connection
+                  resource that provides a vector database
+                type: string
+            type: object
+          status:
+            properties:
+              conditions:
+                items:
+                  description: "Condition contains details for one aspect of the current
+                    state of this API Resource. --- This struct is intended for direct
+                    use as an array at the field path .status.conditions.  For example,
+                    type FooStatus struct{ // Represents the observations of a foo's
+                    current state. // Known .status.conditions.type are: \"Available\",
+                    \"Progressing\", and \"Degraded\" // +patchMergeKey=type // +patchStrategy=merge
+                    // +listType=map // +listMapKey=type Conditions []metav1.Condition
+                    `json:\"conditions,omitempty\" patchStrategy:\"merge\" patchMergeKey:\"type\"
+                    protobuf:\"bytes,1,rep,name=conditions\"` \n // other fields }"
+                  properties:
+                    lastTransitionTime:
+                      description: lastTransitionTime is the last time the condition
+                        transitioned from one status to another. This should be when
+                        the underlying condition changed.  If that is not known, then
+                        using the time when the API field changed is acceptable.
+                      format: date-time
+                      type: string
+                    message:
+                      description: message is a human readable message indicating
+                        details about the transition. This may be an empty string.
+                      maxLength: 32768
+                      type: string
+                    observedGeneration:
+                      description: observedGeneration represents the .metadata.generation
+                        that the condition was set based upon. For instance, if .metadata.generation
+                        is currently 12, but the .status.conditions[x].observedGeneration
+                        is 9, the condition is out of date with respect to the current
+                        state of the instance.
+                      format: int64
+                      minimum: 0
+                      type: integer
+                    reason:
+                      description: reason contains a programmatic identifier indicating
+                        the reason for the condition's last transition. Producers
+                        of specific condition types may define expected values and
+                        meanings for this field, and whether the values are considered
+                        a guaranteed API. The value should be a CamelCase string.
+                        This field may not be empty.
+                      maxLength: 1024
+                      minLength: 1
+                      pattern: ^[A-Za-z]([A-Za-z0-9_,:]*[A-Za-z0-9_])?$
+                      type: string
+                    status:
+                      description: status of the condition, one of True, False, Unknown.
+                      enum:
+                      - "True"
+                      - "False"
+                      - Unknown
+                      type: string
+                    type:
+                      description: type of condition in CamelCase or in foo.example.com/CamelCase.
+                        --- Many .condition.type values are consistent across resources
+                        like Available, but because arbitrary conditions can be useful
+                        (see .node.status.conditions), the ability to deconflict is
+                        important. The regex it matches is (dns1123SubdomainFmt/)?(qualifiedNameFmt)
+                      maxLength: 316
+                      pattern: ^([a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*/)?(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])$
+                      type: string
+                  required:
+                  - lastTransitionTime
+                  - message
+                  - reason
+                  - status
+                  - type
+                  type: object
+                type: array
+              documents:
+                description: Documents contains the collection of statuses for each
+                  document defined by the Knowledge Base. In the case that a metadata
+                  database is defined, the collection will be empty
+                items:
+                  properties:
+                    lastRefreshAt:
+                      description: The time at which the document was last refreshed
+                      format: date-time
+                      type: string
+                    name:
+                      description: The unique name of the document
+                      type: string
+                    nodes:
+                      description: The number of nodes created for the document
+                      format: int32
+                      type: integer
+                    uid:
+                      description: The unique ID of the document (generated internally)
+                      type: string
+                  type: object
+                type: array
+              lastRefreshAt:
+                description: LastRefreshAt specifies the time at which the last refresh
+                  job was executed
+                format: date-time
+                type: string
+              logs:
+                description: Logs contains the location of the logs produced by the
+                  last refresh job
+                items:
+                  description: ContainerLog describes the location of logs for a single
+                    Job
+                  properties:
+                    bucket:
+                      description: The bucket the log was stored in
+                      type: string
+                    container:
+                      description: The container name
+                      type: string
+                    job:
+                      description: The name of the Job
+                      type: string
+                    key:
+                      description: The path to the log in the bucket
+                      type: string
+                  type: object
+                type: array
+              observedGeneration:
+                description: ObservedGeneration specifies the last generation that
+                  was reconciled
+                format: int64
+                type: integer
+              updatedAt:
+                description: The last time the object was updated
+                format: date-time
+                type: string
+            required:
+            - logs
+            type: object
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}

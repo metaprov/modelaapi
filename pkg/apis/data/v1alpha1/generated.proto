@@ -689,7 +689,7 @@ message DataPipelineRunStatus {
 
   // Holds the location of log paths
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 10;
+  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog logs = 10;
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional
@@ -1392,7 +1392,7 @@ message DatasetSnapshotStatus {
   optional int32 progress = 16;
 
   // Logs contains the location of all logs produced by snapshot workloads
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 17;
+  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog logs = 17;
 
   // +kubebuilder:validation:Optional
   optional string hash = 18;
@@ -2041,7 +2041,7 @@ message FeatureHistogramStatus {
 
   // The log file specification that determines the location of all logs produced by the object
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 5;
+  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog logs = 5;
 
   // The phase of the feature histogram
   // +kubebuilder:validation:Optional
@@ -2679,7 +2679,7 @@ message RecipeRunStatus {
 
   // Holds the location of log paths
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 7;
+  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog logs = 7;
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional

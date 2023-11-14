@@ -37,6 +37,7 @@ resources:
 - infra.modela.ai_tenants.yaml
 - infra.modela.ai_userroleclasses.yaml
 - infra.modela.ai_virtualbuckets.yaml
+- llm.modela.ai_knowledgebases.yaml
 - team.modela.ai_postmortems.yaml
 - team.modela.ai_reviews.yaml
 - team.modela.ai_runbooks.yaml

@@ -6,14 +6,7 @@
 
 package v1alpha1
 
-//==============================================================================
-// EntityRef
-//==============================================================================
-
 import (
-	"fmt"
-	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
-	"github.com/metaprov/modelaapi/pkg/util"
 	corev1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	ctrl "sigs.k8s.io/controller-runtime"
@@ -55,13 +48,4 @@ func (fg *FeatureGroup) Default() {
 	}
 	fg.Spec.TenantRef.Namespace = "modela-system"
 	fg.Spec.TenantRef.Name = fg.Namespace
-
-	if *fg.Spec.Location.Type == catalog.DataLocationSQLView || *fg.Spec.Location.Type == catalog.DataLocationSQLTable {
-		// set the path
-		path := fmt.Sprintf("modela/live/tenants/%s/featuregroups/%s/data/raw/data.parquet", fg.Namespace, fg.Name)
-		parquet := FlatFileTypeParquet
-		fg.Spec.FlatFile.FileType = &parquet
-		fg.Spec.Location.Path = util.StrPtr(path)
-	}
-
 }

@@ -20,6 +20,7 @@ PACKAGES=(
     github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1
     github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1
     github.com/metaprov/modelaapi/pkg/apis/team/v1alpha1
+    github.com/metaprov/modelaapi/pkg/apis/llm/v1alpha1
     )
 
 APIMACHINERY_PKGS=(

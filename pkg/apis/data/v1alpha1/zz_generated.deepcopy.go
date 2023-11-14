@@ -932,7 +932,11 @@ func (in *DataPipelineRunStatus) DeepCopyInto(out *DataPipelineRunStatus) {
 		*out = new(int32)
 		**out = **in
 	}
-	in.Logs.DeepCopyInto(&out.Logs)
+	if in.Logs != nil {
+		in, out := &in.Logs, &out.Logs
+		*out = make(catalogv1alpha1.Logs, len(*in))
+		copy(*out, *in)
+	}
 	if in.UpdatedAt != nil {
 		in, out := &in.UpdatedAt, &out.UpdatedAt
 		*out = (*in).DeepCopy()
@@ -1731,7 +1735,11 @@ func (in *DatasetSnapshotStatus) DeepCopyInto(out *DatasetSnapshotStatus) {
 		*out = new(string)
 		**out = **in
 	}
-	in.Logs.DeepCopyInto(&out.Logs)
+	if in.Logs != nil {
+		in, out := &in.Logs, &out.Logs
+		*out = make(catalogv1alpha1.Logs, len(*in))
+		copy(*out, *in)
+	}
 	if in.UpdatedAt != nil {
 		in, out := &in.UpdatedAt, &out.UpdatedAt
 		*out = (*in).DeepCopy()
@@ -2482,7 +2490,11 @@ func (in *FeatureHistogramStatus) DeepCopyInto(out *FeatureHistogramStatus) {
 		in, out := &in.UpdatedAt, &out.UpdatedAt
 		*out = (*in).DeepCopy()
 	}
-	in.Logs.DeepCopyInto(&out.Logs)
+	if in.Logs != nil {
+		in, out := &in.Logs, &out.Logs
+		*out = make(catalogv1alpha1.Logs, len(*in))
+		copy(*out, *in)
+	}
 	in.UnitTestsResult.DeepCopyInto(&out.UnitTestsResult)
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
@@ -3263,7 +3275,11 @@ func (in *RecipeRunStatus) DeepCopyInto(out *RecipeRunStatus) {
 		*out = new(string)
 		**out = **in
 	}
-	in.Logs.DeepCopyInto(&out.Logs)
+	if in.Logs != nil {
+		in, out := &in.Logs, &out.Logs
+		*out = make(catalogv1alpha1.Logs, len(*in))
+		copy(*out, *in)
+	}
 	if in.UpdatedAt != nil {
 		in, out := &in.UpdatedAt, &out.UpdatedAt
 		*out = (*in).DeepCopy()

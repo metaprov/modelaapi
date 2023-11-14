@@ -1069,7 +1069,7 @@ message ModelClassRunStatus {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 12;
 
   // The log file specification that determines the location of all logs produced by the object
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 13;
+  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog logs = 13;
 
   // Last promotion was done
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time promotedAt = 14;
@@ -1723,7 +1723,7 @@ message ModelStatus {
 
   // Logs specifies the location of logs produced by workloads associated with the Model
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 39;
+  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog logs = 39;
 
   // The Roc/Auc curve of the trained model
   // +kubebuilder:validation:Optional
@@ -2064,7 +2064,7 @@ message ReportStatus {
 
   // Logs specifies the location of logs produced by workloads associated with the Report
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 7;
+  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog logs = 7;
 
   // The last time the object was updated
   // +kubebuilder:validation:Optional
@@ -2330,7 +2330,6 @@ message ServingStatus {
 // +kubebuilder:object:root=true
 // +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1
-// +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".status.version",priority=1
 // +kubebuilder:printcolumn:name="Dataset",type="string",JSONPath=".spec.snapshot.dataset"
 // +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task"
 // +kubebuilder:printcolumn:name="Objective",type="string",JSONPath=".spec.search.objective.metric"
@@ -2537,7 +2536,7 @@ message StudyRunStatus {
 
   // Logs specifies the location of logs produced by workloads associated with the Study
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 23;
+  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog logs = 23;
 
   // BaselineStatus contains the status of the baseline phase
   // +kubebuilder:validation:Optional

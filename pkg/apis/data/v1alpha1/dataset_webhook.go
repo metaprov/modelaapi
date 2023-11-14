@@ -66,12 +66,13 @@ func (dataset *Dataset) validate() error {
 
 func (dataset *Dataset) validateSpec(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
-	allErrs = append(allErrs, dataset.validateLocation(fldPath.Child("location"))...)
+	allErrs = append(allErrs, dataset.validateOrigin(fldPath.Child("origin"))...)
 	return allErrs
 }
 
-func (dataset *Dataset) validateLocation(fldPath *field.Path) field.ErrorList {
+func (dataset *Dataset) validateOrigin(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
+	allErrs = append(allErrs, dataset.Spec.Origin.Validate(fldPath)...)
 	return allErrs
 }
 

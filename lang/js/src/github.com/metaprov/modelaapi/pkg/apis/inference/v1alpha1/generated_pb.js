@@ -9716,7 +9716,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRunSpe
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRunStatus.repeatedFields_ = [14];
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRunStatus.repeatedFields_ = [9,14];
 
 
 
@@ -9756,7 +9756,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRunSta
     phase: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
     unittestresults: (f = msg.getUnittestresults()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuiteResult.toObject(includeInstance, f),
     failuremessage: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
-    logs: (f = msg.getLogs()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.toObject(includeInstance, f),
+    logsList: jspb.Message.toObjectList(msg.getLogsList(),
+    github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ContainerLog.toObject, includeInstance),
     forecast: (f = msg.getForecast()) && proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForecastStatus.toObject(includeInstance, f),
     usage: (f = msg.getUsage()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceConsumption.toObject(includeInstance, f),
     updatedat: (f = msg.getUpdatedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
@@ -9830,9 +9831,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRunSta
       msg.setFailuremessage(value);
       break;
     case 9:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.deserializeBinaryFromReader);
-      msg.setLogs(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ContainerLog;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ContainerLog.deserializeBinaryFromReader);
+      msg.addLogs(value);
       break;
     case 10:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ForecastStatus;
@@ -9939,12 +9940,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRunSta
       f
     );
   }
-  f = message.getLogs();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getLogsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
       9,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ContainerLog.serializeBinaryToWriter
     );
   }
   f = message.getForecast();
@@ -10245,39 +10246,40 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRunSta
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 9;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs}
+ * repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog logs = 9;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog>}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRunStatus.prototype.getLogs = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs, 9));
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRunStatus.prototype.getLogsList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog>} */ (
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ContainerLog, 9));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs|undefined} value
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog>} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRunStatus} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRunStatus.prototype.setLogs = function(value) {
-  return jspb.Message.setWrapperField(this, 9, value);
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRunStatus.prototype.setLogsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 9, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRunStatus.prototype.addLogs = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRunStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRunStatus.prototype.clearLogs = function() {
-  return this.setLogs(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRunStatus.prototype.hasLogs = function() {
-  return jspb.Message.getField(this, 9) != null;
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRunStatus.prototype.clearLogsList = function() {
+  return this.setLogsList([]);
 };
 
 
@@ -11311,7 +11313,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionStatus
     observedgeneration: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     activeList: jspb.Message.toObjectList(msg.getActiveList(),
     github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference.toObject, includeInstance),
-    version: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     lastrunversion: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     availablerunversionsList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
     lastrunat: (f = msg.getLastrunat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
@@ -11364,10 +11365,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionStatus
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference.deserializeBinaryFromReader);
       msg.addActive(value);
-      break;
-    case 3:
-      var value = /** @type {number} */ (reader.readUint32());
-      msg.setVersion(value);
       break;
     case 4:
       var value = /** @type {number} */ (reader.readUint32());
@@ -11443,13 +11440,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionStatus
       2,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference.serializeBinaryToWriter
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 3));
-  if (f != null) {
-    writer.writeUint32(
-      3,
-      f
     );
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 4));
@@ -11579,42 +11569,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionStatus
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionStatus.prototype.clearActiveList = function() {
   return this.setActiveList([]);
-};
-
-
-/**
- * optional uint32 version = 3;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionStatus.prototype.getVersion = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionStatus.prototype.setVersion = function(value) {
-  return jspb.Message.setField(this, 3, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionStatus.prototype.clearVersion = function() {
-  return jspb.Message.setField(this, 3, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionStatus.prototype.hasVersion = function() {
-  return jspb.Message.getField(this, 3) != null;
 };
 
 

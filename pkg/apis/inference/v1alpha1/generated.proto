@@ -646,7 +646,7 @@ message PredictionRunStatus {
 
   // Logs contains the location of all logs produced by run workloads
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 9;
+  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog logs = 9;
 
   // Forecast specifies the forecast status for the run
   // +kubebuilder:validation:Optional
@@ -742,11 +742,6 @@ message PredictionStatus {
   // Active contains a collection of references to currently active runs
   // +optional
   repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunReference active = 2;
-
-  // Version specifies the version of the Study as tracked by Modela, which is
-  // incremented each time the object is changed
-  // +kubebuilder:default:=1
-  optional uint32 version = 3;
 
   // LastRunVersion contains the integer version last used to create a run
   // +kubebuilder:default:=0

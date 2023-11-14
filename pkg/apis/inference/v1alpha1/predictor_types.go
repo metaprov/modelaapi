@@ -215,10 +215,9 @@ type BackwardCurtainSpec struct {
 // Predictor
 //==============================================================================
 
-// Predictor condition
 type PredictorConditionType string
 
-// / Predictor Condition
+// Predictor Condition
 const (
 	PredictorReady = "Ready"
 	PredictorSaved = "Saved"

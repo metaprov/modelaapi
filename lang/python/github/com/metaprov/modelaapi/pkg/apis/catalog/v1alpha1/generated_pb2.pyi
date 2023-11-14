@@ -179,28 +179,16 @@ class DataCenter(_message.Message):
     def __init__(self, name: _Optional[str] = ..., code: _Optional[str] = ...) -> None: ...
 
 class DataLocation(_message.Message):
-    __slots__ = ["bucketName", "connectionName", "database", "path", "resourceRef", "sql", "table", "topic", "type", "url"]
-    BUCKETNAME_FIELD_NUMBER: _ClassVar[int]
-    CONNECTIONNAME_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["database", "file", "resource", "web"]
     DATABASE_FIELD_NUMBER: _ClassVar[int]
-    PATH_FIELD_NUMBER: _ClassVar[int]
-    RESOURCEREF_FIELD_NUMBER: _ClassVar[int]
-    SQL_FIELD_NUMBER: _ClassVar[int]
-    TABLE_FIELD_NUMBER: _ClassVar[int]
-    TOPIC_FIELD_NUMBER: _ClassVar[int]
-    TYPE_FIELD_NUMBER: _ClassVar[int]
-    URL_FIELD_NUMBER: _ClassVar[int]
-    bucketName: str
-    connectionName: str
-    database: str
-    path: str
-    resourceRef: _generated_pb2.ObjectReference
-    sql: str
-    table: str
-    topic: str
-    type: str
-    url: str
-    def __init__(self, type: _Optional[str] = ..., connectionName: _Optional[str] = ..., bucketName: _Optional[str] = ..., path: _Optional[str] = ..., table: _Optional[str] = ..., database: _Optional[str] = ..., sql: _Optional[str] = ..., topic: _Optional[str] = ..., url: _Optional[str] = ..., resourceRef: _Optional[_Union[_generated_pb2.ObjectReference, _Mapping]] = ...) -> None: ...
+    FILE_FIELD_NUMBER: _ClassVar[int]
+    RESOURCE_FIELD_NUMBER: _ClassVar[int]
+    WEB_FIELD_NUMBER: _ClassVar[int]
+    database: DatabaseLocation
+    file: FileLocation
+    resource: ResourceLocation
+    web: WebLocation
+    def __init__(self, file: _Optional[_Union[FileLocation, _Mapping]] = ..., database: _Optional[_Union[DatabaseLocation, _Mapping]] = ..., web: _Optional[_Union[WebLocation, _Mapping]] = ..., resource: _Optional[_Union[ResourceLocation, _Mapping]] = ...) -> None: ...
 
 class DataTestCase(_message.Message):
     __slots__ = ["assertThat", "column", "column2", "columns", "compareToRef", "dataFilter", "enabled", "entityRef", "entityRef2", "expectedCategory", "expectedSet", "expectedValue", "featureFilter", "generated", "lower", "lowerInclusive", "metric", "name", "periods", "referenceType", "tags", "type", "upper", "upperInclusive"]
@@ -267,6 +255,16 @@ class DataTestCaseResult(_message.Message):
     failureMsg: str
     name: str
     def __init__(self, name: _Optional[str] = ..., actual: _Optional[_Union[Measurement, _Mapping]] = ..., failure: bool = ..., error: bool = ..., failureMsg: _Optional[str] = ...) -> None: ...
+
+class DatabaseLocation(_message.Message):
+    __slots__ = ["connectionName", "sql", "table"]
+    CONNECTIONNAME_FIELD_NUMBER: _ClassVar[int]
+    SQL_FIELD_NUMBER: _ClassVar[int]
+    TABLE_FIELD_NUMBER: _ClassVar[int]
+    connectionName: str
+    sql: str
+    table: str
+    def __init__(self, connectionName: _Optional[str] = ..., table: _Optional[str] = ..., sql: _Optional[str] = ...) -> None: ...
 
 class FileLocation(_message.Message):
     __slots__ = ["bucketName", "path"]
@@ -361,14 +359,6 @@ class Lib(_message.Message):
     frameworks: str
     version: str
     def __init__(self, frameworks: _Optional[str] = ..., version: _Optional[str] = ...) -> None: ...
-
-class Logs(_message.Message):
-    __slots__ = ["bucket", "containers"]
-    BUCKET_FIELD_NUMBER: _ClassVar[int]
-    CONTAINERS_FIELD_NUMBER: _ClassVar[int]
-    bucket: str
-    containers: _containers.RepeatedCompositeFieldContainer[ContainerLog]
-    def __init__(self, bucket: _Optional[str] = ..., containers: _Optional[_Iterable[_Union[ContainerLog, _Mapping]]] = ...) -> None: ...
 
 class MLFramework(_message.Message):
     __slots__ = ["metadata", "spec"]
@@ -707,6 +697,12 @@ class ResourceConsumption(_message.Message):
     memory: int
     def __init__(self, cpu: _Optional[int] = ..., memory: _Optional[int] = ..., gpu: _Optional[int] = ...) -> None: ...
 
+class ResourceLocation(_message.Message):
+    __slots__ = ["resourceRef"]
+    RESOURCEREF_FIELD_NUMBER: _ClassVar[int]
+    resourceRef: _generated_pb2.ObjectReference
+    def __init__(self, resourceRef: _Optional[_Union[_generated_pb2.ObjectReference, _Mapping]] = ...) -> None: ...
+
 class ResourceSpec(_message.Message):
     __slots__ = ["custom", "requirements", "workloadName"]
     CUSTOM_FIELD_NUMBER: _ClassVar[int]
@@ -828,6 +824,12 @@ class TestSuiteResult(_message.Message):
     startedAt: _generated_pb2_1_1.Time
     tests: _containers.RepeatedCompositeFieldContainer[DataTestCaseResult]
     def __init__(self, entityRef: _Optional[_Union[_generated_pb2.ObjectReference, _Mapping]] = ..., failures: _Optional[int] = ..., errors: _Optional[int] = ..., startedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., completedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., tests: _Optional[_Iterable[_Union[DataTestCaseResult, _Mapping]]] = ...) -> None: ...
+
+class WebLocation(_message.Message):
+    __slots__ = ["url"]
+    URL_FIELD_NUMBER: _ClassVar[int]
+    url: str
+    def __init__(self, url: _Optional[str] = ...) -> None: ...
 
 class WorkerRunResult(_message.Message):
     __slots__ = ["error", "id", "task", "uri"]

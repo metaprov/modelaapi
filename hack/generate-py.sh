@@ -104,6 +104,7 @@ python3 -m grpc_tools.protoc \
     github.com/metaprov/modelaapi/services/trainerd/v1/trainerd.proto \
     github.com/metaprov/modelaapi/services/virtualbucket/v1/virtualbucket.proto \
     github.com/metaprov/modelaapi/services/batchpredictord/v1/batchpredictord.proto \
+    github.com/metaprov/modelaapi/services/knowledgebase/v1/knowledgebase.proto
 
 
 

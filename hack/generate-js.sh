@@ -99,4 +99,5 @@ protoc \
     github.com/metaprov/modelaapi/services/virtualbucket/v1/virtualbucket.proto \
     github.com/metaprov/modelaapi/services/batchpredictord/v1/batchpredictord.proto \
     github.com/metaprov/modelaapi/services/watcherd/v1/watcherd.proto \
+    github.com/metaprov/modelaapi/services/knowledgebase/v1/knowledgebase.proto
 

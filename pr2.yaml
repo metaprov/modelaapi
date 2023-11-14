@@ -40,8 +40,8 @@ spec:
       connection: oneuponedown
       database: ''
       path: ''
-      sql: SELECT * FROM prediction_view;
-      table: prediction_view
+      sql: SELECT * FROM prediction_view_new;
+      table: prediction_view_new
       topic: ''
       type: view
       url: ''
@@ -63,7 +63,7 @@ spec:
       database: ''
       path: ''
       sql: ''
-      table: prediction_alt
+      table: prediction_alt_new
       topic: ''
       type: table
       url: ''

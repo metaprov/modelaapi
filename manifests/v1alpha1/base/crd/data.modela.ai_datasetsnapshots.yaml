@@ -326,33 +326,24 @@ spec:
               logs:
                 description: Logs contains the location of all logs produced by snapshot
                   workloads
-                properties:
-                  bucket:
-                    description: The name of the Virtual Bucket resource where the
-                      logs are stored
-                    type: string
-                  containers:
-                    description: The collection of logs for each container of the
-                      workload
-                    items:
-                      description: ContainerLog describes the location of logs for
-                        a single Job
-                      properties:
-                        bucket:
-                          description: The bucket the log was stored in
-                          type: string
-                        container:
-                          description: The container name
-                          type: string
-                        job:
-                          description: The name of the Job
-                          type: string
-                        key:
-                          description: The path to the log in the bucket
-                          type: string
-                      type: object
-                    type: array
-                type: object
+                items:
+                  description: ContainerLog describes the location of logs for a single
+                    Job
+                  properties:
+                    bucket:
+                      description: The bucket the log was stored in
+                      type: string
+                    container:
+                      description: The container name
+                      type: string
+                    job:
+                      description: The name of the Job
+                      type: string
+                    key:
+                      description: The path to the log in the bucket
+                      type: string
+                  type: object
+                type: array
               observedGeneration:
                 description: ObservedGeneration is the last generation that was reconciled
                 format: int64

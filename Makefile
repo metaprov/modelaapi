@@ -72,6 +72,7 @@ generate-crd:
 	$(CONTROLLER_GEN) crd:allowDangerousTypes=true,crdVersions=v1 paths=./pkg/apis/training/v1alpha1 output:crd:artifacts:config=manifests/v1alpha1/base/crd
 	$(CONTROLLER_GEN) crd:allowDangerousTypes=true,crdVersions=v1 paths=./pkg/apis/inference/v1alpha1 output:crd:artifacts:config=manifests/v1alpha1/base/crd
 	$(CONTROLLER_GEN) crd:allowDangerousTypes=true,crdVersions=v1 paths=./pkg/apis/team/v1alpha1 output:crd:artifacts:config=manifests/v1alpha1/base/crd
+	$(CONTROLLER_GEN) crd:allowDangerousTypes=true,crdVersions=v1 paths=./pkg/apis/llm/v1alpha1 output:crd:artifacts:config=manifests/v1alpha1/base/crd
 	rm manifests/v1alpha1/base/crd/kustomization.yaml && cd manifests/v1alpha1/base/crd && kustomize create --autodetect && cd ../../../...
 
 

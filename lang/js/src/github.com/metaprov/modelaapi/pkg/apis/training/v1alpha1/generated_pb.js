@@ -16097,7 +16097,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRunSpec
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRunStatus.repeatedFields_ = [18];
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRunStatus.repeatedFields_ = [13,18];
 
 
 
@@ -16139,7 +16139,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRunStat
     evalmetrics: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
     failuremessage: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
     updatedat: (f = msg.getUpdatedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    logs: (f = msg.getLogs()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.toObject(includeInstance, f),
+    logsList: jspb.Message.toObjectList(msg.getLogsList(),
+    github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ContainerLog.toObject, includeInstance),
     promotedat: (f = msg.getPromotedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     auto: (f = jspb.Message.getBooleanField(msg, 15)) == null ? undefined : f,
     approvedby: (f = msg.getApprovedby()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
@@ -16221,9 +16222,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRunStat
       msg.setUpdatedat(value);
       break;
     case 13:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.deserializeBinaryFromReader);
-      msg.setLogs(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ContainerLog;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ContainerLog.deserializeBinaryFromReader);
+      msg.addLogs(value);
       break;
     case 14:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
@@ -16342,12 +16343,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRunStat
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
-  f = message.getLogs();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getLogsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
       13,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ContainerLog.serializeBinaryToWriter
     );
   }
   f = message.getPromotedat();
@@ -16718,39 +16719,40 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRunStat
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 13;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs}
+ * repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog logs = 13;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog>}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRunStatus.prototype.getLogs = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs, 13));
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRunStatus.prototype.getLogsList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog>} */ (
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ContainerLog, 13));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs|undefined} value
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog>} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRunStatus} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRunStatus.prototype.setLogs = function(value) {
-  return jspb.Message.setWrapperField(this, 13, value);
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRunStatus.prototype.setLogsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 13, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRunStatus.prototype.addLogs = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 13, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRunStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRunStatus.prototype.clearLogs = function() {
-  return this.setLogs(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRunStatus.prototype.hasLogs = function() {
-  return jspb.Message.getField(this, 13) != null;
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelClassRunStatus.prototype.clearLogsList = function() {
+  return this.setLogsList([]);
 };
 
 
@@ -23059,7 +23061,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStageStatus.
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.repeatedFields_ = [16,17,18,31,32,56];
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.repeatedFields_ = [16,17,18,31,32,39,56];
 
 
 
@@ -23135,7 +23137,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.toObj
     trainingdatahash: (f = msg.getTrainingdatahash()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataHashes.toObject(includeInstance, f),
     trainingresources: (f = msg.getTrainingresources()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceConsumption.toObject(includeInstance, f),
     testingresources: (f = msg.getTestingresources()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceConsumption.toObject(includeInstance, f),
-    logs: (f = msg.getLogs()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.toObject(includeInstance, f),
+    logsList: jspb.Message.toObjectList(msg.getLogsList(),
+    github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ContainerLog.toObject, includeInstance),
     roccurve: (f = msg.getRoccurve()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RocAucCurve.toObject(includeInstance, f),
     prcurve: (f = msg.getPrcurve()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PRCurve.toObject(includeInstance, f),
     trainconfusionmatrix: (f = msg.getTrainconfusionmatrix()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix.toObject(includeInstance, f),
@@ -23365,9 +23368,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.deser
       msg.setTestingresources(value);
       break;
     case 39:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.deserializeBinaryFromReader);
-      msg.setLogs(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ContainerLog;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ContainerLog.deserializeBinaryFromReader);
+      msg.addLogs(value);
       break;
     case 40:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RocAucCurve;
@@ -23771,12 +23774,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.seria
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceConsumption.serializeBinaryToWriter
     );
   }
-  f = message.getLogs();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getLogsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
       39,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ContainerLog.serializeBinaryToWriter
     );
   }
   f = message.getRoccurve();
@@ -25314,39 +25317,40 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 39;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs}
+ * repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog logs = 39;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog>}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getLogs = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs, 39));
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getLogsList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog>} */ (
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ContainerLog, 39));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs|undefined} value
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog>} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setLogs = function(value) {
-  return jspb.Message.setWrapperField(this, 39, value);
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setLogsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 39, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.addLogs = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 39, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearLogs = function() {
-  return this.setLogs(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasLogs = function() {
-  return jspb.Message.getField(this, 39) != null;
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearLogsList = function() {
+  return this.setLogsList([]);
 };
 
 
@@ -29576,7 +29580,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.protot
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.repeatedFields_ = [10];
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.repeatedFields_ = [7,10];
 
 
 
@@ -29615,7 +29619,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.toOb
     observedgeneration: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     failurereason: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     failuremessage: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
-    logs: (f = msg.getLogs()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.toObject(includeInstance, f),
+    logsList: jspb.Message.toObjectList(msg.getLogsList(),
+    github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ContainerLog.toObject, includeInstance),
     updatedat: (f = msg.getUpdatedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     groupby: (f = msg.getGroupby()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportGroupByStatus.toObject(includeInstance, f),
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
@@ -29683,9 +29688,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.dese
       msg.setFailuremessage(value);
       break;
     case 7:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.deserializeBinaryFromReader);
-      msg.setLogs(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ContainerLog;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ContainerLog.deserializeBinaryFromReader);
+      msg.addLogs(value);
       break;
     case 8:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
@@ -29775,12 +29780,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.seri
       f
     );
   }
-  f = message.getLogs();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getLogsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
       7,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ContainerLog.serializeBinaryToWriter
     );
   }
   f = message.getUpdatedat();
@@ -30029,39 +30034,40 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.prot
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 7;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs}
+ * repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog logs = 7;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog>}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.prototype.getLogs = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs, 7));
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.prototype.getLogsList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog>} */ (
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ContainerLog, 7));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs|undefined} value
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog>} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.prototype.setLogs = function(value) {
-  return jspb.Message.setWrapperField(this, 7, value);
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.prototype.setLogsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 7, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.prototype.addLogs = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.prototype.clearLogs = function() {
-  return this.setLogs(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.prototype.hasLogs = function() {
-  return jspb.Message.getField(this, 7) != null;
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.prototype.clearLogsList = function() {
+  return this.setLogsList([]);
 };
 
 
@@ -35086,7 +35092,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyRunSpec.prot
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyRunStatus.repeatedFields_ = [32];
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyRunStatus.repeatedFields_ = [23,32];
 
 
 
@@ -35140,7 +35146,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyRunStatus.to
     failuremessage: (f = jspb.Message.getField(msg, 20)) == null ? undefined : f,
     gc: (f = msg.getGc()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GarbageCollectionStatus.toObject(includeInstance, f),
     trainingdatahash: (f = msg.getTrainingdatahash()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataHashes.toObject(includeInstance, f),
-    logs: (f = msg.getLogs()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.toObject(includeInstance, f),
+    logsList: jspb.Message.toObjectList(msg.getLogsList(),
+    github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ContainerLog.toObject, includeInstance),
     baseline: (f = msg.getBaseline()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyRunPhaseStatus.toObject(includeInstance, f),
     search: (f = msg.getSearch()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyRunPhaseStatus.toObject(includeInstance, f),
     ensemble: (f = msg.getEnsemble()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyRunPhaseStatus.toObject(includeInstance, f),
@@ -35280,9 +35287,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyRunStatus.de
       msg.setTrainingdatahash(value);
       break;
     case 23:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.deserializeBinaryFromReader);
-      msg.setLogs(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ContainerLog;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ContainerLog.deserializeBinaryFromReader);
+      msg.addLogs(value);
       break;
     case 24:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyRunPhaseStatus;
@@ -35513,12 +35520,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyRunStatus.se
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataHashes.serializeBinaryToWriter
     );
   }
-  f = message.getLogs();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getLogsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
       23,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ContainerLog.serializeBinaryToWriter
     );
   }
   f = message.getBaseline();
@@ -36361,39 +36368,40 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyRunStatus.pr
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 23;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs}
+ * repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog logs = 23;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog>}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyRunStatus.prototype.getLogs = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs, 23));
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyRunStatus.prototype.getLogsList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog>} */ (
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ContainerLog, 23));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs|undefined} value
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog>} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyRunStatus} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyRunStatus.prototype.setLogs = function(value) {
-  return jspb.Message.setWrapperField(this, 23, value);
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyRunStatus.prototype.setLogsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 23, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyRunStatus.prototype.addLogs = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 23, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyRunStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyRunStatus.prototype.clearLogs = function() {
-  return this.setLogs(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyRunStatus.prototype.hasLogs = function() {
-  return jspb.Message.getField(this, 23) != null;
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyRunStatus.prototype.clearLogsList = function() {
+  return this.setLogsList([]);
 };
 
 

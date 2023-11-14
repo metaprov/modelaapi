@@ -66,6 +66,7 @@ func (datasource DataSource) validateName(fldPath *field.Path) field.ErrorList {
 
 func (datasource DataSource) validateSpec(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
+	allErrs = append(allErrs, datasource.Spec.InferredFrom.Validate(fldPath.Child("InferredFrom"))...)
 	return allErrs
 }
 

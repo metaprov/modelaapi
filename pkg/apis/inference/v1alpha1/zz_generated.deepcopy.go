@@ -906,7 +906,11 @@ func (in *PredictionRunStatus) DeepCopyInto(out *PredictionRunStatus) {
 		*out = new(string)
 		**out = **in
 	}
-	in.Logs.DeepCopyInto(&out.Logs)
+	if in.Logs != nil {
+		in, out := &in.Logs, &out.Logs
+		*out = make(catalogv1alpha1.Logs, len(*in))
+		copy(*out, *in)
+	}
 	in.Forecast.DeepCopyInto(&out.Forecast)
 	out.Usage = in.Usage
 	if in.UpdatedAt != nil {

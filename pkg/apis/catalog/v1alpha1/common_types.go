@@ -4,6 +4,7 @@ import (
 	"github.com/metaprov/modelaapi/pkg/util"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+	"k8s.io/apimachinery/pkg/util/validation/field"
 	"k8s.io/utils/pointer"
 	"strconv"
 )
@@ -1901,7 +1902,7 @@ const (
 	RecipeRunLabelKey          = "modela.ai/reciperun"
 	SnapshotVersionLabelKey    = "modela.ai/snapshot-version"
 
-	// inference
+	// Inference
 	DataAppLabelKey    = "modela.ai/dataapp"
 	PredictionLabelKey = "modela.ai/prediction"
 	PredictorLabelKey  = "modela.ai/predictor"
@@ -1919,17 +1920,17 @@ const (
 	TenantLabelKey        = "modela.ai/tenant"
 	UserClassLabelKey     = "modela.ai/userclass"
 	VirtualBucketLabelKey = "modela.ai/virtualbucket"
-	// Set the ref on the job for the original object
+
 	ObjectRefNamespaceLabelKey = "modela.ai/object-ref-namespace"
 	ObjectRefNameLabelKey      = "modela.ai/object-ref-name"
 
-	// team
+	// Team
 	PostmortemLabelKey = "modela.ai/postmortem"
 	ReviewLabelKey     = "modela.ai/review"
 	RunbookLabelKey    = "modela.ai/runbook"
 	TodoLabelKey       = "modela.ai/todo"
 
-	// training
+	// Training
 	ModelLabelKey         = "modela.ai/model"
 	ReportLabelKey        = "modela.ai/report"
 	StudyLabelKey         = "modela.ai/study"
@@ -1940,6 +1941,9 @@ const (
 	JobLabelKey           = "kubernetes.io/job"
 	OwnerKindLabelKey     = "modela.ai/owner-kind"
 	OwnerLabelKey         = "modela.ai/owner"
+
+	// LLM
+	KnowledgeBaseLabelKey = "modela.ai/knowledgebase"
 
 	ModelRoleLabelKey    = "modela.ai/role"
 	ModelVersionLabelKey = "modela.ai/modelversion"
@@ -1955,19 +1959,6 @@ const (
 // Data Location
 ///////////////////////////////////////////////////////////
 
-// +kubebuilder:validation:Enum="object";"table";"view";"stream";"web";"public-dataset";"dataset"
-type DataLocationType string
-
-const (
-	DataLocationObjectStorage DataLocationType = "object"
-	DataLocationSQLTable      DataLocationType = "table"
-	DataLocationSQLView       DataLocationType = "view"
-	DataLocationStream        DataLocationType = "stream"
-	DataLocationWebApi        DataLocationType = "web"
-	DataLocationPublicDataset DataLocationType = "public-dataset" // The data reside in a public dataset
-	DataLocationDataset       DataLocationType = "dataset"        // The data reside inside another dataset
-)
-
 // DataLocation describes the external location of data that will be accessed by Modela, and additional
 // information on how to query the data if the location is a non flat-file source.
 type DataLocation struct {
@@ -1978,7 +1969,27 @@ type DataLocation struct {
 	// Web specifies the location of an internet-accessible flat-file
 	Web *WebLocation `json:"web,omitempty" protobuf:"bytes,3,opt,name=web"`
 	// Resource references another Modela resource that contains data
-	Resource *ResourceLocation `json:"resource,omitempty" protobuf:"bytes,3,opt,name=resource"`
+	Resource *ResourceLocation `json:"resource,omitempty" protobuf:"bytes,4,opt,name=resource"`
+}
+
+func (location *DataLocation) Validate(fldPath *field.Path) field.ErrorList {
+	var specCount = 0
+	if location.File != nil {
+		specCount++
+	}
+	if location.Database != nil {
+		specCount++
+	}
+	if location.Web != nil {
+		specCount++
+	}
+	if location.Resource != nil {
+		specCount++
+	}
+	if specCount != 1 {
+		return field.ErrorList{field.Invalid(fldPath, location, "Exactly one location specification must be provided")}
+	}
+	return nil
 }
 
 type DatabaseLocation struct {
@@ -2251,26 +2262,19 @@ type NotificationSpec struct {
 }
 
 // Logs describes the location of logs produced by workloads associated with a resource
-type Logs struct {
-	// The name of the Virtual Bucket resource where the logs are stored
-	// +kubebuilder:validation:Optional
-	BucketName string `json:"bucket,omitempty" protobuf:"bytes,1,opt,name=bucket"`
-	// The collection of logs for each container of the workload
-	// +kubebuilder:validation:Optional
-	Containers []ContainerLog `json:"containers,omitempty" protobuf:"bytes,2,rep,name=containers"`
-}
+type Logs []ContainerLog
 
 // Append the logs only if they are not already exists
-func (logs *Logs) Append(newLogs []ContainerLog) {
-	for _, v := range logs.Containers {
+func (logs Logs) Append(newLogs []ContainerLog) Logs {
+	for _, v := range logs {
 		for _, l := range newLogs {
 			if l.Key == v.Key {
-				return
+				return logs
 			}
 		}
 	}
 
-	logs.Containers = append(logs.Containers, newLogs...)
+	return append(logs, newLogs...)
 }
 
 // ContainerLog describes the location of logs for a single Job

@@ -1,7 +1,7 @@
 package v1alpha1
 
 import (
-	"github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
+	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
@@ -44,8 +44,8 @@ const (
 type KnowledgeBaseConditionType string
 
 const (
-	KnowledgeBaseSaved  KnowledgeBaseConditionType = "Saved"
-	KnowledgeBaseSynced KnowledgeBaseConditionType = "Synced"
+	KnowledgeBaseSaved     KnowledgeBaseConditionType = "Saved"
+	KnowledgeBaseRefreshed KnowledgeBaseConditionType = "Refreshed"
 )
 
 // +kubebuilder:subresource:status
@@ -63,6 +63,14 @@ type KnowledgeBase struct {
 	Status            KnowledgeBaseStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
+// +kubebuilder:object:root=true
+// KnowledgeBaseList contains a list of KnowledgeBases
+type KnowledgeBaseList struct {
+	metav1.TypeMeta `json:",inline"`
+	metav1.ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
+	Items           []KnowledgeBase `json:"items" protobuf:"bytes,2,rep,name=items"`
+}
+
 type KnowledgeBaseSpec struct {
 	// Owner specifies the name of the Account which the object belongs to
 	// +kubebuilder:default:="no-one"
@@ -74,10 +82,10 @@ type KnowledgeBaseSpec struct {
 	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
 	// RefreshSchedule specifies the schedule for Modela to refresh all documents specified by the Knowledge Base
-	RefreshSchedule *v1alpha1.RunSchedule `json:"refreshSchedule,omitempty" protobuf:"bytes,3,opt,name=refreshSchedule"`
+	RefreshSchedule *catalog.RunSchedule `json:"refreshSchedule,omitempty" protobuf:"bytes,3,opt,name=refreshSchedule"`
 	// MetadataDatabase specifies the location of a database table used to store document metadata and statuses.
 	// When specified, any document metadata specified by Documents will be cleared and migrated to the table
-	MetadataDatabase *v1alpha1.DatabaseLocation `json:"metadataDatabase,omitempty" protobuf:"bytes,4,opt,name=metadataDatabase"`
+	MetadataDatabase *catalog.DatabaseLocation `json:"metadataDatabase,omitempty" protobuf:"bytes,4,opt,name=metadataDatabase"`
 	// VectorStoreConnectionName specifies the name of a Connection resource that provides a vector database
 	VectorStoreConnectionName string `json:"vectorStoreConnectionName,omitempty" protobuf:"bytes,5,opt,name=vectorStoreConnectionName"`
 	// DocumentStoreConnectionName specifies the name of a Connection resource to use as a document store
@@ -96,7 +104,7 @@ type ModelSpec struct {
 	// ConnectionName specifies the name of a connection to a foundational model provider
 	ConnectionName string `json:"connectionName,omitempty" protobuf:"bytes,1,opt,name=connectionName"`
 	// Model specifies the vendor-specific model type
-	Model string `json:"model,omitempty" protobuf:"bytes,2,opt,name=connectionName"`
+	Model string `json:"model,omitempty" protobuf:"bytes,2,opt,name=model"`
 }
 
 // NodeParserSpec defines how to break up a document into individual chunks of text
@@ -124,14 +132,14 @@ type SentenceWindowNodeParserSpec struct {
 // TextSplitterSpec defines how to split a document into sentences using a text splitter
 type TextSplitterSpec struct {
 	// The type of text splitter. When a specification for a text splitter is provided, this field
-	// may be omitted. When not provided, the defaults for the type of node parser will be used
-	Type *TextSplitterType `json:"type,omitempty" protobuf:"bytes,3,opt,name=type"`
+	// may be omitted. When not provided, the defaults for the type of text splitter will be used
+	Type *TextSplitterType `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
 	// Sentence splits the document by sentence
-	Sentence *SentenceSplitterSpec `json:"sentence,omitempty" protobuf:"bytes,1,opt,name=sentence"`
+	Sentence *SentenceSplitterSpec `json:"sentence,omitempty" protobuf:"bytes,2,opt,name=sentence"`
 	// Token splits the document by tokens
-	Token *TokenSplitterSpec `json:"token,omitempty" protobuf:"bytes,2,opt,name=token"`
+	Token *TokenSplitterSpec `json:"token,omitempty" protobuf:"bytes,3,opt,name=token"`
 	// Code splits code documents
-	Code *CodeSplitterSpec `json:"code,omitempty" protobuf:"bytes,3,opt,name=code"`
+	Code *CodeSplitterSpec `json:"code,omitempty" protobuf:"bytes,4,opt,name=code"`
 }
 
 // TokenSplitterSpec splits text documents by their tokens
@@ -183,8 +191,6 @@ type SentenceTokenizerSpec struct {
 // DocumentSpec defines the specification of a single document
 type DocumentSpec struct {
 	// The unique name of the document
-	// +kubebuilder:validation:Required
-	// +required
 	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
 	// Description specifies an optional description for the document
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
@@ -210,7 +216,7 @@ type FileReaderSpec struct {
 	// The type of file reader
 	Type FileReaderType `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
 	// The location of the file
-	Location v1alpha1.FileLocation `json:"location,omitempty" protobuf:"bytes,2,opt,name=location"`
+	Location catalog.FileLocation `json:"location,omitempty" protobuf:"bytes,2,opt,name=location"`
 	// Reader-specific options
 	Options map[string]string `json:"options,omitempty" protobuf:"bytes,3,opt,name=options"`
 }
@@ -254,14 +260,16 @@ type KnowledgeBaseStatus struct {
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
 	// LastRefreshAt specifies the time at which the last refresh job was executed
 	LastRefreshAt *metav1.Time `json:"lastRefreshAt,omitempty" protobuf:"bytes,2,opt,name=lastRefreshAt"`
+	// Logs contains the location of the logs produced by the last refresh job
+	Logs catalog.Logs `json:"logs" protobuf:"bytes,3,opt,name=logs"`
 	// Documents contains the collection of statuses for each document defined by the Knowledge Base.
 	// In the case that a metadata database is defined, the collection will be empty
-	Documents []DocumentStatus `json:"documents,omitempty" protobuf:"bytes,3,opt,name=documents"`
+	Documents []DocumentStatus `json:"documents,omitempty" protobuf:"bytes,4,opt,name=documents"`
 	// The last time the object was updated
 	//+kubebuilder:validation:Optional
-	UpdatedAt *metav1.Time `json:"updatedAt,omitempty" protobuf:"bytes,4,opt,name=updatedAt"`
+	UpdatedAt *metav1.Time `json:"updatedAt,omitempty" protobuf:"bytes,5,opt,name=updatedAt"`
 	// +kubebuilder:validation:Optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []metav1.Condition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,5,rep,name=conditions"`
+	Conditions []metav1.Condition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,6,rep,name=conditions"`
 }

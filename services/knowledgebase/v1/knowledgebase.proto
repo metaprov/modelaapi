@@ -1,0 +1,95 @@
+syntax = "proto3";
+option go_package = "github.com/metaprov/modelaapi/services/knowledgebase/v1";
+package github.com.metaprov.modelaapi.services.knowledgebase.v1;
+
+
+import "google/protobuf/field_mask.proto";
+import "google/api/annotations.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/llm/v1alpha1/generated.proto";
+
+
+message ListKnowledgeBasesRequest {
+    string namespace = 1;
+}
+
+message ListKnowledgeBasesResponse {
+    github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBaseList knowledgebases = 1;
+    string next_page_token = 2;
+}
+
+
+message CreateKnowledgeBaseRequest {
+    github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBase knowledgebase = 1;
+}
+
+message CreateKnowledgeBaseResponse {}
+
+
+message UpdateKnowledgeBaseRequest {
+    github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBase knowledgebase = 1;
+    google.protobuf.FieldMask field_mask = 2;
+}
+
+message UpdateKnowledgeBaseResponse {}
+
+
+message GetKnowledgeBaseRequest {
+    string namespace = 1;
+    string name      = 2;
+
+}
+
+message GetKnowledgeBaseResponse {
+    github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBase knowledgebase = 1;
+    string yaml = 2;
+
+}
+
+message DeleteKnowledgeBaseRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message DeleteKnowledgeBaseResponse {}
+
+
+message RefreshKnowledgeBaseRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message RefreshKnowledgeBaseResponse {
+    bytes raw = 1;
+}
+
+service KnowledgeBaseService {
+    rpc ListKnowledgeBases(ListKnowledgeBasesRequest) returns (ListKnowledgeBasesResponse) {
+        option (google.api.http).get = "/v1/knowledgebases/{namespace}";
+    }
+
+    rpc CreateKnowledgeBase(CreateKnowledgeBaseRequest) returns (CreateKnowledgeBaseResponse) {
+        option (google.api.http) = {
+            post: "/v1/knowledgebases"
+            body: "*"
+        };
+    }
+
+    rpc GetKnowledgeBase(GetKnowledgeBaseRequest) returns (GetKnowledgeBaseResponse) {
+        option (google.api.http).get = "/v1/knowledgebases/{namespace}/{name}";
+    }
+
+    rpc UpdateKnowledgeBase(UpdateKnowledgeBaseRequest) returns (UpdateKnowledgeBaseResponse) {
+        option (google.api.http) = {
+            put: "/v1/knowledgebases/{knowledgebase.metadata.namespace}/{knowledgebase.metadata.name}"
+            body: "*"
+        };
+    }
+
+    rpc DeleteKnowledgeBase(DeleteKnowledgeBaseRequest) returns (DeleteKnowledgeBaseResponse) {
+        option (google.api.http).delete = "/v1/knowledgebases/{namespace}/{name}";
+    }
+
+    rpc Refresh(RefreshKnowledgeBaseRequest) returns (RefreshKnowledgeBaseResponse) {
+        option (google.api.http).get = "/v1/knowledgebases/{namespace}/{name}:refresh";
+    }
+}

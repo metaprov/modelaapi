@@ -1445,7 +1445,11 @@ func (in *ModelClassRunStatus) DeepCopyInto(out *ModelClassRunStatus) {
 		in, out := &in.UpdatedAt, &out.UpdatedAt
 		*out = (*in).DeepCopy()
 	}
-	in.Logs.DeepCopyInto(&out.Logs)
+	if in.Logs != nil {
+		in, out := &in.Logs, &out.Logs
+		*out = make(catalogv1alpha1.Logs, len(*in))
+		copy(*out, *in)
+	}
 	if in.PromotedAt != nil {
 		in, out := &in.PromotedAt, &out.PromotedAt
 		*out = (*in).DeepCopy()
@@ -1968,7 +1972,11 @@ func (in *ModelStatus) DeepCopyInto(out *ModelStatus) {
 	out.TrainingDataHash = in.TrainingDataHash
 	out.TrainingResources = in.TrainingResources
 	out.TestingResources = in.TestingResources
-	in.Logs.DeepCopyInto(&out.Logs)
+	if in.Logs != nil {
+		in, out := &in.Logs, &out.Logs
+		*out = make(catalogv1alpha1.Logs, len(*in))
+		copy(*out, *in)
+	}
 	in.RocCurve.DeepCopyInto(&out.RocCurve)
 	in.PRCurve.DeepCopyInto(&out.PRCurve)
 	in.TrainConfusionMatrix.DeepCopyInto(&out.TrainConfusionMatrix)
@@ -2399,7 +2407,11 @@ func (in *ReportStatus) DeepCopyInto(out *ReportStatus) {
 		*out = new(string)
 		**out = **in
 	}
-	in.Logs.DeepCopyInto(&out.Logs)
+	if in.Logs != nil {
+		in, out := &in.Logs, &out.Logs
+		*out = make(catalogv1alpha1.Logs, len(*in))
+		copy(*out, *in)
+	}
 	if in.UpdatedAt != nil {
 		in, out := &in.UpdatedAt, &out.UpdatedAt
 		*out = (*in).DeepCopy()
@@ -2928,7 +2940,11 @@ func (in *StudyRunStatus) DeepCopyInto(out *StudyRunStatus) {
 	}
 	in.GC.DeepCopyInto(&out.GC)
 	out.TrainingDataHash = in.TrainingDataHash
-	in.Logs.DeepCopyInto(&out.Logs)
+	if in.Logs != nil {
+		in, out := &in.Logs, &out.Logs
+		*out = make(catalogv1alpha1.Logs, len(*in))
+		copy(*out, *in)
+	}
 	in.BaselineStatus.DeepCopyInto(&out.BaselineStatus)
 	in.SearchStatus.DeepCopyInto(&out.SearchStatus)
 	in.EnsembleStatus.DeepCopyInto(&out.EnsembleStatus)
