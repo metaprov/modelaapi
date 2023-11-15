@@ -248,7 +248,7 @@ func (in *KnowledgeBaseSpec) DeepCopyInto(out *KnowledgeBaseSpec) {
 	if in.MetadataDatabase != nil {
 		in, out := &in.MetadataDatabase, &out.MetadataDatabase
 		*out = new(catalogv1alpha1.DatabaseLocation)
-		**out = **in
+		(*in).DeepCopyInto(*out)
 	}
 	out.EmbeddingModel = in.EmbeddingModel
 	if in.Documents != nil {

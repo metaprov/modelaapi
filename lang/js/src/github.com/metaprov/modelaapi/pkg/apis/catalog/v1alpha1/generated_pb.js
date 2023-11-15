@@ -18507,7 +18507,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceLocation.p
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceLocation.toObject = function(includeInstance, msg) {
   var f, obj = {
-    resourceref: (f = msg.getResourceref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f)
+    kind: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    name: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    namespace: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -18545,9 +18547,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceLocation.d
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
-      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
-      msg.setResourceref(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setKind(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNamespace(value);
       break;
     default:
       reader.skipField();
@@ -18578,42 +18587,54 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceLocation.p
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceLocation.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getResourceref();
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
   if (f != null) {
-    writer.writeMessage(
+    writer.writeString(
       1,
-      f,
-      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
+      f
     );
   }
 };
 
 
 /**
- * optional k8s.io.api.core.v1.ObjectReference resourceRef = 1;
- * @return {?proto.k8s.io.api.core.v1.ObjectReference}
+ * optional string kind = 1;
+ * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceLocation.prototype.getResourceref = function() {
-  return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 1));
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceLocation.prototype.getKind = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceLocation} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceLocation.prototype.setResourceref = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceLocation.prototype.setKind = function(value) {
+  return jspb.Message.setField(this, 1, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
+ * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceLocation} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceLocation.prototype.clearResourceref = function() {
-  return this.setResourceref(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceLocation.prototype.clearKind = function() {
+  return jspb.Message.setField(this, 1, undefined);
 };
 
 
@@ -18621,8 +18642,80 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceLocation.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceLocation.prototype.hasResourceref = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceLocation.prototype.hasKind = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string name = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceLocation.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceLocation} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceLocation.prototype.setName = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceLocation} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceLocation.prototype.clearName = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceLocation.prototype.hasName = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string namespace = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceLocation.prototype.getNamespace = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceLocation} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceLocation.prototype.setNamespace = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceLocation} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceLocation.prototype.clearNamespace = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceLocation.prototype.hasNamespace = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 

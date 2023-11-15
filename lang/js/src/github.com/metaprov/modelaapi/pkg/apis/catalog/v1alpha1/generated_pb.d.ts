@@ -2152,10 +2152,20 @@ export namespace ResourceConsumption {
 }
 
 export class ResourceLocation extends jspb.Message {
-  getResourceref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setResourceref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ResourceLocation;
-  hasResourceref(): boolean;
-  clearResourceref(): ResourceLocation;
+  getKind(): string;
+  setKind(value: string): ResourceLocation;
+  hasKind(): boolean;
+  clearKind(): ResourceLocation;
+
+  getName(): string;
+  setName(value: string): ResourceLocation;
+  hasName(): boolean;
+  clearName(): ResourceLocation;
+
+  getNamespace(): string;
+  setNamespace(value: string): ResourceLocation;
+  hasNamespace(): boolean;
+  clearNamespace(): ResourceLocation;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ResourceLocation.AsObject;
@@ -2167,7 +2177,9 @@ export class ResourceLocation extends jspb.Message {
 
 export namespace ResourceLocation {
   export type AsObject = {
-    resourceref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    kind?: string,
+    name?: string,
+    namespace?: string,
   }
 }
 

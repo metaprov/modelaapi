@@ -698,10 +698,14 @@ class ResourceConsumption(_message.Message):
     def __init__(self, cpu: _Optional[int] = ..., memory: _Optional[int] = ..., gpu: _Optional[int] = ...) -> None: ...
 
 class ResourceLocation(_message.Message):
-    __slots__ = ["resourceRef"]
-    RESOURCEREF_FIELD_NUMBER: _ClassVar[int]
-    resourceRef: _generated_pb2.ObjectReference
-    def __init__(self, resourceRef: _Optional[_Union[_generated_pb2.ObjectReference, _Mapping]] = ...) -> None: ...
+    __slots__ = ["kind", "name", "namespace"]
+    KIND_FIELD_NUMBER: _ClassVar[int]
+    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    kind: str
+    name: str
+    namespace: str
+    def __init__(self, kind: _Optional[str] = ..., name: _Optional[str] = ..., namespace: _Optional[str] = ...) -> None: ...
 
 class ResourceSpec(_message.Message):
     __slots__ = ["custom", "requirements", "workloadName"]

@@ -311,7 +311,7 @@ spec:
                   any document metadata specified by Documents will be cleared and
                   migrated to the table
                 properties:
-                  connection:
+                  connectionName:
                     default: ""
                     description: ConnectionName specifies the name of the Connection
                       resource containing the credentials to connect to the database
@@ -323,7 +323,7 @@ spec:
                     type: string
                   table:
                     default: ""
-                    description: The name of a table inside a database, if applicable
+                    description: The name of a table inside the database
                     type: string
                 type: object
               nodeParser:

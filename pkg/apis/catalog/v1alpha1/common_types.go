@@ -1959,8 +1959,23 @@ const (
 // Data Location
 ///////////////////////////////////////////////////////////
 
-// DataLocation describes the external location of data that will be accessed by Modela, and additional
-// information on how to query the data if the location is a non flat-file source.
+type (
+	DataLocationType     int
+	ResourceLocationKind string
+)
+
+const (
+	FileDataLocationType DataLocationType = iota
+	DatabaseDataLocationType
+	WebDataLocationType
+	ResourceDataLocationType
+	InvalidDataLocationType
+
+	PublicDatasetResourceLocationKind   ResourceLocationKind = "PublicDataset"
+	DatasetSnapshotResourceLocationKind ResourceLocationKind = "DatasetSnapshot"
+)
+
+// DataLocation describes the location of an external data source
 type DataLocation struct {
 	// File specifies the location of a flat-file
 	File *FileLocation `json:"file,omitempty" protobuf:"bytes,1,opt,name=file"`
@@ -1992,19 +2007,38 @@ func (location *DataLocation) Validate(fldPath *field.Path) field.ErrorList {
 	return nil
 }
 
+func (location *DataLocation) Type() DataLocationType {
+	if len(location.Validate(field.NewPath(""))) != 0 {
+		return InvalidDataLocationType
+	}
+	switch true {
+	case location.File != nil:
+		return FileDataLocationType
+	case location.Database != nil:
+		return DatabaseDataLocationType
+	case location.Web != nil:
+		return WebDataLocationType
+	case location.Resource != nil:
+		return ResourceDataLocationType
+	default:
+		return InvalidDataLocationType
+	}
+}
+
 type DatabaseLocation struct {
 	// ConnectionName specifies the name of the Connection resource containing the credentials to connect to the database
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	ConnectionName string `json:"connection,omitempty" protobuf:"bytes,1,opt,name=connectionName"`
-	// The name of a table inside a database, if applicable
+	ConnectionName string `json:"connectionName,omitempty" protobuf:"bytes,1,opt,name=connectionName"`
+	// The name of a table inside the database
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	Table string `json:"table,omitempty" protobuf:"bytes,2,opt,name=table"`
-	// The SQL statement which will be executed to query data from the table specified by Table
+	Table *string `json:"table,omitempty" protobuf:"bytes,2,opt,name=table"`
+	// The SQL statement which will be executed to query data from the table specified by Table.
+	// When unspecified, the entire content of the table will be read
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	Sql string `json:"sql,omitempty" protobuf:"bytes,3,opt,name=sql"`
+	Sql *string `json:"sql,omitempty" protobuf:"bytes,3,opt,name=sql"`
 }
 
 type WebLocation struct {
@@ -2016,10 +2050,14 @@ type WebLocation struct {
 }
 
 type ResourceLocation struct {
-	// ResourceRef references another resource that
-	// containing data that will be used as the data source
+	// The type of resource which can be used as a data source
 	// +kubebuilder:validation:Optional
-	ResourceRef v1.ObjectReference `json:"resourceRef,omitempty" protobuf:"bytes,1,opt,name=resourceRef"`
+	Kind ResourceLocationKind `json:"kind,omitempty" protobuf:"bytes,1,opt,name=kind"`
+	// The name of the resource
+	Name string `json:"name,omitempty" protobuf:"bytes,2,opt,name=name"`
+	// The namespace of the resource. When referencing a Dataset Snapshot, default to the Data Product of the specifying resource.
+	// When referencing a Public Dataset, default to the built-in catalog namespace
+	Namespace *string `json:"namespace,omitempty" protobuf:"bytes,3,opt,name=namespace"`
 }
 
 func (location *DataLocation) ToFileLocation() *FileLocation {
