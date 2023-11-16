@@ -209,12 +209,8 @@ func (datasource DataSource) IsReady() bool {
 	return datasource.GetCond(DatasourceReady).Status == metav1.ConditionTrue
 }
 
-func (datasource DataSource) Key() string {
-	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/datasources/%s-datasource.yaml", datasource.Namespace, datasource.Spec.VersionName, datasource.Name)
-}
-
 func (datasource DataSource) RootURI() string {
-	return fmt.Sprintf("dataproducts/%s/dataproductversions/%s/datasources/%s", datasource.Namespace, datasource.Spec.VersionName, datasource.Name)
+	return fmt.Sprintf("dataproducts/%s/%s/datasources/%s", datasource.Namespace, datasource.Name)
 }
 
 func (datasource DataSource) ManifestURI() string {

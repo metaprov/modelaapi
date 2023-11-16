@@ -1826,6 +1826,11 @@ export class PredictionRunReference extends jspb.Message {
   hasVersion(): boolean;
   clearVersion(): PredictionRunReference;
 
+  getName(): string;
+  setName(value: string): PredictionRunReference;
+  hasName(): boolean;
+  clearName(): PredictionRunReference;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredictionRunReference.AsObject;
   static toObject(includeInstance: boolean, msg: PredictionRunReference): PredictionRunReference.AsObject;
@@ -1838,6 +1843,7 @@ export namespace PredictionRunReference {
   export type AsObject = {
     prediction?: string,
     version?: number,
+    name?: string,
   }
 }
 
@@ -2386,6 +2392,11 @@ export class RunSpec extends jspb.Message {
   hasMaxpreviousruns(): boolean;
   clearMaxpreviousruns(): RunSpec;
 
+  getSchedule(): RunSchedule | undefined;
+  setSchedule(value?: RunSchedule): RunSpec;
+  hasSchedule(): boolean;
+  clearSchedule(): RunSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RunSpec.AsObject;
   static toObject(includeInstance: boolean, msg: RunSpec): RunSpec.AsObject;
@@ -2398,6 +2409,7 @@ export namespace RunSpec {
   export type AsObject = {
     timeout?: number,
     maxpreviousruns?: number,
+    schedule?: RunSchedule.AsObject,
   }
 }
 
@@ -2456,6 +2468,11 @@ export class SnapshotReference extends jspb.Message {
   hasVersion(): boolean;
   clearVersion(): SnapshotReference;
 
+  getName(): string;
+  setName(value: string): SnapshotReference;
+  hasName(): boolean;
+  clearName(): SnapshotReference;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SnapshotReference.AsObject;
   static toObject(includeInstance: boolean, msg: SnapshotReference): SnapshotReference.AsObject;
@@ -2468,6 +2485,7 @@ export namespace SnapshotReference {
   export type AsObject = {
     dataset?: string,
     version?: number,
+    name?: string,
   }
 }
 
@@ -2482,6 +2500,11 @@ export class StudyRunReference extends jspb.Message {
   hasVersion(): boolean;
   clearVersion(): StudyRunReference;
 
+  getName(): string;
+  setName(value: string): StudyRunReference;
+  hasName(): boolean;
+  clearName(): StudyRunReference;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StudyRunReference.AsObject;
   static toObject(includeInstance: boolean, msg: StudyRunReference): StudyRunReference.AsObject;
@@ -2494,6 +2517,7 @@ export namespace StudyRunReference {
   export type AsObject = {
     study?: string,
     version?: number,
+    name?: string,
   }
 }
 

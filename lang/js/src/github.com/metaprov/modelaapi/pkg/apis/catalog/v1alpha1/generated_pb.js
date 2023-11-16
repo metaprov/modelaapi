@@ -15874,7 +15874,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PredictionRunRefer
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PredictionRunReference.toObject = function(includeInstance, msg) {
   var f, obj = {
     prediction: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    version: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f
+    version: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    name: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -15919,6 +15920,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PredictionRunRefer
       var value = /** @type {number} */ (reader.readUint32());
       msg.setVersion(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -15959,6 +15964,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PredictionRunRefer
   if (f != null) {
     writer.writeUint32(
       2,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
       f
     );
   }
@@ -16034,6 +16046,42 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PredictionRunRefer
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PredictionRunReference.prototype.hasVersion = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string name = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PredictionRunReference.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PredictionRunReference} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PredictionRunReference.prototype.setName = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PredictionRunReference} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PredictionRunReference.prototype.clearName = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PredictionRunReference.prototype.hasName = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
@@ -20267,7 +20315,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSpec.prototype.
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
     timeout: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    maxpreviousruns: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f
+    maxpreviousruns: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    schedule: (f = msg.getSchedule()) && proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -20312,6 +20361,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSpec.deserializ
       var value = /** @type {number} */ (reader.readInt32());
       msg.setMaxpreviousruns(value);
       break;
+    case 3:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule.deserializeBinaryFromReader);
+      msg.setSchedule(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -20353,6 +20407,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSpec.serializeB
     writer.writeInt32(
       2,
       f
+    );
+  }
+  f = message.getSchedule();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule.serializeBinaryToWriter
     );
   }
 };
@@ -20427,6 +20489,43 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSpec.prototype.
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSpec.prototype.hasMaxpreviousruns = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional RunSchedule schedule = 3;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSpec.prototype.getSchedule = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule, 3));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSpec.prototype.setSchedule = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSpec.prototype.clearSchedule = function() {
+  return this.setSchedule(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSpec.prototype.hasSchedule = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
@@ -20823,7 +20922,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference.
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference.toObject = function(includeInstance, msg) {
   var f, obj = {
     dataset: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    version: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f
+    version: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    name: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -20868,6 +20968,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference.
       var value = /** @type {number} */ (reader.readUint32());
       msg.setVersion(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -20908,6 +21012,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference.
   if (f != null) {
     writer.writeUint32(
       2,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
       f
     );
   }
@@ -20986,6 +21097,42 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference.
 };
 
 
+/**
+ * optional string name = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference.prototype.setName = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference.prototype.clearName = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.SnapshotReference.prototype.hasName = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
 
 
 
@@ -21019,7 +21166,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StudyRunReference.
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StudyRunReference.toObject = function(includeInstance, msg) {
   var f, obj = {
     study: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    version: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f
+    version: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    name: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -21064,6 +21212,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StudyRunReference.
       var value = /** @type {number} */ (reader.readUint32());
       msg.setVersion(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -21104,6 +21256,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StudyRunReference.
   if (f != null) {
     writer.writeUint32(
       2,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
       f
     );
   }
@@ -21179,6 +21338,42 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StudyRunReference.
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StudyRunReference.prototype.hasVersion = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string name = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StudyRunReference.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StudyRunReference} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StudyRunReference.prototype.setName = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StudyRunReference} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StudyRunReference.prototype.clearName = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StudyRunReference.prototype.hasName = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 

@@ -169,7 +169,7 @@ type SentenceSplitterSpec struct {
 // CodeSplitterSpec splits code documents by their AST
 type CodeSplitterSpec struct {
 	// The language of the document(s). When set to `infer`, the language of the document
-	// will be inferred using the name and extension of the original file. Documents that
+	// will be inferred using the extension of the original file. Documents that
 	// cannot be parsed using the specified language will be skipped
 	// +kubebuilder:validation:Required
 	Language string `json:"language,omitempty" protobuf:"bytes,1,opt,name=language"`

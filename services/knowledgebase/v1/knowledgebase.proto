@@ -58,9 +58,7 @@ message RefreshKnowledgeBaseRequest {
     string name      = 2;
 }
 
-message RefreshKnowledgeBaseResponse {
-    bytes raw = 1;
-}
+message RefreshKnowledgeBaseResponse {}
 
 service KnowledgeBaseService {
     rpc ListKnowledgeBases(ListKnowledgeBasesRequest) returns (ListKnowledgeBasesResponse) {

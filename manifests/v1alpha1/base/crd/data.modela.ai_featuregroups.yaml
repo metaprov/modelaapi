@@ -333,22 +333,20 @@ spec:
                   table,  a view or a file on S3.
                 properties:
                   database:
-                    description: Database specifies the location of a database (and
-                      an optional query)
+                    description: Database specifies the location of data within a
+                      database
                     properties:
                       connectionName:
-                        default: ""
-                        description: ConnectionName specifies the name of the Connection
-                          resource containing the credentials to connect to the database
+                        description: The name of the Connection resource used to connect
+                          to the database
                         type: string
                       sql:
                         default: ""
-                        description: The SQL statement which will be executed to query
-                          data from the table specified by Table
+                        description: The SQL statement to execute
                         type: string
                       table:
                         default: ""
-                        description: The name of a table inside the database
+                        description: The name of the table to read
                         type: string
                     type: object
                   file:
@@ -372,9 +370,9 @@ spec:
                         type: string
                       namespace:
                         description: The namespace of the resource. When referencing
-                          a Dataset, default to the Data Product of the specifying
+                          a Dataset Snapshot, default to the Data Product of the specifying
                           resource. When referencing a Public Dataset, default to
-                          the catalog namespace
+                          the built-in catalog namespace (modela-catalog)
                         type: string
                     type: object
                   web:
@@ -383,9 +381,7 @@ spec:
                     properties:
                       url:
                         default: ""
-                        description: URL specifies the external location (HTTP or
-                          Git) that will be queried and then stored as flat-file by
-                          the resource which specifies the WebLocation
+                        description: The internet-accessible URL of a file to download
                         type: string
                     type: object
                 type: object
@@ -1281,22 +1277,20 @@ spec:
                   running the sync process
                 properties:
                   database:
-                    description: Database specifies the location of a database (and
-                      an optional query)
+                    description: Database specifies the location of data within a
+                      database
                     properties:
                       connectionName:
-                        default: ""
-                        description: ConnectionName specifies the name of the Connection
-                          resource containing the credentials to connect to the database
+                        description: The name of the Connection resource used to connect
+                          to the database
                         type: string
                       sql:
                         default: ""
-                        description: The SQL statement which will be executed to query
-                          data from the table specified by Table
+                        description: The SQL statement to execute
                         type: string
                       table:
                         default: ""
-                        description: The name of a table inside the database
+                        description: The name of the table to read
                         type: string
                     type: object
                   file:
@@ -1320,9 +1314,9 @@ spec:
                         type: string
                       namespace:
                         description: The namespace of the resource. When referencing
-                          a Dataset, default to the Data Product of the specifying
+                          a Dataset Snapshot, default to the Data Product of the specifying
                           resource. When referencing a Public Dataset, default to
-                          the catalog namespace
+                          the built-in catalog namespace (modela-catalog)
                         type: string
                     type: object
                   web:
@@ -1331,9 +1325,7 @@ spec:
                     properties:
                       url:
                         default: ""
-                        description: URL specifies the external location (HTTP or
-                          Git) that will be queried and then stored as flat-file by
-                          the resource which specifies the WebLocation
+                        description: The internet-accessible URL of a file to download
                         type: string
                     type: object
                 type: object

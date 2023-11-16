@@ -183,7 +183,6 @@ proto.github.com.metaprov.modelaapi.services.publisherd.v1.PublishModelRequest.p
 proto.github.com.metaprov.modelaapi.services.publisherd.v1.PublishModelRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     dataproduct: (f = msg.getDataproduct()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.toObject(includeInstance, f),
-    dataproductversion: (f = msg.getDataproductversion()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.toObject(includeInstance, f),
     model: (f = msg.getModel()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.toObject(includeInstance, f),
     study: (f = msg.getStudy()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.toObject(includeInstance, f),
     datasource: (f = msg.getDatasource()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.toObject(includeInstance, f),
@@ -238,11 +237,6 @@ proto.github.com.metaprov.modelaapi.services.publisherd.v1.PublishModelRequest.d
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.deserializeBinaryFromReader);
       msg.setDataproduct(value);
-      break;
-    case 2:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.deserializeBinaryFromReader);
-      msg.setDataproductversion(value);
       break;
     case 3:
       var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model;
@@ -346,14 +340,6 @@ proto.github.com.metaprov.modelaapi.services.publisherd.v1.PublishModelRequest.s
       1,
       f,
       github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.serializeBinaryToWriter
-    );
-  }
-  f = message.getDataproductversion();
-  if (f != null) {
-    writer.writeMessage(
-      2,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.serializeBinaryToWriter
     );
   }
   f = message.getModel();
@@ -492,43 +478,6 @@ proto.github.com.metaprov.modelaapi.services.publisherd.v1.PublishModelRequest.p
  */
 proto.github.com.metaprov.modelaapi.services.publisherd.v1.PublishModelRequest.prototype.hasDataproduct = function() {
   return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion dataproductversion = 2;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion}
- */
-proto.github.com.metaprov.modelaapi.services.publisherd.v1.PublishModelRequest.prototype.getDataproductversion = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion, 2));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.publisherd.v1.PublishModelRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.publisherd.v1.PublishModelRequest.prototype.setDataproductversion = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.publisherd.v1.PublishModelRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.publisherd.v1.PublishModelRequest.prototype.clearDataproductversion = function() {
-  return this.setDataproductversion(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.publisherd.v1.PublishModelRequest.prototype.hasDataproductversion = function() {
-  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -1118,7 +1067,6 @@ proto.github.com.metaprov.modelaapi.services.publisherd.v1.PackageModelRequest.p
 proto.github.com.metaprov.modelaapi.services.publisherd.v1.PackageModelRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     dataproduct: (f = msg.getDataproduct()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.toObject(includeInstance, f),
-    dataproductversion: (f = msg.getDataproductversion()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.toObject(includeInstance, f),
     model: (f = msg.getModel()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.toObject(includeInstance, f),
     study: (f = msg.getStudy()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.toObject(includeInstance, f),
     datasource: (f = msg.getDatasource()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.toObject(includeInstance, f),
@@ -1166,11 +1114,6 @@ proto.github.com.metaprov.modelaapi.services.publisherd.v1.PackageModelRequest.d
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.deserializeBinaryFromReader);
       msg.setDataproduct(value);
-      break;
-    case 2:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.deserializeBinaryFromReader);
-      msg.setDataproductversion(value);
       break;
     case 3:
       var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model;
@@ -1243,14 +1186,6 @@ proto.github.com.metaprov.modelaapi.services.publisherd.v1.PackageModelRequest.s
       1,
       f,
       github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.serializeBinaryToWriter
-    );
-  }
-  f = message.getDataproductversion();
-  if (f != null) {
-    writer.writeMessage(
-      2,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.serializeBinaryToWriter
     );
   }
   f = message.getModel();
@@ -1342,43 +1277,6 @@ proto.github.com.metaprov.modelaapi.services.publisherd.v1.PackageModelRequest.p
  */
 proto.github.com.metaprov.modelaapi.services.publisherd.v1.PackageModelRequest.prototype.hasDataproduct = function() {
   return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion dataproductversion = 2;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion}
- */
-proto.github.com.metaprov.modelaapi.services.publisherd.v1.PackageModelRequest.prototype.getDataproductversion = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion, 2));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.publisherd.v1.PackageModelRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.publisherd.v1.PackageModelRequest.prototype.setDataproductversion = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.publisherd.v1.PackageModelRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.publisherd.v1.PackageModelRequest.prototype.clearDataproductversion = function() {
-  return this.setDataproductversion(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.publisherd.v1.PackageModelRequest.prototype.hasDataproductversion = function() {
-  return jspb.Message.getField(this, 2) != null;
 };
 
 

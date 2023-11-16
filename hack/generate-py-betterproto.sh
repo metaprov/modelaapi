@@ -46,7 +46,6 @@ venv/bin/python3 -m grpc_tools.protoc \
     github.com/metaprov/modelaapi/services/attachment/v1/attachment.proto \
     github.com/metaprov/modelaapi/services/todo/v1/todo.proto \
     github.com/metaprov/modelaapi/services/modelasystem/v1/modelasystem.proto \
-    github.com/metaprov/modelaapi/services/dbproxyd/v1/dbproxyd.proto \
     github.com/metaprov/modelaapi/services/catalog/v1/catalog.proto \
     github.com/metaprov/modelaapi/services/cloudproxyd/v1/cloudproxyd.proto \
     github.com/metaprov/modelaapi/services/common/v1/common.proto \
@@ -56,7 +55,6 @@ venv/bin/python3 -m grpc_tools.protoc \
     github.com/metaprov/modelaapi/services/datapipeline/v1/datapipeline.proto \
     github.com/metaprov/modelaapi/services/datapipelinerun/v1/datapipelinerun.proto \
     github.com/metaprov/modelaapi/services/dataproduct/v1/dataproduct.proto \
-    github.com/metaprov/modelaapi/services/dataproductversion/v1/dataproductversion.proto \
     github.com/metaprov/modelaapi/services/dataset/v1/dataset.proto \
     github.com/metaprov/modelaapi/services/datasource/v1/datasource.proto \
     github.com/metaprov/modelaapi/services/dataapp/v1/dataapp.proto \

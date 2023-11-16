@@ -4355,15 +4355,25 @@ export class StudySpec extends jspb.Message {
   hasDescription(): boolean;
   clearDescription(): StudySpec;
 
+  getRun(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSpec | undefined;
+  setRun(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSpec): StudySpec;
+  hasRun(): boolean;
+  clearRun(): StudySpec;
+
+  getArtifactbucketname(): string;
+  setArtifactbucketname(value: string): StudySpec;
+  hasArtifactbucketname(): boolean;
+  clearArtifactbucketname(): StudySpec;
+
+  getLabname(): string;
+  setLabname(value: string): StudySpec;
+  hasLabname(): boolean;
+  clearLabname(): StudySpec;
+
   getSnapshot(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.SnapshotReference | undefined;
   setSnapshot(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.SnapshotReference): StudySpec;
   hasSnapshot(): boolean;
   clearSnapshot(): StudySpec;
-
-  getLabref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setLabref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): StudySpec;
-  hasLabref(): boolean;
-  clearLabref(): StudySpec;
 
   getTask(): string;
   setTask(value: string): StudySpec;
@@ -4415,11 +4425,6 @@ export class StudySpec extends jspb.Message {
   hasForecasttemplate(): boolean;
   clearForecasttemplate(): StudySpec;
 
-  getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
-  setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): StudySpec;
-  hasSchedule(): boolean;
-  clearSchedule(): StudySpec;
-
   getInterpretability(): InterpretabilitySpec | undefined;
   setInterpretability(value?: InterpretabilitySpec): StudySpec;
   hasInterpretability(): boolean;
@@ -4470,16 +4475,6 @@ export class StudySpec extends jspb.Message {
   hasFast(): boolean;
   clearFast(): StudySpec;
 
-  getArtifactbucketname(): string;
-  setArtifactbucketname(value: string): StudySpec;
-  hasArtifactbucketname(): boolean;
-  clearArtifactbucketname(): StudySpec;
-
-  getTimeout(): number;
-  setTimeout(value: number): StudySpec;
-  hasTimeout(): boolean;
-  clearTimeout(): StudySpec;
-
   getModelclassname(): string;
   setModelclassname(value: string): StudySpec;
   hasModelclassname(): boolean;
@@ -4497,8 +4492,10 @@ export namespace StudySpec {
   export type AsObject = {
     owner?: string,
     description?: string,
+    run?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSpec.AsObject,
+    artifactbucketname?: string,
+    labname?: string,
     snapshot?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.SnapshotReference.AsObject,
-    labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     task?: string,
     subtask?: string,
     featureengineering?: FeatureEngineeringSpec.AsObject,
@@ -4509,7 +4506,6 @@ export namespace StudySpec {
     trainingtemplate?: TrainingSpec.AsObject,
     split?: DataSplitSpec.AsObject,
     forecasttemplate?: ForecasterSpec.AsObject,
-    schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     interpretability?: InterpretabilitySpec.AsObject,
     outliermodel?: OutlierModelSpec.AsObject,
     unitteststemplate?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
@@ -4520,8 +4516,6 @@ export namespace StudySpec {
     profile?: boolean,
     explain?: boolean,
     fast?: boolean,
-    artifactbucketname?: string,
-    timeout?: number,
     modelclassname?: string,
   }
 }

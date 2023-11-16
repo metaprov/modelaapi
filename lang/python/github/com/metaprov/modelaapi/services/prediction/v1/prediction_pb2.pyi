@@ -9,17 +9,34 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
-class AbortPredictionRequest(_message.Message):
-    __slots__ = ["namespace", "run"]
+class ListPredictionsRequest(_message.Message):
+    __slots__ = ["namespace", "labels", "page_size", "page_token", "order_by"]
+    class LabelsEntry(_message.Message):
+        __slots__ = ["key", "value"]
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: str
+        def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    RUN_FIELD_NUMBER: _ClassVar[int]
+    LABELS_FIELD_NUMBER: _ClassVar[int]
+    PAGE_SIZE_FIELD_NUMBER: _ClassVar[int]
+    PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
+    ORDER_BY_FIELD_NUMBER: _ClassVar[int]
     namespace: str
-    run: _generated_pb2.PredictionRunReference
-    def __init__(self, namespace: _Optional[str] = ..., run: _Optional[_Union[_generated_pb2.PredictionRunReference, _Mapping]] = ...) -> None: ...
+    labels: _containers.ScalarMap[str, str]
+    page_size: int
+    page_token: str
+    order_by: str
+    def __init__(self, namespace: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ..., page_size: _Optional[int] = ..., page_token: _Optional[str] = ..., order_by: _Optional[str] = ...) -> None: ...
 
-class AbortPredictionResponse(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
+class ListPredictionsResponse(_message.Message):
+    __slots__ = ["predictions", "next_page_token"]
+    PREDICTIONS_FIELD_NUMBER: _ClassVar[int]
+    NEXT_PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
+    predictions: _generated_pb2_1.PredictionList
+    next_page_token: str
+    def __init__(self, predictions: _Optional[_Union[_generated_pb2_1.PredictionList, _Mapping]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
 
 class CreatePredictionRequest(_message.Message):
     __slots__ = ["prediction"]
@@ -31,12 +48,40 @@ class CreatePredictionResponse(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
-class DeletePredictionRequest(_message.Message):
-    __slots__ = ["name", "namespace"]
+class UpdatePredictionRequest(_message.Message):
+    __slots__ = ["prediction", "field_mask"]
+    PREDICTION_FIELD_NUMBER: _ClassVar[int]
+    FIELD_MASK_FIELD_NUMBER: _ClassVar[int]
+    prediction: _generated_pb2_1.Prediction
+    field_mask: _field_mask_pb2.FieldMask
+    def __init__(self, prediction: _Optional[_Union[_generated_pb2_1.Prediction, _Mapping]] = ..., field_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
+
+class UpdatePredictionResponse(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class GetPredictionRequest(_message.Message):
+    __slots__ = ["namespace", "name"]
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
-    name: str
     namespace: str
+    name: str
+    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
+
+class GetPredictionResponse(_message.Message):
+    __slots__ = ["prediction", "yaml"]
+    PREDICTION_FIELD_NUMBER: _ClassVar[int]
+    YAML_FIELD_NUMBER: _ClassVar[int]
+    prediction: _generated_pb2_1.Prediction
+    yaml: str
+    def __init__(self, prediction: _Optional[_Union[_generated_pb2_1.Prediction, _Mapping]] = ..., yaml: _Optional[str] = ...) -> None: ...
+
+class DeletePredictionRequest(_message.Message):
+    __slots__ = ["namespace", "name"]
+    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    namespace: str
+    name: str
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class DeletePredictionResponse(_message.Message):
@@ -57,59 +102,14 @@ class DownloadPredictionResponse(_message.Message):
     raw: bytes
     def __init__(self, raw: _Optional[bytes] = ...) -> None: ...
 
-class GetPredictionRequest(_message.Message):
-    __slots__ = ["name", "namespace"]
+class AbortPredictionRequest(_message.Message):
+    __slots__ = ["namespace", "run"]
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    name: str
+    RUN_FIELD_NUMBER: _ClassVar[int]
     namespace: str
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
+    run: _generated_pb2.PredictionRunReference
+    def __init__(self, namespace: _Optional[str] = ..., run: _Optional[_Union[_generated_pb2.PredictionRunReference, _Mapping]] = ...) -> None: ...
 
-class GetPredictionResponse(_message.Message):
-    __slots__ = ["prediction", "yaml"]
-    PREDICTION_FIELD_NUMBER: _ClassVar[int]
-    YAML_FIELD_NUMBER: _ClassVar[int]
-    prediction: _generated_pb2_1.Prediction
-    yaml: str
-    def __init__(self, prediction: _Optional[_Union[_generated_pb2_1.Prediction, _Mapping]] = ..., yaml: _Optional[str] = ...) -> None: ...
-
-class ListPredictionsRequest(_message.Message):
-    __slots__ = ["labels", "namespace", "order_by", "page_size", "page_token"]
-    class LabelsEntry(_message.Message):
-        __slots__ = ["key", "value"]
-        KEY_FIELD_NUMBER: _ClassVar[int]
-        VALUE_FIELD_NUMBER: _ClassVar[int]
-        key: str
-        value: str
-        def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
-    LABELS_FIELD_NUMBER: _ClassVar[int]
-    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    ORDER_BY_FIELD_NUMBER: _ClassVar[int]
-    PAGE_SIZE_FIELD_NUMBER: _ClassVar[int]
-    PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
-    labels: _containers.ScalarMap[str, str]
-    namespace: str
-    order_by: str
-    page_size: int
-    page_token: str
-    def __init__(self, namespace: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ..., page_size: _Optional[int] = ..., page_token: _Optional[str] = ..., order_by: _Optional[str] = ...) -> None: ...
-
-class ListPredictionsResponse(_message.Message):
-    __slots__ = ["next_page_token", "predictions"]
-    NEXT_PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
-    PREDICTIONS_FIELD_NUMBER: _ClassVar[int]
-    next_page_token: str
-    predictions: _generated_pb2_1.PredictionList
-    def __init__(self, predictions: _Optional[_Union[_generated_pb2_1.PredictionList, _Mapping]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
-
-class UpdatePredictionRequest(_message.Message):
-    __slots__ = ["field_mask", "prediction"]
-    FIELD_MASK_FIELD_NUMBER: _ClassVar[int]
-    PREDICTION_FIELD_NUMBER: _ClassVar[int]
-    field_mask: _field_mask_pb2.FieldMask
-    prediction: _generated_pb2_1.Prediction
-    def __init__(self, prediction: _Optional[_Union[_generated_pb2_1.Prediction, _Mapping]] = ..., field_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
-
-class UpdatePredictionResponse(_message.Message):
+class AbortPredictionResponse(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...

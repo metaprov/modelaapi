@@ -16,7 +16,6 @@ message PublishModelRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec    dataproductSpec    = 3;
     string dataproductversionName = 4;
     string dataproductversionNamespace = 5;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersionSpec    dataproductversionSpec    = 6;
     string modelName = 7;
     string modelNamespace = 8;
     github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec      modelSpec    = 9;

@@ -15,42 +15,42 @@ import (
 // defaulting
 var _ webhook.Defaulter = &DatasetSnapshot{}
 
-func (dataset *DatasetSnapshot) Default() {
-	if dataset.ObjectMeta.Labels == nil {
-		dataset.ObjectMeta.Labels = make(map[string]string)
+func (snapshot *DatasetSnapshot) Default() {
+	if snapshot.ObjectMeta.Labels == nil {
+		snapshot.ObjectMeta.Labels = make(map[string]string)
 	}
 
-	dataset.ObjectMeta.Labels[catalog.DatasetLabelKey] = dataset.Spec.DatasetName
+	snapshot.ObjectMeta.Labels[catalog.DatasetLabelKey] = snapshot.Spec.DatasetName
 
-	if dataset.Spec.Owner != nil {
-		dataset.ObjectMeta.Labels[catalog.OwnerLabelKey] = *dataset.Spec.Owner
+	if snapshot.Spec.Owner != nil {
+		snapshot.ObjectMeta.Labels[catalog.OwnerLabelKey] = *snapshot.Spec.Owner
 	}
 
-	if dataset.Spec.ModelClassRunName != nil {
-		dataset.ObjectMeta.Labels[catalog.ModelClassRunLabelKey] = *dataset.Spec.ModelClassRunName
+	if snapshot.Spec.ModelClassRunName != nil {
+		snapshot.ObjectMeta.Labels[catalog.ModelClassRunLabelKey] = *snapshot.Spec.ModelClassRunName
 	}
 
-	dataset.Status.Statistics.Features = make([]FeatureStatistics, 0)
+	snapshot.Status.Statistics.Features = make([]FeatureStatistics, 0)
 }
 
 // validation
 var _ webhook.Validator = &DatasetSnapshot{}
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
-func (dataset *DatasetSnapshot) ValidateCreate() error {
-	return dataset.validate()
+func (snapshot *DatasetSnapshot) ValidateCreate() error {
+	return snapshot.validate()
 }
 
 // ValidateUpdate implements webhook.Validator so a webhook will be registered for the type
-func (dataset *DatasetSnapshot) ValidateUpdate(old runtime.Object) error {
+func (snapshot *DatasetSnapshot) ValidateUpdate(old runtime.Object) error {
 
-	return dataset.validate()
+	return snapshot.validate()
 }
 
-func (dataset *DatasetSnapshot) ValidateDelete() error {
-	return dataset.validate()
+func (snapshot *DatasetSnapshot) ValidateDelete() error {
+	return snapshot.validate()
 }
 
-func (dataset *DatasetSnapshot) validate() error {
+func (snapshot *DatasetSnapshot) validate() error {
 	return nil
 }

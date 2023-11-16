@@ -90,10 +90,9 @@ type StudyRunSpec struct {
 	// +kubebuilder:validation:Required
 	// +required
 	StudyName string `json:"studyName,omitempty" protobuf:"varint,2,opt,name=studyName"`
-	// Timout specifies the time in seconds for the run to be completed. If unspecified, the run
-	// deadline specified by the Study will be used
+	// Timout specifies the time in seconds for the run to be completed
 	// +kubebuilder:validation:Optional
-	Timeout *int64 `json:"timeout,omitempty" protobuf:"varint,3,opt,name=timeout"`
+	Timeout *int32 `json:"timeout,omitempty" protobuf:"varint,3,opt,name=timeout"`
 	// If true, the execution of new workloads associated with the run will be paused
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional

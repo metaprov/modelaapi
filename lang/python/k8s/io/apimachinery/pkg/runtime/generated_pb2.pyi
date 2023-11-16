@@ -19,13 +19,13 @@ class TypeMeta(_message.Message):
     def __init__(self, apiVersion: _Optional[str] = ..., kind: _Optional[str] = ...) -> None: ...
 
 class Unknown(_message.Message):
-    __slots__ = ["contentEncoding", "contentType", "raw", "typeMeta"]
+    __slots__ = ["typeMeta", "raw", "contentEncoding", "contentType"]
+    TYPEMETA_FIELD_NUMBER: _ClassVar[int]
+    RAW_FIELD_NUMBER: _ClassVar[int]
     CONTENTENCODING_FIELD_NUMBER: _ClassVar[int]
     CONTENTTYPE_FIELD_NUMBER: _ClassVar[int]
-    RAW_FIELD_NUMBER: _ClassVar[int]
-    TYPEMETA_FIELD_NUMBER: _ClassVar[int]
+    typeMeta: TypeMeta
+    raw: bytes
     contentEncoding: str
     contentType: str
-    raw: bytes
-    typeMeta: TypeMeta
     def __init__(self, typeMeta: _Optional[_Union[TypeMeta, _Mapping]] = ..., raw: _Optional[bytes] = ..., contentEncoding: _Optional[str] = ..., contentType: _Optional[str] = ...) -> None: ...

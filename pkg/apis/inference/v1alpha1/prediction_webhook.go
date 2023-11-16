@@ -14,13 +14,8 @@ func (prediction *Prediction) Default() {
 		prediction.ObjectMeta.Labels = make(map[string]string)
 	}
 
-	if prediction.Spec.ModelRef != nil {
-		prediction.ObjectMeta.Labels[catalog.ModelLabelKey] = prediction.Spec.ModelRef.Name
-	}
-
-	if prediction.Spec.ServingSiteRef != nil {
-		prediction.ObjectMeta.Labels[catalog.TenantLabelKey] = prediction.Spec.ServingSiteRef.Namespace
-		prediction.ObjectMeta.Labels[catalog.ServingSiteLabelKey] = prediction.Spec.ServingSiteRef.Name
+	if prediction.Spec.ServingSiteName != nil {
+		prediction.ObjectMeta.Labels[catalog.ServingSiteLabelKey] = *prediction.Spec.ServingSiteName
 	}
 
 	if prediction.Spec.ModelClassName != nil {

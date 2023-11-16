@@ -94,9 +94,8 @@ spec:
                 type: string
               timeout:
                 description: Timout specifies the time in seconds for the run to be
-                  completed. If unspecified, the run deadline specified by the Study
-                  will be used
-                format: int64
+                  completed
+                format: int32
                 type: integer
             type: object
           status:

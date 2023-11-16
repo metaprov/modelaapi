@@ -189,6 +189,20 @@ func (studyrun *StudyRun) RefreshProgress() {
 }
 
 func (studyrun *StudyRun) ReachedMaxTime(study *Study) bool {
+	timeout, override := study.Spec.Run.Get().Timeout, studyrun.Spec.Timeout
+	if timeout == nil && override == nil {
+		return false
+	} else if override != nil {
+		timeout = override
+	}
+	if studyrun.Status.SearchStatus.StartedAt == nil {
+		return false
+	}
+	duration := metav1.Now().Unix() - studyrun.CreationTimestamp.Unix()
+	return int32(duration/60) >= *timeout
+}
+
+func (studyrun *StudyRun) ReachedMaxSearchTime(study *Study) bool {
 	if study == nil || studyrun.Status.SearchStatus.StartedAt == nil {
 		return false
 	}

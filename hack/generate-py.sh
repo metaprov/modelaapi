@@ -11,16 +11,6 @@ set -o pipefail
 
 PROJECT_ROOT=$(cd $(dirname ${BASH_SOURCE})/..; pwd)
 
-#rm -rf ${PROJECT_ROOT}/lang/python/github.com
-#rm -rf ${PROJECT_ROOT}/lang/python/github
-#rm -rf ${PROJECT_ROOT}/lang/python/google
-#rm -rf ${PROJECT_ROOT}/lang/python/k8s
-#rm -rf ${PROJECT_ROOT}/lang/python/k8s.io
-
-go mod vendor
-
-
-
 # Generate the grpc first, since it would be generated under github.com and not github/com
 python3 -m pip install grpcio-tools
 
@@ -58,7 +48,6 @@ python3 -m grpc_tools.protoc \
     github.com/metaprov/modelaapi/services/attachment/v1/attachment.proto \
     github.com/metaprov/modelaapi/services/todo/v1/todo.proto \
     github.com/metaprov/modelaapi/services/modelasystem/v1/modelasystem.proto \
-    github.com/metaprov/modelaapi/services/dbproxyd/v1/dbproxyd.proto \
     github.com/metaprov/modelaapi/services/catalog/v1/catalog.proto \
     github.com/metaprov/modelaapi/services/cloudproxyd/v1/cloudproxyd.proto \
     github.com/metaprov/modelaapi/services/common/v1/common.proto \
@@ -68,7 +57,6 @@ python3 -m grpc_tools.protoc \
     github.com/metaprov/modelaapi/services/datapipeline/v1/datapipeline.proto \
     github.com/metaprov/modelaapi/services/datapipelinerun/v1/datapipelinerun.proto \
     github.com/metaprov/modelaapi/services/dataproduct/v1/dataproduct.proto \
-    github.com/metaprov/modelaapi/services/dataproductversion/v1/dataproductversion.proto \
     github.com/metaprov/modelaapi/services/dataset/v1/dataset.proto \
     github.com/metaprov/modelaapi/services/datasetsnapshot/v1/datasetsnapshot.proto \
     github.com/metaprov/modelaapi/services/datasource/v1/datasource.proto \
@@ -104,7 +92,7 @@ python3 -m grpc_tools.protoc \
     github.com/metaprov/modelaapi/services/trainerd/v1/trainerd.proto \
     github.com/metaprov/modelaapi/services/virtualbucket/v1/virtualbucket.proto \
     github.com/metaprov/modelaapi/services/batchpredictord/v1/batchpredictord.proto \
-    github.com/metaprov/modelaapi/services/knowledgebase/v1/knowledgebase.proto
+    github.com/metaprov/modelaapi/services/knowledgebase/v1/knowledgebase.proto \
 
 
 

@@ -2881,7 +2881,7 @@ func (in *StudyRunSpec) DeepCopyInto(out *StudyRunSpec) {
 	}
 	if in.Timeout != nil {
 		in, out := &in.Timeout, &out.Timeout
-		*out = new(int64)
+		*out = new(int32)
 		**out = **in
 	}
 	if in.Pause != nil {
@@ -2991,12 +2991,18 @@ func (in *StudySpec) DeepCopyInto(out *StudySpec) {
 		*out = new(string)
 		**out = **in
 	}
-	in.Snapshot.DeepCopyInto(&out.Snapshot)
-	if in.LabRef != nil {
-		in, out := &in.LabRef, &out.LabRef
-		*out = new(corev1.ObjectReference)
+	in.Run.DeepCopyInto(&out.Run)
+	if in.ArtifactBucketName != nil {
+		in, out := &in.ArtifactBucketName, &out.ArtifactBucketName
+		*out = new(string)
 		**out = **in
 	}
+	if in.LabName != nil {
+		in, out := &in.LabName, &out.LabName
+		*out = new(string)
+		**out = **in
+	}
+	in.Snapshot.DeepCopyInto(&out.Snapshot)
 	if in.SubTask != nil {
 		in, out := &in.SubTask, &out.SubTask
 		*out = new(catalogv1alpha1.MLSubtask)
@@ -3010,7 +3016,6 @@ func (in *StudySpec) DeepCopyInto(out *StudySpec) {
 	in.TrainingTemplate.DeepCopyInto(&out.TrainingTemplate)
 	in.Split.DeepCopyInto(&out.Split)
 	in.ForecastTemplate.DeepCopyInto(&out.ForecastTemplate)
-	in.Schedule.DeepCopyInto(&out.Schedule)
 	in.Interpretability.DeepCopyInto(&out.Interpretability)
 	in.OutlierModel.DeepCopyInto(&out.OutlierModel)
 	in.UnitTestsTemplate.DeepCopyInto(&out.UnitTestsTemplate)
@@ -3043,16 +3048,6 @@ func (in *StudySpec) DeepCopyInto(out *StudySpec) {
 	if in.Fast != nil {
 		in, out := &in.Fast, &out.Fast
 		*out = new(bool)
-		**out = **in
-	}
-	if in.ArtifactBucketName != nil {
-		in, out := &in.ArtifactBucketName, &out.ArtifactBucketName
-		*out = new(string)
-		**out = **in
-	}
-	if in.Timeout != nil {
-		in, out := &in.Timeout, &out.Timeout
-		*out = new(int32)
 		**out = **in
 	}
 	if in.ModelClassName != nil {

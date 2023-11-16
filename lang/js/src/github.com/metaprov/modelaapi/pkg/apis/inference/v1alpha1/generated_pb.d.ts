@@ -827,6 +827,38 @@ export namespace ModelServingSpec {
   }
 }
 
+export class ModelSpec extends jspb.Message {
+  getName(): string;
+  setName(value: string): ModelSpec;
+  hasName(): boolean;
+  clearName(): ModelSpec;
+
+  getStudyrun(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference | undefined;
+  setStudyrun(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference): ModelSpec;
+  hasStudyrun(): boolean;
+  clearStudyrun(): ModelSpec;
+
+  getLocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): ModelSpec;
+  hasLocation(): boolean;
+  clearLocation(): ModelSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModelSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ModelSpec): ModelSpec.AsObject;
+  static serializeBinaryToWriter(message: ModelSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModelSpec;
+  static deserializeBinaryFromReader(message: ModelSpec, reader: jspb.BinaryReader): ModelSpec;
+}
+
+export namespace ModelSpec {
+  export type AsObject = {
+    name?: string,
+    studyrun?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference.AsObject,
+    location?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
+  }
+}
+
 export class OnlineFeatureStoreSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): OnlineFeatureStoreSpec;
@@ -1088,10 +1120,10 @@ export class PredictionRunSpec extends jspb.Message {
   hasDatasetname(): boolean;
   clearDatasetname(): PredictionRunSpec;
 
-  getModelref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setModelref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PredictionRunSpec;
-  hasModelref(): boolean;
-  clearModelref(): PredictionRunSpec;
+  getModel(): ModelSpec | undefined;
+  setModel(value?: ModelSpec): PredictionRunSpec;
+  hasModel(): boolean;
+  clearModel(): PredictionRunSpec;
 
   getTimeout(): number;
   setTimeout(value: number): PredictionRunSpec;
@@ -1120,7 +1152,7 @@ export namespace PredictionRunSpec {
   export type AsObject = {
     owner?: string,
     datasetname?: string,
-    modelref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    model?: ModelSpec.AsObject,
     timeout?: number,
     pause?: boolean,
     abort?: boolean,
@@ -1235,25 +1267,20 @@ export class PredictionSpec extends jspb.Message {
   hasRun(): boolean;
   clearRun(): PredictionSpec;
 
-  getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
-  setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): PredictionSpec;
-  hasSchedule(): boolean;
-  clearSchedule(): PredictionSpec;
+  getArtifactbucketname(): string;
+  setArtifactbucketname(value: string): PredictionSpec;
+  hasArtifactbucketname(): boolean;
+  clearArtifactbucketname(): PredictionSpec;
 
-  getServingsiteref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setServingsiteref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PredictionSpec;
+  getServingsiteref(): string;
+  setServingsiteref(value: string): PredictionSpec;
   hasServingsiteref(): boolean;
   clearServingsiteref(): PredictionSpec;
 
-  getModelref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setModelref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PredictionSpec;
-  hasModelref(): boolean;
-  clearModelref(): PredictionSpec;
-
-  getStudyrunref(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference | undefined;
-  setStudyrunref(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference): PredictionSpec;
-  hasStudyrunref(): boolean;
-  clearStudyrunref(): PredictionSpec;
+  getModel(): ModelSpec | undefined;
+  setModel(value?: ModelSpec): PredictionSpec;
+  hasModel(): boolean;
+  clearModel(): PredictionSpec;
 
   getInput(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataInputSpec | undefined;
   setInput(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataInputSpec): PredictionSpec;
@@ -1303,10 +1330,9 @@ export namespace PredictionSpec {
     owner?: string,
     description?: string,
     run?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSpec.AsObject,
-    schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
-    servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    modelref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    studyrunref?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StudyRunReference.AsObject,
+    artifactbucketname?: string,
+    servingsiteref?: string,
+    model?: ModelSpec.AsObject,
     input?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataInputSpec.AsObject,
     output?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec.AsObject,
     labeled?: boolean,

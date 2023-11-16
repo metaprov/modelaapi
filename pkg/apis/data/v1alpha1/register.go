@@ -52,8 +52,6 @@ func AddKnownTypes(scheme *k8sruntime.Scheme) error {
 		&EntityList{},
 		&DataProduct{},
 		&DataProductList{},
-		&DataProductVersion{},
-		&DataProductVersionList{},
 		&DataPipeline{},
 		&DataPipelineList{},
 		&DataPipelineRun{},

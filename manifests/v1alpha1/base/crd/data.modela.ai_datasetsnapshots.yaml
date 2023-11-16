@@ -91,10 +91,9 @@ spec:
                   the run will be paused
                 type: boolean
               timeout:
-                description: Timout specifies the time in seconds for the run to be
-                  completed. If unspecified, the run deadline specified by the Dataset
-                  will be used
-                format: int64
+                description: Timeout specifies the time in seconds for the snapshot
+                  to be completed
+                format: int32
                 type: integer
             type: object
           status:

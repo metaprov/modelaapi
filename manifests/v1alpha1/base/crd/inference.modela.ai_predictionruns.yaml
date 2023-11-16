@@ -63,45 +63,39 @@ spec:
                   which the snapshot will use to determine the model, observation
                   location, and post-processing options of the batch prediction
                 type: string
-              modelRef:
-                description: The reference to the Model which will be used for the
-                  run. If unspecified, the model specifies by the parent Prediction
-                  will be used
+              model:
+                description: Model specifies an optional model override to use for
+                  the run
                 properties:
-                  apiVersion:
-                    description: API version of the referent.
-                    type: string
-                  fieldPath:
-                    description: 'If referring to a piece of an object instead of
-                      an entire object, this string should contain a valid JSON/Go
-                      field access statement, such as desiredState.manifest.containers[2].
-                      For example, if the object reference is to a container within
-                      a pod, this would take on a value like: "spec.containers{name}"
-                      (where "name" refers to the name of the container that triggered
-                      the event) or if no container name is specified "spec.containers[2]"
-                      (container with index 2 in this pod). This syntax is chosen
-                      only to have some well-defined way of referencing a part of
-                      an object. TODO: this design is not final and this field is
-                      subject to change in the future.'
-                    type: string
-                  kind:
-                    description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
-                    type: string
+                  location:
+                    description: The location of a Model package
+                    properties:
+                      bucketName:
+                        type: string
+                      path:
+                        type: string
+                    type: object
                   name:
-                    description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                    description: The name of a packaged Model
                     type: string
-                  namespace:
-                    description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
-                    type: string
-                  resourceVersion:
-                    description: 'Specific resourceVersion to which this reference
-                      is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
-                    type: string
-                  uid:
-                    description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
-                    type: string
+                  studyRun:
+                    description: A reference to a Study Run, of which the best model
+                      will be used
+                    properties:
+                      name:
+                        description: The name of a Study Run resource. When specified,
+                          takes precedence over Study
+                        type: string
+                      study:
+                        description: The name of the Study which the run belongs to
+                        type: string
+                      version:
+                        description: The version of the run to use. If empty, the
+                          latest available run will be used
+                        format: int32
+                        type: integer
+                    type: object
                 type: object
-                x-kubernetes-map-type: atomic
               owner:
                 default: no-one
                 description: Owner specifies the name of the Account which the object
@@ -114,17 +108,16 @@ spec:
                 type: boolean
               timeout:
                 description: Timout specifies the time in seconds for the run to be
-                  completed. If unspecified, the run deadline specified by the Prediction
-                  will be used
-                format: int64
+                  completed. If unspecified, default to the deadline of the Prediction
+                format: int32
                 type: integer
             type: object
           status:
             description: PredictionRunStatus is the observed state of a PredictionRun
             properties:
               completedAt:
-                description: CompletedAt specifies the time at which the snapshot
-                  completed or failed
+                description: CompletedAt specifies the time at which the run completed
+                  or failed
                 format: date-time
                 type: string
               conditions:
@@ -287,8 +280,8 @@ spec:
                 format: int32
                 type: integer
               runVersion:
-                description: RunVersion specifies the version of the snapshot, which
-                  is determined when the Prediction manifest is saved
+                description: RunVersion specifies the version of the run, which is
+                  determined when the Prediction manifest is saved
                 format: int32
                 type: integer
               unitTestResults:

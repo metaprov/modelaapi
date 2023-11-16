@@ -36,9 +36,8 @@ const (
 	DatasetSnapshotPrepared              DatasetSnapshotConditionType = "Prepared"
 	DatasetSnapshotReported              DatasetSnapshotConditionType = "Reported"
 	DatasetSnapshotUnitTested            DatasetSnapshotConditionType = "UnitTested"
-	DatasetSnapshotSnapshotted           DatasetSnapshotConditionType = "Snapshotted"
+	DatasetSnapshotSnapshotTaken         DatasetSnapshotConditionType = "SnapshotTaken"
 	DatasetSnapshotProfiled              DatasetSnapshotConditionType = "Profiled"
-	DatasetSnapshotIngested              DatasetSnapshotConditionType = "Ingested"
 	DatasetSnapshotGrouped               DatasetSnapshotConditionType = "Grouped"
 	DatasetSnapshotGenerated             DatasetSnapshotConditionType = "Generated"
 	DatasetSnapshotReady                 DatasetSnapshotConditionType = "Ready"
@@ -86,10 +85,9 @@ type DatasetSnapshotSpec struct {
 	// +kubebuilder:validation:Required
 	// +required
 	DatasetName string `json:"datasetName,omitempty" protobuf:"varint,2,opt,name=datasetName"`
-	// Timout specifies the time in seconds for the run to be completed. If unspecified, the run
-	// deadline specified by the Dataset will be used
+	// Timeout specifies the time in seconds for the snapshot to be completed
 	// +kubebuilder:validation:Optional
-	Timeout *int64 `json:"timeout,omitempty" protobuf:"varint,3,opt,name=timeout"`
+	Timeout *int32 `json:"timeout,omitempty" protobuf:"varint,3,opt,name=timeout"`
 	// If true, the execution of new workloads associated with the run will be paused
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional

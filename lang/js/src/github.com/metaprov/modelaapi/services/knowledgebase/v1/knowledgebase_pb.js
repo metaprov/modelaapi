@@ -1942,7 +1942,7 @@ proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.RefreshKnowledgeBa
  */
 proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.RefreshKnowledgeBaseResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    raw: msg.getRaw_asB64()
+
   };
 
   if (includeInstance) {
@@ -1979,10 +1979,6 @@ proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.RefreshKnowledgeBa
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {!Uint8Array} */ (reader.readBytes());
-      msg.setRaw(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -2012,55 +2008,6 @@ proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.RefreshKnowledgeBa
  */
 proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.RefreshKnowledgeBaseResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getRaw_asU8();
-  if (f.length > 0) {
-    writer.writeBytes(
-      1,
-      f
-    );
-  }
-};
-
-
-/**
- * optional bytes raw = 1;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.RefreshKnowledgeBaseResponse.prototype.getRaw = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * optional bytes raw = 1;
- * This is a type-conversion wrapper around `getRaw()`
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.RefreshKnowledgeBaseResponse.prototype.getRaw_asB64 = function() {
-  return /** @type {string} */ (jspb.Message.bytesAsB64(
-      this.getRaw()));
-};
-
-
-/**
- * optional bytes raw = 1;
- * Note that Uint8Array is not supported on all browsers.
- * @see http://caniuse.com/Uint8Array
- * This is a type-conversion wrapper around `getRaw()`
- * @return {!Uint8Array}
- */
-proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.RefreshKnowledgeBaseResponse.prototype.getRaw_asU8 = function() {
-  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
-      this.getRaw()));
-};
-
-
-/**
- * @param {!(string|Uint8Array)} value
- * @return {!proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.RefreshKnowledgeBaseResponse} returns this
- */
-proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.RefreshKnowledgeBaseResponse.prototype.setRaw = function(value) {
-  return jspb.Message.setProto3BytesField(this, 1, value);
 };
 
 

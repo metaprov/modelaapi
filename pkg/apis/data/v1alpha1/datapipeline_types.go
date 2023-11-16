@@ -143,9 +143,6 @@ type DataOutputSpec struct {
 	// +kubebuilder:validation:Optional
 	Format *FlatFileType `json:"format,omitempty" protobuf:"bytes,3,opt,name=format"`
 	// The update strategy for the dataset in the case that the output location already exists (i.e a database table)
-	// UpsertUpdateStrategy will insert new records and update existing ones;
-	// InsertUpdateStrategy will insert new records and not update existing ones;
-	// UpdateUpdateStrategy will not insert new records and only update existing ones
 	// +kubebuilder:default:="upsert"
 	// +kubebuilder:validation:Optional
 	Action *catalog.UpdateStrategy `json:"action,omitempty" protobuf:"bytes,4,opt,name=action"`

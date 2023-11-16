@@ -2,7 +2,6 @@ package v1alpha1
 
 import (
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
-	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
@@ -11,6 +10,8 @@ type PredictionRunPhase string
 
 const (
 	PredictionRunPhasePending     PredictionRunPhase = "Pending"
+	PredictionRunPhasePreparing   PredictionRunPhase = "Preparing"
+	PredictionRunPhasePrepared    PredictionRunPhase = "Prepared"
 	PredictionRunPhaseRunning     PredictionRunPhase = "Running"
 	PredictionRunPhaseFailed      PredictionRunPhase = "Failed"
 	PredictionRunPhaseAborted     PredictionRunPhase = "Aborted"
@@ -23,9 +24,13 @@ const (
 type PredictionRunConditionType string
 
 const (
-	PredictionRunCompleted  PredictionRunConditionType = "Completed"
-	PredictionRunUnitTested PredictionRunConditionType = "UnitTested"
-	PredictionRunAborted    PredictionRunConditionType = "Aborted"
+	PredictionRunPrepared              PredictionRunConditionType = "Prepared"
+	PredictionRunCompleted             PredictionRunConditionType = "Completed"
+	PredictionRunUnitTested            PredictionRunConditionType = "UnitTested"
+	PredictionRunAborted               PredictionRunConditionType = "Aborted"
+	PredictionRunReady                 PredictionRunConditionType = "Ready"
+	PredictionRunPaused                PredictionRunConditionType = "Paused"
+	PredictionRunExternalStatusUpdated PredictionRunConditionType = "ExternalStatusUpdated"
 )
 
 // +kubebuilder:object:root=true
@@ -40,9 +45,8 @@ const (
 type PredictionRun struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
-	Spec              PredictionRunSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
-	//+optional
-	Status PredictionRunStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
+	Spec              PredictionRunSpec   `json:"spec" protobuf:"bytes,2,opt,name=spec"`
+	Status            PredictionRunStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
 // +kubebuilder:object:root=true
@@ -64,14 +68,12 @@ type PredictionRunSpec struct {
 	// +kubebuilder:validation:Required
 	// +required
 	PredictionName string `json:"datasetName,omitempty" protobuf:"varint,2,opt,name=datasetName"`
-	// The reference to the Model which will be used for the run. If unspecified, the model
-	// specifies by the parent Prediction will be used
+	// Model specifies an optional model override to use for the run
 	// +kubebuilder:validation:Optional
-	ModelRef *v1.ObjectReference `json:"modelRef,omitempty" protobuf:"bytes,3,opt,name=modelRef"`
-	// Timout specifies the time in seconds for the run to be completed. If unspecified, the run
-	// deadline specified by the Prediction will be used
+	Model *ModelSpec `json:"model,omitempty" protobuf:"bytes,3,opt,name=model"`
+	// Timout specifies the time in seconds for the run to be completed. If unspecified, default to the deadline of the Prediction
 	// +kubebuilder:validation:Optional
-	Timeout *int64 `json:"timeout,omitempty" protobuf:"varint,4,opt,name=timeout"`
+	Timeout *int32 `json:"timeout,omitempty" protobuf:"varint,4,opt,name=timeout"`
 	// If true, the execution of new workloads associated with the run will be paused
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
@@ -89,7 +91,7 @@ type PredictionRunStatus struct {
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
 	// PredictionManifestLocation specifies the location of the Prediction manifest used during the course of the run
 	PredictionManifestLocation catalog.ManifestLocation `json:"predictionManifestLocation,omitempty" protobuf:"bytes,2,opt,name=predictionManifestLocation"`
-	// RunVersion specifies the version of the snapshot, which is determined when the Prediction manifest is saved
+	// RunVersion specifies the version of the run, which is determined when the Prediction manifest is saved
 	RunVersion catalog.Version `json:"runVersion,omitempty" protobuf:"varint,4,opt,name=runVersion"`
 	// Rows specifies the number of rows predicted
 	//+kubebuilder:validation:Optional
@@ -114,7 +116,7 @@ type PredictionRunStatus struct {
 	Usage catalog.ResourceConsumption `json:"usage,omitempty" protobuf:"bytes,11,rep,name=usage"`
 	// +kubebuilder:validation:Optional
 	UpdatedAt *metav1.Time `json:"updatedAt,omitempty" protobuf:"bytes,12,opt,name=updatedAt"`
-	// CompletedAt specifies the time at which the snapshot completed or failed
+	// CompletedAt specifies the time at which the run completed or failed
 	// +kubebuilder:validation:Optional
 	CompletedAt *metav1.Time `json:"completedAt,omitempty" protobuf:"bytes,13,opt,name=completedAt"`
 	// +patchMergeKey=type

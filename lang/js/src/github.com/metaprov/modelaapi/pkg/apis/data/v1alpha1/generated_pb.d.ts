@@ -1643,152 +1643,6 @@ export namespace DataProductStatus {
   }
 }
 
-export class DataProductVersion extends jspb.Message {
-  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
-  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): DataProductVersion;
-  hasMetadata(): boolean;
-  clearMetadata(): DataProductVersion;
-
-  getSpec(): DataProductVersionSpec | undefined;
-  setSpec(value?: DataProductVersionSpec): DataProductVersion;
-  hasSpec(): boolean;
-  clearSpec(): DataProductVersion;
-
-  getStatus(): DataProductVersionStatus | undefined;
-  setStatus(value?: DataProductVersionStatus): DataProductVersion;
-  hasStatus(): boolean;
-  clearStatus(): DataProductVersion;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DataProductVersion.AsObject;
-  static toObject(includeInstance: boolean, msg: DataProductVersion): DataProductVersion.AsObject;
-  static serializeBinaryToWriter(message: DataProductVersion, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DataProductVersion;
-  static deserializeBinaryFromReader(message: DataProductVersion, reader: jspb.BinaryReader): DataProductVersion;
-}
-
-export namespace DataProductVersion {
-  export type AsObject = {
-    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
-    spec?: DataProductVersionSpec.AsObject,
-    status?: DataProductVersionStatus.AsObject,
-  }
-}
-
-export class DataProductVersionList extends jspb.Message {
-  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
-  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): DataProductVersionList;
-  hasMetadata(): boolean;
-  clearMetadata(): DataProductVersionList;
-
-  getItemsList(): Array<DataProductVersion>;
-  setItemsList(value: Array<DataProductVersion>): DataProductVersionList;
-  clearItemsList(): DataProductVersionList;
-  addItems(value?: DataProductVersion, index?: number): DataProductVersion;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DataProductVersionList.AsObject;
-  static toObject(includeInstance: boolean, msg: DataProductVersionList): DataProductVersionList.AsObject;
-  static serializeBinaryToWriter(message: DataProductVersionList, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DataProductVersionList;
-  static deserializeBinaryFromReader(message: DataProductVersionList, reader: jspb.BinaryReader): DataProductVersionList;
-}
-
-export namespace DataProductVersionList {
-  export type AsObject = {
-    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.AsObject,
-    itemsList: Array<DataProductVersion.AsObject>,
-  }
-}
-
-export class DataProductVersionSpec extends jspb.Message {
-  getProductref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setProductref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): DataProductVersionSpec;
-  hasProductref(): boolean;
-  clearProductref(): DataProductVersionSpec;
-
-  getDescription(): string;
-  setDescription(value: string): DataProductVersionSpec;
-  hasDescription(): boolean;
-  clearDescription(): DataProductVersionSpec;
-
-  getPrevversionname(): string;
-  setPrevversionname(value: string): DataProductVersionSpec;
-  hasPrevversionname(): boolean;
-  clearPrevversionname(): DataProductVersionSpec;
-
-  getBaseline(): boolean;
-  setBaseline(value: boolean): DataProductVersionSpec;
-  hasBaseline(): boolean;
-  clearBaseline(): DataProductVersionSpec;
-
-  getOwner(): string;
-  setOwner(value: string): DataProductVersionSpec;
-  hasOwner(): boolean;
-  clearOwner(): DataProductVersionSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DataProductVersionSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: DataProductVersionSpec): DataProductVersionSpec.AsObject;
-  static serializeBinaryToWriter(message: DataProductVersionSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DataProductVersionSpec;
-  static deserializeBinaryFromReader(message: DataProductVersionSpec, reader: jspb.BinaryReader): DataProductVersionSpec;
-}
-
-export namespace DataProductVersionSpec {
-  export type AsObject = {
-    productref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    description?: string,
-    prevversionname?: string,
-    baseline?: boolean,
-    owner?: string,
-  }
-}
-
-export class DataProductVersionStatus extends jspb.Message {
-  getObservedgeneration(): number;
-  setObservedgeneration(value: number): DataProductVersionStatus;
-  hasObservedgeneration(): boolean;
-  clearObservedgeneration(): DataProductVersionStatus;
-
-  getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DataProductVersionStatus;
-  hasUpdatedat(): boolean;
-  clearUpdatedat(): DataProductVersionStatus;
-
-  getFailurereason(): string;
-  setFailurereason(value: string): DataProductVersionStatus;
-  hasFailurereason(): boolean;
-  clearFailurereason(): DataProductVersionStatus;
-
-  getFailuremessage(): string;
-  setFailuremessage(value: string): DataProductVersionStatus;
-  hasFailuremessage(): boolean;
-  clearFailuremessage(): DataProductVersionStatus;
-
-  getConditionsList(): Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>;
-  setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): DataProductVersionStatus;
-  clearConditionsList(): DataProductVersionStatus;
-  addConditions(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition, index?: number): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DataProductVersionStatus.AsObject;
-  static toObject(includeInstance: boolean, msg: DataProductVersionStatus): DataProductVersionStatus.AsObject;
-  static serializeBinaryToWriter(message: DataProductVersionStatus, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DataProductVersionStatus;
-  static deserializeBinaryFromReader(message: DataProductVersionStatus, reader: jspb.BinaryReader): DataProductVersionStatus;
-}
-
-export namespace DataProductVersionStatus {
-  export type AsObject = {
-    observedgeneration?: number,
-    updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    failurereason?: string,
-    failuremessage?: string,
-    conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
-  }
-}
-
 export class DataSource extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): DataSource;
@@ -2408,10 +2262,15 @@ export class DatasetSpec extends jspb.Message {
   hasRun(): boolean;
   clearRun(): DatasetSpec;
 
-  getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
-  setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): DatasetSpec;
-  hasSchedule(): boolean;
-  clearSchedule(): DatasetSpec;
+  getArtifactbucketname(): string;
+  setArtifactbucketname(value: string): DatasetSpec;
+  hasArtifactbucketname(): boolean;
+  clearArtifactbucketname(): DatasetSpec;
+
+  getLabname(): string;
+  setLabname(value: string): DatasetSpec;
+  hasLabname(): boolean;
+  clearLabname(): DatasetSpec;
 
   getRole(): string;
   setRole(value: string): DatasetSpec;
@@ -2468,11 +2327,6 @@ export class DatasetSpec extends jspb.Message {
   hasFast(): boolean;
   clearFast(): DatasetSpec;
 
-  getArtifactbucketname(): string;
-  setArtifactbucketname(value: string): DatasetSpec;
-  hasArtifactbucketname(): boolean;
-  clearArtifactbucketname(): DatasetSpec;
-
   getSample(): SampleSpec | undefined;
   setSample(value?: SampleSpec): DatasetSpec;
   hasSample(): boolean;
@@ -2487,11 +2341,6 @@ export class DatasetSpec extends jspb.Message {
   setCorrelation(value?: CorrelationSpec): DatasetSpec;
   hasCorrelation(): boolean;
   clearCorrelation(): DatasetSpec;
-
-  getLabref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setLabref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): DatasetSpec;
-  hasLabref(): boolean;
-  clearLabref(): DatasetSpec;
 
   getGroupby(): GroupBySpec | undefined;
   setGroupby(value?: GroupBySpec): DatasetSpec;
@@ -2532,7 +2381,8 @@ export namespace DatasetSpec {
     datasourcename?: string,
     description?: string,
     run?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSpec.AsObject,
-    schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
+    artifactbucketname?: string,
+    labname?: string,
     role?: string,
     task?: string,
     subtask?: string,
@@ -2544,11 +2394,9 @@ export namespace DatasetSpec {
     unittest?: boolean,
     generatefeaturehistogram?: boolean,
     fast?: boolean,
-    artifactbucketname?: string,
     sample?: SampleSpec.AsObject,
     synthetic?: SyntheticSpec.AsObject,
     correlation?: CorrelationSpec.AsObject,
-    labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     groupby?: GroupBySpec.AsObject,
     keyList: Array<string>,
     modelclassname?: string,

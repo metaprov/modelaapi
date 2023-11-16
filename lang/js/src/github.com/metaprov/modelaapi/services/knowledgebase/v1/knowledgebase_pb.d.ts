@@ -226,11 +226,6 @@ export namespace RefreshKnowledgeBaseRequest {
 }
 
 export class RefreshKnowledgeBaseResponse extends jspb.Message {
-  getRaw(): Uint8Array | string;
-  getRaw_asU8(): Uint8Array;
-  getRaw_asB64(): string;
-  setRaw(value: Uint8Array | string): RefreshKnowledgeBaseResponse;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RefreshKnowledgeBaseResponse.AsObject;
   static toObject(includeInstance: boolean, msg: RefreshKnowledgeBaseResponse): RefreshKnowledgeBaseResponse.AsObject;
@@ -241,7 +236,6 @@ export class RefreshKnowledgeBaseResponse extends jspb.Message {
 
 export namespace RefreshKnowledgeBaseResponse {
   export type AsObject = {
-    raw: Uint8Array | string,
   }
 }
 

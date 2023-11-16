@@ -53,6 +53,11 @@ spec:
           spec:
             description: PredictionSpec represent the desired state of Prediction
             properties:
+              artifactBucketName:
+                description: The name of the Virtual Bucket where artifacts generated
+                  by the Prediction will be stored. If empty, default to the Data
+                  Product's default artifact bucket
+                type: string
               description:
                 default: ""
                 description: Description contains the user-provided description of
@@ -272,23 +277,20 @@ spec:
                     description: The location where the dataset is stored
                     properties:
                       database:
-                        description: Database specifies the location of a database
-                          (and an optional query)
+                        description: Database specifies the location of data within
+                          a database
                         properties:
                           connectionName:
-                            default: ""
-                            description: ConnectionName specifies the name of the
-                              Connection resource containing the credentials to connect
-                              to the database
+                            description: The name of the Connection resource used
+                              to connect to the database
                             type: string
                           sql:
                             default: ""
-                            description: The SQL statement which will be executed
-                              to query data from the table specified by Table
+                            description: The SQL statement to execute
                             type: string
                           table:
                             default: ""
-                            description: The name of a table inside the database
+                            description: The name of the table to read
                             type: string
                         type: object
                       file:
@@ -312,9 +314,9 @@ spec:
                             type: string
                           namespace:
                             description: The namespace of the resource. When referencing
-                              a Dataset, default to the Data Product of the specifying
-                              resource. When referencing a Public Dataset, default
-                              to the catalog namespace
+                              a Dataset Snapshot, default to the Data Product of the
+                              specifying resource. When referencing a Public Dataset,
+                              default to the built-in catalog namespace (modela-catalog)
                             type: string
                         type: object
                       web:
@@ -323,9 +325,8 @@ spec:
                         properties:
                           url:
                             default: ""
-                            description: URL specifies the external location (HTTP
-                              or Git) that will be queried and then stored as flat-file
-                              by the resource which specifies the WebLocation
+                            description: The internet-accessible URL of a file to
+                              download
                             type: string
                         type: object
                     type: object
@@ -337,48 +338,43 @@ spec:
                   a workload will be created to compute the metrics of the model based
                   on the labeled dataset and run the tests specified by UnitTests
                 type: boolean
+              model:
+                description: The specification for the model that will be used for
+                  the Prediction
+                properties:
+                  location:
+                    description: The location of a Model package
+                    properties:
+                      bucketName:
+                        type: string
+                      path:
+                        type: string
+                    type: object
+                  name:
+                    description: The name of a packaged Model
+                    type: string
+                  studyRun:
+                    description: A reference to a Study Run, of which the best model
+                      will be used
+                    properties:
+                      name:
+                        description: The name of a Study Run resource. When specified,
+                          takes precedence over Study
+                        type: string
+                      study:
+                        description: The name of the Study which the run belongs to
+                        type: string
+                      version:
+                        description: The version of the run to use. If empty, the
+                          latest available run will be used
+                        format: int32
+                        type: integer
+                    type: object
+                type: object
               modelClassName:
                 description: ModelClassName references the name of the Model Class
                   that created the resource, if applicable
                 type: string
-              modelRef:
-                description: The reference to the Model which will be served during
-                  the batch prediction workload
-                properties:
-                  apiVersion:
-                    description: API version of the referent.
-                    type: string
-                  fieldPath:
-                    description: 'If referring to a piece of an object instead of
-                      an entire object, this string should contain a valid JSON/Go
-                      field access statement, such as desiredState.manifest.containers[2].
-                      For example, if the object reference is to a container within
-                      a pod, this would take on a value like: "spec.containers{name}"
-                      (where "name" refers to the name of the container that triggered
-                      the event) or if no container name is specified "spec.containers[2]"
-                      (container with index 2 in this pod). This syntax is chosen
-                      only to have some well-defined way of referencing a part of
-                      an object. TODO: this design is not final and this field is
-                      subject to change in the future.'
-                    type: string
-                  kind:
-                    description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
-                    type: string
-                  name:
-                    description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
-                    type: string
-                  namespace:
-                    description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
-                    type: string
-                  resourceVersion:
-                    description: 'Specific resourceVersion to which this reference
-                      is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
-                    type: string
-                  uid:
-                    description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
-                    type: string
-                type: object
-                x-kubernetes-map-type: atomic
               output:
                 description: Output specifies the location where the prediction results
                   will be stored
@@ -391,10 +387,7 @@ spec:
                   action:
                     default: upsert
                     description: The update strategy for the dataset in the case that
-                      the output location already exists (i.e a database table) UpsertUpdateStrategy
-                      will insert new records and update existing ones; InsertUpdateStrategy
-                      will insert new records and not update existing ones; UpdateUpdateStrategy
-                      will not insert new records and only update existing ones
+                      the output location already exists (i.e a database table)
                     enum:
                     - upsert
                     - insert
@@ -445,23 +438,20 @@ spec:
                     description: The location where the dataset will be stored
                     properties:
                       database:
-                        description: Database specifies the location of a database
-                          (and an optional query)
+                        description: Database specifies the location of data within
+                          a database
                         properties:
                           connectionName:
-                            default: ""
-                            description: ConnectionName specifies the name of the
-                              Connection resource containing the credentials to connect
-                              to the database
+                            description: The name of the Connection resource used
+                              to connect to the database
                             type: string
                           sql:
                             default: ""
-                            description: The SQL statement which will be executed
-                              to query data from the table specified by Table
+                            description: The SQL statement to execute
                             type: string
                           table:
                             default: ""
-                            description: The name of a table inside the database
+                            description: The name of the table to read
                             type: string
                         type: object
                       file:
@@ -485,9 +475,9 @@ spec:
                             type: string
                           namespace:
                             description: The namespace of the resource. When referencing
-                              a Dataset, default to the Data Product of the specifying
-                              resource. When referencing a Public Dataset, default
-                              to the catalog namespace
+                              a Dataset Snapshot, default to the Data Product of the
+                              specifying resource. When referencing a Public Dataset,
+                              default to the built-in catalog namespace (modela-catalog)
                             type: string
                         type: object
                       web:
@@ -496,9 +486,8 @@ spec:
                         properties:
                           url:
                             default: ""
-                            description: URL specifies the external location (HTTP
-                              or Git) that will be queried and then stored as flat-file
-                              by the resource which specifies the WebLocation
+                            description: The internet-accessible URL of a file to
+                              download
                             type: string
                         type: object
                     type: object
@@ -559,11 +548,40 @@ spec:
                     default: 1
                     description: MaxPreviousRuns specifies the amount of previous
                       runs to maintain, sorted by their run version. When a new run
-                      is created, any runs with a version below that of the latest
-                      version minus MaxPreviousRuns will be garbage collected. Runs
-                      which are still in progress will not be affected
+                      is created, the amount of completed runs will be garbage collected
+                      to the amount
                     format: int32
                     type: integer
+                  schedule:
+                    description: Schedule specifies the schedule for the resource
+                      to create new runs
+                    properties:
+                      cron:
+                        description: The cron string for the schedule, applicable
+                          if the trigger type is Cron. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
+                          for more information
+                        type: string
+                      enabled:
+                        default: false
+                        description: Enabled indicates if the schedule is enabled.
+                          When enabled, a CronJob will be created which when triggered
+                          will initiate the creation of a run for the resource that
+                          specifies the schedule
+                        type: boolean
+                      type:
+                        description: The type of schedule, which can be a frequency
+                          interval or a cron expression
+                        enum:
+                        - now
+                        - once
+                        - hourly
+                        - daily
+                        - weekly
+                        - monthly
+                        - yearly
+                        - cron
+                        type: string
+                    type: object
                   timeout:
                     description: Timeout specifies the deadline in seconds for a run
                       to complete, after which it will be aborted. If empty, runs
@@ -571,90 +589,11 @@ spec:
                     format: int32
                     type: integer
                 type: object
-              schedule:
-                description: Schedule specifies the schedule to create new runs for
-                  the Prediction
-                properties:
-                  cron:
-                    description: The cron string for the schedule, applicable if the
-                      trigger type is Cron. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
-                      for more information
-                    type: string
-                  enabled:
-                    default: false
-                    description: Enabled indicates if the schedule is enabled. When
-                      enabled, a CronJob will be created which when triggered will
-                      initiate the creation of a run for the resource that specifies
-                      the schedule
-                    type: boolean
-                  type:
-                    description: The type of schedule, which can be a frequency interval
-                      or a cron expression
-                    enum:
-                    - now
-                    - once
-                    - hourly
-                    - daily
-                    - weekly
-                    - monthly
-                    - yearly
-                    - cron
-                    type: string
-                type: object
               servingSiteRef:
-                description: The reference to the Serving Site under which Jobs created
-                  by the Prediction will be executed. If empty, it will default to
-                  the default Serving Site of the Data Product for the Prediction
-                properties:
-                  apiVersion:
-                    description: API version of the referent.
-                    type: string
-                  fieldPath:
-                    description: 'If referring to a piece of an object instead of
-                      an entire object, this string should contain a valid JSON/Go
-                      field access statement, such as desiredState.manifest.containers[2].
-                      For example, if the object reference is to a container within
-                      a pod, this would take on a value like: "spec.containers{name}"
-                      (where "name" refers to the name of the container that triggered
-                      the event) or if no container name is specified "spec.containers[2]"
-                      (container with index 2 in this pod). This syntax is chosen
-                      only to have some well-defined way of referencing a part of
-                      an object. TODO: this design is not final and this field is
-                      subject to change in the future.'
-                    type: string
-                  kind:
-                    description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
-                    type: string
-                  name:
-                    description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
-                    type: string
-                  namespace:
-                    description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
-                    type: string
-                  resourceVersion:
-                    description: 'Specific resourceVersion to which this reference
-                      is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
-                    type: string
-                  uid:
-                    description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
-                    type: string
-                type: object
-                x-kubernetes-map-type: atomic
-              studyRunRef:
-                description: The reference to the Study Run, whose selected model
-                  will be used for the prediction. When specified, StudyRunRef will
-                  take precedence over ModelRef
-                properties:
-                  study:
-                    description: Study specifies the name of the Study which the run
-                      belongs to
-                    type: string
-                  version:
-                    description: Version specifies the version of the run to use.
-                      If empty, the latest available run will be used
-                    format: int32
-                    type: integer
-                type: object
+                description: The name of the Serving Site under which Jobs created
+                  by the Prediction will be executed. If empty, default to the Data
+                  Product's default Lab
+                type: string
               unitTests:
                 properties:
                   baselineModelRef:

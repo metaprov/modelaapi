@@ -8,46 +8,8 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
-class CreateDataPipelineRequest(_message.Message):
-    __slots__ = ["datapipeline"]
-    DATAPIPELINE_FIELD_NUMBER: _ClassVar[int]
-    datapipeline: _generated_pb2.DataPipeline
-    def __init__(self, datapipeline: _Optional[_Union[_generated_pb2.DataPipeline, _Mapping]] = ...) -> None: ...
-
-class CreateDataPipelineResponse(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
-class DeleteDataPipelineRequest(_message.Message):
-    __slots__ = ["name", "namespace"]
-    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    name: str
-    namespace: str
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
-
-class DeleteDataPipelineResponse(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
-
-class GetDataPipelineRequest(_message.Message):
-    __slots__ = ["name", "namespace"]
-    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    name: str
-    namespace: str
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
-
-class GetDataPipelineResponse(_message.Message):
-    __slots__ = ["datapipeline", "yaml"]
-    DATAPIPELINE_FIELD_NUMBER: _ClassVar[int]
-    YAML_FIELD_NUMBER: _ClassVar[int]
-    datapipeline: _generated_pb2.DataPipeline
-    yaml: str
-    def __init__(self, datapipeline: _Optional[_Union[_generated_pb2.DataPipeline, _Mapping]] = ..., yaml: _Optional[str] = ...) -> None: ...
-
 class ListDataPipelinesRequest(_message.Message):
-    __slots__ = ["labels", "namespace", "order_by", "page_size", "page_token"]
+    __slots__ = ["namespace", "labels", "page_size", "page_token", "order_by"]
     class LabelsEntry(_message.Message):
         __slots__ = ["key", "value"]
         KEY_FIELD_NUMBER: _ClassVar[int]
@@ -55,16 +17,16 @@ class ListDataPipelinesRequest(_message.Message):
         key: str
         value: str
         def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
-    LABELS_FIELD_NUMBER: _ClassVar[int]
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    ORDER_BY_FIELD_NUMBER: _ClassVar[int]
+    LABELS_FIELD_NUMBER: _ClassVar[int]
     PAGE_SIZE_FIELD_NUMBER: _ClassVar[int]
     PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
-    labels: _containers.ScalarMap[str, str]
+    ORDER_BY_FIELD_NUMBER: _ClassVar[int]
     namespace: str
-    order_by: str
+    labels: _containers.ScalarMap[str, str]
     page_size: int
     page_token: str
+    order_by: str
     def __init__(self, namespace: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ..., page_size: _Optional[int] = ..., page_token: _Optional[str] = ..., order_by: _Optional[str] = ...) -> None: ...
 
 class ListDataPipelinesResponse(_message.Message):
@@ -75,21 +37,15 @@ class ListDataPipelinesResponse(_message.Message):
     next_page_token: str
     def __init__(self, datapipelines: _Optional[_Union[_generated_pb2.DataPipelineList, _Mapping]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
 
-class RunDataPipelineRequest(_message.Message):
-    __slots__ = ["name", "namespace"]
-    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    name: str
-    namespace: str
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
+class CreateDataPipelineRequest(_message.Message):
+    __slots__ = ["datapipeline"]
+    DATAPIPELINE_FIELD_NUMBER: _ClassVar[int]
+    datapipeline: _generated_pb2.DataPipeline
+    def __init__(self, datapipeline: _Optional[_Union[_generated_pb2.DataPipeline, _Mapping]] = ...) -> None: ...
 
-class RunDataPipelineResponse(_message.Message):
-    __slots__ = ["pipeline", "yaml"]
-    PIPELINE_FIELD_NUMBER: _ClassVar[int]
-    YAML_FIELD_NUMBER: _ClassVar[int]
-    pipeline: _generated_pb2.DataPipeline
-    yaml: str
-    def __init__(self, pipeline: _Optional[_Union[_generated_pb2.DataPipeline, _Mapping]] = ..., yaml: _Optional[str] = ...) -> None: ...
+class CreateDataPipelineResponse(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
 
 class UpdateDataPipelineRequest(_message.Message):
     __slots__ = ["datapipeline", "field_mask"]
@@ -100,5 +56,49 @@ class UpdateDataPipelineRequest(_message.Message):
     def __init__(self, datapipeline: _Optional[_Union[_generated_pb2.DataPipeline, _Mapping]] = ..., field_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
 
 class UpdateDataPipelineResponse(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class GetDataPipelineRequest(_message.Message):
+    __slots__ = ["namespace", "name"]
+    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    namespace: str
+    name: str
+    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
+
+class GetDataPipelineResponse(_message.Message):
+    __slots__ = ["datapipeline", "yaml"]
+    DATAPIPELINE_FIELD_NUMBER: _ClassVar[int]
+    YAML_FIELD_NUMBER: _ClassVar[int]
+    datapipeline: _generated_pb2.DataPipeline
+    yaml: str
+    def __init__(self, datapipeline: _Optional[_Union[_generated_pb2.DataPipeline, _Mapping]] = ..., yaml: _Optional[str] = ...) -> None: ...
+
+class RunDataPipelineRequest(_message.Message):
+    __slots__ = ["namespace", "name"]
+    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    namespace: str
+    name: str
+    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
+
+class RunDataPipelineResponse(_message.Message):
+    __slots__ = ["pipeline", "yaml"]
+    PIPELINE_FIELD_NUMBER: _ClassVar[int]
+    YAML_FIELD_NUMBER: _ClassVar[int]
+    pipeline: _generated_pb2.DataPipeline
+    yaml: str
+    def __init__(self, pipeline: _Optional[_Union[_generated_pb2.DataPipeline, _Mapping]] = ..., yaml: _Optional[str] = ...) -> None: ...
+
+class DeleteDataPipelineRequest(_message.Message):
+    __slots__ = ["namespace", "name"]
+    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    namespace: str
+    name: str
+    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
+
+class DeleteDataPipelineResponse(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...

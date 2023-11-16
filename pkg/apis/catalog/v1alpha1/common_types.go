@@ -1284,164 +1284,33 @@ const (
 	NoneCompilerName CompilerName = "none"
 )
 
-// GithubEvents specify repo and the events to listen in order ot fire the pipeline
-type GithubEvents struct {
-	// The GitHub connections used to loginto git
-	GitConnectionsName *string `json:"gitConnectionName,omitempty" protobuf:"bytes,1,opt,name=gitConnectionName"`
-	// Repository is the name of the github repository
-	Repository *string `json:"repository,omitempty" protobuf:"bytes,2,opt,name=repository"`
-	// Branch is the name of the github branch.
-	// By default, the trigger listen to all branch
-	Branch *string `json:"branch,omitempty" protobuf:"bytes,3,opt,name=branch"`
-	// Blobname regex is a regular expression on the blob name that changed
-	BlobNameRegex *string `json:"blobNameRegex,omitempty" protobuf:"bytes,4,opt,name=blobNameRegex"`
-	// Events is the name of the github events.
-	Events []string `json:"events,omitempty" protobuf:"bytes,5,rep,name=events"`
-}
-
-// CronSchedule specifies the schedule for a Job to be executed
-type CronSchedule struct {
-	// Enabled indicates if the schedule is enabled. When enabled, a CronJob will be created which when triggered
-	// will initiate the regeneration of the resource that specifies the schedule
-	// +kubebuilder:default:=false
-	// +kubebuilder:validation:Optional
-	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
-	// The cron string for the schedule, applicable if the trigger type is Cron.
-	// See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm for more information
-	// +kubebuilder:validation:Optional
-	Cron *string `json:"cron,omitempty" protobuf:"bytes,2,opt,name=cron"`
-	// The type of schedule, which can be a frequency interval or a cron expression
-	// +kubebuilder:validation:Optional
-	Type TriggerScheduleEventType `json:"type,omitempty" protobuf:"bytes,3,opt,name=type"`
-	// The number of historical run records that the resource will maintain
-	// +kubebuilder:default:=10
-	// +kubebuilder:validation:Optional
-	MaxRecords *int32 `json:"maxRecords,omitempty" protobuf:"varint,4,opt,name=maxRecords"`
-}
-
-func (schedule *CronSchedule) GetMaxRecords() int {
-	if schedule == nil {
-		return 10
-	}
-	return int(pointer.Int32Deref(schedule.MaxRecords, 10))
-}
-
-func (schedule *CronSchedule) GetEnabled() bool {
-	if schedule == nil {
-		return false
-	}
-	return pointer.BoolDeref(schedule.Enabled, false)
-}
-
-func (schedule *CronSchedule) CronString() *string {
-	if schedule == nil {
-		return nil
-	}
-
-	if !pointer.BoolDeref(schedule.Enabled, false) {
-		return nil
-	}
-
-	switch schedule.Type {
-	case HourlyTriggerScheduleEventType:
-		return util.StrPtr("@hourly")
-	case DailyTriggerScheduleEventType:
-		return util.StrPtr("@daily")
-	case WeeklyTriggerScheduleEventType:
-		return util.StrPtr("@weekly")
-	case MonthlyTriggerScheduleEventType:
-		return util.StrPtr("@monthly")
-	case YearlyTriggerScheduleEventType:
-		return util.StrPtr("@yearly")
-	case CronTriggerScheduleEventType:
-		return schedule.Cron
-	}
-
-	return nil
-}
-
 type ContainerLogs []ContainerLog
 
 func (c ContainerLogs) Append(logs []ContainerLog) ContainerLogs {
 	return append(c, logs...)
 }
 
-type RunRecord struct {
-	// ID specifies the unique ID or resource name for the run
-	ID string `json:"id,omitempty" protobuf:"bytes,1,opt,name=id"`
-	// FailureMessage contains the failure produced by the run, if applicable
-	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,2,opt,name=failureMessage"`
-	// ResourceVersion specifies the version of the resource relevant to the run at the time of completion
-	ResourceVersion int32 `json:"resourceVersion,omitempty" protobuf:"varint,3,opt,name=resourceVersion"`
-	// StartedAt specifies the time at which the run started
-	// +kubebuilder:validation:Optional
-	StartedAt *metav1.Time `json:"startedAt,omitempty" protobuf:"bytes,4,opt,name=startedAt"`
-	// CompletedAt specifies the time at which the run was completed
-	// +kubebuilder:validation:Optional
-	CompletedAt *metav1.Time `json:"completedAt,omitempty" protobuf:"bytes,5,opt,name=completedAt"`
-	// Logs contains the logs for all workloads produced by the run
-	Logs ContainerLogs `json:"logs,omitempty" protobuf:"bytes,6,opt,name=logs"`
-}
-
-type RunStatusOld struct {
-	// Last time the job started
-	// +kubebuilder:validation:Optional
-	LastRunAt *metav1.Time `json:"lastRunAt,omitempty" protobuf:"bytes,1,opt,name=lastRunAt"`
-	// The unique ID of the last run created by the schedule.
-	// +kubebuilder:validation:Optional
-	LastRunId *string `json:"lastRunId,omitempty" protobuf:"bytes,2,opt,name=lastRunId"`
-	// The unique ID of the currently active run
-	// +kubebuilder:validation:Optional
-	ActiveRunId *string `json:"activeRunId,omitempty" protobuf:"bytes,3,opt,name=activeRunId"`
-	// The logs of the currently active run
-	// +kubebuilder:validation:Optional
-	ActiveRunLogs ContainerLogs `json:"activeRunLogs,omitempty" protobuf:"bytes,4,opt,name=activeRunLogs"`
-	// RunRecords contains the collection of previously recorded runs
-	// +kubebuilder:validation:Optional
-	RunRecords []RunRecord `json:"runRecords,omitempty" protobuf:"bytes,5,opt,name=runRecords"`
-}
-
-func (status *RunStatusOld) CreateRecord(version, maxRecords int, failureMessage *string) {
-	if status.ActiveRunId == nil {
-		status.ActiveRunLogs = nil
-		return
-	}
-
-	now := metav1.Now()
-	record := RunRecord{
-		ID:              *status.ActiveRunId,
-		FailureMessage:  failureMessage,
-		ResourceVersion: int32(version),
-		Logs:            status.ActiveRunLogs,
-		CompletedAt:     &now,
-	}
-
-	if status.LastRunAt != nil {
-		record.StartedAt = status.LastRunAt
-	}
-
-	status.RunRecords = append(status.RunRecords, record)
-
-	if len(status.RunRecords) > maxRecords {
-		status.RunRecords = status.RunRecords[len(status.RunRecords)-maxRecords:]
-	}
-
-	status.ActiveRunId = nil
-	status.ActiveRunLogs = nil
-}
-
-// RunSpec specifies the configuration for all runs created by the resource
+// RunSpec specifies the configuration for a run-producing resource
 type RunSpec struct {
 	// Timeout specifies the deadline in seconds for a run to complete, after which it will be aborted.
 	// If empty, runs will not have a deadline
 	// +kubebuilder:validation:Optional
 	Timeout *int32 `json:"timeout,omitempty" protobuf:"varint,1,opt,name=timeout"`
 	// MaxPreviousRuns specifies the amount of previous runs to maintain, sorted by their run version.
-	// When a new run is created, any runs with a version below that of the latest version minus
-	// MaxPreviousRuns will be garbage collected. Runs which are still in progress will not be affected
+	// When a new run is created, the amount of completed runs will be garbage collected to the amount
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional
 	MaxPreviousRuns *int32 `json:"maxPreviousRuns,omitempty" protobuf:"varint,2,opt,name=maxPreviousRuns"`
+	// Schedule specifies the schedule for the resource to create new runs
+	// +kubebuilder:validation:Optional
+	Schedule *RunSchedule `json:"schedule,omitempty" protobuf:"bytes,3,opt,name=schedule"`
+}
+
+func (spec *RunSpec) Get() RunSpec {
+	if spec == nil {
+		return RunSpec{}
+	}
+	return *spec
 }
 
 // RunSchedule specifies the schedule for a run to be executed
@@ -1460,8 +1329,14 @@ type RunSchedule struct {
 	Type TriggerScheduleEventType `json:"type,omitempty" protobuf:"bytes,3,opt,name=type"`
 }
 
-// Compute the next run. return nil if the schedule is disabled.
-func (schedule RunSchedule) NextRun() *string {
+func (schedule *RunSchedule) GetEnabled() bool {
+	if schedule == nil {
+		return false
+	}
+	return pointer.BoolDeref(schedule.Enabled, false)
+}
+
+func (schedule *RunSchedule) NextRun() *string {
 	if !pointer.BoolDeref(schedule.Enabled, false) {
 		return nil
 	}
@@ -1496,17 +1371,10 @@ type RunScheduleStatus struct {
 	LastSuccessfulTime *metav1.Time `json:"lastSuccessfulTime,omitempty" protobuf:"bytes,3,opt,name=lastSuccessfulTime"`
 }
 
-// Check if we are due for a run. next run must be set.
-func (runs *RunSchedule) IsDue() bool {
-	return false
-}
-
 func (runs *RunScheduleStatus) Start() {
 	now := metav1.Now()
 	runs.LastScheduleTime = &now
 }
-
-func (runs *RunSchedule) SetNext(nextRun metav1.Time) {}
 
 // RunReference defines a generic reference to any type of run
 type RunReference struct {
@@ -1518,26 +1386,32 @@ type RunReference struct {
 
 // SnapshotReference defines a reference to a specific snapshot for a Dataset
 type SnapshotReference struct {
-	// Dataset specifies the name of the Dataset which the snapshot belongs to
+	// The name of the Dataset which the snapshot belongs to
 	Dataset string `json:"dataset,omitempty" protobuf:"bytes,1,opt,name=dataset"`
-	// Version specifies the version of the snapshot to use. If empty, the latest available snapshot will be used
+	// The version of the snapshot to use. If empty, the latest available snapshot will be used
 	Version *Version `json:"version,omitempty" protobuf:"varint,2,opt,name=version"`
+	// The name of a Dataset Snapshot resource. When specified, takes precedence over Dataset
+	Name *string `json:"name,omitempty" protobuf:"varint,3,opt,name=name"`
 }
 
 // StudyRunReference defines a reference to a specific run for a Study
 type StudyRunReference struct {
-	// Study specifies the name of the Study which the run belongs to
+	// The name of the Study which the run belongs to
 	Study string `json:"study,omitempty" protobuf:"bytes,1,opt,name=study"`
-	// Version specifies the version of the run to use. If empty, the latest available run will be used
+	// The version of the run to use. If empty, the latest available run will be used
 	Version *Version `json:"version,omitempty" protobuf:"varint,2,opt,name=version"`
+	// The name of a Study Run resource. When specified, takes precedence over Study
+	Name *string `json:"name,omitempty" protobuf:"varint,3,opt,name=name"`
 }
 
 // PredictionRunReference defines a reference to a specific run for a Prediction
 type PredictionRunReference struct {
-	// Prediction specifies the name of the Study which the run belongs to
+	// The name of the Study which the run belongs to
 	Prediction string `json:"prediction,omitempty" protobuf:"bytes,1,opt,name=prediction"`
-	// Version specifies the version of the run to use. If empty, the latest available run will be used
+	// The version of the run to use. If empty, the latest available run will be used
 	Version *Version `json:"version,omitempty" protobuf:"varint,2,opt,name=version"`
+	// The name of a Prediction Run resource. When specified, takes precedence over Prediction
+	Name *string `json:"name,omitempty" protobuf:"varint,3,opt,name=name"`
 }
 
 // Version specifies the numerical version of a resource
@@ -1903,9 +1777,10 @@ const (
 	SnapshotVersionLabelKey    = "modela.ai/snapshot-version"
 
 	// Inference
-	DataAppLabelKey    = "modela.ai/dataapp"
-	PredictionLabelKey = "modela.ai/prediction"
-	PredictorLabelKey  = "modela.ai/predictor"
+	DataAppLabelKey       = "modela.ai/dataapp"
+	PredictionLabelKey    = "modela.ai/prediction"
+	PredictionRunLabelKey = "modela.ai/predictionrun"
+	PredictorLabelKey     = "modela.ai/predictor"
 
 	AccountLabelKey       = "modela.ai/account"
 	AlertLabelKey         = "modela.ai/alert"
@@ -1979,7 +1854,7 @@ const (
 type DataLocation struct {
 	// File specifies the location of a flat-file
 	File *FileLocation `json:"file,omitempty" protobuf:"bytes,1,opt,name=file"`
-	// Database specifies the location of a database (and an optional query)
+	// Database specifies the location of data within a database
 	Database *DatabaseLocation `json:"database,omitempty" protobuf:"bytes,2,opt,name=database"`
 	// Web specifies the location of an internet-accessible flat-file
 	Web *WebLocation `json:"web,omitempty" protobuf:"bytes,3,opt,name=web"`
@@ -1988,11 +1863,12 @@ type DataLocation struct {
 }
 
 func (location *DataLocation) Validate(fldPath *field.Path) field.ErrorList {
-	var specCount = 0
+	var specCount, allErrs = 0, field.ErrorList{}
 	if location.File != nil {
 		specCount++
 	}
 	if location.Database != nil {
+		allErrs = append(allErrs, location.Database.Validate(fldPath)...)
 		specCount++
 	}
 	if location.Web != nil {
@@ -2002,9 +1878,9 @@ func (location *DataLocation) Validate(fldPath *field.Path) field.ErrorList {
 		specCount++
 	}
 	if specCount != 1 {
-		return field.ErrorList{field.Invalid(fldPath, location, "Exactly one location specification must be provided")}
+		allErrs = append(allErrs, field.Invalid(fldPath, location, "Exactly one location specification must be provided"))
 	}
-	return nil
+	return allErrs
 }
 
 func (location *DataLocation) Type() DataLocationType {
@@ -2026,24 +1902,28 @@ func (location *DataLocation) Type() DataLocationType {
 }
 
 type DatabaseLocation struct {
-	// ConnectionName specifies the name of the Connection resource containing the credentials to connect to the database
-	// +kubebuilder:default:=""
+	// The name of the Connection resource used to connect to the database
 	// +kubebuilder:validation:Optional
 	ConnectionName string `json:"connectionName,omitempty" protobuf:"bytes,1,opt,name=connectionName"`
-	// The name of a table inside the database
+	// The name of the table to read
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Table *string `json:"table,omitempty" protobuf:"bytes,2,opt,name=table"`
-	// The SQL statement which will be executed to query data from the table specified by Table.
-	// When unspecified, the entire content of the table will be read
+	// The SQL statement to execute
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Sql *string `json:"sql,omitempty" protobuf:"bytes,3,opt,name=sql"`
 }
 
+func (location *DatabaseLocation) Validate(fldPath *field.Path) field.ErrorList {
+	if (location.Table != nil && location.Sql != nil) || (location.Table == nil && location.Sql == nil) {
+		return field.ErrorList{field.Invalid(fldPath, location, "Exactly one database location type (table, sql) must be specified")}
+	}
+	return nil
+}
+
 type WebLocation struct {
-	//  URL specifies the external location (HTTP or Git) that will be queried
-	// and then stored as flat-file by the resource which specifies the WebLocation
+	// The internet-accessible URL of a file to download
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	URL string `json:"url,omitempty" protobuf:"bytes,1,opt,name=url"`
@@ -2056,7 +1936,7 @@ type ResourceLocation struct {
 	// The name of the resource
 	Name string `json:"name,omitempty" protobuf:"bytes,2,opt,name=name"`
 	// The namespace of the resource. When referencing a Dataset Snapshot, default to the Data Product of the specifying resource.
-	// When referencing a Public Dataset, default to the built-in catalog namespace
+	// When referencing a Public Dataset, default to the built-in catalog namespace (modela-catalog)
 	Namespace *string `json:"namespace,omitempty" protobuf:"bytes,3,opt,name=namespace"`
 }
 

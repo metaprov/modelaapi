@@ -3,7 +3,6 @@ package v1alpha1
 import (
 	"fmt"
 	"github.com/gogo/protobuf/proto"
-	"strconv"
 	strings "strings"
 
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
@@ -78,6 +77,14 @@ func (predictionrun *PredictionRun) GetCondition(condType PredictionRunCondition
 	}
 }
 
+func (predictionrun *PredictionRun) Ready() bool {
+	return predictionrun.GetCondition(PredictionRunReady).Status == metav1.ConditionTrue
+}
+
+func (predictionrun *PredictionRun) Prepared() bool {
+	return predictionrun.GetCondition(PredictionRunPrepared).Status == metav1.ConditionTrue
+}
+
 func (predictionrun *PredictionRun) Aborted() bool {
 	return predictionrun.GetCondition(PredictionRunAborted).Status == metav1.ConditionTrue
 }
@@ -90,13 +97,74 @@ func (predictionrun *PredictionRun) UnitTested() bool {
 	return predictionrun.GetCondition(PredictionRunUnitTested).Status == metav1.ConditionTrue
 }
 
+func (predictionrun *PredictionRun) Paused() bool {
+	return predictionrun.GetCondition(PredictionRunPaused).Status == metav1.ConditionTrue
+}
+
+func (predictionrun *PredictionRun) Failed() bool {
+	return predictionrun.Status.Phase == PredictionRunPhaseFailed
+}
+
 func (predictionrun *PredictionRun) RootURI() string {
-	return fmt.Sprintf("dataproducts/%s/predictions/%s/runs/%s",
-		predictionrun.Namespace, predictionrun.Name, strconv.Itoa(int(predictionrun.Status.RunVersion)))
+	return fmt.Sprintf("dataproducts/%s/predictions/%s/predictionruns/%s", predictionrun.Namespace, predictionrun.Spec.PredictionName, predictionrun.Name)
+}
+
+func (predictionrun *PredictionRun) ExternalStatusUpdated() bool {
+	return predictionrun.GetCondition(PredictionRunExternalStatusUpdated).Status == metav1.ConditionTrue
 }
 
 func (predictionrun *PredictionRun) ManifestURI() string {
 	return fmt.Sprintf("%s/manifest.json", predictionrun.RootURI())
+}
+
+func (predictionrun *PredictionRun) Deleted() bool {
+	return !predictionrun.ObjectMeta.DeletionTimestamp.IsZero()
+}
+
+func (predictionrun *PredictionRun) ReachedMaxTime(prediction *Prediction) bool {
+	timeout, override := prediction.Spec.Run.Get().Timeout, predictionrun.Spec.Timeout
+	if timeout == nil && override == nil {
+		return false
+	} else if override != nil {
+		timeout = override
+	}
+	duration := metav1.Now().Unix() - predictionrun.CreationTimestamp.Unix()
+	return int32(duration/60) >= *timeout
+}
+
+/////// Preparing Condition ///////
+
+func (predictionrun *PredictionRun) MarkPrepareFailed(reason string, msg string) {
+	predictionrun.CreateOrUpdateCondition(metav1.Condition{
+		Type:    string(PredictionRunPrepared),
+		Status:  metav1.ConditionFalse,
+		Reason:  reason,
+		Message: msg,
+	})
+	predictionrun.Status.Phase = PredictionRunPhaseFailed
+	predictionrun.Status.FailureMessage = util.StrPtr(fmt.Sprintf("Prepare failed: %s", msg))
+	now := metav1.Now()
+	if predictionrun.Status.CompletedAt == nil {
+		predictionrun.Status.CompletedAt = &now
+	}
+}
+
+func (predictionrun *PredictionRun) MarkPrepareSuccess() {
+	predictionrun.CreateOrUpdateCondition(metav1.Condition{
+		Type:   string(PredictionRunPrepared),
+		Status: metav1.ConditionTrue,
+		Reason: string(PredictionRunPhasePrepared),
+	})
+	predictionrun.Status.Phase = PredictionRunPhasePrepared
+}
+
+func (predictionrun *PredictionRun) MarkPreparing() {
+	predictionrun.CreateOrUpdateCondition(metav1.Condition{
+		Type:   string(PredictionRunPrepared),
+		Status: metav1.ConditionFalse,
+		Reason: string(PredictionRunPhasePreparing),
+	})
+	predictionrun.Status.Phase = PredictionRunPhasePreparing
 }
 
 /////// Pending Condition ///////
@@ -189,6 +257,36 @@ func (predictionrun *PredictionRun) MarkAborted() {
 		Reason: string(PredictionRunAborted),
 	})
 	predictionrun.Status.Phase = PredictionRunPhaseAborted
+}
+
+/////// External Status Updated Condition ///////
+
+func (predictionrun *PredictionRun) MarkExternalStatusNotUpdated() {
+	predictionrun.CreateOrUpdateCondition(metav1.Condition{
+		Type:   string(PredictionRunExternalStatusUpdated),
+		Status: metav1.ConditionFalse,
+		Reason: "ExternalStatusStale",
+	})
+}
+
+func (predictionrun *PredictionRun) MarkExternalStatusUpdated() {
+	predictionrun.CreateOrUpdateCondition(metav1.Condition{
+		Type:   string(PredictionRunExternalStatusUpdated),
+		Status: metav1.ConditionTrue,
+		Reason: string(PredictionRunExternalStatusUpdated),
+	})
+}
+
+func (predictionrun *PredictionRun) ToRunReference() catalog.RunReference {
+	return catalog.RunReference{Name: predictionrun.Name, Version: predictionrun.Status.RunVersion}
+}
+
+func (predictionrun *PredictionRun) HasScheduleTrigger() bool {
+	trigger, ok := predictionrun.Labels[catalog.TriggerLabelKey]
+	if ok {
+		return trigger == string(catalog.ScheduleTriggerType)
+	}
+	return false
 }
 
 /////// Alerts ///////

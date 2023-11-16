@@ -21,22 +21,22 @@ import (
 	ctrl "sigs.k8s.io/controller-runtime"
 )
 
-func (dataset *DatasetSnapshot) SetupWebhookWithManager(mgr ctrl.Manager) error {
+func (snapshot *DatasetSnapshot) SetupWebhookWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewWebhookManagedBy(mgr).
-		For(dataset).
+		For(snapshot).
 		Complete()
 }
 
-func (dataset *DatasetSnapshot) ReportName() string {
-	return "dataset-report-" + dataset.Name
+func (snapshot *DatasetSnapshot) ReportName() string {
+	return "snapshot-report-" + snapshot.Name
 }
 
-func (dataset *DatasetSnapshot) HasFinalizer() bool {
-	return util.HasFin(&dataset.ObjectMeta, data.GroupName)
+func (snapshot *DatasetSnapshot) HasFinalizer() bool {
+	return util.HasFin(&snapshot.ObjectMeta, data.GroupName)
 }
-func (dataset *DatasetSnapshot) AddFinalizer() { util.AddFin(&dataset.ObjectMeta, data.GroupName) }
-func (dataset *DatasetSnapshot) RemoveFinalizer() {
-	util.RemoveFin(&dataset.ObjectMeta, data.GroupName)
+func (snapshot *DatasetSnapshot) AddFinalizer() { util.AddFin(&snapshot.ObjectMeta, data.GroupName) }
+func (snapshot *DatasetSnapshot) RemoveFinalizer() {
+	util.RemoveFin(&snapshot.ObjectMeta, data.GroupName)
 }
 
 //==============================================================================
@@ -44,27 +44,27 @@ func (dataset *DatasetSnapshot) RemoveFinalizer() {
 //==============================================================================
 
 // Merge or update condition
-func (dataset *DatasetSnapshot) CreateOrUpdateCondition(cond metav1.Condition) {
-	i := dataset.GetConditionIndex(cond.Type)
+func (snapshot *DatasetSnapshot) CreateOrUpdateCondition(cond metav1.Condition) {
+	i := snapshot.GetConditionIndex(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
 		cond.LastTransitionTime = now
-		dataset.Status.Conditions = append(dataset.Status.Conditions, cond)
+		snapshot.Status.Conditions = append(snapshot.Status.Conditions, cond)
 		return
 	}
 	// else we already have the condition, update it
-	current := dataset.Status.Conditions[i]
+	current := snapshot.Status.Conditions[i]
 	current.Message = cond.Message
 	current.Reason = cond.Reason
 	current.LastTransitionTime = now
 	if current.Status != cond.Status {
 		current.Status = cond.Status
 	}
-	dataset.Status.Conditions[i] = current
+	snapshot.Status.Conditions[i] = current
 }
 
-func (dataset *DatasetSnapshot) GetConditionIndex(t string) int {
-	for i, v := range dataset.Status.Conditions {
+func (snapshot *DatasetSnapshot) GetConditionIndex(t string) int {
+	for i, v := range snapshot.Status.Conditions {
 		if v.Type == t {
 			return i
 		}
@@ -72,8 +72,8 @@ func (dataset *DatasetSnapshot) GetConditionIndex(t string) int {
 	return -1
 }
 
-func (dataset *DatasetSnapshot) GetCondition(condType DatasetSnapshotConditionType) metav1.Condition {
-	for _, v := range dataset.Status.Conditions {
+func (snapshot *DatasetSnapshot) GetCondition(condType DatasetSnapshotConditionType) metav1.Condition {
+	for _, v := range snapshot.Status.Conditions {
 		if v.Type == string(condType) {
 			return v
 		}
@@ -88,68 +88,87 @@ func (dataset *DatasetSnapshot) GetCondition(condType DatasetSnapshotConditionTy
 
 }
 
-func (dataset *DatasetSnapshot) Ready() bool {
-	return dataset.GetCondition(DatasetSnapshotReady).Status == metav1.ConditionTrue
+func (snapshot *DatasetSnapshot) Ready() bool {
+	return snapshot.GetCondition(DatasetSnapshotReady).Status == metav1.ConditionTrue
 }
 
-func (dataset *DatasetSnapshot) Prepared() bool {
-	return dataset.GetCondition(DatasetSnapshotPrepared).Status == metav1.ConditionTrue
+func (snapshot *DatasetSnapshot) Prepared() bool {
+	return snapshot.GetCondition(DatasetSnapshotPrepared).Status == metav1.ConditionTrue
 }
 
-func (dataset *DatasetSnapshot) UnitTested() bool {
-	return dataset.GetCondition(DatasetSnapshotUnitTested).Status == metav1.ConditionTrue
+func (snapshot *DatasetSnapshot) UnitTested() bool {
+	return snapshot.GetCondition(DatasetSnapshotUnitTested).Status == metav1.ConditionTrue
 }
 
-func (dataset *DatasetSnapshot) Snapshotted() bool {
-	return dataset.GetCondition(DatasetSnapshotSnapshotted).Status == metav1.ConditionTrue
+func (snapshot *DatasetSnapshot) Snapshotted() bool {
+	return snapshot.GetCondition(DatasetSnapshotSnapshotTaken).Status == metav1.ConditionTrue
 }
 
-func (dataset *DatasetSnapshot) Profiled() bool {
-	return dataset.GetCondition(DatasetSnapshotProfiled).Status == metav1.ConditionTrue
+func (snapshot *DatasetSnapshot) Profiled() bool {
+	return snapshot.GetCondition(DatasetSnapshotProfiled).Status == metav1.ConditionTrue
 }
 
-func (dataset *DatasetSnapshot) Reported() bool {
-	return dataset.GetCondition(DatasetSnapshotReported).Status == metav1.ConditionTrue
+func (snapshot *DatasetSnapshot) Reported() bool {
+	return snapshot.GetCondition(DatasetSnapshotReported).Status == metav1.ConditionTrue
 }
 
-func (dataset *DatasetSnapshot) Generated() bool {
-	return dataset.GetCondition(DatasetSnapshotGenerated).Status == metav1.ConditionTrue
+func (snapshot *DatasetSnapshot) Generated() bool {
+	return snapshot.GetCondition(DatasetSnapshotGenerated).Status == metav1.ConditionTrue
 }
 
-func (dataset *DatasetSnapshot) Aborted() bool {
-	return dataset.GetCondition(DatasetSnapshotAborted).Status == metav1.ConditionTrue
+func (snapshot *DatasetSnapshot) Aborted() bool {
+	return snapshot.GetCondition(DatasetSnapshotAborted).Status == metav1.ConditionTrue
 }
 
-func (dataset *DatasetSnapshot) Paused() bool {
-	return dataset.GetCondition(DatasetSnapshotPaused).Status == metav1.ConditionTrue
+func (snapshot *DatasetSnapshot) Paused() bool {
+	return snapshot.GetCondition(DatasetSnapshotPaused).Status == metav1.ConditionTrue
 }
 
-func (dataset *DatasetSnapshot) ExternalStatusUpdated() bool {
-	return dataset.GetCondition(DatasetSnapshotExternalStatusUpdated).Status == metav1.ConditionTrue
+func (snapshot *DatasetSnapshot) ExternalStatusUpdated() bool {
+	return snapshot.GetCondition(DatasetSnapshotExternalStatusUpdated).Status == metav1.ConditionTrue
 }
 
-func (dataset *DatasetSnapshot) RootURI() string {
-	return fmt.Sprintf("dataproducts/%s/datasets/%s/datasetsnapshots/%s", dataset.Namespace, dataset.Spec.DatasetName, dataset.Name)
+func (snapshot *DatasetSnapshot) Deleted() bool {
+	return !snapshot.ObjectMeta.DeletionTimestamp.IsZero()
 }
 
-func (dataset *DatasetSnapshot) ReportURI() string {
-	return fmt.Sprintf("%s/%s-report.pdf", dataset.RootURI(), dataset.Name)
+func (snapshot *DatasetSnapshot) Failed() bool {
+	return snapshot.Status.Phase == DatasetSnapshotPhaseFailed
 }
 
-func (dataset *DatasetSnapshot) ManifestURI() string {
-	return fmt.Sprintf("%s/manifest.json", dataset.RootURI())
+func (snapshot *DatasetSnapshot) RootURI() string {
+	return fmt.Sprintf("dataproducts/%s/datasets/%s/datasetsnapshots/%s", snapshot.Namespace, snapshot.Spec.DatasetName, snapshot.Name)
 }
 
-func (dataset *DatasetSnapshot) DatasetManifestURI() string {
-	return fmt.Sprintf("%s/dataset.json", dataset.RootURI())
+func (snapshot *DatasetSnapshot) ReportURI() string {
+	return fmt.Sprintf("%s/%s-report.pdf", snapshot.RootURI(), snapshot.Name)
 }
 
-func (dataset *DatasetSnapshot) DataSourceManifestURI() string {
-	return fmt.Sprintf("%s/datasource.json", dataset.RootURI())
+func (snapshot *DatasetSnapshot) ManifestURI() string {
+	return fmt.Sprintf("%s/manifest.json", snapshot.RootURI())
 }
 
-func (dataset *DatasetSnapshot) ProfileURI() string {
-	return fmt.Sprintf("%s/profile/dataset_profile.json", dataset.RootURI())
+func (snapshot *DatasetSnapshot) DatasetManifestURI() string {
+	return fmt.Sprintf("%s/snapshot.json", snapshot.RootURI())
+}
+
+func (snapshot *DatasetSnapshot) DataSourceManifestURI() string {
+	return fmt.Sprintf("%s/datasource.json", snapshot.RootURI())
+}
+
+func (snapshot *DatasetSnapshot) ProfileURI() string {
+	return fmt.Sprintf("%s/profile/dataset_profile.json", snapshot.RootURI())
+}
+
+func (snapshot *DatasetSnapshot) ReachedMaxTime(dataset *Dataset) bool {
+	timeout, override := dataset.Spec.Run.Get().Timeout, snapshot.Spec.Timeout
+	if timeout == nil && override == nil {
+		return false
+	} else if override != nil {
+		timeout = override
+	}
+	duration := metav1.Now().Unix() - snapshot.CreationTimestamp.Unix()
+	return int32(duration/60) >= *timeout
 }
 
 func ParseDatasetSnapshotYaml(content []byte) (*DatasetSnapshot, error) {
@@ -161,312 +180,304 @@ func ParseDatasetSnapshotYaml(content []byte) (*DatasetSnapshot, error) {
 	return r, nil
 }
 
-func (dataset *DatasetSnapshot) MarkSkewColumns() {
-	for _, v := range dataset.Status.Statistics.Features {
+func (snapshot *DatasetSnapshot) MarkSkewColumns() {
+	for _, v := range snapshot.Status.Statistics.Features {
 		if v.Skewness > 0.5 || v.Skewness < -0.5 {
 			v.Skewed = true
 		}
 	}
 }
 
-func (dataset *DatasetSnapshot) RefreshProgress() {
-	if dataset.Ready() || dataset.Failed() || dataset.Aborted() {
-		dataset.Status.Progress = 100
-	} else if dataset.Reported() {
-		dataset.Status.Progress = 80
-	} else if dataset.Profiled() {
-		dataset.Status.Progress = 60
-	} else if dataset.UnitTested() {
-		dataset.Status.Progress = 60
-	} else if dataset.Snapshotted() {
-		dataset.Status.Progress = 40
-	} else if dataset.Generated() {
-		dataset.Status.Progress = 40
-	} else if dataset.Prepared() {
-		dataset.Status.Progress = 20
+func (snapshot *DatasetSnapshot) RefreshProgress() {
+	if snapshot.Ready() || snapshot.Failed() || snapshot.Aborted() {
+		snapshot.Status.Progress = 100
+	} else if snapshot.Reported() {
+		snapshot.Status.Progress = 80
+	} else if snapshot.Profiled() {
+		snapshot.Status.Progress = 60
+	} else if snapshot.UnitTested() {
+		snapshot.Status.Progress = 60
+	} else if snapshot.Snapshotted() {
+		snapshot.Status.Progress = 40
+	} else if snapshot.Generated() {
+		snapshot.Status.Progress = 40
+	} else if snapshot.Prepared() {
+		snapshot.Status.Progress = 20
 	}
 }
 
-func (dataset *DatasetSnapshot) ReachedMaxTime() bool {
-	if dataset.Spec.Timeout == nil {
-		return false
-	}
-	duration := metav1.Now().Unix() - dataset.CreationTimestamp.Unix()
-	return int32(duration/60) >= int32(*dataset.Spec.Timeout)
-}
-
-func (dataset *DatasetSnapshot) MarkAborted() {
-	dataset.CreateOrUpdateCondition(metav1.Condition{
+func (snapshot *DatasetSnapshot) MarkAborted() {
+	snapshot.CreateOrUpdateCondition(metav1.Condition{
 		Type:   string(DatasetSnapshotAborted),
 		Status: metav1.ConditionTrue,
 		Reason: string(DatasetSnapshotAborted),
 	})
-	dataset.Status.Phase = DatasetSnapshotPhaseAborted
-	dataset.RefreshProgress()
+	snapshot.Status.Phase = DatasetSnapshotPhaseAborted
+	snapshot.RefreshProgress()
 }
 
 /////// Preparing Condition ///////
 
-func (dataset *DatasetSnapshot) MarkPrepareFailed(reason string, msg string) {
-	dataset.CreateOrUpdateCondition(metav1.Condition{
+func (snapshot *DatasetSnapshot) MarkPrepareFailed(reason string, msg string) {
+	snapshot.CreateOrUpdateCondition(metav1.Condition{
 		Type:    string(DatasetSnapshotPrepared),
 		Status:  metav1.ConditionFalse,
 		Reason:  reason,
 		Message: msg,
 	})
-	dataset.Status.Phase = DatasetSnapshotPhaseFailed
-	dataset.Status.FailureMessage = util.StrPtr(fmt.Sprintf("Prepare failed: %s", msg))
-	dataset.RefreshProgress()
+	snapshot.Status.Phase = DatasetSnapshotPhaseFailed
+	snapshot.Status.FailureMessage = util.StrPtr(fmt.Sprintf("Prepare failed: %s", msg))
+	snapshot.RefreshProgress()
 	now := metav1.Now()
-	if dataset.Status.CompletedAt == nil {
-		dataset.Status.CompletedAt = &now
+	if snapshot.Status.CompletedAt == nil {
+		snapshot.Status.CompletedAt = &now
 	}
 }
 
-func (dataset *DatasetSnapshot) MarkPrepareSuccess() {
-	dataset.CreateOrUpdateCondition(metav1.Condition{
+func (snapshot *DatasetSnapshot) MarkPrepareSuccess() {
+	snapshot.CreateOrUpdateCondition(metav1.Condition{
 		Type:   string(DatasetSnapshotPrepared),
 		Status: metav1.ConditionTrue,
 		Reason: string(DatasetSnapshotPhasePrepared),
 	})
-	dataset.Status.Phase = DatasetSnapshotPhasePrepared
-	dataset.RefreshProgress()
+	snapshot.Status.Phase = DatasetSnapshotPhasePrepared
+	snapshot.RefreshProgress()
 }
 
-func (dataset *DatasetSnapshot) MarkPreparing() {
-	dataset.CreateOrUpdateCondition(metav1.Condition{
+func (snapshot *DatasetSnapshot) MarkPreparing() {
+	snapshot.CreateOrUpdateCondition(metav1.Condition{
 		Type:   string(DatasetSnapshotPrepared),
 		Status: metav1.ConditionFalse,
 		Reason: string(DatasetSnapshotPhasePreparing),
 	})
-	dataset.Status.Phase = DatasetSnapshotPhasePreparing
-	dataset.RefreshProgress()
+	snapshot.Status.Phase = DatasetSnapshotPhasePreparing
+	snapshot.RefreshProgress()
 }
 
 /////// Snapshot Condition ///////
 
-func (dataset *DatasetSnapshot) MarkSnapshotFailed(reason string, msg string) {
-	dataset.CreateOrUpdateCondition(metav1.Condition{
-		Type:    string(DatasetSnapshotSnapshotted),
+func (snapshot *DatasetSnapshot) MarkSnapshotFailed(reason string, msg string) {
+	snapshot.CreateOrUpdateCondition(metav1.Condition{
+		Type:    string(DatasetSnapshotSnapshotTaken),
 		Status:  metav1.ConditionFalse,
 		Reason:  reason,
 		Message: msg,
 	})
-	dataset.Status.Phase = DatasetSnapshotPhaseFailed
-	dataset.Status.FailureMessage = util.StrPtr(fmt.Sprintf("Snapshot failed: %s", msg))
-	dataset.RefreshProgress()
+	snapshot.Status.Phase = DatasetSnapshotPhaseFailed
+	snapshot.Status.FailureMessage = util.StrPtr(fmt.Sprintf("Snapshot failed: %s", msg))
+	snapshot.RefreshProgress()
 	now := metav1.Now()
-	if dataset.Status.CompletedAt == nil {
-		dataset.Status.CompletedAt = &now
+	if snapshot.Status.CompletedAt == nil {
+		snapshot.Status.CompletedAt = &now
 	}
 
 }
 
-func (dataset *DatasetSnapshot) MarkSnapshotSuccess() {
-	dataset.CreateOrUpdateCondition(metav1.Condition{
-		Type:   string(DatasetSnapshotSnapshotted),
+func (snapshot *DatasetSnapshot) MarkSnapshotSuccess() {
+	snapshot.CreateOrUpdateCondition(metav1.Condition{
+		Type:   string(DatasetSnapshotSnapshotTaken),
 		Status: metav1.ConditionTrue,
 		Reason: string(DatasetSnapshotPhaseSnapshotSuccess),
 	})
-	dataset.Status.Phase = DatasetSnapshotPhaseSnapshotSuccess
-	dataset.RefreshProgress()
+	snapshot.Status.Phase = DatasetSnapshotPhaseSnapshotSuccess
+	snapshot.RefreshProgress()
 }
 
-func (dataset *DatasetSnapshot) MarkTakingSnapshot() {
-	dataset.CreateOrUpdateCondition(metav1.Condition{
-		Type:   string(DatasetSnapshotSnapshotted),
+func (snapshot *DatasetSnapshot) MarkTakingSnapshot() {
+	snapshot.CreateOrUpdateCondition(metav1.Condition{
+		Type:   string(DatasetSnapshotSnapshotTaken),
 		Status: metav1.ConditionFalse,
 		Reason: string(DatasetSnapshotPhaseSnapshotRunning),
 	})
-	dataset.Status.Phase = DatasetSnapshotPhaseSnapshotRunning
-	dataset.RefreshProgress()
+	snapshot.Status.Phase = DatasetSnapshotPhaseSnapshotRunning
+	snapshot.RefreshProgress()
 }
 
 /////// Group Lifecycle ///////
 
-func (dataset *DatasetSnapshot) Grouped() bool {
-	return dataset.GetCondition(DatasetSnapshotGrouped).Status == metav1.ConditionTrue
+func (snapshot *DatasetSnapshot) Grouped() bool {
+	return snapshot.GetCondition(DatasetSnapshotGrouped).Status == metav1.ConditionTrue
 }
 
-func (dataset *DatasetSnapshot) IndexFileKey() string {
-	return dataset.RootURI() + "/" + "groups.json"
+func (snapshot *DatasetSnapshot) IndexFileKey() string {
+	return snapshot.RootURI() + "/" + "groups.json"
 }
 
-func (dataset *DatasetSnapshot) WorkerIndexFileKey(workerIndex int, task string) string {
-	return fmt.Sprintf("%s/%s_%d.json", dataset.RootURI(), task, workerIndex)
+func (snapshot *DatasetSnapshot) WorkerIndexFileKey(workerIndex int, task string) string {
+	return fmt.Sprintf("%s/%s_%d.json", snapshot.RootURI(), task, workerIndex)
 }
 
-func (dataset *DatasetSnapshot) TaskIndexFileKey(task string) string {
-	return fmt.Sprintf("%s/%s.json", dataset.RootURI(), task)
+func (snapshot *DatasetSnapshot) TaskIndexFileKey(task string) string {
+	return fmt.Sprintf("%s/%s.json", snapshot.RootURI(), task)
 }
 
-func (dataset *DatasetSnapshot) GroupsFolder() string {
-	return dataset.RootURI() + "/groups"
+func (snapshot *DatasetSnapshot) GroupsFolder() string {
+	return snapshot.RootURI() + "/groups"
 }
 
-func (dataset *DatasetSnapshot) GroupFolder(keys []string) string {
-	return path.Join(dataset.GroupsFolder(), path.Join(keys...))
+func (snapshot *DatasetSnapshot) GroupFolder(keys []string) string {
+	return path.Join(snapshot.GroupsFolder(), path.Join(keys...))
 }
 
-func (dataset *DatasetSnapshot) GroupDataFolder(keys []string) string {
-	return dataset.GroupFolder(keys) + "/data"
+func (snapshot *DatasetSnapshot) GroupDataFolder(keys []string) string {
+	return snapshot.GroupFolder(keys) + "/data"
 }
 
-func (dataset *DatasetSnapshot) GroupDataFile(keys []string) string {
-	return dataset.GroupDataFolder(keys) + "/raw.csv"
+func (snapshot *DatasetSnapshot) GroupDataFile(keys []string) string {
+	return snapshot.GroupDataFolder(keys) + "/raw.csv"
 }
 
-func (dataset *DatasetSnapshot) GroupProfileFolder(keys []string) string {
-	return dataset.GroupFolder(keys) + "/profile"
+func (snapshot *DatasetSnapshot) GroupProfileFolder(keys []string) string {
+	return snapshot.GroupFolder(keys) + "/profile"
 }
 
-func (dataset *DatasetSnapshot) GroupReportFile(keys []string) string {
-	return dataset.GroupFolder(keys) + "/" + dataset.ReportName() + ".pdf"
+func (snapshot *DatasetSnapshot) GroupReportFile(keys []string) string {
+	return snapshot.GroupFolder(keys) + "/" + snapshot.ReportName() + ".pdf"
 }
 
-func (dataset *DatasetSnapshot) GroupForecastFile(keys []string) string {
-	return dataset.GroupFolder(keys) + "/forecasts/forecast.csv"
+func (snapshot *DatasetSnapshot) GroupForecastFile(keys []string) string {
+	return snapshot.GroupFolder(keys) + "/forecasts/forecast.csv"
 }
 
 /////// Group Condition ///////
 
-func (dataset *DatasetSnapshot) MarkGroupFailed(reason string, msg string) {
-	dataset.CreateOrUpdateCondition(metav1.Condition{
+func (snapshot *DatasetSnapshot) MarkGroupFailed(reason string, msg string) {
+	snapshot.CreateOrUpdateCondition(metav1.Condition{
 		Type:    string(DatasetSnapshotGrouped),
 		Status:  metav1.ConditionFalse,
 		Reason:  reason,
 		Message: msg,
 	})
-	dataset.Status.Phase = DatasetSnapshotPhaseFailed
-	dataset.Status.FailureMessage = util.StrPtr(fmt.Sprintf("Group by failed: %s", msg))
-	dataset.RefreshProgress()
+	snapshot.Status.Phase = DatasetSnapshotPhaseFailed
+	snapshot.Status.FailureMessage = util.StrPtr(fmt.Sprintf("Group by failed: %s", msg))
+	snapshot.RefreshProgress()
 	now := metav1.Now()
-	if dataset.Status.CompletedAt == nil {
-		dataset.Status.CompletedAt = &now
+	if snapshot.Status.CompletedAt == nil {
+		snapshot.Status.CompletedAt = &now
 	}
 
 }
 
-func (dataset *DatasetSnapshot) MarkGroupSuccess() {
-	dataset.CreateOrUpdateCondition(metav1.Condition{
+func (snapshot *DatasetSnapshot) MarkGroupSuccess() {
+	snapshot.CreateOrUpdateCondition(metav1.Condition{
 		Type:   string(DatasetSnapshotGrouped),
 		Status: metav1.ConditionTrue,
 		Reason: string(DatasetSnapshotGrouped),
 	})
-	dataset.Status.Phase = DatasetSnapshotPhaseGrouped
-	dataset.RefreshProgress()
+	snapshot.Status.Phase = DatasetSnapshotPhaseGrouped
+	snapshot.RefreshProgress()
 }
 
-func (dataset *DatasetSnapshot) MarkGrouping() {
-	dataset.CreateOrUpdateCondition(metav1.Condition{
+func (snapshot *DatasetSnapshot) MarkGrouping() {
+	snapshot.CreateOrUpdateCondition(metav1.Condition{
 		Type:   string(DatasetSnapshotGrouped),
 		Status: metav1.ConditionFalse,
 		Reason: string(DatasetSnapshotPhaseGrouping),
 	})
-	dataset.Status.Phase = DatasetSnapshotPhaseGrouping
-	dataset.RefreshProgress()
+	snapshot.Status.Phase = DatasetSnapshotPhaseGrouping
+	snapshot.RefreshProgress()
 }
 
 /////// Unit Test Condition ///////
 
-func (dataset *DatasetSnapshot) MarkUnitTestFailed(reason string, msg string) {
-	dataset.CreateOrUpdateCondition(metav1.Condition{
+func (snapshot *DatasetSnapshot) MarkUnitTestFailed(reason string, msg string) {
+	snapshot.CreateOrUpdateCondition(metav1.Condition{
 		Type:    string(DatasetSnapshotUnitTested),
 		Status:  metav1.ConditionFalse,
 		Reason:  reason,
 		Message: msg,
 	})
 
-	dataset.Status.Phase = DatasetSnapshotPhaseFailed
-	dataset.Status.FailureMessage = util.StrPtr(fmt.Sprintf("Unit test failed: %s", msg))
-	dataset.RefreshProgress()
+	snapshot.Status.Phase = DatasetSnapshotPhaseFailed
+	snapshot.Status.FailureMessage = util.StrPtr(fmt.Sprintf("Unit test failed: %s", msg))
+	snapshot.RefreshProgress()
 	now := metav1.Now()
-	if dataset.Status.CompletedAt == nil {
-		dataset.Status.CompletedAt = &now
+	if snapshot.Status.CompletedAt == nil {
+		snapshot.Status.CompletedAt = &now
 	}
 }
 
-func (dataset *DatasetSnapshot) MarkUnitTested() {
-	dataset.CreateOrUpdateCondition(metav1.Condition{
+func (snapshot *DatasetSnapshot) MarkUnitTested() {
+	snapshot.CreateOrUpdateCondition(metav1.Condition{
 		Type:   string(DatasetSnapshotUnitTested),
 		Status: metav1.ConditionTrue,
 		Reason: string(DatasetSnapshotUnitTested),
 	})
-	dataset.RefreshProgress()
+	snapshot.RefreshProgress()
 }
 
-func (dataset *DatasetSnapshot) MarkUnitTesting() {
-	dataset.CreateOrUpdateCondition(metav1.Condition{
+func (snapshot *DatasetSnapshot) MarkUnitTesting() {
+	snapshot.CreateOrUpdateCondition(metav1.Condition{
 		Type:   string(DatasetSnapshotUnitTested),
 		Status: metav1.ConditionFalse,
 		Reason: string(DatasetSnapshotPhaseUnitTesting),
 	})
-	dataset.Status.Phase = DatasetSnapshotPhaseUnitTesting
-	dataset.RefreshProgress()
+	snapshot.Status.Phase = DatasetSnapshotPhaseUnitTesting
+	snapshot.RefreshProgress()
 }
 
 /////// Generating Condition ///////
 
-func (dataset *DatasetSnapshot) MarkGenerating() {
-	dataset.CreateOrUpdateCondition(metav1.Condition{
+func (snapshot *DatasetSnapshot) MarkGenerating() {
+	snapshot.CreateOrUpdateCondition(metav1.Condition{
 		Type:   string(DatasetSnapshotGenerated),
 		Status: metav1.ConditionFalse,
 		Reason: string(DatasetSnapshotPhaseGenerating),
 	})
-	dataset.Status.Phase = DatasetSnapshotPhaseGenerating
-	dataset.RefreshProgress()
+	snapshot.Status.Phase = DatasetSnapshotPhaseGenerating
+	snapshot.RefreshProgress()
 }
 
-func (dataset *DatasetSnapshot) MarkGenerated() {
-	dataset.CreateOrUpdateCondition(metav1.Condition{
+func (snapshot *DatasetSnapshot) MarkGenerated() {
+	snapshot.CreateOrUpdateCondition(metav1.Condition{
 		Type:   string(DatasetSnapshotGenerated),
 		Status: metav1.ConditionTrue,
 		Reason: string(DatasetSnapshotGenerated),
 	})
-	dataset.Status.Phase = DatasetSnapshotPhaseGenerateSuccess
-	dataset.RefreshProgress()
+	snapshot.Status.Phase = DatasetSnapshotPhaseGenerateSuccess
+	snapshot.RefreshProgress()
 }
 
-func (dataset *DatasetSnapshot) MarkGeneratedFailed(reason string, msg string) {
-	dataset.CreateOrUpdateCondition(metav1.Condition{
+func (snapshot *DatasetSnapshot) MarkGeneratedFailed(reason string, msg string) {
+	snapshot.CreateOrUpdateCondition(metav1.Condition{
 		Type:    string(DatasetSnapshotGenerated),
 		Status:  metav1.ConditionFalse,
 		Reason:  reason,
 		Message: msg,
 	})
-	dataset.Status.Phase = DatasetSnapshotPhaseFailed
-	dataset.Status.FailureMessage = util.StrPtr(fmt.Sprintf("Generation failed: %s", msg))
-	dataset.RefreshProgress()
+	snapshot.Status.Phase = DatasetSnapshotPhaseFailed
+	snapshot.Status.FailureMessage = util.StrPtr(fmt.Sprintf("Generation failed: %s", msg))
+	snapshot.RefreshProgress()
 	now := metav1.Now()
-	if dataset.Status.CompletedAt == nil {
-		dataset.Status.CompletedAt = &now
+	if snapshot.Status.CompletedAt == nil {
+		snapshot.Status.CompletedAt = &now
 	}
 }
 
 /////// Reporting Condition ///////
 
-func (dataset *DatasetSnapshot) MarkReporting() {
-	dataset.CreateOrUpdateCondition(metav1.Condition{
+func (snapshot *DatasetSnapshot) MarkReporting() {
+	snapshot.CreateOrUpdateCondition(metav1.Condition{
 		Type:   string(DatasetSnapshotReported),
 		Status: metav1.ConditionFalse,
 		Reason: string(DatasetSnapshotPhaseReportRunning),
 	})
-	dataset.Status.Phase = DatasetSnapshotPhaseReportRunning
-	dataset.RefreshProgress()
+	snapshot.Status.Phase = DatasetSnapshotPhaseReportRunning
+	snapshot.RefreshProgress()
 }
 
-func (dataset *DatasetSnapshot) MarkReported() {
-	dataset.CreateOrUpdateCondition(metav1.Condition{
+func (snapshot *DatasetSnapshot) MarkReported() {
+	snapshot.CreateOrUpdateCondition(metav1.Condition{
 		Type:   string(DatasetSnapshotReported),
 		Status: metav1.ConditionTrue,
 		Reason: string(DatasetSnapshotReported),
 	})
-	dataset.Status.Phase = DatasetSnapshotPhaseReportSuccess
-	dataset.RefreshProgress()
+	snapshot.Status.Phase = DatasetSnapshotPhaseReportSuccess
+	snapshot.RefreshProgress()
 }
 
-func (dataset *DatasetSnapshot) MarkReportFailed(reason string, msg string) {
-	dataset.CreateOrUpdateCondition(metav1.Condition{
+func (snapshot *DatasetSnapshot) MarkReportFailed(reason string, msg string) {
+	snapshot.CreateOrUpdateCondition(metav1.Condition{
 		Type:    string(DatasetSnapshotReported),
 		Status:  metav1.ConditionFalse,
 		Reason:  reason,
@@ -476,29 +487,29 @@ func (dataset *DatasetSnapshot) MarkReportFailed(reason string, msg string) {
 
 /////// Profile Condition ///////
 
-func (dataset *DatasetSnapshot) MarkProfiling() {
-	dataset.CreateOrUpdateCondition(metav1.Condition{
+func (snapshot *DatasetSnapshot) MarkProfiling() {
+	snapshot.CreateOrUpdateCondition(metav1.Condition{
 		Type:   string(DatasetSnapshotProfiled),
 		Status: metav1.ConditionFalse,
 		Reason: string(DatasetSnapshotPhaseProfileRunning),
 	})
-	dataset.Status.Phase = DatasetSnapshotPhaseProfileRunning
-	dataset.RefreshProgress()
+	snapshot.Status.Phase = DatasetSnapshotPhaseProfileRunning
+	snapshot.RefreshProgress()
 }
 
-func (dataset *DatasetSnapshot) MarkProfiled(profileLocation catalog.FileLocation) {
-	dataset.CreateOrUpdateCondition(metav1.Condition{
+func (snapshot *DatasetSnapshot) MarkProfiled(profileLocation catalog.FileLocation) {
+	snapshot.CreateOrUpdateCondition(metav1.Condition{
 		Type:   string(DatasetSnapshotProfiled),
 		Status: metav1.ConditionTrue,
 		Reason: string(DatasetSnapshotProfiled),
 	})
-	dataset.Status.ProfileLocation = profileLocation
-	dataset.Status.Phase = DatasetSnapshotPhaseProfileSuccess
-	dataset.RefreshProgress()
+	snapshot.Status.ProfileLocation = profileLocation
+	snapshot.Status.Phase = DatasetSnapshotPhaseProfileSuccess
+	snapshot.RefreshProgress()
 }
 
-func (dataset *DatasetSnapshot) MarkProfileFailed(reason string, err string) {
-	dataset.CreateOrUpdateCondition(metav1.Condition{
+func (snapshot *DatasetSnapshot) MarkProfileFailed(reason string, err string) {
+	snapshot.CreateOrUpdateCondition(metav1.Condition{
 		Type:    string(DatasetSnapshotProfiled),
 		Status:  metav1.ConditionFalse,
 		Reason:  reason,
@@ -512,69 +523,61 @@ func (r *Dataset) OpName() string {
 
 /////// Ready Condition ///////
 
-func (dataset *DatasetSnapshot) MarkReady() {
-	dataset.CreateOrUpdateCondition(metav1.Condition{
+func (snapshot *DatasetSnapshot) MarkReady() {
+	snapshot.CreateOrUpdateCondition(metav1.Condition{
 		Type:   string(DatasetSnapshotReady),
 		Status: metav1.ConditionTrue,
 		Reason: string(DatasetSnapshotReady),
 	})
-	dataset.Status.Phase = DatasetSnapshotPhaseReady
-	dataset.RefreshProgress()
+	snapshot.Status.Phase = DatasetSnapshotPhaseReady
+	snapshot.RefreshProgress()
 	now := metav1.Now()
-	if dataset.Status.CompletedAt == nil {
-		dataset.Status.CompletedAt = &now
+	if snapshot.Status.CompletedAt == nil {
+		snapshot.Status.CompletedAt = &now
 	}
 }
 
-func (dataset *DatasetSnapshot) MarkReadyFailed(reason string, err string) {
-	dataset.CreateOrUpdateCondition(metav1.Condition{
+func (snapshot *DatasetSnapshot) MarkReadyFailed(reason string, err string) {
+	snapshot.CreateOrUpdateCondition(metav1.Condition{
 		Type:    string(DatasetSnapshotReady),
 		Status:  metav1.ConditionFalse,
 		Reason:  reason,
 		Message: err,
 	})
-	dataset.Status.Phase = DatasetSnapshotPhaseFailed
-	dataset.Status.FailureMessage = util.StrPtr(fmt.Sprintf("Mark ready failed: %s", err))
-	dataset.RefreshProgress()
+	snapshot.Status.Phase = DatasetSnapshotPhaseFailed
+	snapshot.Status.FailureMessage = util.StrPtr(fmt.Sprintf("Mark ready failed: %s", err))
+	snapshot.RefreshProgress()
 	now := metav1.Now()
-	if dataset.Status.CompletedAt == nil {
-		dataset.Status.CompletedAt = &now
+	if snapshot.Status.CompletedAt == nil {
+		snapshot.Status.CompletedAt = &now
 	}
 }
 
 /////// External Status Updated Condition ///////
 
-func (dataset *DatasetSnapshot) MarkExternalStatusNotUpdated() {
-	dataset.CreateOrUpdateCondition(metav1.Condition{
+func (snapshot *DatasetSnapshot) MarkExternalStatusNotUpdated() {
+	snapshot.CreateOrUpdateCondition(metav1.Condition{
 		Type:   string(DatasetSnapshotExternalStatusUpdated),
 		Status: metav1.ConditionFalse,
 		Reason: "ExternalStatusStale",
 	})
 }
 
-func (dataset *DatasetSnapshot) MarkExternalStatusUpdated() {
-	dataset.CreateOrUpdateCondition(metav1.Condition{
+func (snapshot *DatasetSnapshot) MarkExternalStatusUpdated() {
+	snapshot.CreateOrUpdateCondition(metav1.Condition{
 		Type:   string(DatasetSnapshotExternalStatusUpdated),
 		Status: metav1.ConditionTrue,
 		Reason: string(DatasetSnapshotExternalStatusUpdated),
 	})
 }
 
-func (dataset *DatasetSnapshot) Deleted() bool {
-	return !dataset.ObjectMeta.DeletionTimestamp.IsZero()
-}
-
-func (dataset *DatasetSnapshot) Failed() bool {
-	return dataset.Status.Phase == DatasetSnapshotPhaseFailed
-}
-
-func (dataset *DatasetSnapshot) CompletionAlert(notification catalog.NotificationSpec) *infra.Alert {
+func (snapshot *DatasetSnapshot) CompletionAlert(notification catalog.NotificationSpec) *infra.Alert {
 	level := infra.InfoAlertLevel
-	subject := fmt.Sprintf("Dataset snapshot %s completed successfully", dataset.Name)
+	subject := fmt.Sprintf("Dataset snapshot %s completed successfully", snapshot.Name)
 	result := &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
-			GenerateName: dataset.Name,
-			Namespace:    dataset.Namespace,
+			GenerateName: snapshot.Name,
+			Namespace:    snapshot.Namespace,
 		},
 		Spec: infra.AlertSpec{
 			Subject:      subject,
@@ -582,31 +585,31 @@ func (dataset *DatasetSnapshot) CompletionAlert(notification catalog.Notificatio
 			Notification: notification,
 			EntityRef: v1.ObjectReference{
 				Kind:      "Entity",
-				Name:      dataset.Name,
-				Namespace: dataset.Namespace,
+				Name:      snapshot.Name,
+				Namespace: snapshot.Namespace,
 			},
-			Owner: dataset.Spec.Owner,
+			Owner: snapshot.Spec.Owner,
 			Fields: map[string]string{
-				"Rows":       util.ItoA(&dataset.Status.Statistics.Rows),
-				"Columns":    util.ItoA(&dataset.Status.Statistics.Columns),
-				"Size":       util.ItoA(&dataset.Status.Statistics.SizeInBytes),
-				"Start Time": dataset.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
+				"Rows":       util.ItoA(&snapshot.Status.Statistics.Rows),
+				"Columns":    util.ItoA(&snapshot.Status.Statistics.Columns),
+				"Size":       util.ItoA(&snapshot.Status.Statistics.SizeInBytes),
+				"Start Time": snapshot.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
 			},
 		},
 	}
-	if dataset.Status.CompletedAt != nil {
-		result.Spec.Fields["Completion Time"] = dataset.Status.CompletedAt.Format("01/2/2006 15:04:05")
+	if snapshot.Status.CompletedAt != nil {
+		result.Spec.Fields["Completion Time"] = snapshot.Status.CompletedAt.Format("01/2/2006 15:04:05")
 	}
 	return result
 }
 
-func (dataset *DatasetSnapshot) ErrorAlert(notification catalog.NotificationSpec, err error) *infra.Alert {
+func (snapshot *DatasetSnapshot) ErrorAlert(notification catalog.NotificationSpec, err error) *infra.Alert {
 	level := infra.ErrorAlertLevel
-	subject := fmt.Sprintf("Dataset snapshot %s failed with error: %v", dataset.Name, err.Error())
+	subject := fmt.Sprintf("Dataset snapshot %s failed with error: %v", snapshot.Name, err.Error())
 	result := &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
-			GenerateName: dataset.Name,
-			Namespace:    dataset.Namespace,
+			GenerateName: snapshot.Name,
+			Namespace:    snapshot.Namespace,
 		},
 		Spec: infra.AlertSpec{
 			Subject:      subject,
@@ -614,33 +617,33 @@ func (dataset *DatasetSnapshot) ErrorAlert(notification catalog.NotificationSpec
 			Notification: notification,
 			EntityRef: v1.ObjectReference{
 				Kind:      "Entity",
-				Name:      dataset.Name,
-				Namespace: dataset.Namespace,
+				Name:      snapshot.Name,
+				Namespace: snapshot.Namespace,
 			},
-			Owner: dataset.Spec.Owner,
+			Owner: snapshot.Spec.Owner,
 			Fields: map[string]string{
-				"Rows":       util.ItoA(&dataset.Status.Statistics.Rows),
-				"Columns":    util.ItoA(&dataset.Status.Statistics.Columns),
-				"Size":       util.ItoA(&dataset.Status.Statistics.SizeInBytes),
-				"Start Time": dataset.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
+				"Rows":       util.ItoA(&snapshot.Status.Statistics.Rows),
+				"Columns":    util.ItoA(&snapshot.Status.Statistics.Columns),
+				"Size":       util.ItoA(&snapshot.Status.Statistics.SizeInBytes),
+				"Start Time": snapshot.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
 			},
 		},
 	}
-	if dataset.Status.CompletedAt != nil {
-		result.Spec.Fields["Completion Time"] = dataset.Status.CompletedAt.Format("01/2/2006 15:04:05")
+	if snapshot.Status.CompletedAt != nil {
+		result.Spec.Fields["Completion Time"] = snapshot.Status.CompletedAt.Format("01/2/2006 15:04:05")
 	}
 	return result
 }
 
-func (dataset *DatasetSnapshot) ConstructFeatureHistogram() (*FeatureHistogram, error) {
+func (snapshot *DatasetSnapshot) ConstructFeatureHistogram() (*FeatureHistogram, error) {
 	// get the columns that we need to track drift for
-	columns := dataset.DriftColumnNames()
+	columns := snapshot.DriftColumnNames()
 
 	// create the actual column histogram for the status.
 	histograms := make([]ColumnHistogram, 0)
 	// iterate over all the columns and build the feature histograms
 	for _, c := range columns {
-		column, err := dataset.GetColumn(c)
+		column, err := snapshot.GetColumn(c)
 		if err != nil {
 			return nil, err
 		}
@@ -651,19 +654,19 @@ func (dataset *DatasetSnapshot) ConstructFeatureHistogram() (*FeatureHistogram, 
 		histograms = append(histograms, each)
 	}
 
-	// create a training feature histogram for the dataset.
+	// create a training feature histogram for the snapshot.
 	result := &FeatureHistogram{
 		ObjectMeta: metav1.ObjectMeta{
-			Name:      dataset.Name,
-			Namespace: dataset.Namespace,
+			Name:      snapshot.Name,
+			Namespace: snapshot.Namespace,
 		},
 		Spec: FeatureHistogramSpec{
-			Owner:       dataset.Spec.Owner,
+			Owner:       snapshot.Spec.Owner,
 			Description: util.StrPtr(""),
 			Columns:     columns,
 			SourceRef: &v1.ObjectReference{
-				Namespace: dataset.Namespace,
-				Name:      dataset.Name,
+				Namespace: snapshot.Namespace,
+				Name:      snapshot.Name,
 			},
 			Training: util.BoolPtr(true),
 			Live:     util.BoolPtr(false),
@@ -683,9 +686,9 @@ func (dataset *DatasetSnapshot) ConstructFeatureHistogram() (*FeatureHistogram, 
 }
 
 // return the list of drift. Currently return the drift columns
-func (dataset *DatasetSnapshot) DriftColumnNames() []string {
+func (snapshot *DatasetSnapshot) DriftColumnNames() []string {
 	result := make([]string, 0)
-	for _, v := range dataset.Status.Statistics.Features {
+	for _, v := range snapshot.Status.Statistics.Features {
 		if !v.Target {
 			result = append(result, v.Name)
 		}
@@ -695,8 +698,8 @@ func (dataset *DatasetSnapshot) DriftColumnNames() []string {
 }
 
 // Search for a column stat, based on name
-func (dataset *DatasetSnapshot) GetColumn(name string) (*FeatureStatistics, error) {
-	for _, v := range dataset.Status.Statistics.Features {
+func (snapshot *DatasetSnapshot) GetColumn(name string) (*FeatureStatistics, error) {
+	for _, v := range snapshot.Status.Statistics.Features {
 		if v.Name == name {
 			return &v, nil
 		}
@@ -837,12 +840,12 @@ func (feature FeatureStatistics) BigBoolTest(thresholds []DriftThreshold, rowCou
 	}
 }
 
-func (dataset *DatasetSnapshot) ToRunReference() catalog.RunReference {
-	return catalog.RunReference{Name: dataset.Name, Version: dataset.Status.SnapshotVersion}
+func (snapshot *DatasetSnapshot) ToRunReference() catalog.RunReference {
+	return catalog.RunReference{Name: snapshot.Name, Version: snapshot.Status.SnapshotVersion}
 }
 
-func (dataset *DatasetSnapshot) HasScheduleTrigger() bool {
-	trigger, ok := dataset.Labels[catalog.TriggerLabelKey]
+func (snapshot *DatasetSnapshot) HasScheduleTrigger() bool {
+	trigger, ok := snapshot.Labels[catalog.TriggerLabelKey]
 	if ok {
 		return trigger == string(catalog.ScheduleTriggerType)
 	}
@@ -851,22 +854,22 @@ func (dataset *DatasetSnapshot) HasScheduleTrigger() bool {
 
 /////// Reconciler Methods ///////
 
-func (dataset *DatasetSnapshot) GetStatus() proto.Message {
-	return &dataset.Status
+func (snapshot *DatasetSnapshot) GetStatus() proto.Message {
+	return &snapshot.Status
 }
 
-func (dataset *DatasetSnapshot) GetObservedGeneration() int64 {
-	return dataset.Status.ObservedGeneration
+func (snapshot *DatasetSnapshot) GetObservedGeneration() int64 {
+	return snapshot.Status.ObservedGeneration
 }
 
-func (dataset *DatasetSnapshot) SetObservedGeneration(generation int64) {
-	dataset.Status.ObservedGeneration = generation
+func (snapshot *DatasetSnapshot) SetObservedGeneration(generation int64) {
+	snapshot.Status.ObservedGeneration = generation
 }
 
-func (dataset *DatasetSnapshot) SetUpdatedAt(time *metav1.Time) {
-	dataset.Status.UpdatedAt = time
+func (snapshot *DatasetSnapshot) SetUpdatedAt(time *metav1.Time) {
+	snapshot.Status.UpdatedAt = time
 }
 
-func (dataset *DatasetSnapshot) SetStatus(status interface{}) {
-	dataset.Status = *status.(*DatasetSnapshotStatus)
+func (snapshot *DatasetSnapshot) SetStatus(status interface{}) {
+	snapshot.Status = *status.(*DatasetSnapshotStatus)
 }

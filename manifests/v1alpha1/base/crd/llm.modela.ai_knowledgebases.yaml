@@ -312,18 +312,16 @@ spec:
                   migrated to the table
                 properties:
                   connectionName:
-                    default: ""
-                    description: ConnectionName specifies the name of the Connection
-                      resource containing the credentials to connect to the database
+                    description: The name of the Connection resource used to connect
+                      to the database
                     type: string
                   sql:
                     default: ""
-                    description: The SQL statement which will be executed to query
-                      data from the table specified by Table
+                    description: The SQL statement to execute
                     type: string
                   table:
                     default: ""
-                    description: The name of a table inside the database
+                    description: The name of the table to read
                     type: string
                 type: object
               nodeParser:

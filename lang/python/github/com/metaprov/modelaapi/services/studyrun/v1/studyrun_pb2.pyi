@@ -10,27 +10,54 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
-class AbortStudyRunRequest(_message.Message):
-    __slots__ = ["name", "namespace"]
+class ListStudyRunRequest(_message.Message):
+    __slots__ = ["namespace", "labels"]
+    class LabelsEntry(_message.Message):
+        __slots__ = ["key", "value"]
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: str
+        def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
+    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
+    LABELS_FIELD_NUMBER: _ClassVar[int]
+    namespace: str
+    labels: _containers.ScalarMap[str, str]
+    def __init__(self, namespace: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ...) -> None: ...
+
+class ListStudyRunResponse(_message.Message):
+    __slots__ = ["studyRuns", "next_page_token"]
+    STUDYRUNS_FIELD_NUMBER: _ClassVar[int]
+    NEXT_PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
+    studyRuns: _generated_pb2.StudyRunList
+    next_page_token: str
+    def __init__(self, studyRuns: _Optional[_Union[_generated_pb2.StudyRunList, _Mapping]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
+
+class GetStudyRunRequest(_message.Message):
+    __slots__ = ["namespace", "name"]
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
-    name: str
     namespace: str
+    name: str
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
-class AbortStudyRunResponse(_message.Message):
-    __slots__ = []
-    def __init__(self) -> None: ...
+class GetStudyRunResponse(_message.Message):
+    __slots__ = ["studyRun", "yaml"]
+    STUDYRUN_FIELD_NUMBER: _ClassVar[int]
+    YAML_FIELD_NUMBER: _ClassVar[int]
+    studyRun: _generated_pb2.StudyRun
+    yaml: str
+    def __init__(self, studyRun: _Optional[_Union[_generated_pb2.StudyRun, _Mapping]] = ..., yaml: _Optional[str] = ...) -> None: ...
 
-class CompleteStudyRunSearchRequest(_message.Message):
-    __slots__ = ["name", "namespace"]
+class DeleteStudyRunRequest(_message.Message):
+    __slots__ = ["namespace", "name"]
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
-    name: str
     namespace: str
+    name: str
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
-class CompleteStudyRunSearchResponse(_message.Message):
+class DeleteStudyRunResponse(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
@@ -44,81 +71,54 @@ class CreateStudyRunResponse(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
-class DeleteStudyRunRequest(_message.Message):
-    __slots__ = ["name", "namespace"]
-    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    name: str
-    namespace: str
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
+class UpdateStudyRunRequest(_message.Message):
+    __slots__ = ["studyRun", "field_mask"]
+    STUDYRUN_FIELD_NUMBER: _ClassVar[int]
+    FIELD_MASK_FIELD_NUMBER: _ClassVar[int]
+    studyRun: _generated_pb2.StudyRun
+    field_mask: _field_mask_pb2.FieldMask
+    def __init__(self, studyRun: _Optional[_Union[_generated_pb2.StudyRun, _Mapping]] = ..., field_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
 
-class DeleteStudyRunResponse(_message.Message):
+class UpdateStudyRunResponse(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
 class GetStudyRunProfileRequest(_message.Message):
-    __slots__ = ["models", "name", "namespace"]
-    MODELS_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["namespace", "name", "models"]
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
-    models: int
-    name: str
+    MODELS_FIELD_NUMBER: _ClassVar[int]
     namespace: str
+    name: str
+    models: int
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., models: _Optional[int] = ...) -> None: ...
 
 class GetStudyRunProfileResponse(_message.Message):
-    __slots__ = ["modelsProfile", "profile"]
-    MODELSPROFILE_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["profile", "modelsProfile"]
     PROFILE_FIELD_NUMBER: _ClassVar[int]
-    modelsProfile: _containers.RepeatedCompositeFieldContainer[_common_pb2.ModelProfile]
+    MODELSPROFILE_FIELD_NUMBER: _ClassVar[int]
     profile: _common_pb2.StudyProfile
+    modelsProfile: _containers.RepeatedCompositeFieldContainer[_common_pb2.ModelProfile]
     def __init__(self, profile: _Optional[_Union[_common_pb2.StudyProfile, _Mapping]] = ..., modelsProfile: _Optional[_Iterable[_Union[_common_pb2.ModelProfile, _Mapping]]] = ...) -> None: ...
 
-class GetStudyRunRequest(_message.Message):
-    __slots__ = ["name", "namespace"]
+class AbortStudyRunRequest(_message.Message):
+    __slots__ = ["namespace", "name"]
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
-    name: str
     namespace: str
+    name: str
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
-class GetStudyRunResponse(_message.Message):
-    __slots__ = ["studyRun", "yaml"]
-    STUDYRUN_FIELD_NUMBER: _ClassVar[int]
-    YAML_FIELD_NUMBER: _ClassVar[int]
-    studyRun: _generated_pb2.StudyRun
-    yaml: str
-    def __init__(self, studyRun: _Optional[_Union[_generated_pb2.StudyRun, _Mapping]] = ..., yaml: _Optional[str] = ...) -> None: ...
-
-class ListStudyRunRequest(_message.Message):
-    __slots__ = ["labels", "namespace"]
-    class LabelsEntry(_message.Message):
-        __slots__ = ["key", "value"]
-        KEY_FIELD_NUMBER: _ClassVar[int]
-        VALUE_FIELD_NUMBER: _ClassVar[int]
-        key: str
-        value: str
-        def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
-    LABELS_FIELD_NUMBER: _ClassVar[int]
-    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    labels: _containers.ScalarMap[str, str]
-    namespace: str
-    def __init__(self, namespace: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ...) -> None: ...
-
-class ListStudyRunResponse(_message.Message):
-    __slots__ = ["next_page_token", "studyRuns"]
-    NEXT_PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
-    STUDYRUNS_FIELD_NUMBER: _ClassVar[int]
-    next_page_token: str
-    studyRuns: _generated_pb2.StudyRunList
-    def __init__(self, studyRuns: _Optional[_Union[_generated_pb2.StudyRunList, _Mapping]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
+class AbortStudyRunResponse(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
 
 class PauseStudyRunRequest(_message.Message):
-    __slots__ = ["name", "namespace"]
+    __slots__ = ["namespace", "name"]
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
-    name: str
     namespace: str
+    name: str
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class PauseStudyRunResponse(_message.Message):
@@ -126,25 +126,25 @@ class PauseStudyRunResponse(_message.Message):
     def __init__(self) -> None: ...
 
 class ResumeStudyRunRequest(_message.Message):
-    __slots__ = ["name", "namespace"]
+    __slots__ = ["namespace", "name"]
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
-    name: str
     namespace: str
+    name: str
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class ResumeStudyRunResponse(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
-class UpdateStudyRunRequest(_message.Message):
-    __slots__ = ["field_mask", "studyRun"]
-    FIELD_MASK_FIELD_NUMBER: _ClassVar[int]
-    STUDYRUN_FIELD_NUMBER: _ClassVar[int]
-    field_mask: _field_mask_pb2.FieldMask
-    studyRun: _generated_pb2.StudyRun
-    def __init__(self, studyRun: _Optional[_Union[_generated_pb2.StudyRun, _Mapping]] = ..., field_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
+class CompleteStudyRunSearchRequest(_message.Message):
+    __slots__ = ["namespace", "name"]
+    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    namespace: str
+    name: str
+    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
-class UpdateStudyRunResponse(_message.Message):
+class CompleteStudyRunSearchResponse(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...

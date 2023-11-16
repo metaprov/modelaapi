@@ -11,11 +11,6 @@ export class PublishModelRequest extends jspb.Message {
   hasDataproduct(): boolean;
   clearDataproduct(): PublishModelRequest;
 
-  getDataproductversion(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
-  setDataproductversion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): PublishModelRequest;
-  hasDataproductversion(): boolean;
-  clearDataproductversion(): PublishModelRequest;
-
   getModel(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model | undefined;
   setModel(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model): PublishModelRequest;
   hasModel(): boolean;
@@ -83,7 +78,6 @@ export class PublishModelRequest extends jspb.Message {
 export namespace PublishModelRequest {
   export type AsObject = {
     dataproduct?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
-    dataproductversion?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
     model?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
     study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
@@ -129,11 +123,6 @@ export class PackageModelRequest extends jspb.Message {
   hasDataproduct(): boolean;
   clearDataproduct(): PackageModelRequest;
 
-  getDataproductversion(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
-  setDataproductversion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): PackageModelRequest;
-  hasDataproductversion(): boolean;
-  clearDataproductversion(): PackageModelRequest;
-
   getModel(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model | undefined;
   setModel(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model): PackageModelRequest;
   hasModel(): boolean;
@@ -178,7 +167,6 @@ export class PackageModelRequest extends jspb.Message {
 export namespace PackageModelRequest {
   export type AsObject = {
     dataproduct?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
-    dataproductversion?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
     model?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
     study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,

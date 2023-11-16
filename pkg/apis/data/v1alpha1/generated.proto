@@ -500,9 +500,6 @@ message DataOutputSpec {
   optional string format = 3;
 
   // The update strategy for the dataset in the case that the output location already exists (i.e a database table)
-  // UpsertUpdateStrategy will insert new records and update existing ones;
-  // InsertUpdateStrategy will insert new records and not update existing ones;
-  // UpdateUpdateStrategy will not insert new records and only update existing ones
   // +kubebuilder:default:="upsert"
   // +kubebuilder:validation:Optional
   optional string action = 4;
@@ -999,86 +996,6 @@ message DataProductStatus {
 }
 
 // +kubebuilder:object:root=true
-// +kubebuilder:resource:path=dataproductversions,shortName=dpv,singular=dataproductversion,categories={data,modela,all}
-// +kubebuilder:subresource:status
-// +kubebuilder:storageversion
-// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
-// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
-// +kubebuilder:printcolumn:name="Product",type="string",JSONPath=".spec.productRef.name",description=""
-// +kubebuilder:printcolumn:name="Base",type="boolean",JSONPath=".spec.baseline",description=""
-// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// DataProductVersion represents a single version of a DataProduct, which should increment versions in response to changes in data
-message DataProductVersion {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
-
-  optional DataProductVersionSpec spec = 2;
-
-  // +optional
-  optional DataProductVersionStatus status = 3;
-}
-
-// +kubebuilder:object:root=true
-// DataProductVersionList contains a list of DataProductVersion
-message DataProductVersionList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
-
-  repeated DataProductVersion items = 2;
-}
-
-// DataProductVersionSpec defines the desired state of a DataProductVersion
-message DataProductVersionSpec {
-  // ProductRef contains the object reference to the DataProduct
-  // resource which the DataProductVersion describes the version of
-  // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference productRef = 1;
-
-  // User-provided description of the object
-  // +kubebuilder:validation:Optional
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:MaxLength=512
-  optional string description = 2;
-
-  // The name of the version which preceded the current version
-  // +kubebuilder:validation:MaxLength=63
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string prevVersionName = 3;
-
-  // Indicates if the version is a baseline, and if so will cause Modela to garbage collect the resources from previous versions
-  // +kubebuilder:default:=false
-  // +kubebuilder:validation:Optional
-  optional bool baseline = 4;
-
-  // The name of the Account which created the object, which exists in the same tenant as the object
-  // +kubebuilder:default:="no-one"
-  // +kubebuilder:validation:Optional
-  optional string owner = 5;
-}
-
-// DataProductVersionStatus defines the observed state of a DataProductVersion
-message DataProductVersionStatus {
-  // ObservedGeneration is the last generation that was acted on
-  // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 1;
-
-  // The last time the object was updated
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 2;
-
-  // In the case of failure, the Dataset resource controller will set this field with a failure reason
-  // Borrowed from cluster api controller
-  optional string failureReason = 3;
-
-  // In the case of failure, the Dataset resource controller will set this field with a failure message
-  optional string failureMessage = 4;
-
-  // +patchMergeKey=type
-  // +patchStrategy=merge
-  // +kubebuilder:validation:Optional
-  repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 5;
-}
-
-// +kubebuilder:object:root=true
 // +kubebuilder:resource:path=datasources,singular=datasource,shortName="dsrc",categories={data,modela,all}
 // +kubebuilder:storageversion
 // +kubebuilder:subresource:status
@@ -1305,10 +1222,9 @@ message DatasetSnapshotSpec {
   // +required
   optional string datasetName = 2;
 
-  // Timout specifies the time in seconds for the run to be completed. If unspecified, the run
-  // deadline specified by the Dataset will be used
+  // Timeout specifies the time in seconds for the snapshot to be completed
   // +kubebuilder:validation:Optional
-  optional int64 timeout = 3;
+  optional int32 timeout = 3;
 
   // If true, the execution of new workloads associated with the run will be paused
   // +kubebuilder:default:=false
@@ -1451,67 +1367,68 @@ message DatasetSpec {
   // +kubebuilder:validation:Required
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSpec run = 4;
 
-  // Schedule specifies the schedule to create new snapshots for the Dataset
+  // The name of the Virtual Bucket where artifacts generated by the Dataset will be stored.
+  // If empty, default to the Data Product's default artifact bucket
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 5;
+  optional string artifactBucketName = 5;
+
+  // The name of the Lab under which Jobs created by the Dataset will be executed.
+  // If empty, default to the Data Product's default Lab
+  // +kubebuilder:validation:Optional
+  optional string labName = 6;
 
   // Role specifies the role of the dataset (training, feedback, etc.)
   // +kubebuilder:default:="training"
   // +kubebuilder:validation:Optional
-  optional string role = 6;
+  optional string role = 7;
 
   // The machine learning task relevant to the Dataset. This field must be the same as the task specified by the Data Source
   // +kubebuilder:validation:Optional
-  optional string task = 7;
+  optional string task = 8;
 
   // The machine learning sub-task relevant to the Dataset. This field must be the same as the subtask specified by the Data Source
   // +kubebuilder:default:=none
   // +kubebuilder:validation:Optional
-  optional string subtask = 8;
+  optional string subtask = 9;
 
   // The type of dataset which was uploaded. Tabular is the only supported type as of the current release
   // +kubebuilder:default:="tabular"
   // +kubebuilder:validation:Optional
-  optional string type = 9;
+  optional string type = 10;
 
   // Origin is the location of the data file or database query which holds the raw data of the Dataset. When the Dataset is
   // created, a workload will be created to snapshot the location and store it in the bucket specified by ArtifactBucketName
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataLocation origin = 10;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataLocation origin = 11;
 
   // Resources specifies the resource requirements that will be allocated for the Dataset
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 11;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 12;
 
   // UnitTests specifies the unit tests that will be run against ingested datasets
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite unitTests = 12;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.TestSuite unitTests = 13;
 
   // Indicates if a PDF report containing the Dataset profile should be generated
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool report = 13;
+  optional bool report = 14;
 
   // Indicates if the Dataset should be checked against the validation rules of its Data Source
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool unitTest = 14;
+  optional bool unitTest = 15;
 
   // Indicates if a Feature Histogram will be generated from the dataset's columns. A feature histogram
   // may only be generated if the dataset profile succeeded
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool generateFeatureHistogram = 15;
+  optional bool generateFeatureHistogram = 16;
 
   // Indicates if the Dataset should be quickly processed. If enabled, the validation, profiling, and reporting will be skipped
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool fast = 16;
-
-  // The name of the Virtual Bucket where Dataset artifacts (reports, snapshots) generated by
-  // the Study will be stored. If empty, it will default to the default Virtual Bucket of the Data Product
-  // +kubebuilder:validation:Optional
-  optional string artifactBucketName = 17;
+  optional bool fast = 17;
 
   // Sample specifies the configuration to sample the dataset's data
   // +kubebuilder:validation:Optional
@@ -1526,11 +1443,6 @@ message DatasetSpec {
   // +kubebuilder:validation:Optional
   optional CorrelationSpec correlation = 20;
 
-  // The reference to the Lab under which Jobs created by the Dataset will be executed.
-  // If empty, it will default to the default Lab of the Data Product for the Dataset
-  // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference labRef = 21;
-
   // GroupBy specifies the configuration to partition the dataset by groups
   // By default, this dataset is assigned
   optional GroupBySpec groupBy = 24;
@@ -1542,15 +1454,15 @@ message DatasetSpec {
 
   // ModelClassName specifies the name of the Model Class which created the Dataset, if applicable
   // +kubebuilder:validation:Optional
-  optional string modelClassName = 27;
+  optional string modelClassName = 28;
 
   // FeatureGroupName specifies the name of the Feature Group that will be used to create the Dataset, if applicable
   // +kubebuilder:validation:Optional
-  optional string featureGroupName = 30;
+  optional string featureGroupName = 29;
 
   // Notification specifies the configuration for Alerts generated by the resource
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 31;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 30;
 }
 
 // DatasetStatistics contains statistics about the Dataset and every feature in the dataset

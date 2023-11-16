@@ -80,7 +80,6 @@ protoc \
          github.com/metaprov/modelaapi/services/todo/v1/todo.proto \
          github.com/metaprov/modelaapi/services/fileservices/v1/fileservices.proto \
          github.com/metaprov/modelaapi/services/modelasystem/v1/modelasystem.proto \
-         github.com/metaprov/modelaapi/services/dbproxyd/v1/dbproxyd.proto \
          github.com/metaprov/modelaapi/services/catalog/v1/catalog.proto \
          github.com/metaprov/modelaapi/services/cloudproxyd/v1/cloudproxyd.proto \
          github.com/metaprov/modelaapi/services/batchpredictord/v1/batchpredictord.proto \
@@ -89,7 +88,6 @@ protoc \
          github.com/metaprov/modelaapi/services/datapipeline/v1/datapipeline.proto \
          github.com/metaprov/modelaapi/services/datapipelinerun/v1/datapipelinerun.proto \
          github.com/metaprov/modelaapi/services/dataproduct/v1/dataproduct.proto \
-         github.com/metaprov/modelaapi/services/dataproductversion/v1/dataproductversion.proto \
          github.com/metaprov/modelaapi/services/dataset/v1/dataset.proto \
          github.com/metaprov/modelaapi/services/datasetsnapshot/v1/datasetsnapshot.proto \
          github.com/metaprov/modelaapi/services/datasource/v1/datasource.proto \
