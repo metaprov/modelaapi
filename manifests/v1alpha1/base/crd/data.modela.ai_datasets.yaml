@@ -327,8 +327,8 @@ spec:
                 - featuregroup
                 type: string
               run:
-                description: RunSpec specifies the configuration for snapshot runs
-                  created by the Dataset
+                description: RunSpec specifies the configuration for the execution
+                  of snapshots created by the Dataset
                 properties:
                   maxPreviousRuns:
                     default: 1

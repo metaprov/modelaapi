@@ -36,6 +36,10 @@ const (
 	LabJobRunnerSa          string = "lab-job-sa"
 	LabJobRunnerRoleBinding string = "lab-job-runner-binding"
 
+	DataProductJobRunnerRole        string = "dataproduct-job-runner"
+	DataProductJobRunnerSa          string = "dataproduct-job-sa"
+	DataProductJobRunnerRoleBinding string = "dataproduct-job-runner-binding"
+
 	ServingSiteJobRunnerRole        string = "servingsite-job-runner"
 	ServingSiteJobRunnerSa          string = "servingsite-job-sa"
 	ServingSiteJobRunnerRoleBinding string = "servingsite-job-runner-binding"
@@ -1378,9 +1382,9 @@ func (runs *RunScheduleStatus) Start() {
 
 // RunReference defines a generic reference to any type of run
 type RunReference struct {
-	// Name specifies the name of the resource
+	// The name of the run
 	Name string `json:"name" protobuf:"bytes,1,opt,name=name"`
-	// Version specifies the version of the run
+	// The version of the run
 	Version Version `json:"version" protobuf:"varint,2,opt,name=version"`
 }
 
@@ -1448,8 +1452,11 @@ type RunReferenceList []RunReference
 
 func (v RunReferenceList) RecordReference(reference RunReference, shouldExist bool) RunReferenceList {
 	if shouldExist {
-		for _, x := range v {
+		for i, x := range v {
 			if x.Name == reference.Name {
+				if x.Version != reference.Version {
+					return append(append(v[:i], reference), v[i+1:]...)
+				}
 				return v
 			}
 		}

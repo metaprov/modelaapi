@@ -2015,7 +2015,7 @@ message ReportSpec {
   // The reference to the Lab namespace under which the report generation Job will be executed under.
   // If unspecified, the default Lab for the Data Product of the Report will be used
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference labRef = 9;
+  optional string labName = 9;
 
   // For group forecasting, this is the key of the group
   // +kubebuilder:validation:Optional
@@ -2894,8 +2894,8 @@ message TimeSeriesEvent {
 
 // TrainingSpec specifies the configuration of a model training workload
 message TrainingSpec {
-  // The reference to the Lab under which the model training Job will be created
-  optional k8s.io.api.core.v1.ObjectReference labRef = 1;
+  // The name of the Lab under which the model training Job will be created
+  optional string labName = 1;
 
   // The priority of the Kubernetes Job created by the Model (medium, by default)
   // +kubebuilder:validation:Optional
@@ -2905,7 +2905,7 @@ message TrainingSpec {
   // The type of cross-validation to use, in the case that a validation dataset is not enabled
   // +kubebuilder:default:=kfold
   // +kubebuilder:validation:Optional
-  optional string cvtype = 3;
+  optional string cvType = 3;
 
   // The number of folds to use during cross-validation. If set to 0, cross-validation will be disabled
   // +kubebuilder:default:=5

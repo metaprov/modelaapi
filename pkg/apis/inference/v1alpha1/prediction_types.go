@@ -60,7 +60,7 @@ type PredictionSpec struct {
 	// The name of the Serving Site under which Jobs created by the Prediction will be executed.
 	// If empty, default to the Data Product's default Lab
 	// +kubebuilder:validation:Optional
-	ServingSiteName *string `json:"servingSiteRef,omitempty" protobuf:"bytes,5,opt,name=servingSiteRef"`
+	ServingSiteName *string `json:"servingSiteName,omitempty" protobuf:"bytes,5,opt,name=servingSiteName"`
 	// The specification for the model that will be used for the Prediction
 	// +kubebuilder:validation:Optional
 	Model ModelSpec `json:"model,omitempty" protobuf:"bytes,6,opt,name=model"`
@@ -112,7 +112,7 @@ type PredictionStatus struct {
 	// AvailableRunVersions contains the collection of run versions which are ready for use.
 	// Each version corresponds with an existing PredictionRun resource
 	//+kubebuilder:validation:Optional
-	AvailableRunVersions catalog.VersionList `json:"availableRunVersions,omitempty" protobuf:"bytes,5,opt,name=availableRunVersions"`
+	AvailableRuns catalog.RunReferenceList `json:"availableRuns,omitempty" protobuf:"bytes,5,opt,name=availableRuns"`
 	// LastRunAt specifies the time at which a run was last created for the Study
 	//+kubebuilder:validation:Optional
 	LastRunAt *metav1.Time `json:"lastRunAt,omitempty" protobuf:"bytes,6,opt,name=lastRunAt"`

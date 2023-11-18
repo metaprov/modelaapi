@@ -28877,7 +28877,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.toObje
     owner: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
     resources: (f = msg.getResources()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.toObject(includeInstance, f),
     timeout: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
-    labref: (f = msg.getLabref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
+    labname: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
     keyList: (f = jspb.Message.getRepeatedField(msg, 10)) == null ? undefined : f,
     artifactbucketname: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f,
     modelclassname: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f,
@@ -28954,9 +28954,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.deseri
       msg.setTimeout(value);
       break;
     case 9:
-      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
-      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
-      msg.setLabref(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setLabname(value);
       break;
     case 10:
       var value = /** @type {string} */ (reader.readString());
@@ -29062,12 +29061,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.serial
       f
     );
   }
-  f = message.getLabref();
+  f = /** @type {string} */ (jspb.Message.getField(message, 9));
   if (f != null) {
-    writer.writeMessage(
+    writer.writeString(
       9,
-      f,
-      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
+      f
     );
   }
   f = message.getKeyList();
@@ -29393,30 +29391,29 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.protot
 
 
 /**
- * optional k8s.io.api.core.v1.ObjectReference labRef = 9;
- * @return {?proto.k8s.io.api.core.v1.ObjectReference}
+ * optional string labName = 9;
+ * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.prototype.getLabref = function() {
-  return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 9));
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.prototype.getLabname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
 };
 
 
 /**
- * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.prototype.setLabref = function(value) {
-  return jspb.Message.setWrapperField(this, 9, value);
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.prototype.setLabname = function(value) {
+  return jspb.Message.setField(this, 9, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
+ * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.prototype.clearLabref = function() {
-  return this.setLabref(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.prototype.clearLabname = function() {
+  return jspb.Message.setField(this, 9, undefined);
 };
 
 
@@ -29424,7 +29421,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.prototype.hasLabref = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.prototype.hasLabname = function() {
   return jspb.Message.getField(this, 9) != null;
 };
 
@@ -40678,7 +40675,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    labref: (f = msg.getLabref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
+    labname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     priority: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     cvtype: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     folds: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
@@ -40728,9 +40725,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.dese
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
-      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
-      msg.setLabref(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setLabname(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -40812,12 +40808,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getLabref();
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
   if (f != null) {
-    writer.writeMessage(
+    writer.writeString(
       1,
-      f,
-      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
+      f
     );
   }
   f = /** @type {string} */ (jspb.Message.getField(message, 2));
@@ -40911,30 +40906,29 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.seri
 
 
 /**
- * optional k8s.io.api.core.v1.ObjectReference labRef = 1;
- * @return {?proto.k8s.io.api.core.v1.ObjectReference}
+ * optional string labName = 1;
+ * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.getLabref = function() {
-  return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 1));
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.getLabname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.setLabref = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.setLabname = function(value) {
+  return jspb.Message.setField(this, 1, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
+ * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.clearLabref = function() {
-  return this.setLabref(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.clearLabname = function() {
+  return jspb.Message.setField(this, 1, undefined);
 };
 
 
@@ -40942,7 +40936,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.hasLabref = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.hasLabname = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -40984,7 +40978,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
 
 
 /**
- * optional string cvtype = 3;
+ * optional string cvType = 3;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.getCvtype = function() {

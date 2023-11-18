@@ -42,8 +42,8 @@ func (product DataProduct) IsClassification() bool {
 //==============================================================================
 
 // Merge or update condition
-func (product *DataProduct) CreateOrUpdateCond(cond metav1.Condition) {
-	i := product.GetCondIdx(cond.Type)
+func (product *DataProduct) CreateOrUpdateCondition(cond metav1.Condition) {
+	i := product.GetConditionIndex(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
 		cond.LastTransitionTime = now
@@ -61,7 +61,7 @@ func (product *DataProduct) CreateOrUpdateCond(cond metav1.Condition) {
 	product.Status.Conditions[i] = current
 }
 
-func (product DataProduct) GetCondIdx(t string) int {
+func (product DataProduct) GetConditionIndex(t string) int {
 	for i, v := range product.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -70,23 +70,23 @@ func (product DataProduct) GetCondIdx(t string) int {
 	return -1
 }
 
-func (product DataProduct) GetCond(t string) metav1.Condition {
+func (product DataProduct) GetCondition(t DataProductConditionType) metav1.Condition {
 	for _, v := range product.Status.Conditions {
-		if v.Type == t {
+		if v.Type == string(t) {
 			return v
 		}
 	}
 	// if we did not find the condition, we return an unknown object
 	return metav1.Condition{
-		Type:    t,
+		Type:    string(t),
 		Status:  metav1.ConditionUnknown,
 		Reason:  "",
 		Message: "",
 	}
 }
 
-func (product DataProduct) IsReady() bool {
-	return product.GetCond(DataProductReady).Status == metav1.ConditionTrue
+func (product DataProduct) NamespaceReady() bool {
+	return product.GetCondition(DataProductNamespaceReady).Status == metav1.ConditionTrue
 }
 
 func (product DataProduct) YamlURI() string {
@@ -105,136 +105,37 @@ func (product DataProduct) PrefixArchiveURI(uri string) string {
 	return fmt.Sprintf("modela/archive/tenants/%s/%s", product.Namespace, uri)
 }
 
-// DataEnv product roles
-func (product DataProduct) ProductAdmin() *rbacv1.Role {
-	return &rbacv1.Role{
-		ObjectMeta: metav1.ObjectMeta{
-			Name:      "product-admin",
-			Namespace: product.Name,
-		},
-		Rules: []rbacv1.PolicyRule{
-			{
-				Verbs:           []string{},
-				APIGroups:       []string{},
-				Resources:       []string{},
-				ResourceNames:   []string{},
-				NonResourceURLs: []string{},
-			},
-		},
-	}
-}
-
-// DataScientist role
-func (product DataProduct) DataScientist() *rbacv1.Role {
-	return &rbacv1.Role{
-		ObjectMeta: metav1.ObjectMeta{
-			Name:      "data-scientist",
-			Namespace: product.Name,
-		},
-		Rules: []rbacv1.PolicyRule{
-			{
-				Verbs:           []string{},
-				APIGroups:       []string{},
-				Resources:       []string{},
-				ResourceNames:   []string{},
-				NonResourceURLs: []string{},
-			},
-		},
-	}
-}
-
-// DataEngineer role
-func (product DataProduct) DataEngineer() *rbacv1.Role {
-	return &rbacv1.Role{
-		ObjectMeta: metav1.ObjectMeta{
-			Name:      "data-engineer",
-			Namespace: product.Name,
-		},
-		Rules: []rbacv1.PolicyRule{
-			{
-				Verbs:           []string{},
-				APIGroups:       []string{},
-				Resources:       []string{},
-				ResourceNames:   []string{},
-				NonResourceURLs: []string{},
-			},
-		},
-	}
-}
-
-// Labeler role
-func (product DataProduct) DataLabler() *rbacv1.Role {
-	return &rbacv1.Role{
-		ObjectMeta: metav1.ObjectMeta{
-			Name:      "data-label",
-			Namespace: product.Name,
-		},
-		Rules: []rbacv1.PolicyRule{
-			{
-				Verbs:           []string{},
-				APIGroups:       []string{},
-				Resources:       []string{},
-				ResourceNames:   []string{},
-				NonResourceURLs: []string{},
-			},
-		},
-	}
-
-}
-
-// PredictionConsumer role
-func (product DataProduct) PredictionConsumer() *rbacv1.Role {
-	return &rbacv1.Role{
-		ObjectMeta: metav1.ObjectMeta{
-			Name:      "prediction-consumer",
-			Namespace: product.Name,
-		},
-		Rules: []rbacv1.PolicyRule{
-			{
-				Verbs:           []string{},
-				APIGroups:       []string{},
-				Resources:       []string{},
-				ResourceNames:   []string{},
-				NonResourceURLs: []string{},
-			},
-		},
-	}
-
-}
-
-// ReportsConsumer role
-func (product DataProduct) ReportConsumer() *rbacv1.Role {
-	return &rbacv1.Role{
-		ObjectMeta: metav1.ObjectMeta{
-			Name:      "report-consumer",
-			Namespace: product.Name,
-		},
-		Rules: []rbacv1.PolicyRule{
-			{
-				Verbs:           []string{},
-				APIGroups:       []string{},
-				Resources:       []string{},
-				ResourceNames:   []string{},
-				NonResourceURLs: []string{},
-			},
-		},
-	}
-}
-
-func (product *DataProduct) MarkFailed(reason string, err string) {
-	product.CreateOrUpdateCond(metav1.Condition{
-		Type:    DataProductReady,
+func (dataproduct *DataProduct) MarkRbacNotReady(reason string, message string) {
+	dataproduct.CreateOrUpdateCondition(metav1.Condition{
+		Type:    string(DataProductRbacReady),
 		Status:  metav1.ConditionFalse,
 		Reason:  reason,
-		Message: err,
+		Message: message,
 	})
 }
 
-func (product *DataProduct) MarkReady() {
-	product.CreateOrUpdateCond(metav1.Condition{
-		Type:   DataProductReady,
+func (dataproduct *DataProduct) MarkNamespaceNotReady(reason string, message string) {
+	dataproduct.CreateOrUpdateCondition(metav1.Condition{
+		Type:    string(DataProductNamespaceReady),
+		Status:  metav1.ConditionFalse,
+		Reason:  reason,
+		Message: message,
+	})
+}
+
+func (dataproduct *DataProduct) MarkRbacReady() {
+	dataproduct.CreateOrUpdateCondition(metav1.Condition{
+		Type:   string(DataProductRbacReady),
 		Status: metav1.ConditionTrue,
-		Reason: DataProductReady,
+		Reason: string(DataProductRbacReady),
+	})
+}
+
+func (dataproduct *DataProduct) MarkNamespaceReady() {
+	dataproduct.CreateOrUpdateCondition(metav1.Condition{
+		Type:   string(DataProductNamespaceReady),
+		Status: metav1.ConditionTrue,
+		Reason: string(DataProductNamespaceReady),
 	})
 }
 
@@ -250,11 +151,52 @@ func (product *DataProduct) GetRolesForAccount(account *infra.Account) []string 
 	return result
 }
 
-func (product *DataProduct) UpdateBaselineVersion(versions DataProductVersionList) {
-	for _, v := range versions.Items {
-		if *v.Spec.Baseline {
-			product.Status.BaselineVersion = &v.Name
-		}
+func (product DataProduct) DataProductRole() *rbacv1.Role {
+	return &rbacv1.Role{
+		ObjectMeta: metav1.ObjectMeta{
+			Name:      catalog.DataProductJobRunnerRole,
+			Namespace: product.Name,
+		},
+		Rules: []rbacv1.PolicyRule{
+			{
+				Verbs:           []string{"create"},
+				APIGroups:       []string{"inference.modela.ai", "data.modela.ai", "training.modela.ai"},
+				Resources:       []string{"*"},
+				ResourceNames:   []string{},
+				NonResourceURLs: []string{},
+			},
+		},
+	}
+}
+
+func (product DataProduct) DataProductRoleBinding() *rbacv1.RoleBinding {
+	return &rbacv1.RoleBinding{
+		ObjectMeta: metav1.ObjectMeta{
+			Name:      catalog.DataProductJobRunnerRoleBinding,
+			Namespace: product.Name,
+		},
+		Subjects: []rbacv1.Subject{
+			{
+				Kind:      "ServiceAccount",
+				APIGroup:  "",
+				Name:      catalog.DataProductJobRunnerSa,
+				Namespace: product.Name,
+			},
+		},
+		RoleRef: rbacv1.RoleRef{
+			APIGroup: "rbac.authorization.k8s.io",
+			Kind:     "Role",
+			Name:     catalog.DataProductJobRunnerRole,
+		},
+	}
+}
+
+func (product DataProduct) DataProductServiceAccount() *v1.ServiceAccount {
+	return &v1.ServiceAccount{
+		ObjectMeta: metav1.ObjectMeta{
+			Name:      catalog.DataProductJobRunnerSa,
+			Namespace: product.Name,
+		},
 	}
 }
 

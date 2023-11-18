@@ -188,9 +188,9 @@ spec:
                                 language:
                                   description: The language of the document(s). When
                                     set to `infer`, the language of the document will
-                                    be inferred using the name and extension of the
-                                    original file. Documents that cannot be parsed
-                                    using the specified language will be skipped
+                                    be inferred using the extension of the original
+                                    file. Documents that cannot be parsed using the
+                                    specified language will be skipped
                                   type: string
                                 maxChars:
                                   description: The maximum amount of characters in
@@ -378,7 +378,7 @@ spec:
                           language:
                             description: The language of the document(s). When set
                               to `infer`, the language of the document will be inferred
-                              using the name and extension of the original file. Documents
+                              using the extension of the original file. Documents
                               that cannot be parsed using the specified language will
                               be skipped
                             type: string

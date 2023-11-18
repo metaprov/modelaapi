@@ -20,7 +20,7 @@ option go_package = "github.com/metaprov/modelaapi/pkg/apis/llm/v1alpha1";
 // CodeSplitterSpec splits code documents by their AST
 message CodeSplitterSpec {
   // The language of the document(s). When set to `infer`, the language of the document
-  // will be inferred using the name and extension of the original file. Documents that
+  // will be inferred using the extension of the original file. Documents that
   // cannot be parsed using the specified language will be skipped
   // +kubebuilder:validation:Required
   optional string language = 1;

@@ -92,9 +92,8 @@ func (study *Study) Default() {
 	}
 
 	study.ObjectMeta.Labels[catalog.DatasetLabelKey] = study.Spec.Snapshot.Dataset
-	if study.Spec.LabRef != nil {
-		study.ObjectMeta.Labels[catalog.TenantLabelKey] = study.Spec.LabRef.Namespace
-		study.ObjectMeta.Labels[catalog.LabLabelKey] = study.Spec.LabRef.Name
+	if study.Spec.LabName != nil {
+		study.ObjectMeta.Labels[catalog.LabLabelKey] = *study.Spec.LabName
 	}
 
 	if study.Spec.ModelClassName != nil {

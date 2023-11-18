@@ -1363,7 +1363,7 @@ message DatasetSpec {
   // +kubebuilder:validation:Optional
   optional string description = 3;
 
-  // RunSpec specifies the configuration for snapshot runs created by the Dataset
+  // RunSpec specifies the configuration for the execution of snapshots created by the Dataset
   // +kubebuilder:validation:Required
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSpec run = 4;
 

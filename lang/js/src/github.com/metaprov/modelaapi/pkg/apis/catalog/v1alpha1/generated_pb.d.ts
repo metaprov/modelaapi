@@ -453,44 +453,6 @@ export namespace ContainerLog {
   }
 }
 
-export class CronSchedule extends jspb.Message {
-  getEnabled(): boolean;
-  setEnabled(value: boolean): CronSchedule;
-  hasEnabled(): boolean;
-  clearEnabled(): CronSchedule;
-
-  getCron(): string;
-  setCron(value: string): CronSchedule;
-  hasCron(): boolean;
-  clearCron(): CronSchedule;
-
-  getType(): string;
-  setType(value: string): CronSchedule;
-  hasType(): boolean;
-  clearType(): CronSchedule;
-
-  getMaxrecords(): number;
-  setMaxrecords(value: number): CronSchedule;
-  hasMaxrecords(): boolean;
-  clearMaxrecords(): CronSchedule;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CronSchedule.AsObject;
-  static toObject(includeInstance: boolean, msg: CronSchedule): CronSchedule.AsObject;
-  static serializeBinaryToWriter(message: CronSchedule, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CronSchedule;
-  static deserializeBinaryFromReader(message: CronSchedule, reader: jspb.BinaryReader): CronSchedule;
-}
-
-export namespace CronSchedule {
-  export type AsObject = {
-    enabled?: boolean,
-    cron?: string,
-    type?: string,
-    maxrecords?: number,
-  }
-}
-
 export class CurvePoint extends jspb.Message {
   getX(): number;
   setX(value: number): CurvePoint;
@@ -838,50 +800,6 @@ export namespace FileLocation {
   export type AsObject = {
     bucketname?: string,
     path?: string,
-  }
-}
-
-export class GithubEvents extends jspb.Message {
-  getGitconnectionname(): string;
-  setGitconnectionname(value: string): GithubEvents;
-  hasGitconnectionname(): boolean;
-  clearGitconnectionname(): GithubEvents;
-
-  getRepository(): string;
-  setRepository(value: string): GithubEvents;
-  hasRepository(): boolean;
-  clearRepository(): GithubEvents;
-
-  getBranch(): string;
-  setBranch(value: string): GithubEvents;
-  hasBranch(): boolean;
-  clearBranch(): GithubEvents;
-
-  getBlobnameregex(): string;
-  setBlobnameregex(value: string): GithubEvents;
-  hasBlobnameregex(): boolean;
-  clearBlobnameregex(): GithubEvents;
-
-  getEventsList(): Array<string>;
-  setEventsList(value: Array<string>): GithubEvents;
-  clearEventsList(): GithubEvents;
-  addEvents(value: string, index?: number): GithubEvents;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GithubEvents.AsObject;
-  static toObject(includeInstance: boolean, msg: GithubEvents): GithubEvents.AsObject;
-  static serializeBinaryToWriter(message: GithubEvents, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GithubEvents;
-  static deserializeBinaryFromReader(message: GithubEvents, reader: jspb.BinaryReader): GithubEvents;
-}
-
-export namespace GithubEvents {
-  export type AsObject = {
-    gitconnectionname?: string,
-    repository?: string,
-    branch?: string,
-    blobnameregex?: string,
-    eventsList: Array<string>,
   }
 }
 
@@ -2241,56 +2159,6 @@ export namespace RocAucCurve {
   }
 }
 
-export class RunRecord extends jspb.Message {
-  getId(): string;
-  setId(value: string): RunRecord;
-  hasId(): boolean;
-  clearId(): RunRecord;
-
-  getFailuremessage(): string;
-  setFailuremessage(value: string): RunRecord;
-  hasFailuremessage(): boolean;
-  clearFailuremessage(): RunRecord;
-
-  getResourceversion(): number;
-  setResourceversion(value: number): RunRecord;
-  hasResourceversion(): boolean;
-  clearResourceversion(): RunRecord;
-
-  getStartedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setStartedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): RunRecord;
-  hasStartedat(): boolean;
-  clearStartedat(): RunRecord;
-
-  getCompletedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setCompletedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): RunRecord;
-  hasCompletedat(): boolean;
-  clearCompletedat(): RunRecord;
-
-  getLogsList(): Array<ContainerLog>;
-  setLogsList(value: Array<ContainerLog>): RunRecord;
-  clearLogsList(): RunRecord;
-  addLogs(value?: ContainerLog, index?: number): ContainerLog;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RunRecord.AsObject;
-  static toObject(includeInstance: boolean, msg: RunRecord): RunRecord.AsObject;
-  static serializeBinaryToWriter(message: RunRecord, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RunRecord;
-  static deserializeBinaryFromReader(message: RunRecord, reader: jspb.BinaryReader): RunRecord;
-}
-
-export namespace RunRecord {
-  export type AsObject = {
-    id?: string,
-    failuremessage?: string,
-    resourceversion?: number,
-    startedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    completedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    logsList: Array<ContainerLog.AsObject>,
-  }
-}
-
 export class RunReference extends jspb.Message {
   getName(): string;
   setName(value: string): RunReference;
@@ -2410,50 +2278,6 @@ export namespace RunSpec {
     timeout?: number,
     maxpreviousruns?: number,
     schedule?: RunSchedule.AsObject,
-  }
-}
-
-export class RunStatusOld extends jspb.Message {
-  getLastrunat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastrunat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): RunStatusOld;
-  hasLastrunat(): boolean;
-  clearLastrunat(): RunStatusOld;
-
-  getLastrunid(): string;
-  setLastrunid(value: string): RunStatusOld;
-  hasLastrunid(): boolean;
-  clearLastrunid(): RunStatusOld;
-
-  getActiverunid(): string;
-  setActiverunid(value: string): RunStatusOld;
-  hasActiverunid(): boolean;
-  clearActiverunid(): RunStatusOld;
-
-  getActiverunlogsList(): Array<ContainerLog>;
-  setActiverunlogsList(value: Array<ContainerLog>): RunStatusOld;
-  clearActiverunlogsList(): RunStatusOld;
-  addActiverunlogs(value?: ContainerLog, index?: number): ContainerLog;
-
-  getRunrecordsList(): Array<RunRecord>;
-  setRunrecordsList(value: Array<RunRecord>): RunStatusOld;
-  clearRunrecordsList(): RunStatusOld;
-  addRunrecords(value?: RunRecord, index?: number): RunRecord;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RunStatusOld.AsObject;
-  static toObject(includeInstance: boolean, msg: RunStatusOld): RunStatusOld.AsObject;
-  static serializeBinaryToWriter(message: RunStatusOld, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RunStatusOld;
-  static deserializeBinaryFromReader(message: RunStatusOld, reader: jspb.BinaryReader): RunStatusOld;
-}
-
-export namespace RunStatusOld {
-  export type AsObject = {
-    lastrunat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    lastrunid?: string,
-    activerunid?: string,
-    activerunlogsList: Array<ContainerLog.AsObject>,
-    runrecordsList: Array<RunRecord.AsObject>,
   }
 }
 

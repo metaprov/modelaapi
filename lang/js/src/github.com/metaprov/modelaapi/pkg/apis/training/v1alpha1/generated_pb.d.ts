@@ -3401,10 +3401,10 @@ export class ReportSpec extends jspb.Message {
   hasTimeout(): boolean;
   clearTimeout(): ReportSpec;
 
-  getLabref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setLabref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ReportSpec;
-  hasLabref(): boolean;
-  clearLabref(): ReportSpec;
+  getLabname(): string;
+  setLabname(value: string): ReportSpec;
+  hasLabname(): boolean;
+  clearLabname(): ReportSpec;
 
   getKeyList(): Array<string>;
   setKeyList(value: Array<string>): ReportSpec;
@@ -3444,7 +3444,7 @@ export namespace ReportSpec {
     owner?: string,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     timeout?: number,
-    labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    labname?: string,
     keyList: Array<string>,
     artifactbucketname?: string,
     modelclassname?: string,
@@ -4833,10 +4833,10 @@ export namespace TimeSeriesEvent {
 }
 
 export class TrainingSpec extends jspb.Message {
-  getLabref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setLabref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): TrainingSpec;
-  hasLabref(): boolean;
-  clearLabref(): TrainingSpec;
+  getLabname(): string;
+  setLabname(value: string): TrainingSpec;
+  hasLabname(): boolean;
+  clearLabname(): TrainingSpec;
 
   getPriority(): string;
   setPriority(value: string): TrainingSpec;
@@ -4908,7 +4908,7 @@ export class TrainingSpec extends jspb.Message {
 
 export namespace TrainingSpec {
   export type AsObject = {
-    labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    labname?: string,
     priority?: string,
     cvtype?: string,
     folds?: number,

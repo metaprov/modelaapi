@@ -9,8 +9,8 @@ import (
 type LabConditionType string
 
 const (
-	LabNamespaceReady ServingSiteConditionType = "NamespaceReady"
-	LabRbacReady      ServingSiteConditionType = "RbacReady"
+	LabNamespaceReady LabConditionType = "NamespaceReady"
+	LabRbacReady      LabConditionType = "RbacReady"
 )
 
 // +kubebuilder:object:root=true

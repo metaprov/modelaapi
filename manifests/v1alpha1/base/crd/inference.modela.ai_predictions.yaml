@@ -589,7 +589,7 @@ spec:
                     format: int32
                     type: integer
                 type: object
-              servingSiteRef:
+              servingSiteName:
                 description: The name of the Serving Site under which Jobs created
                   by the Prediction will be executed. If empty, default to the Data
                   Product's default Lab
@@ -909,14 +909,25 @@ spec:
                   - version
                   type: object
                 type: array
-              availableRunVersions:
+              availableRuns:
                 description: AvailableRunVersions contains the collection of run versions
                   which are ready for use. Each version corresponds with an existing
                   PredictionRun resource
                 items:
-                  description: Version specifies the numerical version of a resource
-                  format: int32
-                  type: integer
+                  description: RunReference defines a generic reference to any type
+                    of run
+                  properties:
+                    name:
+                      description: Name specifies the name of the resource
+                      type: string
+                    version:
+                      description: Version specifies the version of the run
+                      format: int32
+                      type: integer
+                  required:
+                  - name
+                  - version
+                  type: object
                 type: array
               conditions:
                 items:

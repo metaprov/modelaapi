@@ -229,29 +229,6 @@ message ContainerLog {
   optional string bucket = 4;
 }
 
-// CronSchedule specifies the schedule for a Job to be executed
-message CronSchedule {
-  // Enabled indicates if the schedule is enabled. When enabled, a CronJob will be created which when triggered
-  // will initiate the regeneration of the resource that specifies the schedule
-  // +kubebuilder:default:=false
-  // +kubebuilder:validation:Optional
-  optional bool enabled = 1;
-
-  // The cron string for the schedule, applicable if the trigger type is Cron.
-  // See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm for more information
-  // +kubebuilder:validation:Optional
-  optional string cron = 2;
-
-  // The type of schedule, which can be a frequency interval or a cron expression
-  // +kubebuilder:validation:Optional
-  optional string type = 3;
-
-  // The number of historical run records that the resource will maintain
-  // +kubebuilder:default:=10
-  // +kubebuilder:validation:Optional
-  optional int32 maxRecords = 4;
-}
-
 message CurvePoint {
   optional double x = 1;
 
@@ -420,25 +397,6 @@ message FileLocation {
   optional string bucketName = 1;
 
   optional string path = 2;
-}
-
-// GithubEvents specify repo and the events to listen in order ot fire the pipeline
-message GithubEvents {
-  // The GitHub connections used to loginto git
-  optional string gitConnectionName = 1;
-
-  // Repository is the name of the github repository
-  optional string repository = 2;
-
-  // Branch is the name of the github branch.
-  // By default, the trigger listen to all branch
-  optional string branch = 3;
-
-  // Blobname regex is a regular expression on the blob name that changed
-  optional string blobNameRegex = 4;
-
-  // Events is the name of the github events.
-  repeated string events = 5;
 }
 
 // GpuClass define the specific for a machine type of a cloud provider
@@ -1098,28 +1056,6 @@ message RocAucCurve {
   repeated CurvePoint values = 1;
 }
 
-message RunRecord {
-  // ID specifies the unique ID or resource name for the run
-  optional string id = 1;
-
-  // FailureMessage contains the failure produced by the run, if applicable
-  optional string failureMessage = 2;
-
-  // ResourceVersion specifies the version of the resource relevant to the run at the time of completion
-  optional int32 resourceVersion = 3;
-
-  // StartedAt specifies the time at which the run started
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startedAt = 4;
-
-  // CompletedAt specifies the time at which the run was completed
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completedAt = 5;
-
-  // Logs contains the logs for all workloads produced by the run
-  repeated ContainerLog logs = 6;
-}
-
 // RunReference defines a generic reference to any type of run
 message RunReference {
   // Name specifies the name of the resource
@@ -1177,28 +1113,6 @@ message RunSpec {
   // Schedule specifies the schedule for the resource to create new runs
   // +kubebuilder:validation:Optional
   optional RunSchedule schedule = 3;
-}
-
-message RunStatusOld {
-  // Last time the job started
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRunAt = 1;
-
-  // The unique ID of the last run created by the schedule.
-  // +kubebuilder:validation:Optional
-  optional string lastRunId = 2;
-
-  // The unique ID of the currently active run
-  // +kubebuilder:validation:Optional
-  optional string activeRunId = 3;
-
-  // The logs of the currently active run
-  // +kubebuilder:validation:Optional
-  repeated ContainerLog activeRunLogs = 4;
-
-  // RunRecords contains the collection of previously recorded runs
-  // +kubebuilder:validation:Optional
-  repeated RunRecord runRecords = 5;
 }
 
 // SnapshotReference defines a reference to a specific snapshot for a Dataset

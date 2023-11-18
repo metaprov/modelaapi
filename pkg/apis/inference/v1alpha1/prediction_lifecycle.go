@@ -85,6 +85,10 @@ func (prediction *Prediction) ManifestURI() string {
 	return fmt.Sprintf("%s/manifest.json", prediction.RootURI())
 }
 
+func (prediction *Prediction) Deleted() bool {
+	return !prediction.ObjectMeta.DeletionTimestamp.IsZero()
+}
+
 /////// Saved Condition ///////
 
 func (prediction *Prediction) MarkNotSaved() {

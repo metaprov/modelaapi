@@ -12,12 +12,11 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-// Condition on the dataset
 type DataProductConditionType string
 
-// / ProductRef Condition
 const (
-	DataProductReady = "Ready"
+	DataProductNamespaceReady DataProductConditionType = "NamespaceReady"
+	DataProductRbacReady      DataProductConditionType = "RbacReady"
 )
 
 // +kubebuilder:object:root=true

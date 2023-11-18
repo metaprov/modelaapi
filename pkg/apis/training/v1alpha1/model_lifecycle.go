@@ -859,7 +859,7 @@ func (model *Model) InitializeFromStudy(run *StudyRun, study *Study) {
 	model.ObjectMeta.Labels = study.ObjectMeta.Labels
 	model.ObjectMeta.Labels[catalog.StudyLabelKey] = study.Name
 	model.ObjectMeta.Labels[catalog.StudyRunLabelKey] = run.Name
-	model.Spec.Training.LabRef = study.Spec.LabRef
+	model.Spec.Training.LabName = study.Spec.LabName
 	model.Spec.Fast = study.Spec.Fast
 }
 

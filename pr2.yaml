@@ -4,76 +4,27 @@ metadata:
   name: ouod-batch-prediction
   namespace: default-product
 spec:
-  abort: false
-  activeDeadlineSeconds: 600
-  createDataset: false
-  forecastSpec:
-    horizon:
-      start: 0
-  schedule:
-    enabled: true
-    type: hourly
+  run:
+    maxPreviousRuns: 5
+    schedule:
+      enabled: true
+      type: hourly
   input:
-    format:
-      csv:
-        commentChars: '#'
-        compression: none
-        delimiter: comma
-        encoding: utf-8
-        escapeChar: single-quote
-        hasIndexColumn: false
-        header: true
-        maxRows: 0
-        nullValues: ''
-        quote: double-quote
-        skipRows: 0
-        strict: false
-      excel:
-        data:
-          entireSheet: false
-        firstSheetWithData: false
-      fileType: csv
-      parquet:
-        engine: auto
     location:
-      bucket: ''
-      connection: oneuponedown
-      database: ''
-      path: ''
-      sql: SELECT * FROM prediction_view_new;
-      table: prediction_view_new
-      topic: ''
-      type: view
-      url: ''
+      database:
+        connectionName: oneuponedown
+        sql: SELECT * FROM prediction_view_new;
   labeled: false
-  modelRef:
+  model:
     name: model-20230711-1659570
-    namespace: default-product
   output:
-    IncludeShapValues: false
     action: upsert
-    createTableIfNotExist: false
-    datasetName: ''
-    detectOutliers: false
-    format: csv
     includeFeatures: false
     location:
-      bucket: ''
-      connection: oneuponedown
-      database: ''
-      path: ''
-      sql: ''
-      table: prediction_alt_new
-      topic: ''
-      type: table
-      url: ''
-  owner: admin
-  partitionLocation: {}
+      database:
+        connectionName: oneuponedown
+        table: prediction_alt_new
   resources:
     custom: false
     workloadName: general-large
-  servingSiteRef:
-    name: modela-serving-site
-    namespace: modela
-  unitTests: {}
-  versionName: v1
+  servingSiteName: modela-serving-site

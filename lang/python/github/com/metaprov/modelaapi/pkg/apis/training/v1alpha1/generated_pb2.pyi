@@ -1086,7 +1086,7 @@ class ReportList(_message.Message):
     def __init__(self, metadata: _Optional[_Union[_generated_pb2_1_1_1.ListMeta, _Mapping]] = ..., items: _Optional[_Iterable[_Union[Report, _Mapping]]] = ...) -> None: ...
 
 class ReportSpec(_message.Message):
-    __slots__ = ["versionName", "entityRef", "reportType", "format", "notification", "owner", "resources", "timeout", "labRef", "key", "artifactBucketName", "modelClassName", "modelClassRunName"]
+    __slots__ = ["versionName", "entityRef", "reportType", "format", "notification", "owner", "resources", "timeout", "labName", "key", "artifactBucketName", "modelClassName", "modelClassRunName"]
     VERSIONNAME_FIELD_NUMBER: _ClassVar[int]
     ENTITYREF_FIELD_NUMBER: _ClassVar[int]
     REPORTTYPE_FIELD_NUMBER: _ClassVar[int]
@@ -1095,7 +1095,7 @@ class ReportSpec(_message.Message):
     OWNER_FIELD_NUMBER: _ClassVar[int]
     RESOURCES_FIELD_NUMBER: _ClassVar[int]
     TIMEOUT_FIELD_NUMBER: _ClassVar[int]
-    LABREF_FIELD_NUMBER: _ClassVar[int]
+    LABNAME_FIELD_NUMBER: _ClassVar[int]
     KEY_FIELD_NUMBER: _ClassVar[int]
     ARTIFACTBUCKETNAME_FIELD_NUMBER: _ClassVar[int]
     MODELCLASSNAME_FIELD_NUMBER: _ClassVar[int]
@@ -1108,12 +1108,12 @@ class ReportSpec(_message.Message):
     owner: str
     resources: _generated_pb2.ResourceSpec
     timeout: int
-    labRef: _generated_pb2_1_1.ObjectReference
+    labName: str
     key: _containers.RepeatedScalarFieldContainer[str]
     artifactBucketName: str
     modelClassName: str
     modelClassRunName: str
-    def __init__(self, versionName: _Optional[str] = ..., entityRef: _Optional[_Union[_generated_pb2_1_1.ObjectReference, _Mapping]] = ..., reportType: _Optional[str] = ..., format: _Optional[str] = ..., notification: _Optional[_Union[_generated_pb2.NotificationSpec, _Mapping]] = ..., owner: _Optional[str] = ..., resources: _Optional[_Union[_generated_pb2.ResourceSpec, _Mapping]] = ..., timeout: _Optional[int] = ..., labRef: _Optional[_Union[_generated_pb2_1_1.ObjectReference, _Mapping]] = ..., key: _Optional[_Iterable[str]] = ..., artifactBucketName: _Optional[str] = ..., modelClassName: _Optional[str] = ..., modelClassRunName: _Optional[str] = ...) -> None: ...
+    def __init__(self, versionName: _Optional[str] = ..., entityRef: _Optional[_Union[_generated_pb2_1_1.ObjectReference, _Mapping]] = ..., reportType: _Optional[str] = ..., format: _Optional[str] = ..., notification: _Optional[_Union[_generated_pb2.NotificationSpec, _Mapping]] = ..., owner: _Optional[str] = ..., resources: _Optional[_Union[_generated_pb2.ResourceSpec, _Mapping]] = ..., timeout: _Optional[int] = ..., labName: _Optional[str] = ..., key: _Optional[_Iterable[str]] = ..., artifactBucketName: _Optional[str] = ..., modelClassName: _Optional[str] = ..., modelClassRunName: _Optional[str] = ...) -> None: ...
 
 class ReportStatus(_message.Message):
     __slots__ = ["completedAt", "phase", "location", "observedGeneration", "failureReason", "failureMessage", "logs", "updatedAt", "groupby", "conditions"]
@@ -1569,8 +1569,8 @@ class TimeSeriesEvent(_message.Message):
     def __init__(self, name: _Optional[str] = ..., method: _Optional[str] = ..., holiday: bool = ..., country: _Optional[str] = ..., preEvent: _Optional[int] = ..., postEvent: _Optional[int] = ..., timePoints: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class TrainingSpec(_message.Message):
-    __slots__ = ["labRef", "priority", "cvtype", "folds", "sh", "seed", "resources", "gpu", "featureImportance", "samplePct", "checkpoint", "logLevel", "timeout"]
-    LABREF_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["labName", "priority", "cvType", "folds", "sh", "seed", "resources", "gpu", "featureImportance", "samplePct", "checkpoint", "logLevel", "timeout"]
+    LABNAME_FIELD_NUMBER: _ClassVar[int]
     PRIORITY_FIELD_NUMBER: _ClassVar[int]
     CVTYPE_FIELD_NUMBER: _ClassVar[int]
     FOLDS_FIELD_NUMBER: _ClassVar[int]
@@ -1583,9 +1583,9 @@ class TrainingSpec(_message.Message):
     CHECKPOINT_FIELD_NUMBER: _ClassVar[int]
     LOGLEVEL_FIELD_NUMBER: _ClassVar[int]
     TIMEOUT_FIELD_NUMBER: _ClassVar[int]
-    labRef: _generated_pb2_1_1.ObjectReference
+    labName: str
     priority: str
-    cvtype: str
+    cvType: str
     folds: int
     sh: SuccessiveHalvingSpec
     seed: float
@@ -1596,7 +1596,7 @@ class TrainingSpec(_message.Message):
     checkpoint: CheckpointSpec
     logLevel: str
     timeout: int
-    def __init__(self, labRef: _Optional[_Union[_generated_pb2_1_1.ObjectReference, _Mapping]] = ..., priority: _Optional[str] = ..., cvtype: _Optional[str] = ..., folds: _Optional[int] = ..., sh: _Optional[_Union[SuccessiveHalvingSpec, _Mapping]] = ..., seed: _Optional[float] = ..., resources: _Optional[_Union[_generated_pb2.ResourceSpec, _Mapping]] = ..., gpu: bool = ..., featureImportance: bool = ..., samplePct: _Optional[int] = ..., checkpoint: _Optional[_Union[CheckpointSpec, _Mapping]] = ..., logLevel: _Optional[str] = ..., timeout: _Optional[int] = ...) -> None: ...
+    def __init__(self, labName: _Optional[str] = ..., priority: _Optional[str] = ..., cvType: _Optional[str] = ..., folds: _Optional[int] = ..., sh: _Optional[_Union[SuccessiveHalvingSpec, _Mapping]] = ..., seed: _Optional[float] = ..., resources: _Optional[_Union[_generated_pb2.ResourceSpec, _Mapping]] = ..., gpu: bool = ..., featureImportance: bool = ..., samplePct: _Optional[int] = ..., checkpoint: _Optional[_Union[CheckpointSpec, _Mapping]] = ..., logLevel: _Optional[str] = ..., timeout: _Optional[int] = ...) -> None: ...
 
 class UnivariateForecastStatus(_message.Message):
     __slots__ = ["gridSearchResultURI", "baseEstimator", "modelURI", "cvResultURI", "forecastURI"]

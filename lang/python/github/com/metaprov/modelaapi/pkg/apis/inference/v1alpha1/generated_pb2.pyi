@@ -430,12 +430,12 @@ class PredictionRunStatus(_message.Message):
     def __init__(self, observedGeneration: _Optional[int] = ..., predictionManifestLocation: _Optional[_Union[_generated_pb2.ManifestLocation, _Mapping]] = ..., runVersion: _Optional[int] = ..., rows: _Optional[int] = ..., phase: _Optional[str] = ..., unitTestResults: _Optional[_Union[_generated_pb2.TestSuiteResult, _Mapping]] = ..., failureMessage: _Optional[str] = ..., logs: _Optional[_Iterable[_Union[_generated_pb2.ContainerLog, _Mapping]]] = ..., forecast: _Optional[_Union[ForecastStatus, _Mapping]] = ..., usage: _Optional[_Union[_generated_pb2.ResourceConsumption, _Mapping]] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1_1_1.Time, _Mapping]] = ..., completedAt: _Optional[_Union[_generated_pb2_1_1_1_1.Time, _Mapping]] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1_1_1.Condition, _Mapping]]] = ...) -> None: ...
 
 class PredictionSpec(_message.Message):
-    __slots__ = ["owner", "description", "run", "artifactBucketName", "servingSiteRef", "model", "input", "output", "labeled", "unitTests", "resources", "forecast", "modelClassName"]
+    __slots__ = ["owner", "description", "run", "artifactBucketName", "servingSiteName", "model", "input", "output", "labeled", "unitTests", "resources", "forecast", "modelClassName"]
     OWNER_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     RUN_FIELD_NUMBER: _ClassVar[int]
     ARTIFACTBUCKETNAME_FIELD_NUMBER: _ClassVar[int]
-    SERVINGSITEREF_FIELD_NUMBER: _ClassVar[int]
+    SERVINGSITENAME_FIELD_NUMBER: _ClassVar[int]
     MODEL_FIELD_NUMBER: _ClassVar[int]
     INPUT_FIELD_NUMBER: _ClassVar[int]
     OUTPUT_FIELD_NUMBER: _ClassVar[int]
@@ -448,7 +448,7 @@ class PredictionSpec(_message.Message):
     description: str
     run: _generated_pb2.RunSpec
     artifactBucketName: str
-    servingSiteRef: str
+    servingSiteName: str
     model: ModelSpec
     input: _generated_pb2_1.DataInputSpec
     output: _generated_pb2_1.DataOutputSpec
@@ -457,14 +457,14 @@ class PredictionSpec(_message.Message):
     resources: _generated_pb2.ResourceSpec
     forecast: ForecastPredictionSpec
     modelClassName: str
-    def __init__(self, owner: _Optional[str] = ..., description: _Optional[str] = ..., run: _Optional[_Union[_generated_pb2.RunSpec, _Mapping]] = ..., artifactBucketName: _Optional[str] = ..., servingSiteRef: _Optional[str] = ..., model: _Optional[_Union[ModelSpec, _Mapping]] = ..., input: _Optional[_Union[_generated_pb2_1.DataInputSpec, _Mapping]] = ..., output: _Optional[_Union[_generated_pb2_1.DataOutputSpec, _Mapping]] = ..., labeled: bool = ..., unitTests: _Optional[_Union[_generated_pb2_1_1.ModelTestSuite, _Mapping]] = ..., resources: _Optional[_Union[_generated_pb2.ResourceSpec, _Mapping]] = ..., forecast: _Optional[_Union[ForecastPredictionSpec, _Mapping]] = ..., modelClassName: _Optional[str] = ...) -> None: ...
+    def __init__(self, owner: _Optional[str] = ..., description: _Optional[str] = ..., run: _Optional[_Union[_generated_pb2.RunSpec, _Mapping]] = ..., artifactBucketName: _Optional[str] = ..., servingSiteName: _Optional[str] = ..., model: _Optional[_Union[ModelSpec, _Mapping]] = ..., input: _Optional[_Union[_generated_pb2_1.DataInputSpec, _Mapping]] = ..., output: _Optional[_Union[_generated_pb2_1.DataOutputSpec, _Mapping]] = ..., labeled: bool = ..., unitTests: _Optional[_Union[_generated_pb2_1_1.ModelTestSuite, _Mapping]] = ..., resources: _Optional[_Union[_generated_pb2.ResourceSpec, _Mapping]] = ..., forecast: _Optional[_Union[ForecastPredictionSpec, _Mapping]] = ..., modelClassName: _Optional[str] = ...) -> None: ...
 
 class PredictionStatus(_message.Message):
-    __slots__ = ["observedGeneration", "active", "lastRunVersion", "availableRunVersions", "lastRunAt", "failureMessage", "schedule", "updatedAt", "conditions"]
+    __slots__ = ["observedGeneration", "active", "lastRunVersion", "availableRuns", "lastRunAt", "failureMessage", "schedule", "updatedAt", "conditions"]
     OBSERVEDGENERATION_FIELD_NUMBER: _ClassVar[int]
     ACTIVE_FIELD_NUMBER: _ClassVar[int]
     LASTRUNVERSION_FIELD_NUMBER: _ClassVar[int]
-    AVAILABLERUNVERSIONS_FIELD_NUMBER: _ClassVar[int]
+    AVAILABLERUNS_FIELD_NUMBER: _ClassVar[int]
     LASTRUNAT_FIELD_NUMBER: _ClassVar[int]
     FAILUREMESSAGE_FIELD_NUMBER: _ClassVar[int]
     SCHEDULE_FIELD_NUMBER: _ClassVar[int]
@@ -473,13 +473,13 @@ class PredictionStatus(_message.Message):
     observedGeneration: int
     active: _containers.RepeatedCompositeFieldContainer[_generated_pb2.RunReference]
     lastRunVersion: int
-    availableRunVersions: _containers.RepeatedScalarFieldContainer[int]
+    availableRuns: _containers.RepeatedCompositeFieldContainer[_generated_pb2.RunReference]
     lastRunAt: _generated_pb2_1_1_1_1.Time
     failureMessage: str
     schedule: _generated_pb2.RunScheduleStatus
     updatedAt: _generated_pb2_1_1_1_1.Time
     conditions: _containers.RepeatedCompositeFieldContainer[_generated_pb2_1_1_1_1.Condition]
-    def __init__(self, observedGeneration: _Optional[int] = ..., active: _Optional[_Iterable[_Union[_generated_pb2.RunReference, _Mapping]]] = ..., lastRunVersion: _Optional[int] = ..., availableRunVersions: _Optional[_Iterable[int]] = ..., lastRunAt: _Optional[_Union[_generated_pb2_1_1_1_1.Time, _Mapping]] = ..., failureMessage: _Optional[str] = ..., schedule: _Optional[_Union[_generated_pb2.RunScheduleStatus, _Mapping]] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1_1_1.Time, _Mapping]] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1_1_1.Condition, _Mapping]]] = ...) -> None: ...
+    def __init__(self, observedGeneration: _Optional[int] = ..., active: _Optional[_Iterable[_Union[_generated_pb2.RunReference, _Mapping]]] = ..., lastRunVersion: _Optional[int] = ..., availableRuns: _Optional[_Iterable[_Union[_generated_pb2.RunReference, _Mapping]]] = ..., lastRunAt: _Optional[_Union[_generated_pb2_1_1_1_1.Time, _Mapping]] = ..., failureMessage: _Optional[str] = ..., schedule: _Optional[_Union[_generated_pb2.RunScheduleStatus, _Mapping]] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1_1_1.Time, _Mapping]] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1_1_1.Condition, _Mapping]]] = ...) -> None: ...
 
 class Predictor(_message.Message):
     __slots__ = ["metadata", "spec", "status"]

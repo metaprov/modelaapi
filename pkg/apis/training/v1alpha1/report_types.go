@@ -113,7 +113,7 @@ type ReportSpec struct {
 	// The reference to the Lab namespace under which the report generation Job will be executed under.
 	// If unspecified, the default Lab for the Data Product of the Report will be used
 	// +kubebuilder:validation:Optional
-	LabRef *v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,9,opt,name=labRef"`
+	LabName *string `json:"labName,omitempty" protobuf:"bytes,9,opt,name=labName"`
 	// For group forecasting, this is the key of the group
 	// +kubebuilder:validation:Optional
 	Key []string `json:"key,omitempty" protobuf:"bytes,10,rep,name=key"`

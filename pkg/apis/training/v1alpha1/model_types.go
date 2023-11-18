@@ -557,8 +557,8 @@ type SuccessiveHalvingSpec struct {
 
 // TrainingSpec specifies the configuration of a model training workload
 type TrainingSpec struct {
-	// The reference to the Lab under which the model training Job will be created
-	LabRef *v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,1,opt,name=labRef"`
+	// The name of the Lab under which the model training Job will be created
+	LabName *string `json:"labName,omitempty" protobuf:"bytes,1,opt,name=labName"`
 	// The priority of the Kubernetes Job created by the Model (medium, by default)
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:="medium"
@@ -566,7 +566,7 @@ type TrainingSpec struct {
 	// The type of cross-validation to use, in the case that a validation dataset is not enabled
 	// +kubebuilder:default:=kfold
 	// +kubebuilder:validation:Optional
-	CvType *catalog.CvType `json:"cvtype,omitempty" protobuf:"bytes,3,opt,name=cvtype"`
+	CvType *catalog.CvType `json:"cvType,omitempty" protobuf:"bytes,3,opt,name=cvType"`
 	// The number of folds to use during cross-validation. If set to 0, cross-validation will be disabled
 	// +kubebuilder:default:=5
 	// +kubebuilder:validation:Optional

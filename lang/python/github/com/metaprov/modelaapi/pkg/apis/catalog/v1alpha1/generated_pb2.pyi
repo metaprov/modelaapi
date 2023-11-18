@@ -150,18 +150,6 @@ class ContainerLog(_message.Message):
     bucket: str
     def __init__(self, job: _Optional[str] = ..., container: _Optional[str] = ..., key: _Optional[str] = ..., bucket: _Optional[str] = ...) -> None: ...
 
-class CronSchedule(_message.Message):
-    __slots__ = ["enabled", "cron", "type", "maxRecords"]
-    ENABLED_FIELD_NUMBER: _ClassVar[int]
-    CRON_FIELD_NUMBER: _ClassVar[int]
-    TYPE_FIELD_NUMBER: _ClassVar[int]
-    MAXRECORDS_FIELD_NUMBER: _ClassVar[int]
-    enabled: bool
-    cron: str
-    type: str
-    maxRecords: int
-    def __init__(self, enabled: bool = ..., cron: _Optional[str] = ..., type: _Optional[str] = ..., maxRecords: _Optional[int] = ...) -> None: ...
-
 class CurvePoint(_message.Message):
     __slots__ = ["x", "y"]
     X_FIELD_NUMBER: _ClassVar[int]
@@ -273,20 +261,6 @@ class FileLocation(_message.Message):
     bucketName: str
     path: str
     def __init__(self, bucketName: _Optional[str] = ..., path: _Optional[str] = ...) -> None: ...
-
-class GithubEvents(_message.Message):
-    __slots__ = ["gitConnectionName", "repository", "branch", "blobNameRegex", "events"]
-    GITCONNECTIONNAME_FIELD_NUMBER: _ClassVar[int]
-    REPOSITORY_FIELD_NUMBER: _ClassVar[int]
-    BRANCH_FIELD_NUMBER: _ClassVar[int]
-    BLOBNAMEREGEX_FIELD_NUMBER: _ClassVar[int]
-    EVENTS_FIELD_NUMBER: _ClassVar[int]
-    gitConnectionName: str
-    repository: str
-    branch: str
-    blobNameRegex: str
-    events: _containers.RepeatedScalarFieldContainer[str]
-    def __init__(self, gitConnectionName: _Optional[str] = ..., repository: _Optional[str] = ..., branch: _Optional[str] = ..., blobNameRegex: _Optional[str] = ..., events: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class GpuClass(_message.Message):
     __slots__ = ["code", "regionName", "vcpu", "gpumem"]
@@ -725,22 +699,6 @@ class RocAucCurve(_message.Message):
     values: _containers.RepeatedCompositeFieldContainer[CurvePoint]
     def __init__(self, values: _Optional[_Iterable[_Union[CurvePoint, _Mapping]]] = ...) -> None: ...
 
-class RunRecord(_message.Message):
-    __slots__ = ["id", "failureMessage", "resourceVersion", "startedAt", "completedAt", "logs"]
-    ID_FIELD_NUMBER: _ClassVar[int]
-    FAILUREMESSAGE_FIELD_NUMBER: _ClassVar[int]
-    RESOURCEVERSION_FIELD_NUMBER: _ClassVar[int]
-    STARTEDAT_FIELD_NUMBER: _ClassVar[int]
-    COMPLETEDAT_FIELD_NUMBER: _ClassVar[int]
-    LOGS_FIELD_NUMBER: _ClassVar[int]
-    id: str
-    failureMessage: str
-    resourceVersion: int
-    startedAt: _generated_pb2_1_1.Time
-    completedAt: _generated_pb2_1_1.Time
-    logs: _containers.RepeatedCompositeFieldContainer[ContainerLog]
-    def __init__(self, id: _Optional[str] = ..., failureMessage: _Optional[str] = ..., resourceVersion: _Optional[int] = ..., startedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., completedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., logs: _Optional[_Iterable[_Union[ContainerLog, _Mapping]]] = ...) -> None: ...
-
 class RunReference(_message.Message):
     __slots__ = ["name", "version"]
     NAME_FIELD_NUMBER: _ClassVar[int]
@@ -778,20 +736,6 @@ class RunSpec(_message.Message):
     maxPreviousRuns: int
     schedule: RunSchedule
     def __init__(self, timeout: _Optional[int] = ..., maxPreviousRuns: _Optional[int] = ..., schedule: _Optional[_Union[RunSchedule, _Mapping]] = ...) -> None: ...
-
-class RunStatusOld(_message.Message):
-    __slots__ = ["lastRunAt", "lastRunId", "activeRunId", "activeRunLogs", "runRecords"]
-    LASTRUNAT_FIELD_NUMBER: _ClassVar[int]
-    LASTRUNID_FIELD_NUMBER: _ClassVar[int]
-    ACTIVERUNID_FIELD_NUMBER: _ClassVar[int]
-    ACTIVERUNLOGS_FIELD_NUMBER: _ClassVar[int]
-    RUNRECORDS_FIELD_NUMBER: _ClassVar[int]
-    lastRunAt: _generated_pb2_1_1.Time
-    lastRunId: str
-    activeRunId: str
-    activeRunLogs: _containers.RepeatedCompositeFieldContainer[ContainerLog]
-    runRecords: _containers.RepeatedCompositeFieldContainer[RunRecord]
-    def __init__(self, lastRunAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., lastRunId: _Optional[str] = ..., activeRunId: _Optional[str] = ..., activeRunLogs: _Optional[_Iterable[_Union[ContainerLog, _Mapping]]] = ..., runRecords: _Optional[_Iterable[_Union[RunRecord, _Mapping]]] = ...) -> None: ...
 
 class SnapshotReference(_message.Message):
     __slots__ = ["dataset", "version", "name"]

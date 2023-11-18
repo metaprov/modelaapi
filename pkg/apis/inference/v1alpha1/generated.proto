@@ -702,7 +702,7 @@ message PredictionSpec {
   // The name of the Serving Site under which Jobs created by the Prediction will be executed.
   // If empty, default to the Data Product's default Lab
   // +kubebuilder:validation:Optional
-  optional string servingSiteRef = 5;
+  optional string servingSiteName = 5;
 
   // The specification for the model that will be used for the Prediction
   // +kubebuilder:validation:Optional
@@ -755,7 +755,7 @@ message PredictionStatus {
   // AvailableRunVersions contains the collection of run versions which are ready for use.
   // Each version corresponds with an existing PredictionRun resource
   // +kubebuilder:validation:Optional
-  repeated uint32 availableRunVersions = 5;
+  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunReference availableRuns = 5;
 
   // LastRunAt specifies the time at which a run was last created for the Study
   // +kubebuilder:validation:Optional

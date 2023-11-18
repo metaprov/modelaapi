@@ -1272,10 +1272,10 @@ export class PredictionSpec extends jspb.Message {
   hasArtifactbucketname(): boolean;
   clearArtifactbucketname(): PredictionSpec;
 
-  getServingsiteref(): string;
-  setServingsiteref(value: string): PredictionSpec;
-  hasServingsiteref(): boolean;
-  clearServingsiteref(): PredictionSpec;
+  getServingsitename(): string;
+  setServingsitename(value: string): PredictionSpec;
+  hasServingsitename(): boolean;
+  clearServingsitename(): PredictionSpec;
 
   getModel(): ModelSpec | undefined;
   setModel(value?: ModelSpec): PredictionSpec;
@@ -1331,7 +1331,7 @@ export namespace PredictionSpec {
     description?: string,
     run?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSpec.AsObject,
     artifactbucketname?: string,
-    servingsiteref?: string,
+    servingsitename?: string,
     model?: ModelSpec.AsObject,
     input?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataInputSpec.AsObject,
     output?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec.AsObject,
@@ -1359,10 +1359,10 @@ export class PredictionStatus extends jspb.Message {
   hasLastrunversion(): boolean;
   clearLastrunversion(): PredictionStatus;
 
-  getAvailablerunversionsList(): Array<number>;
-  setAvailablerunversionsList(value: Array<number>): PredictionStatus;
-  clearAvailablerunversionsList(): PredictionStatus;
-  addAvailablerunversions(value: number, index?: number): PredictionStatus;
+  getAvailablerunsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference>;
+  setAvailablerunsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference>): PredictionStatus;
+  clearAvailablerunsList(): PredictionStatus;
+  addAvailableruns(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference;
 
   getLastrunat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLastrunat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PredictionStatus;
@@ -1402,7 +1402,7 @@ export namespace PredictionStatus {
     observedgeneration?: number,
     activeList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference.AsObject>,
     lastrunversion?: number,
-    availablerunversionsList: Array<number>,
+    availablerunsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunReference.AsObject>,
     lastrunat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     failuremessage?: string,
     schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunScheduleStatus.AsObject,

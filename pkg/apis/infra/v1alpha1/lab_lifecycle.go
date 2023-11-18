@@ -162,7 +162,7 @@ func (lab Lab) ResourceQuota() *corev1.ResourceQuota {
 
 func (lab *Lab) MarkRbacNotReady(reason string, message string) {
 	lab.CreateOrUpdateCond(metav1.Condition{
-		Type:    string(ServingSiteRbacReady),
+		Type:    string(LabRbacReady),
 		Status:  metav1.ConditionFalse,
 		Reason:  reason,
 		Message: message,
@@ -171,7 +171,7 @@ func (lab *Lab) MarkRbacNotReady(reason string, message string) {
 
 func (lab *Lab) MarkNamespaceNotReady(reason string, message string) {
 	lab.CreateOrUpdateCond(metav1.Condition{
-		Type:    string(ServingSiteNamespaceReady),
+		Type:    string(LabNamespaceReady),
 		Status:  metav1.ConditionFalse,
 		Reason:  reason,
 		Message: message,
@@ -205,6 +205,13 @@ func (lab Lab) LabRole() *rbacv1.Role {
 			Namespace: lab.Name,
 		},
 		Rules: []rbacv1.PolicyRule{
+			{
+				Verbs:           []string{"create"},
+				APIGroups:       []string{"data.modela.ai", "training.modela.ai"},
+				Resources:       []string{"*"},
+				ResourceNames:   []string{},
+				NonResourceURLs: []string{},
+			},
 			{
 				Verbs:           []string{"*"},
 				APIGroups:       []string{""},
