@@ -31,6 +31,7 @@ func (snapshot *DatasetSnapshot) Default() {
 	}
 
 	snapshot.Status.Statistics.Features = make([]FeatureStatistics, 0)
+	snapshot.Status.Logs = make(catalog.Logs, 0)
 }
 
 // validation

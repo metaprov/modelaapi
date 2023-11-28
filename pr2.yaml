@@ -16,7 +16,9 @@ spec:
         sql: SELECT * FROM prediction_view_new;
   labeled: false
   model:
-    name: model-20230711-1659570
+    location:
+      path: modela/model.tar
+      bucketName: default-minio-bucket
   output:
     action: upsert
     includeFeatures: false

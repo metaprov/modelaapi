@@ -1598,7 +1598,11 @@ func (in *DatasetSnapshotStatus) DeepCopyInto(out *DatasetSnapshotStatus) {
 	out.ProfileLocation = in.ProfileLocation
 	out.AnomaliesLocation = in.AnomaliesLocation
 	out.SampleLocation = in.SampleLocation
-	in.UnitTestResults.DeepCopyInto(&out.UnitTestResults)
+	if in.UnitTestResults != nil {
+		in, out := &in.UnitTestResults, &out.UnitTestResults
+		*out = new(catalogv1alpha1.TestSuiteResult)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.FailureMessage != nil {
 		in, out := &in.FailureMessage, &out.FailureMessage
 		*out = new(string)
@@ -1621,9 +1625,21 @@ func (in *DatasetSnapshotStatus) DeepCopyInto(out *DatasetSnapshotStatus) {
 		in, out := &in.LastStudyAt, &out.LastStudyAt
 		*out = (*in).DeepCopy()
 	}
-	in.Images.DeepCopyInto(&out.Images)
-	out.FeatureHistogramRef = in.FeatureHistogramRef
-	in.GroupBy.DeepCopyInto(&out.GroupBy)
+	if in.Images != nil {
+		in, out := &in.Images, &out.Images
+		*out = new(catalogv1alpha1.Images)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.FeatureHistogramName != nil {
+		in, out := &in.FeatureHistogramName, &out.FeatureHistogramName
+		*out = new(string)
+		**out = **in
+	}
+	if in.GroupBy != nil {
+		in, out := &in.GroupBy, &out.GroupBy
+		*out = new(DatasetGroupByStatus)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]v1.Condition, len(*in))
@@ -1679,7 +1695,11 @@ func (in *DatasetSpec) DeepCopyInto(out *DatasetSpec) {
 	}
 	in.Origin.DeepCopyInto(&out.Origin)
 	in.Resources.DeepCopyInto(&out.Resources)
-	in.UnitTests.DeepCopyInto(&out.UnitTests)
+	if in.UnitTests != nil {
+		in, out := &in.UnitTests, &out.UnitTests
+		*out = new(catalogv1alpha1.TestSuite)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.Report != nil {
 		in, out := &in.Report, &out.Report
 		*out = new(bool)

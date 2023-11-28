@@ -1167,17 +1167,14 @@ const (
 // Trigger Schedule
 //==============================================================================
 
-// +kubebuilder:validation:Enum="now";"once";"hourly";"daily";"weekly";"monthly";"yearly";"cron"
+// +kubebuilder:validation:Enum="hourly";"daily";"weekly";"monthly";"cron"
 type TriggerScheduleEventType string
 
 const (
-	NowTriggerScheduleEventType     TriggerScheduleEventType = "now"
-	OnceTriggerScheduleEventType    TriggerScheduleEventType = "once"
 	HourlyTriggerScheduleEventType  TriggerScheduleEventType = "hourly"
 	DailyTriggerScheduleEventType   TriggerScheduleEventType = "daily"
 	WeeklyTriggerScheduleEventType  TriggerScheduleEventType = "weekly"
 	MonthlyTriggerScheduleEventType TriggerScheduleEventType = "monthly"
-	YearlyTriggerScheduleEventType  TriggerScheduleEventType = "yearly"
 	CronTriggerScheduleEventType    TriggerScheduleEventType = "cron"
 )
 
@@ -1354,8 +1351,6 @@ func (schedule *RunSchedule) NextRun() *string {
 		return util.StrPtr("@weekly")
 	case MonthlyTriggerScheduleEventType:
 		return util.StrPtr("@monthly")
-	case YearlyTriggerScheduleEventType:
-		return util.StrPtr("@yearly")
 	case CronTriggerScheduleEventType:
 		return schedule.Cron
 	}
@@ -2102,15 +2097,9 @@ type AccountPermissions struct {
 
 // Images describes the Docker images used internally to perform workloads
 type Images struct {
-	// The image used during training
-	// +kubebuilder:validation:Optional
-	TrainerImage *string `json:"trainerImage,omitempty" protobuf:"bytes,1,opt,name=trainerImage"`
 	// The image used for data operations
 	// +kubebuilder:validation:Optional
-	DataImage *string `json:"dataImage,omitempty" protobuf:"bytes,2,opt,name=dataImage"`
-	// The image used to deploy models
-	// +kubebuilder:validation:Optional
-	PublisherImage *string `json:"publisherImage,omitempty" protobuf:"bytes,3,opt,name=publisherImage"`
+	DataImage *string `json:"dataImage,omitempty" protobuf:"bytes,1,opt,name=dataImage"`
 }
 
 // LastRunStatus describes the status of a single run for a run-based resource (such as a pipeline)

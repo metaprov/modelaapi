@@ -856,7 +856,9 @@ func (model *Model) InitializeFromStudy(run *StudyRun, study *Study) {
 	model.Spec.Forecasting = study.Spec.ForecastTemplate.DeepCopy()
 	model.Spec.Objective = study.Spec.Search.Objective
 	model.Spec.Notification = study.Spec.Notification
-	model.ObjectMeta.Labels = study.ObjectMeta.Labels
+	if study.ObjectMeta.Labels != nil {
+		model.ObjectMeta.Labels = study.ObjectMeta.Labels
+	}
 	model.ObjectMeta.Labels[catalog.StudyLabelKey] = study.Name
 	model.ObjectMeta.Labels[catalog.StudyRunLabelKey] = run.Name
 	model.Spec.Training.LabName = study.Spec.LabName

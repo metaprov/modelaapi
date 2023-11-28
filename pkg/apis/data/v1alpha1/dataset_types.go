@@ -93,8 +93,7 @@ type DatasetSpec struct {
 	// +kubebuilder:default:="tabular"
 	// +kubebuilder:validation:Optional
 	Type *catalog.DatasetType `json:"type,omitempty" protobuf:"bytes,10,opt,name=type"`
-	// Origin is the location of the data file or database query which holds the raw data of the Dataset. When the Dataset is
-	// created, a workload will be created to snapshot the location and store it in the bucket specified by ArtifactBucketName
+	// Origin is the location of the raw data that will be read
 	// +kubebuilder:validation:Optional
 	Origin catalog.DataLocation `json:"origin,omitempty" protobuf:"bytes,11,opt,name=origin"`
 	// Resources specifies the resource requirements that will be allocated for the Dataset
@@ -102,7 +101,7 @@ type DatasetSpec struct {
 	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,12,opt,name=resources"`
 	// UnitTests specifies the unit tests that will be run against ingested datasets
 	// +kubebuilder:validation:Optional
-	UnitTests catalog.TestSuite `json:"unitTests,omitempty" protobuf:"bytes,13,opt,name=unitTests"`
+	UnitTests *catalog.TestSuite `json:"unitTests,omitempty" protobuf:"bytes,13,opt,name=unitTests"`
 	// Indicates if a PDF report containing the Dataset profile should be generated
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional

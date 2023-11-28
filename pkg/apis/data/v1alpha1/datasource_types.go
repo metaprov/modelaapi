@@ -90,15 +90,16 @@ const (
 	DatasourceSaved = "Saved"
 )
 
-// +kubebuilder:validation:Enum="double-quote";"single-quote";
+// +kubebuilder:validation:Enum="double-quote";"single-quote";"auto"
 type QuoteChar string
 
 const (
 	SingleQuote QuoteChar = "single-quote"
 	DoubleQuote QuoteChar = "double-quote"
+	AutoQuote   QuoteChar = "double-quote"
 )
 
-// +kubebuilder:validation:Enum="single-quote";"double-quote";"tilda";"none"
+// +kubebuilder:validation:Enum="single-quote";"double-quote";"tilda";"none";"auto"
 type EscapeChar string
 
 const (
@@ -106,10 +107,11 @@ const (
 	DoubleEscapeChar EscapeChar = "double-quote"
 	TildaEscapeChar  EscapeChar = "tilda"
 	NoneEscapeChar   EscapeChar = "none"
+	AutoEscapeChar   EscapeChar = "auto"
 )
 
 // Delimiter specify char or group of char
-// +kubebuilder:validation:Enum="crlf";"cr";"lf";"semicolon";"colon";"comma";"tab";"space";"pipe"
+// +kubebuilder:validation:Enum="crlf";"cr";"lf";"semicolon";"colon";"comma";"tab";"space";"pipe";"auto"
 type Delimiter string
 
 const (
@@ -122,6 +124,7 @@ const (
 	DelimiterTab       Delimiter = "tab"
 	DelimiterSpace     Delimiter = "space"
 	DelimiterPipe      Delimiter = "pipe"
+	DelimiterAuto      Delimiter = "auto"
 )
 
 // FlatFileType represent the type of the file
@@ -143,38 +146,8 @@ const (
 	FlatFileTypeParquet FlatFileType = "parquet"
 )
 
-// DatabaseServerType is the type of the database server
-// +kubebuilder:validation:Enum="sqlserver";"mysql";"postgress";"sqlite";"oracle";"presto";"redshift";"apache-hive";"snowflake";"sybase";"vertica";"cockroach-db";"elasticsearch";"informix";"sap-hana";"teradata";"gcp-spanner";"apache-spark";"clickhouse";"greenplum";"couchbase";"exasol"
-type DatabaseServerType string
-
-const (
-	MsSqlServer    DatabaseServerType = "sqlserver"
-	MySql          DatabaseServerType = "mysql"
-	Postgres       DatabaseServerType = "postgres"
-	SqlLite        DatabaseServerType = "sqlite"
-	Oracle         DatabaseServerType = "oracle"
-	Presto         DatabaseServerType = "presto"
-	AmazonRedShift DatabaseServerType = "redshift"
-	ApacheHive     DatabaseServerType = "apache-hive"
-	Snowflake      DatabaseServerType = "snowflake"
-	Sybase         DatabaseServerType = "sybase"
-	Vertica        DatabaseServerType = "vertica"
-	CockroachDB    DatabaseServerType = "cockroach-db"
-	ElasticSearch  DatabaseServerType = "elasticsearch"
-	Informix       DatabaseServerType = "informix"
-	SAPHana        DatabaseServerType = "sap-hana"
-	Teradata       DatabaseServerType = "teradata"
-	GcpSpanner     DatabaseServerType = "gcp-spanner"
-	ApacheSpark    DatabaseServerType = "apache-spark"
-	ClickHouse     DatabaseServerType = "clickhouse"
-	GreenPlum      DatabaseServerType = "greenplum"
-	Couchbase      DatabaseServerType = "couchbase"
-	Exasol         DatabaseServerType = "exasol"
-)
-
-// ParquetFileSpec specifies the format of a CSV (comma-separated values) file
+// ParquetFileSpec specifies the format of parquet file
 type ParquetFileSpec struct {
-	// The character used to separate fields (by default, a comma)
 	// +kubebuilder:default:="auto"
 	// +kubebuilder:validation:Optional
 	Engine *string `json:"engine,omitempty" protobuf:"bytes,1,opt,name=engine"`

@@ -301,14 +301,10 @@ class HistogramData(_message.Message):
     def __init__(self, bins: _Optional[_Iterable[float]] = ..., categories: _Optional[_Iterable[str]] = ..., counts: _Optional[_Iterable[float]] = ..., missing: _Optional[int] = ..., invalid: _Optional[int] = ...) -> None: ...
 
 class Images(_message.Message):
-    __slots__ = ["trainerImage", "dataImage", "publisherImage"]
-    TRAINERIMAGE_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["dataImage"]
     DATAIMAGE_FIELD_NUMBER: _ClassVar[int]
-    PUBLISHERIMAGE_FIELD_NUMBER: _ClassVar[int]
-    trainerImage: str
     dataImage: str
-    publisherImage: str
-    def __init__(self, trainerImage: _Optional[str] = ..., dataImage: _Optional[str] = ..., publisherImage: _Optional[str] = ...) -> None: ...
+    def __init__(self, dataImage: _Optional[str] = ...) -> None: ...
 
 class LastRunStatus(_message.Message):
     __slots__ = ["name", "status", "completedAt", "duration", "failureReason", "failureMessage"]

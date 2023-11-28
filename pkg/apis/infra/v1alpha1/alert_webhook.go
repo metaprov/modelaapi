@@ -7,7 +7,6 @@
 package v1alpha1
 
 import (
-	"github.com/metaprov/modelaapi/pkg/apis/common"
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
@@ -54,22 +53,11 @@ func (alert Alert) validateMeta(fldPath *field.Path) field.ErrorList {
 
 func (alert Alert) validateName(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
-	err := common.ValidateResourceName(alert.Name)
-	if err != nil {
-		allErrs = append(allErrs, field.Invalid(fldPath.Child("FileName"), alert.Name, err.Error()))
-	}
 	return allErrs
 }
 
 func (alert *Alert) validateSpec(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
-	//Smtp.To   []string
-	//Smtp.Origin string
-	//Smtp.Host string
-	//Smtp.Port int32
-
-	//Slack.WebHook
-
 	return allErrs
 }
 

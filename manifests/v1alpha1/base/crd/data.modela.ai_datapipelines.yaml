@@ -418,10 +418,10 @@ spec:
                         type of run
                       properties:
                         name:
-                          description: Name specifies the name of the resource
+                          description: The name of the run
                           type: string
                         version:
-                          description: Version specifies the version of the run
+                          description: The version of the run
                           format: int32
                           type: integer
                       required:

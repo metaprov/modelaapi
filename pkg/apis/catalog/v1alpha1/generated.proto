@@ -450,17 +450,9 @@ message HistogramData {
 
 // Images describes the Docker images used internally to perform workloads
 message Images {
-  // The image used during training
-  // +kubebuilder:validation:Optional
-  optional string trainerImage = 1;
-
   // The image used for data operations
   // +kubebuilder:validation:Optional
-  optional string dataImage = 2;
-
-  // The image used to deploy models
-  // +kubebuilder:validation:Optional
-  optional string publisherImage = 3;
+  optional string dataImage = 1;
 }
 
 // LastRunStatus describes the status of a single run for a run-based resource (such as a pipeline)
@@ -1058,10 +1050,10 @@ message RocAucCurve {
 
 // RunReference defines a generic reference to any type of run
 message RunReference {
-  // Name specifies the name of the resource
+  // The name of the run
   optional string name = 1;
 
-  // Version specifies the version of the run
+  // The version of the run
   optional uint32 version = 2;
 }
 

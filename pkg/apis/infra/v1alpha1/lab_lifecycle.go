@@ -213,6 +213,13 @@ func (lab Lab) LabRole() *rbacv1.Role {
 				NonResourceURLs: []string{},
 			},
 			{
+				Verbs:           []string{"get"},
+				APIGroups:       []string{"data.modela.ai"},
+				Resources:       []string{"datasets"},
+				ResourceNames:   []string{},
+				NonResourceURLs: []string{},
+			},
+			{
 				Verbs:           []string{"*"},
 				APIGroups:       []string{""},
 				Resources:       []string{"pods", "pods/log", "configmaps"},
@@ -276,6 +283,13 @@ func (lab Lab) LabClusterRole() *rbacv1.ClusterRole {
 				Verbs:           []string{"get"},
 				APIGroups:       []string{"infra.modela.ai"},
 				Resources:       []string{"*"},
+				ResourceNames:   []string{},
+				NonResourceURLs: []string{},
+			},
+			{
+				Verbs:           []string{"get"},
+				APIGroups:       []string{"catalog.modela.ai"},
+				Resources:       []string{"publicdatasets"},
 				ResourceNames:   []string{},
 				NonResourceURLs: []string{},
 			},

@@ -109,6 +109,7 @@ spec:
                         - tab
                         - space
                         - pipe
+                        - auto
                         type: string
                       encoding:
                         default: utf-8
@@ -127,6 +128,7 @@ spec:
                         - double-quote
                         - tilda
                         - none
+                        - auto
                         type: string
                       hasIndexColumn:
                         default: false
@@ -153,6 +155,7 @@ spec:
                         enum:
                         - double-quote
                         - single-quote
+                        - auto
                         type: string
                       skipRows:
                         default: 0
@@ -244,8 +247,6 @@ spec:
                     properties:
                       engine:
                         default: auto
-                        description: The character used to separate fields (by default,
-                          a comma)
                         type: string
                     type: object
                 type: object

@@ -924,20 +924,10 @@ export namespace HistogramData {
 }
 
 export class Images extends jspb.Message {
-  getTrainerimage(): string;
-  setTrainerimage(value: string): Images;
-  hasTrainerimage(): boolean;
-  clearTrainerimage(): Images;
-
   getDataimage(): string;
   setDataimage(value: string): Images;
   hasDataimage(): boolean;
   clearDataimage(): Images;
-
-  getPublisherimage(): string;
-  setPublisherimage(value: string): Images;
-  hasPublisherimage(): boolean;
-  clearPublisherimage(): Images;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Images.AsObject;
@@ -949,9 +939,7 @@ export class Images extends jspb.Message {
 
 export namespace Images {
   export type AsObject = {
-    trainerimage?: string,
     dataimage?: string,
-    publisherimage?: string,
   }
 }
 

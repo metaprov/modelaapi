@@ -8765,9 +8765,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Images.prototype.t
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Images.toObject = function(includeInstance, msg) {
   var f, obj = {
-    trainerimage: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    dataimage: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    publisherimage: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
+    dataimage: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -8806,15 +8804,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Images.deserialize
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setTrainerimage(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
       msg.setDataimage(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPublisherimage(value);
       break;
     default:
       reader.skipField();
@@ -8852,28 +8842,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Images.serializeBi
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 3));
-  if (f != null) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
 };
 
 
 /**
- * optional string trainerImage = 1;
+ * optional string dataImage = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Images.prototype.getTrainerimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Images.prototype.getDataimage = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -8882,7 +8858,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Images.prototype.g
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Images} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Images.prototype.setTrainerimage = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Images.prototype.setDataimage = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
@@ -8891,7 +8867,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Images.prototype.s
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Images} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Images.prototype.clearTrainerimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Images.prototype.clearDataimage = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -8900,80 +8876,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Images.prototype.c
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Images.prototype.hasTrainerimage = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional string dataImage = 2;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Images.prototype.getDataimage = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Images} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Images.prototype.setDataimage = function(value) {
-  return jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Images} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Images.prototype.clearDataimage = function() {
-  return jspb.Message.setField(this, 2, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Images.prototype.hasDataimage = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional string publisherImage = 3;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Images.prototype.getPublisherimage = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Images} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Images.prototype.setPublisherimage = function(value) {
-  return jspb.Message.setField(this, 3, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Images} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Images.prototype.clearPublisherimage = function() {
-  return jspb.Message.setField(this, 3, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Images.prototype.hasPublisherimage = function() {
-  return jspb.Message.getField(this, 3) != null;
+  return jspb.Message.getField(this, 1) != null;
 };
 
 

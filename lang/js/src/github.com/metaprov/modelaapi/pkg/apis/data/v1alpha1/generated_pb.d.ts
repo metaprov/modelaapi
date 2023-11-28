@@ -2188,10 +2188,10 @@ export class DatasetSnapshotStatus extends jspb.Message {
   hasImages(): boolean;
   clearImages(): DatasetSnapshotStatus;
 
-  getFeaturehistogramref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setFeaturehistogramref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): DatasetSnapshotStatus;
-  hasFeaturehistogramref(): boolean;
-  clearFeaturehistogramref(): DatasetSnapshotStatus;
+  getFeaturehistogramname(): string;
+  setFeaturehistogramname(value: string): DatasetSnapshotStatus;
+  hasFeaturehistogramname(): boolean;
+  clearFeaturehistogramname(): DatasetSnapshotStatus;
 
   getGroupby(): DatasetGroupByStatus | undefined;
   setGroupby(value?: DatasetGroupByStatus): DatasetSnapshotStatus;
@@ -2235,7 +2235,7 @@ export namespace DatasetSnapshotStatus {
     completedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     laststudyat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     images?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Images.AsObject,
-    featurehistogramref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    featurehistogramname?: string,
     groupby?: DatasetGroupByStatus.AsObject,
     conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }

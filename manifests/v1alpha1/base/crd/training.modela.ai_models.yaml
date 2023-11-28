@@ -1679,12 +1679,6 @@ spec:
                   dataImage:
                     description: The image used for data operations
                     type: string
-                  publisherImage:
-                    description: The image used to deploy models
-                    type: string
-                  trainerImage:
-                    description: The image used during training
-                    type: string
                 type: object
               impurityImportance:
                 description: The collection of feature importance values, determined

@@ -684,7 +684,7 @@ class DatasetSnapshotSpec(_message.Message):
     def __init__(self, owner: _Optional[str] = ..., datasetName: _Optional[str] = ..., timeout: _Optional[int] = ..., pause: bool = ..., abort: bool = ..., modelClassRunName: _Optional[str] = ...) -> None: ...
 
 class DatasetSnapshotStatus(_message.Message):
-    __slots__ = ["observedGeneration", "datasetManifestLocation", "dataSourceManifestLocation", "snapshotVersion", "statistics", "phase", "reportName", "dataLocation", "reportLocation", "profileLocation", "anomaliesLocation", "sampleLocation", "imbalanced", "unitTestResults", "failureMessage", "progress", "logs", "hash", "updatedAt", "completedAt", "lastStudyAt", "images", "featureHistogramRef", "groupBy", "conditions"]
+    __slots__ = ["observedGeneration", "datasetManifestLocation", "dataSourceManifestLocation", "snapshotVersion", "statistics", "phase", "reportName", "dataLocation", "reportLocation", "profileLocation", "anomaliesLocation", "sampleLocation", "imbalanced", "unitTestResults", "failureMessage", "progress", "logs", "hash", "updatedAt", "completedAt", "lastStudyAt", "images", "featureHistogramName", "groupBy", "conditions"]
     OBSERVEDGENERATION_FIELD_NUMBER: _ClassVar[int]
     DATASETMANIFESTLOCATION_FIELD_NUMBER: _ClassVar[int]
     DATASOURCEMANIFESTLOCATION_FIELD_NUMBER: _ClassVar[int]
@@ -707,7 +707,7 @@ class DatasetSnapshotStatus(_message.Message):
     COMPLETEDAT_FIELD_NUMBER: _ClassVar[int]
     LASTSTUDYAT_FIELD_NUMBER: _ClassVar[int]
     IMAGES_FIELD_NUMBER: _ClassVar[int]
-    FEATUREHISTOGRAMREF_FIELD_NUMBER: _ClassVar[int]
+    FEATUREHISTOGRAMNAME_FIELD_NUMBER: _ClassVar[int]
     GROUPBY_FIELD_NUMBER: _ClassVar[int]
     CONDITIONS_FIELD_NUMBER: _ClassVar[int]
     observedGeneration: int
@@ -732,10 +732,10 @@ class DatasetSnapshotStatus(_message.Message):
     completedAt: _generated_pb2_1_1.Time
     lastStudyAt: _generated_pb2_1_1.Time
     images: _generated_pb2.Images
-    featureHistogramRef: _generated_pb2_1.ObjectReference
+    featureHistogramName: str
     groupBy: DatasetGroupByStatus
     conditions: _containers.RepeatedCompositeFieldContainer[_generated_pb2_1_1.Condition]
-    def __init__(self, observedGeneration: _Optional[int] = ..., datasetManifestLocation: _Optional[_Union[_generated_pb2.ManifestLocation, _Mapping]] = ..., dataSourceManifestLocation: _Optional[_Union[_generated_pb2.ManifestLocation, _Mapping]] = ..., snapshotVersion: _Optional[int] = ..., statistics: _Optional[_Union[DatasetStatistics, _Mapping]] = ..., phase: _Optional[str] = ..., reportName: _Optional[str] = ..., dataLocation: _Optional[_Union[_generated_pb2.FileLocation, _Mapping]] = ..., reportLocation: _Optional[_Union[_generated_pb2.FileLocation, _Mapping]] = ..., profileLocation: _Optional[_Union[_generated_pb2.FileLocation, _Mapping]] = ..., anomaliesLocation: _Optional[_Union[_generated_pb2.FileLocation, _Mapping]] = ..., sampleLocation: _Optional[_Union[_generated_pb2.FileLocation, _Mapping]] = ..., imbalanced: bool = ..., unitTestResults: _Optional[_Union[_generated_pb2.TestSuiteResult, _Mapping]] = ..., failureMessage: _Optional[str] = ..., progress: _Optional[int] = ..., logs: _Optional[_Iterable[_Union[_generated_pb2.ContainerLog, _Mapping]]] = ..., hash: _Optional[str] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., completedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., lastStudyAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., images: _Optional[_Union[_generated_pb2.Images, _Mapping]] = ..., featureHistogramRef: _Optional[_Union[_generated_pb2_1.ObjectReference, _Mapping]] = ..., groupBy: _Optional[_Union[DatasetGroupByStatus, _Mapping]] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1.Condition, _Mapping]]] = ...) -> None: ...
+    def __init__(self, observedGeneration: _Optional[int] = ..., datasetManifestLocation: _Optional[_Union[_generated_pb2.ManifestLocation, _Mapping]] = ..., dataSourceManifestLocation: _Optional[_Union[_generated_pb2.ManifestLocation, _Mapping]] = ..., snapshotVersion: _Optional[int] = ..., statistics: _Optional[_Union[DatasetStatistics, _Mapping]] = ..., phase: _Optional[str] = ..., reportName: _Optional[str] = ..., dataLocation: _Optional[_Union[_generated_pb2.FileLocation, _Mapping]] = ..., reportLocation: _Optional[_Union[_generated_pb2.FileLocation, _Mapping]] = ..., profileLocation: _Optional[_Union[_generated_pb2.FileLocation, _Mapping]] = ..., anomaliesLocation: _Optional[_Union[_generated_pb2.FileLocation, _Mapping]] = ..., sampleLocation: _Optional[_Union[_generated_pb2.FileLocation, _Mapping]] = ..., imbalanced: bool = ..., unitTestResults: _Optional[_Union[_generated_pb2.TestSuiteResult, _Mapping]] = ..., failureMessage: _Optional[str] = ..., progress: _Optional[int] = ..., logs: _Optional[_Iterable[_Union[_generated_pb2.ContainerLog, _Mapping]]] = ..., hash: _Optional[str] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., completedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., lastStudyAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., images: _Optional[_Union[_generated_pb2.Images, _Mapping]] = ..., featureHistogramName: _Optional[str] = ..., groupBy: _Optional[_Union[DatasetGroupByStatus, _Mapping]] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1.Condition, _Mapping]]] = ...) -> None: ...
 
 class DatasetSpec(_message.Message):
     __slots__ = ["owner", "dataSourceName", "description", "run", "artifactBucketName", "labName", "role", "task", "subtask", "type", "origin", "resources", "unitTests", "report", "unitTest", "generateFeatureHistogram", "fast", "sample", "synthetic", "correlation", "groupBy", "key", "modelClassName", "featureGroupName", "notification"]

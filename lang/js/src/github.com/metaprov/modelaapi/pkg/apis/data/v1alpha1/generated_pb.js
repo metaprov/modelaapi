@@ -18699,7 +18699,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
     completedat: (f = msg.getCompletedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     laststudyat: (f = msg.getLaststudyat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     images: (f = msg.getImages()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Images.toObject(includeInstance, f),
-    featurehistogramref: (f = msg.getFeaturehistogramref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
+    featurehistogramname: (f = jspb.Message.getField(msg, 23)) == null ? undefined : f,
     groupby: (f = msg.getGroupby()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetGroupByStatus.toObject(includeInstance, f),
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.toObject, includeInstance)
@@ -18842,9 +18842,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
       msg.setImages(value);
       break;
     case 23:
-      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
-      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
-      msg.setFeaturehistogramref(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFeaturehistogramname(value);
       break;
     case 24:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetGroupByStatus;
@@ -19053,12 +19052,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Images.serializeBinaryToWriter
     );
   }
-  f = message.getFeaturehistogramref();
+  f = /** @type {string} */ (jspb.Message.getField(message, 23));
   if (f != null) {
-    writer.writeMessage(
+    writer.writeString(
       23,
-      f,
-      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
+      f
     );
   }
   f = message.getGroupby();
@@ -19888,30 +19886,29 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
 
 
 /**
- * optional k8s.io.api.core.v1.ObjectReference featureHistogramRef = 23;
- * @return {?proto.k8s.io.api.core.v1.ObjectReference}
+ * optional string featureHistogramName = 23;
+ * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.getFeaturehistogramref = function() {
-  return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 23));
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.getFeaturehistogramname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 23, ""));
 };
 
 
 /**
- * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.setFeaturehistogramref = function(value) {
-  return jspb.Message.setWrapperField(this, 23, value);
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.setFeaturehistogramname = function(value) {
+  return jspb.Message.setField(this, 23, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
+ * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.clearFeaturehistogramref = function() {
-  return this.setFeaturehistogramref(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.clearFeaturehistogramname = function() {
+  return jspb.Message.setField(this, 23, undefined);
 };
 
 
@@ -19919,7 +19916,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.hasFeaturehistogramref = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSnapshotStatus.prototype.hasFeaturehistogramname = function() {
   return jspb.Message.getField(this, 23) != null;
 };
 

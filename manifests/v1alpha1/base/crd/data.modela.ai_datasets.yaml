@@ -203,10 +203,7 @@ spec:
                     type: integer
                 type: object
               origin:
-                description: Origin is the location of the data file or database query
-                  which holds the raw data of the Dataset. When the Dataset is created,
-                  a workload will be created to snapshot the location and store it
-                  in the bucket specified by ArtifactBucketName
+                description: Origin is the location of the raw data that will be read
                 properties:
                   database:
                     description: Database specifies the location of data within a
@@ -713,10 +710,10 @@ spec:
                     of run
                   properties:
                     name:
-                      description: Name specifies the name of the resource
+                      description: The name of the run
                       type: string
                     version:
-                      description: Version specifies the version of the run
+                      description: The version of the run
                       format: int32
                       type: integer
                   required:
@@ -733,10 +730,10 @@ spec:
                     of run
                   properties:
                     name:
-                      description: Name specifies the name of the resource
+                      description: The name of the run
                       type: string
                     version:
-                      description: Version specifies the version of the run
+                      description: The version of the run
                       format: int32
                       type: integer
                   required:
@@ -844,10 +841,10 @@ spec:
                         type of run
                       properties:
                         name:
-                          description: Name specifies the name of the resource
+                          description: The name of the run
                           type: string
                         version:
-                          description: Version specifies the version of the run
+                          description: The version of the run
                           format: int32
                           type: integer
                       required:
