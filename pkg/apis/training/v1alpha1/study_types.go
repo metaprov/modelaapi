@@ -17,7 +17,7 @@ const (
 	AutoSearchMethod SamplerName = "auto"
 )
 
-// +kubebuilder:validation:Enum="patient-pruner";"median-pruner";"percentile-pruner";"successive-halving-pruner";"hyperband-pruner";"threshold-pruner"
+// +kubebuilder:validation:Enum="none";"patient-pruner";"median-pruner";"percentile-pruner";"successive-halving-pruner";"hyperband-pruner";"threshold-pruner"
 type PrunerName string
 
 const (

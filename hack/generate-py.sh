@@ -93,9 +93,7 @@ python3 -m grpc_tools.protoc \
     github.com/metaprov/modelaapi/services/virtualbucket/v1/virtualbucket.proto \
     github.com/metaprov/modelaapi/services/batchpredictord/v1/batchpredictord.proto \
     github.com/metaprov/modelaapi/services/knowledgebase/v1/knowledgebase.proto \
-
-
-
+    github.com/metaprov/modelaapi/services/llm/v1/llm.proto
 
 # create the google/com
 mkdir -p ${PROJECT_ROOT}/lang/python/github/com

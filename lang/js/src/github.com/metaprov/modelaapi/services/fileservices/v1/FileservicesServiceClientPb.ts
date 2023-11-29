@@ -39,5 +39,91 @@ export class FileServicesServiceClient {
     this.options_ = options;
   }
 
+  methodDescriptorInitiateUpload = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.fileservices.v1.FileServicesService/InitiateUpload',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_fileservices_v1_fileservices_pb.InitiateUploadRequest,
+    github_com_metaprov_modelaapi_services_fileservices_v1_fileservices_pb.InitiateUploadResponse,
+    (request: github_com_metaprov_modelaapi_services_fileservices_v1_fileservices_pb.InitiateUploadRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_fileservices_v1_fileservices_pb.InitiateUploadResponse.deserializeBinary
+  );
+
+  initiateUpload(
+    request: github_com_metaprov_modelaapi_services_fileservices_v1_fileservices_pb.InitiateUploadRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_fileservices_v1_fileservices_pb.InitiateUploadResponse>;
+
+  initiateUpload(
+    request: github_com_metaprov_modelaapi_services_fileservices_v1_fileservices_pb.InitiateUploadRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_fileservices_v1_fileservices_pb.InitiateUploadResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_fileservices_v1_fileservices_pb.InitiateUploadResponse>;
+
+  initiateUpload(
+    request: github_com_metaprov_modelaapi_services_fileservices_v1_fileservices_pb.InitiateUploadRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_fileservices_v1_fileservices_pb.InitiateUploadResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.fileservices.v1.FileServicesService/InitiateUpload',
+        request,
+        metadata || {},
+        this.methodDescriptorInitiateUpload,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.fileservices.v1.FileServicesService/InitiateUpload',
+    request,
+    metadata || {},
+    this.methodDescriptorInitiateUpload);
+  }
+
+  methodDescriptorUpload = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.fileservices.v1.FileServicesService/Upload',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_fileservices_v1_fileservices_pb.UploadRequest,
+    github_com_metaprov_modelaapi_services_fileservices_v1_fileservices_pb.UploadResponse,
+    (request: github_com_metaprov_modelaapi_services_fileservices_v1_fileservices_pb.UploadRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_fileservices_v1_fileservices_pb.UploadResponse.deserializeBinary
+  );
+
+  upload(
+    request: github_com_metaprov_modelaapi_services_fileservices_v1_fileservices_pb.UploadRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_fileservices_v1_fileservices_pb.UploadResponse>;
+
+  upload(
+    request: github_com_metaprov_modelaapi_services_fileservices_v1_fileservices_pb.UploadRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_fileservices_v1_fileservices_pb.UploadResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_fileservices_v1_fileservices_pb.UploadResponse>;
+
+  upload(
+    request: github_com_metaprov_modelaapi_services_fileservices_v1_fileservices_pb.UploadRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_fileservices_v1_fileservices_pb.UploadResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.fileservices.v1.FileServicesService/Upload',
+        request,
+        metadata || {},
+        this.methodDescriptorUpload,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.fileservices.v1.FileServicesService/Upload',
+    request,
+    metadata || {},
+    this.methodDescriptorUpload);
+  }
+
 }
 

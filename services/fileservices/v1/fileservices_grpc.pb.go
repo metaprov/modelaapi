@@ -22,7 +22,8 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type FileServicesServiceClient interface {
-	UploadChunk(ctx context.Context, opts ...grpc.CallOption) (FileServicesService_UploadChunkClient, error)
+	InitiateUpload(ctx context.Context, in *InitiateUploadRequest, opts ...grpc.CallOption) (*InitiateUploadResponse, error)
+	Upload(ctx context.Context, in *UploadRequest, opts ...grpc.CallOption) (*UploadResponse, error)
 }
 
 type fileServicesServiceClient struct {
@@ -33,45 +34,30 @@ func NewFileServicesServiceClient(cc grpc.ClientConnInterface) FileServicesServi
 	return &fileServicesServiceClient{cc}
 }
 
-func (c *fileServicesServiceClient) UploadChunk(ctx context.Context, opts ...grpc.CallOption) (FileServicesService_UploadChunkClient, error) {
-	stream, err := c.cc.NewStream(ctx, &FileServicesService_ServiceDesc.Streams[0], "/github.com.metaprov.modelaapi.services.fileservices.v1.FileServicesService/UploadChunk", opts...)
+func (c *fileServicesServiceClient) InitiateUpload(ctx context.Context, in *InitiateUploadRequest, opts ...grpc.CallOption) (*InitiateUploadResponse, error) {
+	out := new(InitiateUploadResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.fileservices.v1.FileServicesService/InitiateUpload", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &fileServicesServiceUploadChunkClient{stream}
-	return x, nil
+	return out, nil
 }
 
-type FileServicesService_UploadChunkClient interface {
-	Send(*DataBlock) error
-	CloseAndRecv() (*UploadResult, error)
-	grpc.ClientStream
-}
-
-type fileServicesServiceUploadChunkClient struct {
-	grpc.ClientStream
-}
-
-func (x *fileServicesServiceUploadChunkClient) Send(m *DataBlock) error {
-	return x.ClientStream.SendMsg(m)
-}
-
-func (x *fileServicesServiceUploadChunkClient) CloseAndRecv() (*UploadResult, error) {
-	if err := x.ClientStream.CloseSend(); err != nil {
+func (c *fileServicesServiceClient) Upload(ctx context.Context, in *UploadRequest, opts ...grpc.CallOption) (*UploadResponse, error) {
+	out := new(UploadResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.fileservices.v1.FileServicesService/Upload", in, out, opts...)
+	if err != nil {
 		return nil, err
 	}
-	m := new(UploadResult)
-	if err := x.ClientStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
+	return out, nil
 }
 
 // FileServicesServiceServer is the server API for FileServicesService service.
 // All implementations must embed UnimplementedFileServicesServiceServer
 // for forward compatibility
 type FileServicesServiceServer interface {
-	UploadChunk(FileServicesService_UploadChunkServer) error
+	InitiateUpload(context.Context, *InitiateUploadRequest) (*InitiateUploadResponse, error)
+	Upload(context.Context, *UploadRequest) (*UploadResponse, error)
 	mustEmbedUnimplementedFileServicesServiceServer()
 }
 
@@ -79,8 +65,11 @@ type FileServicesServiceServer interface {
 type UnimplementedFileServicesServiceServer struct {
 }
 
-func (UnimplementedFileServicesServiceServer) UploadChunk(FileServicesService_UploadChunkServer) error {
-	return status.Errorf(codes.Unimplemented, "method UploadChunk not implemented")
+func (UnimplementedFileServicesServiceServer) InitiateUpload(context.Context, *InitiateUploadRequest) (*InitiateUploadResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method InitiateUpload not implemented")
+}
+func (UnimplementedFileServicesServiceServer) Upload(context.Context, *UploadRequest) (*UploadResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Upload not implemented")
 }
 func (UnimplementedFileServicesServiceServer) mustEmbedUnimplementedFileServicesServiceServer() {}
 
@@ -95,30 +84,40 @@ func RegisterFileServicesServiceServer(s grpc.ServiceRegistrar, srv FileServices
 	s.RegisterService(&FileServicesService_ServiceDesc, srv)
 }
 
-func _FileServicesService_UploadChunk_Handler(srv interface{}, stream grpc.ServerStream) error {
-	return srv.(FileServicesServiceServer).UploadChunk(&fileServicesServiceUploadChunkServer{stream})
-}
-
-type FileServicesService_UploadChunkServer interface {
-	SendAndClose(*UploadResult) error
-	Recv() (*DataBlock, error)
-	grpc.ServerStream
-}
-
-type fileServicesServiceUploadChunkServer struct {
-	grpc.ServerStream
-}
-
-func (x *fileServicesServiceUploadChunkServer) SendAndClose(m *UploadResult) error {
-	return x.ServerStream.SendMsg(m)
-}
-
-func (x *fileServicesServiceUploadChunkServer) Recv() (*DataBlock, error) {
-	m := new(DataBlock)
-	if err := x.ServerStream.RecvMsg(m); err != nil {
+func _FileServicesService_InitiateUpload_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(InitiateUploadRequest)
+	if err := dec(in); err != nil {
 		return nil, err
 	}
-	return m, nil
+	if interceptor == nil {
+		return srv.(FileServicesServiceServer).InitiateUpload(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.fileservices.v1.FileServicesService/InitiateUpload",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(FileServicesServiceServer).InitiateUpload(ctx, req.(*InitiateUploadRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _FileServicesService_Upload_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UploadRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(FileServicesServiceServer).Upload(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.fileservices.v1.FileServicesService/Upload",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(FileServicesServiceServer).Upload(ctx, req.(*UploadRequest))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
 // FileServicesService_ServiceDesc is the grpc.ServiceDesc for FileServicesService service.
@@ -127,13 +126,16 @@ func (x *fileServicesServiceUploadChunkServer) Recv() (*DataBlock, error) {
 var FileServicesService_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "github.com.metaprov.modelaapi.services.fileservices.v1.FileServicesService",
 	HandlerType: (*FileServicesServiceServer)(nil),
-	Methods:     []grpc.MethodDesc{},
-	Streams: []grpc.StreamDesc{
+	Methods: []grpc.MethodDesc{
 		{
-			StreamName:    "UploadChunk",
-			Handler:       _FileServicesService_UploadChunk_Handler,
-			ClientStreams: true,
+			MethodName: "InitiateUpload",
+			Handler:    _FileServicesService_InitiateUpload_Handler,
+		},
+		{
+			MethodName: "Upload",
+			Handler:    _FileServicesService_Upload_Handler,
 		},
 	},
+	Streams:  []grpc.StreamDesc{},
 	Metadata: "github.com/metaprov/modelaapi/services/fileservices/v1/fileservices.proto",
 }

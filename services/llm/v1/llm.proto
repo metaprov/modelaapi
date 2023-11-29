@@ -1,0 +1,17 @@
+syntax = "proto3";
+option go_package = "github.com/metaprov/modelaapi/services/llm/v1";
+
+import "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/llm/v1alpha1/generated.proto";
+
+
+message RefreshRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
+    github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBase knowledgeBase = 2;
+}
+
+message RefreshResponse {}
+
+service LLMService {
+    rpc Refresh(RefreshRequest) returns (RefreshResponse) {}
+}

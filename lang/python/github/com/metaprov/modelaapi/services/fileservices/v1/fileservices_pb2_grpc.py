@@ -14,19 +14,29 @@ class FileServicesServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.UploadChunk = channel.stream_unary(
-                '/github.com.metaprov.modelaapi.services.fileservices.v1.FileServicesService/UploadChunk',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_fileservices_dot_v1_dot_fileservices__pb2.DataBlock.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_fileservices_dot_v1_dot_fileservices__pb2.UploadResult.FromString,
+        self.InitiateUpload = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.fileservices.v1.FileServicesService/InitiateUpload',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_fileservices_dot_v1_dot_fileservices__pb2.InitiateUploadRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_fileservices_dot_v1_dot_fileservices__pb2.InitiateUploadResponse.FromString,
+                )
+        self.Upload = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.fileservices.v1.FileServicesService/Upload',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_fileservices_dot_v1_dot_fileservices__pb2.UploadRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_fileservices_dot_v1_dot_fileservices__pb2.UploadResponse.FromString,
                 )
 
 
 class FileServicesServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
-    def UploadChunk(self, request_iterator, context):
-        """option (google.api.http).post = "/v1/datasets/{namespace}/{name}:upload";
-        """
+    def InitiateUpload(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Upload(self, request, context):
+        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -34,10 +44,15 @@ class FileServicesServiceServicer(object):
 
 def add_FileServicesServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'UploadChunk': grpc.stream_unary_rpc_method_handler(
-                    servicer.UploadChunk,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_fileservices_dot_v1_dot_fileservices__pb2.DataBlock.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_fileservices_dot_v1_dot_fileservices__pb2.UploadResult.SerializeToString,
+            'InitiateUpload': grpc.unary_unary_rpc_method_handler(
+                    servicer.InitiateUpload,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_fileservices_dot_v1_dot_fileservices__pb2.InitiateUploadRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_fileservices_dot_v1_dot_fileservices__pb2.InitiateUploadResponse.SerializeToString,
+            ),
+            'Upload': grpc.unary_unary_rpc_method_handler(
+                    servicer.Upload,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_fileservices_dot_v1_dot_fileservices__pb2.UploadRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_fileservices_dot_v1_dot_fileservices__pb2.UploadResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -50,7 +65,7 @@ class FileServicesService(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
-    def UploadChunk(request_iterator,
+    def InitiateUpload(request,
             target,
             options=(),
             channel_credentials=None,
@@ -60,8 +75,25 @@ class FileServicesService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.stream_unary(request_iterator, target, '/github.com.metaprov.modelaapi.services.fileservices.v1.FileServicesService/UploadChunk',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_fileservices_dot_v1_dot_fileservices__pb2.DataBlock.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_fileservices_dot_v1_dot_fileservices__pb2.UploadResult.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.fileservices.v1.FileServicesService/InitiateUpload',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_fileservices_dot_v1_dot_fileservices__pb2.InitiateUploadRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_fileservices_dot_v1_dot_fileservices__pb2.InitiateUploadResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Upload(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.fileservices.v1.FileServicesService/Upload',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_fileservices_dot_v1_dot_fileservices__pb2.UploadRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_fileservices_dot_v1_dot_fileservices__pb2.UploadResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

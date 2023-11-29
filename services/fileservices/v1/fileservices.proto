@@ -2,36 +2,41 @@ syntax = "proto3";
 option go_package = "github.com/metaprov/modelaapi/services/fileservices/v1";
 package github.com.metaprov.modelaapi.services.fileservices.v1;
 
-
 import "google/protobuf/field_mask.proto";
-import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto";
 import "github.com/metaprov/modelaapi/services/common/v1/common.proto";
 
 
-
-
-message DataBlock {
-    string name               = 1;
-    bytes  data               = 2;
-    string md5_hash           = 3;  
-    string tenant             = 4;  
-    string dataProductName    = 5;
-    string dataProductVersion = 6;
-    string bucket             = 7;
-    string resourceType       = 8;
-    string resourceName       = 9; 
+message Location {
+    string tenant = 1;
+    string dataProduct = 2;
+    string resourceKind = 3;
+    string resourceName = 4;
+    string fileName = 5;
+    string bucket = 6;
 }
 
-message UploadResult {
-    string key                = 1; // the key at the destination.
-    int32  size               = 2; // the total file size uploaded
-    int32  duration           = 3; // the time it took to upload.
+message InitiateUploadRequest {
+    int32 size = 1;
+    Location location = 2;
+}
+
+message InitiateUploadResponse {
+    string token = 1;
+    int32 chunkSize = 2;
+}
+
+message UploadRequest {
+    string token = 1;
+    bytes data = 3;
+}
+
+message UploadResponse {
+    bool complete = 1;
 }
 
 service FileServicesService {
-    rpc UploadChunk(stream DataBlock) returns (UploadResult) {
-        //    option (google.api.http).post = "/v1/datasets/{namespace}/{name}:upload";
-    }
+    rpc InitiateUpload (InitiateUploadRequest) returns (InitiateUploadResponse) {}
+    rpc Upload         (UploadRequest)         returns (UploadResponse)         {}
 }

@@ -12,13 +12,12 @@ _sym_db = _symbol_database.Default()
 
 
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
-from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1 import generated_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2
 from github.com.metaprov.modelaapi.services.common.v1 import common_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_common_dot_v1_dot_common__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nIgithub.com/metaprov/modelaapi/services/fileservices/v1/fileservices.proto\x12\x36github.com.metaprov.modelaapi.services.fileservices.v1\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\"\xba\x01\n\tDataBlock\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\x12\x10\n\x08md5_hash\x18\x03 \x01(\t\x12\x0e\n\x06tenant\x18\x04 \x01(\t\x12\x17\n\x0f\x64\x61taProductName\x18\x05 \x01(\t\x12\x1a\n\x12\x64\x61taProductVersion\x18\x06 \x01(\t\x12\x0e\n\x06\x62ucket\x18\x07 \x01(\t\x12\x14\n\x0cresourceType\x18\x08 \x01(\t\x12\x14\n\x0cresourceName\x18\t \x01(\t\";\n\x0cUploadResult\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x0c\n\x04size\x18\x02 \x01(\x05\x12\x10\n\x08\x64uration\x18\x03 \x01(\x05\x32\xb2\x01\n\x13\x46ileServicesService\x12\x9a\x01\n\x0bUploadChunk\x12\x41.github.com.metaprov.modelaapi.services.fileservices.v1.DataBlock\x1a\x44.github.com.metaprov.modelaapi.services.fileservices.v1.UploadResult\"\x00(\x01\x42\x38Z6github.com/metaprov/modelaapi/services/fileservices/v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nIgithub.com/metaprov/modelaapi/services/fileservices/v1/fileservices.proto\x12\x36github.com.metaprov.modelaapi.services.fileservices.v1\x1a google/protobuf/field_mask.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\"}\n\x08Location\x12\x0e\n\x06tenant\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x61taProduct\x18\x02 \x01(\t\x12\x14\n\x0cresourceKind\x18\x03 \x01(\t\x12\x14\n\x0cresourceName\x18\x04 \x01(\t\x12\x10\n\x08\x66ileName\x18\x05 \x01(\t\x12\x0e\n\x06\x62ucket\x18\x06 \x01(\t\"y\n\x15InitiateUploadRequest\x12\x0c\n\x04size\x18\x01 \x01(\x05\x12R\n\x08location\x18\x02 \x01(\x0b\x32@.github.com.metaprov.modelaapi.services.fileservices.v1.Location\":\n\x16InitiateUploadResponse\x12\r\n\x05token\x18\x01 \x01(\t\x12\x11\n\tchunkSize\x18\x02 \x01(\x05\",\n\rUploadRequest\x12\r\n\x05token\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x03 \x01(\x0c\"\"\n\x0eUploadResponse\x12\x10\n\x08\x63omplete\x18\x01 \x01(\x08\x32\xe5\x02\n\x13\x46ileServicesService\x12\xb1\x01\n\x0eInitiateUpload\x12M.github.com.metaprov.modelaapi.services.fileservices.v1.InitiateUploadRequest\x1aN.github.com.metaprov.modelaapi.services.fileservices.v1.InitiateUploadResponse\"\x00\x12\x99\x01\n\x06Upload\x12\x45.github.com.metaprov.modelaapi.services.fileservices.v1.UploadRequest\x1a\x46.github.com.metaprov.modelaapi.services.fileservices.v1.UploadResponse\"\x00\x42\x38Z6github.com/metaprov/modelaapi/services/fileservices/v1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -26,10 +25,16 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'github.com.metaprov.modelaa
 if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z6github.com/metaprov/modelaapi/services/fileservices/v1'
-  _globals['_DATABLOCK']._serialized_start=360
-  _globals['_DATABLOCK']._serialized_end=546
-  _globals['_UPLOADRESULT']._serialized_start=548
-  _globals['_UPLOADRESULT']._serialized_end=607
-  _globals['_FILESERVICESSERVICE']._serialized_start=610
-  _globals['_FILESERVICESSERVICE']._serialized_end=788
+  _globals['_LOCATION']._serialized_start=329
+  _globals['_LOCATION']._serialized_end=454
+  _globals['_INITIATEUPLOADREQUEST']._serialized_start=456
+  _globals['_INITIATEUPLOADREQUEST']._serialized_end=577
+  _globals['_INITIATEUPLOADRESPONSE']._serialized_start=579
+  _globals['_INITIATEUPLOADRESPONSE']._serialized_end=637
+  _globals['_UPLOADREQUEST']._serialized_start=639
+  _globals['_UPLOADREQUEST']._serialized_end=683
+  _globals['_UPLOADRESPONSE']._serialized_start=685
+  _globals['_UPLOADRESPONSE']._serialized_end=719
+  _globals['_FILESERVICESSERVICE']._serialized_start=722
+  _globals['_FILESERVICESSERVICE']._serialized_end=1079
 # @@protoc_insertion_point(module_scope)

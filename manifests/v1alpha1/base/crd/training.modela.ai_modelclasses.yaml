@@ -1076,13 +1076,10 @@ spec:
                     description: The type of schedule, which can be a frequency interval
                       or a cron expression
                     enum:
-                    - now
-                    - once
                     - hourly
                     - daily
                     - weekly
                     - monthly
-                    - yearly
                     - cron
                     type: string
                 type: object
@@ -1110,13 +1107,10 @@ spec:
                         description: The type of schedule, which can be a frequency
                           interval or a cron expression
                         enum:
-                        - now
-                        - once
                         - hourly
                         - daily
                         - weekly
                         - monthly
-                        - yearly
                         - cron
                         type: string
                     type: object
@@ -1149,13 +1143,10 @@ spec:
                         description: The type of schedule, which can be a frequency
                           interval or a cron expression
                         enum:
-                        - now
-                        - once
                         - hourly
                         - daily
                         - weekly
                         - monthly
-                        - yearly
                         - cron
                         type: string
                     type: object
@@ -1878,13 +1869,10 @@ spec:
                         description: The type of schedule, which can be a frequency
                           interval or a cron expression
                         enum:
-                        - now
-                        - once
                         - hourly
                         - daily
                         - weekly
                         - monthly
-                        - yearly
                         - cron
                         type: string
                     type: object
