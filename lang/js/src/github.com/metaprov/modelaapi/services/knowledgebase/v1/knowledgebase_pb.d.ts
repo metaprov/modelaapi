@@ -9,6 +9,9 @@ export class ListKnowledgeBasesRequest extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): ListKnowledgeBasesRequest;
 
+  getLabelsMap(): jspb.Map<string, string>;
+  clearLabelsMap(): ListKnowledgeBasesRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListKnowledgeBasesRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListKnowledgeBasesRequest): ListKnowledgeBasesRequest.AsObject;
@@ -20,6 +23,7 @@ export class ListKnowledgeBasesRequest extends jspb.Message {
 export namespace ListKnowledgeBasesRequest {
   export type AsObject = {
     namespace: string,
+    labelsMap: Array<[string, string]>,
   }
 }
 

@@ -616,7 +616,7 @@ func (snapshot *DatasetSnapshot) ErrorAlert(notification catalog.NotificationSpe
 			Level:        &level,
 			Notification: notification,
 			EntityRef: v1.ObjectReference{
-				Kind:      "Entity",
+				Kind:      "DatasetSnapshot",
 				Name:      snapshot.Name,
 				Namespace: snapshot.Namespace,
 			},

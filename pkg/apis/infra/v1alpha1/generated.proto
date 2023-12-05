@@ -495,22 +495,19 @@ message LabSpec {
   // +kubebuilder:validation:MaxLength=256
   optional string description = 1;
 
+  // Owner specifies the name of the Account which the object belongs to
+  // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  // The reference to the tenant which the object exists under
-  optional k8s.io.api.core.v1.ObjectReference tenantRef = 2;
+  optional string owner = 5;
 
   // Limits specifies the hard resource limits that can be allocated for workloads created under the Lab
   // +kubebuilder:validation:Optional
   optional ResourceLimitSpec limits = 3;
 
-  // External cluster specify the spec for execution on a remote cluster.
-  // +kubebuilder:validation:Optional
-  optional VirtualClusterSpec externalCluster = 4;
-
-  // The name of the Account which created the object, which exists in the same tenant as the object
-  // +kubebuilder:default:="no-one"
-  // +kubebuilder:validation:Optional
-  optional string owner = 5;
+  // PackageStorage defines the specification for a persistent volume used to store Python packages.
+  // Some workloads, like LLM document ingestion, or recipes, may require external Python packages.
+  // When unspecified, persistence will not be enabled for packages
+  optional VolumeStorageSpec packageStorage = 4;
 }
 
 // LabStatus is the observed state of a Lab
@@ -519,14 +516,18 @@ message LabStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 1;
 
+  // The name of the Persistent Volume Claim belonging to the Lab
+  // +kubebuilder:validation:Optional
+  optional string volumeClaimName = 2;
+
   // The last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 2;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 3;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 3;
+  repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 4;
 }
 
 // +kubebuilder:object:root=true
@@ -667,6 +668,16 @@ message LicenseStatus {
   repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 5;
 }
 
+message NFSVolumeSpec {
+  // server is the hostname or IP address of the NFS server.
+  // More info: https://kubernetes.io/docs/concepts/storage/volumes#nfs
+  optional string server = 1;
+
+  // path that is exported by the NFS server.
+  // More info: https://kubernetes.io/docs/concepts/storage/volumes#nfs
+  optional string path = 2;
+}
+
 // NotificationChannelSpec describes a single Connection to an external messaging system and a destination channel within the system
 message NotificationChannelSpec {
   // Indicates if the channel is enabled to send forwarded Alerts
@@ -780,35 +791,19 @@ message NotifierStatus {
   repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 4;
 }
 
-// ResourceLimitSpec defines the resource limits for workloads created under Lab and ServingSite namespaces
+// ResourceLimitSpec defines the resource limits for workloads created under Lab and Serving Site namespaces
 message ResourceLimitSpec {
   // Indicates if the resource limit is enabled
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:=false
   optional bool enabled = 1;
 
-  // The maximum quantity of memory that can be consumed under the namespace
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.api.resource.Quantity maxMem = 2;
-
-  // The maximum amount of CPU that can be consumed under the namespace
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.api.resource.Quantity maxCpu = 3;
-
-  // The maximum number of pods that can be created under the namespace
-  // +kubebuilder:validation:Optional
-  optional int32 maxPods = 4;
-
-  // The maximum number of persistent volume claims that can be created under the namespace
-  // +kubebuilder:validation:Optional
-  optional int32 maxPvc = 5;
-
   // QuotaSpec defines the resource quota specification for the namespace
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ResourceQuotaSpec quota = 6;
+  optional k8s.io.api.core.v1.ResourceQuotaSpec quota = 2;
 
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.LimitRangeSpec limitRange = 7;
+  optional k8s.io.api.core.v1.LimitRangeSpec limitRange = 3;
 }
 
 // RuleSpec defines the relation between a resource and the actions that can be performed on the resource
@@ -857,33 +852,19 @@ message ServingSiteSpec {
   // +kubebuilder:validation:Optional
   optional string description = 1;
 
-  // The reference to the tenant which the object exists under
+  // The name of the Account which created the object, which exists in the same tenant as the object
+  // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference tenantRef = 2;
+  optional string owner = 2;
 
   // Limits specifies the hard resource limits that can be allocated for workloads created under the ServingSite
   // +kubebuilder:validation:Optional
   optional ResourceLimitSpec limits = 3;
 
   // Ingress defines the specification to create Ingress resources that can route traffic
-  // to the resources which exist under the ServingSite's namespace
+  // to the resources which exist under the Serving Site namespace
   // +kubebuilder:validation:Optional
   optional IngressSpec ingress = 4;
-
-  // External Cluster specify if the serving site will be served on external cluster using the cluster api.
-  // assigned to the Lab will be executed inside the cluster (currently not implemented)
-  // +kubebuilder:validation:Optional
-  optional VirtualClusterSpec externalCluster = 5;
-
-  // The name of the Account which created the object, which exists in the same tenant as the object
-  // +kubebuilder:default:="no-one"
-  // +kubebuilder:validation:Optional
-  optional string owner = 7;
-
-  // The stage of the serving class
-  // +kubebuilder:default:="no-one"
-  // +kubebuilder:validation:Optional
-  optional string stage = 8;
 }
 
 message ServingSiteStatus {
@@ -1137,102 +1118,24 @@ message VirtualBucketStatus {
   repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 6;
 }
 
-message VirtualClusterSpec {
-  // Indicates if the lab should run on its own virtual cluster.
-  // Currently not supported
-  // +kubebuilder:validation:Optional
-  // +kubebuilder:default:=false
-  optional bool enabled = 1;
+// VolumeStorageSpec defines the specification for a persistent volume claim
+message VolumeStorageSpec {
+  // The name of an existing volume claim. When unspecified, a volume claim will be created.
+  // The volume claim must exist in the same namespace as the Lab. Properties from the
+  // specification (i.e. storage quantity) will not be applied to an existing claim
+  optional string volumeClaimName = 1;
 
-  // Description is the user provided description
-  // +kubebuilder:default:=""
-  // +optional
-  optional string description = 2;
+  // The name of an existing volume. A volume claim will be created that binds to the volume
+  optional string volumeName = 2;
 
-  // Nodes is the desired number of nodes
-  // +kubebuilder:default:=1
-  // +kubebuilder:validation:Minimum=1
-  // +kubebuilder:validation:Maximum=10
-  // +kubebuilder:validation:Optional
-  optional int32 nodes = 3;
+  // The name of the storage class belonging to the volume claim
+  optional string storageClassName = 3;
 
-  // +kubebuilder:validation:Optional
-  // NodeClassName is the class of nodes or vm
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string instanceType = 4;
+  // The size of the volume, in bytes, which the volume claim will request. When unspecified, default to 1Gi
+  optional k8s.io.apimachinery.pkg.api.resource.Quantity storage = 4;
 
-  // +kubebuilder:validation:Optional
-  // Gpus is the desired number of gpus
-  // +kubebuilder:default:=0
-  // +kubebuilder:validation:Minimum=0
-  // +kubebuilder:validation:Maximum=10
-  // +kubebuilder:validation:Optional
-  optional int32 gpus = 5;
-
-  // +kubebuilder:validation:Optional
-  // GpuClassName is the The class of gpu.
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string gpuClassName = 6;
-
-  // +kubebuilder:validation:Optional
-  // VolumeSize is the size of the volume that would be mounted on all the node of the cluster
-  // +kubebuilder:default:=0
-  // +kubebuilder:validation:Minimum=0
-  // +kubebuilder:validation:Maximum=10
-  // +kubebuilder:validation:Optional
-  optional int32 volumeSize = 7;
-
-  // +kubebuilder:validation:Optional
-  // Spot indicate if we should we use spot instances.
-  // +kubebuilder:default:=false
-  // +optional
-  optional bool spot = 8;
-
-  // ConnectionName refer to the name of the provider connection
-  // +kubebuilder:default:=""
-  optional string connectionName = 9;
-
-  // Owner is the account name of the owner of this cluster
-  // +kubebuilder:default:="no-one"
-  // +kubebuilder:validation:Optional
-  optional string owner = 10;
-
-  // Specify resource limits for the virtual cluster
-  // +kubebuilder:validation:Optional
-  optional ResourceLimitSpec limits = 11;
-
-  // The cloud region, if this cluster is created in a public cloud
-  // +kubebuilder:validation:Optional
-  optional string region = 12;
-
-  // The cloud AZ, if this cluster is created in a public cloud
-  // +kubebuilder:validation:Optional
-  optional string az = 13;
-
-  // The cluster kubernetes version
-  // +kubebuilder:validation:Optional
-  optional string kubernetesVersion = 14;
-
-  // Set to true, for auto scaling cluster
-  // +kubebuilder:validation:Optional
-  optional bool autoscale = 15;
-
-  // Minimum number of nodes for auto scaling
-  // +kubebuilder:validation:Optional
-  optional int32 minNodes = 16;
-
-  // Maximum number of nodes for auto scaling
-  // +kubebuilder:validation:Optional
-  optional int32 maxNodes = 17;
-
-  // a reference to the cloud object in the catalog that will host the external cluster
-  // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference cloudRef = 18;
-
-  // a reference to the ssh key
-  // +kubebuilder:validation:Optional
-  optional string sshKey = 19;
+  // NFS defines the specification to create a volume that binds to an NFS server.
+  // Defining an NFS volume will allow multiple workloads to consume the volume simultaneously
+  optional NFSVolumeSpec nfs = 5;
 }
 

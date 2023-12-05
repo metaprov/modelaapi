@@ -49,3 +49,5 @@ packagify: build
 copy:
 	rm -rf ~/go/src/github.com/metaprov/modela/venv/lib/python3.10/site-packages/github/com/metaprov/modelaapi
 	cp -R ./github/com/metaprov/modelaapi ~/go/src/github.com/metaprov/modela/venv/lib/python3.10/site-packages/github/com/metaprov/modelaapi
+	rm -rf ~/go/src/github.com/metaprov/modela/pycode/modelallm/venv/lib/python3.10/site-packages/github/com/metaprov/modelaapi
+	cp -R ./github/com/metaprov/modelaapi ~/go/src/github.com/metaprov/modela/pycode/modelallm/venv/lib/python3.10/site-packages/github/com/metaprov/modelaapi

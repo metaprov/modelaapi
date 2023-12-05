@@ -12,6 +12,10 @@ message RefreshRequest {
 
 message RefreshResponse {}
 
+message ShutdownRequest {}
+message ShutdownResponse {}
+
 service LLMService {
     rpc Refresh(RefreshRequest) returns (RefreshResponse) {}
+    rpc Shutdown(ShutdownRequest) returns (ShutdownResponse) {}
 }

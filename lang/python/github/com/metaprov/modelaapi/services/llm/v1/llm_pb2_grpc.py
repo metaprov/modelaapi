@@ -19,12 +19,23 @@ class LLMServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.RefreshRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.RefreshResponse.FromString,
                 )
+        self.Shutdown = channel.unary_unary(
+                '/LLMService/Shutdown',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.ShutdownRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.ShutdownResponse.FromString,
+                )
 
 
 class LLMServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def Refresh(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Shutdown(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -37,6 +48,11 @@ def add_LLMServiceServicer_to_server(servicer, server):
                     servicer.Refresh,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.RefreshRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.RefreshResponse.SerializeToString,
+            ),
+            'Shutdown': grpc.unary_unary_rpc_method_handler(
+                    servicer.Shutdown,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.ShutdownRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.ShutdownResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -62,5 +78,22 @@ class LLMService(object):
         return grpc.experimental.unary_unary(request, target, '/LLMService/Refresh',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.RefreshRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.RefreshResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Shutdown(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/LLMService/Shutdown',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.ShutdownRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.ShutdownResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

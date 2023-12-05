@@ -613,7 +613,7 @@ proto.github.com.metaprov.modelaapi.services.prediction.v1.ListPredictionRunsRes
  */
 proto.github.com.metaprov.modelaapi.services.prediction.v1.ListPredictionRunsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    predictions: (f = msg.getPredictions()) && github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionRunList.toObject(includeInstance, f),
+    predictionruns: (f = msg.getPredictionruns()) && github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionRunList.toObject(includeInstance, f),
     nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -654,7 +654,7 @@ proto.github.com.metaprov.modelaapi.services.prediction.v1.ListPredictionRunsRes
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionRunList;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionRunList.deserializeBinaryFromReader);
-      msg.setPredictions(value);
+      msg.setPredictionruns(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -689,7 +689,7 @@ proto.github.com.metaprov.modelaapi.services.prediction.v1.ListPredictionRunsRes
  */
 proto.github.com.metaprov.modelaapi.services.prediction.v1.ListPredictionRunsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getPredictions();
+  f = message.getPredictionruns();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -708,10 +708,10 @@ proto.github.com.metaprov.modelaapi.services.prediction.v1.ListPredictionRunsRes
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRunList predictions = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRunList predictionRuns = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRunList}
  */
-proto.github.com.metaprov.modelaapi.services.prediction.v1.ListPredictionRunsResponse.prototype.getPredictions = function() {
+proto.github.com.metaprov.modelaapi.services.prediction.v1.ListPredictionRunsResponse.prototype.getPredictionruns = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRunList} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionRunList, 1));
 };
@@ -721,7 +721,7 @@ proto.github.com.metaprov.modelaapi.services.prediction.v1.ListPredictionRunsRes
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRunList|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.prediction.v1.ListPredictionRunsResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.prediction.v1.ListPredictionRunsResponse.prototype.setPredictions = function(value) {
+proto.github.com.metaprov.modelaapi.services.prediction.v1.ListPredictionRunsResponse.prototype.setPredictionruns = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -730,8 +730,8 @@ proto.github.com.metaprov.modelaapi.services.prediction.v1.ListPredictionRunsRes
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.prediction.v1.ListPredictionRunsResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.prediction.v1.ListPredictionRunsResponse.prototype.clearPredictions = function() {
-  return this.setPredictions(undefined);
+proto.github.com.metaprov.modelaapi.services.prediction.v1.ListPredictionRunsResponse.prototype.clearPredictionruns = function() {
+  return this.setPredictionruns(undefined);
 };
 
 
@@ -739,7 +739,7 @@ proto.github.com.metaprov.modelaapi.services.prediction.v1.ListPredictionRunsRes
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.prediction.v1.ListPredictionRunsResponse.prototype.hasPredictions = function() {
+proto.github.com.metaprov.modelaapi.services.prediction.v1.ListPredictionRunsResponse.prototype.hasPredictionruns = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -794,7 +794,7 @@ proto.github.com.metaprov.modelaapi.services.prediction.v1.CreatePredictionRunRe
  */
 proto.github.com.metaprov.modelaapi.services.prediction.v1.CreatePredictionRunRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    prediction: (f = msg.getPrediction()) && github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionRun.toObject(includeInstance, f)
+    predictionrun: (f = msg.getPredictionrun()) && github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionRun.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -834,7 +834,7 @@ proto.github.com.metaprov.modelaapi.services.prediction.v1.CreatePredictionRunRe
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionRun;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionRun.deserializeBinaryFromReader);
-      msg.setPrediction(value);
+      msg.setPredictionrun(value);
       break;
     default:
       reader.skipField();
@@ -865,7 +865,7 @@ proto.github.com.metaprov.modelaapi.services.prediction.v1.CreatePredictionRunRe
  */
 proto.github.com.metaprov.modelaapi.services.prediction.v1.CreatePredictionRunRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getPrediction();
+  f = message.getPredictionrun();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -877,10 +877,10 @@ proto.github.com.metaprov.modelaapi.services.prediction.v1.CreatePredictionRunRe
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRun prediction = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRun predictionRun = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRun}
  */
-proto.github.com.metaprov.modelaapi.services.prediction.v1.CreatePredictionRunRequest.prototype.getPrediction = function() {
+proto.github.com.metaprov.modelaapi.services.prediction.v1.CreatePredictionRunRequest.prototype.getPredictionrun = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRun} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionRun, 1));
 };
@@ -890,7 +890,7 @@ proto.github.com.metaprov.modelaapi.services.prediction.v1.CreatePredictionRunRe
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRun|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.prediction.v1.CreatePredictionRunRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.prediction.v1.CreatePredictionRunRequest.prototype.setPrediction = function(value) {
+proto.github.com.metaprov.modelaapi.services.prediction.v1.CreatePredictionRunRequest.prototype.setPredictionrun = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -899,8 +899,8 @@ proto.github.com.metaprov.modelaapi.services.prediction.v1.CreatePredictionRunRe
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.prediction.v1.CreatePredictionRunRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.prediction.v1.CreatePredictionRunRequest.prototype.clearPrediction = function() {
-  return this.setPrediction(undefined);
+proto.github.com.metaprov.modelaapi.services.prediction.v1.CreatePredictionRunRequest.prototype.clearPredictionrun = function() {
+  return this.setPredictionrun(undefined);
 };
 
 
@@ -908,7 +908,7 @@ proto.github.com.metaprov.modelaapi.services.prediction.v1.CreatePredictionRunRe
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.prediction.v1.CreatePredictionRunRequest.prototype.hasPrediction = function() {
+proto.github.com.metaprov.modelaapi.services.prediction.v1.CreatePredictionRunRequest.prototype.hasPredictionrun = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1046,7 +1046,7 @@ proto.github.com.metaprov.modelaapi.services.prediction.v1.UpdatePredictionRunRe
  */
 proto.github.com.metaprov.modelaapi.services.prediction.v1.UpdatePredictionRunRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    prediction: (f = msg.getPrediction()) && github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionRun.toObject(includeInstance, f),
+    predictionrun: (f = msg.getPredictionrun()) && github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionRun.toObject(includeInstance, f),
     fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
@@ -1087,7 +1087,7 @@ proto.github.com.metaprov.modelaapi.services.prediction.v1.UpdatePredictionRunRe
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionRun;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionRun.deserializeBinaryFromReader);
-      msg.setPrediction(value);
+      msg.setPredictionrun(value);
       break;
     case 2:
       var value = new google_protobuf_field_mask_pb.FieldMask;
@@ -1123,7 +1123,7 @@ proto.github.com.metaprov.modelaapi.services.prediction.v1.UpdatePredictionRunRe
  */
 proto.github.com.metaprov.modelaapi.services.prediction.v1.UpdatePredictionRunRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getPrediction();
+  f = message.getPredictionrun();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1143,10 +1143,10 @@ proto.github.com.metaprov.modelaapi.services.prediction.v1.UpdatePredictionRunRe
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRun prediction = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRun predictionRun = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRun}
  */
-proto.github.com.metaprov.modelaapi.services.prediction.v1.UpdatePredictionRunRequest.prototype.getPrediction = function() {
+proto.github.com.metaprov.modelaapi.services.prediction.v1.UpdatePredictionRunRequest.prototype.getPredictionrun = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRun} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionRun, 1));
 };
@@ -1156,7 +1156,7 @@ proto.github.com.metaprov.modelaapi.services.prediction.v1.UpdatePredictionRunRe
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRun|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.prediction.v1.UpdatePredictionRunRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.prediction.v1.UpdatePredictionRunRequest.prototype.setPrediction = function(value) {
+proto.github.com.metaprov.modelaapi.services.prediction.v1.UpdatePredictionRunRequest.prototype.setPredictionrun = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1165,8 +1165,8 @@ proto.github.com.metaprov.modelaapi.services.prediction.v1.UpdatePredictionRunRe
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.prediction.v1.UpdatePredictionRunRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.prediction.v1.UpdatePredictionRunRequest.prototype.clearPrediction = function() {
-  return this.setPrediction(undefined);
+proto.github.com.metaprov.modelaapi.services.prediction.v1.UpdatePredictionRunRequest.prototype.clearPredictionrun = function() {
+  return this.setPredictionrun(undefined);
 };
 
 
@@ -1174,7 +1174,7 @@ proto.github.com.metaprov.modelaapi.services.prediction.v1.UpdatePredictionRunRe
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.prediction.v1.UpdatePredictionRunRequest.prototype.hasPrediction = function() {
+proto.github.com.metaprov.modelaapi.services.prediction.v1.UpdatePredictionRunRequest.prototype.hasPredictionrun = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1509,7 +1509,7 @@ proto.github.com.metaprov.modelaapi.services.prediction.v1.GetPredictionRunRespo
  */
 proto.github.com.metaprov.modelaapi.services.prediction.v1.GetPredictionRunResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    prediction: (f = msg.getPrediction()) && github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionRun.toObject(includeInstance, f),
+    predictionrun: (f = msg.getPredictionrun()) && github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionRun.toObject(includeInstance, f),
     yaml: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -1550,7 +1550,7 @@ proto.github.com.metaprov.modelaapi.services.prediction.v1.GetPredictionRunRespo
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionRun;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionRun.deserializeBinaryFromReader);
-      msg.setPrediction(value);
+      msg.setPredictionrun(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -1585,7 +1585,7 @@ proto.github.com.metaprov.modelaapi.services.prediction.v1.GetPredictionRunRespo
  */
 proto.github.com.metaprov.modelaapi.services.prediction.v1.GetPredictionRunResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getPrediction();
+  f = message.getPredictionrun();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1604,10 +1604,10 @@ proto.github.com.metaprov.modelaapi.services.prediction.v1.GetPredictionRunRespo
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRun prediction = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRun predictionRun = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRun}
  */
-proto.github.com.metaprov.modelaapi.services.prediction.v1.GetPredictionRunResponse.prototype.getPrediction = function() {
+proto.github.com.metaprov.modelaapi.services.prediction.v1.GetPredictionRunResponse.prototype.getPredictionrun = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRun} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictionRun, 1));
 };
@@ -1617,7 +1617,7 @@ proto.github.com.metaprov.modelaapi.services.prediction.v1.GetPredictionRunRespo
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRun|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.prediction.v1.GetPredictionRunResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.prediction.v1.GetPredictionRunResponse.prototype.setPrediction = function(value) {
+proto.github.com.metaprov.modelaapi.services.prediction.v1.GetPredictionRunResponse.prototype.setPredictionrun = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1626,8 +1626,8 @@ proto.github.com.metaprov.modelaapi.services.prediction.v1.GetPredictionRunRespo
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.prediction.v1.GetPredictionRunResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.prediction.v1.GetPredictionRunResponse.prototype.clearPrediction = function() {
-  return this.setPrediction(undefined);
+proto.github.com.metaprov.modelaapi.services.prediction.v1.GetPredictionRunResponse.prototype.clearPredictionrun = function() {
+  return this.setPredictionrun(undefined);
 };
 
 
@@ -1635,7 +1635,7 @@ proto.github.com.metaprov.modelaapi.services.prediction.v1.GetPredictionRunRespo
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.prediction.v1.GetPredictionRunResponse.prototype.hasPrediction = function() {
+proto.github.com.metaprov.modelaapi.services.prediction.v1.GetPredictionRunResponse.prototype.hasPredictionrun = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

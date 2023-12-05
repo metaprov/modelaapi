@@ -115,6 +115,82 @@ func (*RefreshResponse) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modelaapi_services_llm_v1_llm_proto_rawDescGZIP(), []int{1}
 }
 
+type ShutdownRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *ShutdownRequest) Reset() {
+	*x = ShutdownRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_github_com_metaprov_modelaapi_services_llm_v1_llm_proto_msgTypes[2]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ShutdownRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ShutdownRequest) ProtoMessage() {}
+
+func (x *ShutdownRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_github_com_metaprov_modelaapi_services_llm_v1_llm_proto_msgTypes[2]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ShutdownRequest.ProtoReflect.Descriptor instead.
+func (*ShutdownRequest) Descriptor() ([]byte, []int) {
+	return file_github_com_metaprov_modelaapi_services_llm_v1_llm_proto_rawDescGZIP(), []int{2}
+}
+
+type ShutdownResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *ShutdownResponse) Reset() {
+	*x = ShutdownResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_github_com_metaprov_modelaapi_services_llm_v1_llm_proto_msgTypes[3]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ShutdownResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ShutdownResponse) ProtoMessage() {}
+
+func (x *ShutdownResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_github_com_metaprov_modelaapi_services_llm_v1_llm_proto_msgTypes[3]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ShutdownResponse.ProtoReflect.Descriptor instead.
+func (*ShutdownResponse) Descriptor() ([]byte, []int) {
+	return file_github_com_metaprov_modelaapi_services_llm_v1_llm_proto_rawDescGZIP(), []int{3}
+}
+
 var File_github_com_metaprov_modelaapi_services_llm_v1_llm_proto protoreflect.FileDescriptor
 
 var file_github_com_metaprov_modelaapi_services_llm_v1_llm_proto_rawDesc = []byte{
@@ -145,14 +221,20 @@ var file_github_com_metaprov_modelaapi_services_llm_v1_llm_proto_rawDesc = []byt
 	0x31, 0x2e, 0x4b, 0x6e, 0x6f, 0x77, 0x6c, 0x65, 0x64, 0x67, 0x65, 0x42, 0x61, 0x73, 0x65, 0x52,
 	0x0d, 0x6b, 0x6e, 0x6f, 0x77, 0x6c, 0x65, 0x64, 0x67, 0x65, 0x42, 0x61, 0x73, 0x65, 0x22, 0x11,
 	0x0a, 0x0f, 0x52, 0x65, 0x66, 0x72, 0x65, 0x73, 0x68, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
-	0x65, 0x32, 0x3c, 0x0a, 0x0a, 0x4c, 0x4c, 0x4d, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12,
-	0x2e, 0x0a, 0x07, 0x52, 0x65, 0x66, 0x72, 0x65, 0x73, 0x68, 0x12, 0x0f, 0x2e, 0x52, 0x65, 0x66,
-	0x72, 0x65, 0x73, 0x68, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x10, 0x2e, 0x52, 0x65,
-	0x66, 0x72, 0x65, 0x73, 0x68, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42,
-	0x2f, 0x5a, 0x2d, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65,
-	0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x61, 0x70, 0x69,
-	0x2f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x6c, 0x6c, 0x6d, 0x2f, 0x76, 0x31,
-	0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x65, 0x22, 0x11, 0x0a, 0x0f, 0x53, 0x68, 0x75, 0x74, 0x64, 0x6f, 0x77, 0x6e, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x22, 0x12, 0x0a, 0x10, 0x53, 0x68, 0x75, 0x74, 0x64, 0x6f, 0x77, 0x6e,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x32, 0x6f, 0x0a, 0x0a, 0x4c, 0x4c, 0x4d, 0x53,
+	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x2e, 0x0a, 0x07, 0x52, 0x65, 0x66, 0x72, 0x65, 0x73,
+	0x68, 0x12, 0x0f, 0x2e, 0x52, 0x65, 0x66, 0x72, 0x65, 0x73, 0x68, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x1a, 0x10, 0x2e, 0x52, 0x65, 0x66, 0x72, 0x65, 0x73, 0x68, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x31, 0x0a, 0x08, 0x53, 0x68, 0x75, 0x74, 0x64, 0x6f,
+	0x77, 0x6e, 0x12, 0x10, 0x2e, 0x53, 0x68, 0x75, 0x74, 0x64, 0x6f, 0x77, 0x6e, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x1a, 0x11, 0x2e, 0x53, 0x68, 0x75, 0x74, 0x64, 0x6f, 0x77, 0x6e, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x2f, 0x5a, 0x2d, 0x67, 0x69, 0x74,
+	0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76,
+	0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x61, 0x70, 0x69, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69,
+	0x63, 0x65, 0x73, 0x2f, 0x6c, 0x6c, 0x6d, 0x2f, 0x76, 0x31, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74,
+	0x6f, 0x33,
 }
 
 var (
@@ -167,20 +249,24 @@ func file_github_com_metaprov_modelaapi_services_llm_v1_llm_proto_rawDescGZIP() 
 	return file_github_com_metaprov_modelaapi_services_llm_v1_llm_proto_rawDescData
 }
 
-var file_github_com_metaprov_modelaapi_services_llm_v1_llm_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_github_com_metaprov_modelaapi_services_llm_v1_llm_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_github_com_metaprov_modelaapi_services_llm_v1_llm_proto_goTypes = []interface{}{
 	(*RefreshRequest)(nil),          // 0: RefreshRequest
 	(*RefreshResponse)(nil),         // 1: RefreshResponse
-	(*v1alpha1.DataProduct)(nil),    // 2: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
-	(*v1alpha11.KnowledgeBase)(nil), // 3: github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBase
+	(*ShutdownRequest)(nil),         // 2: ShutdownRequest
+	(*ShutdownResponse)(nil),        // 3: ShutdownResponse
+	(*v1alpha1.DataProduct)(nil),    // 4: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	(*v1alpha11.KnowledgeBase)(nil), // 5: github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBase
 }
 var file_github_com_metaprov_modelaapi_services_llm_v1_llm_proto_depIdxs = []int32{
-	2, // 0: RefreshRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
-	3, // 1: RefreshRequest.knowledgeBase:type_name -> github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBase
+	4, // 0: RefreshRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	5, // 1: RefreshRequest.knowledgeBase:type_name -> github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBase
 	0, // 2: LLMService.Refresh:input_type -> RefreshRequest
-	1, // 3: LLMService.Refresh:output_type -> RefreshResponse
-	3, // [3:4] is the sub-list for method output_type
-	2, // [2:3] is the sub-list for method input_type
+	2, // 3: LLMService.Shutdown:input_type -> ShutdownRequest
+	1, // 4: LLMService.Refresh:output_type -> RefreshResponse
+	3, // 5: LLMService.Shutdown:output_type -> ShutdownResponse
+	4, // [4:6] is the sub-list for method output_type
+	2, // [2:4] is the sub-list for method input_type
 	2, // [2:2] is the sub-list for extension type_name
 	2, // [2:2] is the sub-list for extension extendee
 	0, // [0:2] is the sub-list for field type_name
@@ -216,6 +302,30 @@ func file_github_com_metaprov_modelaapi_services_llm_v1_llm_proto_init() {
 				return nil
 			}
 		}
+		file_github_com_metaprov_modelaapi_services_llm_v1_llm_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ShutdownRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_github_com_metaprov_modelaapi_services_llm_v1_llm_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ShutdownResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -223,7 +333,7 @@ func file_github_com_metaprov_modelaapi_services_llm_v1_llm_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_github_com_metaprov_modelaapi_services_llm_v1_llm_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   2,
+			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

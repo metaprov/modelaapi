@@ -1157,6 +1157,7 @@ spec:
                         default: median-pruner
                         description: The type of pruner to use during model search
                         enum:
+                        - none
                         - patient-pruner
                         - median-pruner
                         - percentile-pruner

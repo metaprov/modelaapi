@@ -1,8 +1,6 @@
 package v1alpha1
 
 import (
-	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
-	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
@@ -54,28 +52,17 @@ type ServingSiteSpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,1,opt,name=description"`
-	// The reference to the tenant which the object exists under
+	// The name of the Account which created the object, which exists in the same tenant as the object
+	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
-	TenantRef *v1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,2,opt,name=tenantRef"`
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,2,opt,name=owner"`
 	// Limits specifies the hard resource limits that can be allocated for workloads created under the ServingSite
 	// +kubebuilder:validation:Optional
 	Limits ResourceLimitSpec `json:"limits,omitempty" protobuf:"bytes,3,opt,name=limits"`
 	// Ingress defines the specification to create Ingress resources that can route traffic
-	// to the resources which exist under the ServingSite's namespace
+	// to the resources which exist under the Serving Site namespace
 	// +kubebuilder:validation:Optional
 	Ingress IngressSpec `json:"ingress,omitempty" protobuf:"bytes,4,opt,name=ingress"`
-	// External Cluster specify if the serving site will be served on external cluster using the cluster api.
-	// assigned to the Lab will be executed inside the cluster (currently not implemented)
-	// +kubebuilder:validation:Optional
-	ExternalCluster *VirtualClusterSpec `json:"externalCluster,omitempty" protobuf:"bytes,5,opt,name=externalCluster"`
-	// The name of the Account which created the object, which exists in the same tenant as the object
-	// +kubebuilder:default:="no-one"
-	// +kubebuilder:validation:Optional
-	Owner *string `json:"owner,omitempty" protobuf:"bytes,7,opt,name=owner"`
-	// The stage of the serving class
-	// +kubebuilder:default:="no-one"
-	// +kubebuilder:validation:Optional
-	Stage *catalog.ServingSiteStage `json:"stage,omitempty" protobuf:"bytes,8,opt,name=stage"`
 }
 
 type ServingSiteStatus struct {

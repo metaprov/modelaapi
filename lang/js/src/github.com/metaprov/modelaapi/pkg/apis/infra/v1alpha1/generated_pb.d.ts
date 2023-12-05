@@ -820,25 +820,20 @@ export class LabSpec extends jspb.Message {
   hasDescription(): boolean;
   clearDescription(): LabSpec;
 
-  getTenantref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setTenantref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): LabSpec;
-  hasTenantref(): boolean;
-  clearTenantref(): LabSpec;
+  getOwner(): string;
+  setOwner(value: string): LabSpec;
+  hasOwner(): boolean;
+  clearOwner(): LabSpec;
 
   getLimits(): ResourceLimitSpec | undefined;
   setLimits(value?: ResourceLimitSpec): LabSpec;
   hasLimits(): boolean;
   clearLimits(): LabSpec;
 
-  getExternalcluster(): VirtualClusterSpec | undefined;
-  setExternalcluster(value?: VirtualClusterSpec): LabSpec;
-  hasExternalcluster(): boolean;
-  clearExternalcluster(): LabSpec;
-
-  getOwner(): string;
-  setOwner(value: string): LabSpec;
-  hasOwner(): boolean;
-  clearOwner(): LabSpec;
+  getPackagestorage(): VolumeStorageSpec | undefined;
+  setPackagestorage(value?: VolumeStorageSpec): LabSpec;
+  hasPackagestorage(): boolean;
+  clearPackagestorage(): LabSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LabSpec.AsObject;
@@ -851,10 +846,9 @@ export class LabSpec extends jspb.Message {
 export namespace LabSpec {
   export type AsObject = {
     description?: string,
-    tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    limits?: ResourceLimitSpec.AsObject,
-    externalcluster?: VirtualClusterSpec.AsObject,
     owner?: string,
+    limits?: ResourceLimitSpec.AsObject,
+    packagestorage?: VolumeStorageSpec.AsObject,
   }
 }
 
@@ -863,6 +857,11 @@ export class LabStatus extends jspb.Message {
   setObservedgeneration(value: number): LabStatus;
   hasObservedgeneration(): boolean;
   clearObservedgeneration(): LabStatus;
+
+  getVolumeclaimname(): string;
+  setVolumeclaimname(value: string): LabStatus;
+  hasVolumeclaimname(): boolean;
+  clearVolumeclaimname(): LabStatus;
 
   getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): LabStatus;
@@ -885,6 +884,7 @@ export class LabStatus extends jspb.Message {
 export namespace LabStatus {
   export type AsObject = {
     observedgeneration?: number,
+    volumeclaimname?: string,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }
@@ -1105,6 +1105,32 @@ export namespace LicenseStatus {
     failurereason?: string,
     failuremessage?: string,
     conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
+  }
+}
+
+export class NFSVolumeSpec extends jspb.Message {
+  getServer(): string;
+  setServer(value: string): NFSVolumeSpec;
+  hasServer(): boolean;
+  clearServer(): NFSVolumeSpec;
+
+  getPath(): string;
+  setPath(value: string): NFSVolumeSpec;
+  hasPath(): boolean;
+  clearPath(): NFSVolumeSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): NFSVolumeSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: NFSVolumeSpec): NFSVolumeSpec.AsObject;
+  static serializeBinaryToWriter(message: NFSVolumeSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): NFSVolumeSpec;
+  static deserializeBinaryFromReader(message: NFSVolumeSpec, reader: jspb.BinaryReader): NFSVolumeSpec;
+}
+
+export namespace NFSVolumeSpec {
+  export type AsObject = {
+    server?: string,
+    path?: string,
   }
 }
 
@@ -1330,26 +1356,6 @@ export class ResourceLimitSpec extends jspb.Message {
   hasEnabled(): boolean;
   clearEnabled(): ResourceLimitSpec;
 
-  getMaxmem(): k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity | undefined;
-  setMaxmem(value?: k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity): ResourceLimitSpec;
-  hasMaxmem(): boolean;
-  clearMaxmem(): ResourceLimitSpec;
-
-  getMaxcpu(): k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity | undefined;
-  setMaxcpu(value?: k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity): ResourceLimitSpec;
-  hasMaxcpu(): boolean;
-  clearMaxcpu(): ResourceLimitSpec;
-
-  getMaxpods(): number;
-  setMaxpods(value: number): ResourceLimitSpec;
-  hasMaxpods(): boolean;
-  clearMaxpods(): ResourceLimitSpec;
-
-  getMaxpvc(): number;
-  setMaxpvc(value: number): ResourceLimitSpec;
-  hasMaxpvc(): boolean;
-  clearMaxpvc(): ResourceLimitSpec;
-
   getQuota(): k8s_io_api_core_v1_generated_pb.ResourceQuotaSpec | undefined;
   setQuota(value?: k8s_io_api_core_v1_generated_pb.ResourceQuotaSpec): ResourceLimitSpec;
   hasQuota(): boolean;
@@ -1371,10 +1377,6 @@ export class ResourceLimitSpec extends jspb.Message {
 export namespace ResourceLimitSpec {
   export type AsObject = {
     enabled?: boolean,
-    maxmem?: k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.AsObject,
-    maxcpu?: k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.AsObject,
-    maxpods?: number,
-    maxpvc?: number,
     quota?: k8s_io_api_core_v1_generated_pb.ResourceQuotaSpec.AsObject,
     limitrange?: k8s_io_api_core_v1_generated_pb.LimitRangeSpec.AsObject,
   }
@@ -1470,10 +1472,10 @@ export class ServingSiteSpec extends jspb.Message {
   hasDescription(): boolean;
   clearDescription(): ServingSiteSpec;
 
-  getTenantref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setTenantref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ServingSiteSpec;
-  hasTenantref(): boolean;
-  clearTenantref(): ServingSiteSpec;
+  getOwner(): string;
+  setOwner(value: string): ServingSiteSpec;
+  hasOwner(): boolean;
+  clearOwner(): ServingSiteSpec;
 
   getLimits(): ResourceLimitSpec | undefined;
   setLimits(value?: ResourceLimitSpec): ServingSiteSpec;
@@ -1484,21 +1486,6 @@ export class ServingSiteSpec extends jspb.Message {
   setIngress(value?: IngressSpec): ServingSiteSpec;
   hasIngress(): boolean;
   clearIngress(): ServingSiteSpec;
-
-  getExternalcluster(): VirtualClusterSpec | undefined;
-  setExternalcluster(value?: VirtualClusterSpec): ServingSiteSpec;
-  hasExternalcluster(): boolean;
-  clearExternalcluster(): ServingSiteSpec;
-
-  getOwner(): string;
-  setOwner(value: string): ServingSiteSpec;
-  hasOwner(): boolean;
-  clearOwner(): ServingSiteSpec;
-
-  getStage(): string;
-  setStage(value: string): ServingSiteSpec;
-  hasStage(): boolean;
-  clearStage(): ServingSiteSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ServingSiteSpec.AsObject;
@@ -1511,12 +1498,9 @@ export class ServingSiteSpec extends jspb.Message {
 export namespace ServingSiteSpec {
   export type AsObject = {
     description?: string,
-    tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    owner?: string,
     limits?: ResourceLimitSpec.AsObject,
     ingress?: IngressSpec.AsObject,
-    externalcluster?: VirtualClusterSpec.AsObject,
-    owner?: string,
-    stage?: string,
   }
 }
 
@@ -1988,131 +1972,47 @@ export namespace VirtualBucketStatus {
   }
 }
 
-export class VirtualClusterSpec extends jspb.Message {
-  getEnabled(): boolean;
-  setEnabled(value: boolean): VirtualClusterSpec;
-  hasEnabled(): boolean;
-  clearEnabled(): VirtualClusterSpec;
+export class VolumeStorageSpec extends jspb.Message {
+  getVolumeclaimname(): string;
+  setVolumeclaimname(value: string): VolumeStorageSpec;
+  hasVolumeclaimname(): boolean;
+  clearVolumeclaimname(): VolumeStorageSpec;
 
-  getDescription(): string;
-  setDescription(value: string): VirtualClusterSpec;
-  hasDescription(): boolean;
-  clearDescription(): VirtualClusterSpec;
+  getVolumename(): string;
+  setVolumename(value: string): VolumeStorageSpec;
+  hasVolumename(): boolean;
+  clearVolumename(): VolumeStorageSpec;
 
-  getNodes(): number;
-  setNodes(value: number): VirtualClusterSpec;
-  hasNodes(): boolean;
-  clearNodes(): VirtualClusterSpec;
+  getStorageclassname(): string;
+  setStorageclassname(value: string): VolumeStorageSpec;
+  hasStorageclassname(): boolean;
+  clearStorageclassname(): VolumeStorageSpec;
 
-  getInstancetype(): string;
-  setInstancetype(value: string): VirtualClusterSpec;
-  hasInstancetype(): boolean;
-  clearInstancetype(): VirtualClusterSpec;
+  getStorage(): k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity | undefined;
+  setStorage(value?: k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity): VolumeStorageSpec;
+  hasStorage(): boolean;
+  clearStorage(): VolumeStorageSpec;
 
-  getGpus(): number;
-  setGpus(value: number): VirtualClusterSpec;
-  hasGpus(): boolean;
-  clearGpus(): VirtualClusterSpec;
-
-  getGpuclassname(): string;
-  setGpuclassname(value: string): VirtualClusterSpec;
-  hasGpuclassname(): boolean;
-  clearGpuclassname(): VirtualClusterSpec;
-
-  getVolumesize(): number;
-  setVolumesize(value: number): VirtualClusterSpec;
-  hasVolumesize(): boolean;
-  clearVolumesize(): VirtualClusterSpec;
-
-  getSpot(): boolean;
-  setSpot(value: boolean): VirtualClusterSpec;
-  hasSpot(): boolean;
-  clearSpot(): VirtualClusterSpec;
-
-  getConnectionname(): string;
-  setConnectionname(value: string): VirtualClusterSpec;
-  hasConnectionname(): boolean;
-  clearConnectionname(): VirtualClusterSpec;
-
-  getOwner(): string;
-  setOwner(value: string): VirtualClusterSpec;
-  hasOwner(): boolean;
-  clearOwner(): VirtualClusterSpec;
-
-  getLimits(): ResourceLimitSpec | undefined;
-  setLimits(value?: ResourceLimitSpec): VirtualClusterSpec;
-  hasLimits(): boolean;
-  clearLimits(): VirtualClusterSpec;
-
-  getRegion(): string;
-  setRegion(value: string): VirtualClusterSpec;
-  hasRegion(): boolean;
-  clearRegion(): VirtualClusterSpec;
-
-  getAz(): string;
-  setAz(value: string): VirtualClusterSpec;
-  hasAz(): boolean;
-  clearAz(): VirtualClusterSpec;
-
-  getKubernetesversion(): string;
-  setKubernetesversion(value: string): VirtualClusterSpec;
-  hasKubernetesversion(): boolean;
-  clearKubernetesversion(): VirtualClusterSpec;
-
-  getAutoscale(): boolean;
-  setAutoscale(value: boolean): VirtualClusterSpec;
-  hasAutoscale(): boolean;
-  clearAutoscale(): VirtualClusterSpec;
-
-  getMinnodes(): number;
-  setMinnodes(value: number): VirtualClusterSpec;
-  hasMinnodes(): boolean;
-  clearMinnodes(): VirtualClusterSpec;
-
-  getMaxnodes(): number;
-  setMaxnodes(value: number): VirtualClusterSpec;
-  hasMaxnodes(): boolean;
-  clearMaxnodes(): VirtualClusterSpec;
-
-  getCloudref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setCloudref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): VirtualClusterSpec;
-  hasCloudref(): boolean;
-  clearCloudref(): VirtualClusterSpec;
-
-  getSshkey(): string;
-  setSshkey(value: string): VirtualClusterSpec;
-  hasSshkey(): boolean;
-  clearSshkey(): VirtualClusterSpec;
+  getNfs(): NFSVolumeSpec | undefined;
+  setNfs(value?: NFSVolumeSpec): VolumeStorageSpec;
+  hasNfs(): boolean;
+  clearNfs(): VolumeStorageSpec;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): VirtualClusterSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: VirtualClusterSpec): VirtualClusterSpec.AsObject;
-  static serializeBinaryToWriter(message: VirtualClusterSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): VirtualClusterSpec;
-  static deserializeBinaryFromReader(message: VirtualClusterSpec, reader: jspb.BinaryReader): VirtualClusterSpec;
+  toObject(includeInstance?: boolean): VolumeStorageSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: VolumeStorageSpec): VolumeStorageSpec.AsObject;
+  static serializeBinaryToWriter(message: VolumeStorageSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): VolumeStorageSpec;
+  static deserializeBinaryFromReader(message: VolumeStorageSpec, reader: jspb.BinaryReader): VolumeStorageSpec;
 }
 
-export namespace VirtualClusterSpec {
+export namespace VolumeStorageSpec {
   export type AsObject = {
-    enabled?: boolean,
-    description?: string,
-    nodes?: number,
-    instancetype?: string,
-    gpus?: number,
-    gpuclassname?: string,
-    volumesize?: number,
-    spot?: boolean,
-    connectionname?: string,
-    owner?: string,
-    limits?: ResourceLimitSpec.AsObject,
-    region?: string,
-    az?: string,
-    kubernetesversion?: string,
-    autoscale?: boolean,
-    minnodes?: number,
-    maxnodes?: number,
-    cloudref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    sshkey?: string,
+    volumeclaimname?: string,
+    volumename?: string,
+    storageclassname?: string,
+    storage?: k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.AsObject,
+    nfs?: NFSVolumeSpec.AsObject,
   }
 }
 

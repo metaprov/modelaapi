@@ -4,7 +4,7 @@ package common
 type KindName string
 
 const (
-	// catalog kinds
+	// Catalog
 	AlgorithmKind       KindName = "algorithms"
 	CloudKind           KindName = "clouds"
 	MLFrameworkKind     KindName = "mlframeworks"
@@ -13,7 +13,7 @@ const (
 	UserRoleClassKind   KindName = "userroleclasses"
 	WorkloadClassKind   KindName = "workloadclasses"
 
-	// data
+	// Data
 	DataPipelineKind       KindName = "datapipelines"
 	DataPipelineRunKind    KindName = "datapipelineruns"
 	DataProductKind        KindName = "dataproducts"
@@ -27,13 +27,16 @@ const (
 	RecipeKind             KindName = "recipes"
 	RecipeRunKind          KindName = "reciperuns"
 
-	// inference
+	// Inference
 	PredictionKind    KindName = "predictions"
 	PredictionRunKind KindName = "predictionrun"
 	PredictorKind     KindName = "predictors"
 	DataAppKind       KindName = "dataapps"
 
-	// infra
+	// LLM
+	KnowledgeBaseKind KindName = "knowledgebases"
+
+	// Infra
 	AccountKind       KindName = "accounts"
 	AlertKind         KindName = "alerts"
 	ApiTokenKind      KindName = "apitokens"
@@ -47,7 +50,7 @@ const (
 	VirtualBucketKind KindName = "virtualbuckets"
 	AttachmentKind    KindName = "attachments"
 
-	// Training kind
+	// Training
 	ModelKind         KindName = "models"
 	ModelClassKind    KindName = "modelclasses"
 	ModelClassRunKind KindName = "modelclassrun"
@@ -55,14 +58,14 @@ const (
 	StudyKind         KindName = "studies"
 	StudyRunKind      KindName = "studyruns"
 
-	// team
+	// Team
 	ReviewKind     KindName = "reviews"
 	PostMortemKind KindName = "postmortems"
 	RunBookKind    KindName = "runbooks"
 	TodoKind       KindName = "todos"
 	MeetingKind    KindName = "meetings"
 
-	// k8s core kinds
+	// K8s Core
 	SecretKind     KindName = "secrets"
 	DeploymentKind KindName = "deployments"
 	ServiceKind    KindName = "services"

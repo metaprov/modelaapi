@@ -31,30 +31,30 @@ class ListPredictionRunsRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ..., page_size: _Optional[int] = ..., page_token: _Optional[str] = ..., order_by: _Optional[str] = ...) -> None: ...
 
 class ListPredictionRunsResponse(_message.Message):
-    __slots__ = ["predictions", "next_page_token"]
-    PREDICTIONS_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["predictionRuns", "next_page_token"]
+    PREDICTIONRUNS_FIELD_NUMBER: _ClassVar[int]
     NEXT_PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
-    predictions: _generated_pb2_1.PredictionRunList
+    predictionRuns: _generated_pb2_1.PredictionRunList
     next_page_token: str
-    def __init__(self, predictions: _Optional[_Union[_generated_pb2_1.PredictionRunList, _Mapping]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
+    def __init__(self, predictionRuns: _Optional[_Union[_generated_pb2_1.PredictionRunList, _Mapping]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
 
 class CreatePredictionRunRequest(_message.Message):
-    __slots__ = ["prediction"]
-    PREDICTION_FIELD_NUMBER: _ClassVar[int]
-    prediction: _generated_pb2_1.PredictionRun
-    def __init__(self, prediction: _Optional[_Union[_generated_pb2_1.PredictionRun, _Mapping]] = ...) -> None: ...
+    __slots__ = ["predictionRun"]
+    PREDICTIONRUN_FIELD_NUMBER: _ClassVar[int]
+    predictionRun: _generated_pb2_1.PredictionRun
+    def __init__(self, predictionRun: _Optional[_Union[_generated_pb2_1.PredictionRun, _Mapping]] = ...) -> None: ...
 
 class CreatePredictionRunResponse(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
 
 class UpdatePredictionRunRequest(_message.Message):
-    __slots__ = ["prediction", "field_mask"]
-    PREDICTION_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["predictionRun", "field_mask"]
+    PREDICTIONRUN_FIELD_NUMBER: _ClassVar[int]
     FIELD_MASK_FIELD_NUMBER: _ClassVar[int]
-    prediction: _generated_pb2_1.PredictionRun
+    predictionRun: _generated_pb2_1.PredictionRun
     field_mask: _field_mask_pb2.FieldMask
-    def __init__(self, prediction: _Optional[_Union[_generated_pb2_1.PredictionRun, _Mapping]] = ..., field_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
+    def __init__(self, predictionRun: _Optional[_Union[_generated_pb2_1.PredictionRun, _Mapping]] = ..., field_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
 
 class UpdatePredictionRunResponse(_message.Message):
     __slots__ = []
@@ -69,12 +69,12 @@ class GetPredictionRunRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class GetPredictionRunResponse(_message.Message):
-    __slots__ = ["prediction", "yaml"]
-    PREDICTION_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["predictionRun", "yaml"]
+    PREDICTIONRUN_FIELD_NUMBER: _ClassVar[int]
     YAML_FIELD_NUMBER: _ClassVar[int]
-    prediction: _generated_pb2_1.PredictionRun
+    predictionRun: _generated_pb2_1.PredictionRun
     yaml: str
-    def __init__(self, prediction: _Optional[_Union[_generated_pb2_1.PredictionRun, _Mapping]] = ..., yaml: _Optional[str] = ...) -> None: ...
+    def __init__(self, predictionRun: _Optional[_Union[_generated_pb2_1.PredictionRun, _Mapping]] = ..., yaml: _Optional[str] = ...) -> None: ...
 
 class DeletePredictionRunRequest(_message.Message):
     __slots__ = ["namespace", "name"]

@@ -51,6 +51,11 @@ spec:
             type: object
           spec:
             properties:
+              artifactBucketName:
+                description: The name of the Virtual Bucket where artifacts generated
+                  by the Knowledge Base will be stored. If empty, default to the Data
+                  Product's default artifact bucket
+                type: string
               description:
                 default: ""
                 description: The user-provided description of the Knowledge Base
@@ -305,25 +310,17 @@ spec:
                     description: Model specifies the vendor-specific model type
                     type: string
                 type: object
-              metadataDatabase:
-                description: MetadataDatabase specifies the location of a database
-                  table used to store document metadata and statuses. When specified,
-                  any document metadata specified by Documents will be cleared and
-                  migrated to the table
-                properties:
-                  connectionName:
-                    description: The name of the Connection resource used to connect
-                      to the database
-                    type: string
-                  sql:
-                    default: ""
-                    description: The SQL statement to execute
-                    type: string
-                  table:
-                    default: ""
-                    description: The name of the table to read
-                    type: string
-                type: object
+              labName:
+                description: The name of the Lab under which Jobs created by the Knowledge
+                  Base will be executed. If empty, default to the Data Product's default
+                  Lab
+                type: string
+              metadataDatabaseConnectionName:
+                description: MetadataDatabase specifies a connection to a database
+                  used to store document metadata and statuses. When specified, any
+                  document metadata specified by Documents will be cleared and migrated
+                  to the table
+                type: string
               nodeParser:
                 description: NodeParser specifies the default node parser for all
                   documents. The node parser defines how to split up documents into
@@ -487,6 +484,49 @@ spec:
                     - cron
                     type: string
                 type: object
+              resources:
+                description: Resources specifies the resource requirements that will
+                  be allocated for refresh jobs
+                properties:
+                  custom:
+                    default: false
+                    description: Custom indicates if the custom requirements specified
+                      by Requirements will be used
+                    type: boolean
+                  requirements:
+                    description: Requirements specifies the custom resource requirements
+                      for the workload
+                    properties:
+                      limits:
+                        additionalProperties:
+                          anyOf:
+                          - type: integer
+                          - type: string
+                          pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
+                          x-kubernetes-int-or-string: true
+                        description: 'Limits describes the maximum amount of compute
+                          resources allowed. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/'
+                        type: object
+                      requests:
+                        additionalProperties:
+                          anyOf:
+                          - type: integer
+                          - type: string
+                          pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
+                          x-kubernetes-int-or-string: true
+                        description: 'Requests describes the minimum amount of compute
+                          resources required. If Requests is omitted for a container,
+                          it defaults to Limits if that is explicitly specified, otherwise
+                          to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/'
+                        type: object
+                    type: object
+                  workloadName:
+                    description: WorkloadName references the name of a Workload Class
+                      resource that will be used to determine the resource requirements
+                      of the workload. If specified, WorkloadName will take precedence
+                      over custom requirements
+                    type: string
+                type: object
               vectorStoreConnectionName:
                 description: VectorStoreConnectionName specifies the name of a Connection
                   resource that provides a vector database
@@ -584,6 +624,11 @@ spec:
                       type: string
                   type: object
                 type: array
+              lastCompletionAt:
+                description: LastCompletionAt specifies the time at which the last
+                  refresh job was completed
+                format: date-time
+                type: string
               lastRefreshAt:
                 description: LastRefreshAt specifies the time at which the last refresh
                   job was executed
@@ -619,8 +664,6 @@ spec:
                 description: The last time the object was updated
                 format: date-time
                 type: string
-            required:
-            - logs
             type: object
         type: object
     served: true

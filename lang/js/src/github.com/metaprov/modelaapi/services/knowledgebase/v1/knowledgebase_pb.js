@@ -314,7 +314,8 @@ proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.ListKnowledgeBases
  */
 proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.ListKnowledgeBasesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    namespace: jspb.Message.getFieldWithDefault(msg, 1, "")
+    namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    labelsMap: (f = msg.getLabelsMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -355,6 +356,12 @@ proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.ListKnowledgeBases
       var value = /** @type {string} */ (reader.readString());
       msg.setNamespace(value);
       break;
+    case 2:
+      var value = msg.getLabelsMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
+         });
+      break;
     default:
       reader.skipField();
       break;
@@ -391,6 +398,10 @@ proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.ListKnowledgeBases
       f
     );
   }
+  f = message.getLabelsMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(2, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+  }
 };
 
 
@@ -410,6 +421,28 @@ proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.ListKnowledgeBases
 proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.ListKnowledgeBasesRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
+
+
+/**
+ * map<string, string> labels = 2;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,string>}
+ */
+proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.ListKnowledgeBasesRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,string>} */ (
+      jspb.Message.getMapField(this, 2, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.ListKnowledgeBasesRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.ListKnowledgeBasesRequest.prototype.clearLabelsMap = function() {
+  this.getLabelsMap().clear();
+  return this;};
 
 
 
@@ -539,7 +572,7 @@ proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.ListKnowledgeBases
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBaseList knowledgebases = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBaseList knowledgeBases = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBaseList}
  */
 proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.ListKnowledgeBasesResponse.prototype.getKnowledgebases = function() {
@@ -708,7 +741,7 @@ proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.CreateKnowledgeBas
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBase knowledgebase = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBase knowledgeBase = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBase}
  */
 proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.CreateKnowledgeBaseRequest.prototype.getKnowledgebase = function() {
@@ -974,7 +1007,7 @@ proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.UpdateKnowledgeBas
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBase knowledgebase = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBase knowledgeBase = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBase}
  */
 proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.UpdateKnowledgeBaseRequest.prototype.getKnowledgebase = function() {
@@ -1435,7 +1468,7 @@ proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.GetKnowledgeBaseRe
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBase knowledgebase = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBase knowledgeBase = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBase}
  */
 proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.GetKnowledgeBaseResponse.prototype.getKnowledgebase = function() {

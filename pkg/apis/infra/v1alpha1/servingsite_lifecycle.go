@@ -139,7 +139,7 @@ func (servingsite ServingSite) ConstructGrpcIngress() *nwv1.Ingress {
 			Name:      servingsite.Name + "-grpc",
 			Labels: map[string]string{
 				"modela.ai/servingsite": servingsite.Name,
-				"modela.ai/tenant":      servingsite.Spec.TenantRef.Name,
+				"modela.ai/tenant":      servingsite.Namespace,
 			},
 			Annotations: map[string]string{
 				"nginx.ingress.kubernetes.io/enable-cors":        "true",
@@ -180,7 +180,7 @@ func (servingsite ServingSite) ConstructRestIngress() *nwv1.Ingress {
 			Name:      servingsite.Name + "-rest",
 			Labels: map[string]string{
 				"modela.ai/servingsite": servingsite.Name,
-				"modela.ai/tenant":      servingsite.Spec.TenantRef.Name,
+				"modela.ai/tenant":      servingsite.Namespace,
 			},
 			Annotations: map[string]string{
 				"nginx.ingress.kubernetes.io/enable-cors":        "true",

@@ -245,10 +245,21 @@ func (in *KnowledgeBaseSpec) DeepCopyInto(out *KnowledgeBaseSpec) {
 		*out = new(catalogv1alpha1.RunSchedule)
 		(*in).DeepCopyInto(*out)
 	}
-	if in.MetadataDatabase != nil {
-		in, out := &in.MetadataDatabase, &out.MetadataDatabase
-		*out = new(catalogv1alpha1.DatabaseLocation)
-		(*in).DeepCopyInto(*out)
+	if in.ArtifactBucketName != nil {
+		in, out := &in.ArtifactBucketName, &out.ArtifactBucketName
+		*out = new(string)
+		**out = **in
+	}
+	if in.LabName != nil {
+		in, out := &in.LabName, &out.LabName
+		*out = new(string)
+		**out = **in
+	}
+	in.Resources.DeepCopyInto(&out.Resources)
+	if in.MetadataDatabaseConnectionName != nil {
+		in, out := &in.MetadataDatabaseConnectionName, &out.MetadataDatabaseConnectionName
+		*out = new(string)
+		**out = **in
 	}
 	out.EmbeddingModel = in.EmbeddingModel
 	if in.Documents != nil {
@@ -276,6 +287,10 @@ func (in *KnowledgeBaseStatus) DeepCopyInto(out *KnowledgeBaseStatus) {
 	*out = *in
 	if in.LastRefreshAt != nil {
 		in, out := &in.LastRefreshAt, &out.LastRefreshAt
+		*out = (*in).DeepCopy()
+	}
+	if in.LastCompletionAt != nil {
+		in, out := &in.LastCompletionAt, &out.LastCompletionAt
 		*out = (*in).DeepCopy()
 	}
 	if in.Logs != nil {

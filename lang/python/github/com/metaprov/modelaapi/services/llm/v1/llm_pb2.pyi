@@ -17,3 +17,11 @@ class RefreshRequest(_message.Message):
 class RefreshResponse(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
+
+class ShutdownRequest(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class ShutdownResponse(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...

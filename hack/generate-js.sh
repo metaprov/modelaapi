@@ -46,6 +46,7 @@ protoc \
     github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto \
     github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1/generated.proto \
     github.com/metaprov/modelaapi/pkg/apis/team/v1alpha1/generated.proto \
+    github.com/metaprov/modelaapi/pkg/apis/llm/v1alpha1/generated.proto \
     github.com/metaprov/modelaapi/services/account/v1/account.proto \
     github.com/metaprov/modelaapi/services/userroleclass/v1/userroleclass.proto \
     github.com/metaprov/modelaapi/services/fileservices/v1/fileservices.proto \

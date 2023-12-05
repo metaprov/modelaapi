@@ -15,7 +15,7 @@ from github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1 import generated_pb2 a
 from github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1 import generated_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_llm_dot_v1alpha1_dot_generated__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n7github.com/metaprov/modelaapi/services/llm/v1/llm.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\x1a\x43github.com/metaprov/modelaapi/pkg/apis/llm/v1alpha1/generated.proto\"\xbf\x01\n\x0eRefreshRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\rknowledgeBase\x18\x02 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBase\"\x11\n\x0fRefreshResponse2<\n\nLLMService\x12.\n\x07Refresh\x12\x0f.RefreshRequest\x1a\x10.RefreshResponse\"\x00\x42/Z-github.com/metaprov/modelaapi/services/llm/v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n7github.com/metaprov/modelaapi/services/llm/v1/llm.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\x1a\x43github.com/metaprov/modelaapi/pkg/apis/llm/v1alpha1/generated.proto\"\xbf\x01\n\x0eRefreshRequest\x12R\n\x07product\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12Y\n\rknowledgeBase\x18\x02 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBase\"\x11\n\x0fRefreshResponse\"\x11\n\x0fShutdownRequest\"\x12\n\x10ShutdownResponse2o\n\nLLMService\x12.\n\x07Refresh\x12\x0f.RefreshRequest\x1a\x10.RefreshResponse\"\x00\x12\x31\n\x08Shutdown\x12\x10.ShutdownRequest\x1a\x11.ShutdownResponse\"\x00\x42/Z-github.com/metaprov/modelaapi/services/llm/v1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -27,6 +27,10 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['_REFRESHREQUEST']._serialized_end=390
   _globals['_REFRESHRESPONSE']._serialized_start=392
   _globals['_REFRESHRESPONSE']._serialized_end=409
-  _globals['_LLMSERVICE']._serialized_start=411
-  _globals['_LLMSERVICE']._serialized_end=471
+  _globals['_SHUTDOWNREQUEST']._serialized_start=411
+  _globals['_SHUTDOWNREQUEST']._serialized_end=428
+  _globals['_SHUTDOWNRESPONSE']._serialized_start=430
+  _globals['_SHUTDOWNRESPONSE']._serialized_end=448
+  _globals['_LLMSERVICE']._serialized_start=450
+  _globals['_LLMSERVICE']._serialized_end=561
 # @@protoc_insertion_point(module_scope)

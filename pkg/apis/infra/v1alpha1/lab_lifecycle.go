@@ -32,21 +32,21 @@ func (lab *Lab) SetupWebhookWithManager(mgr ctrl.Manager) error {
 // Keys
 //==============================================================================
 
-func (lab Lab) RootURI() string {
+func (lab *Lab) RootURI() string {
 	return fmt.Sprintf("tenants/%s/labs/%s", lab.Namespace, lab.Name)
 }
 
-func (lab Lab) ManifestURI() string {
+func (lab *Lab) ManifestURI() string {
 	return fmt.Sprintf("%s/%s-lab.yaml", lab.RootURI(), lab.Name)
 }
 
-func (lab Lab) CreateNamespace() *corev1.Namespace {
+func (lab *Lab) CreateNamespace() *corev1.Namespace {
 	namespace := &corev1.Namespace{}
 	namespace.ObjectMeta.Name = lab.ObjectMeta.Name
 	return namespace
 }
 
-func (lab Lab) Selector() *metav1.LabelSelector {
+func (lab *Lab) Selector() *metav1.LabelSelector {
 	result := &metav1.LabelSelector{
 		MatchLabels: map[string]string{},
 	}
@@ -122,19 +122,23 @@ func ParseLabYaml(content []byte) (*Lab, error) {
 	return r, nil
 }
 
-func (lab Lab) ResourceQuotaEnabled() bool {
+func (lab *Lab) Deleted() bool {
+	return !lab.ObjectMeta.DeletionTimestamp.IsZero()
+}
+
+func (lab *Lab) ResourceQuotaEnabled() bool {
 	return lab.Spec.Limits.QuotaSpec != nil
 }
 
-func (lab Lab) LimitRangeEnabled() bool {
+func (lab *Lab) LimitRangeEnabled() bool {
 	return lab.Spec.Limits.LimitRangeSpec != nil
 }
 
-func (lab Lab) LimitsEnabled() bool {
+func (lab *Lab) LimitsEnabled() bool {
 	return pointer.BoolDeref(lab.Spec.Limits.Enabled, false)
 }
 
-func (lab Lab) LimitRange() *corev1.LimitRange {
+func (lab *Lab) LimitRange() *corev1.LimitRange {
 	limitRange := &corev1.LimitRange{
 		ObjectMeta: metav1.ObjectMeta{
 			Name:      fmt.Sprintf("%s-limitrange", lab.Name),
@@ -147,7 +151,7 @@ func (lab Lab) LimitRange() *corev1.LimitRange {
 	return limitRange
 }
 
-func (lab Lab) ResourceQuota() *corev1.ResourceQuota {
+func (lab *Lab) ResourceQuota() *corev1.ResourceQuota {
 	resourceQuota := &corev1.ResourceQuota{
 		ObjectMeta: metav1.ObjectMeta{
 			Name:      fmt.Sprintf("%s-resourcequota", lab.Name),
@@ -163,6 +167,15 @@ func (lab Lab) ResourceQuota() *corev1.ResourceQuota {
 func (lab *Lab) MarkRbacNotReady(reason string, message string) {
 	lab.CreateOrUpdateCond(metav1.Condition{
 		Type:    string(LabRbacReady),
+		Status:  metav1.ConditionFalse,
+		Reason:  reason,
+		Message: message,
+	})
+}
+
+func (lab *Lab) MarkVolumeNotReady(reason string, message string) {
+	lab.CreateOrUpdateCond(metav1.Condition{
+		Type:    string(LabVolumeReady),
 		Status:  metav1.ConditionFalse,
 		Reason:  reason,
 		Message: message,
@@ -186,6 +199,14 @@ func (lab *Lab) MarkRbacReady() {
 	})
 }
 
+func (lab *Lab) MarkVolumeReady() {
+	lab.CreateOrUpdateCond(metav1.Condition{
+		Type:   string(LabVolumeReady),
+		Status: metav1.ConditionTrue,
+		Reason: string(LabVolumeReady),
+	})
+}
+
 func (lab *Lab) MarkNamespaceReady() {
 	lab.CreateOrUpdateCond(metav1.Condition{
 		Type:   string(LabNamespaceReady),
@@ -198,7 +219,7 @@ func (lab *Lab) MarkNamespaceReady() {
 /// Roles
 /////////////////////////////////////////
 
-func (lab Lab) LabRole() *rbacv1.Role {
+func (lab *Lab) LabRole() *rbacv1.Role {
 	return &rbacv1.Role{
 		ObjectMeta: metav1.ObjectMeta{
 			Name:      catalog.LabJobRunnerRole,
@@ -244,7 +265,7 @@ func (lab Lab) LabRole() *rbacv1.Role {
 	}
 }
 
-func (lab Lab) LabRoleBinding() *rbacv1.RoleBinding {
+func (lab *Lab) LabRoleBinding() *rbacv1.RoleBinding {
 	return &rbacv1.RoleBinding{
 		ObjectMeta: metav1.ObjectMeta{
 			Name:      catalog.LabJobRunnerRoleBinding,
@@ -266,7 +287,7 @@ func (lab Lab) LabRoleBinding() *rbacv1.RoleBinding {
 	}
 }
 
-func (lab Lab) LabClusterRole() *rbacv1.ClusterRole {
+func (lab *Lab) LabClusterRole() *rbacv1.ClusterRole {
 	return &rbacv1.ClusterRole{
 		ObjectMeta: metav1.ObjectMeta{
 			Name: catalog.LabJobRunnerRole,
@@ -297,7 +318,7 @@ func (lab Lab) LabClusterRole() *rbacv1.ClusterRole {
 	}
 }
 
-func (lab Lab) LabClusterRoleBinding() *rbacv1.ClusterRoleBinding {
+func (lab *Lab) LabClusterRoleBinding() *rbacv1.ClusterRoleBinding {
 	return &rbacv1.ClusterRoleBinding{
 		ObjectMeta: metav1.ObjectMeta{
 			Name: fmt.Sprintf("%s-%s", lab.Name, catalog.LabJobRunnerRoleBinding),
@@ -318,7 +339,7 @@ func (lab Lab) LabClusterRoleBinding() *rbacv1.ClusterRoleBinding {
 	}
 }
 
-func (lab Lab) LabServiceAccount() *corev1.ServiceAccount {
+func (lab *Lab) LabServiceAccount() *corev1.ServiceAccount {
 	return &corev1.ServiceAccount{
 		ObjectMeta: metav1.ObjectMeta{
 			Name:      catalog.LabJobRunnerSa,
@@ -327,11 +348,11 @@ func (lab Lab) LabServiceAccount() *corev1.ServiceAccount {
 	}
 }
 
-func (lab Lab) GetStatus() proto.Message {
+func (lab *Lab) GetStatus() proto.Message {
 	return &lab.Status
 }
 
-func (lab Lab) GetObservedGeneration() int64 {
+func (lab *Lab) GetObservedGeneration() int64 {
 	return lab.Status.ObservedGeneration
 }
 

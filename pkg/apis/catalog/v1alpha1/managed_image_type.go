@@ -23,15 +23,13 @@ type ManagedImageRole string
 
 const (
 	CloudProxyImageRole       ManagedImageRole = "cloud-proxy"
-	TrainerImageRole          ManagedImageRole = "trainer"
 	PredictorImageRole        ManagedImageRole = "predictor"
 	DashboardImageRole        ManagedImageRole = "dashboard"
 	WorkloadImageRole         ManagedImageRole = "workload"
-	DataplaneImageRole        ManagedImageRole = "dataplane"
-	PublisherImageRole        ManagedImageRole = "publisher"
+	DataPlaneImageRole        ManagedImageRole = "dataplane"
+	LLMPlaneImageRole         ManagedImageRole = "llmplane"
 	SystemImageRole           ManagedImageRole = "system"
 	PredictionRouterImageRole ManagedImageRole = "prediction-router"
-	BatchPredictionImageRole  ManagedImageRole = "batch-prediction"
 )
 
 // +genclient

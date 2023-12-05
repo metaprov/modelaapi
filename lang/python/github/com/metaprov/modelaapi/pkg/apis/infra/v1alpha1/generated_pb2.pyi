@@ -291,28 +291,28 @@ class LabList(_message.Message):
     def __init__(self, metadata: _Optional[_Union[_generated_pb2_1_1_1.ListMeta, _Mapping]] = ..., items: _Optional[_Iterable[_Union[Lab, _Mapping]]] = ...) -> None: ...
 
 class LabSpec(_message.Message):
-    __slots__ = ["description", "tenantRef", "limits", "externalCluster", "owner"]
+    __slots__ = ["description", "owner", "limits", "packageStorage"]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
-    TENANTREF_FIELD_NUMBER: _ClassVar[int]
-    LIMITS_FIELD_NUMBER: _ClassVar[int]
-    EXTERNALCLUSTER_FIELD_NUMBER: _ClassVar[int]
     OWNER_FIELD_NUMBER: _ClassVar[int]
+    LIMITS_FIELD_NUMBER: _ClassVar[int]
+    PACKAGESTORAGE_FIELD_NUMBER: _ClassVar[int]
     description: str
-    tenantRef: _generated_pb2_1.ObjectReference
-    limits: ResourceLimitSpec
-    externalCluster: VirtualClusterSpec
     owner: str
-    def __init__(self, description: _Optional[str] = ..., tenantRef: _Optional[_Union[_generated_pb2_1.ObjectReference, _Mapping]] = ..., limits: _Optional[_Union[ResourceLimitSpec, _Mapping]] = ..., externalCluster: _Optional[_Union[VirtualClusterSpec, _Mapping]] = ..., owner: _Optional[str] = ...) -> None: ...
+    limits: ResourceLimitSpec
+    packageStorage: VolumeStorageSpec
+    def __init__(self, description: _Optional[str] = ..., owner: _Optional[str] = ..., limits: _Optional[_Union[ResourceLimitSpec, _Mapping]] = ..., packageStorage: _Optional[_Union[VolumeStorageSpec, _Mapping]] = ...) -> None: ...
 
 class LabStatus(_message.Message):
-    __slots__ = ["observedGeneration", "updatedAt", "conditions"]
+    __slots__ = ["observedGeneration", "volumeClaimName", "updatedAt", "conditions"]
     OBSERVEDGENERATION_FIELD_NUMBER: _ClassVar[int]
+    VOLUMECLAIMNAME_FIELD_NUMBER: _ClassVar[int]
     UPDATEDAT_FIELD_NUMBER: _ClassVar[int]
     CONDITIONS_FIELD_NUMBER: _ClassVar[int]
     observedGeneration: int
+    volumeClaimName: str
     updatedAt: _generated_pb2_1_1_1.Time
     conditions: _containers.RepeatedCompositeFieldContainer[_generated_pb2_1_1_1.Condition]
-    def __init__(self, observedGeneration: _Optional[int] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1_1.Time, _Mapping]] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1_1.Condition, _Mapping]]] = ...) -> None: ...
+    def __init__(self, observedGeneration: _Optional[int] = ..., volumeClaimName: _Optional[str] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1_1.Time, _Mapping]] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1_1.Condition, _Mapping]]] = ...) -> None: ...
 
 class License(_message.Message):
     __slots__ = ["metadata", "spec", "status"]
@@ -384,6 +384,14 @@ class LicenseStatus(_message.Message):
     conditions: _containers.RepeatedCompositeFieldContainer[_generated_pb2_1_1_1.Condition]
     def __init__(self, updatedAt: _Optional[_Union[_generated_pb2_1_1_1.Time, _Mapping]] = ..., observedGeneration: _Optional[int] = ..., failureReason: _Optional[str] = ..., failureMessage: _Optional[str] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1_1.Condition, _Mapping]]] = ...) -> None: ...
 
+class NFSVolumeSpec(_message.Message):
+    __slots__ = ["server", "path"]
+    SERVER_FIELD_NUMBER: _ClassVar[int]
+    PATH_FIELD_NUMBER: _ClassVar[int]
+    server: str
+    path: str
+    def __init__(self, server: _Optional[str] = ..., path: _Optional[str] = ...) -> None: ...
+
 class NotificationChannelSpec(_message.Message):
     __slots__ = ["enabled", "connectionName", "info", "error", "destination"]
     ENABLED_FIELD_NUMBER: _ClassVar[int]
@@ -453,22 +461,14 @@ class NotifierStatus(_message.Message):
     def __init__(self, observedGeneration: _Optional[int] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1_1.Time, _Mapping]] = ..., channelsStatus: _Optional[_Iterable[_Union[NotificationChannelStatus, _Mapping]]] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1_1.Condition, _Mapping]]] = ...) -> None: ...
 
 class ResourceLimitSpec(_message.Message):
-    __slots__ = ["enabled", "maxMem", "maxCpu", "maxPods", "maxPvc", "quota", "limitRange"]
+    __slots__ = ["enabled", "quota", "limitRange"]
     ENABLED_FIELD_NUMBER: _ClassVar[int]
-    MAXMEM_FIELD_NUMBER: _ClassVar[int]
-    MAXCPU_FIELD_NUMBER: _ClassVar[int]
-    MAXPODS_FIELD_NUMBER: _ClassVar[int]
-    MAXPVC_FIELD_NUMBER: _ClassVar[int]
     QUOTA_FIELD_NUMBER: _ClassVar[int]
     LIMITRANGE_FIELD_NUMBER: _ClassVar[int]
     enabled: bool
-    maxMem: _generated_pb2_1_1.Quantity
-    maxCpu: _generated_pb2_1_1.Quantity
-    maxPods: int
-    maxPvc: int
     quota: _generated_pb2_1.ResourceQuotaSpec
     limitRange: _generated_pb2_1.LimitRangeSpec
-    def __init__(self, enabled: bool = ..., maxMem: _Optional[_Union[_generated_pb2_1_1.Quantity, _Mapping]] = ..., maxCpu: _Optional[_Union[_generated_pb2_1_1.Quantity, _Mapping]] = ..., maxPods: _Optional[int] = ..., maxPvc: _Optional[int] = ..., quota: _Optional[_Union[_generated_pb2_1.ResourceQuotaSpec, _Mapping]] = ..., limitRange: _Optional[_Union[_generated_pb2_1.LimitRangeSpec, _Mapping]] = ...) -> None: ...
+    def __init__(self, enabled: bool = ..., quota: _Optional[_Union[_generated_pb2_1.ResourceQuotaSpec, _Mapping]] = ..., limitRange: _Optional[_Union[_generated_pb2_1.LimitRangeSpec, _Mapping]] = ...) -> None: ...
 
 class RuleSpec(_message.Message):
     __slots__ = ["resource", "verbs"]
@@ -497,22 +497,16 @@ class ServingSiteList(_message.Message):
     def __init__(self, metadata: _Optional[_Union[_generated_pb2_1_1_1.ListMeta, _Mapping]] = ..., items: _Optional[_Iterable[_Union[ServingSite, _Mapping]]] = ...) -> None: ...
 
 class ServingSiteSpec(_message.Message):
-    __slots__ = ["description", "tenantRef", "limits", "ingress", "externalCluster", "owner", "stage"]
+    __slots__ = ["description", "owner", "limits", "ingress"]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
-    TENANTREF_FIELD_NUMBER: _ClassVar[int]
+    OWNER_FIELD_NUMBER: _ClassVar[int]
     LIMITS_FIELD_NUMBER: _ClassVar[int]
     INGRESS_FIELD_NUMBER: _ClassVar[int]
-    EXTERNALCLUSTER_FIELD_NUMBER: _ClassVar[int]
-    OWNER_FIELD_NUMBER: _ClassVar[int]
-    STAGE_FIELD_NUMBER: _ClassVar[int]
     description: str
-    tenantRef: _generated_pb2_1.ObjectReference
+    owner: str
     limits: ResourceLimitSpec
     ingress: IngressSpec
-    externalCluster: VirtualClusterSpec
-    owner: str
-    stage: str
-    def __init__(self, description: _Optional[str] = ..., tenantRef: _Optional[_Union[_generated_pb2_1.ObjectReference, _Mapping]] = ..., limits: _Optional[_Union[ResourceLimitSpec, _Mapping]] = ..., ingress: _Optional[_Union[IngressSpec, _Mapping]] = ..., externalCluster: _Optional[_Union[VirtualClusterSpec, _Mapping]] = ..., owner: _Optional[str] = ..., stage: _Optional[str] = ...) -> None: ...
+    def __init__(self, description: _Optional[str] = ..., owner: _Optional[str] = ..., limits: _Optional[_Union[ResourceLimitSpec, _Mapping]] = ..., ingress: _Optional[_Union[IngressSpec, _Mapping]] = ...) -> None: ...
 
 class ServingSiteStatus(_message.Message):
     __slots__ = ["observedGeneration", "updatedAt", "activePredictors", "inactivePredictors", "totalPredictorServiceFailed", "totalPredictorDataDriftFailed", "totalPredictorAccuracyFailed", "dailyPredictionsCounts", "failureMessage", "grpcIngressName", "restIngressName", "conditions"]
@@ -662,44 +656,16 @@ class VirtualBucketStatus(_message.Message):
     conditions: _containers.RepeatedCompositeFieldContainer[_generated_pb2_1_1_1.Condition]
     def __init__(self, updatedAt: _Optional[_Union[_generated_pb2_1_1_1.Time, _Mapping]] = ..., observedGeneration: _Optional[int] = ..., failureMessage: _Optional[str] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1_1.Condition, _Mapping]]] = ...) -> None: ...
 
-class VirtualClusterSpec(_message.Message):
-    __slots__ = ["enabled", "description", "nodes", "instanceType", "gpus", "gpuClassName", "volumeSize", "spot", "connectionName", "owner", "limits", "region", "az", "kubernetesVersion", "autoscale", "minNodes", "maxNodes", "cloudRef", "sshKey"]
-    ENABLED_FIELD_NUMBER: _ClassVar[int]
-    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
-    NODES_FIELD_NUMBER: _ClassVar[int]
-    INSTANCETYPE_FIELD_NUMBER: _ClassVar[int]
-    GPUS_FIELD_NUMBER: _ClassVar[int]
-    GPUCLASSNAME_FIELD_NUMBER: _ClassVar[int]
-    VOLUMESIZE_FIELD_NUMBER: _ClassVar[int]
-    SPOT_FIELD_NUMBER: _ClassVar[int]
-    CONNECTIONNAME_FIELD_NUMBER: _ClassVar[int]
-    OWNER_FIELD_NUMBER: _ClassVar[int]
-    LIMITS_FIELD_NUMBER: _ClassVar[int]
-    REGION_FIELD_NUMBER: _ClassVar[int]
-    AZ_FIELD_NUMBER: _ClassVar[int]
-    KUBERNETESVERSION_FIELD_NUMBER: _ClassVar[int]
-    AUTOSCALE_FIELD_NUMBER: _ClassVar[int]
-    MINNODES_FIELD_NUMBER: _ClassVar[int]
-    MAXNODES_FIELD_NUMBER: _ClassVar[int]
-    CLOUDREF_FIELD_NUMBER: _ClassVar[int]
-    SSHKEY_FIELD_NUMBER: _ClassVar[int]
-    enabled: bool
-    description: str
-    nodes: int
-    instanceType: str
-    gpus: int
-    gpuClassName: str
-    volumeSize: int
-    spot: bool
-    connectionName: str
-    owner: str
-    limits: ResourceLimitSpec
-    region: str
-    az: str
-    kubernetesVersion: str
-    autoscale: bool
-    minNodes: int
-    maxNodes: int
-    cloudRef: _generated_pb2_1.ObjectReference
-    sshKey: str
-    def __init__(self, enabled: bool = ..., description: _Optional[str] = ..., nodes: _Optional[int] = ..., instanceType: _Optional[str] = ..., gpus: _Optional[int] = ..., gpuClassName: _Optional[str] = ..., volumeSize: _Optional[int] = ..., spot: bool = ..., connectionName: _Optional[str] = ..., owner: _Optional[str] = ..., limits: _Optional[_Union[ResourceLimitSpec, _Mapping]] = ..., region: _Optional[str] = ..., az: _Optional[str] = ..., kubernetesVersion: _Optional[str] = ..., autoscale: bool = ..., minNodes: _Optional[int] = ..., maxNodes: _Optional[int] = ..., cloudRef: _Optional[_Union[_generated_pb2_1.ObjectReference, _Mapping]] = ..., sshKey: _Optional[str] = ...) -> None: ...
+class VolumeStorageSpec(_message.Message):
+    __slots__ = ["volumeClaimName", "volumeName", "storageClassName", "storage", "nfs"]
+    VOLUMECLAIMNAME_FIELD_NUMBER: _ClassVar[int]
+    VOLUMENAME_FIELD_NUMBER: _ClassVar[int]
+    STORAGECLASSNAME_FIELD_NUMBER: _ClassVar[int]
+    STORAGE_FIELD_NUMBER: _ClassVar[int]
+    NFS_FIELD_NUMBER: _ClassVar[int]
+    volumeClaimName: str
+    volumeName: str
+    storageClassName: str
+    storage: _generated_pb2_1_1.Quantity
+    nfs: NFSVolumeSpec
+    def __init__(self, volumeClaimName: _Optional[str] = ..., volumeName: _Optional[str] = ..., storageClassName: _Optional[str] = ..., storage: _Optional[_Union[_generated_pb2_1_1.Quantity, _Mapping]] = ..., nfs: _Optional[_Union[NFSVolumeSpec, _Mapping]] = ...) -> None: ...

@@ -10,23 +10,24 @@ import "github.com/metaprov/modelaapi/pkg/apis/llm/v1alpha1/generated.proto";
 
 message ListKnowledgeBasesRequest {
     string namespace = 1;
+    map<string, string> labels = 2;
 }
 
 message ListKnowledgeBasesResponse {
-    github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBaseList knowledgebases = 1;
+    github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBaseList knowledgeBases = 1;
     string next_page_token = 2;
 }
 
 
 message CreateKnowledgeBaseRequest {
-    github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBase knowledgebase = 1;
+    github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBase knowledgeBase = 1;
 }
 
 message CreateKnowledgeBaseResponse {}
 
 
 message UpdateKnowledgeBaseRequest {
-    github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBase knowledgebase = 1;
+    github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBase knowledgeBase = 1;
     google.protobuf.FieldMask field_mask = 2;
 }
 
@@ -40,7 +41,7 @@ message GetKnowledgeBaseRequest {
 }
 
 message GetKnowledgeBaseResponse {
-    github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBase knowledgebase = 1;
+    github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBase knowledgeBase = 1;
     string yaml = 2;
 
 }

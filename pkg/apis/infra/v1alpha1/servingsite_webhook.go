@@ -9,7 +9,6 @@ package v1alpha1
 import (
 	"github.com/metaprov/modelaapi/pkg/util"
 	"github.com/pkg/errors"
-	v1 "k8s.io/api/core/v1"
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
@@ -21,17 +20,11 @@ import (
 var _ webhook.Defaulter = &ServingSite{}
 
 func (servingsite *ServingSite) Default() {
-	if servingsite.Spec.TenantRef == nil {
-		servingsite.Spec.TenantRef = &v1.ObjectReference{
-			Namespace: "default-tenant",
-			Name:      servingsite.Namespace,
-		}
-	}
 	if servingsite.Spec.Description == nil {
 		servingsite.Spec.Description = util.StrPtr("")
 	}
 	if servingsite.Spec.Ingress.FQDN == nil {
-		servingsite.Spec.Ingress.FQDN = util.StrPtr(servingsite.Name + ".modela.ai")
+		servingsite.Spec.Ingress.FQDN = util.StrPtr(servingsite.Name + ".localhost")
 	}
 }
 

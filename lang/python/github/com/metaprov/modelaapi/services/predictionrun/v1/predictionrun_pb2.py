@@ -17,7 +17,7 @@ from github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1 import generated_pb
 from github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1 import generated_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nKgithub.com/metaprov/modelaapi/services/predictionrun/v1/predictionrun.proto\x12\x34github.com.metaprov.modelaapi.services.prediction.v1\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1aGgithub.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1/generated.proto\x1aIgithub.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated.proto\"\x83\x02\n\x19ListPredictionRunsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12k\n\x06labels\x18\x02 \x03(\x0b\x32[.github.com.metaprov.modelaapi.services.prediction.v1.ListPredictionRunsRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x98\x01\n\x1aListPredictionRunsResponse\x12\x61\n\x0bpredictions\x18\x01 \x01(\x0b\x32L.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRunList\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"z\n\x1a\x43reatePredictionRunRequest\x12\\\n\nprediction\x18\x01 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRun\"\x1d\n\x1b\x43reatePredictionRunResponse\"\xaa\x01\n\x1aUpdatePredictionRunRequest\x12\\\n\nprediction\x18\x01 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRun\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\x1d\n\x1bUpdatePredictionRunResponse\":\n\x17GetPredictionRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x86\x01\n\x18GetPredictionRunResponse\x12\\\n\nprediction\x18\x01 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRun\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"=\n\x1a\x44\x65letePredictionRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1d\n\x1b\x44\x65letePredictionRunResponse\"?\n\x1c\x44ownloadPredictionRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\",\n\x1d\x44ownloadPredictionRunResponse\x12\x0b\n\x03raw\x18\x01 \x01(\x0c\"<\n\x19\x41\x62ortPredictionRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1c\n\x1a\x41\x62ortPredictionRunResponse2\xa1\r\n\x14PredictionRunService\x12\xdf\x01\n\x12ListPredictionRuns\x12O.github.com.metaprov.modelaapi.services.prediction.v1.ListPredictionRunsRequest\x1aP.github.com.metaprov.modelaapi.services.prediction.v1.ListPredictionRunsResponse\"&\x82\xd3\xe4\x93\x02 \x12\x1e/v1/predictionruns/{namespace}\x12\xd6\x01\n\x13\x43reatePredictionRun\x12P.github.com.metaprov.modelaapi.services.prediction.v1.CreatePredictionRunRequest\x1aQ.github.com.metaprov.modelaapi.services.prediction.v1.CreatePredictionRunResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\"\x0f/v1/predictions:\x01*\x12\xe0\x01\n\x10GetPredictionRun\x12M.github.com.metaprov.modelaapi.services.prediction.v1.GetPredictionRunRequest\x1aN.github.com.metaprov.modelaapi.services.prediction.v1.GetPredictionRunResponse\"-\x82\xd3\xe4\x93\x02\'\x12%/v1/predictionruns/{namespace}/{name}\x12\x94\x02\n\x13UpdatePredictionRun\x12P.github.com.metaprov.modelaapi.services.prediction.v1.UpdatePredictionRunRequest\x1aQ.github.com.metaprov.modelaapi.services.prediction.v1.UpdatePredictionRunResponse\"X\x82\xd3\xe4\x93\x02R\x1aM/v1/predictionruns/{prediction.metadata.namespace}/{prediction.metadata.name}:\x01*\x12\xe9\x01\n\x13\x44\x65letePredictionRun\x12P.github.com.metaprov.modelaapi.services.prediction.v1.DeletePredictionRunRequest\x1aQ.github.com.metaprov.modelaapi.services.prediction.v1.DeletePredictionRunResponse\"-\x82\xd3\xe4\x93\x02\'*%/v1/predictionruns/{namespace}/{name}\x12\xf8\x01\n\x15\x44ownloadPredictionRun\x12R.github.com.metaprov.modelaapi.services.prediction.v1.DownloadPredictionRunRequest\x1aS.github.com.metaprov.modelaapi.services.prediction.v1.DownloadPredictionRunResponse\"6\x82\xd3\xe4\x93\x02\x30\x12./v1/predictionruns/{namespace}/{name}:download\x12\xec\x01\n\x12\x41\x62ortPredictionRun\x12O.github.com.metaprov.modelaapi.services.prediction.v1.AbortPredictionRunRequest\x1aP.github.com.metaprov.modelaapi.services.prediction.v1.AbortPredictionRunResponse\"3\x82\xd3\xe4\x93\x02-\"+/v1/predictionruns/{namespace}/{name}:abortB6Z4github.com/metaprov/modelaapi/services/prediction/v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nKgithub.com/metaprov/modelaapi/services/predictionrun/v1/predictionrun.proto\x12\x34github.com.metaprov.modelaapi.services.prediction.v1\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1aGgithub.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1/generated.proto\x1aIgithub.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated.proto\"\x83\x02\n\x19ListPredictionRunsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12k\n\x06labels\x18\x02 \x03(\x0b\x32[.github.com.metaprov.modelaapi.services.prediction.v1.ListPredictionRunsRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x9b\x01\n\x1aListPredictionRunsResponse\x12\x64\n\x0epredictionRuns\x18\x01 \x01(\x0b\x32L.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRunList\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"}\n\x1a\x43reatePredictionRunRequest\x12_\n\rpredictionRun\x18\x01 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRun\"\x1d\n\x1b\x43reatePredictionRunResponse\"\xad\x01\n\x1aUpdatePredictionRunRequest\x12_\n\rpredictionRun\x18\x01 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRun\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\x1d\n\x1bUpdatePredictionRunResponse\":\n\x17GetPredictionRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x89\x01\n\x18GetPredictionRunResponse\x12_\n\rpredictionRun\x18\x01 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionRun\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"=\n\x1a\x44\x65letePredictionRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1d\n\x1b\x44\x65letePredictionRunResponse\"?\n\x1c\x44ownloadPredictionRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\",\n\x1d\x44ownloadPredictionRunResponse\x12\x0b\n\x03raw\x18\x01 \x01(\x0c\"<\n\x19\x41\x62ortPredictionRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1c\n\x1a\x41\x62ortPredictionRunResponse2\xa1\r\n\x14PredictionRunService\x12\xdf\x01\n\x12ListPredictionRuns\x12O.github.com.metaprov.modelaapi.services.prediction.v1.ListPredictionRunsRequest\x1aP.github.com.metaprov.modelaapi.services.prediction.v1.ListPredictionRunsResponse\"&\x82\xd3\xe4\x93\x02 \x12\x1e/v1/predictionruns/{namespace}\x12\xd6\x01\n\x13\x43reatePredictionRun\x12P.github.com.metaprov.modelaapi.services.prediction.v1.CreatePredictionRunRequest\x1aQ.github.com.metaprov.modelaapi.services.prediction.v1.CreatePredictionRunResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\"\x0f/v1/predictions:\x01*\x12\xe0\x01\n\x10GetPredictionRun\x12M.github.com.metaprov.modelaapi.services.prediction.v1.GetPredictionRunRequest\x1aN.github.com.metaprov.modelaapi.services.prediction.v1.GetPredictionRunResponse\"-\x82\xd3\xe4\x93\x02\'\x12%/v1/predictionruns/{namespace}/{name}\x12\x94\x02\n\x13UpdatePredictionRun\x12P.github.com.metaprov.modelaapi.services.prediction.v1.UpdatePredictionRunRequest\x1aQ.github.com.metaprov.modelaapi.services.prediction.v1.UpdatePredictionRunResponse\"X\x82\xd3\xe4\x93\x02R\x1aM/v1/predictionruns/{prediction.metadata.namespace}/{prediction.metadata.name}:\x01*\x12\xe9\x01\n\x13\x44\x65letePredictionRun\x12P.github.com.metaprov.modelaapi.services.prediction.v1.DeletePredictionRunRequest\x1aQ.github.com.metaprov.modelaapi.services.prediction.v1.DeletePredictionRunResponse\"-\x82\xd3\xe4\x93\x02\'*%/v1/predictionruns/{namespace}/{name}\x12\xf8\x01\n\x15\x44ownloadPredictionRun\x12R.github.com.metaprov.modelaapi.services.prediction.v1.DownloadPredictionRunRequest\x1aS.github.com.metaprov.modelaapi.services.prediction.v1.DownloadPredictionRunResponse\"6\x82\xd3\xe4\x93\x02\x30\x12./v1/predictionruns/{namespace}/{name}:download\x12\xec\x01\n\x12\x41\x62ortPredictionRun\x12O.github.com.metaprov.modelaapi.services.prediction.v1.AbortPredictionRunRequest\x1aP.github.com.metaprov.modelaapi.services.prediction.v1.AbortPredictionRunResponse\"3\x82\xd3\xe4\x93\x02-\"+/v1/predictionruns/{namespace}/{name}:abortB6Z4github.com/metaprov/modelaapi/services/prediction/v1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -46,31 +46,31 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['_LISTPREDICTIONRUNSREQUEST_LABELSENTRY']._serialized_start=560
   _globals['_LISTPREDICTIONRUNSREQUEST_LABELSENTRY']._serialized_end=605
   _globals['_LISTPREDICTIONRUNSRESPONSE']._serialized_start=608
-  _globals['_LISTPREDICTIONRUNSRESPONSE']._serialized_end=760
-  _globals['_CREATEPREDICTIONRUNREQUEST']._serialized_start=762
-  _globals['_CREATEPREDICTIONRUNREQUEST']._serialized_end=884
-  _globals['_CREATEPREDICTIONRUNRESPONSE']._serialized_start=886
-  _globals['_CREATEPREDICTIONRUNRESPONSE']._serialized_end=915
-  _globals['_UPDATEPREDICTIONRUNREQUEST']._serialized_start=918
-  _globals['_UPDATEPREDICTIONRUNREQUEST']._serialized_end=1088
-  _globals['_UPDATEPREDICTIONRUNRESPONSE']._serialized_start=1090
-  _globals['_UPDATEPREDICTIONRUNRESPONSE']._serialized_end=1119
-  _globals['_GETPREDICTIONRUNREQUEST']._serialized_start=1121
-  _globals['_GETPREDICTIONRUNREQUEST']._serialized_end=1179
-  _globals['_GETPREDICTIONRUNRESPONSE']._serialized_start=1182
-  _globals['_GETPREDICTIONRUNRESPONSE']._serialized_end=1316
-  _globals['_DELETEPREDICTIONRUNREQUEST']._serialized_start=1318
-  _globals['_DELETEPREDICTIONRUNREQUEST']._serialized_end=1379
-  _globals['_DELETEPREDICTIONRUNRESPONSE']._serialized_start=1381
-  _globals['_DELETEPREDICTIONRUNRESPONSE']._serialized_end=1410
-  _globals['_DOWNLOADPREDICTIONRUNREQUEST']._serialized_start=1412
-  _globals['_DOWNLOADPREDICTIONRUNREQUEST']._serialized_end=1475
-  _globals['_DOWNLOADPREDICTIONRUNRESPONSE']._serialized_start=1477
-  _globals['_DOWNLOADPREDICTIONRUNRESPONSE']._serialized_end=1521
-  _globals['_ABORTPREDICTIONRUNREQUEST']._serialized_start=1523
-  _globals['_ABORTPREDICTIONRUNREQUEST']._serialized_end=1583
-  _globals['_ABORTPREDICTIONRUNRESPONSE']._serialized_start=1585
-  _globals['_ABORTPREDICTIONRUNRESPONSE']._serialized_end=1613
-  _globals['_PREDICTIONRUNSERVICE']._serialized_start=1616
-  _globals['_PREDICTIONRUNSERVICE']._serialized_end=3313
+  _globals['_LISTPREDICTIONRUNSRESPONSE']._serialized_end=763
+  _globals['_CREATEPREDICTIONRUNREQUEST']._serialized_start=765
+  _globals['_CREATEPREDICTIONRUNREQUEST']._serialized_end=890
+  _globals['_CREATEPREDICTIONRUNRESPONSE']._serialized_start=892
+  _globals['_CREATEPREDICTIONRUNRESPONSE']._serialized_end=921
+  _globals['_UPDATEPREDICTIONRUNREQUEST']._serialized_start=924
+  _globals['_UPDATEPREDICTIONRUNREQUEST']._serialized_end=1097
+  _globals['_UPDATEPREDICTIONRUNRESPONSE']._serialized_start=1099
+  _globals['_UPDATEPREDICTIONRUNRESPONSE']._serialized_end=1128
+  _globals['_GETPREDICTIONRUNREQUEST']._serialized_start=1130
+  _globals['_GETPREDICTIONRUNREQUEST']._serialized_end=1188
+  _globals['_GETPREDICTIONRUNRESPONSE']._serialized_start=1191
+  _globals['_GETPREDICTIONRUNRESPONSE']._serialized_end=1328
+  _globals['_DELETEPREDICTIONRUNREQUEST']._serialized_start=1330
+  _globals['_DELETEPREDICTIONRUNREQUEST']._serialized_end=1391
+  _globals['_DELETEPREDICTIONRUNRESPONSE']._serialized_start=1393
+  _globals['_DELETEPREDICTIONRUNRESPONSE']._serialized_end=1422
+  _globals['_DOWNLOADPREDICTIONRUNREQUEST']._serialized_start=1424
+  _globals['_DOWNLOADPREDICTIONRUNREQUEST']._serialized_end=1487
+  _globals['_DOWNLOADPREDICTIONRUNRESPONSE']._serialized_start=1489
+  _globals['_DOWNLOADPREDICTIONRUNRESPONSE']._serialized_end=1533
+  _globals['_ABORTPREDICTIONRUNREQUEST']._serialized_start=1535
+  _globals['_ABORTPREDICTIONRUNREQUEST']._serialized_end=1595
+  _globals['_ABORTPREDICTIONRUNRESPONSE']._serialized_start=1597
+  _globals['_ABORTPREDICTIONRUNRESPONSE']._serialized_end=1625
+  _globals['_PREDICTIONRUNSERVICE']._serialized_start=1628
+  _globals['_PREDICTIONRUNSERVICE']._serialized_end=3325
 # @@protoc_insertion_point(module_scope)

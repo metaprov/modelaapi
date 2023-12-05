@@ -119,6 +119,8 @@ const (
 	SyncOnlineTableTask          TaskName = "sync-online-table" // sync the online dataset into the store.
 	IngestFeatureGroupTask       TaskName = "ingest-feature-group"
 	GenTrainingDatasetTask       TaskName = "gen-training-dataset"
+
+	RefreshKnowledgeBaseTask TaskName = "refresh-knowledgebase"
 )
 
 // SecretKeyName is the secret or in env variable
@@ -1338,6 +1340,9 @@ func (schedule *RunSchedule) GetEnabled() bool {
 }
 
 func (schedule *RunSchedule) NextRun() *string {
+	if schedule == nil {
+		return nil
+	}
 	if !pointer.BoolDeref(schedule.Enabled, false) {
 		return nil
 	}
@@ -2086,6 +2091,8 @@ type HistogramData struct {
 type PermissionsSpec struct {
 	Accounts []AccountPermissions `json:"accounts,omitempty" protobuf:"bytes,1,rep,name=accounts"`
 }
+
+// TODO(liam): simplify permission spec
 
 // AccountPermissions specifies the User Role Classes of an individual Account
 type AccountPermissions struct {

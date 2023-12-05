@@ -82,5 +82,48 @@ export class LLMServiceClient {
     this.methodDescriptorRefresh);
   }
 
+  methodDescriptorShutdown = new grpcWeb.MethodDescriptor(
+    '/LLMService/Shutdown',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_llm_v1_llm_pb.ShutdownRequest,
+    github_com_metaprov_modelaapi_services_llm_v1_llm_pb.ShutdownResponse,
+    (request: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.ShutdownRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_llm_v1_llm_pb.ShutdownResponse.deserializeBinary
+  );
+
+  shutdown(
+    request: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.ShutdownRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_llm_v1_llm_pb.ShutdownResponse>;
+
+  shutdown(
+    request: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.ShutdownRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.ShutdownResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_llm_v1_llm_pb.ShutdownResponse>;
+
+  shutdown(
+    request: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.ShutdownRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.ShutdownResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/LLMService/Shutdown',
+        request,
+        metadata || {},
+        this.methodDescriptorShutdown,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/LLMService/Shutdown',
+    request,
+    metadata || {},
+    this.methodDescriptorShutdown);
+  }
+
 }
 

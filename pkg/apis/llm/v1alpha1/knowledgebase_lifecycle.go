@@ -5,7 +5,9 @@ import (
 	"github.com/gogo/protobuf/proto"
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/apis/data"
+	infra "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/util"
+	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	ctrl "sigs.k8s.io/controller-runtime"
 )
@@ -67,6 +69,10 @@ func (kb *KnowledgeBase) GetCondition(condType KnowledgeBaseConditionType) metav
 	}
 }
 
+func (kb *KnowledgeBase) Deleted() bool {
+	return !kb.ObjectMeta.DeletionTimestamp.IsZero()
+}
+
 func (kb *KnowledgeBase) RootURI() string {
 	return fmt.Sprintf("dataproducts/%s/knowledgebases/%s", kb.Namespace, kb.Name)
 }
@@ -99,11 +105,15 @@ func (kb *KnowledgeBase) Refreshed() bool {
 	return kb.GetCondition(KnowledgeBaseRefreshed).Status == metav1.ConditionTrue
 }
 
+func (kb *KnowledgeBase) Refreshing() bool {
+	return kb.GetCondition(KnowledgeBaseRefreshed).Reason == RefreshingReason
+}
+
 func (kb *KnowledgeBase) MarkNotRefreshed() {
 	kb.CreateOrUpdateCondition(metav1.Condition{
 		Type:   string(KnowledgeBaseRefreshed),
 		Status: metav1.ConditionFalse,
-		Reason: "Refreshing",
+		Reason: RefreshingReason,
 	})
 }
 
@@ -113,6 +123,54 @@ func (kb *KnowledgeBase) MarkRefreshed() {
 		Status: metav1.ConditionTrue,
 		Reason: string(KnowledgeBaseRefreshed),
 	})
+}
+
+func (kb *KnowledgeBase) MarkRefreshing() {
+	kb.CreateOrUpdateCondition(metav1.Condition{
+		Type:   string(KnowledgeBaseRefreshed),
+		Status: metav1.ConditionTrue,
+		Reason: "Refreshing",
+	})
+}
+
+func (kb *KnowledgeBase) MarkRefreshFailed(reason string, msg string) {
+	kb.CreateOrUpdateCondition(metav1.Condition{
+		Type:    string(KnowledgeBaseRefreshed),
+		Status:  metav1.ConditionFalse,
+		Reason:  reason,
+		Message: msg,
+	})
+}
+
+/////// Alert Methods ///////
+
+func (kb *KnowledgeBase) ErrorAlert(notification catalog.NotificationSpec, err error) *infra.Alert {
+	level := infra.ErrorAlertLevel
+	subject := fmt.Sprintf("Knowledge Base %s failed with error: %v", kb.Name, err.Error())
+	result := &infra.Alert{
+		ObjectMeta: metav1.ObjectMeta{
+			GenerateName: kb.Name,
+			Namespace:    kb.Namespace,
+		},
+		Spec: infra.AlertSpec{
+			Subject:      subject,
+			Level:        &level,
+			Notification: notification,
+			EntityRef: v1.ObjectReference{
+				Kind:      "KnowledgeBase",
+				Name:      kb.Name,
+				Namespace: kb.Namespace,
+			},
+			Owner: kb.Spec.Owner,
+			Fields: map[string]string{
+				"Start Time": kb.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
+			},
+		},
+	}
+	if kb.Status.LastCompletionAt != nil {
+		result.Spec.Fields["Completion Time"] = kb.Status.LastCompletionAt.Format("01/2/2006 15:04:05")
+	}
+	return result
 }
 
 /////// Reconciler Methods ///////
