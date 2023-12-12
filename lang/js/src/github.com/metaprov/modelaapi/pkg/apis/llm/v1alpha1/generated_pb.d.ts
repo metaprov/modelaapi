@@ -44,6 +44,50 @@ export namespace CodeSplitterSpec {
   }
 }
 
+export class ConcreteNodeParserSpec extends jspb.Message {
+  getIncludeorderrelationship(): boolean;
+  setIncludeorderrelationship(value: boolean): ConcreteNodeParserSpec;
+  hasIncludeorderrelationship(): boolean;
+  clearIncludeorderrelationship(): ConcreteNodeParserSpec;
+
+  getIncludemetadata(): boolean;
+  setIncludemetadata(value: boolean): ConcreteNodeParserSpec;
+  hasIncludemetadata(): boolean;
+  clearIncludemetadata(): ConcreteNodeParserSpec;
+
+  getType(): string;
+  setType(value: string): ConcreteNodeParserSpec;
+  hasType(): boolean;
+  clearType(): ConcreteNodeParserSpec;
+
+  getText(): TextSplitterSpec | undefined;
+  setText(value?: TextSplitterSpec): ConcreteNodeParserSpec;
+  hasText(): boolean;
+  clearText(): ConcreteNodeParserSpec;
+
+  getSentence(): SentenceWindowNodeParserSpec | undefined;
+  setSentence(value?: SentenceWindowNodeParserSpec): ConcreteNodeParserSpec;
+  hasSentence(): boolean;
+  clearSentence(): ConcreteNodeParserSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ConcreteNodeParserSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ConcreteNodeParserSpec): ConcreteNodeParserSpec.AsObject;
+  static serializeBinaryToWriter(message: ConcreteNodeParserSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ConcreteNodeParserSpec;
+  static deserializeBinaryFromReader(message: ConcreteNodeParserSpec, reader: jspb.BinaryReader): ConcreteNodeParserSpec;
+}
+
+export namespace ConcreteNodeParserSpec {
+  export type AsObject = {
+    includeorderrelationship?: boolean,
+    includemetadata?: boolean,
+    type?: string,
+    text?: TextSplitterSpec.AsObject,
+    sentence?: SentenceWindowNodeParserSpec.AsObject,
+  }
+}
+
 export class DatabaseReaderSpec extends jspb.Message {
   getType(): string;
   setType(value: string): DatabaseReaderSpec;
@@ -109,8 +153,8 @@ export class DocumentSpec extends jspb.Message {
   hasEmbeddingmodel(): boolean;
   clearEmbeddingmodel(): DocumentSpec;
 
-  getFile(): FileReaderSpec | undefined;
-  setFile(value?: FileReaderSpec): DocumentSpec;
+  getFile(): FileLocationReaderSpec | undefined;
+  setFile(value?: FileLocationReaderSpec): DocumentSpec;
   hasFile(): boolean;
   clearFile(): DocumentSpec;
 
@@ -123,6 +167,11 @@ export class DocumentSpec extends jspb.Message {
   setWeb(value?: WebReaderSpec): DocumentSpec;
   hasWeb(): boolean;
   clearWeb(): DocumentSpec;
+
+  getRepository(): RepositoryReaderSpec | undefined;
+  setRepository(value?: RepositoryReaderSpec): DocumentSpec;
+  hasRepository(): boolean;
+  clearRepository(): DocumentSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DocumentSpec.AsObject;
@@ -140,9 +189,10 @@ export namespace DocumentSpec {
     refreshperiod?: number,
     nodeparser?: NodeParserSpec.AsObject,
     embeddingmodel?: ModelSpec.AsObject,
-    file?: FileReaderSpec.AsObject,
+    file?: FileLocationReaderSpec.AsObject,
     database?: DatabaseReaderSpec.AsObject,
     web?: WebReaderSpec.AsObject,
+    repository?: RepositoryReaderSpec.AsObject,
   }
 }
 
@@ -152,15 +202,20 @@ export class DocumentStatus extends jspb.Message {
   hasName(): boolean;
   clearName(): DocumentStatus;
 
-  getUid(): string;
-  setUid(value: string): DocumentStatus;
-  hasUid(): boolean;
-  clearUid(): DocumentStatus;
-
   getNodes(): number;
   setNodes(value: number): DocumentStatus;
   hasNodes(): boolean;
   clearNodes(): DocumentStatus;
+
+  getLasterror(): string;
+  setLasterror(value: string): DocumentStatus;
+  hasLasterror(): boolean;
+  clearLasterror(): DocumentStatus;
+
+  getFlagged(): boolean;
+  setFlagged(value: boolean): DocumentStatus;
+  hasFlagged(): boolean;
+  clearFlagged(): DocumentStatus;
 
   getLastrefreshat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLastrefreshat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DocumentStatus;
@@ -178,9 +233,68 @@ export class DocumentStatus extends jspb.Message {
 export namespace DocumentStatus {
   export type AsObject = {
     name?: string,
-    uid?: string,
     nodes?: number,
+    lasterror?: string,
+    flagged?: boolean,
     lastrefreshat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+  }
+}
+
+export class ExtensionFilter extends jspb.Message {
+  getIncludeList(): Array<string>;
+  setIncludeList(value: Array<string>): ExtensionFilter;
+  clearIncludeList(): ExtensionFilter;
+  addInclude(value: string, index?: number): ExtensionFilter;
+
+  getExcludeList(): Array<string>;
+  setExcludeList(value: Array<string>): ExtensionFilter;
+  clearExcludeList(): ExtensionFilter;
+  addExclude(value: string, index?: number): ExtensionFilter;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExtensionFilter.AsObject;
+  static toObject(includeInstance: boolean, msg: ExtensionFilter): ExtensionFilter.AsObject;
+  static serializeBinaryToWriter(message: ExtensionFilter, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExtensionFilter;
+  static deserializeBinaryFromReader(message: ExtensionFilter, reader: jspb.BinaryReader): ExtensionFilter;
+}
+
+export namespace ExtensionFilter {
+  export type AsObject = {
+    includeList: Array<string>,
+    excludeList: Array<string>,
+  }
+}
+
+export class FileLocationReaderSpec extends jspb.Message {
+  getFilereaderspec(): FileReaderSpec | undefined;
+  setFilereaderspec(value?: FileReaderSpec): FileLocationReaderSpec;
+  hasFilereaderspec(): boolean;
+  clearFilereaderspec(): FileLocationReaderSpec;
+
+  getLocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
+  setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): FileLocationReaderSpec;
+  hasLocation(): boolean;
+  clearLocation(): FileLocationReaderSpec;
+
+  getUrl(): string;
+  setUrl(value: string): FileLocationReaderSpec;
+  hasUrl(): boolean;
+  clearUrl(): FileLocationReaderSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FileLocationReaderSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: FileLocationReaderSpec): FileLocationReaderSpec.AsObject;
+  static serializeBinaryToWriter(message: FileLocationReaderSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FileLocationReaderSpec;
+  static deserializeBinaryFromReader(message: FileLocationReaderSpec, reader: jspb.BinaryReader): FileLocationReaderSpec;
+}
+
+export namespace FileLocationReaderSpec {
+  export type AsObject = {
+    filereaderspec?: FileReaderSpec.AsObject,
+    location?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
+    url?: string,
   }
 }
 
@@ -189,11 +303,6 @@ export class FileReaderSpec extends jspb.Message {
   setType(value: string): FileReaderSpec;
   hasType(): boolean;
   clearType(): FileReaderSpec;
-
-  getLocation(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation | undefined;
-  setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation): FileReaderSpec;
-  hasLocation(): boolean;
-  clearLocation(): FileReaderSpec;
 
   getOptionsMap(): jspb.Map<string, string>;
   clearOptionsMap(): FileReaderSpec;
@@ -209,8 +318,49 @@ export class FileReaderSpec extends jspb.Message {
 export namespace FileReaderSpec {
   export type AsObject = {
     type?: string,
-    location?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FileLocation.AsObject,
     optionsMap: Array<[string, string]>,
+  }
+}
+
+export class FilteredNodeParser extends jspb.Message {
+  getExtension(): ExtensionFilter | undefined;
+  setExtension(value?: ExtensionFilter): FilteredNodeParser;
+  hasExtension(): boolean;
+  clearExtension(): FilteredNodeParser;
+
+  getLength(): LengthFilter | undefined;
+  setLength(value?: LengthFilter): FilteredNodeParser;
+  hasLength(): boolean;
+  clearLength(): FilteredNodeParser;
+
+  getName(): NameFilter | undefined;
+  setName(value?: NameFilter): FilteredNodeParser;
+  hasName(): boolean;
+  clearName(): FilteredNodeParser;
+
+  getMetadataMap(): jspb.Map<string, string>;
+  clearMetadataMap(): FilteredNodeParser;
+
+  getParser(): ConcreteNodeParserSpec | undefined;
+  setParser(value?: ConcreteNodeParserSpec): FilteredNodeParser;
+  hasParser(): boolean;
+  clearParser(): FilteredNodeParser;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FilteredNodeParser.AsObject;
+  static toObject(includeInstance: boolean, msg: FilteredNodeParser): FilteredNodeParser.AsObject;
+  static serializeBinaryToWriter(message: FilteredNodeParser, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FilteredNodeParser;
+  static deserializeBinaryFromReader(message: FilteredNodeParser, reader: jspb.BinaryReader): FilteredNodeParser;
+}
+
+export namespace FilteredNodeParser {
+  export type AsObject = {
+    extension?: ExtensionFilter.AsObject,
+    length?: LengthFilter.AsObject,
+    name?: NameFilter.AsObject,
+    metadataMap: Array<[string, string]>,
+    parser?: ConcreteNodeParserSpec.AsObject,
   }
 }
 
@@ -414,6 +564,58 @@ export namespace KnowledgeBaseStatus {
   }
 }
 
+export class LengthFilter extends jspb.Message {
+  getGreaterthan(): number;
+  setGreaterthan(value: number): LengthFilter;
+  hasGreaterthan(): boolean;
+  clearGreaterthan(): LengthFilter;
+
+  getLessthan(): number;
+  setLessthan(value: number): LengthFilter;
+  hasLessthan(): boolean;
+  clearLessthan(): LengthFilter;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LengthFilter.AsObject;
+  static toObject(includeInstance: boolean, msg: LengthFilter): LengthFilter.AsObject;
+  static serializeBinaryToWriter(message: LengthFilter, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LengthFilter;
+  static deserializeBinaryFromReader(message: LengthFilter, reader: jspb.BinaryReader): LengthFilter;
+}
+
+export namespace LengthFilter {
+  export type AsObject = {
+    greaterthan?: number,
+    lessthan?: number,
+  }
+}
+
+export class MixedNodeParserSpec extends jspb.Message {
+  getParsersList(): Array<FilteredNodeParser>;
+  setParsersList(value: Array<FilteredNodeParser>): MixedNodeParserSpec;
+  clearParsersList(): MixedNodeParserSpec;
+  addParsers(value?: FilteredNodeParser, index?: number): FilteredNodeParser;
+
+  getFallback(): ConcreteNodeParserSpec | undefined;
+  setFallback(value?: ConcreteNodeParserSpec): MixedNodeParserSpec;
+  hasFallback(): boolean;
+  clearFallback(): MixedNodeParserSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MixedNodeParserSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: MixedNodeParserSpec): MixedNodeParserSpec.AsObject;
+  static serializeBinaryToWriter(message: MixedNodeParserSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MixedNodeParserSpec;
+  static deserializeBinaryFromReader(message: MixedNodeParserSpec, reader: jspb.BinaryReader): MixedNodeParserSpec;
+}
+
+export namespace MixedNodeParserSpec {
+  export type AsObject = {
+    parsersList: Array<FilteredNodeParser.AsObject>,
+    fallback?: ConcreteNodeParserSpec.AsObject,
+  }
+}
+
 export class ModelSpec extends jspb.Message {
   getConnectionname(): string;
   setConnectionname(value: string): ModelSpec;
@@ -440,31 +642,42 @@ export namespace ModelSpec {
   }
 }
 
+export class NameFilter extends jspb.Message {
+  getContains(): string;
+  setContains(value: string): NameFilter;
+  hasContains(): boolean;
+  clearContains(): NameFilter;
+
+  getEquals(): string;
+  setEquals(value: string): NameFilter;
+  hasEquals(): boolean;
+  clearEquals(): NameFilter;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): NameFilter.AsObject;
+  static toObject(includeInstance: boolean, msg: NameFilter): NameFilter.AsObject;
+  static serializeBinaryToWriter(message: NameFilter, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): NameFilter;
+  static deserializeBinaryFromReader(message: NameFilter, reader: jspb.BinaryReader): NameFilter;
+}
+
+export namespace NameFilter {
+  export type AsObject = {
+    contains?: string,
+    equals?: string,
+  }
+}
+
 export class NodeParserSpec extends jspb.Message {
-  getIncludeorderrelationship(): boolean;
-  setIncludeorderrelationship(value: boolean): NodeParserSpec;
-  hasIncludeorderrelationship(): boolean;
-  clearIncludeorderrelationship(): NodeParserSpec;
+  getConcretenodeparserspec(): ConcreteNodeParserSpec | undefined;
+  setConcretenodeparserspec(value?: ConcreteNodeParserSpec): NodeParserSpec;
+  hasConcretenodeparserspec(): boolean;
+  clearConcretenodeparserspec(): NodeParserSpec;
 
-  getIncludemetadata(): boolean;
-  setIncludemetadata(value: boolean): NodeParserSpec;
-  hasIncludemetadata(): boolean;
-  clearIncludemetadata(): NodeParserSpec;
-
-  getType(): string;
-  setType(value: string): NodeParserSpec;
-  hasType(): boolean;
-  clearType(): NodeParserSpec;
-
-  getText(): TextSplitterSpec | undefined;
-  setText(value?: TextSplitterSpec): NodeParserSpec;
-  hasText(): boolean;
-  clearText(): NodeParserSpec;
-
-  getSentence(): SentenceWindowNodeParserSpec | undefined;
-  setSentence(value?: SentenceWindowNodeParserSpec): NodeParserSpec;
-  hasSentence(): boolean;
-  clearSentence(): NodeParserSpec;
+  getMixed(): MixedNodeParserSpec | undefined;
+  setMixed(value?: MixedNodeParserSpec): NodeParserSpec;
+  hasMixed(): boolean;
+  clearMixed(): NodeParserSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NodeParserSpec.AsObject;
@@ -476,11 +689,82 @@ export class NodeParserSpec extends jspb.Message {
 
 export namespace NodeParserSpec {
   export type AsObject = {
-    includeorderrelationship?: boolean,
-    includemetadata?: boolean,
+    concretenodeparserspec?: ConcreteNodeParserSpec.AsObject,
+    mixed?: MixedNodeParserSpec.AsObject,
+  }
+}
+
+export class RepositoryFileReader extends jspb.Message {
+  getExtension(): string;
+  setExtension(value: string): RepositoryFileReader;
+  hasExtension(): boolean;
+  clearExtension(): RepositoryFileReader;
+
+  getExtensionsList(): Array<string>;
+  setExtensionsList(value: Array<string>): RepositoryFileReader;
+  clearExtensionsList(): RepositoryFileReader;
+  addExtensions(value: string, index?: number): RepositoryFileReader;
+
+  getReader(): FileReaderSpec | undefined;
+  setReader(value?: FileReaderSpec): RepositoryFileReader;
+  hasReader(): boolean;
+  clearReader(): RepositoryFileReader;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RepositoryFileReader.AsObject;
+  static toObject(includeInstance: boolean, msg: RepositoryFileReader): RepositoryFileReader.AsObject;
+  static serializeBinaryToWriter(message: RepositoryFileReader, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RepositoryFileReader;
+  static deserializeBinaryFromReader(message: RepositoryFileReader, reader: jspb.BinaryReader): RepositoryFileReader;
+}
+
+export namespace RepositoryFileReader {
+  export type AsObject = {
+    extension?: string,
+    extensionsList: Array<string>,
+    reader?: FileReaderSpec.AsObject,
+  }
+}
+
+export class RepositoryReaderSpec extends jspb.Message {
+  getType(): string;
+  setType(value: string): RepositoryReaderSpec;
+  hasType(): boolean;
+  clearType(): RepositoryReaderSpec;
+
+  getConnectionname(): string;
+  setConnectionname(value: string): RepositoryReaderSpec;
+  hasConnectionname(): boolean;
+  clearConnectionname(): RepositoryReaderSpec;
+
+  getExtensionsList(): Array<string>;
+  setExtensionsList(value: Array<string>): RepositoryReaderSpec;
+  clearExtensionsList(): RepositoryReaderSpec;
+  addExtensions(value: string, index?: number): RepositoryReaderSpec;
+
+  getReadersList(): Array<RepositoryFileReader>;
+  setReadersList(value: Array<RepositoryFileReader>): RepositoryReaderSpec;
+  clearReadersList(): RepositoryReaderSpec;
+  addReaders(value?: RepositoryFileReader, index?: number): RepositoryFileReader;
+
+  getOptionsMap(): jspb.Map<string, string>;
+  clearOptionsMap(): RepositoryReaderSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RepositoryReaderSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: RepositoryReaderSpec): RepositoryReaderSpec.AsObject;
+  static serializeBinaryToWriter(message: RepositoryReaderSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RepositoryReaderSpec;
+  static deserializeBinaryFromReader(message: RepositoryReaderSpec, reader: jspb.BinaryReader): RepositoryReaderSpec;
+}
+
+export namespace RepositoryReaderSpec {
+  export type AsObject = {
     type?: string,
-    text?: TextSplitterSpec.AsObject,
-    sentence?: SentenceWindowNodeParserSpec.AsObject,
+    connectionname?: string,
+    extensionsList: Array<string>,
+    readersList: Array<RepositoryFileReader.AsObject>,
+    optionsMap: Array<[string, string]>,
   }
 }
 

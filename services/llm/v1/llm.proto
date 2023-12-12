@@ -6,11 +6,21 @@ import "github.com/metaprov/modelaapi/pkg/apis/llm/v1alpha1/generated.proto";
 
 
 message RefreshRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
-    github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBase knowledgeBase = 2;
+    string tenant = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 2;
+    github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBase knowledgeBase = 3;
 }
 
-message RefreshResponse {}
+message DocumentStatusUpdate {
+    bool delete = 1;
+    string error = 2;
+    github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.DocumentStatus status = 3;
+}
+
+message RefreshResponse {
+    repeated DocumentStatusUpdate statuses = 1;
+}
+
 
 message ShutdownRequest {}
 message ShutdownResponse {}

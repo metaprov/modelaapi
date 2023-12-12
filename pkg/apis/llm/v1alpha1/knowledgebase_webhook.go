@@ -61,11 +61,18 @@ func (kb *KnowledgeBase) validateDocuments(fldPath *field.Path) field.ErrorList 
 		var specCount = 0
 		if doc.File != nil {
 			specCount++
+			if doc.File.Location != nil && doc.File.Url != nil {
+				allErrs = append(allErrs, field.Invalid(fldPath.Key(doc.Name).Child("File"),
+					doc.File, "Only one of location or url must be specified for a file reader"))
+			}
 		}
 		if doc.Database != nil {
 			specCount++
 		}
 		if doc.Web != nil {
+			specCount++
+		}
+		if doc.Repository != nil {
 			specCount++
 		}
 		if specCount > 1 {
@@ -79,13 +86,35 @@ func (kb *KnowledgeBase) validateDocuments(fldPath *field.Path) field.ErrorList 
 	return allErrs
 }
 
+func (kb *KnowledgeBase) validateRepositoryReader(fldPath *field.Path, spec RepositoryReaderSpec) field.ErrorList {
+	var allErrs field.ErrorList
+	for i, reader := range spec.Readers {
+		if reader.Extension != nil && len(reader.Extensions) > 0 {
+			allErrs = append(allErrs, field.Invalid(fldPath.Child("readers").Index(i), reader,
+				"Only one of extension or extensions may be specified"))
+		}
+	}
+	return allErrs
+}
+
 func (kb *KnowledgeBase) validateNodeParser(fldPath *field.Path, spec NodeParserSpec) field.ErrorList {
 	var allErrs field.ErrorList
-	if spec.Type == nil && spec.Text == nil && spec.Sentence == nil {
-		allErrs = append(allErrs, field.Invalid(fldPath, spec, "A node parser specification "+
-			"(text splitter, sentence window) or type must be provided; none found"))
+	if spec.Mixed != nil && spec.Text != nil && spec.Sentence != nil {
+		allErrs = append(allErrs, field.Invalid(fldPath, spec, "Multiple node parser specifications must not be provided"))
 		return allErrs
 	}
+
+	if spec.Mixed != nil {
+		allErrs = append(allErrs, kb.validateMixedNodeParser(fldPath.Child("mixed"), *spec.Mixed)...)
+	} else {
+		allErrs = append(allErrs, kb.validateConcreteNodeParser(fldPath, spec.ConcreteNodeParserSpec)...)
+	}
+
+	return allErrs
+}
+
+func (kb *KnowledgeBase) validateConcreteNodeParser(fldPath *field.Path, spec ConcreteNodeParserSpec) field.ErrorList {
+	var allErrs field.ErrorList
 	if spec.Text != nil && spec.Sentence != nil {
 		allErrs = append(allErrs, field.Invalid(fldPath, spec, "Multiple node parser specifications must not be provided"))
 		return allErrs
@@ -98,13 +127,31 @@ func (kb *KnowledgeBase) validateNodeParser(fldPath *field.Path, spec NodeParser
 	return allErrs
 }
 
+func (kb *KnowledgeBase) validateMixedNodeParser(fldPath *field.Path, spec MixedNodeParserSpec) field.ErrorList {
+	var allErrs field.ErrorList
+	if spec.Fallback != nil {
+		allErrs = append(allErrs, kb.validateConcreteNodeParser(fldPath, *spec.Fallback)...)
+	}
+	for i, parser := range spec.Parsers {
+		if parser.Extension != nil {
+			if len(parser.Extension.Exclude) > 0 && len(parser.Extension.Include) > 0 {
+				allErrs = append(allErrs, field.Invalid(fldPath.Index(i).Child("extension"), parser.Extension,
+					"Only one of include or exclude may be specified"))
+			}
+		}
+		if parser.Name != nil {
+			if parser.Name.Contains != nil && parser.Name.Equals != nil {
+				allErrs = append(allErrs, field.Invalid(fldPath.Index(i).Child("name"), parser.Extension,
+					"Only one of contains or equals may be specified"))
+			}
+		}
+		allErrs = append(allErrs, kb.validateConcreteNodeParser(fldPath, parser.Parser)...)
+	}
+	return allErrs
+}
+
 func (kb *KnowledgeBase) validateTextSplitter(fldPath *field.Path, spec TextSplitterSpec) field.ErrorList {
 	var allErrs field.ErrorList
-	if spec.Type == nil && spec.Sentence == nil && spec.Code == nil && spec.Token == nil {
-		allErrs = append(allErrs, field.Invalid(fldPath, spec, "A text splitter specification "+
-			"(sentence, token, code) or type must be provided; none found"))
-		return allErrs
-	}
 	var specCount = 0
 	if spec.Sentence != nil {
 		specCount++

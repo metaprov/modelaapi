@@ -109,7 +109,7 @@ spec:
                       type: object
                     file:
                       description: File specifies the configuration to read text from
-                        a file
+                        an external file
                       properties:
                         location:
                           description: The location of the file
@@ -126,6 +126,9 @@ spec:
                           type: object
                         type:
                           description: The type of file reader
+                          type: string
+                        url:
+                          description: The URL to download the file
                           type: string
                       type: object
                     metadata:
@@ -150,6 +153,379 @@ spec:
                             be included between nodes. When unspecified, default to
                             true
                           type: boolean
+                        mixed:
+                          description: The specification for a mixed node parser,
+                            which will change depending on the document being processed
+                          properties:
+                            fallback:
+                              description: The node parser to use for documents that
+                                are not matched to any of the parsers specified in
+                                Parsers
+                              properties:
+                                includeMetadata:
+                                  description: Indicate if metadata should be included
+                                    in the nodes. When unspecified, default to true
+                                  type: boolean
+                                includeOrderRelationship:
+                                  description: Indicate if previous/next relationships
+                                    should be included between nodes. When unspecified,
+                                    default to true
+                                  type: boolean
+                                sentence:
+                                  description: The specification for the sentence
+                                    window node parser
+                                  properties:
+                                    splitter:
+                                      description: The function to split documents
+                                        into sentences. When unspecified, default
+                                        to the Punkt tokenizer
+                                      properties:
+                                        separator:
+                                          description: The separator character or
+                                            regex pattern, required when the tokenizer
+                                            type is `regex` or `separator`
+                                          type: string
+                                        type:
+                                          type: string
+                                      type: object
+                                    windowSize:
+                                      description: The number of sentences to capture
+                                        on each side of the node. When unspecified,
+                                        default to 3
+                                      format: int32
+                                      type: integer
+                                  type: object
+                                text:
+                                  description: The specification for the text splitter
+                                    to use as a node parser
+                                  properties:
+                                    code:
+                                      description: Code splits code documents
+                                      properties:
+                                        chunkLines:
+                                          description: The number of code lines in
+                                            each chunk. When unspecified, default
+                                            to 40
+                                          format: int32
+                                          type: integer
+                                        chunkLinesOverlap:
+                                          description: The amount of code lines that
+                                            will be captured on each side of the node.
+                                            When unspecified, default to 15
+                                          format: int32
+                                          type: integer
+                                        language:
+                                          description: The language of the document(s).
+                                            When set to `infer`, the language of the
+                                            document will be inferred using the extension
+                                            of the original file. Documents that cannot
+                                            be parsed using the specified language
+                                            will be skipped
+                                          type: string
+                                        maxChars:
+                                          description: The maximum amount of characters
+                                            in each chunk. When unspecified, default
+                                            to 1500
+                                          format: int32
+                                          type: integer
+                                      type: object
+                                    sentence:
+                                      description: Sentence splits the document by
+                                        sentence
+                                      properties:
+                                        chunkOverlap:
+                                          description: The amount of tokens that will
+                                            be captured on each side of the node.
+                                            When unspecified, default to 200
+                                          format: int32
+                                          type: integer
+                                        chunkSize:
+                                          description: The chunk size, in tokens,
+                                            for each chunk. When unspecified, default
+                                            to 1024
+                                          format: int32
+                                          type: integer
+                                        paragraphSeparator:
+                                          description: The separator character for
+                                            paragraphs. When unspecified, default
+                                            to newline
+                                          type: string
+                                        splitter:
+                                          description: The function to split documents
+                                            into sentences. When unspecified, default
+                                            to the Punkt tokenizer
+                                          properties:
+                                            separator:
+                                              description: The separator character
+                                                or regex pattern, required when the
+                                                tokenizer type is `regex` or `separator`
+                                              type: string
+                                            type:
+                                              type: string
+                                          type: object
+                                        wordSeparator:
+                                          description: The separator character for
+                                            words. When unspecified, default to the
+                                            space character
+                                          type: string
+                                      type: object
+                                    token:
+                                      description: Token splits the document by tokens
+                                      properties:
+                                        chunkOverlap:
+                                          description: The amount of tokens that will
+                                            be captured on each side of the node.
+                                            When unspecified, default to 200
+                                          format: int32
+                                          type: integer
+                                        chunkSize:
+                                          description: The chunk size, in tokens,
+                                            for each chunk. When unspecified, default
+                                            to 1024
+                                          format: int32
+                                          type: integer
+                                        wordSeparator:
+                                          description: The separator character for
+                                            words. When unspecified, default to the
+                                            space character
+                                          type: string
+                                      type: object
+                                    type:
+                                      description: The type of text splitter. When
+                                        a specification for a text splitter is provided,
+                                        this field may be omitted. When not provided,
+                                        the defaults for the specified text splitter
+                                        type will be used. When unspecified, default
+                                        to the sentence splitter
+                                      type: string
+                                  type: object
+                                type:
+                                  description: The type of node parser. When a specification
+                                    for a text or sentence window node parser is provided,
+                                    this field may be omitted. When not provided,
+                                    the defaults for the specified node parser type
+                                    will be used. When unspecified, default to sentence
+                                    window
+                                  type: string
+                              type: object
+                            parsers:
+                              description: The collection of filtered node parsers,
+                                with each containing one or more filters and a parser
+                                definition. Each parser is matched sequentially in
+                                the order that they are listed
+                              items:
+                                description: FilteredNodeParser specifies a node parser
+                                  and optional filters
+                                properties:
+                                  extension:
+                                    description: Filter documents by their file extension
+                                    properties:
+                                      exclude:
+                                        description: File extensions to exclude. All
+                                          extensions excluding the collection will
+                                          be matched
+                                        items:
+                                          type: string
+                                        type: array
+                                      include:
+                                        description: File extensions to include
+                                        items:
+                                          type: string
+                                        type: array
+                                    type: object
+                                  length:
+                                    description: Filter documents by their length
+                                    properties:
+                                      greaterThan:
+                                        description: Match if the document length
+                                          is greater than the specified value
+                                        format: int32
+                                        type: integer
+                                      lessThan:
+                                        description: Match if the document length
+                                          is less than the specified value
+                                        format: int32
+                                        type: integer
+                                    type: object
+                                  metadata:
+                                    additionalProperties:
+                                      type: string
+                                    description: Filter documents by their metadata
+                                    type: object
+                                  name:
+                                    description: Filter documents by their name
+                                    properties:
+                                      contains:
+                                        description: Match documents whose name contains
+                                          the specified string
+                                        type: string
+                                      equals:
+                                        description: Match documents whose name equals
+                                          the specified string
+                                        type: string
+                                    type: object
+                                  parser:
+                                    description: The node parser definition
+                                    properties:
+                                      includeMetadata:
+                                        description: Indicate if metadata should be
+                                          included in the nodes. When unspecified,
+                                          default to true
+                                        type: boolean
+                                      includeOrderRelationship:
+                                        description: Indicate if previous/next relationships
+                                          should be included between nodes. When unspecified,
+                                          default to true
+                                        type: boolean
+                                      sentence:
+                                        description: The specification for the sentence
+                                          window node parser
+                                        properties:
+                                          splitter:
+                                            description: The function to split documents
+                                              into sentences. When unspecified, default
+                                              to the Punkt tokenizer
+                                            properties:
+                                              separator:
+                                                description: The separator character
+                                                  or regex pattern, required when
+                                                  the tokenizer type is `regex` or
+                                                  `separator`
+                                                type: string
+                                              type:
+                                                type: string
+                                            type: object
+                                          windowSize:
+                                            description: The number of sentences to
+                                              capture on each side of the node. When
+                                              unspecified, default to 3
+                                            format: int32
+                                            type: integer
+                                        type: object
+                                      text:
+                                        description: The specification for the text
+                                          splitter to use as a node parser
+                                        properties:
+                                          code:
+                                            description: Code splits code documents
+                                            properties:
+                                              chunkLines:
+                                                description: The number of code lines
+                                                  in each chunk. When unspecified,
+                                                  default to 40
+                                                format: int32
+                                                type: integer
+                                              chunkLinesOverlap:
+                                                description: The amount of code lines
+                                                  that will be captured on each side
+                                                  of the node. When unspecified, default
+                                                  to 15
+                                                format: int32
+                                                type: integer
+                                              language:
+                                                description: The language of the document(s).
+                                                  When set to `infer`, the language
+                                                  of the document will be inferred
+                                                  using the extension of the original
+                                                  file. Documents that cannot be parsed
+                                                  using the specified language will
+                                                  be skipped
+                                                type: string
+                                              maxChars:
+                                                description: The maximum amount of
+                                                  characters in each chunk. When unspecified,
+                                                  default to 1500
+                                                format: int32
+                                                type: integer
+                                            type: object
+                                          sentence:
+                                            description: Sentence splits the document
+                                              by sentence
+                                            properties:
+                                              chunkOverlap:
+                                                description: The amount of tokens
+                                                  that will be captured on each side
+                                                  of the node. When unspecified, default
+                                                  to 200
+                                                format: int32
+                                                type: integer
+                                              chunkSize:
+                                                description: The chunk size, in tokens,
+                                                  for each chunk. When unspecified,
+                                                  default to 1024
+                                                format: int32
+                                                type: integer
+                                              paragraphSeparator:
+                                                description: The separator character
+                                                  for paragraphs. When unspecified,
+                                                  default to newline
+                                                type: string
+                                              splitter:
+                                                description: The function to split
+                                                  documents into sentences. When unspecified,
+                                                  default to the Punkt tokenizer
+                                                properties:
+                                                  separator:
+                                                    description: The separator character
+                                                      or regex pattern, required when
+                                                      the tokenizer type is `regex`
+                                                      or `separator`
+                                                    type: string
+                                                  type:
+                                                    type: string
+                                                type: object
+                                              wordSeparator:
+                                                description: The separator character
+                                                  for words. When unspecified, default
+                                                  to the space character
+                                                type: string
+                                            type: object
+                                          token:
+                                            description: Token splits the document
+                                              by tokens
+                                            properties:
+                                              chunkOverlap:
+                                                description: The amount of tokens
+                                                  that will be captured on each side
+                                                  of the node. When unspecified, default
+                                                  to 200
+                                                format: int32
+                                                type: integer
+                                              chunkSize:
+                                                description: The chunk size, in tokens,
+                                                  for each chunk. When unspecified,
+                                                  default to 1024
+                                                format: int32
+                                                type: integer
+                                              wordSeparator:
+                                                description: The separator character
+                                                  for words. When unspecified, default
+                                                  to the space character
+                                                type: string
+                                            type: object
+                                          type:
+                                            description: The type of text splitter.
+                                              When a specification for a text splitter
+                                              is provided, this field may be omitted.
+                                              When not provided, the defaults for
+                                              the specified text splitter type will
+                                              be used. When unspecified, default to
+                                              the sentence splitter
+                                            type: string
+                                        type: object
+                                      type:
+                                        description: The type of node parser. When
+                                          a specification for a text or sentence window
+                                          node parser is provided, this field may
+                                          be omitted. When not provided, the defaults
+                                          for the specified node parser type will
+                                          be used. When unspecified, default to sentence
+                                          window
+                                        type: string
+                                    type: object
+                                type: object
+                              type: array
+                          type: object
                         sentence:
                           description: The specification for the sentence window node
                             parser
@@ -261,24 +637,80 @@ spec:
                             type:
                               description: The type of text splitter. When a specification
                                 for a text splitter is provided, this field may be
-                                omitted. When not provided, the defaults for the type
-                                of text splitter will be used
+                                omitted. When not provided, the defaults for the specified
+                                text splitter type will be used. When unspecified,
+                                default to the sentence splitter
                               type: string
                           type: object
                         type:
                           description: The type of node parser. When a specification
                             for a text or sentence window node parser is provided,
                             this field may be omitted. When not provided, the defaults
-                            for the type of node parser will be used
+                            for the specified node parser type will be used. When
+                            unspecified, default to sentence window
                           type: string
                       type: object
                     refreshPeriod:
-                      description: RefreshPeriod specifies the time, in seconds, at
-                        which the document must be refreshed If unspecified or zero,
-                        the document will be refreshed on each sync. When set to -1,
-                        the document will only refresh once
+                      description: RefreshPeriod specifies the period, in seconds,
+                        at which the document must be refreshed If unspecified or
+                        zero, the document will be refreshed on each sync. When set
+                        to -1, the document will only refresh once
                       format: int32
                       type: integer
+                    repository:
+                      description: Repository specifies the configuration to read
+                        many files from a repository,
+                      properties:
+                        connectionName:
+                          description: The name of the connection that provides authorization
+                            details for the repository
+                          type: string
+                        extensions:
+                          description: The collection of supported file extensions
+                            to read. File extensions supported by Modela will automatically
+                            be read by their supported reader, if not already defined
+                            in Readers
+                          items:
+                            type: string
+                          type: array
+                        options:
+                          additionalProperties:
+                            type: string
+                          description: Reader-specific options
+                          type: object
+                        readers:
+                          description: The readers to use for individual file extensions
+                          items:
+                            properties:
+                              extension:
+                                description: The file extension supported by the reader.
+                                  Only one of Extension or Extensions may be specified
+                                type: string
+                              extensions:
+                                description: The collection of extensions supported
+                                  by the reader
+                                items:
+                                  type: string
+                                type: array
+                              reader:
+                                description: The file reader to use for the specified
+                                  extensions
+                                properties:
+                                  options:
+                                    additionalProperties:
+                                      type: string
+                                    description: Reader-specific options
+                                    type: object
+                                  type:
+                                    description: The type of file reader
+                                    type: string
+                                type: object
+                            type: object
+                          type: array
+                        type:
+                          description: The type of repository reader
+                          type: string
+                      type: object
                     web:
                       description: Web specifies the configuration to read text from
                         an external web-based source
@@ -334,6 +766,357 @@ spec:
                     description: Indicate if previous/next relationships should be
                       included between nodes. When unspecified, default to true
                     type: boolean
+                  mixed:
+                    description: The specification for a mixed node parser, which
+                      will change depending on the document being processed
+                    properties:
+                      fallback:
+                        description: The node parser to use for documents that are
+                          not matched to any of the parsers specified in Parsers
+                        properties:
+                          includeMetadata:
+                            description: Indicate if metadata should be included in
+                              the nodes. When unspecified, default to true
+                            type: boolean
+                          includeOrderRelationship:
+                            description: Indicate if previous/next relationships should
+                              be included between nodes. When unspecified, default
+                              to true
+                            type: boolean
+                          sentence:
+                            description: The specification for the sentence window
+                              node parser
+                            properties:
+                              splitter:
+                                description: The function to split documents into
+                                  sentences. When unspecified, default to the Punkt
+                                  tokenizer
+                                properties:
+                                  separator:
+                                    description: The separator character or regex
+                                      pattern, required when the tokenizer type is
+                                      `regex` or `separator`
+                                    type: string
+                                  type:
+                                    type: string
+                                type: object
+                              windowSize:
+                                description: The number of sentences to capture on
+                                  each side of the node. When unspecified, default
+                                  to 3
+                                format: int32
+                                type: integer
+                            type: object
+                          text:
+                            description: The specification for the text splitter to
+                              use as a node parser
+                            properties:
+                              code:
+                                description: Code splits code documents
+                                properties:
+                                  chunkLines:
+                                    description: The number of code lines in each
+                                      chunk. When unspecified, default to 40
+                                    format: int32
+                                    type: integer
+                                  chunkLinesOverlap:
+                                    description: The amount of code lines that will
+                                      be captured on each side of the node. When unspecified,
+                                      default to 15
+                                    format: int32
+                                    type: integer
+                                  language:
+                                    description: The language of the document(s).
+                                      When set to `infer`, the language of the document
+                                      will be inferred using the extension of the
+                                      original file. Documents that cannot be parsed
+                                      using the specified language will be skipped
+                                    type: string
+                                  maxChars:
+                                    description: The maximum amount of characters
+                                      in each chunk. When unspecified, default to
+                                      1500
+                                    format: int32
+                                    type: integer
+                                type: object
+                              sentence:
+                                description: Sentence splits the document by sentence
+                                properties:
+                                  chunkOverlap:
+                                    description: The amount of tokens that will be
+                                      captured on each side of the node. When unspecified,
+                                      default to 200
+                                    format: int32
+                                    type: integer
+                                  chunkSize:
+                                    description: The chunk size, in tokens, for each
+                                      chunk. When unspecified, default to 1024
+                                    format: int32
+                                    type: integer
+                                  paragraphSeparator:
+                                    description: The separator character for paragraphs.
+                                      When unspecified, default to newline
+                                    type: string
+                                  splitter:
+                                    description: The function to split documents into
+                                      sentences. When unspecified, default to the
+                                      Punkt tokenizer
+                                    properties:
+                                      separator:
+                                        description: The separator character or regex
+                                          pattern, required when the tokenizer type
+                                          is `regex` or `separator`
+                                        type: string
+                                      type:
+                                        type: string
+                                    type: object
+                                  wordSeparator:
+                                    description: The separator character for words.
+                                      When unspecified, default to the space character
+                                    type: string
+                                type: object
+                              token:
+                                description: Token splits the document by tokens
+                                properties:
+                                  chunkOverlap:
+                                    description: The amount of tokens that will be
+                                      captured on each side of the node. When unspecified,
+                                      default to 200
+                                    format: int32
+                                    type: integer
+                                  chunkSize:
+                                    description: The chunk size, in tokens, for each
+                                      chunk. When unspecified, default to 1024
+                                    format: int32
+                                    type: integer
+                                  wordSeparator:
+                                    description: The separator character for words.
+                                      When unspecified, default to the space character
+                                    type: string
+                                type: object
+                              type:
+                                description: The type of text splitter. When a specification
+                                  for a text splitter is provided, this field may
+                                  be omitted. When not provided, the defaults for
+                                  the specified text splitter type will be used. When
+                                  unspecified, default to the sentence splitter
+                                type: string
+                            type: object
+                          type:
+                            description: The type of node parser. When a specification
+                              for a text or sentence window node parser is provided,
+                              this field may be omitted. When not provided, the defaults
+                              for the specified node parser type will be used. When
+                              unspecified, default to sentence window
+                            type: string
+                        type: object
+                      parsers:
+                        description: The collection of filtered node parsers, with
+                          each containing one or more filters and a parser definition.
+                          Each parser is matched sequentially in the order that they
+                          are listed
+                        items:
+                          description: FilteredNodeParser specifies a node parser
+                            and optional filters
+                          properties:
+                            extension:
+                              description: Filter documents by their file extension
+                              properties:
+                                exclude:
+                                  description: File extensions to exclude. All extensions
+                                    excluding the collection will be matched
+                                  items:
+                                    type: string
+                                  type: array
+                                include:
+                                  description: File extensions to include
+                                  items:
+                                    type: string
+                                  type: array
+                              type: object
+                            length:
+                              description: Filter documents by their length
+                              properties:
+                                greaterThan:
+                                  description: Match if the document length is greater
+                                    than the specified value
+                                  format: int32
+                                  type: integer
+                                lessThan:
+                                  description: Match if the document length is less
+                                    than the specified value
+                                  format: int32
+                                  type: integer
+                              type: object
+                            metadata:
+                              additionalProperties:
+                                type: string
+                              description: Filter documents by their metadata
+                              type: object
+                            name:
+                              description: Filter documents by their name
+                              properties:
+                                contains:
+                                  description: Match documents whose name contains
+                                    the specified string
+                                  type: string
+                                equals:
+                                  description: Match documents whose name equals the
+                                    specified string
+                                  type: string
+                              type: object
+                            parser:
+                              description: The node parser definition
+                              properties:
+                                includeMetadata:
+                                  description: Indicate if metadata should be included
+                                    in the nodes. When unspecified, default to true
+                                  type: boolean
+                                includeOrderRelationship:
+                                  description: Indicate if previous/next relationships
+                                    should be included between nodes. When unspecified,
+                                    default to true
+                                  type: boolean
+                                sentence:
+                                  description: The specification for the sentence
+                                    window node parser
+                                  properties:
+                                    splitter:
+                                      description: The function to split documents
+                                        into sentences. When unspecified, default
+                                        to the Punkt tokenizer
+                                      properties:
+                                        separator:
+                                          description: The separator character or
+                                            regex pattern, required when the tokenizer
+                                            type is `regex` or `separator`
+                                          type: string
+                                        type:
+                                          type: string
+                                      type: object
+                                    windowSize:
+                                      description: The number of sentences to capture
+                                        on each side of the node. When unspecified,
+                                        default to 3
+                                      format: int32
+                                      type: integer
+                                  type: object
+                                text:
+                                  description: The specification for the text splitter
+                                    to use as a node parser
+                                  properties:
+                                    code:
+                                      description: Code splits code documents
+                                      properties:
+                                        chunkLines:
+                                          description: The number of code lines in
+                                            each chunk. When unspecified, default
+                                            to 40
+                                          format: int32
+                                          type: integer
+                                        chunkLinesOverlap:
+                                          description: The amount of code lines that
+                                            will be captured on each side of the node.
+                                            When unspecified, default to 15
+                                          format: int32
+                                          type: integer
+                                        language:
+                                          description: The language of the document(s).
+                                            When set to `infer`, the language of the
+                                            document will be inferred using the extension
+                                            of the original file. Documents that cannot
+                                            be parsed using the specified language
+                                            will be skipped
+                                          type: string
+                                        maxChars:
+                                          description: The maximum amount of characters
+                                            in each chunk. When unspecified, default
+                                            to 1500
+                                          format: int32
+                                          type: integer
+                                      type: object
+                                    sentence:
+                                      description: Sentence splits the document by
+                                        sentence
+                                      properties:
+                                        chunkOverlap:
+                                          description: The amount of tokens that will
+                                            be captured on each side of the node.
+                                            When unspecified, default to 200
+                                          format: int32
+                                          type: integer
+                                        chunkSize:
+                                          description: The chunk size, in tokens,
+                                            for each chunk. When unspecified, default
+                                            to 1024
+                                          format: int32
+                                          type: integer
+                                        paragraphSeparator:
+                                          description: The separator character for
+                                            paragraphs. When unspecified, default
+                                            to newline
+                                          type: string
+                                        splitter:
+                                          description: The function to split documents
+                                            into sentences. When unspecified, default
+                                            to the Punkt tokenizer
+                                          properties:
+                                            separator:
+                                              description: The separator character
+                                                or regex pattern, required when the
+                                                tokenizer type is `regex` or `separator`
+                                              type: string
+                                            type:
+                                              type: string
+                                          type: object
+                                        wordSeparator:
+                                          description: The separator character for
+                                            words. When unspecified, default to the
+                                            space character
+                                          type: string
+                                      type: object
+                                    token:
+                                      description: Token splits the document by tokens
+                                      properties:
+                                        chunkOverlap:
+                                          description: The amount of tokens that will
+                                            be captured on each side of the node.
+                                            When unspecified, default to 200
+                                          format: int32
+                                          type: integer
+                                        chunkSize:
+                                          description: The chunk size, in tokens,
+                                            for each chunk. When unspecified, default
+                                            to 1024
+                                          format: int32
+                                          type: integer
+                                        wordSeparator:
+                                          description: The separator character for
+                                            words. When unspecified, default to the
+                                            space character
+                                          type: string
+                                      type: object
+                                    type:
+                                      description: The type of text splitter. When
+                                        a specification for a text splitter is provided,
+                                        this field may be omitted. When not provided,
+                                        the defaults for the specified text splitter
+                                        type will be used. When unspecified, default
+                                        to the sentence splitter
+                                      type: string
+                                  type: object
+                                type:
+                                  description: The type of node parser. When a specification
+                                    for a text or sentence window node parser is provided,
+                                    this field may be omitted. When not provided,
+                                    the defaults for the specified node parser type
+                                    will be used. When unspecified, default to sentence
+                                    window
+                                  type: string
+                              type: object
+                          type: object
+                        type: array
+                    type: object
                   sentence:
                     description: The specification for the sentence window node parser
                     properties:
@@ -441,15 +1224,17 @@ spec:
                       type:
                         description: The type of text splitter. When a specification
                           for a text splitter is provided, this field may be omitted.
-                          When not provided, the defaults for the type of text splitter
-                          will be used
+                          When not provided, the defaults for the specified text splitter
+                          type will be used. When unspecified, default to the sentence
+                          splitter
                         type: string
                     type: object
                   type:
                     description: The type of node parser. When a specification for
                       a text or sentence window node parser is provided, this field
-                      may be omitted. When not provided, the defaults for the type
-                      of node parser will be used
+                      may be omitted. When not provided, the defaults for the specified
+                      node parser type will be used. When unspecified, default to
+                      sentence window
                     type: string
                 type: object
               owner:
@@ -608,6 +1393,14 @@ spec:
                   database is defined, the collection will be empty
                 items:
                   properties:
+                    flagged:
+                      description: Indicates if the document is manually flagged for
+                        refresh
+                      type: boolean
+                    lastError:
+                      description: The last error that occurred while processing the
+                        document
+                      type: string
                     lastRefreshAt:
                       description: The time at which the document was last refreshed
                       format: date-time
@@ -619,9 +1412,6 @@ spec:
                       description: The number of nodes created for the document
                       format: int32
                       type: integer
-                    uid:
-                      description: The unique ID of the document (generated internally)
-                      type: string
                   type: object
                 type: array
               lastCompletionAt:

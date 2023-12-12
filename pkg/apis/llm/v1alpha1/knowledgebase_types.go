@@ -9,6 +9,7 @@ type (
 	FileReaderType        string
 	DatabaseReaderType    string
 	WebReaderType         string
+	RepositoryReaderType  string
 	NodeParserType        string
 	SentenceTokenizerType string
 	TextSplitterType      string
@@ -22,13 +23,17 @@ const (
 	SQLDatabaseReaderType   DatabaseReaderType = "sql"
 	MongoDatabaseReaderType DatabaseReaderType = "mongo"
 
-	URLWebReaderType WebReaderType = "url"
+	GoogleSheetsWebReaderType WebReaderType = "google-sheets"
+
+	GithubRepositoryReaderType RepositoryReaderType = "github"
+	BucketRepositoryReaderType RepositoryReaderType = "bucket"
 
 	HTMLNodeParserType           NodeParserType = "html"
 	JSONNodeParserType           NodeParserType = "json"
 	MarkdownNodeParserType       NodeParserType = "markdown"
 	TextSplitterNodeParserType   NodeParserType = "text-splitter"
 	SentenceWindowNodeParserType NodeParserType = "sentence-window"
+	SimpleFileNodeParserType     NodeParserType = "simple-file"
 
 	SentenceTextSplitterType TextSplitterType = "sentence"
 	TokenTextSplitterType    TextSplitterType = "token"
@@ -121,19 +126,73 @@ type ModelSpec struct {
 	Model string `json:"model,omitempty" protobuf:"bytes,2,opt,name=model"`
 }
 
-// NodeParserSpec defines how to break up a document into individual chunks of text
-type NodeParserSpec struct {
+// ConcreteNodeParserSpec defines how to break up a document into individual chunks of text
+type ConcreteNodeParserSpec struct {
 	// Indicate if previous/next relationships should be included between nodes. When unspecified, default to true
 	IncludeOrderRelationship *bool `json:"includeOrderRelationship,omitempty" protobuf:"bytes,1,opt,name=includeOrderRelationship"`
 	// Indicate if metadata should be included in the nodes. When unspecified, default to true
 	IncludeMetadata *bool `json:"includeMetadata,omitempty" protobuf:"bytes,2,opt,name=includeMetadata"`
 	// The type of node parser. When a specification for a text or sentence window node parser is provided, this field
-	// may be omitted. When not provided, the defaults for the type of node parser will be used
+	// may be omitted. When not provided, the defaults for the specified node parser type will be used.
+	// When unspecified, default to sentence window
 	Type *NodeParserType `json:"type,omitempty" protobuf:"bytes,3,opt,name=type"`
 	// The specification for the text splitter to use as a node parser
 	Text *TextSplitterSpec `json:"text,omitempty" protobuf:"bytes,4,opt,name=text"`
 	// The specification for the sentence window node parser
 	Sentence *SentenceWindowNodeParserSpec `json:"sentence,omitempty" protobuf:"bytes,5,opt,name=sentence"`
+}
+
+// NodeParserSpec defines how to break up a document into individual chunks of text.
+// A dynamic node parser may also specify a mixed parser, which can changes between multiple
+// concrete node parsers depending on the document being processed
+type NodeParserSpec struct {
+	ConcreteNodeParserSpec `json:",inline" protobuf:"bytes,7,opt,name=concreteNodeParserSpec"`
+	// The specification for a mixed node parser, which will change depending on the document being processed
+	Mixed *MixedNodeParserSpec `json:"mixed,omitempty" protobuf:"bytes,6,opt,name=mixed"`
+}
+
+type ExtensionFilter struct {
+	// File extensions to include
+	Include []string `json:"include,omitempty" protobuf:"bytes,1,opt,name=include"`
+	// File extensions to exclude. All extensions excluding the collection will be matched
+	Exclude []string `json:"exclude,omitempty" protobuf:"bytes,2,opt,name=exclude"`
+}
+
+type LengthFilter struct {
+	// Match if the document length is greater than the specified value
+	GreaterThan uint32 `json:"greaterThan,omitempty" protobuf:"varint,1,opt,name=greaterThan"`
+	// Match if the document length is less than the specified value
+	LessThan uint32 `json:"lessThan,omitempty" protobuf:"varint,2,opt,name=lessThan"`
+}
+
+type NameFilter struct {
+	// Match documents whose name contains the specified string
+	Contains *string `json:"contains,omitempty" protobuf:"bytes,1,opt,name=contains"`
+	// Match documents whose name equals the specified string
+	Equals *string `json:"equals,omitempty" protobuf:"bytes,2,opt,name=equals"`
+}
+
+// FilteredNodeParser specifies a node parser and optional filters
+type FilteredNodeParser struct {
+	// Filter documents by their file extension
+	Extension *ExtensionFilter `json:"extension,omitempty" protobuf:"bytes,1,opt,name=extension"`
+	// Filter documents by their length
+	Length *LengthFilter `json:"length,omitempty" protobuf:"bytes,2,opt,name=length"`
+	// Filter documents by their name
+	Name *NameFilter `json:"name,omitempty" protobuf:"bytes,3,opt,name=name"`
+	// Filter documents by their metadata
+	Metadata map[string]string `json:"metadata,omitempty" protobuf:"bytes,4,opt,name=metadata"`
+	// The node parser definition
+	Parser ConcreteNodeParserSpec `json:"parser,omitempty" protobuf:"bytes,5,opt,name=parser"`
+}
+
+// MixedNodeParserSpec defines a node parser that changes based on the document being parsed
+type MixedNodeParserSpec struct {
+	// The collection of filtered node parsers, with each containing one or more filters and a parser definition.
+	// Each parser is matched sequentially in the order that they are listed
+	Parsers []FilteredNodeParser `json:"parsers,omitempty" protobuf:"bytes,1,opt,name=parsers"`
+	// The node parser to use for documents that are not matched to any of the parsers specified in Parsers
+	Fallback *ConcreteNodeParserSpec `json:"fallback,omitempty" protobuf:"bytes,2,opt,name=fallback"`
 }
 
 type SentenceWindowNodeParserSpec struct {
@@ -146,7 +205,8 @@ type SentenceWindowNodeParserSpec struct {
 // TextSplitterSpec defines how to split a document into sentences using a text splitter
 type TextSplitterSpec struct {
 	// The type of text splitter. When a specification for a text splitter is provided, this field
-	// may be omitted. When not provided, the defaults for the type of text splitter will be used
+	// may be omitted. When not provided, the defaults for the specified text splitter type will be used.
+	// When unspecified, default to the sentence splitter
 	Type *TextSplitterType `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
 	// Sentence splits the document by sentence
 	Sentence *SentenceSplitterSpec `json:"sentence,omitempty" protobuf:"bytes,2,opt,name=sentence"`
@@ -180,7 +240,7 @@ type SentenceSplitterSpec struct {
 	Splitter *SentenceTokenizerSpec `json:"splitter,omitempty" protobuf:"bytes,5,opt,name=splitter"`
 }
 
-// CodeSplitterSpec splits code documents by their AST
+// CodeSplitterSpec splits code documents by their syntax trees
 type CodeSplitterSpec struct {
 	// The language of the document(s). When set to `infer`, the language of the document
 	// will be inferred using the extension of the original file. Documents that
@@ -195,7 +255,7 @@ type CodeSplitterSpec struct {
 	MaxChars *int32 `json:"maxChars,omitempty" protobuf:"bytes,4,opt,name=maxChars"`
 }
 
-// SentenceTokenizerSpec specifies a function to split text into sentences
+// SentenceTokenizerSpec defines a function to split text into sentences
 type SentenceTokenizerSpec struct {
 	Type SentenceTokenizerType `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
 	// The separator character or regex pattern, required when the tokenizer type is `regex` or `separator`
@@ -210,7 +270,7 @@ type DocumentSpec struct {
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
 	// Metadata contains user-specified metadata about the document
 	Metadata map[string]string `json:"metadata,omitempty" protobuf:"bytes,3,opt,name=metadata"`
-	// RefreshPeriod specifies the time, in seconds, at which the document must be refreshed
+	// RefreshPeriod specifies the period, in seconds, at which the document must be refreshed
 	// If unspecified or zero, the document will be refreshed on each sync.
 	// When set to -1, the document will only refresh once
 	RefreshPeriod *int32 `json:"refreshPeriod,omitempty" protobuf:"bytes,4,opt,name=refreshPeriod"`
@@ -218,21 +278,29 @@ type DocumentSpec struct {
 	NodeParser *NodeParserSpec `json:"nodeParser,omitempty" protobuf:"bytes,5,opt,name=nodeParser"`
 	// EmbeddingModel specifies a document-specific embedding model
 	EmbeddingModel *ModelSpec `json:"embeddingModel,omitempty" protobuf:"bytes,6,opt,name=embeddingModel"`
-	// File specifies the configuration to read text from a file
-	File *FileReaderSpec `json:"file,omitempty" protobuf:"bytes,7,opt,name=file"`
+	// File specifies the configuration to read text from an external file
+	File *FileLocationReaderSpec `json:"file,omitempty" protobuf:"bytes,7,opt,name=file"`
 	// Database specifies the configuration to read text from a database query
 	Database *DatabaseReaderSpec `json:"database,omitempty" protobuf:"bytes,8,opt,name=database"`
 	// Web specifies the configuration to read text from an external web-based source
 	Web *WebReaderSpec `json:"web,omitempty" protobuf:"bytes,9,opt,name=web"`
+	// Repository specifies the configuration to read many files from a repository,
+	Repository *RepositoryReaderSpec `json:"repository,omitempty" protobuf:"bytes,10,opt,name=repository"`
 }
 
 type FileReaderSpec struct {
 	// The type of file reader
 	Type FileReaderType `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
-	// The location of the file
-	Location catalog.FileLocation `json:"location,omitempty" protobuf:"bytes,2,opt,name=location"`
 	// Reader-specific options
-	Options map[string]string `json:"options,omitempty" protobuf:"bytes,3,opt,name=options"`
+	Options map[string]string `json:"options,omitempty" protobuf:"bytes,4,opt,name=options"`
+}
+
+type FileLocationReaderSpec struct {
+	FileReaderSpec `json:",inline" protobuf:"bytes,4,opt,name=fileReaderSpec"`
+	// The location of the file
+	Location *catalog.FileLocation `json:"location,omitempty" protobuf:"bytes,2,opt,name=location"`
+	// The URL to download the file
+	Url *string `json:"url,omitempty" protobuf:"bytes,3,opt,name=url"`
 }
 
 type DatabaseReaderSpec struct {
@@ -255,17 +323,44 @@ type WebReaderSpec struct {
 	Options map[string]string `json:"options,omitempty" protobuf:"bytes,3,opt,name=options"`
 }
 
+type RepositoryFileReader struct {
+	// The file extension supported by the reader. Only one of Extension or Extensions may be specified
+	Extension *string `json:"extension,omitempty" protobuf:"bytes,1,opt,name=extension"`
+	// The collection of extensions supported by the reader
+	//+kubebuilder:validation:Optional
+	Extensions []string `json:"extensions,omitempty" protobuf:"bytes,2,opt,name=extensions"`
+	// The file reader to use for the specified extensions
+	Reader FileReaderSpec `json:"reader,omitempty" protobuf:"bytes,3,opt,name=reader"`
+}
+
+type RepositoryReaderSpec struct {
+	// The type of repository reader
+	Type RepositoryReaderType `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
+	// The name of the connection that provides authorization details for the repository
+	ConnectionName string `json:"connectionName,omitempty" protobuf:"bytes,2,opt,name=connectionName"`
+	// The collection of supported file extensions to read. File extensions supported by Modela will
+	// automatically be read by their supported reader, if not already defined in Readers
+	Extensions []string `json:"extensions,omitempty" protobuf:"bytes,3,opt,name=extensions"`
+	// The readers to use for individual file extensions
+	//+kubebuilder:validation:Optional
+	Readers []RepositoryFileReader `json:"readers,omitempty" protobuf:"bytes,4,opt,name=readers"`
+	// Reader-specific options
+	Options map[string]string `json:"options,omitempty" protobuf:"bytes,5,opt,name=options"`
+}
+
 type DocumentStatus struct {
 	// The unique name of the document
 	// +kubebuilder:validation:Required
 	// +required
 	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
-	// The unique ID of the document (generated internally)
-	UID string `json:"uid,omitempty" protobuf:"bytes,2,opt,name=uid"`
 	// The number of nodes created for the document
-	Nodes int32 `json:"nodes,omitempty" protobuf:"varint,3,opt,name=nodes"`
+	Nodes int32 `json:"nodes,omitempty" protobuf:"varint,2,opt,name=nodes"`
+	// The last error that occurred while processing the document
+	LastError *string `json:"lastError,omitempty" protobuf:"bytes,3,opt,name=lastError"`
+	// Indicates if the document is manually flagged for refresh
+	Flagged *bool `json:"flagged,omitempty" protobuf:"bytes,4,opt,name=flagged"`
 	// The time at which the document was last refreshed
-	LastRefreshAt *metav1.Time `json:"lastRefreshAt,omitempty" protobuf:"bytes,4,opt,name=lastRefreshAt"`
+	LastRefreshAt *metav1.Time `json:"lastRefreshAt,omitempty" protobuf:"bytes,5,opt,name=lastRefreshAt"`
 }
 
 type KnowledgeBaseStatus struct {

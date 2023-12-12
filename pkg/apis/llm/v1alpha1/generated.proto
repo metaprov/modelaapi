@@ -17,7 +17,7 @@ import "k8s.io/apimachinery/pkg/runtime/schema/generated.proto";
 // Package-wide variables from generator "generated".
 option go_package = "github.com/metaprov/modelaapi/pkg/apis/llm/v1alpha1";
 
-// CodeSplitterSpec splits code documents by their AST
+// CodeSplitterSpec splits code documents by their syntax trees
 message CodeSplitterSpec {
   // The language of the document(s). When set to `infer`, the language of the document
   // will be inferred using the extension of the original file. Documents that
@@ -33,6 +33,26 @@ message CodeSplitterSpec {
 
   // The maximum amount of characters in each chunk. When unspecified, default to 1500
   optional int32 maxChars = 4;
+}
+
+// ConcreteNodeParserSpec defines how to break up a document into individual chunks of text
+message ConcreteNodeParserSpec {
+  // Indicate if previous/next relationships should be included between nodes. When unspecified, default to true
+  optional bool includeOrderRelationship = 1;
+
+  // Indicate if metadata should be included in the nodes. When unspecified, default to true
+  optional bool includeMetadata = 2;
+
+  // The type of node parser. When a specification for a text or sentence window node parser is provided, this field
+  // may be omitted. When not provided, the defaults for the specified node parser type will be used.
+  // When unspecified, default to sentence window
+  optional string type = 3;
+
+  // The specification for the text splitter to use as a node parser
+  optional TextSplitterSpec text = 4;
+
+  // The specification for the sentence window node parser
+  optional SentenceWindowNodeParserSpec sentence = 5;
 }
 
 message DatabaseReaderSpec {
@@ -60,7 +80,7 @@ message DocumentSpec {
   // Metadata contains user-specified metadata about the document
   map<string, string> metadata = 3;
 
-  // RefreshPeriod specifies the time, in seconds, at which the document must be refreshed
+  // RefreshPeriod specifies the period, in seconds, at which the document must be refreshed
   // If unspecified or zero, the document will be refreshed on each sync.
   // When set to -1, the document will only refresh once
   optional int32 refreshPeriod = 4;
@@ -71,14 +91,17 @@ message DocumentSpec {
   // EmbeddingModel specifies a document-specific embedding model
   optional ModelSpec embeddingModel = 6;
 
-  // File specifies the configuration to read text from a file
-  optional FileReaderSpec file = 7;
+  // File specifies the configuration to read text from an external file
+  optional FileLocationReaderSpec file = 7;
 
   // Database specifies the configuration to read text from a database query
   optional DatabaseReaderSpec database = 8;
 
   // Web specifies the configuration to read text from an external web-based source
   optional WebReaderSpec web = 9;
+
+  // Repository specifies the configuration to read many files from a repository,
+  optional RepositoryReaderSpec repository = 10;
 }
 
 message DocumentStatus {
@@ -87,25 +110,61 @@ message DocumentStatus {
   // +required
   optional string name = 1;
 
-  // The unique ID of the document (generated internally)
-  optional string uid = 2;
-
   // The number of nodes created for the document
-  optional int32 nodes = 3;
+  optional int32 nodes = 2;
+
+  // The last error that occurred while processing the document
+  optional string lastError = 3;
+
+  // Indicates if the document is manually flagged for refresh
+  optional bool flagged = 4;
 
   // The time at which the document was last refreshed
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRefreshAt = 4;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRefreshAt = 5;
+}
+
+message ExtensionFilter {
+  // File extensions to include
+  repeated string include = 1;
+
+  // File extensions to exclude. All extensions excluding the collection will be matched
+  repeated string exclude = 2;
+}
+
+message FileLocationReaderSpec {
+  optional FileReaderSpec fileReaderSpec = 4;
+
+  // The location of the file
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation location = 2;
+
+  // The URL to download the file
+  optional string url = 3;
 }
 
 message FileReaderSpec {
   // The type of file reader
   optional string type = 1;
 
-  // The location of the file
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FileLocation location = 2;
-
   // Reader-specific options
-  map<string, string> options = 3;
+  map<string, string> options = 4;
+}
+
+// FilteredNodeParser specifies a node parser and optional filters
+message FilteredNodeParser {
+  // Filter documents by their file extension
+  optional ExtensionFilter extension = 1;
+
+  // Filter documents by their length
+  optional LengthFilter length = 2;
+
+  // Filter documents by their name
+  optional NameFilter name = 3;
+
+  // Filter documents by their metadata
+  map<string, string> metadata = 4;
+
+  // The node parser definition
+  optional ConcreteNodeParserSpec parser = 5;
 }
 
 // +kubebuilder:subresource:status
@@ -211,6 +270,24 @@ message KnowledgeBaseStatus {
   repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 7;
 }
 
+message LengthFilter {
+  // Match if the document length is greater than the specified value
+  optional uint32 greaterThan = 1;
+
+  // Match if the document length is less than the specified value
+  optional uint32 lessThan = 2;
+}
+
+// MixedNodeParserSpec defines a node parser that changes based on the document being parsed
+message MixedNodeParserSpec {
+  // The collection of filtered node parsers, with each containing one or more filters and a parser definition.
+  // Each parser is matched sequentially in the order that they are listed
+  repeated FilteredNodeParser parsers = 1;
+
+  // The node parser to use for documents that are not matched to any of the parsers specified in Parsers
+  optional ConcreteNodeParserSpec fallback = 2;
+}
+
 // ModelSpec specifies the configuration for an LLM
 message ModelSpec {
   // ConnectionName specifies the name of a connection to a foundational model provider
@@ -220,23 +297,53 @@ message ModelSpec {
   optional string model = 2;
 }
 
-// NodeParserSpec defines how to break up a document into individual chunks of text
+message NameFilter {
+  // Match documents whose name contains the specified string
+  optional string contains = 1;
+
+  // Match documents whose name equals the specified string
+  optional string equals = 2;
+}
+
+// NodeParserSpec defines how to break up a document into individual chunks of text.
+// A dynamic node parser may also specify a mixed parser, which can changes between multiple
+// concrete node parsers depending on the document being processed
 message NodeParserSpec {
-  // Indicate if previous/next relationships should be included between nodes. When unspecified, default to true
-  optional bool includeOrderRelationship = 1;
+  optional ConcreteNodeParserSpec concreteNodeParserSpec = 7;
 
-  // Indicate if metadata should be included in the nodes. When unspecified, default to true
-  optional bool includeMetadata = 2;
+  // The specification for a mixed node parser, which will change depending on the document being processed
+  optional MixedNodeParserSpec mixed = 6;
+}
 
-  // The type of node parser. When a specification for a text or sentence window node parser is provided, this field
-  // may be omitted. When not provided, the defaults for the type of node parser will be used
-  optional string type = 3;
+message RepositoryFileReader {
+  // The file extension supported by the reader. Only one of Extension or Extensions may be specified
+  optional string extension = 1;
 
-  // The specification for the text splitter to use as a node parser
-  optional TextSplitterSpec text = 4;
+  // The collection of extensions supported by the reader
+  // +kubebuilder:validation:Optional
+  repeated string extensions = 2;
 
-  // The specification for the sentence window node parser
-  optional SentenceWindowNodeParserSpec sentence = 5;
+  // The file reader to use for the specified extensions
+  optional FileReaderSpec reader = 3;
+}
+
+message RepositoryReaderSpec {
+  // The type of repository reader
+  optional string type = 1;
+
+  // The name of the connection that provides authorization details for the repository
+  optional string connectionName = 2;
+
+  // The collection of supported file extensions to read. File extensions supported by Modela will
+  // automatically be read by their supported reader, if not already defined in Readers
+  repeated string extensions = 3;
+
+  // The readers to use for individual file extensions
+  // +kubebuilder:validation:Optional
+  repeated RepositoryFileReader readers = 4;
+
+  // Reader-specific options
+  map<string, string> options = 5;
 }
 
 // SentenceSplitterSpec splits text documents with a preference for complete sentences
@@ -257,7 +364,7 @@ message SentenceSplitterSpec {
   optional SentenceTokenizerSpec splitter = 5;
 }
 
-// SentenceTokenizerSpec specifies a function to split text into sentences
+// SentenceTokenizerSpec defines a function to split text into sentences
 message SentenceTokenizerSpec {
   optional string type = 1;
 
@@ -276,7 +383,8 @@ message SentenceWindowNodeParserSpec {
 // TextSplitterSpec defines how to split a document into sentences using a text splitter
 message TextSplitterSpec {
   // The type of text splitter. When a specification for a text splitter is provided, this field
-  // may be omitted. When not provided, the defaults for the type of text splitter will be used
+  // may be omitted. When not provided, the defaults for the specified text splitter type will be used.
+  // When unspecified, default to the sentence splitter
   optional string type = 1;
 
   // Sentence splits the document by sentence
