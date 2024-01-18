@@ -10,7 +10,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class GetModelClassRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ("namespace", "name")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -18,7 +18,7 @@ class GetModelClassRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class GetModelClassResponse(_message.Message):
-    __slots__ = ["modelclass", "yaml"]
+    __slots__ = ("modelclass", "yaml")
     MODELCLASS_FIELD_NUMBER: _ClassVar[int]
     YAML_FIELD_NUMBER: _ClassVar[int]
     modelclass: _generated_pb2.ModelClass
@@ -26,9 +26,9 @@ class GetModelClassResponse(_message.Message):
     def __init__(self, modelclass: _Optional[_Union[_generated_pb2.ModelClass, _Mapping]] = ..., yaml: _Optional[str] = ...) -> None: ...
 
 class ListModelClassRequest(_message.Message):
-    __slots__ = ["namespace", "labels"]
+    __slots__ = ("namespace", "labels")
     class LabelsEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -41,7 +41,7 @@ class ListModelClassRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
 class ListModelClassResponse(_message.Message):
-    __slots__ = ["modelclasses", "next_page_token"]
+    __slots__ = ("modelclasses", "next_page_token")
     MODELCLASSES_FIELD_NUMBER: _ClassVar[int]
     NEXT_PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
     modelclasses: _generated_pb2.ModelClassList
@@ -49,17 +49,17 @@ class ListModelClassResponse(_message.Message):
     def __init__(self, modelclasses: _Optional[_Union[_generated_pb2.ModelClassList, _Mapping]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
 
 class CreateModelClassRequest(_message.Message):
-    __slots__ = ["modelclass"]
+    __slots__ = ("modelclass",)
     MODELCLASS_FIELD_NUMBER: _ClassVar[int]
     modelclass: _generated_pb2.ModelClass
     def __init__(self, modelclass: _Optional[_Union[_generated_pb2.ModelClass, _Mapping]] = ...) -> None: ...
 
 class CreateModelClassResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class UpdateModelClassRequest(_message.Message):
-    __slots__ = ["modelclass", "field_mask"]
+    __slots__ = ("modelclass", "field_mask")
     MODELCLASS_FIELD_NUMBER: _ClassVar[int]
     FIELD_MASK_FIELD_NUMBER: _ClassVar[int]
     modelclass: _generated_pb2.ModelClass
@@ -67,7 +67,7 @@ class UpdateModelClassRequest(_message.Message):
     def __init__(self, modelclass: _Optional[_Union[_generated_pb2.ModelClass, _Mapping]] = ..., field_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
 
 class CreateModelClassProfileRequest(_message.Message):
-    __slots__ = ["namespace", "name", "modelclasses"]
+    __slots__ = ("namespace", "name", "modelclasses")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     MODELCLASSES_FIELD_NUMBER: _ClassVar[int]
@@ -77,7 +77,7 @@ class CreateModelClassProfileRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., modelclasses: _Optional[_Iterable[_Union[_generated_pb2.Model, _Mapping]]] = ...) -> None: ...
 
 class CreateModelClassProfileResponse(_message.Message):
-    __slots__ = ["namespace", "name", "uri"]
+    __slots__ = ("namespace", "name", "uri")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     URI_FIELD_NUMBER: _ClassVar[int]
@@ -87,7 +87,7 @@ class CreateModelClassProfileResponse(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., uri: _Optional[str] = ...) -> None: ...
 
 class GetModelClassProfileRequest(_message.Message):
-    __slots__ = ["namespace", "name", "models"]
+    __slots__ = ("namespace", "name", "models")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     MODELS_FIELD_NUMBER: _ClassVar[int]
@@ -97,7 +97,7 @@ class GetModelClassProfileRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., models: _Optional[int] = ...) -> None: ...
 
 class DeleteModelClassRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ("namespace", "name")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -105,15 +105,15 @@ class DeleteModelClassRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class DeleteModelClassResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class UpdateModelClassResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class ModelClassTrainNowRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ("namespace", "name")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -121,11 +121,11 @@ class ModelClassTrainNowRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class ModelClassTrainNowResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class ModelClassPredictNowRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ("namespace", "name")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -133,5 +133,5 @@ class ModelClassPredictNowRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class ModelClassPredictNowResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...

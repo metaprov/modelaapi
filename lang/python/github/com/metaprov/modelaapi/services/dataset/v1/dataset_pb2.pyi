@@ -12,9 +12,9 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ListDatasetsRequest(_message.Message):
-    __slots__ = ["namespace", "labels", "page_size", "page_token", "order_by"]
+    __slots__ = ("namespace", "labels", "page_size", "page_token", "order_by")
     class LabelsEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -33,7 +33,7 @@ class ListDatasetsRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ..., page_size: _Optional[int] = ..., page_token: _Optional[str] = ..., order_by: _Optional[str] = ...) -> None: ...
 
 class ListDatasetsResponse(_message.Message):
-    __slots__ = ["datasets", "next_page_token"]
+    __slots__ = ("datasets", "next_page_token")
     DATASETS_FIELD_NUMBER: _ClassVar[int]
     NEXT_PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
     datasets: _generated_pb2.DatasetList
@@ -41,9 +41,9 @@ class ListDatasetsResponse(_message.Message):
     def __init__(self, datasets: _Optional[_Union[_generated_pb2.DatasetList, _Mapping]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
 
 class GetDatasetRequest(_message.Message):
-    __slots__ = ["namespace", "name", "labels"]
+    __slots__ = ("namespace", "name", "labels")
     class LabelsEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -58,7 +58,7 @@ class GetDatasetRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
 class GetDatasetResponse(_message.Message):
-    __slots__ = ["dataset", "yaml"]
+    __slots__ = ("dataset", "yaml")
     DATASET_FIELD_NUMBER: _ClassVar[int]
     YAML_FIELD_NUMBER: _ClassVar[int]
     dataset: _generated_pb2.Dataset
@@ -66,7 +66,7 @@ class GetDatasetResponse(_message.Message):
     def __init__(self, dataset: _Optional[_Union[_generated_pb2.Dataset, _Mapping]] = ..., yaml: _Optional[str] = ...) -> None: ...
 
 class GetDatasetSnapshotReferenceRequest(_message.Message):
-    __slots__ = ["namespace", "snapshot"]
+    __slots__ = ("namespace", "snapshot")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     SNAPSHOT_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -74,23 +74,23 @@ class GetDatasetSnapshotReferenceRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., snapshot: _Optional[_Union[_generated_pb2_1.SnapshotReference, _Mapping]] = ...) -> None: ...
 
 class GetDatasetSnapshotReferenceResponse(_message.Message):
-    __slots__ = ["snapshot"]
+    __slots__ = ("snapshot",)
     SNAPSHOT_FIELD_NUMBER: _ClassVar[int]
     snapshot: _generated_pb2.DatasetSnapshot
     def __init__(self, snapshot: _Optional[_Union[_generated_pb2.DatasetSnapshot, _Mapping]] = ...) -> None: ...
 
 class CreateDatasetRequest(_message.Message):
-    __slots__ = ["dataset"]
+    __slots__ = ("dataset",)
     DATASET_FIELD_NUMBER: _ClassVar[int]
     dataset: _generated_pb2.Dataset
     def __init__(self, dataset: _Optional[_Union[_generated_pb2.Dataset, _Mapping]] = ...) -> None: ...
 
 class CreateDatasetResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class UpdateDatasetRequest(_message.Message):
-    __slots__ = ["dataset", "field_mask"]
+    __slots__ = ("dataset", "field_mask")
     DATASET_FIELD_NUMBER: _ClassVar[int]
     FIELD_MASK_FIELD_NUMBER: _ClassVar[int]
     dataset: _generated_pb2.Dataset
@@ -98,11 +98,11 @@ class UpdateDatasetRequest(_message.Message):
     def __init__(self, dataset: _Optional[_Union[_generated_pb2.Dataset, _Mapping]] = ..., field_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
 
 class UpdateDatasetResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DeleteDatasetRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ("namespace", "name")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -110,11 +110,11 @@ class DeleteDatasetRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class DeleteDatasetResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class GetDatasetProfileRequest(_message.Message):
-    __slots__ = ["namespace", "snapshot", "groups"]
+    __slots__ = ("namespace", "snapshot", "groups")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     SNAPSHOT_FIELD_NUMBER: _ClassVar[int]
     GROUPS_FIELD_NUMBER: _ClassVar[int]
@@ -124,13 +124,13 @@ class GetDatasetProfileRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., snapshot: _Optional[_Union[_generated_pb2_1.SnapshotReference, _Mapping]] = ..., groups: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class GetDatasetProfileResponse(_message.Message):
-    __slots__ = ["profile"]
+    __slots__ = ("profile",)
     PROFILE_FIELD_NUMBER: _ClassVar[int]
     profile: _common_pb2.DatasetProfile
     def __init__(self, profile: _Optional[_Union[_common_pb2.DatasetProfile, _Mapping]] = ...) -> None: ...
 
 class DownloadDatasetRequest(_message.Message):
-    __slots__ = ["namespace", "snapshot", "groups", "convert"]
+    __slots__ = ("namespace", "snapshot", "groups", "convert")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     SNAPSHOT_FIELD_NUMBER: _ClassVar[int]
     GROUPS_FIELD_NUMBER: _ClassVar[int]
@@ -142,13 +142,13 @@ class DownloadDatasetRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., snapshot: _Optional[_Union[_generated_pb2_1.SnapshotReference, _Mapping]] = ..., groups: _Optional[_Iterable[str]] = ..., convert: bool = ...) -> None: ...
 
 class DownloadDatasetResponse(_message.Message):
-    __slots__ = ["raw"]
+    __slots__ = ("raw",)
     RAW_FIELD_NUMBER: _ClassVar[int]
     raw: bytes
     def __init__(self, raw: _Optional[bytes] = ...) -> None: ...
 
 class GetDatasetAnomaliesRequest(_message.Message):
-    __slots__ = ["namespace", "snapshot", "groups"]
+    __slots__ = ("namespace", "snapshot", "groups")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     SNAPSHOT_FIELD_NUMBER: _ClassVar[int]
     GROUPS_FIELD_NUMBER: _ClassVar[int]
@@ -158,13 +158,13 @@ class GetDatasetAnomaliesRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., snapshot: _Optional[_Union[_generated_pb2_1.SnapshotReference, _Mapping]] = ..., groups: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class GetDatasetAnomaliesResponse(_message.Message):
-    __slots__ = ["table"]
+    __slots__ = ("table",)
     TABLE_FIELD_NUMBER: _ClassVar[int]
     table: _common_pb2.TableView
     def __init__(self, table: _Optional[_Union[_common_pb2.TableView, _Mapping]] = ...) -> None: ...
 
 class CompareDatasetsRequest(_message.Message):
-    __slots__ = ["namespace", "snapshots"]
+    __slots__ = ("namespace", "snapshots")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     SNAPSHOTS_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -172,13 +172,13 @@ class CompareDatasetsRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., snapshots: _Optional[_Iterable[_Union[_generated_pb2_1.SnapshotReference, _Mapping]]] = ...) -> None: ...
 
 class CompareDatasetsResponse(_message.Message):
-    __slots__ = ["profiles"]
+    __slots__ = ("profiles",)
     PROFILES_FIELD_NUMBER: _ClassVar[int]
     profiles: _containers.RepeatedCompositeFieldContainer[_common_pb2.DatasetProfile]
     def __init__(self, profiles: _Optional[_Iterable[_Union[_common_pb2.DatasetProfile, _Mapping]]] = ...) -> None: ...
 
 class SnapshotDatasetRequest(_message.Message):
-    __slots__ = ["namespace", "name", "groups"]
+    __slots__ = ("namespace", "name", "groups")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     GROUPS_FIELD_NUMBER: _ClassVar[int]
@@ -188,7 +188,7 @@ class SnapshotDatasetRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., groups: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class SnapshotDatasetResponse(_message.Message):
-    __slots__ = ["name"]
+    __slots__ = ("name",)
     NAME_FIELD_NUMBER: _ClassVar[int]
     name: str
     def __init__(self, name: _Optional[str] = ...) -> None: ...

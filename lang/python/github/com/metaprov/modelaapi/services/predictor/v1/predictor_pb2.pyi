@@ -9,9 +9,9 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ListPredictorsRequest(_message.Message):
-    __slots__ = ["namespace", "labels", "page_size", "page_token", "order_by"]
+    __slots__ = ("namespace", "labels", "page_size", "page_token", "order_by")
     class LabelsEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -30,7 +30,7 @@ class ListPredictorsRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ..., page_size: _Optional[int] = ..., page_token: _Optional[str] = ..., order_by: _Optional[str] = ...) -> None: ...
 
 class ListPredictorsResponse(_message.Message):
-    __slots__ = ["predictors", "next_page_token"]
+    __slots__ = ("predictors", "next_page_token")
     PREDICTORS_FIELD_NUMBER: _ClassVar[int]
     NEXT_PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
     predictors: _generated_pb2.PredictorList
@@ -38,17 +38,17 @@ class ListPredictorsResponse(_message.Message):
     def __init__(self, predictors: _Optional[_Union[_generated_pb2.PredictorList, _Mapping]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
 
 class CreatePredictorResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class CreatePredictorRequest(_message.Message):
-    __slots__ = ["predictor"]
+    __slots__ = ("predictor",)
     PREDICTOR_FIELD_NUMBER: _ClassVar[int]
     predictor: _generated_pb2.Predictor
     def __init__(self, predictor: _Optional[_Union[_generated_pb2.Predictor, _Mapping]] = ...) -> None: ...
 
 class UpdatePredictorRequest(_message.Message):
-    __slots__ = ["predictor", "field_mask"]
+    __slots__ = ("predictor", "field_mask")
     PREDICTOR_FIELD_NUMBER: _ClassVar[int]
     FIELD_MASK_FIELD_NUMBER: _ClassVar[int]
     predictor: _generated_pb2.Predictor
@@ -56,11 +56,11 @@ class UpdatePredictorRequest(_message.Message):
     def __init__(self, predictor: _Optional[_Union[_generated_pb2.Predictor, _Mapping]] = ..., field_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
 
 class UpdatePredictorResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class GetPredictorRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ("namespace", "name")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -68,7 +68,7 @@ class GetPredictorRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class GetPredictorResponse(_message.Message):
-    __slots__ = ["predictor", "yaml"]
+    __slots__ = ("predictor", "yaml")
     PREDICTOR_FIELD_NUMBER: _ClassVar[int]
     YAML_FIELD_NUMBER: _ClassVar[int]
     predictor: _generated_pb2.Predictor
@@ -76,7 +76,7 @@ class GetPredictorResponse(_message.Message):
     def __init__(self, predictor: _Optional[_Union[_generated_pb2.Predictor, _Mapping]] = ..., yaml: _Optional[str] = ...) -> None: ...
 
 class DeletePredictorRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ("namespace", "name")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -84,11 +84,11 @@ class DeletePredictorRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class DeletePredictorResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class RollbackRequest(_message.Message):
-    __slots__ = ["namespace", "name", "modelName"]
+    __slots__ = ("namespace", "name", "modelName")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     MODELNAME_FIELD_NUMBER: _ClassVar[int]
@@ -98,11 +98,11 @@ class RollbackRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., modelName: _Optional[str] = ...) -> None: ...
 
 class RollbackResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class PredictOneRequest(_message.Message):
-    __slots__ = ["namespace", "name", "fields", "values"]
+    __slots__ = ("namespace", "name", "fields", "values")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     FIELDS_FIELD_NUMBER: _ClassVar[int]
@@ -114,9 +114,9 @@ class PredictOneRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., fields: _Optional[str] = ..., values: _Optional[str] = ...) -> None: ...
 
 class PredictOneResponse(_message.Message):
-    __slots__ = ["namespace", "name", "label", "score", "proba"]
+    __slots__ = ("namespace", "name", "label", "score", "proba")
     class ProbaEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str

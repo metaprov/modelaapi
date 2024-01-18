@@ -38,6 +38,9 @@ export class DocumentStatusUpdate extends jspb.Message {
   getDelete(): boolean;
   setDelete(value: boolean): DocumentStatusUpdate;
 
+  getName(): string;
+  setName(value: string): DocumentStatusUpdate;
+
   getError(): string;
   setError(value: string): DocumentStatusUpdate;
 
@@ -57,6 +60,7 @@ export class DocumentStatusUpdate extends jspb.Message {
 export namespace DocumentStatusUpdate {
   export type AsObject = {
     pb_delete: boolean,
+    name: string,
     error: string,
     status?: github_com_metaprov_modelaapi_pkg_apis_llm_v1alpha1_generated_pb.DocumentStatus.AsObject,
   }
@@ -79,6 +83,42 @@ export class RefreshResponse extends jspb.Message {
 export namespace RefreshResponse {
   export type AsObject = {
     statusesList: Array<DocumentStatusUpdate.AsObject>,
+  }
+}
+
+export class DeleteRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): DeleteRequest;
+
+  getName(): string;
+  setName(value: string): DeleteRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteRequest): DeleteRequest.AsObject;
+  static serializeBinaryToWriter(message: DeleteRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteRequest;
+  static deserializeBinaryFromReader(message: DeleteRequest, reader: jspb.BinaryReader): DeleteRequest;
+}
+
+export namespace DeleteRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+  }
+}
+
+export class DeleteResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteResponse): DeleteResponse.AsObject;
+  static serializeBinaryToWriter(message: DeleteResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteResponse;
+  static deserializeBinaryFromReader(message: DeleteResponse, reader: jspb.BinaryReader): DeleteResponse;
+}
+
+export namespace DeleteResponse {
+  export type AsObject = {
   }
 }
 

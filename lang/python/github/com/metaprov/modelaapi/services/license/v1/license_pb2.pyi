@@ -10,9 +10,9 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ListLicensesRequest(_message.Message):
-    __slots__ = ["namespace", "labels", "page_size", "page_token", "order_by"]
+    __slots__ = ("namespace", "labels", "page_size", "page_token", "order_by")
     class LabelsEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -31,7 +31,7 @@ class ListLicensesRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ..., page_size: _Optional[int] = ..., page_token: _Optional[str] = ..., order_by: _Optional[str] = ...) -> None: ...
 
 class ListLicensesResponse(_message.Message):
-    __slots__ = ["licences", "next_page_token"]
+    __slots__ = ("licences", "next_page_token")
     LICENCES_FIELD_NUMBER: _ClassVar[int]
     NEXT_PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
     licences: _generated_pb2.LicenseList
@@ -39,17 +39,17 @@ class ListLicensesResponse(_message.Message):
     def __init__(self, licences: _Optional[_Union[_generated_pb2.LicenseList, _Mapping]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
 
 class LicenseResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class CreateLicenseRequest(_message.Message):
-    __slots__ = ["license"]
+    __slots__ = ("license",)
     LICENSE_FIELD_NUMBER: _ClassVar[int]
     license: _generated_pb2.License
     def __init__(self, license: _Optional[_Union[_generated_pb2.License, _Mapping]] = ...) -> None: ...
 
 class CreateLicenseFromKeyRequest(_message.Message):
-    __slots__ = ["key", "tenant"]
+    __slots__ = ("key", "tenant")
     KEY_FIELD_NUMBER: _ClassVar[int]
     TENANT_FIELD_NUMBER: _ClassVar[int]
     key: str
@@ -57,11 +57,11 @@ class CreateLicenseFromKeyRequest(_message.Message):
     def __init__(self, key: _Optional[str] = ..., tenant: _Optional[str] = ...) -> None: ...
 
 class CreateLicenseResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class UpdateLicenseRequest(_message.Message):
-    __slots__ = ["license", "field_mask"]
+    __slots__ = ("license", "field_mask")
     LICENSE_FIELD_NUMBER: _ClassVar[int]
     FIELD_MASK_FIELD_NUMBER: _ClassVar[int]
     license: _generated_pb2.License
@@ -69,11 +69,11 @@ class UpdateLicenseRequest(_message.Message):
     def __init__(self, license: _Optional[_Union[_generated_pb2.License, _Mapping]] = ..., field_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
 
 class UpdateLicenseResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class GetLicenseRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ("namespace", "name")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -81,7 +81,7 @@ class GetLicenseRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class GetLicenseResponse(_message.Message):
-    __slots__ = ["license", "yaml"]
+    __slots__ = ("license", "yaml")
     LICENSE_FIELD_NUMBER: _ClassVar[int]
     YAML_FIELD_NUMBER: _ClassVar[int]
     license: _generated_pb2.License
@@ -89,7 +89,7 @@ class GetLicenseResponse(_message.Message):
     def __init__(self, license: _Optional[_Union[_generated_pb2.License, _Mapping]] = ..., yaml: _Optional[str] = ...) -> None: ...
 
 class GetLicenseNamespacesRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ("namespace", "name")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -97,13 +97,13 @@ class GetLicenseNamespacesRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class GetLicenseNamespacesResponse(_message.Message):
-    __slots__ = ["namespaces"]
+    __slots__ = ("namespaces",)
     NAMESPACES_FIELD_NUMBER: _ClassVar[int]
     namespaces: _containers.RepeatedCompositeFieldContainer[_common_pb2.NamespaceInfo]
     def __init__(self, namespaces: _Optional[_Iterable[_Union[_common_pb2.NamespaceInfo, _Mapping]]] = ...) -> None: ...
 
 class DeleteLicenseRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ("namespace", "name")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -111,5 +111,5 @@ class DeleteLicenseRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class DeleteLicenseResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...

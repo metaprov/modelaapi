@@ -11,7 +11,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class BatchPredictRequest(_message.Message):
-    __slots__ = ["prediction", "model", "datasource", "tenant"]
+    __slots__ = ("prediction", "model", "datasource", "tenant")
     PREDICTION_FIELD_NUMBER: _ClassVar[int]
     MODEL_FIELD_NUMBER: _ClassVar[int]
     DATASOURCE_FIELD_NUMBER: _ClassVar[int]
@@ -23,7 +23,7 @@ class BatchPredictRequest(_message.Message):
     def __init__(self, prediction: _Optional[_Union[_generated_pb2_1_1_1.Prediction, _Mapping]] = ..., model: _Optional[_Union[_generated_pb2_1_1.Model, _Mapping]] = ..., datasource: _Optional[_Union[_generated_pb2_1.DataSource, _Mapping]] = ..., tenant: _Optional[str] = ...) -> None: ...
 
 class BatchPredictModelClassRequest(_message.Message):
-    __slots__ = ["prediction", "datasource", "model", "modelClass", "entities", "groups"]
+    __slots__ = ("prediction", "datasource", "model", "modelClass", "entities", "groups")
     PREDICTION_FIELD_NUMBER: _ClassVar[int]
     DATASOURCE_FIELD_NUMBER: _ClassVar[int]
     MODEL_FIELD_NUMBER: _ClassVar[int]
@@ -39,15 +39,15 @@ class BatchPredictModelClassRequest(_message.Message):
     def __init__(self, prediction: _Optional[_Union[_generated_pb2_1_1_1.Prediction, _Mapping]] = ..., datasource: _Optional[_Union[_generated_pb2_1.DataSource, _Mapping]] = ..., model: _Optional[_Union[_generated_pb2_1_1.Model, _Mapping]] = ..., modelClass: _Optional[_Union[_generated_pb2_1_1.ModelClass, _Mapping]] = ..., entities: _Optional[_Iterable[_Union[_generated_pb2_1.Entity, _Mapping]]] = ..., groups: _Optional[_Iterable[_Union[_generated_pb2_1.FeatureGroup, _Mapping]]] = ...) -> None: ...
 
 class BatchPredictResponse(_message.Message):
-    __slots__ = ["rows"]
+    __slots__ = ("rows",)
     ROWS_FIELD_NUMBER: _ClassVar[int]
     rows: int
     def __init__(self, rows: _Optional[int] = ...) -> None: ...
 
 class ShutdownRequest(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class ShutdownResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...

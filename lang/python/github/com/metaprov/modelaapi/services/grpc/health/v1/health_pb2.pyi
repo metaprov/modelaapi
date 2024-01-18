@@ -6,15 +6,15 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class HealthCheckRequest(_message.Message):
-    __slots__ = ["service"]
+    __slots__ = ("service",)
     SERVICE_FIELD_NUMBER: _ClassVar[int]
     service: str
     def __init__(self, service: _Optional[str] = ...) -> None: ...
 
 class HealthCheckResponse(_message.Message):
-    __slots__ = ["status"]
+    __slots__ = ("status",)
     class ServingStatus(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         UNKNOWN: _ClassVar[HealthCheckResponse.ServingStatus]
         SERVING: _ClassVar[HealthCheckResponse.ServingStatus]
         NOT_SERVING: _ClassVar[HealthCheckResponse.ServingStatus]

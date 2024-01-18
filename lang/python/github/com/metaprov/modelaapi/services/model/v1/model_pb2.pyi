@@ -11,13 +11,13 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class CreateModelProfileResponse(_message.Message):
-    __slots__ = ["uri"]
+    __slots__ = ("uri",)
     URI_FIELD_NUMBER: _ClassVar[int]
     uri: str
     def __init__(self, uri: _Optional[str] = ...) -> None: ...
 
 class CreateModelProfileRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ("namespace", "name")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -25,7 +25,7 @@ class CreateModelProfileRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class ListModelProfileRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ("namespace", "name")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -33,7 +33,7 @@ class ListModelProfileRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class GetModelProfileRequest(_message.Message):
-    __slots__ = ["namespace", "name", "uri", "group"]
+    __slots__ = ("namespace", "name", "uri", "group")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     URI_FIELD_NUMBER: _ClassVar[int]
@@ -45,15 +45,15 @@ class GetModelProfileRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., uri: _Optional[str] = ..., group: _Optional[str] = ...) -> None: ...
 
 class GetModelProfileResponse(_message.Message):
-    __slots__ = ["profile"]
+    __slots__ = ("profile",)
     PROFILE_FIELD_NUMBER: _ClassVar[int]
     profile: _common_pb2.ModelProfile
     def __init__(self, profile: _Optional[_Union[_common_pb2.ModelProfile, _Mapping]] = ...) -> None: ...
 
 class GetModelLogsResponse(_message.Message):
-    __slots__ = ["logs"]
+    __slots__ = ("logs",)
     class LogsEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -64,7 +64,7 @@ class GetModelLogsResponse(_message.Message):
     def __init__(self, logs: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
 class GetModelLogsRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ("namespace", "name")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -72,27 +72,27 @@ class GetModelLogsRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class CreateModelRequest(_message.Message):
-    __slots__ = ["model"]
+    __slots__ = ("model",)
     MODEL_FIELD_NUMBER: _ClassVar[int]
     model: _generated_pb2.Model
     def __init__(self, model: _Optional[_Union[_generated_pb2.Model, _Mapping]] = ...) -> None: ...
 
 class CreateModelResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class UpdateModelRequest(_message.Message):
-    __slots__ = ["model"]
+    __slots__ = ("model",)
     MODEL_FIELD_NUMBER: _ClassVar[int]
     model: _generated_pb2.Model
     def __init__(self, model: _Optional[_Union[_generated_pb2.Model, _Mapping]] = ...) -> None: ...
 
 class UpdateModelResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class GetModelResponse(_message.Message):
-    __slots__ = ["model", "yaml"]
+    __slots__ = ("model", "yaml")
     MODEL_FIELD_NUMBER: _ClassVar[int]
     YAML_FIELD_NUMBER: _ClassVar[int]
     model: _generated_pb2.Model
@@ -100,7 +100,7 @@ class GetModelResponse(_message.Message):
     def __init__(self, model: _Optional[_Union[_generated_pb2.Model, _Mapping]] = ..., yaml: _Optional[str] = ...) -> None: ...
 
 class AbortModelRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ("namespace", "name")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -108,11 +108,11 @@ class AbortModelRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class AbortModelResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class PauseModelRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ("namespace", "name")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -120,11 +120,11 @@ class PauseModelRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class PauseModelResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class ResumeModelRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ("namespace", "name")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -132,11 +132,11 @@ class ResumeModelRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class ResumeModelResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class CompareModelsRequest(_message.Message):
-    __slots__ = ["namespace", "names"]
+    __slots__ = ("namespace", "names")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAMES_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -144,7 +144,7 @@ class CompareModelsRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., names: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class CompareModelsResponse(_message.Message):
-    __slots__ = ["namespace", "names", "profiles"]
+    __slots__ = ("namespace", "names", "profiles")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAMES_FIELD_NUMBER: _ClassVar[int]
     PROFILES_FIELD_NUMBER: _ClassVar[int]
@@ -154,7 +154,7 @@ class CompareModelsResponse(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., names: _Optional[_Iterable[str]] = ..., profiles: _Optional[_Iterable[_Union[_common_pb2.ModelProfile, _Mapping]]] = ...) -> None: ...
 
 class CompileModelRequest(_message.Message):
-    __slots__ = ["namespace", "name", "target", "compiler"]
+    __slots__ = ("namespace", "name", "target", "compiler")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     TARGET_FIELD_NUMBER: _ClassVar[int]
@@ -166,7 +166,7 @@ class CompileModelRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., target: _Optional[str] = ..., compiler: _Optional[str] = ...) -> None: ...
 
 class CompileModelResponse(_message.Message):
-    __slots__ = ["namespace", "names"]
+    __slots__ = ("namespace", "names")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAMES_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -174,7 +174,7 @@ class CompileModelResponse(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., names: _Optional[str] = ...) -> None: ...
 
 class DeployModelRequest(_message.Message):
-    __slots__ = ["namespace", "name", "predictor", "replicas", "traffic", "role", "servingsite"]
+    __slots__ = ("namespace", "name", "predictor", "replicas", "traffic", "role", "servingsite")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     PREDICTOR_FIELD_NUMBER: _ClassVar[int]
@@ -192,7 +192,7 @@ class DeployModelRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., predictor: _Optional[str] = ..., replicas: _Optional[int] = ..., traffic: _Optional[int] = ..., role: _Optional[str] = ..., servingsite: _Optional[str] = ...) -> None: ...
 
 class PublishModelRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ("namespace", "name")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -200,13 +200,13 @@ class PublishModelRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class DeployModelResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class ListModelsRequest(_message.Message):
-    __slots__ = ["namespace", "labels", "page_size", "page_token", "order_by"]
+    __slots__ = ("namespace", "labels", "page_size", "page_token", "order_by")
     class LabelsEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -225,13 +225,13 @@ class ListModelsRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ..., page_size: _Optional[int] = ..., page_token: _Optional[str] = ..., order_by: _Optional[str] = ...) -> None: ...
 
 class ListModelsResponse(_message.Message):
-    __slots__ = ["models"]
+    __slots__ = ("models",)
     MODELS_FIELD_NUMBER: _ClassVar[int]
     models: _generated_pb2.ModelList
     def __init__(self, models: _Optional[_Union[_generated_pb2.ModelList, _Mapping]] = ...) -> None: ...
 
 class GetModelRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ("namespace", "name")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -239,11 +239,11 @@ class GetModelRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class UpdateModelResult(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DeleteModelRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ("namespace", "name")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -251,17 +251,17 @@ class DeleteModelRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class DeleteModelResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class PublishModelResponse(_message.Message):
-    __slots__ = ["modelTarHash"]
+    __slots__ = ("modelTarHash",)
     MODELTARHASH_FIELD_NUMBER: _ClassVar[int]
     modelTarHash: str
     def __init__(self, modelTarHash: _Optional[str] = ...) -> None: ...
 
 class GetMisclassRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ("namespace", "name")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -269,13 +269,13 @@ class GetMisclassRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class GetMisclassResponse(_message.Message):
-    __slots__ = ["table"]
+    __slots__ = ("table",)
     TABLE_FIELD_NUMBER: _ClassVar[int]
     table: _common_pb2.TableView
     def __init__(self, table: _Optional[_Union[_common_pb2.TableView, _Mapping]] = ...) -> None: ...
 
 class DownloadModelRequest(_message.Message):
-    __slots__ = ["namespace", "name", "group"]
+    __slots__ = ("namespace", "name", "group")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     GROUP_FIELD_NUMBER: _ClassVar[int]
@@ -285,13 +285,13 @@ class DownloadModelRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., group: _Optional[str] = ...) -> None: ...
 
 class DownloadModelResponse(_message.Message):
-    __slots__ = ["raw"]
+    __slots__ = ("raw",)
     RAW_FIELD_NUMBER: _ClassVar[int]
     raw: bytes
     def __init__(self, raw: _Optional[bytes] = ...) -> None: ...
 
 class PromoteModelRequest(_message.Message):
-    __slots__ = ["namespace", "name", "tenant", "servingsite", "predictor", "shadow"]
+    __slots__ = ("namespace", "name", "tenant", "servingsite", "predictor", "shadow")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     TENANT_FIELD_NUMBER: _ClassVar[int]
@@ -307,11 +307,11 @@ class PromoteModelRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., tenant: _Optional[str] = ..., servingsite: _Optional[str] = ..., predictor: _Optional[str] = ..., shadow: bool = ...) -> None: ...
 
 class PromoteModelResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class TestModelRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ("namespace", "name")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -319,11 +319,11 @@ class TestModelRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class TestModelResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class PreviewScoreRequest(_message.Message):
-    __slots__ = ["snapshot", "pipelines", "estimator", "metric", "rows", "client"]
+    __slots__ = ("snapshot", "pipelines", "estimator", "metric", "rows", "client")
     SNAPSHOT_FIELD_NUMBER: _ClassVar[int]
     PIPELINES_FIELD_NUMBER: _ClassVar[int]
     ESTIMATOR_FIELD_NUMBER: _ClassVar[int]
@@ -339,7 +339,7 @@ class PreviewScoreRequest(_message.Message):
     def __init__(self, snapshot: _Optional[_Union[_generated_pb2_1.DatasetSnapshot, _Mapping]] = ..., pipelines: _Optional[_Iterable[_Union[_generated_pb2.FeatureEngineeringPipeline, _Mapping]]] = ..., estimator: _Optional[str] = ..., metric: _Optional[str] = ..., rows: _Optional[int] = ..., client: _Optional[str] = ...) -> None: ...
 
 class PreviewScoreResponse(_message.Message):
-    __slots__ = ["score"]
+    __slots__ = ("score",)
     SCORE_FIELD_NUMBER: _ClassVar[int]
     score: float
     def __init__(self, score: _Optional[float] = ...) -> None: ...

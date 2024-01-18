@@ -8,21 +8,21 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class GenerateTrainingDatasetRequest(_message.Message):
-    __slots__ = ["model"]
+    __slots__ = ("model",)
     MODEL_FIELD_NUMBER: _ClassVar[int]
     model: _generated_pb2_1_1.ModelClass
     def __init__(self, model: _Optional[_Union[_generated_pb2_1_1.ModelClass, _Mapping]] = ...) -> None: ...
 
 class GenerateTrainingDatasetResponse(_message.Message):
-    __slots__ = ["path"]
+    __slots__ = ("path",)
     PATH_FIELD_NUMBER: _ClassVar[int]
     path: str
     def __init__(self, path: _Optional[str] = ...) -> None: ...
 
 class SyncRequest(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class SyncResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...

@@ -2,15 +2,18 @@
 /**
  * @fileoverview
  * @enhanceable
+ * @suppress {missingRequire} reports error on implicit type usages.
  * @suppress {messageConventions} JS Compiler reports an error if a variable or
  *     field starts with 'MSG_' and isn't a translatable message.
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
+/* eslint-disable */
+// @ts-nocheck
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global = Function('return this')();
+var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
 var github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb = require('../../../../../../../github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1/generated_pb.js');
 goog.object.extend(proto, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb);
@@ -5927,13 +5930,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    tenantref: (f = msg.getTenantref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
+    owner: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     category: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     provider: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     secretdataMap: (f = msg.getSecretdataMap()) ? f.toObject(includeInstance, undefined) : [],
-    optionsMap: (f = msg.getOptionsMap()) ? f.toObject(includeInstance, undefined) : [],
-    owner: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
-    secretref: (f = msg.getSecretref()) && k8s_io_api_core_v1_generated_pb.SecretReference.toObject(includeInstance, f)
+    optionsMap: (f = msg.getOptionsMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -5971,9 +5972,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.deser
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
-      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
-      msg.setTenantref(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOwner(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -5994,15 +5994,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.deser
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
          });
-      break;
-    case 6:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setOwner(value);
-      break;
-    case 7:
-      var value = new k8s_io_api_core_v1_generated_pb.SecretReference;
-      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.SecretReference.deserializeBinaryFromReader);
-      msg.setSecretref(value);
       break;
     default:
       reader.skipField();
@@ -6033,12 +6024,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getTenantref();
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
   if (f != null) {
-    writer.writeMessage(
+    writer.writeString(
       1,
-      f,
-      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
+      f
     );
   }
   f = /** @type {string} */ (jspb.Message.getField(message, 2));
@@ -6063,49 +6053,33 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.seria
   if (f && f.getLength() > 0) {
     f.serializeBinary(5, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 6));
-  if (f != null) {
-    writer.writeString(
-      6,
-      f
-    );
-  }
-  f = message.getSecretref();
-  if (f != null) {
-    writer.writeMessage(
-      7,
-      f,
-      k8s_io_api_core_v1_generated_pb.SecretReference.serializeBinaryToWriter
-    );
-  }
 };
 
 
 /**
- * optional k8s.io.api.core.v1.ObjectReference tenantRef = 1;
- * @return {?proto.k8s.io.api.core.v1.ObjectReference}
+ * optional string owner = 1;
+ * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getTenantref = function() {
-  return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 1));
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getOwner = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setTenantref = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.clearTenantref = function() {
-  return this.setTenantref(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setOwner = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.clearOwner = function() {
+  return jspb.Message.setField(this, 1, undefined);
 };
 
 
@@ -6113,7 +6087,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasTenantref = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasOwner = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -6234,79 +6208,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
   return this;};
 
 
-/**
- * optional string owner = 6;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getOwner = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setOwner = function(value) {
-  return jspb.Message.setField(this, 6, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.clearOwner = function() {
-  return jspb.Message.setField(this, 6, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasOwner = function() {
-  return jspb.Message.getField(this, 6) != null;
-};
-
-
-/**
- * optional k8s.io.api.core.v1.SecretReference secretRef = 7;
- * @return {?proto.k8s.io.api.core.v1.SecretReference}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getSecretref = function() {
-  return /** @type{?proto.k8s.io.api.core.v1.SecretReference} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.SecretReference, 7));
-};
-
-
-/**
- * @param {?proto.k8s.io.api.core.v1.SecretReference|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setSecretref = function(value) {
-  return jspb.Message.setWrapperField(this, 7, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.clearSecretref = function() {
-  return this.setSecretref(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasSecretref = function() {
-  return jspb.Message.getField(this, 7) != null;
-};
-
-
 
 /**
  * List of repeated fields within this message type.
@@ -6348,8 +6249,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus.toO
   var f, obj = {
     observedgeneration: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     updatedat: (f = msg.getUpdatedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    failurereason: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    failuremessage: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.toObject, includeInstance)
   };
@@ -6396,14 +6295,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus.des
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
       msg.setUpdatedat(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setFailurereason(value);
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setFailuremessage(value);
       break;
     case 5:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition;
@@ -6452,20 +6343,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus.ser
       2,
       f,
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 3));
-  if (f != null) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 4));
-  if (f != null) {
-    writer.writeString(
-      4,
-      f
     );
   }
   f = message.getConditionsList();
@@ -6549,78 +6426,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus.pro
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus.prototype.hasUpdatedat = function() {
   return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional string failureReason = 3;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus.prototype.getFailurereason = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus.prototype.setFailurereason = function(value) {
-  return jspb.Message.setField(this, 3, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus.prototype.clearFailurereason = function() {
-  return jspb.Message.setField(this, 3, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus.prototype.hasFailurereason = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional string failureMessage = 4;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus.prototype.getFailuremessage = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus.prototype.setFailuremessage = function(value) {
-  return jspb.Message.setField(this, 4, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus.prototype.clearFailuremessage = function() {
-  return jspb.Message.setField(this, 4, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus.prototype.hasFailuremessage = function() {
-  return jspb.Message.getField(this, 4) != null;
 };
 
 
@@ -13162,8 +12967,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.de
       msg.setTotalpredictoraccuracyfailed(value);
       break;
     case 8:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.addDailypredictionscounts(value);
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt32() : [reader.readInt32()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addDailypredictionscounts(values[i]);
+      }
       break;
     case 10:
       var value = /** @type {string} */ (reader.readString());

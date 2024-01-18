@@ -9,13 +9,13 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class AggregationRule(_message.Message):
-    __slots__ = ["clusterRoleSelectors"]
+    __slots__ = ("clusterRoleSelectors",)
     CLUSTERROLESELECTORS_FIELD_NUMBER: _ClassVar[int]
     clusterRoleSelectors: _containers.RepeatedCompositeFieldContainer[_generated_pb2.LabelSelector]
     def __init__(self, clusterRoleSelectors: _Optional[_Iterable[_Union[_generated_pb2.LabelSelector, _Mapping]]] = ...) -> None: ...
 
 class ClusterRole(_message.Message):
-    __slots__ = ["metadata", "rules", "aggregationRule"]
+    __slots__ = ("metadata", "rules", "aggregationRule")
     METADATA_FIELD_NUMBER: _ClassVar[int]
     RULES_FIELD_NUMBER: _ClassVar[int]
     AGGREGATIONRULE_FIELD_NUMBER: _ClassVar[int]
@@ -25,7 +25,7 @@ class ClusterRole(_message.Message):
     def __init__(self, metadata: _Optional[_Union[_generated_pb2.ObjectMeta, _Mapping]] = ..., rules: _Optional[_Iterable[_Union[PolicyRule, _Mapping]]] = ..., aggregationRule: _Optional[_Union[AggregationRule, _Mapping]] = ...) -> None: ...
 
 class ClusterRoleBinding(_message.Message):
-    __slots__ = ["metadata", "subjects", "roleRef"]
+    __slots__ = ("metadata", "subjects", "roleRef")
     METADATA_FIELD_NUMBER: _ClassVar[int]
     SUBJECTS_FIELD_NUMBER: _ClassVar[int]
     ROLEREF_FIELD_NUMBER: _ClassVar[int]
@@ -35,7 +35,7 @@ class ClusterRoleBinding(_message.Message):
     def __init__(self, metadata: _Optional[_Union[_generated_pb2.ObjectMeta, _Mapping]] = ..., subjects: _Optional[_Iterable[_Union[Subject, _Mapping]]] = ..., roleRef: _Optional[_Union[RoleRef, _Mapping]] = ...) -> None: ...
 
 class ClusterRoleBindingList(_message.Message):
-    __slots__ = ["metadata", "items"]
+    __slots__ = ("metadata", "items")
     METADATA_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     metadata: _generated_pb2.ListMeta
@@ -43,7 +43,7 @@ class ClusterRoleBindingList(_message.Message):
     def __init__(self, metadata: _Optional[_Union[_generated_pb2.ListMeta, _Mapping]] = ..., items: _Optional[_Iterable[_Union[ClusterRoleBinding, _Mapping]]] = ...) -> None: ...
 
 class ClusterRoleList(_message.Message):
-    __slots__ = ["metadata", "items"]
+    __slots__ = ("metadata", "items")
     METADATA_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     metadata: _generated_pb2.ListMeta
@@ -51,7 +51,7 @@ class ClusterRoleList(_message.Message):
     def __init__(self, metadata: _Optional[_Union[_generated_pb2.ListMeta, _Mapping]] = ..., items: _Optional[_Iterable[_Union[ClusterRole, _Mapping]]] = ...) -> None: ...
 
 class PolicyRule(_message.Message):
-    __slots__ = ["verbs", "apiGroups", "resources", "resourceNames", "nonResourceURLs"]
+    __slots__ = ("verbs", "apiGroups", "resources", "resourceNames", "nonResourceURLs")
     VERBS_FIELD_NUMBER: _ClassVar[int]
     APIGROUPS_FIELD_NUMBER: _ClassVar[int]
     RESOURCES_FIELD_NUMBER: _ClassVar[int]
@@ -65,7 +65,7 @@ class PolicyRule(_message.Message):
     def __init__(self, verbs: _Optional[_Iterable[str]] = ..., apiGroups: _Optional[_Iterable[str]] = ..., resources: _Optional[_Iterable[str]] = ..., resourceNames: _Optional[_Iterable[str]] = ..., nonResourceURLs: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class Role(_message.Message):
-    __slots__ = ["metadata", "rules"]
+    __slots__ = ("metadata", "rules")
     METADATA_FIELD_NUMBER: _ClassVar[int]
     RULES_FIELD_NUMBER: _ClassVar[int]
     metadata: _generated_pb2.ObjectMeta
@@ -73,7 +73,7 @@ class Role(_message.Message):
     def __init__(self, metadata: _Optional[_Union[_generated_pb2.ObjectMeta, _Mapping]] = ..., rules: _Optional[_Iterable[_Union[PolicyRule, _Mapping]]] = ...) -> None: ...
 
 class RoleBinding(_message.Message):
-    __slots__ = ["metadata", "subjects", "roleRef"]
+    __slots__ = ("metadata", "subjects", "roleRef")
     METADATA_FIELD_NUMBER: _ClassVar[int]
     SUBJECTS_FIELD_NUMBER: _ClassVar[int]
     ROLEREF_FIELD_NUMBER: _ClassVar[int]
@@ -83,7 +83,7 @@ class RoleBinding(_message.Message):
     def __init__(self, metadata: _Optional[_Union[_generated_pb2.ObjectMeta, _Mapping]] = ..., subjects: _Optional[_Iterable[_Union[Subject, _Mapping]]] = ..., roleRef: _Optional[_Union[RoleRef, _Mapping]] = ...) -> None: ...
 
 class RoleBindingList(_message.Message):
-    __slots__ = ["metadata", "items"]
+    __slots__ = ("metadata", "items")
     METADATA_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     metadata: _generated_pb2.ListMeta
@@ -91,7 +91,7 @@ class RoleBindingList(_message.Message):
     def __init__(self, metadata: _Optional[_Union[_generated_pb2.ListMeta, _Mapping]] = ..., items: _Optional[_Iterable[_Union[RoleBinding, _Mapping]]] = ...) -> None: ...
 
 class RoleList(_message.Message):
-    __slots__ = ["metadata", "items"]
+    __slots__ = ("metadata", "items")
     METADATA_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     metadata: _generated_pb2.ListMeta
@@ -99,7 +99,7 @@ class RoleList(_message.Message):
     def __init__(self, metadata: _Optional[_Union[_generated_pb2.ListMeta, _Mapping]] = ..., items: _Optional[_Iterable[_Union[Role, _Mapping]]] = ...) -> None: ...
 
 class RoleRef(_message.Message):
-    __slots__ = ["apiGroup", "kind", "name"]
+    __slots__ = ("apiGroup", "kind", "name")
     APIGROUP_FIELD_NUMBER: _ClassVar[int]
     KIND_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
@@ -109,7 +109,7 @@ class RoleRef(_message.Message):
     def __init__(self, apiGroup: _Optional[str] = ..., kind: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class Subject(_message.Message):
-    __slots__ = ["kind", "apiGroup", "name", "namespace"]
+    __slots__ = ("kind", "apiGroup", "name", "namespace")
     KIND_FIELD_NUMBER: _ClassVar[int]
     APIGROUP_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]

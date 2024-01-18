@@ -13,13 +13,21 @@ message RefreshRequest {
 
 message DocumentStatusUpdate {
     bool delete = 1;
-    string error = 2;
-    github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.DocumentStatus status = 3;
+    string name = 2;
+    string error = 3;
+    github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.DocumentStatus status = 4;
 }
 
 message RefreshResponse {
     repeated DocumentStatusUpdate statuses = 1;
 }
+
+message DeleteRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message DeleteResponse {}
 
 
 message ShutdownRequest {}
@@ -27,5 +35,6 @@ message ShutdownResponse {}
 
 service LLMService {
     rpc Refresh(RefreshRequest) returns (RefreshResponse) {}
+    rpc Delete(DeleteRequest) returns (DeleteResponse) {}
     rpc Shutdown(ShutdownRequest) returns (ShutdownResponse) {}
 }

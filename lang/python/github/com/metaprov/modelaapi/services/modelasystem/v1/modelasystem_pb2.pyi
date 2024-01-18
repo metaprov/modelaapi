@@ -9,7 +9,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class DownloadLogFileRequest(_message.Message):
-    __slots__ = ["tenant", "namespace", "bucket", "path"]
+    __slots__ = ("tenant", "namespace", "bucket", "path")
     TENANT_FIELD_NUMBER: _ClassVar[int]
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     BUCKET_FIELD_NUMBER: _ClassVar[int]
@@ -21,13 +21,13 @@ class DownloadLogFileRequest(_message.Message):
     def __init__(self, tenant: _Optional[str] = ..., namespace: _Optional[str] = ..., bucket: _Optional[str] = ..., path: _Optional[str] = ...) -> None: ...
 
 class DownloadLogFileResponse(_message.Message):
-    __slots__ = ["result"]
+    __slots__ = ("result",)
     RESULT_FIELD_NUMBER: _ClassVar[int]
     result: bytes
     def __init__(self, result: _Optional[bytes] = ...) -> None: ...
 
 class BackupDatabaseRequest(_message.Message):
-    __slots__ = ["namespace", "bucket", "path"]
+    __slots__ = ("namespace", "bucket", "path")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     BUCKET_FIELD_NUMBER: _ClassVar[int]
     PATH_FIELD_NUMBER: _ClassVar[int]
@@ -37,13 +37,13 @@ class BackupDatabaseRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., bucket: _Optional[str] = ..., path: _Optional[str] = ...) -> None: ...
 
 class BackupDatabaseResponse(_message.Message):
-    __slots__ = ["path"]
+    __slots__ = ("path",)
     PATH_FIELD_NUMBER: _ClassVar[int]
     path: str
     def __init__(self, path: _Optional[str] = ...) -> None: ...
 
 class BackupEtcdRequest(_message.Message):
-    __slots__ = ["namespace", "bucket", "path"]
+    __slots__ = ("namespace", "bucket", "path")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     BUCKET_FIELD_NUMBER: _ClassVar[int]
     PATH_FIELD_NUMBER: _ClassVar[int]
@@ -53,7 +53,7 @@ class BackupEtcdRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., bucket: _Optional[str] = ..., path: _Optional[str] = ...) -> None: ...
 
 class BackupEtcdResponse(_message.Message):
-    __slots__ = ["path"]
+    __slots__ = ("path",)
     PATH_FIELD_NUMBER: _ClassVar[int]
     path: str
     def __init__(self, path: _Optional[str] = ...) -> None: ...

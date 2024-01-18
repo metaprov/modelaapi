@@ -10,9 +10,9 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ListAccountsRequest(_message.Message):
-    __slots__ = ["namespace", "labels", "page_size", "page_token", "order_by"]
+    __slots__ = ("namespace", "labels", "page_size", "page_token", "order_by")
     class LabelsEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -31,7 +31,7 @@ class ListAccountsRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ..., page_size: _Optional[int] = ..., page_token: _Optional[str] = ..., order_by: _Optional[str] = ...) -> None: ...
 
 class ListAccountsResponse(_message.Message):
-    __slots__ = ["accounts", "next_page_token"]
+    __slots__ = ("accounts", "next_page_token")
     ACCOUNTS_FIELD_NUMBER: _ClassVar[int]
     NEXT_PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
     accounts: _generated_pb2.AccountList
@@ -39,11 +39,11 @@ class ListAccountsResponse(_message.Message):
     def __init__(self, accounts: _Optional[_Union[_generated_pb2.AccountList, _Mapping]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
 
 class AccountResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class CreateAccountRequest(_message.Message):
-    __slots__ = ["account", "password"]
+    __slots__ = ("account", "password")
     ACCOUNT_FIELD_NUMBER: _ClassVar[int]
     PASSWORD_FIELD_NUMBER: _ClassVar[int]
     account: _generated_pb2.Account
@@ -51,11 +51,11 @@ class CreateAccountRequest(_message.Message):
     def __init__(self, account: _Optional[_Union[_generated_pb2.Account, _Mapping]] = ..., password: _Optional[str] = ...) -> None: ...
 
 class CreateAccountResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class UpdateAccountRequest(_message.Message):
-    __slots__ = ["account", "update_mask"]
+    __slots__ = ("account", "update_mask")
     ACCOUNT_FIELD_NUMBER: _ClassVar[int]
     UPDATE_MASK_FIELD_NUMBER: _ClassVar[int]
     account: _generated_pb2.Account
@@ -63,11 +63,11 @@ class UpdateAccountRequest(_message.Message):
     def __init__(self, account: _Optional[_Union[_generated_pb2.Account, _Mapping]] = ..., update_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
 
 class UpdateAccountResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class GetAccountRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ("namespace", "name")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -75,7 +75,7 @@ class GetAccountRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class GetAccountResponse(_message.Message):
-    __slots__ = ["account", "yaml"]
+    __slots__ = ("account", "yaml")
     ACCOUNT_FIELD_NUMBER: _ClassVar[int]
     YAML_FIELD_NUMBER: _ClassVar[int]
     account: _generated_pb2.Account
@@ -83,7 +83,7 @@ class GetAccountResponse(_message.Message):
     def __init__(self, account: _Optional[_Union[_generated_pb2.Account, _Mapping]] = ..., yaml: _Optional[str] = ...) -> None: ...
 
 class GetAccountNamespacesRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ("namespace", "name")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -91,13 +91,13 @@ class GetAccountNamespacesRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class GetAccountNamespacesResponse(_message.Message):
-    __slots__ = ["namespaces"]
+    __slots__ = ("namespaces",)
     NAMESPACES_FIELD_NUMBER: _ClassVar[int]
     namespaces: _containers.RepeatedCompositeFieldContainer[_common_pb2.NamespaceInfo]
     def __init__(self, namespaces: _Optional[_Iterable[_Union[_common_pb2.NamespaceInfo, _Mapping]]] = ...) -> None: ...
 
 class DeleteAccountRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ("namespace", "name")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -105,19 +105,19 @@ class DeleteAccountRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class DeleteAccountResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class AccountCreateResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class ResetPasswordResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class AccountLoginRequest(_message.Message):
-    __slots__ = ["namespace", "name", "password"]
+    __slots__ = ("namespace", "name", "password")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     PASSWORD_FIELD_NUMBER: _ClassVar[int]
@@ -127,13 +127,13 @@ class AccountLoginRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., password: _Optional[str] = ...) -> None: ...
 
 class AccountLoginResponse(_message.Message):
-    __slots__ = ["token"]
+    __slots__ = ("token",)
     TOKEN_FIELD_NUMBER: _ClassVar[int]
     token: str
     def __init__(self, token: _Optional[str] = ...) -> None: ...
 
 class AccountGetByNameRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ("namespace", "name")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -141,7 +141,7 @@ class AccountGetByNameRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class ChangePasswordRequest(_message.Message):
-    __slots__ = ["namespace", "name", "old", "new", "confirmedNew"]
+    __slots__ = ("namespace", "name", "old", "new", "confirmedNew")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     OLD_FIELD_NUMBER: _ClassVar[int]
@@ -155,11 +155,11 @@ class ChangePasswordRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., old: _Optional[str] = ..., new: _Optional[str] = ..., confirmedNew: _Optional[str] = ...) -> None: ...
 
 class ChangePasswordResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class ResetPasswordRequest(_message.Message):
-    __slots__ = ["namespace", "name", "new", "confirmedNew"]
+    __slots__ = ("namespace", "name", "new", "confirmedNew")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     NEW_FIELD_NUMBER: _ClassVar[int]
@@ -171,7 +171,7 @@ class ResetPasswordRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., new: _Optional[str] = ..., confirmedNew: _Optional[str] = ...) -> None: ...
 
 class UploadAvatarRequest(_message.Message):
-    __slots__ = ["namespace", "name", "bucketName", "avatar"]
+    __slots__ = ("namespace", "name", "bucketName", "avatar")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     BUCKETNAME_FIELD_NUMBER: _ClassVar[int]
@@ -183,11 +183,11 @@ class UploadAvatarRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., bucketName: _Optional[str] = ..., avatar: _Optional[bytes] = ...) -> None: ...
 
 class UploadAvatarResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DownloadAvatarRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ("namespace", "name")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -195,7 +195,7 @@ class DownloadAvatarRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class DownloadAvatarReponse(_message.Message):
-    __slots__ = ["avatar"]
+    __slots__ = ("avatar",)
     AVATAR_FIELD_NUMBER: _ClassVar[int]
     avatar: bytes
     def __init__(self, avatar: _Optional[bytes] = ...) -> None: ...

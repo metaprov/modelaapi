@@ -9,9 +9,9 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ListRecipeRunsRequest(_message.Message):
-    __slots__ = ["namespace", "labels", "page_size", "page_token", "order_by"]
+    __slots__ = ("namespace", "labels", "page_size", "page_token", "order_by")
     class LabelsEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -30,7 +30,7 @@ class ListRecipeRunsRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ..., page_size: _Optional[int] = ..., page_token: _Optional[str] = ..., order_by: _Optional[str] = ...) -> None: ...
 
 class ListRecipeRunsResponse(_message.Message):
-    __slots__ = ["reciperuns", "next_page_token"]
+    __slots__ = ("reciperuns", "next_page_token")
     RECIPERUNS_FIELD_NUMBER: _ClassVar[int]
     NEXT_PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
     reciperuns: _generated_pb2.RecipeRunList
@@ -38,17 +38,17 @@ class ListRecipeRunsResponse(_message.Message):
     def __init__(self, reciperuns: _Optional[_Union[_generated_pb2.RecipeRunList, _Mapping]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
 
 class CreateRecipeRunRequest(_message.Message):
-    __slots__ = ["reciperun"]
+    __slots__ = ("reciperun",)
     RECIPERUN_FIELD_NUMBER: _ClassVar[int]
     reciperun: _generated_pb2.RecipeRun
     def __init__(self, reciperun: _Optional[_Union[_generated_pb2.RecipeRun, _Mapping]] = ...) -> None: ...
 
 class CreateRecipeRunResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class UpdateRecipeRunRequest(_message.Message):
-    __slots__ = ["reciperun", "field_mask"]
+    __slots__ = ("reciperun", "field_mask")
     RECIPERUN_FIELD_NUMBER: _ClassVar[int]
     FIELD_MASK_FIELD_NUMBER: _ClassVar[int]
     reciperun: _generated_pb2.RecipeRun
@@ -56,11 +56,11 @@ class UpdateRecipeRunRequest(_message.Message):
     def __init__(self, reciperun: _Optional[_Union[_generated_pb2.RecipeRun, _Mapping]] = ..., field_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
 
 class UpdateRecipeRunResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class GetRecipeRunRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ("namespace", "name")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -68,7 +68,7 @@ class GetRecipeRunRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class GetRecipeRunResponse(_message.Message):
-    __slots__ = ["reciperun", "yaml"]
+    __slots__ = ("reciperun", "yaml")
     RECIPERUN_FIELD_NUMBER: _ClassVar[int]
     YAML_FIELD_NUMBER: _ClassVar[int]
     reciperun: _generated_pb2.RecipeRun
@@ -76,7 +76,7 @@ class GetRecipeRunResponse(_message.Message):
     def __init__(self, reciperun: _Optional[_Union[_generated_pb2.RecipeRun, _Mapping]] = ..., yaml: _Optional[str] = ...) -> None: ...
 
 class DeleteRecipeRunRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ("namespace", "name")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -84,5 +84,5 @@ class DeleteRecipeRunRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class DeleteRecipeRunResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...

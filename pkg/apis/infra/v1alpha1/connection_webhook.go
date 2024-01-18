@@ -8,7 +8,6 @@ package v1alpha1
 
 import (
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
-	corev1 "k8s.io/api/core/v1"
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
@@ -17,22 +16,12 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/webhook"
 )
 
-// defaulting
 var _ webhook.Defaulter = &Connection{}
 
-// No defaults for the current configuration
 func (connection *Connection) Default() {
-	if connection.Spec.TenantRef == nil {
-		connection.Spec.TenantRef = &corev1.ObjectReference{
-			Namespace: "modela-system",
-			Name:      "modela",
-		}
+	if connection.Spec.Category == "" {
+		connection.Spec.Category = catalog.GeneralConnectionCategory
 	}
-	if connection.Spec.Category == nil {
-		general := catalog.GeneralConnectionCategory
-		connection.Spec.Category = &general
-	}
-
 }
 
 // validation
@@ -63,7 +52,7 @@ func (connection Connection) validate() error {
 	}
 
 	return apierrors.NewInvalid(
-		schema.GroupKind{Group: "infra.modela.ai", Kind: "StorageConnection"},
+		schema.GroupKind{Group: "infra.modela.ai", Kind: "Connection"},
 		connection.Name, allErrs)
 }
 

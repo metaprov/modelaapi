@@ -362,9 +362,9 @@ message ConnectionList {
 
 // ConnectionSpec defines the desired state of a Connection
 message ConnectionSpec {
-  // The reference to the Tenant which owns the DataProduct. Defaults to `default-tenant`
+  // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference tenantRef = 1;
+  optional string owner = 1;
 
   // The type of external system which the connection references
   // +kubebuilder:default:="general"
@@ -382,12 +382,6 @@ message ConnectionSpec {
 
   // Options contains non-sensitive options relevant to the Connection
   map<string, string> options = 5;
-
-  // +kubebuilder:default:="no-one"
-  // +kubebuilder:validation:Optional
-  optional string owner = 6;
-
-  optional k8s.io.api.core.v1.SecretReference secretRef = 7;
 }
 
 // ConnectionStatus is the observed state of a Connection
@@ -399,15 +393,6 @@ message ConnectionStatus {
   // Last time the object was updated
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 2;
-
-  // UpdateUpdateStrategy in case of terminal failure
-  // Borrowed from cluster api controller
-  // +kubebuilder:validation:Optional
-  optional string failureReason = 3;
-
-  // UpdateUpdateStrategy in case of terminal failure message
-  // +kubebuilder:validation:Optional
-  optional string failureMessage = 4;
 
   // +patchMergeKey=type
   // +patchStrategy=merge

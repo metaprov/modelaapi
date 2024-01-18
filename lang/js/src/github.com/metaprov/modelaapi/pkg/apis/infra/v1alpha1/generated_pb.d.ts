@@ -605,10 +605,10 @@ export namespace ConnectionList {
 }
 
 export class ConnectionSpec extends jspb.Message {
-  getTenantref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setTenantref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ConnectionSpec;
-  hasTenantref(): boolean;
-  clearTenantref(): ConnectionSpec;
+  getOwner(): string;
+  setOwner(value: string): ConnectionSpec;
+  hasOwner(): boolean;
+  clearOwner(): ConnectionSpec;
 
   getCategory(): string;
   setCategory(value: string): ConnectionSpec;
@@ -626,16 +626,6 @@ export class ConnectionSpec extends jspb.Message {
   getOptionsMap(): jspb.Map<string, string>;
   clearOptionsMap(): ConnectionSpec;
 
-  getOwner(): string;
-  setOwner(value: string): ConnectionSpec;
-  hasOwner(): boolean;
-  clearOwner(): ConnectionSpec;
-
-  getSecretref(): k8s_io_api_core_v1_generated_pb.SecretReference | undefined;
-  setSecretref(value?: k8s_io_api_core_v1_generated_pb.SecretReference): ConnectionSpec;
-  hasSecretref(): boolean;
-  clearSecretref(): ConnectionSpec;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ConnectionSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ConnectionSpec): ConnectionSpec.AsObject;
@@ -646,13 +636,11 @@ export class ConnectionSpec extends jspb.Message {
 
 export namespace ConnectionSpec {
   export type AsObject = {
-    tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    owner?: string,
     category?: string,
     provider?: string,
     secretdataMap: Array<[string, string]>,
     optionsMap: Array<[string, string]>,
-    owner?: string,
-    secretref?: k8s_io_api_core_v1_generated_pb.SecretReference.AsObject,
   }
 }
 
@@ -666,16 +654,6 @@ export class ConnectionStatus extends jspb.Message {
   setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ConnectionStatus;
   hasUpdatedat(): boolean;
   clearUpdatedat(): ConnectionStatus;
-
-  getFailurereason(): string;
-  setFailurereason(value: string): ConnectionStatus;
-  hasFailurereason(): boolean;
-  clearFailurereason(): ConnectionStatus;
-
-  getFailuremessage(): string;
-  setFailuremessage(value: string): ConnectionStatus;
-  hasFailuremessage(): boolean;
-  clearFailuremessage(): ConnectionStatus;
 
   getConditionsList(): Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>;
   setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): ConnectionStatus;
@@ -694,8 +672,6 @@ export namespace ConnectionStatus {
   export type AsObject = {
     observedgeneration?: number,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    failurereason?: string,
-    failuremessage?: string,
     conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }
 }

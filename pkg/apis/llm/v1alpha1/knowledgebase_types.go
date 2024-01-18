@@ -26,14 +26,13 @@ const (
 	GoogleSheetsWebReaderType WebReaderType = "google-sheets"
 
 	GithubRepositoryReaderType RepositoryReaderType = "github"
-	BucketRepositoryReaderType RepositoryReaderType = "bucket"
+	S3RepositoryReaderType     RepositoryReaderType = "s3"
 
 	HTMLNodeParserType           NodeParserType = "html"
 	JSONNodeParserType           NodeParserType = "json"
 	MarkdownNodeParserType       NodeParserType = "markdown"
 	TextSplitterNodeParserType   NodeParserType = "text-splitter"
 	SentenceWindowNodeParserType NodeParserType = "sentence-window"
-	SimpleFileNodeParserType     NodeParserType = "simple-file"
 
 	SentenceTextSplitterType TextSplitterType = "sentence"
 	TokenTextSplitterType    TextSplitterType = "token"

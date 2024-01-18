@@ -10,9 +10,9 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ListTodosRequest(_message.Message):
-    __slots__ = ["namespace", "labels"]
+    __slots__ = ("namespace", "labels")
     class LabelsEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -25,7 +25,7 @@ class ListTodosRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
 class ListTodosResponse(_message.Message):
-    __slots__ = ["todos", "next_page_token"]
+    __slots__ = ("todos", "next_page_token")
     TODOS_FIELD_NUMBER: _ClassVar[int]
     NEXT_PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
     todos: _generated_pb2.TodoList
@@ -33,7 +33,7 @@ class ListTodosResponse(_message.Message):
     def __init__(self, todos: _Optional[_Union[_generated_pb2.TodoList, _Mapping]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
 
 class CreateTodoRequest(_message.Message):
-    __slots__ = ["todo", "password"]
+    __slots__ = ("todo", "password")
     TODO_FIELD_NUMBER: _ClassVar[int]
     PASSWORD_FIELD_NUMBER: _ClassVar[int]
     todo: _generated_pb2.Todo
@@ -41,11 +41,11 @@ class CreateTodoRequest(_message.Message):
     def __init__(self, todo: _Optional[_Union[_generated_pb2.Todo, _Mapping]] = ..., password: _Optional[str] = ...) -> None: ...
 
 class CreateTodoResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class UpdateTodoRequest(_message.Message):
-    __slots__ = ["todo", "field_mask"]
+    __slots__ = ("todo", "field_mask")
     TODO_FIELD_NUMBER: _ClassVar[int]
     FIELD_MASK_FIELD_NUMBER: _ClassVar[int]
     todo: _generated_pb2.Todo
@@ -53,11 +53,11 @@ class UpdateTodoRequest(_message.Message):
     def __init__(self, todo: _Optional[_Union[_generated_pb2.Todo, _Mapping]] = ..., field_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
 
 class UpdateTodoResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class GetTodoRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ("namespace", "name")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -65,7 +65,7 @@ class GetTodoRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class GetTodoResponse(_message.Message):
-    __slots__ = ["todo", "yaml"]
+    __slots__ = ("todo", "yaml")
     TODO_FIELD_NUMBER: _ClassVar[int]
     YAML_FIELD_NUMBER: _ClassVar[int]
     todo: _generated_pb2.Todo
@@ -73,7 +73,7 @@ class GetTodoResponse(_message.Message):
     def __init__(self, todo: _Optional[_Union[_generated_pb2.Todo, _Mapping]] = ..., yaml: _Optional[str] = ...) -> None: ...
 
 class DeleteTodoRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ("namespace", "name")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -81,5 +81,5 @@ class DeleteTodoRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class DeleteTodoResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...

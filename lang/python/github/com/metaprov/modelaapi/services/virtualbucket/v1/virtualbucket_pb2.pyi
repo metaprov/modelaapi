@@ -9,9 +9,9 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ListVirtualBucketsRequest(_message.Message):
-    __slots__ = ["namespace", "labels"]
+    __slots__ = ("namespace", "labels")
     class LabelsEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -24,7 +24,7 @@ class ListVirtualBucketsRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
 class ListVirtualBucketsResponse(_message.Message):
-    __slots__ = ["virtualbuckets", "next_page_token"]
+    __slots__ = ("virtualbuckets", "next_page_token")
     VIRTUALBUCKETS_FIELD_NUMBER: _ClassVar[int]
     NEXT_PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
     virtualbuckets: _generated_pb2.VirtualBucketList
@@ -32,17 +32,17 @@ class ListVirtualBucketsResponse(_message.Message):
     def __init__(self, virtualbuckets: _Optional[_Union[_generated_pb2.VirtualBucketList, _Mapping]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
 
 class CreateVirtualBucketRequest(_message.Message):
-    __slots__ = ["virtualbucket"]
+    __slots__ = ("virtualbucket",)
     VIRTUALBUCKET_FIELD_NUMBER: _ClassVar[int]
     virtualbucket: _generated_pb2.VirtualBucket
     def __init__(self, virtualbucket: _Optional[_Union[_generated_pb2.VirtualBucket, _Mapping]] = ...) -> None: ...
 
 class CreateVirtualBucketResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class UpdateVirtualBucketRequest(_message.Message):
-    __slots__ = ["virtualbucket", "field_mask"]
+    __slots__ = ("virtualbucket", "field_mask")
     VIRTUALBUCKET_FIELD_NUMBER: _ClassVar[int]
     FIELD_MASK_FIELD_NUMBER: _ClassVar[int]
     virtualbucket: _generated_pb2.VirtualBucket
@@ -50,11 +50,11 @@ class UpdateVirtualBucketRequest(_message.Message):
     def __init__(self, virtualbucket: _Optional[_Union[_generated_pb2.VirtualBucket, _Mapping]] = ..., field_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
 
 class UpdateVirtualBucketResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class GetVirtualBucketRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ("namespace", "name")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -62,7 +62,7 @@ class GetVirtualBucketRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class GetVirtualBucketResponse(_message.Message):
-    __slots__ = ["virtualbucket", "yaml"]
+    __slots__ = ("virtualbucket", "yaml")
     VIRTUALBUCKET_FIELD_NUMBER: _ClassVar[int]
     YAML_FIELD_NUMBER: _ClassVar[int]
     virtualbucket: _generated_pb2.VirtualBucket
@@ -70,7 +70,7 @@ class GetVirtualBucketResponse(_message.Message):
     def __init__(self, virtualbucket: _Optional[_Union[_generated_pb2.VirtualBucket, _Mapping]] = ..., yaml: _Optional[str] = ...) -> None: ...
 
 class DeleteVirtualBucketRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ("namespace", "name")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -78,5 +78,5 @@ class DeleteVirtualBucketRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class DeleteVirtualBucketResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...

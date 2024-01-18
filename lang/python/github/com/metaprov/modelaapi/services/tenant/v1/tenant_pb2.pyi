@@ -12,9 +12,9 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ListTenantAlertsRequest(_message.Message):
-    __slots__ = ["namespace", "labels", "page_size", "page_token", "order_by"]
+    __slots__ = ("namespace", "labels", "page_size", "page_token", "order_by")
     class LabelsEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -33,7 +33,7 @@ class ListTenantAlertsRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ..., page_size: _Optional[int] = ..., page_token: _Optional[str] = ..., order_by: _Optional[str] = ...) -> None: ...
 
 class ListTenantAlertsResponse(_message.Message):
-    __slots__ = ["alerts", "next_page_token"]
+    __slots__ = ("alerts", "next_page_token")
     ALERTS_FIELD_NUMBER: _ClassVar[int]
     NEXT_PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
     alerts: _generated_pb2.AlertList
@@ -41,9 +41,9 @@ class ListTenantAlertsResponse(_message.Message):
     def __init__(self, alerts: _Optional[_Union[_generated_pb2.AlertList, _Mapping]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
 
 class ListTenantsRequest(_message.Message):
-    __slots__ = ["namespace", "labels"]
+    __slots__ = ("namespace", "labels")
     class LabelsEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -56,7 +56,7 @@ class ListTenantsRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
 class ListTenantsResponse(_message.Message):
-    __slots__ = ["tenants", "next_page_token"]
+    __slots__ = ("tenants", "next_page_token")
     TENANTS_FIELD_NUMBER: _ClassVar[int]
     NEXT_PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
     tenants: _generated_pb2.TenantList
@@ -64,17 +64,17 @@ class ListTenantsResponse(_message.Message):
     def __init__(self, tenants: _Optional[_Union[_generated_pb2.TenantList, _Mapping]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
 
 class CreateTenantRequest(_message.Message):
-    __slots__ = ["tenant"]
+    __slots__ = ("tenant",)
     TENANT_FIELD_NUMBER: _ClassVar[int]
     tenant: _generated_pb2.Tenant
     def __init__(self, tenant: _Optional[_Union[_generated_pb2.Tenant, _Mapping]] = ...) -> None: ...
 
 class CreateTenantResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class UpdateTenantRequest(_message.Message):
-    __slots__ = ["tenant", "field_mask"]
+    __slots__ = ("tenant", "field_mask")
     TENANT_FIELD_NUMBER: _ClassVar[int]
     FIELD_MASK_FIELD_NUMBER: _ClassVar[int]
     tenant: _generated_pb2.Tenant
@@ -82,11 +82,11 @@ class UpdateTenantRequest(_message.Message):
     def __init__(self, tenant: _Optional[_Union[_generated_pb2.Tenant, _Mapping]] = ..., field_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
 
 class UpdateTenantResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class GetTenantRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ("namespace", "name")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -94,7 +94,7 @@ class GetTenantRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class GetTenantResponse(_message.Message):
-    __slots__ = ["tenant", "alerts", "datasets", "studies", "models", "predictors", "yaml"]
+    __slots__ = ("tenant", "alerts", "datasets", "studies", "models", "predictors", "yaml")
     TENANT_FIELD_NUMBER: _ClassVar[int]
     ALERTS_FIELD_NUMBER: _ClassVar[int]
     DATASETS_FIELD_NUMBER: _ClassVar[int]
@@ -112,7 +112,7 @@ class GetTenantResponse(_message.Message):
     def __init__(self, tenant: _Optional[_Union[_generated_pb2.Tenant, _Mapping]] = ..., alerts: _Optional[_Iterable[_Union[_generated_pb2.Alert, _Mapping]]] = ..., datasets: _Optional[_Iterable[_Union[_generated_pb2_1.Dataset, _Mapping]]] = ..., studies: _Optional[_Iterable[_Union[_generated_pb2_1_1.Study, _Mapping]]] = ..., models: _Optional[_Iterable[_Union[_generated_pb2_1_1.Model, _Mapping]]] = ..., predictors: _Optional[_Iterable[_Union[_generated_pb2_1_1_1.Predictor, _Mapping]]] = ..., yaml: _Optional[str] = ...) -> None: ...
 
 class DeleteTenantRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ("namespace", "name")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -120,15 +120,15 @@ class DeleteTenantRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class DeleteTenantResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class ListTenantNamesRequest(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class ListTenantNamesResponse(_message.Message):
-    __slots__ = ["names"]
+    __slots__ = ("names",)
     NAMES_FIELD_NUMBER: _ClassVar[int]
     names: _containers.RepeatedScalarFieldContainer[str]
     def __init__(self, names: _Optional[_Iterable[str]] = ...) -> None: ...
