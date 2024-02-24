@@ -241,7 +241,7 @@ type ServingEnvironment struct {
 	ServingSiteRef *v1.ObjectReference `json:"servingSiteRef,omitempty" protobuf:"bytes,3,opt,name=servingSiteRef"`
 	// Define the predictor access in this environment.
 	// +kubebuilder:validation:Optional
-	Access catalog.AccessSpec `json:"access,omitempty" protobuf:"bytes,4,opt,name=access"`
+	Access catalog.PredictorAccessSpec `json:"access,omitempty" protobuf:"bytes,4,opt,name=access"`
 	// The number of replicas in this environment.
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional

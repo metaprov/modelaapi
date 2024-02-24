@@ -1559,7 +1559,7 @@ const (
 )
 
 // AccessType define how client reach the predictor
-// +kubebuilder:validation:Enum="cluster-ip";"node-port";"load-balancer";"ingress";"mesh";"none"
+// +kubebuilder:validation:Enum="cluster-ip";"node-port";"load-balancer";"ingress"
 type AccessType string
 
 const (
@@ -1569,10 +1569,8 @@ const (
 	NodePortAccessType AccessType = "node-port"
 	// Use load balancer if the predictor can be accessed from outside the cluster
 	LoadBalancerAccessType AccessType = "load-balancer"
-	// Use ingress if the predictor should register with an ingress.
+	// Use ingress if the predictor should register with an ingress
 	IngressAccessType AccessType = "ingress"
-	// Use none if the desired port is none
-	NoneAccessType AccessType = "none"
 )
 
 // Op is a relational operator
@@ -2128,7 +2126,7 @@ type LastRunStatus struct {
 	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,6,opt,name=failureMessage"`
 }
 
-type AccessSpec struct {
+type PredictorAccessSpec struct {
 	// The port number that will be exposed on the Predictor's Pods to serve prediction traffic through the GRPCInferenceService API.
 	// The Kubernetes Service created by the Predictor will expose the port and forward GRPC traffic to the backend pods
 	// +kubebuilder:validation:Optional

@@ -416,7 +416,7 @@ type ServingSpec struct {
 	Dashboard *bool `json:"dashboard,omitempty" protobuf:"varint,8,opt,name=dashboard"`
 	// Access specifies the configuration for the Predictor service to be exposed externally
 	// +kubebuilder:validation:Optional
-	Access catalog.AccessSpec `json:"access,omitempty" protobuf:"bytes,9,opt,name=access"`
+	Access catalog.PredictorAccessSpec `json:"access,omitempty" protobuf:"bytes,9,opt,name=access"`
 	// Replicas specifies the number of replicas that will be created for the Predictor
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional

@@ -36,15 +36,15 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.GoGoProtoPackageIsVersion3 // please upgrade the proto package
 
-func (m *AccessSpec) Reset()      { *m = AccessSpec{} }
-func (*AccessSpec) ProtoMessage() {}
-func (*AccessSpec) Descriptor() ([]byte, []int) {
+func (m *PredictorAccessSpec) Reset()      { *m = PredictorAccessSpec{} }
+func (*PredictorAccessSpec) ProtoMessage() {}
+func (*PredictorAccessSpec) Descriptor() ([]byte, []int) {
 	return fileDescriptor_94b23fa02186e653, []int{0}
 }
-func (m *AccessSpec) XXX_Unmarshal(b []byte) error {
+func (m *PredictorAccessSpec) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-func (m *AccessSpec) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+func (m *PredictorAccessSpec) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
 	n, err := m.MarshalToSizedBuffer(b)
 	if err != nil {
@@ -52,13 +52,13 @@ func (m *AccessSpec) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	}
 	return b[:n], nil
 }
-func (m *AccessSpec) XXX_Merge(src proto.Message) {
+func (m *PredictorAccessSpec) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_AccessSpec.Merge(m, src)
 }
-func (m *AccessSpec) XXX_Size() int {
+func (m *PredictorAccessSpec) XXX_Size() int {
 	return m.Size()
 }
-func (m *AccessSpec) XXX_DiscardUnknown() {
+func (m *PredictorAccessSpec) XXX_DiscardUnknown() {
 	xxx_messageInfo_AccessSpec.DiscardUnknown(m)
 }
 
@@ -1913,7 +1913,7 @@ func (m *WorkloadClassSpec) XXX_DiscardUnknown() {
 var xxx_messageInfo_WorkloadClassSpec proto.InternalMessageInfo
 
 func init() {
-	proto.RegisterType((*AccessSpec)(nil), "github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AccessSpec")
+	proto.RegisterType((*PredictorAccessSpec)(nil), "github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PredictorAccessSpec")
 	proto.RegisterType((*AccountPermissions)(nil), "github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AccountPermissions")
 	proto.RegisterType((*Algorithm)(nil), "github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Algorithm")
 	proto.RegisterType((*AlgorithmList)(nil), "github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AlgorithmList")
@@ -2308,7 +2308,7 @@ var fileDescriptor_94b23fa02186e653 = []byte{
 	0x00, 0x00,
 }
 
-func (m *AccessSpec) Marshal() (dAtA []byte, err error) {
+func (m *PredictorAccessSpec) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
 	n, err := m.MarshalToSizedBuffer(dAtA[:size])
@@ -2318,12 +2318,12 @@ func (m *AccessSpec) Marshal() (dAtA []byte, err error) {
 	return dAtA[:n], nil
 }
 
-func (m *AccessSpec) MarshalTo(dAtA []byte) (int, error) {
+func (m *PredictorAccessSpec) MarshalTo(dAtA []byte) (int, error) {
 	size := m.Size()
 	return m.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (m *AccessSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (m *PredictorAccessSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
@@ -5976,7 +5976,7 @@ func encodeVarintGenerated(dAtA []byte, offset int, v uint64) int {
 	dAtA[offset] = uint8(v)
 	return base
 }
-func (m *AccessSpec) Size() (n int) {
+func (m *PredictorAccessSpec) Size() (n int) {
 	if m == nil {
 		return 0
 	}
@@ -7433,11 +7433,11 @@ func sovGenerated(x uint64) (n int) {
 func sozGenerated(x uint64) (n int) {
 	return sovGenerated(uint64((x << 1) ^ uint64((int64(x) >> 63))))
 }
-func (this *AccessSpec) String() string {
+func (this *PredictorAccessSpec) String() string {
 	if this == nil {
 		return "nil"
 	}
-	s := strings.Join([]string{`&AccessSpec{`,
+	s := strings.Join([]string{`&PredictorAccessSpec{`,
 		`Port:` + valueToStringGenerated(this.Port) + `,`,
 		`NodePort:` + valueToStringGenerated(this.NodePort) + `,`,
 		`Path:` + valueToStringGenerated(this.Path) + `,`,
@@ -8440,7 +8440,7 @@ func valueToStringGenerated(v interface{}) string {
 	pv := reflect.Indirect(rv).Interface()
 	return fmt.Sprintf("*%v", pv)
 }
-func (m *AccessSpec) Unmarshal(dAtA []byte) error {
+func (m *PredictorAccessSpec) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -8463,10 +8463,10 @@ func (m *AccessSpec) Unmarshal(dAtA []byte) error {
 		fieldNum := int32(wire >> 3)
 		wireType := int(wire & 0x7)
 		if wireType == 4 {
-			return fmt.Errorf("proto: AccessSpec: wiretype end group for non-group")
+			return fmt.Errorf("proto: PredictorAccessSpec: wiretype end group for non-group")
 		}
 		if fieldNum <= 0 {
-			return fmt.Errorf("proto: AccessSpec: illegal tag %d (wire type %d)", fieldNum, wire)
+			return fmt.Errorf("proto: PredictorAccessSpec: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		case 1:

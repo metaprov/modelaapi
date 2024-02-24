@@ -181,7 +181,7 @@ type OnlineFeatureStoreSpec struct {
 	Hostname *string `json:"hostname,omitempty" protobuf:"bytes,2,opt,name=hostname"`
 }
 
-// AccessSpec specifies the configuration to expose a Predictor service externally
+// PredictorAccessSpec specifies the configuration to expose a Predictor service externally
 
 type ForwardCurtainSpec struct {
 	// +kubebuilder:default:=false
@@ -285,7 +285,7 @@ type PredictorSpec struct {
 	Progressive *ProgressiveSpec `json:"progressive,omitempty" protobuf:"bytes,9,opt,name=progressive"`
 	// Access specifies the configuration for the Predictor service to be exposed externally
 	// +kubebuilder:validation:Optional
-	Access catalog.AccessSpec `json:"access,omitempty" protobuf:"bytes,11,opt,name=access"`
+	Access catalog.PredictorAccessSpec `json:"access,omitempty" protobuf:"bytes,11,opt,name=access"`
 	// The number of replicas for the Kubernetes Serving associated with the Predictor, which will instantiate multiple
 	// copies of the service in the case that automatic scaling is disabled
 	// +kubebuilder:validation:Optional

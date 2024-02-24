@@ -782,7 +782,7 @@ func init() {
 	proto.RegisterType((*KnowledgeBaseStatus)(nil), "github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBaseStatus")
 	proto.RegisterType((*LengthFilter)(nil), "github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.LengthFilter")
 	proto.RegisterType((*MixedNodeParserSpec)(nil), "github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.MixedNodeParserSpec")
-	proto.RegisterType((*ModelSpec)(nil), "github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.ModelSpec")
+	proto.RegisterType((*ModelSpec)(nil), "github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.EmbeddingModelSpec")
 	proto.RegisterType((*NameFilter)(nil), "github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.NameFilter")
 	proto.RegisterType((*NodeParserSpec)(nil), "github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.NodeParserSpec")
 	proto.RegisterType((*RepositoryFileReader)(nil), "github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.RepositoryFileReader")
@@ -3220,7 +3220,7 @@ func (this *DocumentSpec) String() string {
 		`Metadata:` + mapStringForMetadata + `,`,
 		`RefreshPeriod:` + valueToStringGenerated(this.RefreshPeriod) + `,`,
 		`NodeParser:` + strings.Replace(this.NodeParser.String(), "NodeParserSpec", "NodeParserSpec", 1) + `,`,
-		`EmbeddingModel:` + strings.Replace(this.EmbeddingModel.String(), "ModelSpec", "ModelSpec", 1) + `,`,
+		`EmbeddingModel:` + strings.Replace(this.EmbeddingModel.String(), "EmbeddingModelSpec", "EmbeddingModelSpec", 1) + `,`,
 		`File:` + strings.Replace(this.File.String(), "FileLocationReaderSpec", "FileLocationReaderSpec", 1) + `,`,
 		`Database:` + strings.Replace(this.Database.String(), "DatabaseReaderSpec", "DatabaseReaderSpec", 1) + `,`,
 		`Web:` + strings.Replace(this.Web.String(), "WebReaderSpec", "WebReaderSpec", 1) + `,`,
@@ -3358,7 +3358,7 @@ func (this *KnowledgeBaseSpec) String() string {
 		`MetadataDatabaseConnectionName:` + valueToStringGenerated(this.MetadataDatabaseConnectionName) + `,`,
 		`VectorStoreConnectionName:` + fmt.Sprintf("%v", this.VectorStoreConnectionName) + `,`,
 		`DocumentStoreConnectionName:` + fmt.Sprintf("%v", this.DocumentStoreConnectionName) + `,`,
-		`EmbeddingModel:` + strings.Replace(strings.Replace(this.EmbeddingModel.String(), "ModelSpec", "ModelSpec", 1), `&`, ``, 1) + `,`,
+		`EmbeddingModel:` + strings.Replace(strings.Replace(this.EmbeddingModel.String(), "EmbeddingModelSpec", "EmbeddingModelSpec", 1), `&`, ``, 1) + `,`,
 		`Documents:` + repeatedStringForDocuments + `,`,
 		`NodeParser:` + strings.Replace(strings.Replace(this.NodeParser.String(), "NodeParserSpec", "NodeParserSpec", 1), `&`, ``, 1) + `,`,
 		`}`,
@@ -3427,7 +3427,7 @@ func (this *ModelSpec) String() string {
 	if this == nil {
 		return "nil"
 	}
-	s := strings.Join([]string{`&ModelSpec{`,
+	s := strings.Join([]string{`&EmbeddingModelSpec{`,
 		`ConnectionName:` + fmt.Sprintf("%v", this.ConnectionName) + `,`,
 		`Model:` + fmt.Sprintf("%v", this.Model) + `,`,
 		`}`,
@@ -6886,10 +6886,10 @@ func (m *ModelSpec) Unmarshal(dAtA []byte) error {
 		fieldNum := int32(wire >> 3)
 		wireType := int(wire & 0x7)
 		if wireType == 4 {
-			return fmt.Errorf("proto: ModelSpec: wiretype end group for non-group")
+			return fmt.Errorf("proto: EmbeddingModelSpec: wiretype end group for non-group")
 		}
 		if fieldNum <= 0 {
-			return fmt.Errorf("proto: ModelSpec: illegal tag %d (wire type %d)", fieldNum, wire)
+			return fmt.Errorf("proto: EmbeddingModelSpec: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		case 1:

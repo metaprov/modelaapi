@@ -2667,7 +2667,7 @@ func init() {
 	proto.RegisterType((*ModelGroupByStatus)(nil), "github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelGroupByStatus")
 	proto.RegisterType((*ModelList)(nil), "github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelList")
 	proto.RegisterType((*ModelResult)(nil), "github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelResult")
-	proto.RegisterType((*ModelSpec)(nil), "github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec")
+	proto.RegisterType((*ModelSpec)(nil), "github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EmbeddingModelSpec")
 	proto.RegisterType((*ModelStageStatus)(nil), "github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStageStatus")
 	proto.RegisterType((*ModelStatus)(nil), "github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus")
 	proto.RegisterType((*ModelTestSuite)(nil), "github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelTestSuite")
@@ -14207,7 +14207,7 @@ func (this *Model) String() string {
 	}
 	s := strings.Join([]string{`&Model{`,
 		`ObjectMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.ObjectMeta), "ObjectMeta", "v1.ObjectMeta", 1), `&`, ``, 1) + `,`,
-		`Spec:` + strings.Replace(strings.Replace(this.Spec.String(), "ModelSpec", "ModelSpec", 1), `&`, ``, 1) + `,`,
+		`Spec:` + strings.Replace(strings.Replace(this.Spec.String(), "EmbeddingModelSpec", "EmbeddingModelSpec", 1), `&`, ``, 1) + `,`,
 		`Status:` + strings.Replace(strings.Replace(this.Status.String(), "ModelStatus", "ModelStatus", 1), `&`, ``, 1) + `,`,
 		`}`,
 	}, "")
@@ -14498,7 +14498,7 @@ func (this *ModelSpec) String() string {
 	if this == nil {
 		return "nil"
 	}
-	s := strings.Join([]string{`&ModelSpec{`,
+	s := strings.Join([]string{`&EmbeddingModelSpec{`,
 		`Owner:` + valueToStringGenerated(this.Owner) + `,`,
 		`StudyRunName:` + fmt.Sprintf("%v", this.StudyRunName) + `,`,
 		`Task:` + fmt.Sprintf("%v", this.Task) + `,`,
@@ -14915,7 +14915,7 @@ func (this *ServingEnvironment) String() string {
 		`Name:` + fmt.Sprintf("%v", this.Name) + `,`,
 		`Tests:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.Tests), "TestSuite", "v1alpha1.TestSuite", 1), `&`, ``, 1) + `,`,
 		`ServingSiteRef:` + strings.Replace(fmt.Sprintf("%v", this.ServingSiteRef), "ObjectReference", "v11.ObjectReference", 1) + `,`,
-		`Access:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.Access), "AccessSpec", "v1alpha1.AccessSpec", 1), `&`, ``, 1) + `,`,
+		`Access:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.Access), "PredictorAccessSpec", "v1alpha1.PredictorAccessSpec", 1), `&`, ``, 1) + `,`,
 		`Replicas:` + valueToStringGenerated(this.Replicas) + `,`,
 		`Online:` + valueToStringGenerated(this.Online) + `,`,
 		`Dashboard:` + valueToStringGenerated(this.Dashboard) + `,`,
@@ -14936,7 +14936,7 @@ func (this *ServingSpec) String() string {
 		`Resources:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.Resources), "ResourceSpec", "v1alpha1.ResourceSpec", 1), `&`, ``, 1) + `,`,
 		`ServingSiteRef:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.ServingSiteRef), "ObjectReference", "v11.ObjectReference", 1), `&`, ``, 1) + `,`,
 		`Dashboard:` + valueToStringGenerated(this.Dashboard) + `,`,
-		`Access:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.Access), "AccessSpec", "v1alpha1.AccessSpec", 1), `&`, ``, 1) + `,`,
+		`Access:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.Access), "PredictorAccessSpec", "v1alpha1.PredictorAccessSpec", 1), `&`, ``, 1) + `,`,
 		`Replicas:` + valueToStringGenerated(this.Replicas) + `,`,
 		`Promotion:` + valueToStringGenerated(this.Promotion) + `,`,
 		`}`,
@@ -25948,10 +25948,10 @@ func (m *ModelSpec) Unmarshal(dAtA []byte) error {
 		fieldNum := int32(wire >> 3)
 		wireType := int(wire & 0x7)
 		if wireType == 4 {
-			return fmt.Errorf("proto: ModelSpec: wiretype end group for non-group")
+			return fmt.Errorf("proto: EmbeddingModelSpec: wiretype end group for non-group")
 		}
 		if fieldNum <= 0 {
-			return fmt.Errorf("proto: ModelSpec: illegal tag %d (wire type %d)", fieldNum, wire)
+			return fmt.Errorf("proto: EmbeddingModelSpec: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		case 1:

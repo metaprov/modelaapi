@@ -1153,7 +1153,7 @@ func init() {
 	proto.RegisterType((*ModelDeploymentStatus)(nil), "github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus")
 	proto.RegisterMapType((map[github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1.Metric]MetricHistory)(nil), "github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelDeploymentStatus.MetricsHistoryEntry")
 	proto.RegisterType((*ModelServingSpec)(nil), "github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelServingSpec")
-	proto.RegisterType((*ModelSpec)(nil), "github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelSpec")
+	proto.RegisterType((*ModelSpec)(nil), "github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.EmbeddingModelSpec")
 	proto.RegisterType((*OnlineFeatureStoreSpec)(nil), "github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.OnlineFeatureStoreSpec")
 	proto.RegisterType((*OnlineStoreStatus)(nil), "github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.OnlineStoreStatus")
 	proto.RegisterType((*Prediction)(nil), "github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction")
@@ -5468,7 +5468,7 @@ func (this *DataAppSpec) String() string {
 		`ModelClassName:` + valueToStringGenerated(this.ModelClassName) + `,`,
 		`Description:` + valueToStringGenerated(this.Description) + `,`,
 		`ModelName:` + valueToStringGenerated(this.ModelName) + `,`,
-		`Access:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.Access), "AccessSpec", "v1alpha11.AccessSpec", 1), `&`, ``, 1) + `,`,
+		`Access:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.Access), "PredictorAccessSpec", "v1alpha11.PredictorAccessSpec", 1), `&`, ``, 1) + `,`,
 		`Replicas:` + valueToStringGenerated(this.Replicas) + `,`,
 		`Resources:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.Resources), "ResourceSpec", "v1alpha11.ResourceSpec", 1), `&`, ``, 1) + `,`,
 		`ServingSiteRef:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.ServingSiteRef), "ObjectReference", "v1.ObjectReference", 1), `&`, ``, 1) + `,`,
@@ -5714,7 +5714,7 @@ func (this *ModelSpec) String() string {
 	if this == nil {
 		return "nil"
 	}
-	s := strings.Join([]string{`&ModelSpec{`,
+	s := strings.Join([]string{`&EmbeddingModelSpec{`,
 		`Name:` + valueToStringGenerated(this.Name) + `,`,
 		`StudyRun:` + strings.Replace(fmt.Sprintf("%v", this.StudyRun), "StudyRunReference", "v1alpha11.StudyRunReference", 1) + `,`,
 		`Location:` + strings.Replace(fmt.Sprintf("%v", this.Location), "FileLocation", "v1alpha11.FileLocation", 1) + `,`,
@@ -5834,7 +5834,7 @@ func (this *PredictionRunSpec) String() string {
 	s := strings.Join([]string{`&PredictionRunSpec{`,
 		`Owner:` + valueToStringGenerated(this.Owner) + `,`,
 		`PredictionName:` + fmt.Sprintf("%v", this.PredictionName) + `,`,
-		`Model:` + strings.Replace(this.Model.String(), "ModelSpec", "ModelSpec", 1) + `,`,
+		`Model:` + strings.Replace(this.Model.String(), "EmbeddingModelSpec", "EmbeddingModelSpec", 1) + `,`,
 		`Timeout:` + valueToStringGenerated(this.Timeout) + `,`,
 		`Pause:` + valueToStringGenerated(this.Pause) + `,`,
 		`Abort:` + valueToStringGenerated(this.Abort) + `,`,
@@ -5884,7 +5884,7 @@ func (this *PredictionSpec) String() string {
 		`Run:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.Run), "RunSpec", "v1alpha11.RunSpec", 1), `&`, ``, 1) + `,`,
 		`ArtifactBucketName:` + valueToStringGenerated(this.ArtifactBucketName) + `,`,
 		`ServingSiteName:` + valueToStringGenerated(this.ServingSiteName) + `,`,
-		`Model:` + strings.Replace(strings.Replace(this.Model.String(), "ModelSpec", "ModelSpec", 1), `&`, ``, 1) + `,`,
+		`Model:` + strings.Replace(strings.Replace(this.Model.String(), "EmbeddingModelSpec", "EmbeddingModelSpec", 1), `&`, ``, 1) + `,`,
 		`Input:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.Input), "DataInputSpec", "v1alpha1.DataInputSpec", 1), `&`, ``, 1) + `,`,
 		`Output:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.Output), "DataOutputSpec", "v1alpha1.DataOutputSpec", 1), `&`, ``, 1) + `,`,
 		`Labeled:` + valueToStringGenerated(this.Labeled) + `,`,
@@ -5975,7 +5975,7 @@ func (this *PredictorSpec) String() string {
 		`ServingSiteRef:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.ServingSiteRef), "ObjectReference", "v1.ObjectReference", 1), `&`, ``, 1) + `,`,
 		`Models:` + repeatedStringForModels + `,`,
 		`Progressive:` + strings.Replace(this.Progressive.String(), "ProgressiveSpec", "ProgressiveSpec", 1) + `,`,
-		`Access:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.Access), "AccessSpec", "v1alpha11.AccessSpec", 1), `&`, ``, 1) + `,`,
+		`Access:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.Access), "PredictorAccessSpec", "v1alpha11.PredictorAccessSpec", 1), `&`, ``, 1) + `,`,
 		`Replicas:` + valueToStringGenerated(this.Replicas) + `,`,
 		`AutoScaling:` + strings.Replace(strings.Replace(this.AutoScaling.String(), "AutoScalingSpec", "AutoScalingSpec", 1), `&`, ``, 1) + `,`,
 		`Owner:` + valueToStringGenerated(this.Owner) + `,`,
@@ -10075,10 +10075,10 @@ func (m *ModelSpec) Unmarshal(dAtA []byte) error {
 		fieldNum := int32(wire >> 3)
 		wireType := int(wire & 0x7)
 		if wireType == 4 {
-			return fmt.Errorf("proto: ModelSpec: wiretype end group for non-group")
+			return fmt.Errorf("proto: EmbeddingModelSpec: wiretype end group for non-group")
 		}
 		if fieldNum <= 0 {
-			return fmt.Errorf("proto: ModelSpec: illegal tag %d (wire type %d)", fieldNum, wire)
+			return fmt.Errorf("proto: EmbeddingModelSpec: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		case 1:

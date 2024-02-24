@@ -16,9 +16,17 @@ type (
 )
 
 const (
-	CSVFileReaderType     FileReaderType = "csv"
-	ParquetFileReaderType FileReaderType = "parquet"
-	PDFFileReaderType     FileReaderType = "pdf"
+	DefaultFileReaderType    FileReaderType = "default"
+	FlatFileReaderType       FileReaderType = "flat"
+	PDFFileReaderType        FileReaderType = "pdf"
+	DocxFileReaderType       FileReaderType = "docx"
+	PowerPointFileReaderType FileReaderType = "powerpoint"
+	AudioFileReaderType      FileReaderType = "audio"
+	CSVFileReaderType        FileReaderType = "csv"
+	EpubFileReaderType       FileReaderType = "epub"
+	MarkdownFileReaderType   FileReaderType = "markdown"
+	NotebookFileReaderType   FileReaderType = "notebook"
+	JSONFileReaderType       FileReaderType = "json"
 
 	SQLDatabaseReaderType   DatabaseReaderType = "sql"
 	MongoDatabaseReaderType DatabaseReaderType = "mongo"
@@ -63,7 +71,7 @@ const (
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1
 // +kubebuilder:printcolumn:name="Last Sync",type="date",JSONPath=".status.lastSyncAt",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
-// KnowledgeBase represents a collection of documents that can be queried with retrieval-augmented generation
+// KnowledgeBase represents a collection of documents that are stored in one or more indexes
 type KnowledgeBase struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
@@ -105,12 +113,10 @@ type KnowledgeBaseSpec struct {
 	// MetadataDatabase specifies a connection to a database used to store document metadata and statuses.
 	// When specified, any document metadata specified by Documents will be cleared and migrated to the table
 	MetadataDatabaseConnectionName *string `json:"metadataDatabaseConnectionName,omitempty" protobuf:"bytes,7,opt,name=metadataDatabaseConnectionName"`
-	// VectorStoreConnectionName specifies the name of a Connection resource that provides a vector database
-	VectorStoreConnectionName string `json:"vectorStoreConnectionName,omitempty" protobuf:"bytes,8,opt,name=vectorStoreConnectionName"`
 	// DocumentStoreConnectionName specifies the name of a Connection resource to use as a document store
 	DocumentStoreConnectionName string `json:"documentStoreConnectionName,omitempty" protobuf:"bytes,9,opt,name=documentStoreConnectionName"`
-	// EmbeddingModel specifies the embedding model to use when ingesting documents
-	EmbeddingModel ModelSpec `json:"embeddingModel,omitempty" protobuf:"bytes,10,opt,name=embeddingModel"`
+	// Indexes specifies the collection of indexes that the documents will be added to
+	Indexes []IndexSpec `json:"indexes,omitempty" protobuf:"bytes,10,opt,name=indexes"`
 	// Documents specifies the collection of documents included in the Knowledge Base
 	Documents []DocumentSpec `json:"documents,omitempty" protobuf:"bytes,11,opt,name=documents"`
 	// NodeParser specifies the default node parser for all documents.
@@ -118,12 +124,40 @@ type KnowledgeBaseSpec struct {
 	NodeParser NodeParserSpec `json:"nodeParser,omitempty" protobuf:"bytes,12,opt,name=nodeParser"`
 }
 
-// ModelSpec specifies the configuration for an LLM
-type ModelSpec struct {
-	// ConnectionName specifies the name of a connection to a foundational model provider
-	ConnectionName string `json:"connectionName,omitempty" protobuf:"bytes,1,opt,name=connectionName"`
-	// Model specifies the vendor-specific model type
-	Model string `json:"model,omitempty" protobuf:"bytes,2,opt,name=model"`
+// VectorIndexSpec specifies the configuration for a vector store index
+type VectorIndexSpec struct {
+	// DatabaseConnectionName specifies the name of a Connection resource that provides a vector database
+	DatabaseConnectionName string `json:"databaseConnectionName,omitempty" protobuf:"bytes,1,opt,name=databaseConnectionName"`
+	// EmbeddingModel specifies the embedding model to use when ingesting documents
+	EmbeddingModel ModelSpec `json:"embeddingModel,omitempty" protobuf:"bytes,2,opt,name=embeddingModel"`
+}
+
+// DocumentSummaryIndexEmbeddingSpec specifies the configuration to embed documents in a document summary index
+type DocumentSummaryIndexEmbeddingSpec struct {
+	// DatabaseConnectionName specifies the name of a Connection resource that provides a vector database
+	DatabaseConnectionName string `json:"databaseConnectionName,omitempty" protobuf:"bytes,1,opt,name=databaseConnectionName"`
+	// EmbeddingModel specifies the embedding model to use when ingesting documents
+	EmbeddingModel ModelSpec `json:"embeddingModel,omitempty" protobuf:"bytes,2,opt,name=embeddingModel"`
+}
+
+// DocumentSummaryIndexSpec specifies the configuration for a document summary index
+type DocumentSummaryIndexSpec struct {
+	// The LLM to use when summarizing documents
+	LLM ModelSpec `json:"llm,omitempty" protobuf:"bytes,1,opt,name=llm"`
+	// The configuration to optionally embed summarized documents
+	Embedding *DocumentSummaryIndexEmbeddingSpec `json:"embedding,omitempty" protobuf:"bytes,2,opt,name=embedding"`
+}
+
+// IndexSpec specifies the configuration for a document index
+type IndexSpec struct {
+	// Name specifies the name of the index
+	// +kubebuilder:validation:Required
+	// +required
+	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
+	// Vector stores documents with vector embeddings
+	Vector *VectorIndexSpec `json:"vector,omitempty" protobuf:"bytes,2,opt,name=vector"`
+	// DocumentSummary stores documents by their summaries
+	DocumentSummary *DocumentSummaryIndexSpec `json:"documentSummary,omitempty" protobuf:"bytes,3,opt,name=documentSummary"`
 }
 
 // ConcreteNodeParserSpec defines how to break up a document into individual chunks of text
@@ -274,22 +308,26 @@ type DocumentSpec struct {
 	// If unspecified or zero, the document will be refreshed on each sync.
 	// When set to -1, the document will only refresh once
 	RefreshPeriod *int32 `json:"refreshPeriod,omitempty" protobuf:"bytes,4,opt,name=refreshPeriod"`
+	// Indexes specifies the collection of indexes that the document will be added to.
+	// If empty, the document will be added to all indexes defined by the Knowledge Base
+	Indexes []string `json:"indexes,omitempty" protobuf:"bytes,5,opt,name=indexes"`
 	// NodeParser specifies document-specific options for breaking up the document into nodes
-	NodeParser *NodeParserSpec `json:"nodeParser,omitempty" protobuf:"bytes,5,opt,name=nodeParser"`
+	NodeParser *NodeParserSpec `json:"nodeParser,omitempty" protobuf:"bytes,6,opt,name=nodeParser"`
 	// EmbeddingModel specifies a document-specific embedding model
-	EmbeddingModel *ModelSpec `json:"embeddingModel,omitempty" protobuf:"bytes,6,opt,name=embeddingModel"`
+	EmbeddingModel *ModelSpec `json:"embeddingModel,omitempty" protobuf:"bytes,7,opt,name=embeddingModel"`
 	// File specifies the configuration to read text from an external file
-	File *FileLocationReaderSpec `json:"file,omitempty" protobuf:"bytes,7,opt,name=file"`
+	File *FileLocationReaderSpec `json:"file,omitempty" protobuf:"bytes,8,opt,name=file"`
 	// Database specifies the configuration to read text from a database query
-	Database *DatabaseReaderSpec `json:"database,omitempty" protobuf:"bytes,8,opt,name=database"`
+	Database *DatabaseReaderSpec `json:"database,omitempty" protobuf:"bytes,9,opt,name=database"`
 	// Web specifies the configuration to read text from an external web-based source
-	Web *WebReaderSpec `json:"web,omitempty" protobuf:"bytes,9,opt,name=web"`
+	Web *WebReaderSpec `json:"web,omitempty" protobuf:"bytes,10,opt,name=web"`
 	// Repository specifies the configuration to read many files from a repository,
-	Repository *RepositoryReaderSpec `json:"repository,omitempty" protobuf:"bytes,10,opt,name=repository"`
+	Repository *RepositoryReaderSpec `json:"repository,omitempty" protobuf:"bytes,11,opt,name=repository"`
 }
 
 type FileReaderSpec struct {
 	// The type of file reader
+	// +kubebuilder:default:="default"
 	Type FileReaderType `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
 	// Reader-specific options
 	Options map[string]string `json:"options,omitempty" protobuf:"bytes,4,opt,name=options"`
@@ -339,7 +377,8 @@ type RepositoryReaderSpec struct {
 	// The name of the connection that provides authorization details for the repository
 	ConnectionName string `json:"connectionName,omitempty" protobuf:"bytes,2,opt,name=connectionName"`
 	// The collection of supported file extensions to read. File extensions supported by Modela will
-	// automatically be read by their supported reader, if not already defined in Readers
+	// automatically be read by their supported reader, if not already mapped to a reader in Readers.
+	// Unsupported extensions will be read as plain-text
 	Extensions []string `json:"extensions,omitempty" protobuf:"bytes,3,opt,name=extensions"`
 	// The readers to use for individual file extensions
 	//+kubebuilder:validation:Optional

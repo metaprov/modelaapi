@@ -71,7 +71,7 @@ type DataAppSpec struct {
 	// +kubebuilder:validation:Optional
 	ModelName *string `json:"modelName,omitempty" protobuf:"bytes,5,opt,name=modelName"`
 	// Access specifies the configuration for the Data App service to be exposed externally
-	Access catalog.AccessSpec `json:"access,omitempty" protobuf:"bytes,6,opt,name=access"`
+	Access catalog.PredictorAccessSpec `json:"access,omitempty" protobuf:"bytes,6,opt,name=access"`
 	// The number of replicas for the Kubernetes Serving associated with the DataApp, which will instantiate multiple
 	// copies of the service in the case that automatic scaling is disabled
 	// +kubebuilder:default:=1
