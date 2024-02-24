@@ -9,9 +9,9 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ListReportsRequest(_message.Message):
-    __slots__ = ["namespace", "labels", "page_size", "page_token", "order_by"]
+    __slots__ = ("namespace", "labels", "page_size", "page_token", "order_by")
     class LabelsEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -30,7 +30,7 @@ class ListReportsRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ..., page_size: _Optional[int] = ..., page_token: _Optional[str] = ..., order_by: _Optional[str] = ...) -> None: ...
 
 class ListReportsResponse(_message.Message):
-    __slots__ = ["reports", "next_page_token"]
+    __slots__ = ("reports", "next_page_token")
     REPORTS_FIELD_NUMBER: _ClassVar[int]
     NEXT_PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
     reports: _generated_pb2.ReportList
@@ -38,17 +38,17 @@ class ListReportsResponse(_message.Message):
     def __init__(self, reports: _Optional[_Union[_generated_pb2.ReportList, _Mapping]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
 
 class CreateReportRequest(_message.Message):
-    __slots__ = ["report"]
+    __slots__ = ("report",)
     REPORT_FIELD_NUMBER: _ClassVar[int]
     report: _generated_pb2.Report
     def __init__(self, report: _Optional[_Union[_generated_pb2.Report, _Mapping]] = ...) -> None: ...
 
 class CreateReportResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class UpdateReportRequest(_message.Message):
-    __slots__ = ["report", "field_mask"]
+    __slots__ = ("report", "field_mask")
     REPORT_FIELD_NUMBER: _ClassVar[int]
     FIELD_MASK_FIELD_NUMBER: _ClassVar[int]
     report: _generated_pb2.Report
@@ -56,11 +56,11 @@ class UpdateReportRequest(_message.Message):
     def __init__(self, report: _Optional[_Union[_generated_pb2.Report, _Mapping]] = ..., field_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
 
 class UpdateReportResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class GetReportRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ("namespace", "name")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -68,7 +68,7 @@ class GetReportRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class GetReportResponse(_message.Message):
-    __slots__ = ["report", "yaml"]
+    __slots__ = ("report", "yaml")
     REPORT_FIELD_NUMBER: _ClassVar[int]
     YAML_FIELD_NUMBER: _ClassVar[int]
     report: _generated_pb2.Report
@@ -76,7 +76,7 @@ class GetReportResponse(_message.Message):
     def __init__(self, report: _Optional[_Union[_generated_pb2.Report, _Mapping]] = ..., yaml: _Optional[str] = ...) -> None: ...
 
 class DeleteReportRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ("namespace", "name")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -84,11 +84,11 @@ class DeleteReportRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class DeleteReportResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class DownloadReportRequest(_message.Message):
-    __slots__ = ["namespace", "name", "group"]
+    __slots__ = ("namespace", "name", "group")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     GROUP_FIELD_NUMBER: _ClassVar[int]
@@ -98,7 +98,7 @@ class DownloadReportRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., group: _Optional[str] = ...) -> None: ...
 
 class DownloadReportResponse(_message.Message):
-    __slots__ = ["raw"]
+    __slots__ = ("raw",)
     RAW_FIELD_NUMBER: _ClassVar[int]
     raw: bytes
     def __init__(self, raw: _Optional[bytes] = ...) -> None: ...

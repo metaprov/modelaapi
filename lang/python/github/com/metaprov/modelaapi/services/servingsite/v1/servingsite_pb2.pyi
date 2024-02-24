@@ -9,9 +9,9 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ListServingSitesRequest(_message.Message):
-    __slots__ = ["namespace", "labels", "page_size", "page_token", "order_by"]
+    __slots__ = ("namespace", "labels", "page_size", "page_token", "order_by")
     class LabelsEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -30,7 +30,7 @@ class ListServingSitesRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ..., page_size: _Optional[int] = ..., page_token: _Optional[str] = ..., order_by: _Optional[str] = ...) -> None: ...
 
 class ListServingSitesResponse(_message.Message):
-    __slots__ = ["servingsites", "next_page_token"]
+    __slots__ = ("servingsites", "next_page_token")
     SERVINGSITES_FIELD_NUMBER: _ClassVar[int]
     NEXT_PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
     servingsites: _generated_pb2.ServingSiteList
@@ -38,17 +38,17 @@ class ListServingSitesResponse(_message.Message):
     def __init__(self, servingsites: _Optional[_Union[_generated_pb2.ServingSiteList, _Mapping]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
 
 class CreateServingSiteRequest(_message.Message):
-    __slots__ = ["servingsite"]
+    __slots__ = ("servingsite",)
     SERVINGSITE_FIELD_NUMBER: _ClassVar[int]
     servingsite: _generated_pb2.ServingSite
     def __init__(self, servingsite: _Optional[_Union[_generated_pb2.ServingSite, _Mapping]] = ...) -> None: ...
 
 class CreateServingSiteResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class UpdateServingSiteRequest(_message.Message):
-    __slots__ = ["servingsite", "field_mask"]
+    __slots__ = ("servingsite", "field_mask")
     SERVINGSITE_FIELD_NUMBER: _ClassVar[int]
     FIELD_MASK_FIELD_NUMBER: _ClassVar[int]
     servingsite: _generated_pb2.ServingSite
@@ -56,11 +56,11 @@ class UpdateServingSiteRequest(_message.Message):
     def __init__(self, servingsite: _Optional[_Union[_generated_pb2.ServingSite, _Mapping]] = ..., field_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
 
 class UpdateServingSiteResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class GetServingSiteRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ("namespace", "name")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -68,7 +68,7 @@ class GetServingSiteRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class GetServingSiteResponse(_message.Message):
-    __slots__ = ["servingsite", "yaml"]
+    __slots__ = ("servingsite", "yaml")
     SERVINGSITE_FIELD_NUMBER: _ClassVar[int]
     YAML_FIELD_NUMBER: _ClassVar[int]
     servingsite: _generated_pb2.ServingSite
@@ -76,7 +76,7 @@ class GetServingSiteResponse(_message.Message):
     def __init__(self, servingsite: _Optional[_Union[_generated_pb2.ServingSite, _Mapping]] = ..., yaml: _Optional[str] = ...) -> None: ...
 
 class GetPublicKeyRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ("namespace", "name")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -84,13 +84,13 @@ class GetPublicKeyRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class GetPublicKeyResponse(_message.Message):
-    __slots__ = ["publickey"]
+    __slots__ = ("publickey",)
     PUBLICKEY_FIELD_NUMBER: _ClassVar[int]
     publickey: bytes
     def __init__(self, publickey: _Optional[bytes] = ...) -> None: ...
 
 class DeleteServingSiteRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ("namespace", "name")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -98,5 +98,5 @@ class DeleteServingSiteRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class DeleteServingSiteResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...

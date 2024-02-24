@@ -11,9 +11,9 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class GetSecretRequest(_message.Message):
-    __slots__ = ["namespace", "name", "labels"]
+    __slots__ = ("namespace", "name", "labels")
     class LabelsEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -28,15 +28,15 @@ class GetSecretRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
 class GetSecretResponse(_message.Message):
-    __slots__ = ["secret"]
+    __slots__ = ("secret",)
     SECRET_FIELD_NUMBER: _ClassVar[int]
     secret: SecretInfo
     def __init__(self, secret: _Optional[_Union[SecretInfo, _Mapping]] = ...) -> None: ...
 
 class ListSecretsRequest(_message.Message):
-    __slots__ = ["namespace", "labels"]
+    __slots__ = ("namespace", "labels")
     class LabelsEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -49,15 +49,15 @@ class ListSecretsRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
 class ListSecretResponse(_message.Message):
-    __slots__ = ["secrets"]
+    __slots__ = ("secrets",)
     SECRETS_FIELD_NUMBER: _ClassVar[int]
     secrets: _containers.RepeatedCompositeFieldContainer[SecretInfo]
     def __init__(self, secrets: _Optional[_Iterable[_Union[SecretInfo, _Mapping]]] = ...) -> None: ...
 
 class GetDeploymentRequest(_message.Message):
-    __slots__ = ["namespace", "name", "labels"]
+    __slots__ = ("namespace", "name", "labels")
     class LabelsEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -72,15 +72,15 @@ class GetDeploymentRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
 class GetDeploymentResponse(_message.Message):
-    __slots__ = ["deployment"]
+    __slots__ = ("deployment",)
     DEPLOYMENT_FIELD_NUMBER: _ClassVar[int]
     deployment: DeploymentInfo
     def __init__(self, deployment: _Optional[_Union[DeploymentInfo, _Mapping]] = ...) -> None: ...
 
 class ListDeploymentsRequest(_message.Message):
-    __slots__ = ["namespace", "labels"]
+    __slots__ = ("namespace", "labels")
     class LabelsEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -93,15 +93,15 @@ class ListDeploymentsRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
 class ListDeploymentsResponse(_message.Message):
-    __slots__ = ["deployments"]
+    __slots__ = ("deployments",)
     DEPLOYMENTS_FIELD_NUMBER: _ClassVar[int]
     deployments: _containers.RepeatedCompositeFieldContainer[DeploymentInfo]
     def __init__(self, deployments: _Optional[_Iterable[_Union[DeploymentInfo, _Mapping]]] = ...) -> None: ...
 
 class GetServiceRequest(_message.Message):
-    __slots__ = ["namespace", "name", "labels"]
+    __slots__ = ("namespace", "name", "labels")
     class LabelsEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -116,15 +116,15 @@ class GetServiceRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
 class GetServiceResponse(_message.Message):
-    __slots__ = ["service"]
+    __slots__ = ("service",)
     SERVICE_FIELD_NUMBER: _ClassVar[int]
     service: ServiceInfo
     def __init__(self, service: _Optional[_Union[ServiceInfo, _Mapping]] = ...) -> None: ...
 
 class ListServicesRequest(_message.Message):
-    __slots__ = ["namespace", "labels"]
+    __slots__ = ("namespace", "labels")
     class LabelsEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -137,15 +137,15 @@ class ListServicesRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
 class ListServicesResponse(_message.Message):
-    __slots__ = ["services"]
+    __slots__ = ("services",)
     SERVICES_FIELD_NUMBER: _ClassVar[int]
     services: _containers.RepeatedCompositeFieldContainer[ServiceInfo]
     def __init__(self, services: _Optional[_Iterable[_Union[ServiceInfo, _Mapping]]] = ...) -> None: ...
 
 class GetPodRequest(_message.Message):
-    __slots__ = ["namespace", "name", "labels"]
+    __slots__ = ("namespace", "name", "labels")
     class LabelsEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -160,15 +160,15 @@ class GetPodRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
 class GetPodResponse(_message.Message):
-    __slots__ = ["pod"]
+    __slots__ = ("pod",)
     POD_FIELD_NUMBER: _ClassVar[int]
     pod: PodInfo
     def __init__(self, pod: _Optional[_Union[PodInfo, _Mapping]] = ...) -> None: ...
 
 class ListPodsRequest(_message.Message):
-    __slots__ = ["namespace", "labels"]
+    __slots__ = ("namespace", "labels")
     class LabelsEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -181,15 +181,15 @@ class ListPodsRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
 class ListPodsResponse(_message.Message):
-    __slots__ = ["pods"]
+    __slots__ = ("pods",)
     PODS_FIELD_NUMBER: _ClassVar[int]
     pods: _containers.RepeatedCompositeFieldContainer[PodInfo]
     def __init__(self, pods: _Optional[_Iterable[_Union[PodInfo, _Mapping]]] = ...) -> None: ...
 
 class GetJobRequest(_message.Message):
-    __slots__ = ["namespace", "name", "labels"]
+    __slots__ = ("namespace", "name", "labels")
     class LabelsEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -204,15 +204,15 @@ class GetJobRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
 class GetJobResponse(_message.Message):
-    __slots__ = ["job"]
+    __slots__ = ("job",)
     JOB_FIELD_NUMBER: _ClassVar[int]
     job: JobInfo
     def __init__(self, job: _Optional[_Union[JobInfo, _Mapping]] = ...) -> None: ...
 
 class ListJobsRequest(_message.Message):
-    __slots__ = ["tenant", "namespace", "labels"]
+    __slots__ = ("tenant", "namespace", "labels")
     class LabelsEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -227,13 +227,13 @@ class ListJobsRequest(_message.Message):
     def __init__(self, tenant: _Optional[str] = ..., namespace: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
 class ListJobsResponse(_message.Message):
-    __slots__ = ["jobs"]
+    __slots__ = ("jobs",)
     JOBS_FIELD_NUMBER: _ClassVar[int]
     jobs: _containers.RepeatedCompositeFieldContainer[JobInfo]
     def __init__(self, jobs: _Optional[_Iterable[_Union[JobInfo, _Mapping]]] = ...) -> None: ...
 
 class GetContainerLogRequest(_message.Message):
-    __slots__ = ["namespace", "name", "containername"]
+    __slots__ = ("namespace", "name", "containername")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     CONTAINERNAME_FIELD_NUMBER: _ClassVar[int]
@@ -243,15 +243,15 @@ class GetContainerLogRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., containername: _Optional[str] = ...) -> None: ...
 
 class GetContainerLogResponse(_message.Message):
-    __slots__ = ["log"]
+    __slots__ = ("log",)
     LOG_FIELD_NUMBER: _ClassVar[int]
     log: bytes
     def __init__(self, log: _Optional[bytes] = ...) -> None: ...
 
 class ListEventsRequest(_message.Message):
-    __slots__ = ["namespace", "name", "labels"]
+    __slots__ = ("namespace", "name", "labels")
     class LabelsEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -266,13 +266,13 @@ class ListEventsRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
 class ListEventsResponse(_message.Message):
-    __slots__ = ["items"]
+    __slots__ = ("items",)
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     items: _generated_pb2_1.EventList
     def __init__(self, items: _Optional[_Union[_generated_pb2_1.EventList, _Mapping]] = ...) -> None: ...
 
 class SecretInfo(_message.Message):
-    __slots__ = ["name", "namespace"]
+    __slots__ = ("name", "namespace")
     NAME_FIELD_NUMBER: _ClassVar[int]
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     name: str
@@ -280,9 +280,9 @@ class SecretInfo(_message.Message):
     def __init__(self, name: _Optional[str] = ..., namespace: _Optional[str] = ...) -> None: ...
 
 class ServiceInfo(_message.Message):
-    __slots__ = ["name", "namespace", "labels", "ip", "port", "createdAt", "status"]
+    __slots__ = ("name", "namespace", "labels", "ip", "port", "createdAt", "status")
     class LabelsEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -305,7 +305,7 @@ class ServiceInfo(_message.Message):
     def __init__(self, name: _Optional[str] = ..., namespace: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ..., ip: _Optional[str] = ..., port: _Optional[str] = ..., createdAt: _Optional[_Union[_generated_pb2.Time, _Mapping]] = ..., status: _Optional[_Union[_generated_pb2_1.ServiceStatus, _Mapping]] = ...) -> None: ...
 
 class ContainerInfo(_message.Message):
-    __slots__ = ["image", "name", "log"]
+    __slots__ = ("image", "name", "log")
     IMAGE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     LOG_FIELD_NUMBER: _ClassVar[int]
@@ -315,9 +315,9 @@ class ContainerInfo(_message.Message):
     def __init__(self, image: _Optional[str] = ..., name: _Optional[str] = ..., log: _Optional[bytes] = ...) -> None: ...
 
 class DeploymentInfo(_message.Message):
-    __slots__ = ["name", "namespace", "labels", "createdAt", "status", "pods"]
+    __slots__ = ("name", "namespace", "labels", "createdAt", "status", "pods")
     class LabelsEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -338,9 +338,9 @@ class DeploymentInfo(_message.Message):
     def __init__(self, name: _Optional[str] = ..., namespace: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ..., createdAt: _Optional[_Union[_generated_pb2.Time, _Mapping]] = ..., status: _Optional[_Union[_generated_pb2_1_1.DeploymentStatus, _Mapping]] = ..., pods: _Optional[_Iterable[_Union[PodInfo, _Mapping]]] = ...) -> None: ...
 
 class PodInfo(_message.Message):
-    __slots__ = ["name", "namespace", "labels", "createdAt", "status", "contrainers"]
+    __slots__ = ("name", "namespace", "labels", "createdAt", "status", "contrainers")
     class LabelsEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -361,9 +361,9 @@ class PodInfo(_message.Message):
     def __init__(self, name: _Optional[str] = ..., namespace: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ..., createdAt: _Optional[_Union[_generated_pb2.Time, _Mapping]] = ..., status: _Optional[_Union[_generated_pb2_1.PodStatus, _Mapping]] = ..., contrainers: _Optional[_Iterable[_Union[ContainerInfo, _Mapping]]] = ...) -> None: ...
 
 class JobInfo(_message.Message):
-    __slots__ = ["name", "namespace", "labels", "startedAt", "completedAt", "failed", "succeeded", "active", "ready", "pods", "model", "study", "dataset"]
+    __slots__ = ("name", "namespace", "labels", "startedAt", "completedAt", "failed", "succeeded", "active", "ready", "pods", "model", "study", "dataset")
     class LabelsEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str

@@ -13,7 +13,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class AutoScalingSpec(_message.Message):
-    __slots__ = ["enabled", "minReplicas", "maxReplicas", "cpuAvgUtilization", "memAvgUtilization"]
+    __slots__ = ("enabled", "minReplicas", "maxReplicas", "cpuAvgUtilization", "memAvgUtilization")
     ENABLED_FIELD_NUMBER: _ClassVar[int]
     MINREPLICAS_FIELD_NUMBER: _ClassVar[int]
     MAXREPLICAS_FIELD_NUMBER: _ClassVar[int]
@@ -27,7 +27,7 @@ class AutoScalingSpec(_message.Message):
     def __init__(self, enabled: bool = ..., minReplicas: _Optional[int] = ..., maxReplicas: _Optional[int] = ..., cpuAvgUtilization: _Optional[int] = ..., memAvgUtilization: _Optional[int] = ...) -> None: ...
 
 class BackwardCurtainSpec(_message.Message):
-    __slots__ = ["enabled", "accountRef", "confidenceLow", "confidenceHigh"]
+    __slots__ = ("enabled", "accountRef", "confidenceLow", "confidenceHigh")
     ENABLED_FIELD_NUMBER: _ClassVar[int]
     ACCOUNTREF_FIELD_NUMBER: _ClassVar[int]
     CONFIDENCELOW_FIELD_NUMBER: _ClassVar[int]
@@ -39,7 +39,7 @@ class BackwardCurtainSpec(_message.Message):
     def __init__(self, enabled: bool = ..., accountRef: _Optional[_Union[_generated_pb2_1_1_1.ObjectReference, _Mapping]] = ..., confidenceLow: _Optional[float] = ..., confidenceHigh: _Optional[float] = ...) -> None: ...
 
 class CustomAppSpec(_message.Message):
-    __slots__ = ["owner", "title", "pages"]
+    __slots__ = ("owner", "title", "pages")
     OWNER_FIELD_NUMBER: _ClassVar[int]
     TITLE_FIELD_NUMBER: _ClassVar[int]
     PAGES_FIELD_NUMBER: _ClassVar[int]
@@ -49,7 +49,7 @@ class CustomAppSpec(_message.Message):
     def __init__(self, owner: bool = ..., title: _Optional[str] = ..., pages: _Optional[_Iterable[_Union[_generated_pb2_1.PageSpec, _Mapping]]] = ...) -> None: ...
 
 class DataApp(_message.Message):
-    __slots__ = ["metadata", "spec", "status"]
+    __slots__ = ("metadata", "spec", "status")
     METADATA_FIELD_NUMBER: _ClassVar[int]
     SPEC_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
@@ -59,7 +59,7 @@ class DataApp(_message.Message):
     def __init__(self, metadata: _Optional[_Union[_generated_pb2_1_1_1_1.ObjectMeta, _Mapping]] = ..., spec: _Optional[_Union[DataAppSpec, _Mapping]] = ..., status: _Optional[_Union[DataAppStatus, _Mapping]] = ...) -> None: ...
 
 class DataAppList(_message.Message):
-    __slots__ = ["metadata", "items"]
+    __slots__ = ("metadata", "items")
     METADATA_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     metadata: _generated_pb2_1_1_1_1.ListMeta
@@ -67,7 +67,7 @@ class DataAppList(_message.Message):
     def __init__(self, metadata: _Optional[_Union[_generated_pb2_1_1_1_1.ListMeta, _Mapping]] = ..., items: _Optional[_Iterable[_Union[DataApp, _Mapping]]] = ...) -> None: ...
 
 class DataAppSpec(_message.Message):
-    __slots__ = ["owner", "versionName", "modelClassName", "description", "modelName", "access", "replicas", "resources", "servingsiteRef", "custom"]
+    __slots__ = ("owner", "versionName", "modelClassName", "description", "modelName", "access", "replicas", "resources", "servingsiteRef", "custom")
     OWNER_FIELD_NUMBER: _ClassVar[int]
     VERSIONNAME_FIELD_NUMBER: _ClassVar[int]
     MODELCLASSNAME_FIELD_NUMBER: _ClassVar[int]
@@ -91,7 +91,7 @@ class DataAppSpec(_message.Message):
     def __init__(self, owner: _Optional[str] = ..., versionName: _Optional[str] = ..., modelClassName: _Optional[str] = ..., description: _Optional[str] = ..., modelName: _Optional[str] = ..., access: _Optional[_Union[_generated_pb2.AccessSpec, _Mapping]] = ..., replicas: _Optional[int] = ..., resources: _Optional[_Union[_generated_pb2.ResourceSpec, _Mapping]] = ..., servingsiteRef: _Optional[_Union[_generated_pb2_1_1_1.ObjectReference, _Mapping]] = ..., custom: _Optional[_Union[CustomAppSpec, _Mapping]] = ...) -> None: ...
 
 class DataAppStatus(_message.Message):
-    __slots__ = ["observedGeneration", "updatedAt", "deploymentStatus", "servicetStatus", "failureReason", "failureMessage", "conditions"]
+    __slots__ = ("observedGeneration", "updatedAt", "deploymentStatus", "servicetStatus", "failureReason", "failureMessage", "conditions")
     OBSERVEDGENERATION_FIELD_NUMBER: _ClassVar[int]
     UPDATEDAT_FIELD_NUMBER: _ClassVar[int]
     DEPLOYMENTSTATUS_FIELD_NUMBER: _ClassVar[int]
@@ -109,7 +109,7 @@ class DataAppStatus(_message.Message):
     def __init__(self, observedGeneration: _Optional[int] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1_1_1.Time, _Mapping]] = ..., deploymentStatus: _Optional[_Union[_generated_pb2_1_1_1.ObjectReference, _Mapping]] = ..., servicetStatus: _Optional[_Union[_generated_pb2_1_1_1.ServiceStatus, _Mapping]] = ..., failureReason: _Optional[str] = ..., failureMessage: _Optional[str] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1_1_1.Condition, _Mapping]]] = ...) -> None: ...
 
 class DriftDetectionSpec(_message.Message):
-    __slots__ = ["enabled", "genDriftTests", "minPredictions", "columns", "driftThresholds", "schedule", "outlierDetectionModelRef", "maxHistograms", "periodSeconds"]
+    __slots__ = ("enabled", "genDriftTests", "minPredictions", "columns", "driftThresholds", "schedule", "outlierDetectionModelRef", "maxHistograms", "periodSeconds")
     ENABLED_FIELD_NUMBER: _ClassVar[int]
     GENDRIFTTESTS_FIELD_NUMBER: _ClassVar[int]
     MINPREDICTIONS_FIELD_NUMBER: _ClassVar[int]
@@ -131,7 +131,7 @@ class DriftDetectionSpec(_message.Message):
     def __init__(self, enabled: bool = ..., genDriftTests: bool = ..., minPredictions: _Optional[int] = ..., columns: _Optional[_Iterable[str]] = ..., driftThresholds: _Optional[_Iterable[_Union[_generated_pb2_1.DriftThreshold, _Mapping]]] = ..., schedule: _Optional[_Union[_generated_pb2.RunSchedule, _Mapping]] = ..., outlierDetectionModelRef: _Optional[_Union[_generated_pb2_1_1_1.ObjectReference, _Mapping]] = ..., maxHistograms: _Optional[int] = ..., periodSeconds: _Optional[int] = ...) -> None: ...
 
 class FastSlowModelSpec(_message.Message):
-    __slots__ = ["enabled", "fastModelRef", "slowModelRef", "probaLowPct", "probaHighPct"]
+    __slots__ = ("enabled", "fastModelRef", "slowModelRef", "probaLowPct", "probaHighPct")
     ENABLED_FIELD_NUMBER: _ClassVar[int]
     FASTMODELREF_FIELD_NUMBER: _ClassVar[int]
     SLOWMODELREF_FIELD_NUMBER: _ClassVar[int]
@@ -145,7 +145,7 @@ class FastSlowModelSpec(_message.Message):
     def __init__(self, enabled: bool = ..., fastModelRef: _Optional[_Union[_generated_pb2_1_1_1.ObjectReference, _Mapping]] = ..., slowModelRef: _Optional[_Union[_generated_pb2_1_1_1.ObjectReference, _Mapping]] = ..., probaLowPct: _Optional[int] = ..., probaHighPct: _Optional[int] = ...) -> None: ...
 
 class FeedbackTestSpec(_message.Message):
-    __slots__ = ["enabled", "tests", "schedule"]
+    __slots__ = ("enabled", "tests", "schedule")
     ENABLED_FIELD_NUMBER: _ClassVar[int]
     TESTS_FIELD_NUMBER: _ClassVar[int]
     SCHEDULE_FIELD_NUMBER: _ClassVar[int]
@@ -155,9 +155,9 @@ class FeedbackTestSpec(_message.Message):
     def __init__(self, enabled: bool = ..., tests: _Optional[_Union[_generated_pb2.TestSuite, _Mapping]] = ..., schedule: _Optional[_Union[_generated_pb2.RunSchedule, _Mapping]] = ...) -> None: ...
 
 class ForecastPredictionSpec(_message.Message):
-    __slots__ = ["hierarchyValues", "horizon"]
+    __slots__ = ("hierarchyValues", "horizon")
     class HierarchyValuesEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -170,7 +170,7 @@ class ForecastPredictionSpec(_message.Message):
     def __init__(self, hierarchyValues: _Optional[_Mapping[str, str]] = ..., horizon: _Optional[_Union[_generated_pb2_1_1.WindowSpec, _Mapping]] = ...) -> None: ...
 
 class ForecastRun(_message.Message):
-    __slots__ = ["key", "modelLocation", "horizon"]
+    __slots__ = ("key", "modelLocation", "horizon")
     KEY_FIELD_NUMBER: _ClassVar[int]
     MODELLOCATION_FIELD_NUMBER: _ClassVar[int]
     HORIZON_FIELD_NUMBER: _ClassVar[int]
@@ -180,9 +180,9 @@ class ForecastRun(_message.Message):
     def __init__(self, key: _Optional[str] = ..., modelLocation: _Optional[str] = ..., horizon: _Optional[_Union[_generated_pb2_1_1.WindowSpec, _Mapping]] = ...) -> None: ...
 
 class ForecastSpec(_message.Message):
-    __slots__ = ["runs"]
+    __slots__ = ("runs",)
     class RunsEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -193,7 +193,7 @@ class ForecastSpec(_message.Message):
     def __init__(self, runs: _Optional[_Mapping[str, ForecastRun]] = ...) -> None: ...
 
 class ForecastStatus(_message.Message):
-    __slots__ = ["profileURI", "reportURI", "forecastLocation", "workerResults"]
+    __slots__ = ("profileURI", "reportURI", "forecastLocation", "workerResults")
     PROFILEURI_FIELD_NUMBER: _ClassVar[int]
     REPORTURI_FIELD_NUMBER: _ClassVar[int]
     FORECASTLOCATION_FIELD_NUMBER: _ClassVar[int]
@@ -205,7 +205,7 @@ class ForecastStatus(_message.Message):
     def __init__(self, profileURI: _Optional[str] = ..., reportURI: _Optional[str] = ..., forecastLocation: _Optional[_Union[_generated_pb2.FileLocation, _Mapping]] = ..., workerResults: _Optional[_Iterable[_Union[_generated_pb2.WorkerRunResult, _Mapping]]] = ...) -> None: ...
 
 class ForwardCurtainSpec(_message.Message):
-    __slots__ = ["enabled", "accountRef", "percent"]
+    __slots__ = ("enabled", "accountRef", "percent")
     ENABLED_FIELD_NUMBER: _ClassVar[int]
     ACCOUNTREF_FIELD_NUMBER: _ClassVar[int]
     PERCENT_FIELD_NUMBER: _ClassVar[int]
@@ -215,7 +215,7 @@ class ForwardCurtainSpec(_message.Message):
     def __init__(self, enabled: bool = ..., accountRef: _Optional[_Union[_generated_pb2_1_1_1.ObjectReference, _Mapping]] = ..., percent: _Optional[int] = ...) -> None: ...
 
 class MetricHistory(_message.Message):
-    __slots__ = ["metric", "history"]
+    __slots__ = ("metric", "history")
     METRIC_FIELD_NUMBER: _ClassVar[int]
     HISTORY_FIELD_NUMBER: _ClassVar[int]
     metric: str
@@ -223,7 +223,7 @@ class MetricHistory(_message.Message):
     def __init__(self, metric: _Optional[str] = ..., history: _Optional[_Iterable[float]] = ...) -> None: ...
 
 class ModelDeploymentRecord(_message.Message):
-    __slots__ = ["modelName", "modelVersion", "modelRole", "imageName", "deployedAt", "retiredAt", "failureMessage", "avgDailyPrediction", "avgLatency"]
+    __slots__ = ("modelName", "modelVersion", "modelRole", "imageName", "deployedAt", "retiredAt", "failureMessage", "avgDailyPrediction", "avgLatency")
     MODELNAME_FIELD_NUMBER: _ClassVar[int]
     MODELVERSION_FIELD_NUMBER: _ClassVar[int]
     MODELROLE_FIELD_NUMBER: _ClassVar[int]
@@ -245,9 +245,9 @@ class ModelDeploymentRecord(_message.Message):
     def __init__(self, modelName: _Optional[str] = ..., modelVersion: _Optional[str] = ..., modelRole: _Optional[str] = ..., imageName: _Optional[str] = ..., deployedAt: _Optional[_Union[_generated_pb2_1_1_1_1.Time, _Mapping]] = ..., retiredAt: _Optional[_Union[_generated_pb2_1_1_1_1.Time, _Mapping]] = ..., failureMessage: _Optional[str] = ..., avgDailyPrediction: _Optional[int] = ..., avgLatency: _Optional[float] = ...) -> None: ...
 
 class ModelDeploymentStatus(_message.Message):
-    __slots__ = ["modelName", "modelVersion", "modelRole", "imageName", "deploymentRef", "serviceRef", "hpaRef", "failureMessage", "deployedAt", "lastFeedbackDatasetRef", "lastFeedbackTestAt", "lastFeedbackTestResults", "metricsHistory", "avgDailyPrediction", "avgLatency", "endpoint"]
+    __slots__ = ("modelName", "modelVersion", "modelRole", "imageName", "deploymentRef", "serviceRef", "hpaRef", "failureMessage", "deployedAt", "lastFeedbackDatasetRef", "lastFeedbackTestAt", "lastFeedbackTestResults", "metricsHistory", "avgDailyPrediction", "avgLatency", "endpoint")
     class MetricsHistoryEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -288,7 +288,7 @@ class ModelDeploymentStatus(_message.Message):
     def __init__(self, modelName: _Optional[str] = ..., modelVersion: _Optional[str] = ..., modelRole: _Optional[str] = ..., imageName: _Optional[str] = ..., deploymentRef: _Optional[_Union[_generated_pb2_1_1_1.ObjectReference, _Mapping]] = ..., serviceRef: _Optional[_Union[_generated_pb2_1_1_1.ObjectReference, _Mapping]] = ..., hpaRef: _Optional[_Union[_generated_pb2_1_1_1.ObjectReference, _Mapping]] = ..., failureMessage: _Optional[str] = ..., deployedAt: _Optional[_Union[_generated_pb2_1_1_1_1.Time, _Mapping]] = ..., lastFeedbackDatasetRef: _Optional[_Union[_generated_pb2_1_1_1.ObjectReference, _Mapping]] = ..., lastFeedbackTestAt: _Optional[_Union[_generated_pb2_1_1_1_1.Time, _Mapping]] = ..., lastFeedbackTestResults: _Optional[_Iterable[_Union[_generated_pb2.Measurement, _Mapping]]] = ..., metricsHistory: _Optional[_Mapping[str, MetricHistory]] = ..., avgDailyPrediction: _Optional[int] = ..., avgLatency: _Optional[float] = ..., endpoint: _Optional[str] = ...) -> None: ...
 
 class ModelServingSpec(_message.Message):
-    __slots__ = ["serverless", "servingTests"]
+    __slots__ = ("serverless", "servingTests")
     SERVERLESS_FIELD_NUMBER: _ClassVar[int]
     SERVINGTESTS_FIELD_NUMBER: _ClassVar[int]
     serverless: bool
@@ -296,7 +296,7 @@ class ModelServingSpec(_message.Message):
     def __init__(self, serverless: bool = ..., servingTests: _Optional[_Union[_generated_pb2.TestSuite, _Mapping]] = ...) -> None: ...
 
 class ModelSpec(_message.Message):
-    __slots__ = ["name", "studyRun", "location"]
+    __slots__ = ("name", "studyRun", "location")
     NAME_FIELD_NUMBER: _ClassVar[int]
     STUDYRUN_FIELD_NUMBER: _ClassVar[int]
     LOCATION_FIELD_NUMBER: _ClassVar[int]
@@ -306,7 +306,7 @@ class ModelSpec(_message.Message):
     def __init__(self, name: _Optional[str] = ..., studyRun: _Optional[_Union[_generated_pb2.StudyRunReference, _Mapping]] = ..., location: _Optional[_Union[_generated_pb2.FileLocation, _Mapping]] = ...) -> None: ...
 
 class OnlineFeatureStoreSpec(_message.Message):
-    __slots__ = ["enabled", "hostname"]
+    __slots__ = ("enabled", "hostname")
     ENABLED_FIELD_NUMBER: _ClassVar[int]
     HOSTNAME_FIELD_NUMBER: _ClassVar[int]
     enabled: bool
@@ -314,13 +314,13 @@ class OnlineFeatureStoreSpec(_message.Message):
     def __init__(self, enabled: bool = ..., hostname: _Optional[str] = ...) -> None: ...
 
 class OnlineStoreStatus(_message.Message):
-    __slots__ = ["lastAccessed"]
+    __slots__ = ("lastAccessed",)
     LASTACCESSED_FIELD_NUMBER: _ClassVar[int]
     lastAccessed: _generated_pb2_1_1_1_1.Time
     def __init__(self, lastAccessed: _Optional[_Union[_generated_pb2_1_1_1_1.Time, _Mapping]] = ...) -> None: ...
 
 class Prediction(_message.Message):
-    __slots__ = ["metadata", "spec", "status"]
+    __slots__ = ("metadata", "spec", "status")
     METADATA_FIELD_NUMBER: _ClassVar[int]
     SPEC_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
@@ -330,7 +330,7 @@ class Prediction(_message.Message):
     def __init__(self, metadata: _Optional[_Union[_generated_pb2_1_1_1_1.ObjectMeta, _Mapping]] = ..., spec: _Optional[_Union[PredictionSpec, _Mapping]] = ..., status: _Optional[_Union[PredictionStatus, _Mapping]] = ...) -> None: ...
 
 class PredictionCacheSpec(_message.Message):
-    __slots__ = ["enabled", "inMemory", "redis", "connectionRef"]
+    __slots__ = ("enabled", "inMemory", "redis", "connectionRef")
     ENABLED_FIELD_NUMBER: _ClassVar[int]
     INMEMORY_FIELD_NUMBER: _ClassVar[int]
     REDIS_FIELD_NUMBER: _ClassVar[int]
@@ -342,7 +342,7 @@ class PredictionCacheSpec(_message.Message):
     def __init__(self, enabled: bool = ..., inMemory: bool = ..., redis: bool = ..., connectionRef: _Optional[_Union[_generated_pb2_1_1_1.ObjectReference, _Mapping]] = ...) -> None: ...
 
 class PredictionList(_message.Message):
-    __slots__ = ["metadata", "items"]
+    __slots__ = ("metadata", "items")
     METADATA_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     metadata: _generated_pb2_1_1_1_1.ListMeta
@@ -350,7 +350,7 @@ class PredictionList(_message.Message):
     def __init__(self, metadata: _Optional[_Union[_generated_pb2_1_1_1_1.ListMeta, _Mapping]] = ..., items: _Optional[_Iterable[_Union[Prediction, _Mapping]]] = ...) -> None: ...
 
 class PredictionLoggingSpec(_message.Message):
-    __slots__ = ["enabled", "samplePercent", "rows", "backupFreqSeconds", "backupConnectionRef", "location"]
+    __slots__ = ("enabled", "samplePercent", "rows", "backupFreqSeconds", "backupConnectionRef", "location")
     ENABLED_FIELD_NUMBER: _ClassVar[int]
     SAMPLEPERCENT_FIELD_NUMBER: _ClassVar[int]
     ROWS_FIELD_NUMBER: _ClassVar[int]
@@ -366,7 +366,7 @@ class PredictionLoggingSpec(_message.Message):
     def __init__(self, enabled: bool = ..., samplePercent: _Optional[int] = ..., rows: _Optional[int] = ..., backupFreqSeconds: _Optional[int] = ..., backupConnectionRef: _Optional[_Union[_generated_pb2_1_1_1.ObjectReference, _Mapping]] = ..., location: _Optional[_Union[_generated_pb2.DataLocation, _Mapping]] = ...) -> None: ...
 
 class PredictionRun(_message.Message):
-    __slots__ = ["metadata", "spec", "status"]
+    __slots__ = ("metadata", "spec", "status")
     METADATA_FIELD_NUMBER: _ClassVar[int]
     SPEC_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
@@ -376,7 +376,7 @@ class PredictionRun(_message.Message):
     def __init__(self, metadata: _Optional[_Union[_generated_pb2_1_1_1_1.ObjectMeta, _Mapping]] = ..., spec: _Optional[_Union[PredictionRunSpec, _Mapping]] = ..., status: _Optional[_Union[PredictionRunStatus, _Mapping]] = ...) -> None: ...
 
 class PredictionRunList(_message.Message):
-    __slots__ = ["metadata", "items"]
+    __slots__ = ("metadata", "items")
     METADATA_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     metadata: _generated_pb2_1_1_1_1.ListMeta
@@ -384,7 +384,7 @@ class PredictionRunList(_message.Message):
     def __init__(self, metadata: _Optional[_Union[_generated_pb2_1_1_1_1.ListMeta, _Mapping]] = ..., items: _Optional[_Iterable[_Union[PredictionRun, _Mapping]]] = ...) -> None: ...
 
 class PredictionRunSpec(_message.Message):
-    __slots__ = ["owner", "datasetName", "model", "timeout", "pause", "abort"]
+    __slots__ = ("owner", "datasetName", "model", "timeout", "pause", "abort")
     OWNER_FIELD_NUMBER: _ClassVar[int]
     DATASETNAME_FIELD_NUMBER: _ClassVar[int]
     MODEL_FIELD_NUMBER: _ClassVar[int]
@@ -400,7 +400,7 @@ class PredictionRunSpec(_message.Message):
     def __init__(self, owner: _Optional[str] = ..., datasetName: _Optional[str] = ..., model: _Optional[_Union[ModelSpec, _Mapping]] = ..., timeout: _Optional[int] = ..., pause: bool = ..., abort: bool = ...) -> None: ...
 
 class PredictionRunStatus(_message.Message):
-    __slots__ = ["observedGeneration", "predictionManifestLocation", "runVersion", "rows", "phase", "unitTestResults", "failureMessage", "logs", "forecast", "usage", "updatedAt", "completedAt", "conditions"]
+    __slots__ = ("observedGeneration", "predictionManifestLocation", "runVersion", "rows", "phase", "unitTestResults", "failureMessage", "logs", "forecast", "usage", "updatedAt", "completedAt", "conditions")
     OBSERVEDGENERATION_FIELD_NUMBER: _ClassVar[int]
     PREDICTIONMANIFESTLOCATION_FIELD_NUMBER: _ClassVar[int]
     RUNVERSION_FIELD_NUMBER: _ClassVar[int]
@@ -430,7 +430,7 @@ class PredictionRunStatus(_message.Message):
     def __init__(self, observedGeneration: _Optional[int] = ..., predictionManifestLocation: _Optional[_Union[_generated_pb2.ManifestLocation, _Mapping]] = ..., runVersion: _Optional[int] = ..., rows: _Optional[int] = ..., phase: _Optional[str] = ..., unitTestResults: _Optional[_Union[_generated_pb2.TestSuiteResult, _Mapping]] = ..., failureMessage: _Optional[str] = ..., logs: _Optional[_Iterable[_Union[_generated_pb2.ContainerLog, _Mapping]]] = ..., forecast: _Optional[_Union[ForecastStatus, _Mapping]] = ..., usage: _Optional[_Union[_generated_pb2.ResourceConsumption, _Mapping]] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1_1_1.Time, _Mapping]] = ..., completedAt: _Optional[_Union[_generated_pb2_1_1_1_1.Time, _Mapping]] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1_1_1.Condition, _Mapping]]] = ...) -> None: ...
 
 class PredictionSpec(_message.Message):
-    __slots__ = ["owner", "description", "run", "artifactBucketName", "servingSiteName", "model", "input", "output", "labeled", "unitTests", "resources", "forecast", "modelClassName"]
+    __slots__ = ("owner", "description", "run", "artifactBucketName", "servingSiteName", "model", "input", "output", "labeled", "unitTests", "resources", "forecast", "modelClassName")
     OWNER_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     RUN_FIELD_NUMBER: _ClassVar[int]
@@ -460,7 +460,7 @@ class PredictionSpec(_message.Message):
     def __init__(self, owner: _Optional[str] = ..., description: _Optional[str] = ..., run: _Optional[_Union[_generated_pb2.RunSpec, _Mapping]] = ..., artifactBucketName: _Optional[str] = ..., servingSiteName: _Optional[str] = ..., model: _Optional[_Union[ModelSpec, _Mapping]] = ..., input: _Optional[_Union[_generated_pb2_1.DataInputSpec, _Mapping]] = ..., output: _Optional[_Union[_generated_pb2_1.DataOutputSpec, _Mapping]] = ..., labeled: bool = ..., unitTests: _Optional[_Union[_generated_pb2_1_1.ModelTestSuite, _Mapping]] = ..., resources: _Optional[_Union[_generated_pb2.ResourceSpec, _Mapping]] = ..., forecast: _Optional[_Union[ForecastPredictionSpec, _Mapping]] = ..., modelClassName: _Optional[str] = ...) -> None: ...
 
 class PredictionStatus(_message.Message):
-    __slots__ = ["observedGeneration", "active", "lastRunVersion", "availableRuns", "lastRunAt", "failureMessage", "schedule", "updatedAt", "conditions"]
+    __slots__ = ("observedGeneration", "active", "lastRunVersion", "availableRuns", "lastRunAt", "failureMessage", "schedule", "updatedAt", "conditions")
     OBSERVEDGENERATION_FIELD_NUMBER: _ClassVar[int]
     ACTIVE_FIELD_NUMBER: _ClassVar[int]
     LASTRUNVERSION_FIELD_NUMBER: _ClassVar[int]
@@ -482,7 +482,7 @@ class PredictionStatus(_message.Message):
     def __init__(self, observedGeneration: _Optional[int] = ..., active: _Optional[_Iterable[_Union[_generated_pb2.RunReference, _Mapping]]] = ..., lastRunVersion: _Optional[int] = ..., availableRuns: _Optional[_Iterable[_Union[_generated_pb2.RunReference, _Mapping]]] = ..., lastRunAt: _Optional[_Union[_generated_pb2_1_1_1_1.Time, _Mapping]] = ..., failureMessage: _Optional[str] = ..., schedule: _Optional[_Union[_generated_pb2.RunScheduleStatus, _Mapping]] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1_1_1.Time, _Mapping]] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1_1_1.Condition, _Mapping]]] = ...) -> None: ...
 
 class Predictor(_message.Message):
-    __slots__ = ["metadata", "spec", "status"]
+    __slots__ = ("metadata", "spec", "status")
     METADATA_FIELD_NUMBER: _ClassVar[int]
     SPEC_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
@@ -492,7 +492,7 @@ class Predictor(_message.Message):
     def __init__(self, metadata: _Optional[_Union[_generated_pb2_1_1_1_1.ObjectMeta, _Mapping]] = ..., spec: _Optional[_Union[PredictorSpec, _Mapping]] = ..., status: _Optional[_Union[PredictorStatus, _Mapping]] = ...) -> None: ...
 
 class PredictorList(_message.Message):
-    __slots__ = ["metadata", "items"]
+    __slots__ = ("metadata", "items")
     METADATA_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     metadata: _generated_pb2_1_1_1_1.ListMeta
@@ -500,7 +500,7 @@ class PredictorList(_message.Message):
     def __init__(self, metadata: _Optional[_Union[_generated_pb2_1_1_1_1.ListMeta, _Mapping]] = ..., items: _Optional[_Iterable[_Union[Predictor, _Mapping]]] = ...) -> None: ...
 
 class PredictorSpec(_message.Message):
-    __slots__ = ["versionName", "modelClassName", "description", "productRef", "template", "servingSiteRef", "models", "progressive", "access", "replicas", "autoScaling", "owner", "resources", "cache", "store", "serving", "task", "drift", "feedback", "notification", "predictionLogging", "forwardCurtain", "backwardCurtain", "fastSlow"]
+    __slots__ = ("versionName", "modelClassName", "description", "productRef", "template", "servingSiteRef", "models", "progressive", "access", "replicas", "autoScaling", "owner", "resources", "cache", "store", "serving", "task", "drift", "feedback", "notification", "predictionLogging", "forwardCurtain", "backwardCurtain", "fastSlow")
     VERSIONNAME_FIELD_NUMBER: _ClassVar[int]
     MODELCLASSNAME_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
@@ -552,7 +552,7 @@ class PredictorSpec(_message.Message):
     def __init__(self, versionName: _Optional[str] = ..., modelClassName: _Optional[str] = ..., description: _Optional[str] = ..., productRef: _Optional[_Union[_generated_pb2_1_1_1.ObjectReference, _Mapping]] = ..., template: bool = ..., servingSiteRef: _Optional[_Union[_generated_pb2_1_1_1.ObjectReference, _Mapping]] = ..., models: _Optional[_Iterable[_Union[_generated_pb2.ModelDeploymentSpec, _Mapping]]] = ..., progressive: _Optional[_Union[ProgressiveSpec, _Mapping]] = ..., access: _Optional[_Union[_generated_pb2.AccessSpec, _Mapping]] = ..., replicas: _Optional[int] = ..., autoScaling: _Optional[_Union[AutoScalingSpec, _Mapping]] = ..., owner: _Optional[str] = ..., resources: _Optional[_Union[_generated_pb2.ResourceSpec, _Mapping]] = ..., cache: _Optional[_Union[PredictionCacheSpec, _Mapping]] = ..., store: _Optional[_Union[OnlineFeatureStoreSpec, _Mapping]] = ..., serving: _Optional[_Union[ModelServingSpec, _Mapping]] = ..., task: _Optional[str] = ..., drift: _Optional[_Union[DriftDetectionSpec, _Mapping]] = ..., feedback: _Optional[_Union[FeedbackTestSpec, _Mapping]] = ..., notification: _Optional[_Union[_generated_pb2.NotificationSpec, _Mapping]] = ..., predictionLogging: _Optional[_Union[PredictionLoggingSpec, _Mapping]] = ..., forwardCurtain: _Optional[_Union[ForwardCurtainSpec, _Mapping]] = ..., backwardCurtain: _Optional[_Union[BackwardCurtainSpec, _Mapping]] = ..., fastSlow: _Optional[_Union[FastSlowModelSpec, _Mapping]] = ...) -> None: ...
 
 class PredictorStatus(_message.Message):
-    __slots__ = ["observedGeneration", "history", "modelStatus", "predictorletStatus", "onlineStoreStatus", "updatedAt", "failureMessage", "loadBalancerStatus", "lastPredictionDataset", "servingTestsResults", "conditions"]
+    __slots__ = ("observedGeneration", "history", "modelStatus", "predictorletStatus", "onlineStoreStatus", "updatedAt", "failureMessage", "loadBalancerStatus", "lastPredictionDataset", "servingTestsResults", "conditions")
     OBSERVEDGENERATION_FIELD_NUMBER: _ClassVar[int]
     HISTORY_FIELD_NUMBER: _ClassVar[int]
     MODELSTATUS_FIELD_NUMBER: _ClassVar[int]
@@ -578,7 +578,7 @@ class PredictorStatus(_message.Message):
     def __init__(self, observedGeneration: _Optional[int] = ..., history: _Optional[_Iterable[_Union[ModelDeploymentRecord, _Mapping]]] = ..., modelStatus: _Optional[_Iterable[_Union[ModelDeploymentStatus, _Mapping]]] = ..., predictorletStatus: _Optional[_Union[PredictorletStatus, _Mapping]] = ..., onlineStoreStatus: _Optional[_Union[OnlineStoreStatus, _Mapping]] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1_1_1.Time, _Mapping]] = ..., failureMessage: _Optional[str] = ..., loadBalancerStatus: _Optional[_Union[_generated_pb2_1_1_1.LoadBalancerStatus, _Mapping]] = ..., lastPredictionDataset: _Optional[_Union[_generated_pb2_1_1_1.ObjectReference, _Mapping]] = ..., servingTestsResults: _Optional[_Union[_generated_pb2.TestSuiteResult, _Mapping]] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1_1_1.Condition, _Mapping]]] = ...) -> None: ...
 
 class PredictorletStatus(_message.Message):
-    __slots__ = ["deploymentRef", "serviceRef", "deployedAt", "p50", "p95", "p99", "avgDailyPrediction", "totalPredictions", "lastPredictionTime", "failureMessage"]
+    __slots__ = ("deploymentRef", "serviceRef", "deployedAt", "p50", "p95", "p99", "avgDailyPrediction", "totalPredictions", "lastPredictionTime", "failureMessage")
     DEPLOYMENTREF_FIELD_NUMBER: _ClassVar[int]
     SERVICEREF_FIELD_NUMBER: _ClassVar[int]
     DEPLOYEDAT_FIELD_NUMBER: _ClassVar[int]
@@ -602,7 +602,7 @@ class PredictorletStatus(_message.Message):
     def __init__(self, deploymentRef: _Optional[_Union[_generated_pb2_1_1_1.ObjectReference, _Mapping]] = ..., serviceRef: _Optional[_Union[_generated_pb2_1_1_1.ObjectReference, _Mapping]] = ..., deployedAt: _Optional[_Union[_generated_pb2_1_1_1_1.Time, _Mapping]] = ..., p50: _Optional[float] = ..., p95: _Optional[float] = ..., p99: _Optional[float] = ..., avgDailyPrediction: _Optional[int] = ..., totalPredictions: _Optional[int] = ..., lastPredictionTime: _Optional[_Union[_generated_pb2_1_1_1_1.Time, _Mapping]] = ..., failureMessage: _Optional[str] = ...) -> None: ...
 
 class ProgressiveSpec(_message.Message):
-    __slots__ = ["warmup", "trafficIncrement", "canaryMetrics"]
+    __slots__ = ("warmup", "trafficIncrement", "canaryMetrics")
     WARMUP_FIELD_NUMBER: _ClassVar[int]
     TRAFFICINCREMENT_FIELD_NUMBER: _ClassVar[int]
     CANARYMETRICS_FIELD_NUMBER: _ClassVar[int]
@@ -612,7 +612,7 @@ class ProgressiveSpec(_message.Message):
     def __init__(self, warmup: _Optional[int] = ..., trafficIncrement: _Optional[int] = ..., canaryMetrics: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class ValidationError(_message.Message):
-    __slots__ = ["column", "metric", "min", "max", "actual"]
+    __slots__ = ("column", "metric", "min", "max", "actual")
     COLUMN_FIELD_NUMBER: _ClassVar[int]
     METRIC_FIELD_NUMBER: _ClassVar[int]
     MIN_FIELD_NUMBER: _ClassVar[int]

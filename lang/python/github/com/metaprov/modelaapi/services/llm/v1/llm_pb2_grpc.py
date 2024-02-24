@@ -19,6 +19,11 @@ class LLMServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.RefreshRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.RefreshResponse.FromString,
                 )
+        self.Delete = channel.unary_unary(
+                '/LLMService/Delete',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.DeleteRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.DeleteResponse.FromString,
+                )
         self.Shutdown = channel.unary_unary(
                 '/LLMService/Shutdown',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.ShutdownRequest.SerializeToString,
@@ -30,6 +35,12 @@ class LLMServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def Refresh(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Delete(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -48,6 +59,11 @@ def add_LLMServiceServicer_to_server(servicer, server):
                     servicer.Refresh,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.RefreshRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.RefreshResponse.SerializeToString,
+            ),
+            'Delete': grpc.unary_unary_rpc_method_handler(
+                    servicer.Delete,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.DeleteRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.DeleteResponse.SerializeToString,
             ),
             'Shutdown': grpc.unary_unary_rpc_method_handler(
                     servicer.Shutdown,
@@ -78,6 +94,23 @@ class LLMService(object):
         return grpc.experimental.unary_unary(request, target, '/LLMService/Refresh',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.RefreshRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.RefreshResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Delete(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/LLMService/Delete',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.DeleteRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.DeleteResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

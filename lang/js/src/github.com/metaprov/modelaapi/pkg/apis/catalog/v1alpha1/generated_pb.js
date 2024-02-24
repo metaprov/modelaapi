@@ -2,15 +2,18 @@
 /**
  * @fileoverview
  * @enhanceable
+ * @suppress {missingRequire} reports error on implicit type usages.
  * @suppress {messageConventions} JS Compiler reports an error if a variable or
  *     field starts with 'MSG_' and isn't a translatable message.
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
+/* eslint-disable */
+// @ts-nocheck
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global = Function('return this')();
+var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
 var k8s_io_api_core_v1_generated_pb = require('../../../../../../../k8s.io/api/core/v1/generated_pb.js');
 goog.object.extend(proto, k8s_io_api_core_v1_generated_pb);
@@ -8464,16 +8467,20 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData.dese
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.addBins(value);
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedDouble() : [reader.readDouble()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addBins(values[i]);
+      }
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.addCategories(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.addCounts(value);
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedDouble() : [reader.readDouble()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addCounts(values[i]);
+      }
       break;
     case 4:
       var value = /** @type {number} */ (reader.readInt32());

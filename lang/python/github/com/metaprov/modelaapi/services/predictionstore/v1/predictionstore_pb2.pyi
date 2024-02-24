@@ -8,7 +8,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class PredictionsIngestRequest(_message.Message):
-    __slots__ = ["dataset", "key", "connection", "secret"]
+    __slots__ = ("dataset", "key", "connection", "secret")
     DATASET_FIELD_NUMBER: _ClassVar[int]
     KEY_FIELD_NUMBER: _ClassVar[int]
     CONNECTION_FIELD_NUMBER: _ClassVar[int]
@@ -20,5 +20,5 @@ class PredictionsIngestRequest(_message.Message):
     def __init__(self, dataset: _Optional[_Union[_generated_pb2.Dataset, _Mapping]] = ..., key: _Optional[str] = ..., connection: _Optional[_Union[_generated_pb2_1.Connection, _Mapping]] = ..., secret: _Optional[_Union[_generated_pb2_1_1.Secret, _Mapping]] = ...) -> None: ...
 
 class PredictionIngestResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...

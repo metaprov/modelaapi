@@ -11,7 +11,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class TrainRequest(_message.Message):
-    __slots__ = ["product", "datasource", "dataset", "snapshot", "bucket", "model", "study", "run", "baseModels"]
+    __slots__ = ("product", "datasource", "dataset", "snapshot", "bucket", "model", "study", "run", "baseModels")
     PRODUCT_FIELD_NUMBER: _ClassVar[int]
     DATASOURCE_FIELD_NUMBER: _ClassVar[int]
     DATASET_FIELD_NUMBER: _ClassVar[int]
@@ -33,16 +33,16 @@ class TrainRequest(_message.Message):
     def __init__(self, product: _Optional[_Union[_generated_pb2_1.DataProduct, _Mapping]] = ..., datasource: _Optional[_Union[_generated_pb2_1.DataSource, _Mapping]] = ..., dataset: _Optional[_Union[_generated_pb2_1.Dataset, _Mapping]] = ..., snapshot: _Optional[_Union[_generated_pb2_1.DatasetSnapshot, _Mapping]] = ..., bucket: _Optional[_Union[_generated_pb2_1_1.VirtualBucket, _Mapping]] = ..., model: _Optional[_Union[_generated_pb2.Model, _Mapping]] = ..., study: _Optional[_Union[_generated_pb2.Study, _Mapping]] = ..., run: _Optional[_Union[_generated_pb2.StudyRun, _Mapping]] = ..., baseModels: _Optional[_Iterable[_Union[_generated_pb2.Model, _Mapping]]] = ...) -> None: ...
 
 class TrainResponse(_message.Message):
-    __slots__ = ["results", "weightsLocation", "labelEncoderLocation", "forecastLocation", "profileLocation", "confusionMatrix", "pythonVersionInfo", "OS", "pipFreeze", "impurityFeatureImportance"]
+    __slots__ = ("results", "weightsLocation", "labelEncoderLocation", "forecastLocation", "profileLocation", "confusionMatrix", "pythonVersionInfo", "OS", "pipFreeze", "impurityFeatureImportance")
     class PipFreezeEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
         value: str
         def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
     class ImpurityFeatureImportanceEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -71,7 +71,7 @@ class TrainResponse(_message.Message):
     def __init__(self, results: _Optional[_Iterable[_Union[_generated_pb2_1_1_1.Measurement, _Mapping]]] = ..., weightsLocation: _Optional[_Union[_generated_pb2_1_1_1.FileLocation, _Mapping]] = ..., labelEncoderLocation: _Optional[_Union[_generated_pb2_1_1_1.FileLocation, _Mapping]] = ..., forecastLocation: _Optional[_Union[_generated_pb2_1_1_1.FileLocation, _Mapping]] = ..., profileLocation: _Optional[_Union[_generated_pb2_1_1_1.FileLocation, _Mapping]] = ..., confusionMatrix: _Optional[_Union[_generated_pb2_1_1_1.ConfusionMatrix, _Mapping]] = ..., pythonVersionInfo: _Optional[str] = ..., OS: _Optional[str] = ..., pipFreeze: _Optional[_Mapping[str, str]] = ..., impurityFeatureImportance: _Optional[_Mapping[str, float]] = ...) -> None: ...
 
 class TestRequest(_message.Message):
-    __slots__ = ["product", "datasource", "dataset", "snapshot", "model", "study", "run", "bucket", "baseModels"]
+    __slots__ = ("product", "datasource", "dataset", "snapshot", "model", "study", "run", "bucket", "baseModels")
     PRODUCT_FIELD_NUMBER: _ClassVar[int]
     DATASOURCE_FIELD_NUMBER: _ClassVar[int]
     DATASET_FIELD_NUMBER: _ClassVar[int]
@@ -93,9 +93,9 @@ class TestRequest(_message.Message):
     def __init__(self, product: _Optional[_Union[_generated_pb2_1.DataProduct, _Mapping]] = ..., datasource: _Optional[_Union[_generated_pb2_1.DataSource, _Mapping]] = ..., dataset: _Optional[_Union[_generated_pb2_1.Dataset, _Mapping]] = ..., snapshot: _Optional[_Union[_generated_pb2_1.DatasetSnapshot, _Mapping]] = ..., model: _Optional[_Union[_generated_pb2.Model, _Mapping]] = ..., study: _Optional[_Union[_generated_pb2.Study, _Mapping]] = ..., run: _Optional[_Union[_generated_pb2.StudyRun, _Mapping]] = ..., bucket: _Optional[_Union[_generated_pb2_1_1.VirtualBucket, _Mapping]] = ..., baseModels: _Optional[_Iterable[_Union[_generated_pb2.Model, _Mapping]]] = ...) -> None: ...
 
 class TestResponse(_message.Message):
-    __slots__ = ["trainResults", "testResults", "testWeightsLocation", "fullWeightsLocation", "misclassLocation", "permutationFeatureImportance", "trainConfusionMatrix", "testConfusionMatrix"]
+    __slots__ = ("trainResults", "testResults", "testWeightsLocation", "fullWeightsLocation", "misclassLocation", "permutationFeatureImportance", "trainConfusionMatrix", "testConfusionMatrix")
     class PermutationFeatureImportanceEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -120,7 +120,7 @@ class TestResponse(_message.Message):
     def __init__(self, trainResults: _Optional[_Iterable[_Union[_generated_pb2_1_1_1.Measurement, _Mapping]]] = ..., testResults: _Optional[_Iterable[_Union[_generated_pb2_1_1_1.Measurement, _Mapping]]] = ..., testWeightsLocation: _Optional[_Union[_generated_pb2_1_1_1.FileLocation, _Mapping]] = ..., fullWeightsLocation: _Optional[_Union[_generated_pb2_1_1_1.FileLocation, _Mapping]] = ..., misclassLocation: _Optional[_Union[_generated_pb2_1_1_1.FileLocation, _Mapping]] = ..., permutationFeatureImportance: _Optional[_Mapping[str, float]] = ..., trainConfusionMatrix: _Optional[_Union[_generated_pb2_1_1_1.ConfusionMatrix, _Mapping]] = ..., testConfusionMatrix: _Optional[_Union[_generated_pb2_1_1_1.ConfusionMatrix, _Mapping]] = ...) -> None: ...
 
 class TrainDriftDetectorRequest(_message.Message):
-    __slots__ = ["product", "datasource", "dataset", "snapshot", "model", "study", "run", "bucket", "baseModels"]
+    __slots__ = ("product", "datasource", "dataset", "snapshot", "model", "study", "run", "bucket", "baseModels")
     PRODUCT_FIELD_NUMBER: _ClassVar[int]
     DATASOURCE_FIELD_NUMBER: _ClassVar[int]
     DATASET_FIELD_NUMBER: _ClassVar[int]
@@ -142,7 +142,7 @@ class TrainDriftDetectorRequest(_message.Message):
     def __init__(self, product: _Optional[_Union[_generated_pb2_1.DataProduct, _Mapping]] = ..., datasource: _Optional[_Union[_generated_pb2_1.DataSource, _Mapping]] = ..., dataset: _Optional[_Union[_generated_pb2_1.Dataset, _Mapping]] = ..., snapshot: _Optional[_Union[_generated_pb2_1.DatasetSnapshot, _Mapping]] = ..., model: _Optional[_Union[_generated_pb2.Model, _Mapping]] = ..., study: _Optional[_Union[_generated_pb2.Study, _Mapping]] = ..., run: _Optional[_Union[_generated_pb2.StudyRun, _Mapping]] = ..., bucket: _Optional[_Union[_generated_pb2_1_1.VirtualBucket, _Mapping]] = ..., baseModels: _Optional[_Iterable[_Union[_generated_pb2.Model, _Mapping]]] = ...) -> None: ...
 
 class ForecastRequest(_message.Message):
-    __slots__ = ["product", "datasource", "dataset", "snapshot", "model", "study", "run", "bucket"]
+    __slots__ = ("product", "datasource", "dataset", "snapshot", "model", "study", "run", "bucket")
     PRODUCT_FIELD_NUMBER: _ClassVar[int]
     DATASOURCE_FIELD_NUMBER: _ClassVar[int]
     DATASET_FIELD_NUMBER: _ClassVar[int]
@@ -162,21 +162,21 @@ class ForecastRequest(_message.Message):
     def __init__(self, product: _Optional[_Union[_generated_pb2_1.DataProduct, _Mapping]] = ..., datasource: _Optional[_Union[_generated_pb2_1.DataSource, _Mapping]] = ..., dataset: _Optional[_Union[_generated_pb2_1.Dataset, _Mapping]] = ..., snapshot: _Optional[_Union[_generated_pb2_1.DatasetSnapshot, _Mapping]] = ..., model: _Optional[_Union[_generated_pb2.Model, _Mapping]] = ..., study: _Optional[_Union[_generated_pb2.Study, _Mapping]] = ..., run: _Optional[_Union[_generated_pb2.StudyRun, _Mapping]] = ..., bucket: _Optional[_Union[_generated_pb2_1_1.VirtualBucket, _Mapping]] = ...) -> None: ...
 
 class ForecastResponse(_message.Message):
-    __slots__ = ["forecastLocation"]
+    __slots__ = ("forecastLocation",)
     FORECASTLOCATION_FIELD_NUMBER: _ClassVar[int]
     forecastLocation: _generated_pb2_1_1_1.FileLocation
     def __init__(self, forecastLocation: _Optional[_Union[_generated_pb2_1_1_1.FileLocation, _Mapping]] = ...) -> None: ...
 
 class ShutdownRequest(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class ShutdownResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class ExplainRequest(_message.Message):
-    __slots__ = ["product", "datasource", "dataset", "snapshot", "model", "study", "run", "bucket", "baseModels"]
+    __slots__ = ("product", "datasource", "dataset", "snapshot", "model", "study", "run", "bucket", "baseModels")
     PRODUCT_FIELD_NUMBER: _ClassVar[int]
     DATASOURCE_FIELD_NUMBER: _ClassVar[int]
     DATASET_FIELD_NUMBER: _ClassVar[int]
@@ -198,7 +198,7 @@ class ExplainRequest(_message.Message):
     def __init__(self, product: _Optional[_Union[_generated_pb2_1.DataProduct, _Mapping]] = ..., datasource: _Optional[_Union[_generated_pb2_1.DataSource, _Mapping]] = ..., dataset: _Optional[_Union[_generated_pb2_1.Dataset, _Mapping]] = ..., snapshot: _Optional[_Union[_generated_pb2_1.DatasetSnapshot, _Mapping]] = ..., model: _Optional[_Union[_generated_pb2.Model, _Mapping]] = ..., study: _Optional[_Union[_generated_pb2.Study, _Mapping]] = ..., run: _Optional[_Union[_generated_pb2.StudyRun, _Mapping]] = ..., bucket: _Optional[_Union[_generated_pb2_1_1.VirtualBucket, _Mapping]] = ..., baseModels: _Optional[_Iterable[_Union[_generated_pb2.Model, _Mapping]]] = ...) -> None: ...
 
 class ExplainResponse(_message.Message):
-    __slots__ = ["explainerLocation", "trainShapValuesLocation", "testShapValuesLocation"]
+    __slots__ = ("explainerLocation", "trainShapValuesLocation", "testShapValuesLocation")
     EXPLAINERLOCATION_FIELD_NUMBER: _ClassVar[int]
     TRAINSHAPVALUESLOCATION_FIELD_NUMBER: _ClassVar[int]
     TESTSHAPVALUESLOCATION_FIELD_NUMBER: _ClassVar[int]

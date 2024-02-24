@@ -10,7 +10,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class DatasetProfile(_message.Message):
-    __slots__ = ["cols", "rows", "filesize", "imbalance", "plots", "columns", "table", "hash", "groups", "ts"]
+    __slots__ = ("cols", "rows", "filesize", "imbalance", "plots", "columns", "table", "hash", "groups", "ts")
     COLS_FIELD_NUMBER: _ClassVar[int]
     ROWS_FIELD_NUMBER: _ClassVar[int]
     FILESIZE_FIELD_NUMBER: _ClassVar[int]
@@ -34,9 +34,9 @@ class DatasetProfile(_message.Message):
     def __init__(self, cols: _Optional[int] = ..., rows: _Optional[int] = ..., filesize: _Optional[int] = ..., imbalance: bool = ..., plots: _Optional[_Iterable[_Union[Plot, _Mapping]]] = ..., columns: _Optional[_Iterable[_Union[_generated_pb2.FeatureStatistics, _Mapping]]] = ..., table: _Optional[_Union[TableView, _Mapping]] = ..., hash: _Optional[str] = ..., groups: _Optional[_Union[TableView, _Mapping]] = ..., ts: _Optional[_Union[TimeSeriesProfile, _Mapping]] = ...) -> None: ...
 
 class ModelProfile(_message.Message):
-    __slots__ = ["name", "plots", "importance", "rocauc", "pr", "multiclassRocAuc", "multiclassPR", "algs", "features", "groups"]
+    __slots__ = ("name", "plots", "importance", "rocauc", "pr", "multiclassRocAuc", "multiclassPR", "algs", "features", "groups")
     class ImportanceEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -65,7 +65,7 @@ class ModelProfile(_message.Message):
     def __init__(self, name: _Optional[str] = ..., plots: _Optional[_Iterable[_Union[Plot, _Mapping]]] = ..., importance: _Optional[_Mapping[str, float]] = ..., rocauc: _Optional[_Union[ROCCurve, _Mapping]] = ..., pr: _Optional[_Union[PrecisionRecallCurve, _Mapping]] = ..., multiclassRocAuc: _Optional[_Iterable[_Union[ROCCurve, _Mapping]]] = ..., multiclassPR: _Optional[_Iterable[_Union[PrecisionRecallCurve, _Mapping]]] = ..., algs: _Optional[_Iterable[_Union[ForecastingAlgProfile, _Mapping]]] = ..., features: _Optional[_Union[TableView, _Mapping]] = ..., groups: _Optional[_Union[TableView, _Mapping]] = ...) -> None: ...
 
 class ForecastingAlgProfile(_message.Message):
-    __slots__ = ["algorithm", "series", "timeStat", "valueStat", "cv", "forecast", "metrics", "changePoints", "plots"]
+    __slots__ = ("algorithm", "series", "timeStat", "valueStat", "cv", "forecast", "metrics", "changePoints", "plots")
     ALGORITHM_FIELD_NUMBER: _ClassVar[int]
     SERIES_FIELD_NUMBER: _ClassVar[int]
     TIMESTAT_FIELD_NUMBER: _ClassVar[int]
@@ -87,7 +87,7 @@ class ForecastingAlgProfile(_message.Message):
     def __init__(self, algorithm: _Optional[str] = ..., series: _Optional[_Union[TableView, _Mapping]] = ..., timeStat: _Optional[_Union[TimeStat, _Mapping]] = ..., valueStat: _Optional[_Union[TableView, _Mapping]] = ..., cv: _Optional[_Union[TableView, _Mapping]] = ..., forecast: _Optional[_Union[TableView, _Mapping]] = ..., metrics: _Optional[_Union[TableView, _Mapping]] = ..., changePoints: _Optional[_Union[TableView, _Mapping]] = ..., plots: _Optional[_Iterable[_Union[Plot, _Mapping]]] = ...) -> None: ...
 
 class TimeStat(_message.Message):
-    __slots__ = ["gaps", "added_timepoints", "dropped_timepoints", "data_points", "mean_increments_secs", "min_timestamp", "max_timestamp"]
+    __slots__ = ("gaps", "added_timepoints", "dropped_timepoints", "data_points", "mean_increments_secs", "min_timestamp", "max_timestamp")
     GAPS_FIELD_NUMBER: _ClassVar[int]
     ADDED_TIMEPOINTS_FIELD_NUMBER: _ClassVar[int]
     DROPPED_TIMEPOINTS_FIELD_NUMBER: _ClassVar[int]
@@ -105,7 +105,7 @@ class TimeStat(_message.Message):
     def __init__(self, gaps: _Optional[_Union[TableView, _Mapping]] = ..., added_timepoints: _Optional[int] = ..., dropped_timepoints: _Optional[int] = ..., data_points: _Optional[int] = ..., mean_increments_secs: _Optional[float] = ..., min_timestamp: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., max_timestamp: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
 
 class ROCCurve(_message.Message):
-    __slots__ = ["classname", "classid", "fpr", "tpr", "thresholds"]
+    __slots__ = ("classname", "classid", "fpr", "tpr", "thresholds")
     CLASSNAME_FIELD_NUMBER: _ClassVar[int]
     CLASSID_FIELD_NUMBER: _ClassVar[int]
     FPR_FIELD_NUMBER: _ClassVar[int]
@@ -119,7 +119,7 @@ class ROCCurve(_message.Message):
     def __init__(self, classname: _Optional[str] = ..., classid: _Optional[int] = ..., fpr: _Optional[_Iterable[float]] = ..., tpr: _Optional[_Iterable[float]] = ..., thresholds: _Optional[_Iterable[float]] = ...) -> None: ...
 
 class PrecisionRecallCurve(_message.Message):
-    __slots__ = ["classname", "classid", "precision", "recall", "thresholds"]
+    __slots__ = ("classname", "classid", "precision", "recall", "thresholds")
     CLASSNAME_FIELD_NUMBER: _ClassVar[int]
     CLASSID_FIELD_NUMBER: _ClassVar[int]
     PRECISION_FIELD_NUMBER: _ClassVar[int]
@@ -133,9 +133,9 @@ class PrecisionRecallCurve(_message.Message):
     def __init__(self, classname: _Optional[str] = ..., classid: _Optional[int] = ..., precision: _Optional[_Iterable[float]] = ..., recall: _Optional[_Iterable[float]] = ..., thresholds: _Optional[_Iterable[float]] = ...) -> None: ...
 
 class TimeSeriesProfile(_message.Message):
-    __slots__ = ["kpss", "adf", "zivot", "kendall", "dw", "key", "series", "valueStat", "featuresView", "features"]
+    __slots__ = ("kpss", "adf", "zivot", "kendall", "dw", "key", "series", "valueStat", "featuresView", "features")
     class FeaturesEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -164,9 +164,9 @@ class TimeSeriesProfile(_message.Message):
     def __init__(self, kpss: _Optional[_Union[KPSS, _Mapping]] = ..., adf: _Optional[_Union[ADF, _Mapping]] = ..., zivot: _Optional[_Union[ZivotAndrew, _Mapping]] = ..., kendall: _Optional[_Union[MannKendall, _Mapping]] = ..., dw: _Optional[_Union[DurbinWatson, _Mapping]] = ..., key: _Optional[str] = ..., series: _Optional[_Union[TableView, _Mapping]] = ..., valueStat: _Optional[_Union[TableView, _Mapping]] = ..., featuresView: _Optional[_Union[TableView, _Mapping]] = ..., features: _Optional[_Mapping[str, float]] = ...) -> None: ...
 
 class KPSS(_message.Message):
-    __slots__ = ["kpss_stat", "pvalue", "lags", "crit"]
+    __slots__ = ("kpss_stat", "pvalue", "lags", "crit")
     class CritEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -183,9 +183,9 @@ class KPSS(_message.Message):
     def __init__(self, kpss_stat: _Optional[float] = ..., pvalue: _Optional[float] = ..., lags: _Optional[float] = ..., crit: _Optional[_Mapping[str, float]] = ...) -> None: ...
 
 class ADF(_message.Message):
-    __slots__ = ["adf", "pvalue", "usedlag", "nobs", "crit"]
+    __slots__ = ("adf", "pvalue", "usedlag", "nobs", "crit")
     class CritEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -204,9 +204,9 @@ class ADF(_message.Message):
     def __init__(self, adf: _Optional[float] = ..., pvalue: _Optional[float] = ..., usedlag: _Optional[int] = ..., nobs: _Optional[int] = ..., crit: _Optional[_Mapping[str, float]] = ...) -> None: ...
 
 class ZivotAndrew(_message.Message):
-    __slots__ = ["zastat", "pvalue", "crit", "baselag", "bpidx"]
+    __slots__ = ("zastat", "pvalue", "crit", "baselag", "bpidx")
     class CritEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -225,7 +225,7 @@ class ZivotAndrew(_message.Message):
     def __init__(self, zastat: _Optional[float] = ..., pvalue: _Optional[float] = ..., crit: _Optional[_Mapping[str, float]] = ..., baselag: _Optional[int] = ..., bpidx: _Optional[int] = ...) -> None: ...
 
 class MannKendall(_message.Message):
-    __slots__ = ["trend", "h", "p", "z", "tau", "s", "var_s", "slope", "intercept"]
+    __slots__ = ("trend", "h", "p", "z", "tau", "s", "var_s", "slope", "intercept")
     TREND_FIELD_NUMBER: _ClassVar[int]
     H_FIELD_NUMBER: _ClassVar[int]
     P_FIELD_NUMBER: _ClassVar[int]
@@ -247,13 +247,13 @@ class MannKendall(_message.Message):
     def __init__(self, trend: _Optional[str] = ..., h: _Optional[float] = ..., p: _Optional[float] = ..., z: _Optional[float] = ..., tau: _Optional[float] = ..., s: _Optional[float] = ..., var_s: _Optional[float] = ..., slope: _Optional[float] = ..., intercept: _Optional[float] = ...) -> None: ...
 
 class DurbinWatson(_message.Message):
-    __slots__ = ["dw"]
+    __slots__ = ("dw",)
     DW_FIELD_NUMBER: _ClassVar[int]
     dw: float
     def __init__(self, dw: _Optional[float] = ...) -> None: ...
 
 class ForecastProfile(_message.Message):
-    __slots__ = ["name", "plots"]
+    __slots__ = ("name", "plots")
     NAME_FIELD_NUMBER: _ClassVar[int]
     PLOTS_FIELD_NUMBER: _ClassVar[int]
     name: str
@@ -261,7 +261,7 @@ class ForecastProfile(_message.Message):
     def __init__(self, name: _Optional[str] = ..., plots: _Optional[_Iterable[_Union[Plot, _Mapping]]] = ...) -> None: ...
 
 class StudyProfile(_message.Message):
-    __slots__ = ["plots", "models", "trainingHash", "testingHash", "validationHash"]
+    __slots__ = ("plots", "models", "trainingHash", "testingHash", "validationHash")
     PLOTS_FIELD_NUMBER: _ClassVar[int]
     MODELS_FIELD_NUMBER: _ClassVar[int]
     TRAININGHASH_FIELD_NUMBER: _ClassVar[int]
@@ -275,7 +275,7 @@ class StudyProfile(_message.Message):
     def __init__(self, plots: _Optional[_Iterable[_Union[Plot, _Mapping]]] = ..., models: _Optional[_Iterable[_Union[ModelProfile, _Mapping]]] = ..., trainingHash: _Optional[str] = ..., testingHash: _Optional[str] = ..., validationHash: _Optional[str] = ...) -> None: ...
 
 class Plot(_message.Message):
-    __slots__ = ["name", "title", "img", "fname", "url"]
+    __slots__ = ("name", "title", "img", "fname", "url")
     NAME_FIELD_NUMBER: _ClassVar[int]
     TITLE_FIELD_NUMBER: _ClassVar[int]
     IMG_FIELD_NUMBER: _ClassVar[int]
@@ -289,7 +289,7 @@ class Plot(_message.Message):
     def __init__(self, name: _Optional[str] = ..., title: _Optional[str] = ..., img: _Optional[bytes] = ..., fname: _Optional[str] = ..., url: _Optional[str] = ...) -> None: ...
 
 class Histogram(_message.Message):
-    __slots__ = ["values", "bins", "categories"]
+    __slots__ = ("values", "bins", "categories")
     VALUES_FIELD_NUMBER: _ClassVar[int]
     BINS_FIELD_NUMBER: _ClassVar[int]
     CATEGORIES_FIELD_NUMBER: _ClassVar[int]
@@ -299,9 +299,9 @@ class Histogram(_message.Message):
     def __init__(self, values: _Optional[_Iterable[float]] = ..., bins: _Optional[_Iterable[float]] = ..., categories: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class NamespaceInfo(_message.Message):
-    __slots__ = ["type", "Name", "accounts", "buckets", "labs", "servingsites", "datasets", "datasources", "studies", "models"]
+    __slots__ = ("type", "Name", "accounts", "buckets", "labs", "servingsites", "datasets", "datasources", "studies", "models")
     class NamespaceType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-        __slots__ = []
+        __slots__ = ()
         TENANT: _ClassVar[NamespaceInfo.NamespaceType]
         DATAPRODUCT: _ClassVar[NamespaceInfo.NamespaceType]
         LAB: _ClassVar[NamespaceInfo.NamespaceType]
@@ -337,7 +337,7 @@ class NamespaceInfo(_message.Message):
     def __init__(self, type: _Optional[_Union[NamespaceInfo.NamespaceType, str]] = ..., Name: _Optional[str] = ..., accounts: _Optional[int] = ..., buckets: _Optional[int] = ..., labs: _Optional[int] = ..., servingsites: _Optional[int] = ..., datasets: _Optional[int] = ..., datasources: _Optional[int] = ..., studies: _Optional[int] = ..., models: _Optional[int] = ...) -> None: ...
 
 class TableView(_message.Message):
-    __slots__ = ["cols", "rows", "profiles"]
+    __slots__ = ("cols", "rows", "profiles")
     COLS_FIELD_NUMBER: _ClassVar[int]
     ROWS_FIELD_NUMBER: _ClassVar[int]
     PROFILES_FIELD_NUMBER: _ClassVar[int]
@@ -347,7 +347,7 @@ class TableView(_message.Message):
     def __init__(self, cols: _Optional[_Iterable[str]] = ..., rows: _Optional[_Iterable[_Union[TableViewRow, _Mapping]]] = ..., profiles: _Optional[_Iterable[_Union[_generated_pb2.FeatureStatistics, _Mapping]]] = ...) -> None: ...
 
 class TableViewRow(_message.Message):
-    __slots__ = ["values"]
+    __slots__ = ("values",)
     VALUES_FIELD_NUMBER: _ClassVar[int]
     values: _containers.RepeatedScalarFieldContainer[str]
     def __init__(self, values: _Optional[_Iterable[str]] = ...) -> None: ...

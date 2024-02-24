@@ -7,21 +7,21 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class IngestResponse(_message.Message):
-    __slots__ = ["liveKey"]
+    __slots__ = ("liveKey",)
     LIVEKEY_FIELD_NUMBER: _ClassVar[int]
     liveKey: str
     def __init__(self, liveKey: _Optional[str] = ...) -> None: ...
 
 class ObjectResponse(_message.Message):
-    __slots__ = ["archivePath"]
+    __slots__ = ("archivePath",)
     ARCHIVEPATH_FIELD_NUMBER: _ClassVar[int]
     archivePath: str
     def __init__(self, archivePath: _Optional[str] = ...) -> None: ...
 
 class ObjectRequest(_message.Message):
-    __slots__ = ["bucket", "connection", "secret", "key"]
+    __slots__ = ("bucket", "connection", "secret", "key")
     class SecretEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -38,7 +38,7 @@ class ObjectRequest(_message.Message):
     def __init__(self, bucket: _Optional[_Union[_generated_pb2.VirtualBucket, _Mapping]] = ..., connection: _Optional[_Union[_generated_pb2.Connection, _Mapping]] = ..., secret: _Optional[_Mapping[str, bytes]] = ..., key: _Optional[str] = ...) -> None: ...
 
 class ExistInVirtualBucketResponse(_message.Message):
-    __slots__ = ["exist"]
+    __slots__ = ("exist",)
     EXIST_FIELD_NUMBER: _ClassVar[int]
     exist: bool
     def __init__(self, exist: bool = ...) -> None: ...

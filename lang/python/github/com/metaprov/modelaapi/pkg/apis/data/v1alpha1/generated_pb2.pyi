@@ -11,7 +11,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ApprovalReviewStatus(_message.Message):
-    __slots__ = ["reviewer", "result", "approvedAt", "notes"]
+    __slots__ = ("reviewer", "result", "approvedAt", "notes")
     REVIEWER_FIELD_NUMBER: _ClassVar[int]
     RESULT_FIELD_NUMBER: _ClassVar[int]
     APPROVEDAT_FIELD_NUMBER: _ClassVar[int]
@@ -23,7 +23,7 @@ class ApprovalReviewStatus(_message.Message):
     def __init__(self, reviewer: _Optional[str] = ..., result: _Optional[str] = ..., approvedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., notes: _Optional[str] = ...) -> None: ...
 
 class ApprovalSpec(_message.Message):
-    __slots__ = ["enabled", "decisionType", "members"]
+    __slots__ = ("enabled", "decisionType", "members")
     ENABLED_FIELD_NUMBER: _ClassVar[int]
     DECISIONTYPE_FIELD_NUMBER: _ClassVar[int]
     MEMBERS_FIELD_NUMBER: _ClassVar[int]
@@ -33,7 +33,7 @@ class ApprovalSpec(_message.Message):
     def __init__(self, enabled: bool = ..., decisionType: _Optional[str] = ..., members: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class ApprovalStatus(_message.Message):
-    __slots__ = ["status", "reviews"]
+    __slots__ = ("status", "reviews")
     STATUS_FIELD_NUMBER: _ClassVar[int]
     REVIEWS_FIELD_NUMBER: _ClassVar[int]
     status: str
@@ -41,7 +41,7 @@ class ApprovalStatus(_message.Message):
     def __init__(self, status: _Optional[str] = ..., reviews: _Optional[_Iterable[_Union[ApprovalReviewStatus, _Mapping]]] = ...) -> None: ...
 
 class BarChartSpec(_message.Message):
-    __slots__ = ["datasetName", "x", "y", "legend", "sort"]
+    __slots__ = ("datasetName", "x", "y", "legend", "sort")
     DATASETNAME_FIELD_NUMBER: _ClassVar[int]
     X_FIELD_NUMBER: _ClassVar[int]
     Y_FIELD_NUMBER: _ClassVar[int]
@@ -55,7 +55,7 @@ class BarChartSpec(_message.Message):
     def __init__(self, datasetName: _Optional[str] = ..., x: _Optional[str] = ..., y: _Optional[str] = ..., legend: bool = ..., sort: bool = ...) -> None: ...
 
 class Column(_message.Message):
-    __slots__ = ["name", "displayName", "datatype", "format", "description", "ignore", "target", "nullable", "pk", "fk", "multipleOf", "maximum", "exclusiveMaximum", "minimum", "exclusiveMinimum", "maxLength", "minLength", "pattern", "required", "example", "externalDocs", "enum", "maxItems", "minItems", "uniqueItems", "pii", "phi", "protected", "defaultValueNum", "log", "mu", "sigma", "skewThreshold", "driftThreshold", "key", "fold", "weight", "reserved", "imputation", "scaling", "generated", "formula", "id", "step", "loc", "datetimeFormat", "timeseries", "regressor", "laggedRegressor", "timeIndex", "aggr", "window"]
+    __slots__ = ("name", "displayName", "datatype", "format", "description", "ignore", "target", "nullable", "pk", "fk", "multipleOf", "maximum", "exclusiveMaximum", "minimum", "exclusiveMinimum", "maxLength", "minLength", "pattern", "required", "example", "externalDocs", "enum", "maxItems", "minItems", "uniqueItems", "pii", "phi", "protected", "defaultValueNum", "log", "mu", "sigma", "skewThreshold", "driftThreshold", "key", "fold", "weight", "reserved", "imputation", "scaling", "generated", "formula", "id", "step", "loc", "datetimeFormat", "timeseries", "regressor", "laggedRegressor", "timeIndex", "aggr", "window")
     NAME_FIELD_NUMBER: _ClassVar[int]
     DISPLAYNAME_FIELD_NUMBER: _ClassVar[int]
     DATATYPE_FIELD_NUMBER: _ClassVar[int]
@@ -163,7 +163,7 @@ class Column(_message.Message):
     def __init__(self, name: _Optional[str] = ..., displayName: _Optional[str] = ..., datatype: _Optional[str] = ..., format: _Optional[str] = ..., description: _Optional[str] = ..., ignore: bool = ..., target: bool = ..., nullable: bool = ..., pk: bool = ..., fk: bool = ..., multipleOf: _Optional[int] = ..., maximum: _Optional[float] = ..., exclusiveMaximum: bool = ..., minimum: _Optional[float] = ..., exclusiveMinimum: bool = ..., maxLength: _Optional[int] = ..., minLength: _Optional[int] = ..., pattern: _Optional[str] = ..., required: bool = ..., example: _Optional[str] = ..., externalDocs: _Optional[str] = ..., enum: _Optional[_Iterable[str]] = ..., maxItems: _Optional[int] = ..., minItems: _Optional[int] = ..., uniqueItems: bool = ..., pii: bool = ..., phi: bool = ..., protected: bool = ..., defaultValueNum: _Optional[float] = ..., log: bool = ..., mu: _Optional[float] = ..., sigma: _Optional[float] = ..., skewThreshold: _Optional[float] = ..., driftThreshold: _Optional[float] = ..., key: bool = ..., fold: bool = ..., weight: bool = ..., reserved: bool = ..., imputation: _Optional[str] = ..., scaling: _Optional[str] = ..., generated: bool = ..., formula: _Optional[str] = ..., id: bool = ..., step: _Optional[float] = ..., loc: _Optional[int] = ..., datetimeFormat: _Optional[str] = ..., timeseries: bool = ..., regressor: bool = ..., laggedRegressor: bool = ..., timeIndex: bool = ..., aggr: _Optional[str] = ..., window: _Optional[int] = ...) -> None: ...
 
 class ColumnHistogram(_message.Message):
-    __slots__ = ["name", "histogram", "metrics", "drift"]
+    __slots__ = ("name", "histogram", "metrics", "drift")
     NAME_FIELD_NUMBER: _ClassVar[int]
     HISTOGRAM_FIELD_NUMBER: _ClassVar[int]
     METRICS_FIELD_NUMBER: _ClassVar[int]
@@ -175,7 +175,7 @@ class ColumnHistogram(_message.Message):
     def __init__(self, name: _Optional[str] = ..., histogram: _Optional[_Union[_generated_pb2.HistogramData, _Mapping]] = ..., metrics: _Optional[_Iterable[_Union[_generated_pb2.Measurement, _Mapping]]] = ..., drift: bool = ...) -> None: ...
 
 class ColumnSpec(_message.Message):
-    __slots__ = ["spacer", "width", "content"]
+    __slots__ = ("spacer", "width", "content")
     SPACER_FIELD_NUMBER: _ClassVar[int]
     WIDTH_FIELD_NUMBER: _ClassVar[int]
     CONTENT_FIELD_NUMBER: _ClassVar[int]
@@ -185,7 +185,7 @@ class ColumnSpec(_message.Message):
     def __init__(self, spacer: bool = ..., width: _Optional[int] = ..., content: _Optional[_Union[ComponentSpec, _Mapping]] = ...) -> None: ...
 
 class ComponentSpec(_message.Message):
-    __slots__ = ["title", "subtitle", "footer", "content"]
+    __slots__ = ("title", "subtitle", "footer", "content")
     TITLE_FIELD_NUMBER: _ClassVar[int]
     SUBTITLE_FIELD_NUMBER: _ClassVar[int]
     FOOTER_FIELD_NUMBER: _ClassVar[int]
@@ -197,7 +197,7 @@ class ComponentSpec(_message.Message):
     def __init__(self, title: _Optional[str] = ..., subtitle: _Optional[str] = ..., footer: _Optional[str] = ..., content: _Optional[_Union[ComponentView, _Mapping]] = ...) -> None: ...
 
 class ComponentView(_message.Message):
-    __slots__ = ["metric", "gauge", "histogram", "table", "lineChart", "barChart", "scatterPlot"]
+    __slots__ = ("metric", "gauge", "histogram", "table", "lineChart", "barChart", "scatterPlot")
     METRIC_FIELD_NUMBER: _ClassVar[int]
     GAUGE_FIELD_NUMBER: _ClassVar[int]
     HISTOGRAM_FIELD_NUMBER: _ClassVar[int]
@@ -215,7 +215,7 @@ class ComponentView(_message.Message):
     def __init__(self, metric: _Optional[_Union[MetricSpec, _Mapping]] = ..., gauge: _Optional[_Union[GaugeSpec, _Mapping]] = ..., histogram: _Optional[_Union[HistogramSpec, _Mapping]] = ..., table: _Optional[_Union[TableSpec, _Mapping]] = ..., lineChart: _Optional[_Union[LineChartSpec, _Mapping]] = ..., barChart: _Optional[_Union[BarChartSpec, _Mapping]] = ..., scatterPlot: _Optional[_Union[ScatterPlotSpec, _Mapping]] = ...) -> None: ...
 
 class Correlation(_message.Message):
-    __slots__ = ["x", "y", "value", "method"]
+    __slots__ = ("x", "y", "value", "method")
     X_FIELD_NUMBER: _ClassVar[int]
     Y_FIELD_NUMBER: _ClassVar[int]
     VALUE_FIELD_NUMBER: _ClassVar[int]
@@ -227,7 +227,7 @@ class Correlation(_message.Message):
     def __init__(self, x: _Optional[str] = ..., y: _Optional[str] = ..., value: _Optional[float] = ..., method: _Optional[str] = ...) -> None: ...
 
 class CorrelationSpec(_message.Message):
-    __slots__ = ["cutoff", "method", "top"]
+    __slots__ = ("cutoff", "method", "top")
     CUTOFF_FIELD_NUMBER: _ClassVar[int]
     METHOD_FIELD_NUMBER: _ClassVar[int]
     TOP_FIELD_NUMBER: _ClassVar[int]
@@ -237,7 +237,7 @@ class CorrelationSpec(_message.Message):
     def __init__(self, cutoff: _Optional[float] = ..., method: _Optional[str] = ..., top: _Optional[int] = ...) -> None: ...
 
 class CsvFileSpec(_message.Message):
-    __slots__ = ["delimiter", "quote", "escapeChar", "commentChars", "header", "skipRows", "nullValues", "encoding", "maxRows", "strict", "compression", "hasIndexColumn"]
+    __slots__ = ("delimiter", "quote", "escapeChar", "commentChars", "header", "skipRows", "nullValues", "encoding", "maxRows", "strict", "compression", "hasIndexColumn")
     DELIMITER_FIELD_NUMBER: _ClassVar[int]
     QUOTE_FIELD_NUMBER: _ClassVar[int]
     ESCAPECHAR_FIELD_NUMBER: _ClassVar[int]
@@ -265,7 +265,7 @@ class CsvFileSpec(_message.Message):
     def __init__(self, delimiter: _Optional[str] = ..., quote: _Optional[str] = ..., escapeChar: _Optional[str] = ..., commentChars: _Optional[str] = ..., header: bool = ..., skipRows: _Optional[int] = ..., nullValues: _Optional[str] = ..., encoding: _Optional[str] = ..., maxRows: _Optional[int] = ..., strict: bool = ..., compression: _Optional[str] = ..., hasIndexColumn: bool = ...) -> None: ...
 
 class DataInputSpec(_message.Message):
-    __slots__ = ["location", "format"]
+    __slots__ = ("location", "format")
     LOCATION_FIELD_NUMBER: _ClassVar[int]
     FORMAT_FIELD_NUMBER: _ClassVar[int]
     location: _generated_pb2.DataLocation
@@ -273,7 +273,7 @@ class DataInputSpec(_message.Message):
     def __init__(self, location: _Optional[_Union[_generated_pb2.DataLocation, _Mapping]] = ..., format: _Optional[_Union[FlatFileFormatSpec, _Mapping]] = ...) -> None: ...
 
 class DataOutputSpec(_message.Message):
-    __slots__ = ["datasetName", "location", "format", "action", "createTableIfNotExist", "includeFeatures", "includeShapValues", "detectOutliers"]
+    __slots__ = ("datasetName", "location", "format", "action", "createTableIfNotExist", "includeFeatures", "includeShapValues", "detectOutliers")
     DATASETNAME_FIELD_NUMBER: _ClassVar[int]
     LOCATION_FIELD_NUMBER: _ClassVar[int]
     FORMAT_FIELD_NUMBER: _ClassVar[int]
@@ -293,7 +293,7 @@ class DataOutputSpec(_message.Message):
     def __init__(self, datasetName: _Optional[str] = ..., location: _Optional[_Union[_generated_pb2.DataLocation, _Mapping]] = ..., format: _Optional[str] = ..., action: _Optional[str] = ..., createTableIfNotExist: bool = ..., includeFeatures: bool = ..., includeShapValues: bool = ..., detectOutliers: bool = ...) -> None: ...
 
 class DataPipeline(_message.Message):
-    __slots__ = ["metadata", "spec", "status"]
+    __slots__ = ("metadata", "spec", "status")
     METADATA_FIELD_NUMBER: _ClassVar[int]
     SPEC_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
@@ -303,7 +303,7 @@ class DataPipeline(_message.Message):
     def __init__(self, metadata: _Optional[_Union[_generated_pb2_1_1.ObjectMeta, _Mapping]] = ..., spec: _Optional[_Union[DataPipelineSpec, _Mapping]] = ..., status: _Optional[_Union[DataPipelineStatus, _Mapping]] = ...) -> None: ...
 
 class DataPipelineList(_message.Message):
-    __slots__ = ["metadata", "items"]
+    __slots__ = ("metadata", "items")
     METADATA_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     metadata: _generated_pb2_1_1.ListMeta
@@ -311,7 +311,7 @@ class DataPipelineList(_message.Message):
     def __init__(self, metadata: _Optional[_Union[_generated_pb2_1_1.ListMeta, _Mapping]] = ..., items: _Optional[_Iterable[_Union[DataPipeline, _Mapping]]] = ...) -> None: ...
 
 class DataPipelineRun(_message.Message):
-    __slots__ = ["metadata", "spec", "status"]
+    __slots__ = ("metadata", "spec", "status")
     METADATA_FIELD_NUMBER: _ClassVar[int]
     SPEC_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
@@ -321,7 +321,7 @@ class DataPipelineRun(_message.Message):
     def __init__(self, metadata: _Optional[_Union[_generated_pb2_1_1.ObjectMeta, _Mapping]] = ..., spec: _Optional[_Union[DataPipelineRunSpec, _Mapping]] = ..., status: _Optional[_Union[DataPipelineRunStatus, _Mapping]] = ...) -> None: ...
 
 class DataPipelineRunCondition(_message.Message):
-    __slots__ = ["type", "status", "lastTransitionTime", "reason", "message"]
+    __slots__ = ("type", "status", "lastTransitionTime", "reason", "message")
     TYPE_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
     LASTTRANSITIONTIME_FIELD_NUMBER: _ClassVar[int]
@@ -335,7 +335,7 @@ class DataPipelineRunCondition(_message.Message):
     def __init__(self, type: _Optional[str] = ..., status: _Optional[str] = ..., lastTransitionTime: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., reason: _Optional[str] = ..., message: _Optional[str] = ...) -> None: ...
 
 class DataPipelineRunList(_message.Message):
-    __slots__ = ["metadata", "items"]
+    __slots__ = ("metadata", "items")
     METADATA_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     metadata: _generated_pb2_1_1.ListMeta
@@ -343,7 +343,7 @@ class DataPipelineRunList(_message.Message):
     def __init__(self, metadata: _Optional[_Union[_generated_pb2_1_1.ListMeta, _Mapping]] = ..., items: _Optional[_Iterable[_Union[DataPipelineRun, _Mapping]]] = ...) -> None: ...
 
 class DataPipelineRunSpec(_message.Message):
-    __slots__ = ["versionName", "datapipelineName", "owner", "resources", "priority", "paused", "aborted", "labRef", "modelClassName", "modelClassRunName"]
+    __slots__ = ("versionName", "datapipelineName", "owner", "resources", "priority", "paused", "aborted", "labRef", "modelClassName", "modelClassRunName")
     VERSIONNAME_FIELD_NUMBER: _ClassVar[int]
     DATAPIPELINENAME_FIELD_NUMBER: _ClassVar[int]
     OWNER_FIELD_NUMBER: _ClassVar[int]
@@ -367,7 +367,7 @@ class DataPipelineRunSpec(_message.Message):
     def __init__(self, versionName: _Optional[str] = ..., datapipelineName: _Optional[str] = ..., owner: _Optional[str] = ..., resources: _Optional[_Union[_generated_pb2.ResourceSpec, _Mapping]] = ..., priority: _Optional[str] = ..., paused: bool = ..., aborted: bool = ..., labRef: _Optional[_Union[_generated_pb2_1.ObjectReference, _Mapping]] = ..., modelClassName: _Optional[str] = ..., modelClassRunName: _Optional[str] = ...) -> None: ...
 
 class DataPipelineRunStatus(_message.Message):
-    __slots__ = ["recipeRuns", "output", "phase", "completedAt", "observedGeneration", "failureReason", "failureMessage", "progress", "logs", "updatedAt", "conditions"]
+    __slots__ = ("recipeRuns", "output", "phase", "completedAt", "observedGeneration", "failureReason", "failureMessage", "progress", "logs", "updatedAt", "conditions")
     RECIPERUNS_FIELD_NUMBER: _ClassVar[int]
     OUTPUT_FIELD_NUMBER: _ClassVar[int]
     PHASE_FIELD_NUMBER: _ClassVar[int]
@@ -393,9 +393,9 @@ class DataPipelineRunStatus(_message.Message):
     def __init__(self, recipeRuns: _Optional[_Iterable[str]] = ..., output: _Optional[_Union[_generated_pb2.DataLocation, _Mapping]] = ..., phase: _Optional[str] = ..., completedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., observedGeneration: _Optional[int] = ..., failureReason: _Optional[str] = ..., failureMessage: _Optional[str] = ..., progress: _Optional[int] = ..., logs: _Optional[_Iterable[_Union[_generated_pb2.ContainerLog, _Mapping]]] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1.Condition, _Mapping]]] = ...) -> None: ...
 
 class DataPipelineSpec(_message.Message):
-    __slots__ = ["versionName", "modelClassName", "description", "datasetSelector", "recipes", "output", "schedule", "notification", "owner", "resources", "priority", "paused", "ttl"]
+    __slots__ = ("versionName", "modelClassName", "description", "datasetSelector", "recipes", "output", "schedule", "notification", "owner", "resources", "priority", "paused", "ttl")
     class DatasetSelectorEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -430,7 +430,7 @@ class DataPipelineSpec(_message.Message):
     def __init__(self, versionName: _Optional[str] = ..., modelClassName: _Optional[str] = ..., description: _Optional[str] = ..., datasetSelector: _Optional[_Mapping[str, str]] = ..., recipes: _Optional[_Iterable[_Union[RecipePartSpec, _Mapping]]] = ..., output: _Optional[_Union[DataOutputSpec, _Mapping]] = ..., schedule: _Optional[_Union[_generated_pb2.RunSchedule, _Mapping]] = ..., notification: _Optional[_Union[_generated_pb2.NotificationSpec, _Mapping]] = ..., owner: _Optional[str] = ..., resources: _Optional[_Union[_generated_pb2.ResourceSpec, _Mapping]] = ..., priority: _Optional[str] = ..., paused: bool = ..., ttl: _Optional[int] = ...) -> None: ...
 
 class DataPipelineStatus(_message.Message):
-    __slots__ = ["observedGeneration", "updatedAt", "schedule", "lastRunName", "runsCount", "conditions"]
+    __slots__ = ("observedGeneration", "updatedAt", "schedule", "lastRunName", "runsCount", "conditions")
     OBSERVEDGENERATION_FIELD_NUMBER: _ClassVar[int]
     UPDATEDAT_FIELD_NUMBER: _ClassVar[int]
     SCHEDULE_FIELD_NUMBER: _ClassVar[int]
@@ -446,7 +446,7 @@ class DataPipelineStatus(_message.Message):
     def __init__(self, observedGeneration: _Optional[int] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., schedule: _Optional[_Union[_generated_pb2.RunScheduleStatus, _Mapping]] = ..., lastRunName: _Optional[str] = ..., runsCount: _Optional[int] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1.Condition, _Mapping]]] = ...) -> None: ...
 
 class DataProduct(_message.Message):
-    __slots__ = ["metadata", "spec", "status"]
+    __slots__ = ("metadata", "spec", "status")
     METADATA_FIELD_NUMBER: _ClassVar[int]
     SPEC_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
@@ -456,7 +456,7 @@ class DataProduct(_message.Message):
     def __init__(self, metadata: _Optional[_Union[_generated_pb2_1_1.ObjectMeta, _Mapping]] = ..., spec: _Optional[_Union[DataProductSpec, _Mapping]] = ..., status: _Optional[_Union[DataProductStatus, _Mapping]] = ...) -> None: ...
 
 class DataProductList(_message.Message):
-    __slots__ = ["metadata", "items"]
+    __slots__ = ("metadata", "items")
     METADATA_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     metadata: _generated_pb2_1_1.ListMeta
@@ -464,7 +464,7 @@ class DataProductList(_message.Message):
     def __init__(self, metadata: _Optional[_Union[_generated_pb2_1_1.ListMeta, _Mapping]] = ..., items: _Optional[_Iterable[_Union[DataProduct, _Mapping]]] = ...) -> None: ...
 
 class DataProductSpec(_message.Message):
-    __slots__ = ["owner", "public", "tenantRef", "gitLocation", "cacheBucketName", "defaultLabName", "defaultServingSiteName", "defaultBucketName", "task", "subtask", "description", "notification", "trainingResources", "servingResources", "priority", "color", "approval", "permissions", "tags"]
+    __slots__ = ("owner", "public", "tenantRef", "gitLocation", "cacheBucketName", "defaultLabName", "defaultServingSiteName", "defaultBucketName", "task", "subtask", "description", "notification", "trainingResources", "servingResources", "priority", "color", "approval", "permissions", "tags")
     OWNER_FIELD_NUMBER: _ClassVar[int]
     PUBLIC_FIELD_NUMBER: _ClassVar[int]
     TENANTREF_FIELD_NUMBER: _ClassVar[int]
@@ -506,7 +506,7 @@ class DataProductSpec(_message.Message):
     def __init__(self, owner: _Optional[str] = ..., public: bool = ..., tenantRef: _Optional[_Union[_generated_pb2_1.ObjectReference, _Mapping]] = ..., gitLocation: _Optional[_Union[GitLocation, _Mapping]] = ..., cacheBucketName: _Optional[str] = ..., defaultLabName: _Optional[str] = ..., defaultServingSiteName: _Optional[str] = ..., defaultBucketName: _Optional[str] = ..., task: _Optional[str] = ..., subtask: _Optional[str] = ..., description: _Optional[str] = ..., notification: _Optional[_Union[_generated_pb2.NotificationSpec, _Mapping]] = ..., trainingResources: _Optional[_Union[_generated_pb2.ResourceSpec, _Mapping]] = ..., servingResources: _Optional[_Union[_generated_pb2.ResourceSpec, _Mapping]] = ..., priority: _Optional[str] = ..., color: _Optional[str] = ..., approval: _Optional[_Union[ApprovalSpec, _Mapping]] = ..., permissions: _Optional[_Union[_generated_pb2.PermissionsSpec, _Mapping]] = ..., tags: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class DataProductStatus(_message.Message):
-    __slots__ = ["observedGeneration", "updatedAt", "datasourcesCount", "datasetsCount", "dataPipelineCount", "totalDataPipelineRuns", "studiesCount", "modelsCount", "predictorsCount", "dataAppsCount", "predictionsCount", "infoAlertsCount", "errorAlertsCount", "modelClassesCount", "failureReason", "failureMessage", "baselineVersion", "conditions"]
+    __slots__ = ("observedGeneration", "updatedAt", "datasourcesCount", "datasetsCount", "dataPipelineCount", "totalDataPipelineRuns", "studiesCount", "modelsCount", "predictorsCount", "dataAppsCount", "predictionsCount", "infoAlertsCount", "errorAlertsCount", "modelClassesCount", "failureReason", "failureMessage", "baselineVersion", "conditions")
     OBSERVEDGENERATION_FIELD_NUMBER: _ClassVar[int]
     UPDATEDAT_FIELD_NUMBER: _ClassVar[int]
     DATASOURCESCOUNT_FIELD_NUMBER: _ClassVar[int]
@@ -546,7 +546,7 @@ class DataProductStatus(_message.Message):
     def __init__(self, observedGeneration: _Optional[int] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., datasourcesCount: _Optional[int] = ..., datasetsCount: _Optional[int] = ..., dataPipelineCount: _Optional[int] = ..., totalDataPipelineRuns: _Optional[int] = ..., studiesCount: _Optional[int] = ..., modelsCount: _Optional[int] = ..., predictorsCount: _Optional[int] = ..., dataAppsCount: _Optional[int] = ..., predictionsCount: _Optional[int] = ..., infoAlertsCount: _Optional[int] = ..., errorAlertsCount: _Optional[int] = ..., modelClassesCount: _Optional[int] = ..., failureReason: _Optional[str] = ..., failureMessage: _Optional[str] = ..., baselineVersion: _Optional[str] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1.Condition, _Mapping]]] = ...) -> None: ...
 
 class DataSource(_message.Message):
-    __slots__ = ["metadata", "spec", "status"]
+    __slots__ = ("metadata", "spec", "status")
     METADATA_FIELD_NUMBER: _ClassVar[int]
     SPEC_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
@@ -556,7 +556,7 @@ class DataSource(_message.Message):
     def __init__(self, metadata: _Optional[_Union[_generated_pb2_1_1.ObjectMeta, _Mapping]] = ..., spec: _Optional[_Union[DataSourceSpec, _Mapping]] = ..., status: _Optional[_Union[DataSourceStatus, _Mapping]] = ...) -> None: ...
 
 class DataSourceList(_message.Message):
-    __slots__ = ["metadata", "items"]
+    __slots__ = ("metadata", "items")
     METADATA_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     metadata: _generated_pb2_1_1.ListMeta
@@ -564,7 +564,7 @@ class DataSourceList(_message.Message):
     def __init__(self, metadata: _Optional[_Union[_generated_pb2_1_1.ListMeta, _Mapping]] = ..., items: _Optional[_Iterable[_Union[DataSource, _Mapping]]] = ...) -> None: ...
 
 class DataSourceSpec(_message.Message):
-    __slots__ = ["owner", "versionName", "description", "datasetType", "schema", "flatfile", "labeled", "sample", "task", "subtask", "relationships", "labeling", "inferredFrom", "unitTestsTemplate", "ingestMethod"]
+    __slots__ = ("owner", "versionName", "description", "datasetType", "schema", "flatfile", "labeled", "sample", "task", "subtask", "relationships", "labeling", "inferredFrom", "unitTestsTemplate", "ingestMethod")
     OWNER_FIELD_NUMBER: _ClassVar[int]
     VERSIONNAME_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
@@ -598,7 +598,7 @@ class DataSourceSpec(_message.Message):
     def __init__(self, owner: _Optional[str] = ..., versionName: _Optional[str] = ..., description: _Optional[str] = ..., datasetType: _Optional[str] = ..., schema: _Optional[_Union[Schema, _Mapping]] = ..., flatfile: _Optional[_Union[FlatFileFormatSpec, _Mapping]] = ..., labeled: bool = ..., sample: _Optional[_Union[SampleSpec, _Mapping]] = ..., task: _Optional[str] = ..., subtask: _Optional[str] = ..., relationships: _Optional[_Iterable[_Union[RelationshipSpec, _Mapping]]] = ..., labeling: _Optional[_Union[LabelingSpec, _Mapping]] = ..., inferredFrom: _Optional[_Union[_generated_pb2.DataLocation, _Mapping]] = ..., unitTestsTemplate: _Optional[_Union[_generated_pb2.TestSuite, _Mapping]] = ..., ingestMethod: _Optional[str] = ...) -> None: ...
 
 class DataSourceStatus(_message.Message):
-    __slots__ = ["cols", "observedGeneration", "lastDatasetCreatedAt", "lastDatasetName", "updatedAt", "failureReason", "failureMessage", "conditions"]
+    __slots__ = ("cols", "observedGeneration", "lastDatasetCreatedAt", "lastDatasetName", "updatedAt", "failureReason", "failureMessage", "conditions")
     COLS_FIELD_NUMBER: _ClassVar[int]
     OBSERVEDGENERATION_FIELD_NUMBER: _ClassVar[int]
     LASTDATASETCREATEDAT_FIELD_NUMBER: _ClassVar[int]
@@ -618,7 +618,7 @@ class DataSourceStatus(_message.Message):
     def __init__(self, cols: _Optional[int] = ..., observedGeneration: _Optional[int] = ..., lastDatasetCreatedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., lastDatasetName: _Optional[str] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., failureReason: _Optional[str] = ..., failureMessage: _Optional[str] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1.Condition, _Mapping]]] = ...) -> None: ...
 
 class Dataset(_message.Message):
-    __slots__ = ["metadata", "spec", "status"]
+    __slots__ = ("metadata", "spec", "status")
     METADATA_FIELD_NUMBER: _ClassVar[int]
     SPEC_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
@@ -628,7 +628,7 @@ class Dataset(_message.Message):
     def __init__(self, metadata: _Optional[_Union[_generated_pb2_1_1.ObjectMeta, _Mapping]] = ..., spec: _Optional[_Union[DatasetSpec, _Mapping]] = ..., status: _Optional[_Union[DatasetStatus, _Mapping]] = ...) -> None: ...
 
 class DatasetGroupByStatus(_message.Message):
-    __slots__ = ["datasetsURI", "profilesURI", "reportsURI", "unitTestsURI", "workerResults"]
+    __slots__ = ("datasetsURI", "profilesURI", "reportsURI", "unitTestsURI", "workerResults")
     DATASETSURI_FIELD_NUMBER: _ClassVar[int]
     PROFILESURI_FIELD_NUMBER: _ClassVar[int]
     REPORTSURI_FIELD_NUMBER: _ClassVar[int]
@@ -642,7 +642,7 @@ class DatasetGroupByStatus(_message.Message):
     def __init__(self, datasetsURI: _Optional[str] = ..., profilesURI: _Optional[str] = ..., reportsURI: _Optional[str] = ..., unitTestsURI: _Optional[str] = ..., workerResults: _Optional[_Iterable[_Union[_generated_pb2.WorkerRunResult, _Mapping]]] = ...) -> None: ...
 
 class DatasetList(_message.Message):
-    __slots__ = ["metadata", "items"]
+    __slots__ = ("metadata", "items")
     METADATA_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     metadata: _generated_pb2_1_1.ListMeta
@@ -650,7 +650,7 @@ class DatasetList(_message.Message):
     def __init__(self, metadata: _Optional[_Union[_generated_pb2_1_1.ListMeta, _Mapping]] = ..., items: _Optional[_Iterable[_Union[Dataset, _Mapping]]] = ...) -> None: ...
 
 class DatasetSnapshot(_message.Message):
-    __slots__ = ["metadata", "spec", "status"]
+    __slots__ = ("metadata", "spec", "status")
     METADATA_FIELD_NUMBER: _ClassVar[int]
     SPEC_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
@@ -660,7 +660,7 @@ class DatasetSnapshot(_message.Message):
     def __init__(self, metadata: _Optional[_Union[_generated_pb2_1_1.ObjectMeta, _Mapping]] = ..., spec: _Optional[_Union[DatasetSnapshotSpec, _Mapping]] = ..., status: _Optional[_Union[DatasetSnapshotStatus, _Mapping]] = ...) -> None: ...
 
 class DatasetSnapshotList(_message.Message):
-    __slots__ = ["metadata", "items"]
+    __slots__ = ("metadata", "items")
     METADATA_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     metadata: _generated_pb2_1_1.ListMeta
@@ -668,7 +668,7 @@ class DatasetSnapshotList(_message.Message):
     def __init__(self, metadata: _Optional[_Union[_generated_pb2_1_1.ListMeta, _Mapping]] = ..., items: _Optional[_Iterable[_Union[DatasetSnapshot, _Mapping]]] = ...) -> None: ...
 
 class DatasetSnapshotSpec(_message.Message):
-    __slots__ = ["owner", "datasetName", "timeout", "pause", "abort", "modelClassRunName"]
+    __slots__ = ("owner", "datasetName", "timeout", "pause", "abort", "modelClassRunName")
     OWNER_FIELD_NUMBER: _ClassVar[int]
     DATASETNAME_FIELD_NUMBER: _ClassVar[int]
     TIMEOUT_FIELD_NUMBER: _ClassVar[int]
@@ -684,7 +684,7 @@ class DatasetSnapshotSpec(_message.Message):
     def __init__(self, owner: _Optional[str] = ..., datasetName: _Optional[str] = ..., timeout: _Optional[int] = ..., pause: bool = ..., abort: bool = ..., modelClassRunName: _Optional[str] = ...) -> None: ...
 
 class DatasetSnapshotStatus(_message.Message):
-    __slots__ = ["observedGeneration", "datasetManifestLocation", "dataSourceManifestLocation", "snapshotVersion", "statistics", "phase", "reportName", "dataLocation", "reportLocation", "profileLocation", "anomaliesLocation", "sampleLocation", "imbalanced", "unitTestResults", "failureMessage", "progress", "logs", "hash", "updatedAt", "completedAt", "lastStudyAt", "images", "featureHistogramName", "groupBy", "conditions"]
+    __slots__ = ("observedGeneration", "datasetManifestLocation", "dataSourceManifestLocation", "snapshotVersion", "statistics", "phase", "reportName", "dataLocation", "reportLocation", "profileLocation", "anomaliesLocation", "sampleLocation", "imbalanced", "unitTestResults", "failureMessage", "progress", "logs", "hash", "updatedAt", "completedAt", "lastStudyAt", "images", "featureHistogramName", "groupBy", "conditions")
     OBSERVEDGENERATION_FIELD_NUMBER: _ClassVar[int]
     DATASETMANIFESTLOCATION_FIELD_NUMBER: _ClassVar[int]
     DATASOURCEMANIFESTLOCATION_FIELD_NUMBER: _ClassVar[int]
@@ -738,7 +738,7 @@ class DatasetSnapshotStatus(_message.Message):
     def __init__(self, observedGeneration: _Optional[int] = ..., datasetManifestLocation: _Optional[_Union[_generated_pb2.ManifestLocation, _Mapping]] = ..., dataSourceManifestLocation: _Optional[_Union[_generated_pb2.ManifestLocation, _Mapping]] = ..., snapshotVersion: _Optional[int] = ..., statistics: _Optional[_Union[DatasetStatistics, _Mapping]] = ..., phase: _Optional[str] = ..., reportName: _Optional[str] = ..., dataLocation: _Optional[_Union[_generated_pb2.FileLocation, _Mapping]] = ..., reportLocation: _Optional[_Union[_generated_pb2.FileLocation, _Mapping]] = ..., profileLocation: _Optional[_Union[_generated_pb2.FileLocation, _Mapping]] = ..., anomaliesLocation: _Optional[_Union[_generated_pb2.FileLocation, _Mapping]] = ..., sampleLocation: _Optional[_Union[_generated_pb2.FileLocation, _Mapping]] = ..., imbalanced: bool = ..., unitTestResults: _Optional[_Union[_generated_pb2.TestSuiteResult, _Mapping]] = ..., failureMessage: _Optional[str] = ..., progress: _Optional[int] = ..., logs: _Optional[_Iterable[_Union[_generated_pb2.ContainerLog, _Mapping]]] = ..., hash: _Optional[str] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., completedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., lastStudyAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., images: _Optional[_Union[_generated_pb2.Images, _Mapping]] = ..., featureHistogramName: _Optional[str] = ..., groupBy: _Optional[_Union[DatasetGroupByStatus, _Mapping]] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1.Condition, _Mapping]]] = ...) -> None: ...
 
 class DatasetSpec(_message.Message):
-    __slots__ = ["owner", "dataSourceName", "description", "run", "artifactBucketName", "labName", "role", "task", "subtask", "type", "origin", "resources", "unitTests", "report", "unitTest", "generateFeatureHistogram", "fast", "sample", "synthetic", "correlation", "groupBy", "key", "modelClassName", "featureGroupName", "notification"]
+    __slots__ = ("owner", "dataSourceName", "description", "run", "artifactBucketName", "labName", "role", "task", "subtask", "type", "origin", "resources", "unitTests", "report", "unitTest", "generateFeatureHistogram", "fast", "sample", "synthetic", "correlation", "groupBy", "key", "modelClassName", "featureGroupName", "notification")
     OWNER_FIELD_NUMBER: _ClassVar[int]
     DATASOURCENAME_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
@@ -792,7 +792,7 @@ class DatasetSpec(_message.Message):
     def __init__(self, owner: _Optional[str] = ..., dataSourceName: _Optional[str] = ..., description: _Optional[str] = ..., run: _Optional[_Union[_generated_pb2.RunSpec, _Mapping]] = ..., artifactBucketName: _Optional[str] = ..., labName: _Optional[str] = ..., role: _Optional[str] = ..., task: _Optional[str] = ..., subtask: _Optional[str] = ..., type: _Optional[str] = ..., origin: _Optional[_Union[_generated_pb2.DataLocation, _Mapping]] = ..., resources: _Optional[_Union[_generated_pb2.ResourceSpec, _Mapping]] = ..., unitTests: _Optional[_Union[_generated_pb2.TestSuite, _Mapping]] = ..., report: bool = ..., unitTest: bool = ..., generateFeatureHistogram: bool = ..., fast: bool = ..., sample: _Optional[_Union[SampleSpec, _Mapping]] = ..., synthetic: _Optional[_Union[SyntheticSpec, _Mapping]] = ..., correlation: _Optional[_Union[CorrelationSpec, _Mapping]] = ..., groupBy: _Optional[_Union[GroupBySpec, _Mapping]] = ..., key: _Optional[_Iterable[str]] = ..., modelClassName: _Optional[str] = ..., featureGroupName: _Optional[str] = ..., notification: _Optional[_Union[_generated_pb2.NotificationSpec, _Mapping]] = ...) -> None: ...
 
 class DatasetStatistics(_message.Message):
-    __slots__ = ["features", "rows", "columns", "sizeInBytes", "correlationsWithTarget", "topCorrelations"]
+    __slots__ = ("features", "rows", "columns", "sizeInBytes", "correlationsWithTarget", "topCorrelations")
     FEATURES_FIELD_NUMBER: _ClassVar[int]
     ROWS_FIELD_NUMBER: _ClassVar[int]
     COLUMNS_FIELD_NUMBER: _ClassVar[int]
@@ -808,7 +808,7 @@ class DatasetStatistics(_message.Message):
     def __init__(self, features: _Optional[_Iterable[_Union[FeatureStatistics, _Mapping]]] = ..., rows: _Optional[int] = ..., columns: _Optional[int] = ..., sizeInBytes: _Optional[int] = ..., correlationsWithTarget: _Optional[_Iterable[_Union[Correlation, _Mapping]]] = ..., topCorrelations: _Optional[_Iterable[_Union[Correlation, _Mapping]]] = ...) -> None: ...
 
 class DatasetStatus(_message.Message):
-    __slots__ = ["observedGeneration", "active", "lastSnapshotVersion", "availableSnapshots", "lastSnapshotAt", "lastFailureMessage", "updatedAt", "schedule", "conditions"]
+    __slots__ = ("observedGeneration", "active", "lastSnapshotVersion", "availableSnapshots", "lastSnapshotAt", "lastFailureMessage", "updatedAt", "schedule", "conditions")
     OBSERVEDGENERATION_FIELD_NUMBER: _ClassVar[int]
     ACTIVE_FIELD_NUMBER: _ClassVar[int]
     LASTSNAPSHOTVERSION_FIELD_NUMBER: _ClassVar[int]
@@ -830,7 +830,7 @@ class DatasetStatus(_message.Message):
     def __init__(self, observedGeneration: _Optional[int] = ..., active: _Optional[_Iterable[_Union[_generated_pb2.RunReference, _Mapping]]] = ..., lastSnapshotVersion: _Optional[int] = ..., availableSnapshots: _Optional[_Iterable[_Union[_generated_pb2.RunReference, _Mapping]]] = ..., lastSnapshotAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., lastFailureMessage: _Optional[str] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., schedule: _Optional[_Union[_generated_pb2.RunScheduleStatus, _Mapping]] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1.Condition, _Mapping]]] = ...) -> None: ...
 
 class DriftThreshold(_message.Message):
-    __slots__ = ["metric", "value"]
+    __slots__ = ("metric", "value")
     METRIC_FIELD_NUMBER: _ClassVar[int]
     VALUE_FIELD_NUMBER: _ClassVar[int]
     metric: str
@@ -838,7 +838,7 @@ class DriftThreshold(_message.Message):
     def __init__(self, metric: _Optional[str] = ..., value: _Optional[float] = ...) -> None: ...
 
 class Entity(_message.Message):
-    __slots__ = ["metadata", "spec", "status"]
+    __slots__ = ("metadata", "spec", "status")
     METADATA_FIELD_NUMBER: _ClassVar[int]
     SPEC_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
@@ -848,7 +848,7 @@ class Entity(_message.Message):
     def __init__(self, metadata: _Optional[_Union[_generated_pb2_1_1.ObjectMeta, _Mapping]] = ..., spec: _Optional[_Union[EntitySpec, _Mapping]] = ..., status: _Optional[_Union[EntityStatus, _Mapping]] = ...) -> None: ...
 
 class EntityList(_message.Message):
-    __slots__ = ["metadata", "items"]
+    __slots__ = ("metadata", "items")
     METADATA_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     metadata: _generated_pb2_1_1.ListMeta
@@ -856,7 +856,7 @@ class EntityList(_message.Message):
     def __init__(self, metadata: _Optional[_Union[_generated_pb2_1_1.ListMeta, _Mapping]] = ..., items: _Optional[_Iterable[_Union[Entity, _Mapping]]] = ...) -> None: ...
 
 class EntitySpec(_message.Message):
-    __slots__ = ["tenantRef", "description", "joinKey", "owner", "tags"]
+    __slots__ = ("tenantRef", "description", "joinKey", "owner", "tags")
     TENANTREF_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     JOINKEY_FIELD_NUMBER: _ClassVar[int]
@@ -870,7 +870,7 @@ class EntitySpec(_message.Message):
     def __init__(self, tenantRef: _Optional[_Union[_generated_pb2_1.ObjectReference, _Mapping]] = ..., description: _Optional[str] = ..., joinKey: _Optional[str] = ..., owner: _Optional[str] = ..., tags: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class EntityStatus(_message.Message):
-    __slots__ = ["observedGeneration", "updatedAt", "conditions"]
+    __slots__ = ("observedGeneration", "updatedAt", "conditions")
     OBSERVEDGENERATION_FIELD_NUMBER: _ClassVar[int]
     UPDATEDAT_FIELD_NUMBER: _ClassVar[int]
     CONDITIONS_FIELD_NUMBER: _ClassVar[int]
@@ -880,7 +880,7 @@ class EntityStatus(_message.Message):
     def __init__(self, observedGeneration: _Optional[int] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1.Condition, _Mapping]]] = ...) -> None: ...
 
 class ExcelNotebookSpec(_message.Message):
-    __slots__ = ["firstSheetWithData", "sheetName", "sheetIndex", "columnNameRow", "data"]
+    __slots__ = ("firstSheetWithData", "sheetName", "sheetIndex", "columnNameRow", "data")
     FIRSTSHEETWITHDATA_FIELD_NUMBER: _ClassVar[int]
     SHEETNAME_FIELD_NUMBER: _ClassVar[int]
     SHEETINDEX_FIELD_NUMBER: _ClassVar[int]
@@ -894,7 +894,7 @@ class ExcelNotebookSpec(_message.Message):
     def __init__(self, firstSheetWithData: bool = ..., sheetName: _Optional[str] = ..., sheetIndex: _Optional[int] = ..., columnNameRow: _Optional[int] = ..., data: _Optional[_Union[ExcelSheetArea, _Mapping]] = ...) -> None: ...
 
 class ExcelSheetArea(_message.Message):
-    __slots__ = ["entireSheet", "fromColumn", "toColumn", "fromRow", "toRow"]
+    __slots__ = ("entireSheet", "fromColumn", "toColumn", "fromRow", "toRow")
     ENTIRESHEET_FIELD_NUMBER: _ClassVar[int]
     FROMCOLUMN_FIELD_NUMBER: _ClassVar[int]
     TOCOLUMN_FIELD_NUMBER: _ClassVar[int]
@@ -908,7 +908,7 @@ class ExcelSheetArea(_message.Message):
     def __init__(self, entireSheet: bool = ..., fromColumn: _Optional[int] = ..., toColumn: _Optional[int] = ..., fromRow: _Optional[int] = ..., toRow: _Optional[int] = ...) -> None: ...
 
 class FeatureGroup(_message.Message):
-    __slots__ = ["metadata", "spec", "status"]
+    __slots__ = ("metadata", "spec", "status")
     METADATA_FIELD_NUMBER: _ClassVar[int]
     SPEC_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
@@ -918,7 +918,7 @@ class FeatureGroup(_message.Message):
     def __init__(self, metadata: _Optional[_Union[_generated_pb2_1_1.ObjectMeta, _Mapping]] = ..., spec: _Optional[_Union[FeatureGroupSpec, _Mapping]] = ..., status: _Optional[_Union[FeatureGroupStatus, _Mapping]] = ...) -> None: ...
 
 class FeatureGroupList(_message.Message):
-    __slots__ = ["metadata", "items"]
+    __slots__ = ("metadata", "items")
     METADATA_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     metadata: _generated_pb2_1_1.ListMeta
@@ -926,7 +926,7 @@ class FeatureGroupList(_message.Message):
     def __init__(self, metadata: _Optional[_Union[_generated_pb2_1_1.ListMeta, _Mapping]] = ..., items: _Optional[_Iterable[_Union[FeatureGroup, _Mapping]]] = ...) -> None: ...
 
 class FeatureGroupSpec(_message.Message):
-    __slots__ = ["tenantRef", "owner", "description", "artifactBucketName", "ingestType", "entityName", "tags", "ingestSchedule", "syncSchedule", "flatfile", "schema", "tests", "location", "timeColumn", "timeColumnFormat", "keyColumn", "materialization", "resources", "labRef"]
+    __slots__ = ("tenantRef", "owner", "description", "artifactBucketName", "ingestType", "entityName", "tags", "ingestSchedule", "syncSchedule", "flatfile", "schema", "tests", "location", "timeColumn", "timeColumnFormat", "keyColumn", "materialization", "resources", "labRef")
     TENANTREF_FIELD_NUMBER: _ClassVar[int]
     OWNER_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
@@ -968,7 +968,7 @@ class FeatureGroupSpec(_message.Message):
     def __init__(self, tenantRef: _Optional[_Union[_generated_pb2_1.ObjectReference, _Mapping]] = ..., owner: _Optional[str] = ..., description: _Optional[str] = ..., artifactBucketName: _Optional[str] = ..., ingestType: _Optional[str] = ..., entityName: _Optional[str] = ..., tags: _Optional[_Iterable[str]] = ..., ingestSchedule: _Optional[_Union[_generated_pb2.RunSchedule, _Mapping]] = ..., syncSchedule: _Optional[_Union[_generated_pb2.RunSchedule, _Mapping]] = ..., flatfile: _Optional[_Union[FlatFileFormatSpec, _Mapping]] = ..., schema: _Optional[_Union[Schema, _Mapping]] = ..., tests: _Optional[_Union[_generated_pb2.TestSuite, _Mapping]] = ..., location: _Optional[_Union[_generated_pb2.DataLocation, _Mapping]] = ..., timeColumn: _Optional[str] = ..., timeColumnFormat: _Optional[str] = ..., keyColumn: _Optional[str] = ..., materialization: _Optional[_Union[MaterializationSpec, _Mapping]] = ..., resources: _Optional[_Union[_generated_pb2.ResourceSpec, _Mapping]] = ..., labRef: _Optional[_Union[_generated_pb2_1.ObjectReference, _Mapping]] = ...) -> None: ...
 
 class FeatureGroupStatus(_message.Message):
-    __slots__ = ["phase", "observedGeneration", "updatedAt", "rows", "ingestSchedule", "syncSchedule", "onlineTable", "onlineTableCreated", "ingestDatasetName", "failureReason", "failureMessage", "conditions"]
+    __slots__ = ("phase", "observedGeneration", "updatedAt", "rows", "ingestSchedule", "syncSchedule", "onlineTable", "onlineTableCreated", "ingestDatasetName", "failureReason", "failureMessage", "conditions")
     PHASE_FIELD_NUMBER: _ClassVar[int]
     OBSERVEDGENERATION_FIELD_NUMBER: _ClassVar[int]
     UPDATEDAT_FIELD_NUMBER: _ClassVar[int]
@@ -996,7 +996,7 @@ class FeatureGroupStatus(_message.Message):
     def __init__(self, phase: _Optional[str] = ..., observedGeneration: _Optional[int] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., rows: _Optional[int] = ..., ingestSchedule: _Optional[_Union[_generated_pb2.RunScheduleStatus, _Mapping]] = ..., syncSchedule: _Optional[_Union[_generated_pb2.RunScheduleStatus, _Mapping]] = ..., onlineTable: _Optional[_Union[_generated_pb2.DataLocation, _Mapping]] = ..., onlineTableCreated: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., ingestDatasetName: _Optional[str] = ..., failureReason: _Optional[str] = ..., failureMessage: _Optional[str] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1.Condition, _Mapping]]] = ...) -> None: ...
 
 class FeatureHistogram(_message.Message):
-    __slots__ = ["metadata", "spec", "status"]
+    __slots__ = ("metadata", "spec", "status")
     METADATA_FIELD_NUMBER: _ClassVar[int]
     SPEC_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
@@ -1006,7 +1006,7 @@ class FeatureHistogram(_message.Message):
     def __init__(self, metadata: _Optional[_Union[_generated_pb2_1_1.ObjectMeta, _Mapping]] = ..., spec: _Optional[_Union[FeatureHistogramSpec, _Mapping]] = ..., status: _Optional[_Union[FeatureHistogramStatus, _Mapping]] = ...) -> None: ...
 
 class FeatureHistogramList(_message.Message):
-    __slots__ = ["metadata", "items"]
+    __slots__ = ("metadata", "items")
     METADATA_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     metadata: _generated_pb2_1_1.ListMeta
@@ -1014,7 +1014,7 @@ class FeatureHistogramList(_message.Message):
     def __init__(self, metadata: _Optional[_Union[_generated_pb2_1_1.ListMeta, _Mapping]] = ..., items: _Optional[_Iterable[_Union[FeatureHistogram, _Mapping]]] = ...) -> None: ...
 
 class FeatureHistogramSpec(_message.Message):
-    __slots__ = ["owner", "versionName", "description", "columns", "sourceRef", "training", "live", "start", "end", "baseRef", "driftThresholds", "syncIntervalSec", "unitTests", "genUnitTests", "featureFilter", "referenceType"]
+    __slots__ = ("owner", "versionName", "description", "columns", "sourceRef", "training", "live", "start", "end", "baseRef", "driftThresholds", "syncIntervalSec", "unitTests", "genUnitTests", "featureFilter", "referenceType")
     OWNER_FIELD_NUMBER: _ClassVar[int]
     VERSIONNAME_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
@@ -1050,7 +1050,7 @@ class FeatureHistogramSpec(_message.Message):
     def __init__(self, owner: _Optional[str] = ..., versionName: _Optional[str] = ..., description: _Optional[str] = ..., columns: _Optional[_Iterable[str]] = ..., sourceRef: _Optional[_Union[_generated_pb2_1.ObjectReference, _Mapping]] = ..., training: bool = ..., live: bool = ..., start: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., end: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., baseRef: _Optional[_Union[_generated_pb2_1.ObjectReference, _Mapping]] = ..., driftThresholds: _Optional[_Iterable[_Union[DriftThreshold, _Mapping]]] = ..., syncIntervalSec: _Optional[int] = ..., unitTests: _Optional[_Union[_generated_pb2.TestSuite, _Mapping]] = ..., genUnitTests: bool = ..., featureFilter: _Optional[str] = ..., referenceType: _Optional[str] = ...) -> None: ...
 
 class FeatureHistogramStatus(_message.Message):
-    __slots__ = ["observedGeneration", "columns", "updatedAt", "logs", "phase", "failureReason", "failureMessage", "unitTestsResult", "total", "errors", "conditions"]
+    __slots__ = ("observedGeneration", "columns", "updatedAt", "logs", "phase", "failureReason", "failureMessage", "unitTestsResult", "total", "errors", "conditions")
     OBSERVEDGENERATION_FIELD_NUMBER: _ClassVar[int]
     COLUMNS_FIELD_NUMBER: _ClassVar[int]
     UPDATEDAT_FIELD_NUMBER: _ClassVar[int]
@@ -1076,7 +1076,7 @@ class FeatureHistogramStatus(_message.Message):
     def __init__(self, observedGeneration: _Optional[int] = ..., columns: _Optional[_Iterable[_Union[ColumnHistogram, _Mapping]]] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., logs: _Optional[_Iterable[_Union[_generated_pb2.ContainerLog, _Mapping]]] = ..., phase: _Optional[str] = ..., failureReason: _Optional[str] = ..., failureMessage: _Optional[str] = ..., unitTestsResult: _Optional[_Union[_generated_pb2.TestSuiteResult, _Mapping]] = ..., total: _Optional[int] = ..., errors: _Optional[int] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1.Condition, _Mapping]]] = ...) -> None: ...
 
 class FeatureStatistics(_message.Message):
-    __slots__ = ["name", "datatype", "count", "distinct", "missing", "percentMissing", "mean", "stddev", "variance", "min", "max", "kurtosis", "skewness", "sum", "mad", "p25", "p50", "p75", "iqr", "mode", "zeros", "invalid", "importance", "target", "ignore", "nullable", "highCardinality", "highCorrWithOtherFeatures", "lowCorrWithTarget", "highMissingPct", "skewed", "constant", "duplicate", "reserved", "completeness", "distinctValueCount", "mostFreqValuesRatio", "histogram", "corrToTarget", "index", "outliers", "values"]
+    __slots__ = ("name", "datatype", "count", "distinct", "missing", "percentMissing", "mean", "stddev", "variance", "min", "max", "kurtosis", "skewness", "sum", "mad", "p25", "p50", "p75", "iqr", "mode", "zeros", "invalid", "importance", "target", "ignore", "nullable", "highCardinality", "highCorrWithOtherFeatures", "lowCorrWithTarget", "highMissingPct", "skewed", "constant", "duplicate", "reserved", "completeness", "distinctValueCount", "mostFreqValuesRatio", "histogram", "corrToTarget", "index", "outliers", "values")
     NAME_FIELD_NUMBER: _ClassVar[int]
     DATATYPE_FIELD_NUMBER: _ClassVar[int]
     COUNT_FIELD_NUMBER: _ClassVar[int]
@@ -1164,7 +1164,7 @@ class FeatureStatistics(_message.Message):
     def __init__(self, name: _Optional[str] = ..., datatype: _Optional[str] = ..., count: _Optional[float] = ..., distinct: _Optional[int] = ..., missing: _Optional[int] = ..., percentMissing: _Optional[float] = ..., mean: _Optional[float] = ..., stddev: _Optional[float] = ..., variance: _Optional[float] = ..., min: _Optional[float] = ..., max: _Optional[float] = ..., kurtosis: _Optional[float] = ..., skewness: _Optional[float] = ..., sum: _Optional[int] = ..., mad: _Optional[float] = ..., p25: _Optional[float] = ..., p50: _Optional[float] = ..., p75: _Optional[float] = ..., iqr: _Optional[float] = ..., mode: _Optional[str] = ..., zeros: _Optional[float] = ..., invalid: _Optional[int] = ..., importance: _Optional[float] = ..., target: bool = ..., ignore: bool = ..., nullable: bool = ..., highCardinality: bool = ..., highCorrWithOtherFeatures: bool = ..., lowCorrWithTarget: bool = ..., highMissingPct: bool = ..., skewed: bool = ..., constant: bool = ..., duplicate: bool = ..., reserved: bool = ..., completeness: _Optional[float] = ..., distinctValueCount: _Optional[float] = ..., mostFreqValuesRatio: _Optional[float] = ..., histogram: _Optional[_Union[_generated_pb2.HistogramData, _Mapping]] = ..., corrToTarget: _Optional[float] = ..., index: _Optional[int] = ..., outliers: _Optional[_Union[OutlierStatistics, _Mapping]] = ..., values: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class FlatFileFormatSpec(_message.Message):
-    __slots__ = ["fileType", "csv", "excel", "parquet"]
+    __slots__ = ("fileType", "csv", "excel", "parquet")
     FILETYPE_FIELD_NUMBER: _ClassVar[int]
     CSV_FIELD_NUMBER: _ClassVar[int]
     EXCEL_FIELD_NUMBER: _ClassVar[int]
@@ -1176,7 +1176,7 @@ class FlatFileFormatSpec(_message.Message):
     def __init__(self, fileType: _Optional[str] = ..., csv: _Optional[_Union[CsvFileSpec, _Mapping]] = ..., excel: _Optional[_Union[ExcelNotebookSpec, _Mapping]] = ..., parquet: _Optional[_Union[ParquetFileSpec, _Mapping]] = ...) -> None: ...
 
 class GaugeSpec(_message.Message):
-    __slots__ = ["datasetName", "column", "row", "scalar"]
+    __slots__ = ("datasetName", "column", "row", "scalar")
     DATASETNAME_FIELD_NUMBER: _ClassVar[int]
     COLUMN_FIELD_NUMBER: _ClassVar[int]
     ROW_FIELD_NUMBER: _ClassVar[int]
@@ -1188,7 +1188,7 @@ class GaugeSpec(_message.Message):
     def __init__(self, datasetName: _Optional[str] = ..., column: _Optional[str] = ..., row: _Optional[int] = ..., scalar: _Optional[str] = ...) -> None: ...
 
 class GitLocation(_message.Message):
-    __slots__ = ["gitConnectionName", "url", "branch", "private"]
+    __slots__ = ("gitConnectionName", "url", "branch", "private")
     GITCONNECTIONNAME_FIELD_NUMBER: _ClassVar[int]
     URL_FIELD_NUMBER: _ClassVar[int]
     BRANCH_FIELD_NUMBER: _ClassVar[int]
@@ -1200,7 +1200,7 @@ class GitLocation(_message.Message):
     def __init__(self, gitConnectionName: _Optional[str] = ..., url: _Optional[str] = ..., branch: _Optional[str] = ..., private: bool = ...) -> None: ...
 
 class GroupBySpec(_message.Message):
-    __slots__ = ["enabled", "groupBy", "frequency", "interval", "aggregate"]
+    __slots__ = ("enabled", "groupBy", "frequency", "interval", "aggregate")
     ENABLED_FIELD_NUMBER: _ClassVar[int]
     GROUPBY_FIELD_NUMBER: _ClassVar[int]
     FREQUENCY_FIELD_NUMBER: _ClassVar[int]
@@ -1214,7 +1214,7 @@ class GroupBySpec(_message.Message):
     def __init__(self, enabled: bool = ..., groupBy: _Optional[_Iterable[str]] = ..., frequency: _Optional[str] = ..., interval: _Optional[int] = ..., aggregate: _Optional[str] = ...) -> None: ...
 
 class GroupDatasetLocationStatus(_message.Message):
-    __slots__ = ["groupsRoot", "groupRoot", "groupDataFolder", "groupDataFile", "groupProfileFolder", "groupReportFile", "groupFeaturesFile"]
+    __slots__ = ("groupsRoot", "groupRoot", "groupDataFolder", "groupDataFile", "groupProfileFolder", "groupReportFile", "groupFeaturesFile")
     GROUPSROOT_FIELD_NUMBER: _ClassVar[int]
     GROUPROOT_FIELD_NUMBER: _ClassVar[int]
     GROUPDATAFOLDER_FIELD_NUMBER: _ClassVar[int]
@@ -1232,7 +1232,7 @@ class GroupDatasetLocationStatus(_message.Message):
     def __init__(self, groupsRoot: _Optional[str] = ..., groupRoot: _Optional[str] = ..., groupDataFolder: _Optional[str] = ..., groupDataFile: _Optional[str] = ..., groupProfileFolder: _Optional[str] = ..., groupReportFile: _Optional[str] = ..., groupFeaturesFile: _Optional[str] = ...) -> None: ...
 
 class HistogramSpec(_message.Message):
-    __slots__ = ["datasetName", "x", "bins"]
+    __slots__ = ("datasetName", "x", "bins")
     DATASETNAME_FIELD_NUMBER: _ClassVar[int]
     X_FIELD_NUMBER: _ClassVar[int]
     BINS_FIELD_NUMBER: _ClassVar[int]
@@ -1242,7 +1242,7 @@ class HistogramSpec(_message.Message):
     def __init__(self, datasetName: _Optional[str] = ..., x: _Optional[str] = ..., bins: _Optional[int] = ...) -> None: ...
 
 class ImageLocation(_message.Message):
-    __slots__ = ["name", "registryConnectionName"]
+    __slots__ = ("name", "registryConnectionName")
     NAME_FIELD_NUMBER: _ClassVar[int]
     REGISTRYCONNECTIONNAME_FIELD_NUMBER: _ClassVar[int]
     name: str
@@ -1250,7 +1250,7 @@ class ImageLocation(_message.Message):
     def __init__(self, name: _Optional[str] = ..., registryConnectionName: _Optional[str] = ...) -> None: ...
 
 class KPI(_message.Message):
-    __slots__ = ["name", "value"]
+    __slots__ = ("name", "value")
     NAME_FIELD_NUMBER: _ClassVar[int]
     VALUE_FIELD_NUMBER: _ClassVar[int]
     name: str
@@ -1258,7 +1258,7 @@ class KPI(_message.Message):
     def __init__(self, name: _Optional[str] = ..., value: _Optional[float] = ...) -> None: ...
 
 class LabelingRule(_message.Message):
-    __slots__ = ["column", "operator", "value"]
+    __slots__ = ("column", "operator", "value")
     COLUMN_FIELD_NUMBER: _ClassVar[int]
     OPERATOR_FIELD_NUMBER: _ClassVar[int]
     VALUE_FIELD_NUMBER: _ClassVar[int]
@@ -1268,7 +1268,7 @@ class LabelingRule(_message.Message):
     def __init__(self, column: _Optional[str] = ..., operator: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
 
 class LabelingSpec(_message.Message):
-    __slots__ = ["enabled", "resultColumn", "positive", "negative"]
+    __slots__ = ("enabled", "resultColumn", "positive", "negative")
     ENABLED_FIELD_NUMBER: _ClassVar[int]
     RESULTCOLUMN_FIELD_NUMBER: _ClassVar[int]
     POSITIVE_FIELD_NUMBER: _ClassVar[int]
@@ -1280,7 +1280,7 @@ class LabelingSpec(_message.Message):
     def __init__(self, enabled: bool = ..., resultColumn: _Optional[str] = ..., positive: _Optional[_Iterable[_Union[LabelingRule, _Mapping]]] = ..., negative: _Optional[_Iterable[_Union[LabelingRule, _Mapping]]] = ...) -> None: ...
 
 class LineChartSpec(_message.Message):
-    __slots__ = ["datasetName", "x", "y", "legend"]
+    __slots__ = ("datasetName", "x", "y", "legend")
     DATASETNAME_FIELD_NUMBER: _ClassVar[int]
     X_FIELD_NUMBER: _ClassVar[int]
     Y_FIELD_NUMBER: _ClassVar[int]
@@ -1292,7 +1292,7 @@ class LineChartSpec(_message.Message):
     def __init__(self, datasetName: _Optional[str] = ..., x: _Optional[str] = ..., y: _Optional[str] = ..., legend: bool = ...) -> None: ...
 
 class MaterializationSpec(_message.Message):
-    __slots__ = ["online", "offline", "startDate", "offlineTTL", "onlineTTL", "backfill", "schedule"]
+    __slots__ = ("online", "offline", "startDate", "offlineTTL", "onlineTTL", "backfill", "schedule")
     ONLINE_FIELD_NUMBER: _ClassVar[int]
     OFFLINE_FIELD_NUMBER: _ClassVar[int]
     STARTDATE_FIELD_NUMBER: _ClassVar[int]
@@ -1310,7 +1310,7 @@ class MaterializationSpec(_message.Message):
     def __init__(self, online: bool = ..., offline: bool = ..., startDate: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., offlineTTL: _Optional[int] = ..., onlineTTL: _Optional[int] = ..., backfill: _Optional[int] = ..., schedule: _Optional[_Union[_generated_pb2.RunSchedule, _Mapping]] = ...) -> None: ...
 
 class MetricSpec(_message.Message):
-    __slots__ = ["datasetName", "column", "row", "scalar"]
+    __slots__ = ("datasetName", "column", "row", "scalar")
     DATASETNAME_FIELD_NUMBER: _ClassVar[int]
     COLUMN_FIELD_NUMBER: _ClassVar[int]
     ROW_FIELD_NUMBER: _ClassVar[int]
@@ -1322,7 +1322,7 @@ class MetricSpec(_message.Message):
     def __init__(self, datasetName: _Optional[str] = ..., column: _Optional[str] = ..., row: _Optional[int] = ..., scalar: _Optional[str] = ...) -> None: ...
 
 class OutlierStatistics(_message.Message):
-    __slots__ = ["lower", "upper", "percent"]
+    __slots__ = ("lower", "upper", "percent")
     LOWER_FIELD_NUMBER: _ClassVar[int]
     UPPER_FIELD_NUMBER: _ClassVar[int]
     PERCENT_FIELD_NUMBER: _ClassVar[int]
@@ -1332,19 +1332,19 @@ class OutlierStatistics(_message.Message):
     def __init__(self, lower: _Optional[int] = ..., upper: _Optional[int] = ..., percent: _Optional[float] = ...) -> None: ...
 
 class PageSpec(_message.Message):
-    __slots__ = ["rows"]
+    __slots__ = ("rows",)
     ROWS_FIELD_NUMBER: _ClassVar[int]
     rows: _containers.RepeatedCompositeFieldContainer[RowSpec]
     def __init__(self, rows: _Optional[_Iterable[_Union[RowSpec, _Mapping]]] = ...) -> None: ...
 
 class ParquetFileSpec(_message.Message):
-    __slots__ = ["engine"]
+    __slots__ = ("engine",)
     ENGINE_FIELD_NUMBER: _ClassVar[int]
     engine: str
     def __init__(self, engine: _Optional[str] = ...) -> None: ...
 
 class Recipe(_message.Message):
-    __slots__ = ["metadata", "spec", "status"]
+    __slots__ = ("metadata", "spec", "status")
     METADATA_FIELD_NUMBER: _ClassVar[int]
     SPEC_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
@@ -1354,7 +1354,7 @@ class Recipe(_message.Message):
     def __init__(self, metadata: _Optional[_Union[_generated_pb2_1_1.ObjectMeta, _Mapping]] = ..., spec: _Optional[_Union[RecipeSpec, _Mapping]] = ..., status: _Optional[_Union[RecipeStatus, _Mapping]] = ...) -> None: ...
 
 class RecipeInputSpec(_message.Message):
-    __slots__ = ["datasetName", "location", "format"]
+    __slots__ = ("datasetName", "location", "format")
     DATASETNAME_FIELD_NUMBER: _ClassVar[int]
     LOCATION_FIELD_NUMBER: _ClassVar[int]
     FORMAT_FIELD_NUMBER: _ClassVar[int]
@@ -1364,7 +1364,7 @@ class RecipeInputSpec(_message.Message):
     def __init__(self, datasetName: _Optional[str] = ..., location: _Optional[_Union[_generated_pb2.DataLocation, _Mapping]] = ..., format: _Optional[str] = ...) -> None: ...
 
 class RecipeList(_message.Message):
-    __slots__ = ["metadata", "items"]
+    __slots__ = ("metadata", "items")
     METADATA_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     metadata: _generated_pb2_1_1.ListMeta
@@ -1372,7 +1372,7 @@ class RecipeList(_message.Message):
     def __init__(self, metadata: _Optional[_Union[_generated_pb2_1_1.ListMeta, _Mapping]] = ..., items: _Optional[_Iterable[_Union[Recipe, _Mapping]]] = ...) -> None: ...
 
 class RecipeOutputSpec(_message.Message):
-    __slots__ = ["createDataset", "datasetName", "location"]
+    __slots__ = ("createDataset", "datasetName", "location")
     CREATEDATASET_FIELD_NUMBER: _ClassVar[int]
     DATASETNAME_FIELD_NUMBER: _ClassVar[int]
     LOCATION_FIELD_NUMBER: _ClassVar[int]
@@ -1382,7 +1382,7 @@ class RecipeOutputSpec(_message.Message):
     def __init__(self, createDataset: bool = ..., datasetName: _Optional[str] = ..., location: _Optional[_Union[_generated_pb2.DataLocation, _Mapping]] = ...) -> None: ...
 
 class RecipePartSpec(_message.Message):
-    __slots__ = ["recipeName", "dependents"]
+    __slots__ = ("recipeName", "dependents")
     RECIPENAME_FIELD_NUMBER: _ClassVar[int]
     DEPENDENTS_FIELD_NUMBER: _ClassVar[int]
     recipeName: str
@@ -1390,7 +1390,7 @@ class RecipePartSpec(_message.Message):
     def __init__(self, recipeName: _Optional[str] = ..., dependents: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class RecipeRun(_message.Message):
-    __slots__ = ["metadata", "spec", "status"]
+    __slots__ = ("metadata", "spec", "status")
     METADATA_FIELD_NUMBER: _ClassVar[int]
     SPEC_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
@@ -1400,7 +1400,7 @@ class RecipeRun(_message.Message):
     def __init__(self, metadata: _Optional[_Union[_generated_pb2_1_1.ObjectMeta, _Mapping]] = ..., spec: _Optional[_Union[RecipeRunSpec, _Mapping]] = ..., status: _Optional[_Union[RecipeRunStatus, _Mapping]] = ...) -> None: ...
 
 class RecipeRunList(_message.Message):
-    __slots__ = ["metadata", "items"]
+    __slots__ = ("metadata", "items")
     METADATA_FIELD_NUMBER: _ClassVar[int]
     ITEMS_FIELD_NUMBER: _ClassVar[int]
     metadata: _generated_pb2_1_1.ListMeta
@@ -1408,7 +1408,7 @@ class RecipeRunList(_message.Message):
     def __init__(self, metadata: _Optional[_Union[_generated_pb2_1_1.ListMeta, _Mapping]] = ..., items: _Optional[_Iterable[_Union[RecipeRun, _Mapping]]] = ...) -> None: ...
 
 class RecipeRunSpec(_message.Message):
-    __slots__ = ["versionName", "recipeName", "labRef", "location", "resources", "ttl", "modelClassName", "modelClassRunName"]
+    __slots__ = ("versionName", "recipeName", "labRef", "location", "resources", "ttl", "modelClassName", "modelClassRunName")
     VERSIONNAME_FIELD_NUMBER: _ClassVar[int]
     RECIPENAME_FIELD_NUMBER: _ClassVar[int]
     LABREF_FIELD_NUMBER: _ClassVar[int]
@@ -1428,7 +1428,7 @@ class RecipeRunSpec(_message.Message):
     def __init__(self, versionName: _Optional[str] = ..., recipeName: _Optional[str] = ..., labRef: _Optional[_Union[_generated_pb2_1.ObjectReference, _Mapping]] = ..., location: _Optional[_Union[_generated_pb2.DataLocation, _Mapping]] = ..., resources: _Optional[_Union[_generated_pb2.ResourceSpec, _Mapping]] = ..., ttl: _Optional[int] = ..., modelClassName: _Optional[str] = ..., modelClassRunName: _Optional[str] = ...) -> None: ...
 
 class RecipeRunStatus(_message.Message):
-    __slots__ = ["completedAt", "phase", "observedGeneration", "failureReason", "failureMessage", "triggeredBy", "logs", "updatedAt", "conditions"]
+    __slots__ = ("completedAt", "phase", "observedGeneration", "failureReason", "failureMessage", "triggeredBy", "logs", "updatedAt", "conditions")
     COMPLETEDAT_FIELD_NUMBER: _ClassVar[int]
     PHASE_FIELD_NUMBER: _ClassVar[int]
     OBSERVEDGENERATION_FIELD_NUMBER: _ClassVar[int]
@@ -1450,7 +1450,7 @@ class RecipeRunStatus(_message.Message):
     def __init__(self, completedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., phase: _Optional[str] = ..., observedGeneration: _Optional[int] = ..., failureReason: _Optional[str] = ..., failureMessage: _Optional[str] = ..., triggeredBy: _Optional[str] = ..., logs: _Optional[_Iterable[_Union[_generated_pb2.ContainerLog, _Mapping]]] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1.Condition, _Mapping]]] = ...) -> None: ...
 
 class RecipeSpec(_message.Message):
-    __slots__ = ["owner", "versionName", "description", "input", "steps", "output", "sample", "resources", "timeout", "ttl", "unitTestsTemplate"]
+    __slots__ = ("owner", "versionName", "description", "input", "steps", "output", "sample", "resources", "timeout", "ttl", "unitTestsTemplate")
     OWNER_FIELD_NUMBER: _ClassVar[int]
     VERSIONNAME_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
@@ -1476,7 +1476,7 @@ class RecipeSpec(_message.Message):
     def __init__(self, owner: _Optional[str] = ..., versionName: _Optional[str] = ..., description: _Optional[str] = ..., input: _Optional[_Union[RecipeInputSpec, _Mapping]] = ..., steps: _Optional[_Iterable[_Union[RecipeStep, _Mapping]]] = ..., output: _Optional[_Union[RecipeOutputSpec, _Mapping]] = ..., sample: _Optional[_Union[SampleSpec, _Mapping]] = ..., resources: _Optional[_Union[_generated_pb2.ResourceSpec, _Mapping]] = ..., timeout: _Optional[int] = ..., ttl: _Optional[int] = ..., unitTestsTemplate: _Optional[_Union[_generated_pb2.TestSuite, _Mapping]] = ...) -> None: ...
 
 class RecipeStatus(_message.Message):
-    __slots__ = ["observedGeneration", "lastRun", "updatedAt", "conditions"]
+    __slots__ = ("observedGeneration", "lastRun", "updatedAt", "conditions")
     OBSERVEDGENERATION_FIELD_NUMBER: _ClassVar[int]
     LASTRUN_FIELD_NUMBER: _ClassVar[int]
     UPDATEDAT_FIELD_NUMBER: _ClassVar[int]
@@ -1488,7 +1488,7 @@ class RecipeStatus(_message.Message):
     def __init__(self, observedGeneration: _Optional[int] = ..., lastRun: _Optional[_Union[_generated_pb2.LastRunStatus, _Mapping]] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1.Condition, _Mapping]]] = ...) -> None: ...
 
 class RecipeStep(_message.Message):
-    __slots__ = ["op", "parameters"]
+    __slots__ = ("op", "parameters")
     OP_FIELD_NUMBER: _ClassVar[int]
     PARAMETERS_FIELD_NUMBER: _ClassVar[int]
     op: str
@@ -1496,7 +1496,7 @@ class RecipeStep(_message.Message):
     def __init__(self, op: _Optional[str] = ..., parameters: _Optional[_Iterable[_Union[RecipeStepParam, _Mapping]]] = ...) -> None: ...
 
 class RecipeStepParam(_message.Message):
-    __slots__ = ["name", "value"]
+    __slots__ = ("name", "value")
     NAME_FIELD_NUMBER: _ClassVar[int]
     VALUE_FIELD_NUMBER: _ClassVar[int]
     name: str
@@ -1504,7 +1504,7 @@ class RecipeStepParam(_message.Message):
     def __init__(self, name: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
 
 class RecommendationSchema(_message.Message):
-    __slots__ = ["userIDColumn", "itemIDColumn", "ratingColumn"]
+    __slots__ = ("userIDColumn", "itemIDColumn", "ratingColumn")
     USERIDCOLUMN_FIELD_NUMBER: _ClassVar[int]
     ITEMIDCOLUMN_FIELD_NUMBER: _ClassVar[int]
     RATINGCOLUMN_FIELD_NUMBER: _ClassVar[int]
@@ -1514,7 +1514,7 @@ class RecommendationSchema(_message.Message):
     def __init__(self, userIDColumn: _Optional[str] = ..., itemIDColumn: _Optional[str] = ..., ratingColumn: _Optional[str] = ...) -> None: ...
 
 class RelationshipSpec(_message.Message):
-    __slots__ = ["type", "column", "arity", "relatesTo"]
+    __slots__ = ("type", "column", "arity", "relatesTo")
     TYPE_FIELD_NUMBER: _ClassVar[int]
     COLUMN_FIELD_NUMBER: _ClassVar[int]
     ARITY_FIELD_NUMBER: _ClassVar[int]
@@ -1526,13 +1526,13 @@ class RelationshipSpec(_message.Message):
     def __init__(self, type: _Optional[str] = ..., column: _Optional[str] = ..., arity: _Optional[str] = ..., relatesTo: _Optional[str] = ...) -> None: ...
 
 class RowSpec(_message.Message):
-    __slots__ = ["cols"]
+    __slots__ = ("cols",)
     COLS_FIELD_NUMBER: _ClassVar[int]
     cols: _containers.RepeatedCompositeFieldContainer[ColumnSpec]
     def __init__(self, cols: _Optional[_Iterable[_Union[ColumnSpec, _Mapping]]] = ...) -> None: ...
 
 class SampleSpec(_message.Message):
-    __slots__ = ["type", "rows", "percent", "filter"]
+    __slots__ = ("type", "rows", "percent", "filter")
     TYPE_FIELD_NUMBER: _ClassVar[int]
     ROWS_FIELD_NUMBER: _ClassVar[int]
     PERCENT_FIELD_NUMBER: _ClassVar[int]
@@ -1544,7 +1544,7 @@ class SampleSpec(_message.Message):
     def __init__(self, type: _Optional[str] = ..., rows: _Optional[int] = ..., percent: _Optional[int] = ..., filter: _Optional[str] = ...) -> None: ...
 
 class ScatterPlotSpec(_message.Message):
-    __slots__ = ["datasetName", "x", "y"]
+    __slots__ = ("datasetName", "x", "y")
     DATASETNAME_FIELD_NUMBER: _ClassVar[int]
     X_FIELD_NUMBER: _ClassVar[int]
     Y_FIELD_NUMBER: _ClassVar[int]
@@ -1554,7 +1554,7 @@ class ScatterPlotSpec(_message.Message):
     def __init__(self, datasetName: _Optional[str] = ..., x: _Optional[str] = ..., y: _Optional[str] = ...) -> None: ...
 
 class Schema(_message.Message):
-    __slots__ = ["timeSeriesSchema", "recommendationSchema", "columns", "key"]
+    __slots__ = ("timeSeriesSchema", "recommendationSchema", "columns", "key")
     TIMESERIESSCHEMA_FIELD_NUMBER: _ClassVar[int]
     RECOMMENDATIONSCHEMA_FIELD_NUMBER: _ClassVar[int]
     COLUMNS_FIELD_NUMBER: _ClassVar[int]
@@ -1566,7 +1566,7 @@ class Schema(_message.Message):
     def __init__(self, timeSeriesSchema: _Optional[_Union[TimeSeriesSchema, _Mapping]] = ..., recommendationSchema: _Optional[_Union[RecommendationSchema, _Mapping]] = ..., columns: _Optional[_Iterable[_Union[Column, _Mapping]]] = ..., key: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class SyntheticSpec(_message.Message):
-    __slots__ = ["enabled", "rows"]
+    __slots__ = ("enabled", "rows")
     ENABLED_FIELD_NUMBER: _ClassVar[int]
     ROWS_FIELD_NUMBER: _ClassVar[int]
     enabled: bool
@@ -1574,7 +1574,7 @@ class SyntheticSpec(_message.Message):
     def __init__(self, enabled: bool = ..., rows: _Optional[int] = ...) -> None: ...
 
 class TableSpec(_message.Message):
-    __slots__ = ["datasetName", "columns", "filters", "groupby", "rows", "showIndex", "border"]
+    __slots__ = ("datasetName", "columns", "filters", "groupby", "rows", "showIndex", "border")
     DATASETNAME_FIELD_NUMBER: _ClassVar[int]
     COLUMNS_FIELD_NUMBER: _ClassVar[int]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
@@ -1592,7 +1592,7 @@ class TableSpec(_message.Message):
     def __init__(self, datasetName: _Optional[str] = ..., columns: _Optional[_Iterable[str]] = ..., filters: _Optional[_Iterable[str]] = ..., groupby: _Optional[_Iterable[str]] = ..., rows: _Optional[int] = ..., showIndex: bool = ..., border: bool = ...) -> None: ...
 
 class TimeSeriesSchema(_message.Message):
-    __slots__ = ["type", "freq", "interval"]
+    __slots__ = ("type", "freq", "interval")
     TYPE_FIELD_NUMBER: _ClassVar[int]
     FREQ_FIELD_NUMBER: _ClassVar[int]
     INTERVAL_FIELD_NUMBER: _ClassVar[int]

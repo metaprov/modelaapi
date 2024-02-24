@@ -9,9 +9,9 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ListFeatureGroupRequest(_message.Message):
-    __slots__ = ["namespace", "labels", "page_size", "page_token", "order_by"]
+    __slots__ = ("namespace", "labels", "page_size", "page_token", "order_by")
     class LabelsEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -30,7 +30,7 @@ class ListFeatureGroupRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ..., page_size: _Optional[int] = ..., page_token: _Optional[str] = ..., order_by: _Optional[str] = ...) -> None: ...
 
 class ListFeatureGroupResponse(_message.Message):
-    __slots__ = ["featuregroups", "next_page_token"]
+    __slots__ = ("featuregroups", "next_page_token")
     FEATUREGROUPS_FIELD_NUMBER: _ClassVar[int]
     NEXT_PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
     featuregroups: _generated_pb2.FeatureGroupList
@@ -38,17 +38,17 @@ class ListFeatureGroupResponse(_message.Message):
     def __init__(self, featuregroups: _Optional[_Union[_generated_pb2.FeatureGroupList, _Mapping]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
 
 class CreateFeatureGroupRequest(_message.Message):
-    __slots__ = ["featuregroup"]
+    __slots__ = ("featuregroup",)
     FEATUREGROUP_FIELD_NUMBER: _ClassVar[int]
     featuregroup: _generated_pb2.FeatureGroup
     def __init__(self, featuregroup: _Optional[_Union[_generated_pb2.FeatureGroup, _Mapping]] = ...) -> None: ...
 
 class CreateFeatureGroupResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class UpdateFeatureGroupRequest(_message.Message):
-    __slots__ = ["featuregroup", "field_mask"]
+    __slots__ = ("featuregroup", "field_mask")
     FEATUREGROUP_FIELD_NUMBER: _ClassVar[int]
     FIELD_MASK_FIELD_NUMBER: _ClassVar[int]
     featuregroup: _generated_pb2.FeatureGroup
@@ -56,11 +56,11 @@ class UpdateFeatureGroupRequest(_message.Message):
     def __init__(self, featuregroup: _Optional[_Union[_generated_pb2.FeatureGroup, _Mapping]] = ..., field_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
 
 class UpdateFeatureGroupResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class GetFeatureGroupRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ("namespace", "name")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -68,7 +68,7 @@ class GetFeatureGroupRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class GetFeatureGroupResponse(_message.Message):
-    __slots__ = ["featuregroup", "yaml"]
+    __slots__ = ("featuregroup", "yaml")
     FEATUREGROUP_FIELD_NUMBER: _ClassVar[int]
     YAML_FIELD_NUMBER: _ClassVar[int]
     featuregroup: _generated_pb2.FeatureGroup
@@ -76,7 +76,7 @@ class GetFeatureGroupResponse(_message.Message):
     def __init__(self, featuregroup: _Optional[_Union[_generated_pb2.FeatureGroup, _Mapping]] = ..., yaml: _Optional[str] = ...) -> None: ...
 
 class DeleteFeatureGroupRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ("namespace", "name")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -84,15 +84,15 @@ class DeleteFeatureGroupRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class DeleteFeatureGroupResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class PauseFeatureGroupResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class PauseFeatureGroupRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ("namespace", "name")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -100,11 +100,11 @@ class PauseFeatureGroupRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class ResumeFeatureGroupResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class ResumeFeatureGroupRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ("namespace", "name")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -112,7 +112,7 @@ class ResumeFeatureGroupRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class IngestFeatureGroupRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ("namespace", "name")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -120,11 +120,11 @@ class IngestFeatureGroupRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class IngestFeatureGroupResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class SyncFeatureGroupRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ("namespace", "name")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -132,5 +132,5 @@ class SyncFeatureGroupRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class SyncFeatureGroupResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...

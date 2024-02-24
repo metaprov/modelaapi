@@ -10,9 +10,9 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ListUserRoleClassesRequest(_message.Message):
-    __slots__ = ["namespace", "labels", "page_size", "page_token", "order_by"]
+    __slots__ = ("namespace", "labels", "page_size", "page_token", "order_by")
     class LabelsEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -31,7 +31,7 @@ class ListUserRoleClassesRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ..., page_size: _Optional[int] = ..., page_token: _Optional[str] = ..., order_by: _Optional[str] = ...) -> None: ...
 
 class ListUserRoleClassesResponse(_message.Message):
-    __slots__ = ["roles", "next_page_token"]
+    __slots__ = ("roles", "next_page_token")
     ROLES_FIELD_NUMBER: _ClassVar[int]
     NEXT_PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
     roles: _generated_pb2.UserRoleClassList
@@ -39,21 +39,21 @@ class ListUserRoleClassesResponse(_message.Message):
     def __init__(self, roles: _Optional[_Union[_generated_pb2.UserRoleClassList, _Mapping]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
 
 class UserRoleClassResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class CreateUserRoleClassRequest(_message.Message):
-    __slots__ = ["role"]
+    __slots__ = ("role",)
     ROLE_FIELD_NUMBER: _ClassVar[int]
     role: _generated_pb2.UserRoleClass
     def __init__(self, role: _Optional[_Union[_generated_pb2.UserRoleClass, _Mapping]] = ...) -> None: ...
 
 class CreateUserRoleClassResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class UpdateUserRoleClassRequest(_message.Message):
-    __slots__ = ["role", "update_mask"]
+    __slots__ = ("role", "update_mask")
     ROLE_FIELD_NUMBER: _ClassVar[int]
     UPDATE_MASK_FIELD_NUMBER: _ClassVar[int]
     role: _generated_pb2.UserRoleClass
@@ -61,11 +61,11 @@ class UpdateUserRoleClassRequest(_message.Message):
     def __init__(self, role: _Optional[_Union[_generated_pb2.UserRoleClass, _Mapping]] = ..., update_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
 
 class UpdateUserRoleClassResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class GetUserRoleClassRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ("namespace", "name")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -73,7 +73,7 @@ class GetUserRoleClassRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class GetUserRoleClassResponse(_message.Message):
-    __slots__ = ["role", "yaml"]
+    __slots__ = ("role", "yaml")
     ROLE_FIELD_NUMBER: _ClassVar[int]
     YAML_FIELD_NUMBER: _ClassVar[int]
     role: _generated_pb2.UserRoleClass
@@ -81,7 +81,7 @@ class GetUserRoleClassResponse(_message.Message):
     def __init__(self, role: _Optional[_Union[_generated_pb2.UserRoleClass, _Mapping]] = ..., yaml: _Optional[str] = ...) -> None: ...
 
 class DeleteUserRoleClassRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ("namespace", "name")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -89,15 +89,15 @@ class DeleteUserRoleClassRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class DeleteUserRoleClassResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class UserRoleClassCreateResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class UserRoleClassLoginRequest(_message.Message):
-    __slots__ = ["namespace", "name", "password"]
+    __slots__ = ("namespace", "name", "password")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     PASSWORD_FIELD_NUMBER: _ClassVar[int]
@@ -107,7 +107,7 @@ class UserRoleClassLoginRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., password: _Optional[str] = ...) -> None: ...
 
 class UserRoleClassLoginResponse(_message.Message):
-    __slots__ = ["token"]
+    __slots__ = ("token",)
     TOKEN_FIELD_NUMBER: _ClassVar[int]
     token: str
     def __init__(self, token: _Optional[str] = ...) -> None: ...

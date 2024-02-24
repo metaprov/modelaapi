@@ -9,7 +9,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Location(_message.Message):
-    __slots__ = ["tenant", "dataProduct", "resourceKind", "resourceName", "fileName", "bucket"]
+    __slots__ = ("tenant", "dataProduct", "resourceKind", "resourceName", "fileName", "bucket")
     TENANT_FIELD_NUMBER: _ClassVar[int]
     DATAPRODUCT_FIELD_NUMBER: _ClassVar[int]
     RESOURCEKIND_FIELD_NUMBER: _ClassVar[int]
@@ -25,7 +25,7 @@ class Location(_message.Message):
     def __init__(self, tenant: _Optional[str] = ..., dataProduct: _Optional[str] = ..., resourceKind: _Optional[str] = ..., resourceName: _Optional[str] = ..., fileName: _Optional[str] = ..., bucket: _Optional[str] = ...) -> None: ...
 
 class InitiateUploadRequest(_message.Message):
-    __slots__ = ["size", "location"]
+    __slots__ = ("size", "location")
     SIZE_FIELD_NUMBER: _ClassVar[int]
     LOCATION_FIELD_NUMBER: _ClassVar[int]
     size: int
@@ -33,7 +33,7 @@ class InitiateUploadRequest(_message.Message):
     def __init__(self, size: _Optional[int] = ..., location: _Optional[_Union[Location, _Mapping]] = ...) -> None: ...
 
 class InitiateUploadResponse(_message.Message):
-    __slots__ = ["token", "chunkSize"]
+    __slots__ = ("token", "chunkSize")
     TOKEN_FIELD_NUMBER: _ClassVar[int]
     CHUNKSIZE_FIELD_NUMBER: _ClassVar[int]
     token: str
@@ -41,7 +41,7 @@ class InitiateUploadResponse(_message.Message):
     def __init__(self, token: _Optional[str] = ..., chunkSize: _Optional[int] = ...) -> None: ...
 
 class UploadRequest(_message.Message):
-    __slots__ = ["token", "data"]
+    __slots__ = ("token", "data")
     TOKEN_FIELD_NUMBER: _ClassVar[int]
     DATA_FIELD_NUMBER: _ClassVar[int]
     token: str
@@ -49,7 +49,7 @@ class UploadRequest(_message.Message):
     def __init__(self, token: _Optional[str] = ..., data: _Optional[bytes] = ...) -> None: ...
 
 class UploadResponse(_message.Message):
-    __slots__ = ["complete"]
+    __slots__ = ("complete",)
     COMPLETE_FIELD_NUMBER: _ClassVar[int]
     complete: bool
     def __init__(self, complete: bool = ...) -> None: ...

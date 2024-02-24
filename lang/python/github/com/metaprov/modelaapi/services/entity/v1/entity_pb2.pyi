@@ -9,9 +9,9 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ListEntitiesRequest(_message.Message):
-    __slots__ = ["namespace", "labels", "page_size", "page_token", "order_by"]
+    __slots__ = ("namespace", "labels", "page_size", "page_token", "order_by")
     class LabelsEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -30,7 +30,7 @@ class ListEntitiesRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ..., page_size: _Optional[int] = ..., page_token: _Optional[str] = ..., order_by: _Optional[str] = ...) -> None: ...
 
 class ListEntitiesResponse(_message.Message):
-    __slots__ = ["entities", "next_page_token"]
+    __slots__ = ("entities", "next_page_token")
     ENTITIES_FIELD_NUMBER: _ClassVar[int]
     NEXT_PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
     entities: _generated_pb2.EntityList
@@ -38,17 +38,17 @@ class ListEntitiesResponse(_message.Message):
     def __init__(self, entities: _Optional[_Union[_generated_pb2.EntityList, _Mapping]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
 
 class CreateEntityRequest(_message.Message):
-    __slots__ = ["entity"]
+    __slots__ = ("entity",)
     ENTITY_FIELD_NUMBER: _ClassVar[int]
     entity: _generated_pb2.Entity
     def __init__(self, entity: _Optional[_Union[_generated_pb2.Entity, _Mapping]] = ...) -> None: ...
 
 class CreateEntityResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class UpdateEntityRequest(_message.Message):
-    __slots__ = ["entity", "field_mask"]
+    __slots__ = ("entity", "field_mask")
     ENTITY_FIELD_NUMBER: _ClassVar[int]
     FIELD_MASK_FIELD_NUMBER: _ClassVar[int]
     entity: _generated_pb2.Entity
@@ -56,11 +56,11 @@ class UpdateEntityRequest(_message.Message):
     def __init__(self, entity: _Optional[_Union[_generated_pb2.Entity, _Mapping]] = ..., field_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
 
 class UpdateEntityResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class GetEntityRequest(_message.Message):
-    __slots__ = ["namespace", "name", "field_mask"]
+    __slots__ = ("namespace", "name", "field_mask")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     FIELD_MASK_FIELD_NUMBER: _ClassVar[int]
@@ -70,7 +70,7 @@ class GetEntityRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., field_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
 
 class GetEntityResponse(_message.Message):
-    __slots__ = ["entity", "yaml"]
+    __slots__ = ("entity", "yaml")
     ENTITY_FIELD_NUMBER: _ClassVar[int]
     YAML_FIELD_NUMBER: _ClassVar[int]
     entity: _generated_pb2.Entity
@@ -78,7 +78,7 @@ class GetEntityResponse(_message.Message):
     def __init__(self, entity: _Optional[_Union[_generated_pb2.Entity, _Mapping]] = ..., yaml: _Optional[str] = ...) -> None: ...
 
 class DeleteEntityRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ("namespace", "name")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -86,5 +86,5 @@ class DeleteEntityRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class DeleteEntityResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...

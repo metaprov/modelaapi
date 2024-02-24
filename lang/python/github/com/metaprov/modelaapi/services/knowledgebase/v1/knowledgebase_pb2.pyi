@@ -9,9 +9,9 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ListKnowledgeBasesRequest(_message.Message):
-    __slots__ = ["namespace", "labels"]
+    __slots__ = ("namespace", "labels")
     class LabelsEntry(_message.Message):
-        __slots__ = ["key", "value"]
+        __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -24,7 +24,7 @@ class ListKnowledgeBasesRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
 class ListKnowledgeBasesResponse(_message.Message):
-    __slots__ = ["knowledgeBases", "next_page_token"]
+    __slots__ = ("knowledgeBases", "next_page_token")
     KNOWLEDGEBASES_FIELD_NUMBER: _ClassVar[int]
     NEXT_PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
     knowledgeBases: _generated_pb2.KnowledgeBaseList
@@ -32,17 +32,17 @@ class ListKnowledgeBasesResponse(_message.Message):
     def __init__(self, knowledgeBases: _Optional[_Union[_generated_pb2.KnowledgeBaseList, _Mapping]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
 
 class CreateKnowledgeBaseRequest(_message.Message):
-    __slots__ = ["knowledgeBase"]
+    __slots__ = ("knowledgeBase",)
     KNOWLEDGEBASE_FIELD_NUMBER: _ClassVar[int]
     knowledgeBase: _generated_pb2.KnowledgeBase
     def __init__(self, knowledgeBase: _Optional[_Union[_generated_pb2.KnowledgeBase, _Mapping]] = ...) -> None: ...
 
 class CreateKnowledgeBaseResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class UpdateKnowledgeBaseRequest(_message.Message):
-    __slots__ = ["knowledgeBase", "field_mask"]
+    __slots__ = ("knowledgeBase", "field_mask")
     KNOWLEDGEBASE_FIELD_NUMBER: _ClassVar[int]
     FIELD_MASK_FIELD_NUMBER: _ClassVar[int]
     knowledgeBase: _generated_pb2.KnowledgeBase
@@ -50,11 +50,11 @@ class UpdateKnowledgeBaseRequest(_message.Message):
     def __init__(self, knowledgeBase: _Optional[_Union[_generated_pb2.KnowledgeBase, _Mapping]] = ..., field_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
 
 class UpdateKnowledgeBaseResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class GetKnowledgeBaseRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ("namespace", "name")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -62,7 +62,7 @@ class GetKnowledgeBaseRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class GetKnowledgeBaseResponse(_message.Message):
-    __slots__ = ["knowledgeBase", "yaml"]
+    __slots__ = ("knowledgeBase", "yaml")
     KNOWLEDGEBASE_FIELD_NUMBER: _ClassVar[int]
     YAML_FIELD_NUMBER: _ClassVar[int]
     knowledgeBase: _generated_pb2.KnowledgeBase
@@ -70,7 +70,7 @@ class GetKnowledgeBaseResponse(_message.Message):
     def __init__(self, knowledgeBase: _Optional[_Union[_generated_pb2.KnowledgeBase, _Mapping]] = ..., yaml: _Optional[str] = ...) -> None: ...
 
 class DeleteKnowledgeBaseRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ("namespace", "name")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -78,11 +78,11 @@ class DeleteKnowledgeBaseRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class DeleteKnowledgeBaseResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
 
 class RefreshKnowledgeBaseRequest(_message.Message):
-    __slots__ = ["namespace", "name"]
+    __slots__ = ("namespace", "name")
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     namespace: str
@@ -90,5 +90,5 @@ class RefreshKnowledgeBaseRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class RefreshKnowledgeBaseResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
