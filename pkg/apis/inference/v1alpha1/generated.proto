@@ -148,7 +148,7 @@ message DataAppSpec {
   optional string modelName = 5;
 
   // Access specifies the configuration for the Data App service to be exposed externally
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AccessSpec access = 6;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PredictorAccessSpec access = 6;
 
   // The number of replicas for the Kubernetes Serving associated with the DataApp, which will instantiate multiple
   // copies of the service in the case that automatic scaling is disabled
@@ -850,7 +850,7 @@ message PredictorSpec {
 
   // Access specifies the configuration for the Predictor service to be exposed externally
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AccessSpec access = 11;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PredictorAccessSpec access = 11;
 
   // The number of replicas for the Kubernetes Serving associated with the Predictor, which will instantiate multiple
   // copies of the service in the case that automatic scaling is disabled

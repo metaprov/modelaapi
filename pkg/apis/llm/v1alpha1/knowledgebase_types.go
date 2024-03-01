@@ -131,20 +131,12 @@ type VectorIndexSpec struct {
 	EmbeddingModel ModelSpec `json:"embeddingModel,omitempty" protobuf:"bytes,2,opt,name=embeddingModel"`
 }
 
-// DocumentSummaryIndexEmbeddingSpec specifies the configuration to embed documents in a document summary index
-type DocumentSummaryIndexEmbeddingSpec struct {
-	// DatabaseConnectionName specifies the name of a Connection resource that provides a vector database
-	DatabaseConnectionName string `json:"databaseConnectionName,omitempty" protobuf:"bytes,1,opt,name=databaseConnectionName"`
-	// EmbeddingModel specifies the embedding model to use when ingesting documents
-	EmbeddingModel ModelSpec `json:"embeddingModel,omitempty" protobuf:"bytes,2,opt,name=embeddingModel"`
-}
-
 // DocumentSummaryIndexSpec specifies the configuration for a document summary index
 type DocumentSummaryIndexSpec struct {
-	// The LLM to use when summarizing documents
-	LLM ModelSpec `json:"llm,omitempty" protobuf:"bytes,1,opt,name=llm"`
+	// The response synthesizer to use when summarizing documents
+	ResponseSynthesizer ResponseSynthesizerSpec `json:"responseSynthesizer,omitempty" protobuf:"bytes,1,opt,name=responseSynthesizer"`
 	// The configuration to optionally embed summarized documents
-	Embedding *DocumentSummaryIndexEmbeddingSpec `json:"embedding,omitempty" protobuf:"bytes,2,opt,name=embedding"`
+	Embedding *VectorIndexSpec `json:"embedding,omitempty" protobuf:"bytes,2,opt,name=embedding"`
 }
 
 // IndexSpec specifies the configuration for a document index
@@ -249,6 +241,14 @@ type TextSplitterSpec struct {
 	Code *CodeSplitterSpec `json:"code,omitempty" protobuf:"bytes,4,opt,name=code"`
 }
 
+// HierarchicalSplitterSpec defines how to split text documents into a recursive hierarchy of nodes
+type HierarchicalSplitterSpec struct {
+	// Indicates if hierarchical splitting is enabled
+	Enabled bool `json:"enabled" protobuf:"varint,1,opt,name=enabled"`
+	// The chunk sizes for each level in the hierarchy. When unspecified, default to 2048, 512, and 128
+	ChunkSizes []int `json:"chunkSizes,omitempty" protobuf:"bytes,4,opt,name=chunkSizes"`
+}
+
 // TokenSplitterSpec splits text documents by their tokens
 type TokenSplitterSpec struct {
 	// The chunk size, in tokens, for each chunk. When unspecified, default to 1024
@@ -257,6 +257,8 @@ type TokenSplitterSpec struct {
 	ChunkOverlap *int32 `json:"chunkOverlap,omitempty" protobuf:"bytes,2,opt,name=chunkOverlap"`
 	// The separator character for words. When unspecified, default to the space character
 	WordSeparator *string `json:"wordSeparator,omitempty" protobuf:"bytes,3,opt,name=wordSeparator"`
+	// The configuration for hierarchical splitting. When unspecified, hierarchical splitting is disabled
+	Hierarchical *HierarchicalSplitterSpec `json:"hierarchical,omitempty" protobuf:"bytes,4,opt,name=hierarchical"`
 }
 
 // SentenceSplitterSpec splits text documents with a preference for complete sentences
@@ -271,6 +273,8 @@ type SentenceSplitterSpec struct {
 	ParagraphSeparator *string `json:"paragraphSeparator,omitempty" protobuf:"bytes,4,opt,name=paragraphSeparator"`
 	// The function to split documents into sentences. When unspecified, default to the Punkt tokenizer
 	Splitter *SentenceTokenizerSpec `json:"splitter,omitempty" protobuf:"bytes,5,opt,name=splitter"`
+	// The configuration for hierarchical splitting. When unspecified, hierarchical splitting is disabled
+	Hierarchical *HierarchicalSplitterSpec `json:"hierarchical,omitempty" protobuf:"bytes,6,opt,name=hierarchical"`
 }
 
 // CodeSplitterSpec splits code documents by their syntax trees

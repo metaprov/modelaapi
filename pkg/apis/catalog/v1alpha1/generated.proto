@@ -18,52 +18,6 @@ import "k8s.io/apimachinery/pkg/runtime/schema/generated.proto";
 // Package-wide variables from generator "generated".
 option go_package = "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1";
 
-message AccessSpec {
-  // The port number that will be exposed on the Predictor's Pods to serve prediction traffic through the GRPCInferenceService API.
-  // The Kubernetes Service created by the Predictor will expose the port and forward GRPC traffic to the backend pods
-  // +kubebuilder:validation:Optional
-  // +kubebuilder:validation:Minimum=1024
-  // +kubebuilder:validation:Maximum=65535
-  // +kubebuilder:validation:Optional
-  // +kubebuilder:default:=8080
-  optional int32 port = 1;
-
-  // The port number that will be exposed on the external address of every node on the cluster, in the case of the
-  // Predictor's access type being NodePort. Traffic from the port will be forwarded to the Predictor's backend service
-  // +kubebuilder:validation:Minimum=0
-  // +kubebuilder:validation:Maximum=65535
-  // +kubebuilder:validation:Optional
-  optional int32 nodePort = 2;
-
-  // The auto-generated DNS path where the Predictor service can be accessed. If the access type is ClusterIP, it will
-  // be a cluster-internal DNS name (i.e. predictor.default-serving-site.svc.cluster.local). In the case of the Ingress
-  // access type, it will be determined by the FQDN of the host ServingSite (i.e. predictor.default-serving-site.your-domain.ai).
-  // +kubebuilder:validation:MaxLength=256
-  // +kubebuilder:validation:Optional
-  // +kubebuilder:default:=""
-  optional string path = 3;
-
-  // The Kubernetes-native access method which specifies how the Kubernetes Service created by the Predictor will be exposed.
-  // See https://modela.ai/docs/docs/serving/production/#access-method for a detailed description of each access type
-  // +kubebuilder:default:="cluster-ip"
-  // +kubebuilder:validation:Optional
-  optional string accessType = 4;
-
-  // Indicates if the prediction service should expose an additional port to serve the Modela prediction API through HTTP.
-  // The port one digit above the number specified by the Port field will be exposed to accept HTTP/1.1 traffic
-  // +kubebuilder:default:=false
-  // +kubebuilder:validation:Optional
-  optional bool http = 5;
-
-  // +kubebuilder:default:=none
-  // +kubebuilder:validation:Optional
-  optional string authMethod = 6;
-
-  // ApiKeySecretRef references a Kubernetes Secret containing an API key that must be passed in prediction requests to the Predictor
-  // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.SecretReference apikeySecretRef = 7;
-}
-
 // AccountPermissions specifies the User Role Classes of an individual Account
 message AccountPermissions {
   // The name of the Account receiving the permissions
@@ -867,6 +821,52 @@ message PredictionRunReference {
 
   // The name of a Prediction Run resource. When specified, takes precedence over Prediction
   optional string name = 3;
+}
+
+message PredictorAccessSpec {
+  // The port number that will be exposed on the Predictor's Pods to serve prediction traffic through the GRPCInferenceService API.
+  // The Kubernetes Service created by the Predictor will expose the port and forward GRPC traffic to the backend pods
+  // +kubebuilder:validation:Optional
+  // +kubebuilder:validation:Minimum=1024
+  // +kubebuilder:validation:Maximum=65535
+  // +kubebuilder:validation:Optional
+  // +kubebuilder:default:=8080
+  optional int32 port = 1;
+
+  // The port number that will be exposed on the external address of every node on the cluster, in the case of the
+  // Predictor's access type being NodePort. Traffic from the port will be forwarded to the Predictor's backend service
+  // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Maximum=65535
+  // +kubebuilder:validation:Optional
+  optional int32 nodePort = 2;
+
+  // The auto-generated DNS path where the Predictor service can be accessed. If the access type is ClusterIP, it will
+  // be a cluster-internal DNS name (i.e. predictor.default-serving-site.svc.cluster.local). In the case of the Ingress
+  // access type, it will be determined by the FQDN of the host ServingSite (i.e. predictor.default-serving-site.your-domain.ai).
+  // +kubebuilder:validation:MaxLength=256
+  // +kubebuilder:validation:Optional
+  // +kubebuilder:default:=""
+  optional string path = 3;
+
+  // The Kubernetes-native access method which specifies how the Kubernetes Service created by the Predictor will be exposed.
+  // See https://modela.ai/docs/docs/serving/production/#access-method for a detailed description of each access type
+  // +kubebuilder:default:="cluster-ip"
+  // +kubebuilder:validation:Optional
+  optional string accessType = 4;
+
+  // Indicates if the prediction service should expose an additional port to serve the Modela prediction API through HTTP.
+  // The port one digit above the number specified by the Port field will be exposed to accept HTTP/1.1 traffic
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool http = 5;
+
+  // +kubebuilder:default:=none
+  // +kubebuilder:validation:Optional
+  optional string authMethod = 6;
+
+  // ApiKeySecretRef references a Kubernetes Secret containing an API key that must be passed in prediction requests to the Predictor
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.SecretReference apikeySecretRef = 7;
 }
 
 // Pretrained model contain the metadata about a pretrained model

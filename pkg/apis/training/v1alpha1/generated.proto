@@ -2232,7 +2232,7 @@ message ServingEnvironment {
 
   // Define the predictor access in this environment.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AccessSpec access = 4;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PredictorAccessSpec access = 4;
 
   // The number of replicas in this environment.
   // +kubebuilder:default:=1
@@ -2289,7 +2289,7 @@ message ServingSpec {
 
   // Access specifies the configuration for the Predictor service to be exposed externally
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AccessSpec access = 9;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PredictorAccessSpec access = 9;
 
   // Replicas specifies the number of replicas that will be created for the Predictor
   // +kubebuilder:default:=1

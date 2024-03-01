@@ -34,8 +34,8 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: KnowledgeBase represents a collection of documents that can be
-          queried with retrieval-augmented generation
+        description: KnowledgeBase represents a collection of documents that are stored
+          in one or more indexes
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -104,7 +104,8 @@ spec:
                             to a foundational model provider
                           type: string
                         model:
-                          description: Model specifies the vendor-specific model type
+                          description: Model specifies the vendor-specific model type.
+                            If unspecified, choose the default model for the vendor
                           type: string
                       type: object
                     file:
@@ -125,12 +126,20 @@ spec:
                           description: Reader-specific options
                           type: object
                         type:
+                          default: default
                           description: The type of file reader
                           type: string
                         url:
                           description: The URL to download the file
                           type: string
                       type: object
+                    indexes:
+                      description: Indexes specifies the collection of indexes that
+                        the document will be added to. If empty, the document will
+                        be added to all indexes defined by the Knowledge Base
+                      items:
+                        type: string
+                      type: array
                     metadata:
                       additionalProperties:
                         type: string
@@ -245,6 +254,25 @@ spec:
                                             to 1024
                                           format: int32
                                           type: integer
+                                        hierarchical:
+                                          description: The configuration for hierarchical
+                                            splitting. When unspecified, hierarchical
+                                            splitting is disabled
+                                          properties:
+                                            chunkSizes:
+                                              description: The chunk sizes for each
+                                                level in the hierarchy. When unspecified,
+                                                default to 2048, 512, and 128
+                                              items:
+                                                type: integer
+                                              type: array
+                                            enabled:
+                                              description: Indicates if hierarchical
+                                                splitting is enabled
+                                              type: boolean
+                                          required:
+                                          - enabled
+                                          type: object
                                         paragraphSeparator:
                                           description: The separator character for
                                             paragraphs. When unspecified, default
@@ -284,6 +312,25 @@ spec:
                                             to 1024
                                           format: int32
                                           type: integer
+                                        hierarchical:
+                                          description: The configuration for hierarchical
+                                            splitting. When unspecified, hierarchical
+                                            splitting is disabled
+                                          properties:
+                                            chunkSizes:
+                                              description: The chunk sizes for each
+                                                level in the hierarchy. When unspecified,
+                                                default to 2048, 512, and 128
+                                              items:
+                                                type: integer
+                                              type: array
+                                            enabled:
+                                              description: Indicates if hierarchical
+                                                splitting is enabled
+                                              type: boolean
+                                          required:
+                                          - enabled
+                                          type: object
                                         wordSeparator:
                                           description: The separator character for
                                             words. When unspecified, default to the
@@ -455,6 +502,26 @@ spec:
                                                   default to 1024
                                                 format: int32
                                                 type: integer
+                                              hierarchical:
+                                                description: The configuration for
+                                                  hierarchical splitting. When unspecified,
+                                                  hierarchical splitting is disabled
+                                                properties:
+                                                  chunkSizes:
+                                                    description: The chunk sizes for
+                                                      each level in the hierarchy.
+                                                      When unspecified, default to
+                                                      2048, 512, and 128
+                                                    items:
+                                                      type: integer
+                                                    type: array
+                                                  enabled:
+                                                    description: Indicates if hierarchical
+                                                      splitting is enabled
+                                                    type: boolean
+                                                required:
+                                                - enabled
+                                                type: object
                                               paragraphSeparator:
                                                 description: The separator character
                                                   for paragraphs. When unspecified,
@@ -497,6 +564,26 @@ spec:
                                                   default to 1024
                                                 format: int32
                                                 type: integer
+                                              hierarchical:
+                                                description: The configuration for
+                                                  hierarchical splitting. When unspecified,
+                                                  hierarchical splitting is disabled
+                                                properties:
+                                                  chunkSizes:
+                                                    description: The chunk sizes for
+                                                      each level in the hierarchy.
+                                                      When unspecified, default to
+                                                      2048, 512, and 128
+                                                    items:
+                                                      type: integer
+                                                    type: array
+                                                  enabled:
+                                                    description: Indicates if hierarchical
+                                                      splitting is enabled
+                                                    type: boolean
+                                                required:
+                                                - enabled
+                                                type: object
                                               wordSeparator:
                                                 description: The separator character
                                                   for words. When unspecified, default
@@ -593,6 +680,25 @@ spec:
                                     chunk. When unspecified, default to 1024
                                   format: int32
                                   type: integer
+                                hierarchical:
+                                  description: The configuration for hierarchical
+                                    splitting. When unspecified, hierarchical splitting
+                                    is disabled
+                                  properties:
+                                    chunkSizes:
+                                      description: The chunk sizes for each level
+                                        in the hierarchy. When unspecified, default
+                                        to 2048, 512, and 128
+                                      items:
+                                        type: integer
+                                      type: array
+                                    enabled:
+                                      description: Indicates if hierarchical splitting
+                                        is enabled
+                                      type: boolean
+                                  required:
+                                  - enabled
+                                  type: object
                                 paragraphSeparator:
                                   description: The separator character for paragraphs.
                                     When unspecified, default to newline
@@ -629,6 +735,25 @@ spec:
                                     chunk. When unspecified, default to 1024
                                   format: int32
                                   type: integer
+                                hierarchical:
+                                  description: The configuration for hierarchical
+                                    splitting. When unspecified, hierarchical splitting
+                                    is disabled
+                                  properties:
+                                    chunkSizes:
+                                      description: The chunk sizes for each level
+                                        in the hierarchy. When unspecified, default
+                                        to 2048, 512, and 128
+                                      items:
+                                        type: integer
+                                      type: array
+                                    enabled:
+                                      description: Indicates if hierarchical splitting
+                                        is enabled
+                                      type: boolean
+                                  required:
+                                  - enabled
+                                  type: object
                                 wordSeparator:
                                   description: The separator character for words.
                                     When unspecified, default to the space character
@@ -668,8 +793,9 @@ spec:
                         extensions:
                           description: The collection of supported file extensions
                             to read. File extensions supported by Modela will automatically
-                            be read by their supported reader, if not already defined
-                            in Readers
+                            be read by their supported reader, if not already mapped
+                            to a reader in Readers. Unsupported extensions will be
+                            read as plain-text
                           items:
                             type: string
                           type: array
@@ -702,6 +828,7 @@ spec:
                                     description: Reader-specific options
                                     type: object
                                   type:
+                                    default: default
                                     description: The type of file reader
                                     type: string
                                 type: object
@@ -730,18 +857,124 @@ spec:
                       type: object
                   type: object
                 type: array
-              embeddingModel:
-                description: EmbeddingModel specifies the embedding model to use when
-                  ingesting documents
-                properties:
-                  connectionName:
-                    description: ConnectionName specifies the name of a connection
-                      to a foundational model provider
-                    type: string
-                  model:
-                    description: Model specifies the vendor-specific model type
-                    type: string
-                type: object
+              indexes:
+                description: Indexes specifies the collection of indexes that the
+                  documents will be added to
+                items:
+                  description: IndexSpec specifies the configuration for a document
+                    index
+                  properties:
+                    documentSummary:
+                      description: DocumentSummary stores documents by their summaries
+                      properties:
+                        embedding:
+                          description: The configuration to optionally embed summarized
+                            documents
+                          properties:
+                            databaseConnectionName:
+                              description: DatabaseConnectionName specifies the name
+                                of a Connection resource that provides a vector database
+                              type: string
+                            embeddingModel:
+                              description: EmbeddingModel specifies the embedding
+                                model to use when ingesting documents
+                              properties:
+                                connectionName:
+                                  description: ConnectionName specifies the name of
+                                    a connection to a foundational model provider
+                                  type: string
+                                model:
+                                  description: Model specifies the vendor-specific
+                                    model type. If unspecified, choose the default
+                                    model for the vendor
+                                  type: string
+                              type: object
+                          type: object
+                        responseSynthesizer:
+                          description: The response synthesizer to use when summarizing
+                            documents
+                          properties:
+                            answerFiltering:
+                              description: The specification for answer filtering.
+                                If unspecified, answer filtering will be disabled.
+                                Compatible only with refine and compact response modes
+                              properties:
+                                enabled:
+                                  description: Indicates if answer filtering is enabled
+                                  type: boolean
+                                model:
+                                  description: The LLM to use when filtering answers.
+                                    If unspecified, default to the LLM defined by
+                                    the response synthesizer
+                                  properties:
+                                    connectionName:
+                                      description: ConnectionName specifies the name
+                                        of a connection to a foundational model provider
+                                      type: string
+                                    model:
+                                      description: Model specifies the vendor-specific
+                                        model type. If unspecified, choose the default
+                                        model for the vendor
+                                      type: string
+                                  type: object
+                              required:
+                              - enabled
+                              type: object
+                            mode:
+                              description: The method to use when synthesizing responses.
+                                If unspecified, default to `refine`
+                              enum:
+                              - refine
+                              - compact
+                              - simple-summarize
+                              - tree-summarize
+                              - accumulate
+                              - compact-accumulate
+                              type: string
+                            model:
+                              description: The LLM to use when synthesizing responses.
+                                If unspecified, use the default provided by the parent
+                                specification
+                              properties:
+                                connectionName:
+                                  description: ConnectionName specifies the name of
+                                    a connection to a foundational model provider
+                                  type: string
+                                model:
+                                  description: Model specifies the vendor-specific
+                                    model type. If unspecified, choose the default
+                                    model for the vendor
+                                  type: string
+                              type: object
+                          type: object
+                      type: object
+                    name:
+                      description: Name specifies the name of the index
+                      type: string
+                    vector:
+                      description: Vector stores documents with vector embeddings
+                      properties:
+                        databaseConnectionName:
+                          description: DatabaseConnectionName specifies the name of
+                            a Connection resource that provides a vector database
+                          type: string
+                        embeddingModel:
+                          description: EmbeddingModel specifies the embedding model
+                            to use when ingesting documents
+                          properties:
+                            connectionName:
+                              description: ConnectionName specifies the name of a
+                                connection to a foundational model provider
+                              type: string
+                            model:
+                              description: Model specifies the vendor-specific model
+                                type. If unspecified, choose the default model for
+                                the vendor
+                              type: string
+                          type: object
+                      type: object
+                  type: object
+                type: array
               labName:
                 description: The name of the Lab under which Jobs created by the Knowledge
                   Base will be executed. If empty, default to the Data Product's default
@@ -853,6 +1086,25 @@ spec:
                                       chunk. When unspecified, default to 1024
                                     format: int32
                                     type: integer
+                                  hierarchical:
+                                    description: The configuration for hierarchical
+                                      splitting. When unspecified, hierarchical splitting
+                                      is disabled
+                                    properties:
+                                      chunkSizes:
+                                        description: The chunk sizes for each level
+                                          in the hierarchy. When unspecified, default
+                                          to 2048, 512, and 128
+                                        items:
+                                          type: integer
+                                        type: array
+                                      enabled:
+                                        description: Indicates if hierarchical splitting
+                                          is enabled
+                                        type: boolean
+                                    required:
+                                    - enabled
+                                    type: object
                                   paragraphSeparator:
                                     description: The separator character for paragraphs.
                                       When unspecified, default to newline
@@ -889,6 +1141,25 @@ spec:
                                       chunk. When unspecified, default to 1024
                                     format: int32
                                     type: integer
+                                  hierarchical:
+                                    description: The configuration for hierarchical
+                                      splitting. When unspecified, hierarchical splitting
+                                      is disabled
+                                    properties:
+                                      chunkSizes:
+                                        description: The chunk sizes for each level
+                                          in the hierarchy. When unspecified, default
+                                          to 2048, 512, and 128
+                                        items:
+                                          type: integer
+                                        type: array
+                                      enabled:
+                                        description: Indicates if hierarchical splitting
+                                          is enabled
+                                        type: boolean
+                                    required:
+                                    - enabled
+                                    type: object
                                   wordSeparator:
                                     description: The separator character for words.
                                       When unspecified, default to the space character
@@ -1051,6 +1322,25 @@ spec:
                                             to 1024
                                           format: int32
                                           type: integer
+                                        hierarchical:
+                                          description: The configuration for hierarchical
+                                            splitting. When unspecified, hierarchical
+                                            splitting is disabled
+                                          properties:
+                                            chunkSizes:
+                                              description: The chunk sizes for each
+                                                level in the hierarchy. When unspecified,
+                                                default to 2048, 512, and 128
+                                              items:
+                                                type: integer
+                                              type: array
+                                            enabled:
+                                              description: Indicates if hierarchical
+                                                splitting is enabled
+                                              type: boolean
+                                          required:
+                                          - enabled
+                                          type: object
                                         paragraphSeparator:
                                           description: The separator character for
                                             paragraphs. When unspecified, default
@@ -1090,6 +1380,25 @@ spec:
                                             to 1024
                                           format: int32
                                           type: integer
+                                        hierarchical:
+                                          description: The configuration for hierarchical
+                                            splitting. When unspecified, hierarchical
+                                            splitting is disabled
+                                          properties:
+                                            chunkSizes:
+                                              description: The chunk sizes for each
+                                                level in the hierarchy. When unspecified,
+                                                default to 2048, 512, and 128
+                                              items:
+                                                type: integer
+                                              type: array
+                                            enabled:
+                                              description: Indicates if hierarchical
+                                                splitting is enabled
+                                              type: boolean
+                                          required:
+                                          - enabled
+                                          type: object
                                         wordSeparator:
                                           description: The separator character for
                                             words. When unspecified, default to the
@@ -1182,6 +1491,24 @@ spec:
                               When unspecified, default to 1024
                             format: int32
                             type: integer
+                          hierarchical:
+                            description: The configuration for hierarchical splitting.
+                              When unspecified, hierarchical splitting is disabled
+                            properties:
+                              chunkSizes:
+                                description: The chunk sizes for each level in the
+                                  hierarchy. When unspecified, default to 2048, 512,
+                                  and 128
+                                items:
+                                  type: integer
+                                type: array
+                              enabled:
+                                description: Indicates if hierarchical splitting is
+                                  enabled
+                                type: boolean
+                            required:
+                            - enabled
+                            type: object
                           paragraphSeparator:
                             description: The separator character for paragraphs. When
                               unspecified, default to newline
@@ -1216,6 +1543,24 @@ spec:
                               When unspecified, default to 1024
                             format: int32
                             type: integer
+                          hierarchical:
+                            description: The configuration for hierarchical splitting.
+                              When unspecified, hierarchical splitting is disabled
+                            properties:
+                              chunkSizes:
+                                description: The chunk sizes for each level in the
+                                  hierarchy. When unspecified, default to 2048, 512,
+                                  and 128
+                                items:
+                                  type: integer
+                                type: array
+                              enabled:
+                                description: Indicates if hierarchical splitting is
+                                  enabled
+                                type: boolean
+                            required:
+                            - enabled
+                            type: object
                           wordSeparator:
                             description: The separator character for words. When unspecified,
                               default to the space character
@@ -1312,10 +1657,6 @@ spec:
                       over custom requirements
                     type: string
                 type: object
-              vectorStoreConnectionName:
-                description: VectorStoreConnectionName specifies the name of a Connection
-                  resource that provides a vector database
-                type: string
             type: object
           status:
             properties:

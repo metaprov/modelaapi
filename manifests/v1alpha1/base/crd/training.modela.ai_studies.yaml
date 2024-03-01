@@ -1343,8 +1343,6 @@ spec:
                         - node-port
                         - load-balancer
                         - ingress
-                        - mesh
-                        - none
                         type: string
                       apikeySecretRef:
                         description: ApiKeySecretRef references a Kubernetes Secret
