@@ -105,7 +105,9 @@ spec:
                           type: string
                         model:
                           description: Model specifies the vendor-specific model type.
-                            If unspecified, choose the default model for the vendor
+                            If unspecified, use the model provided by the `model`
+                            option of the connection, or choose the default model
+                            for the vendor
                           type: string
                       type: object
                     file:
@@ -885,8 +887,9 @@ spec:
                                   type: string
                                 model:
                                   description: Model specifies the vendor-specific
-                                    model type. If unspecified, choose the default
-                                    model for the vendor
+                                    model type. If unspecified, use the model provided
+                                    by the `model` option of the connection, or choose
+                                    the default model for the vendor
                                   type: string
                               type: object
                           type: object
@@ -913,8 +916,9 @@ spec:
                                       type: string
                                     model:
                                       description: Model specifies the vendor-specific
-                                        model type. If unspecified, choose the default
-                                        model for the vendor
+                                        model type. If unspecified, use the model
+                                        provided by the `model` option of the connection,
+                                        or choose the default model for the vendor
                                       type: string
                                   type: object
                               required:
@@ -942,8 +946,9 @@ spec:
                                   type: string
                                 model:
                                   description: Model specifies the vendor-specific
-                                    model type. If unspecified, choose the default
-                                    model for the vendor
+                                    model type. If unspecified, use the model provided
+                                    by the `model` option of the connection, or choose
+                                    the default model for the vendor
                                   type: string
                               type: object
                           type: object
@@ -968,8 +973,9 @@ spec:
                               type: string
                             model:
                               description: Model specifies the vendor-specific model
-                                type. If unspecified, choose the default model for
-                                the vendor
+                                type. If unspecified, use the model provided by the
+                                `model` option of the connection, or choose the default
+                                model for the vendor
                               type: string
                           type: object
                       type: object

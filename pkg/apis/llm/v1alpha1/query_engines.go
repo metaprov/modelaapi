@@ -58,6 +58,10 @@ type RouterQueryEngineSpec struct {
 type SubQuestionQueryEngineSpec struct {
 	// The query engines to route requests to
 	Tools []QueryEngineToolSpec `json:"tools,omitempty" protobuf:"bytes,1,opt,name=tools"`
+	// The response synthesizer to use when generating responses
+	ResponseSynthesizer *ResponseSynthesizerSpec `json:"responseSynthesizer,omitempty" protobuf:"bytes,2,opt,name=responseSynthesizer"`
+	// The large language model to use when genreating questions
+	Model *ModelSpec `json:"model,omitempty" protobuf:"bytes,3,opt,name=model"`
 }
 
 // RetrieverQueryEngine augments a query with a retriever

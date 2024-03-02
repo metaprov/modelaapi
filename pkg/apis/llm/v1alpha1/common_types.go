@@ -24,7 +24,8 @@ type IndexReference struct {
 type ModelSpec struct {
 	// ConnectionName specifies the name of a connection to a foundational model provider
 	ConnectionName string `json:"connectionName,omitempty" protobuf:"bytes,1,opt,name=connectionName"`
-	// Model specifies the vendor-specific model type. If unspecified, choose the default model for the vendor
+	// Model specifies the vendor-specific model type. If unspecified, use the model provided by the
+	// `model` option of the connection, or choose the default model for the vendor
 	Model *string `json:"model,omitempty" protobuf:"bytes,2,opt,name=model"`
 }
 
