@@ -1,7 +1,7 @@
 import * as jspb from 'google-protobuf'
 
 import * as github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated_pb';
-import * as github_com_metaprov_modelaapi_pkg_apis_llm_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/llm/v1alpha1/generated_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_llm_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/genai/v1alpha1/generated_pb';
 
 
 export class RefreshRequest extends jspb.Message {

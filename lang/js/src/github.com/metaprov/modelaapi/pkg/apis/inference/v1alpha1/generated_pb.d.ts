@@ -207,8 +207,8 @@ export class DataAppSpec extends jspb.Message {
   hasModelname(): boolean;
   clearModelname(): DataAppSpec;
 
-  getAccess(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec | undefined;
-  setAccess(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec): DataAppSpec;
+  getAccess(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PredictorAccessSpec | undefined;
+  setAccess(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PredictorAccessSpec): DataAppSpec;
   hasAccess(): boolean;
   clearAccess(): DataAppSpec;
 
@@ -247,7 +247,7 @@ export namespace DataAppSpec {
     modelclassname?: string,
     description?: string,
     modelname?: string,
-    access?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec.AsObject,
+    access?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PredictorAccessSpec.AsObject,
     replicas?: number,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
@@ -1510,8 +1510,8 @@ export class PredictorSpec extends jspb.Message {
   hasProgressive(): boolean;
   clearProgressive(): PredictorSpec;
 
-  getAccess(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec | undefined;
-  setAccess(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec): PredictorSpec;
+  getAccess(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PredictorAccessSpec | undefined;
+  setAccess(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PredictorAccessSpec): PredictorSpec;
   hasAccess(): boolean;
   clearAccess(): PredictorSpec;
 
@@ -1608,7 +1608,7 @@ export namespace PredictorSpec {
     servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     modelsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec.AsObject>,
     progressive?: ProgressiveSpec.AsObject,
-    access?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec.AsObject,
+    access?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PredictorAccessSpec.AsObject,
     replicas?: number,
     autoscaling?: AutoScalingSpec.AsObject,
     owner?: string,

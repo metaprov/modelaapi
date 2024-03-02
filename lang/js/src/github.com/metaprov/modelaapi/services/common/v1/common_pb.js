@@ -2,18 +2,15 @@
 /**
  * @fileoverview
  * @enhanceable
- * @suppress {missingRequire} reports error on implicit type usages.
  * @suppress {messageConventions} JS Compiler reports an error if a variable or
  *     field starts with 'MSG_' and isn't a translatable message.
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
-/* eslint-disable */
-// @ts-nocheck
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
+var global = Function('return this')();
 
 var google_protobuf_duration_pb = require('google-protobuf/google/protobuf/duration_pb.js');
 goog.object.extend(proto, google_protobuf_duration_pb);
@@ -2551,22 +2548,16 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ROCCurve.deserializeBinar
       msg.setClassid(value);
       break;
     case 3:
-      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedDouble() : [reader.readDouble()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addFpr(values[i]);
-      }
+      var value = /** @type {!Array<number>} */ (reader.readPackedDouble());
+      msg.setFprList(value);
       break;
     case 4:
-      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedDouble() : [reader.readDouble()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addTpr(values[i]);
-      }
+      var value = /** @type {!Array<number>} */ (reader.readPackedDouble());
+      msg.setTprList(value);
       break;
     case 5:
-      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedDouble() : [reader.readDouble()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addThresholds(values[i]);
-      }
+      var value = /** @type {!Array<number>} */ (reader.readPackedDouble());
+      msg.setThresholdsList(value);
       break;
     default:
       reader.skipField();
@@ -2871,22 +2862,16 @@ proto.github.com.metaprov.modelaapi.services.common.v1.PrecisionRecallCurve.dese
       msg.setClassid(value);
       break;
     case 3:
-      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedDouble() : [reader.readDouble()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addPrecision(values[i]);
-      }
+      var value = /** @type {!Array<number>} */ (reader.readPackedDouble());
+      msg.setPrecisionList(value);
       break;
     case 4:
-      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedDouble() : [reader.readDouble()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addRecall(values[i]);
-      }
+      var value = /** @type {!Array<number>} */ (reader.readPackedDouble());
+      msg.setRecallList(value);
       break;
     case 5:
-      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedDouble() : [reader.readDouble()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addThresholds(values[i]);
-      }
+      var value = /** @type {!Array<number>} */ (reader.readPackedDouble());
+      msg.setThresholdsList(value);
       break;
     default:
       reader.skipField();
@@ -5748,16 +5733,12 @@ proto.github.com.metaprov.modelaapi.services.common.v1.Histogram.deserializeBina
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedDouble() : [reader.readDouble()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addValues(values[i]);
-      }
+      var value = /** @type {!Array<number>} */ (reader.readPackedDouble());
+      msg.setValuesList(value);
       break;
     case 2:
-      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedDouble() : [reader.readDouble()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addBins(values[i]);
-      }
+      var value = /** @type {!Array<number>} */ (reader.readPackedDouble());
+      msg.setBinsList(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());

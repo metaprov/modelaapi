@@ -10,24 +10,6 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
-class AccessSpec(_message.Message):
-    __slots__ = ("port", "nodePort", "path", "accessType", "http", "authMethod", "apikeySecretRef")
-    PORT_FIELD_NUMBER: _ClassVar[int]
-    NODEPORT_FIELD_NUMBER: _ClassVar[int]
-    PATH_FIELD_NUMBER: _ClassVar[int]
-    ACCESSTYPE_FIELD_NUMBER: _ClassVar[int]
-    HTTP_FIELD_NUMBER: _ClassVar[int]
-    AUTHMETHOD_FIELD_NUMBER: _ClassVar[int]
-    APIKEYSECRETREF_FIELD_NUMBER: _ClassVar[int]
-    port: int
-    nodePort: int
-    path: str
-    accessType: str
-    http: bool
-    authMethod: str
-    apikeySecretRef: _generated_pb2.SecretReference
-    def __init__(self, port: _Optional[int] = ..., nodePort: _Optional[int] = ..., path: _Optional[str] = ..., accessType: _Optional[str] = ..., http: bool = ..., authMethod: _Optional[str] = ..., apikeySecretRef: _Optional[_Union[_generated_pb2.SecretReference, _Mapping]] = ...) -> None: ...
-
 class AccountPermissions(_message.Message):
     __slots__ = ("accountName", "roles")
     ACCOUNTNAME_FIELD_NUMBER: _ClassVar[int]
@@ -570,6 +552,24 @@ class PredictionRunReference(_message.Message):
     version: int
     name: str
     def __init__(self, prediction: _Optional[str] = ..., version: _Optional[int] = ..., name: _Optional[str] = ...) -> None: ...
+
+class PredictorAccessSpec(_message.Message):
+    __slots__ = ("port", "nodePort", "path", "accessType", "http", "authMethod", "apikeySecretRef")
+    PORT_FIELD_NUMBER: _ClassVar[int]
+    NODEPORT_FIELD_NUMBER: _ClassVar[int]
+    PATH_FIELD_NUMBER: _ClassVar[int]
+    ACCESSTYPE_FIELD_NUMBER: _ClassVar[int]
+    HTTP_FIELD_NUMBER: _ClassVar[int]
+    AUTHMETHOD_FIELD_NUMBER: _ClassVar[int]
+    APIKEYSECRETREF_FIELD_NUMBER: _ClassVar[int]
+    port: int
+    nodePort: int
+    path: str
+    accessType: str
+    http: bool
+    authMethod: str
+    apikeySecretRef: _generated_pb2.SecretReference
+    def __init__(self, port: _Optional[int] = ..., nodePort: _Optional[int] = ..., path: _Optional[str] = ..., accessType: _Optional[str] = ..., http: bool = ..., authMethod: _Optional[str] = ..., apikeySecretRef: _Optional[_Union[_generated_pb2.SecretReference, _Mapping]] = ...) -> None: ...
 
 class PretrainedModel(_message.Message):
     __slots__ = ("metadata", "spec")

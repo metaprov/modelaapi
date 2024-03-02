@@ -2,25 +2,22 @@
 /**
  * @fileoverview
  * @enhanceable
- * @suppress {missingRequire} reports error on implicit type usages.
  * @suppress {messageConventions} JS Compiler reports an error if a variable or
  *     field starts with 'MSG_' and isn't a translatable message.
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
-/* eslint-disable */
-// @ts-nocheck
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
+var global = Function('return this')();
 
 var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/field_mask_pb.js');
 goog.object.extend(proto, google_protobuf_field_mask_pb);
 var google_api_annotations_pb = require('../../../../../../google/api/annotations_pb.js');
 goog.object.extend(proto, google_api_annotations_pb);
-var github_com_metaprov_modelaapi_pkg_apis_llm_v1alpha1_generated_pb = require('../../../../../../github.com/metaprov/modelaapi/pkg/apis/llm/v1alpha1/generated_pb.js');
-goog.object.extend(proto, github_com_metaprov_modelaapi_pkg_apis_llm_v1alpha1_generated_pb);
+var github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb = require('../../../../../../github.com/metaprov/modelaapi/pkg/apis/genai/v1alpha1/generated_pb.js');
+goog.object.extend(proto, github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.CreateKnowledgeBaseRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.CreateKnowledgeBaseResponse', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.DeleteKnowledgeBaseRequest', null, global);
@@ -480,7 +477,7 @@ proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.ListKnowledgeBases
  */
 proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.ListKnowledgeBasesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    knowledgebases: (f = msg.getKnowledgebases()) && github_com_metaprov_modelaapi_pkg_apis_llm_v1alpha1_generated_pb.KnowledgeBaseList.toObject(includeInstance, f),
+    knowledgebases: (f = msg.getKnowledgebases()) && github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb.KnowledgeBaseList.toObject(includeInstance, f),
     nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -519,8 +516,8 @@ proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.ListKnowledgeBases
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_llm_v1alpha1_generated_pb.KnowledgeBaseList;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_llm_v1alpha1_generated_pb.KnowledgeBaseList.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb.KnowledgeBaseList;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb.KnowledgeBaseList.deserializeBinaryFromReader);
       msg.setKnowledgebases(value);
       break;
     case 2:
@@ -561,7 +558,7 @@ proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.ListKnowledgeBases
     writer.writeMessage(
       1,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_llm_v1alpha1_generated_pb.KnowledgeBaseList.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb.KnowledgeBaseList.serializeBinaryToWriter
     );
   }
   f = message.getNextPageToken();
@@ -575,17 +572,17 @@ proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.ListKnowledgeBases
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBaseList knowledgeBases = 1;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBaseList}
+ * optional github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KnowledgeBaseList knowledgeBases = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KnowledgeBaseList}
  */
 proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.ListKnowledgeBasesResponse.prototype.getKnowledgebases = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBaseList} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_llm_v1alpha1_generated_pb.KnowledgeBaseList, 1));
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KnowledgeBaseList} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb.KnowledgeBaseList, 1));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBaseList|undefined} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KnowledgeBaseList|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.ListKnowledgeBasesResponse} returns this
 */
 proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.ListKnowledgeBasesResponse.prototype.setKnowledgebases = function(value) {
@@ -661,7 +658,7 @@ proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.CreateKnowledgeBas
  */
 proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.CreateKnowledgeBaseRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    knowledgebase: (f = msg.getKnowledgebase()) && github_com_metaprov_modelaapi_pkg_apis_llm_v1alpha1_generated_pb.KnowledgeBase.toObject(includeInstance, f)
+    knowledgebase: (f = msg.getKnowledgebase()) && github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb.KnowledgeBase.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -699,8 +696,8 @@ proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.CreateKnowledgeBas
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_llm_v1alpha1_generated_pb.KnowledgeBase;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_llm_v1alpha1_generated_pb.KnowledgeBase.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb.KnowledgeBase;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb.KnowledgeBase.deserializeBinaryFromReader);
       msg.setKnowledgebase(value);
       break;
     default:
@@ -737,24 +734,24 @@ proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.CreateKnowledgeBas
     writer.writeMessage(
       1,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_llm_v1alpha1_generated_pb.KnowledgeBase.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb.KnowledgeBase.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBase knowledgeBase = 1;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBase}
+ * optional github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KnowledgeBase knowledgeBase = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KnowledgeBase}
  */
 proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.CreateKnowledgeBaseRequest.prototype.getKnowledgebase = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBase} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_llm_v1alpha1_generated_pb.KnowledgeBase, 1));
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KnowledgeBase} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb.KnowledgeBase, 1));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBase|undefined} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KnowledgeBase|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.CreateKnowledgeBaseRequest} returns this
 */
 proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.CreateKnowledgeBaseRequest.prototype.setKnowledgebase = function(value) {
@@ -913,7 +910,7 @@ proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.UpdateKnowledgeBas
  */
 proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.UpdateKnowledgeBaseRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    knowledgebase: (f = msg.getKnowledgebase()) && github_com_metaprov_modelaapi_pkg_apis_llm_v1alpha1_generated_pb.KnowledgeBase.toObject(includeInstance, f),
+    knowledgebase: (f = msg.getKnowledgebase()) && github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb.KnowledgeBase.toObject(includeInstance, f),
     fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
@@ -952,8 +949,8 @@ proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.UpdateKnowledgeBas
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_llm_v1alpha1_generated_pb.KnowledgeBase;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_llm_v1alpha1_generated_pb.KnowledgeBase.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb.KnowledgeBase;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb.KnowledgeBase.deserializeBinaryFromReader);
       msg.setKnowledgebase(value);
       break;
     case 2:
@@ -995,7 +992,7 @@ proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.UpdateKnowledgeBas
     writer.writeMessage(
       1,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_llm_v1alpha1_generated_pb.KnowledgeBase.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb.KnowledgeBase.serializeBinaryToWriter
     );
   }
   f = message.getFieldMask();
@@ -1010,17 +1007,17 @@ proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.UpdateKnowledgeBas
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBase knowledgeBase = 1;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBase}
+ * optional github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KnowledgeBase knowledgeBase = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KnowledgeBase}
  */
 proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.UpdateKnowledgeBaseRequest.prototype.getKnowledgebase = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBase} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_llm_v1alpha1_generated_pb.KnowledgeBase, 1));
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KnowledgeBase} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb.KnowledgeBase, 1));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBase|undefined} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KnowledgeBase|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.UpdateKnowledgeBaseRequest} returns this
 */
 proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.UpdateKnowledgeBaseRequest.prototype.setKnowledgebase = function(value) {
@@ -1376,7 +1373,7 @@ proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.GetKnowledgeBaseRe
  */
 proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.GetKnowledgeBaseResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    knowledgebase: (f = msg.getKnowledgebase()) && github_com_metaprov_modelaapi_pkg_apis_llm_v1alpha1_generated_pb.KnowledgeBase.toObject(includeInstance, f),
+    knowledgebase: (f = msg.getKnowledgebase()) && github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb.KnowledgeBase.toObject(includeInstance, f),
     yaml: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -1415,8 +1412,8 @@ proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.GetKnowledgeBaseRe
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_llm_v1alpha1_generated_pb.KnowledgeBase;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_llm_v1alpha1_generated_pb.KnowledgeBase.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb.KnowledgeBase;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb.KnowledgeBase.deserializeBinaryFromReader);
       msg.setKnowledgebase(value);
       break;
     case 2:
@@ -1457,7 +1454,7 @@ proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.GetKnowledgeBaseRe
     writer.writeMessage(
       1,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_llm_v1alpha1_generated_pb.KnowledgeBase.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb.KnowledgeBase.serializeBinaryToWriter
     );
   }
   f = message.getYaml();
@@ -1471,17 +1468,17 @@ proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.GetKnowledgeBaseRe
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBase knowledgeBase = 1;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBase}
+ * optional github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KnowledgeBase knowledgeBase = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KnowledgeBase}
  */
 proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.GetKnowledgeBaseResponse.prototype.getKnowledgebase = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBase} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_llm_v1alpha1_generated_pb.KnowledgeBase, 1));
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KnowledgeBase} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb.KnowledgeBase, 1));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBase|undefined} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KnowledgeBase|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.GetKnowledgeBaseResponse} returns this
 */
 proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.GetKnowledgeBaseResponse.prototype.setKnowledgebase = function(value) {

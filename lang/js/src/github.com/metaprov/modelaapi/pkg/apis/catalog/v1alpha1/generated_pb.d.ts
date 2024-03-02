@@ -7,62 +7,6 @@ import * as k8s_io_apimachinery_pkg_runtime_generated_pb from '../../../../../..
 import * as k8s_io_apimachinery_pkg_runtime_schema_generated_pb from '../../../../../../../k8s.io/apimachinery/pkg/runtime/schema/generated_pb';
 
 
-export class AccessSpec extends jspb.Message {
-  getPort(): number;
-  setPort(value: number): AccessSpec;
-  hasPort(): boolean;
-  clearPort(): AccessSpec;
-
-  getNodeport(): number;
-  setNodeport(value: number): AccessSpec;
-  hasNodeport(): boolean;
-  clearNodeport(): AccessSpec;
-
-  getPath(): string;
-  setPath(value: string): AccessSpec;
-  hasPath(): boolean;
-  clearPath(): AccessSpec;
-
-  getAccesstype(): string;
-  setAccesstype(value: string): AccessSpec;
-  hasAccesstype(): boolean;
-  clearAccesstype(): AccessSpec;
-
-  getHttp(): boolean;
-  setHttp(value: boolean): AccessSpec;
-  hasHttp(): boolean;
-  clearHttp(): AccessSpec;
-
-  getAuthmethod(): string;
-  setAuthmethod(value: string): AccessSpec;
-  hasAuthmethod(): boolean;
-  clearAuthmethod(): AccessSpec;
-
-  getApikeysecretref(): k8s_io_api_core_v1_generated_pb.SecretReference | undefined;
-  setApikeysecretref(value?: k8s_io_api_core_v1_generated_pb.SecretReference): AccessSpec;
-  hasApikeysecretref(): boolean;
-  clearApikeysecretref(): AccessSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): AccessSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: AccessSpec): AccessSpec.AsObject;
-  static serializeBinaryToWriter(message: AccessSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): AccessSpec;
-  static deserializeBinaryFromReader(message: AccessSpec, reader: jspb.BinaryReader): AccessSpec;
-}
-
-export namespace AccessSpec {
-  export type AsObject = {
-    port?: number,
-    nodeport?: number,
-    path?: string,
-    accesstype?: string,
-    http?: boolean,
-    authmethod?: string,
-    apikeysecretref?: k8s_io_api_core_v1_generated_pb.SecretReference.AsObject,
-  }
-}
-
 export class AccountPermissions extends jspb.Message {
   getAccountname(): string;
   setAccountname(value: string): AccountPermissions;
@@ -1750,6 +1694,62 @@ export namespace PredictionRunReference {
     prediction?: string,
     version?: number,
     name?: string,
+  }
+}
+
+export class PredictorAccessSpec extends jspb.Message {
+  getPort(): number;
+  setPort(value: number): PredictorAccessSpec;
+  hasPort(): boolean;
+  clearPort(): PredictorAccessSpec;
+
+  getNodeport(): number;
+  setNodeport(value: number): PredictorAccessSpec;
+  hasNodeport(): boolean;
+  clearNodeport(): PredictorAccessSpec;
+
+  getPath(): string;
+  setPath(value: string): PredictorAccessSpec;
+  hasPath(): boolean;
+  clearPath(): PredictorAccessSpec;
+
+  getAccesstype(): string;
+  setAccesstype(value: string): PredictorAccessSpec;
+  hasAccesstype(): boolean;
+  clearAccesstype(): PredictorAccessSpec;
+
+  getHttp(): boolean;
+  setHttp(value: boolean): PredictorAccessSpec;
+  hasHttp(): boolean;
+  clearHttp(): PredictorAccessSpec;
+
+  getAuthmethod(): string;
+  setAuthmethod(value: string): PredictorAccessSpec;
+  hasAuthmethod(): boolean;
+  clearAuthmethod(): PredictorAccessSpec;
+
+  getApikeysecretref(): k8s_io_api_core_v1_generated_pb.SecretReference | undefined;
+  setApikeysecretref(value?: k8s_io_api_core_v1_generated_pb.SecretReference): PredictorAccessSpec;
+  hasApikeysecretref(): boolean;
+  clearApikeysecretref(): PredictorAccessSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PredictorAccessSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: PredictorAccessSpec): PredictorAccessSpec.AsObject;
+  static serializeBinaryToWriter(message: PredictorAccessSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PredictorAccessSpec;
+  static deserializeBinaryFromReader(message: PredictorAccessSpec, reader: jspb.BinaryReader): PredictorAccessSpec;
+}
+
+export namespace PredictorAccessSpec {
+  export type AsObject = {
+    port?: number,
+    nodeport?: number,
+    path?: string,
+    accesstype?: string,
+    http?: boolean,
+    authmethod?: string,
+    apikeysecretref?: k8s_io_api_core_v1_generated_pb.SecretReference.AsObject,
   }
 }
 

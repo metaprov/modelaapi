@@ -1,4 +1,4 @@
-// source: github.com/metaprov/modelaapi/pkg/apis/llm/v1alpha1/generated.proto
+// source: github.com/metaprov/modelaapi/pkg/apis/genai/v1alpha1/generated.proto
 /**
  * @fileoverview
  * @enhanceable
@@ -23,32 +23,32 @@ var k8s_io_apimachinery_pkg_runtime_generated_pb = require('../../../../../../..
 goog.object.extend(proto, k8s_io_apimachinery_pkg_runtime_generated_pb);
 var k8s_io_apimachinery_pkg_runtime_schema_generated_pb = require('../../../../../../../k8s.io/apimachinery/pkg/runtime/schema/generated_pb.js');
 goog.object.extend(proto, k8s_io_apimachinery_pkg_runtime_schema_generated_pb);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.CodeSplitterSpec', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.ConcreteNodeParserSpec', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.DatabaseReaderSpec', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.DocumentSpec', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.DocumentStatus', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.ExtensionFilter', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.FileLocationReaderSpec', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.FileReaderSpec', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.FilteredNodeParser', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBase', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBaseList', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBaseSpec', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBaseStatus', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.LengthFilter', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.MixedNodeParserSpec', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.ModelSpec', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.NameFilter', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.NodeParserSpec', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.RepositoryFileReader', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.RepositoryReaderSpec', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.SentenceSplitterSpec', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.SentenceTokenizerSpec', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.SentenceWindowNodeParserSpec', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.TextSplitterSpec', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.TokenSplitterSpec', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.WebReaderSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.CodeSplitterSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ConcreteNodeParserSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.DatabaseReaderSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.DocumentSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.DocumentStatus', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ExtensionFilter', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FileLocationReaderSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FileReaderSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FilteredNodeParser', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KnowledgeBase', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KnowledgeBaseList', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KnowledgeBaseSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KnowledgeBaseStatus', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LengthFilter', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.MixedNodeParserSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.NameFilter', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.NodeParserSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RepositoryFileReader', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RepositoryReaderSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SentenceSplitterSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SentenceTokenizerSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SentenceWindowNodeParserSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSplitterSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TokenSplitterSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.WebReaderSpec', null, global);
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -68,7 +68,7 @@ if (goog.DEBUG && !COMPILED) {
    * @public
    * @override
    */
-  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.CodeSplitterSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.CodeSplitterSpec';
+  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.CodeSplitterSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.CodeSplitterSpec';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -89,7 +89,7 @@ if (goog.DEBUG && !COMPILED) {
    * @public
    * @override
    */
-  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.ConcreteNodeParserSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.ConcreteNodeParserSpec';
+  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.ConcreteNodeParserSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ConcreteNodeParserSpec';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -110,7 +110,7 @@ if (goog.DEBUG && !COMPILED) {
    * @public
    * @override
    */
-  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.DatabaseReaderSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.DatabaseReaderSpec';
+  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.DatabaseReaderSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.DatabaseReaderSpec';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -131,7 +131,7 @@ if (goog.DEBUG && !COMPILED) {
    * @public
    * @override
    */
-  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.DocumentSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.DocumentSpec';
+  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.DocumentSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.DocumentSpec';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -152,7 +152,7 @@ if (goog.DEBUG && !COMPILED) {
    * @public
    * @override
    */
-  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.DocumentStatus.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.DocumentStatus';
+  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.DocumentStatus.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.DocumentStatus';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -173,7 +173,7 @@ if (goog.DEBUG && !COMPILED) {
    * @public
    * @override
    */
-  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.ExtensionFilter.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.ExtensionFilter';
+  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.ExtensionFilter.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ExtensionFilter';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -194,7 +194,7 @@ if (goog.DEBUG && !COMPILED) {
    * @public
    * @override
    */
-  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.FileLocationReaderSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.FileLocationReaderSpec';
+  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.FileLocationReaderSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FileLocationReaderSpec';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -215,7 +215,7 @@ if (goog.DEBUG && !COMPILED) {
    * @public
    * @override
    */
-  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.FileReaderSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.FileReaderSpec';
+  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.FileReaderSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FileReaderSpec';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -236,7 +236,7 @@ if (goog.DEBUG && !COMPILED) {
    * @public
    * @override
    */
-  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.FilteredNodeParser.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.FilteredNodeParser';
+  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.FilteredNodeParser.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FilteredNodeParser';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -257,7 +257,7 @@ if (goog.DEBUG && !COMPILED) {
    * @public
    * @override
    */
-  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBase.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBase';
+  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBase.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KnowledgeBase';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -278,7 +278,7 @@ if (goog.DEBUG && !COMPILED) {
    * @public
    * @override
    */
-  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBaseList.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBaseList';
+  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBaseList.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KnowledgeBaseList';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -299,7 +299,7 @@ if (goog.DEBUG && !COMPILED) {
    * @public
    * @override
    */
-  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBaseSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBaseSpec';
+  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBaseSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KnowledgeBaseSpec';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -320,7 +320,7 @@ if (goog.DEBUG && !COMPILED) {
    * @public
    * @override
    */
-  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBaseStatus.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBaseStatus';
+  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBaseStatus.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KnowledgeBaseStatus';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -341,7 +341,7 @@ if (goog.DEBUG && !COMPILED) {
    * @public
    * @override
    */
-  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.LengthFilter.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.LengthFilter';
+  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.LengthFilter.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LengthFilter';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -362,7 +362,7 @@ if (goog.DEBUG && !COMPILED) {
    * @public
    * @override
    */
-  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.MixedNodeParserSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.MixedNodeParserSpec';
+  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.MixedNodeParserSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.MixedNodeParserSpec';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -383,7 +383,7 @@ if (goog.DEBUG && !COMPILED) {
    * @public
    * @override
    */
-  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.ModelSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.ModelSpec';
+  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.ModelSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -404,7 +404,7 @@ if (goog.DEBUG && !COMPILED) {
    * @public
    * @override
    */
-  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.NameFilter.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.NameFilter';
+  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.NameFilter.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.NameFilter';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -425,7 +425,7 @@ if (goog.DEBUG && !COMPILED) {
    * @public
    * @override
    */
-  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.NodeParserSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.NodeParserSpec';
+  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.NodeParserSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.NodeParserSpec';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -446,7 +446,7 @@ if (goog.DEBUG && !COMPILED) {
    * @public
    * @override
    */
-  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.RepositoryFileReader.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.RepositoryFileReader';
+  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.RepositoryFileReader.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RepositoryFileReader';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -467,7 +467,7 @@ if (goog.DEBUG && !COMPILED) {
    * @public
    * @override
    */
-  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.RepositoryReaderSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.RepositoryReaderSpec';
+  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.RepositoryReaderSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RepositoryReaderSpec';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -488,7 +488,7 @@ if (goog.DEBUG && !COMPILED) {
    * @public
    * @override
    */
-  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.SentenceSplitterSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.SentenceSplitterSpec';
+  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.SentenceSplitterSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SentenceSplitterSpec';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -509,7 +509,7 @@ if (goog.DEBUG && !COMPILED) {
    * @public
    * @override
    */
-  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.SentenceTokenizerSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.SentenceTokenizerSpec';
+  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.SentenceTokenizerSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SentenceTokenizerSpec';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -530,7 +530,7 @@ if (goog.DEBUG && !COMPILED) {
    * @public
    * @override
    */
-  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.SentenceWindowNodeParserSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.SentenceWindowNodeParserSpec';
+  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.SentenceWindowNodeParserSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SentenceWindowNodeParserSpec';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -551,7 +551,7 @@ if (goog.DEBUG && !COMPILED) {
    * @public
    * @override
    */
-  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.TextSplitterSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.TextSplitterSpec';
+  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.TextSplitterSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSplitterSpec';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -572,7 +572,7 @@ if (goog.DEBUG && !COMPILED) {
    * @public
    * @override
    */
-  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.TokenSplitterSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.TokenSplitterSpec';
+  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.TokenSplitterSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TokenSplitterSpec';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -593,7 +593,7 @@ if (goog.DEBUG && !COMPILED) {
    * @public
    * @override
    */
-  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.WebReaderSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.WebReaderSpec';
+  proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.WebReaderSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.WebReaderSpec';
 }
 
 

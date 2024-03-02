@@ -2,18 +2,15 @@
 /**
  * @fileoverview
  * @enhanceable
- * @suppress {missingRequire} reports error on implicit type usages.
  * @suppress {messageConventions} JS Compiler reports an error if a variable or
  *     field starts with 'MSG_' and isn't a translatable message.
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
-/* eslint-disable */
-// @ts-nocheck
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
+var global = Function('return this')();
 
 var github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb = require('../../../../../../../github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1/generated_pb.js');
 goog.object.extend(proto, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb);
@@ -27630,16 +27627,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.RegressionForecas
       msg.setDate(value);
       break;
     case 6:
-      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt32() : [reader.readInt32()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addWindows(values[i]);
-      }
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.addWindows(value);
       break;
     case 7:
-      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt32() : [reader.readInt32()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addLags(values[i]);
-      }
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.addLags(value);
       break;
     case 8:
       var value = /** @type {string} */ (reader.readString());
@@ -31892,7 +31885,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingEnvironmen
     name: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     tests: (f = msg.getTests()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.toObject(includeInstance, f),
     servingsiteref: (f = msg.getServingsiteref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
-    access: (f = msg.getAccess()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec.toObject(includeInstance, f),
+    access: (f = msg.getAccess()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PredictorAccessSpec.toObject(includeInstance, f),
     replicas: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     online: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f,
     dashboard: (f = jspb.Message.getBooleanField(msg, 7)) == null ? undefined : f,
@@ -31950,8 +31943,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingEnvironmen
       msg.setServingsiteref(value);
       break;
     case 4:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PredictorAccessSpec;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PredictorAccessSpec.deserializeBinaryFromReader);
       msg.setAccess(value);
       break;
     case 5:
@@ -32036,7 +32029,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingEnvironmen
     writer.writeMessage(
       4,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PredictorAccessSpec.serializeBinaryToWriter
     );
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 5));
@@ -32196,17 +32189,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingEnvironmen
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AccessSpec access = 4;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AccessSpec}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PredictorAccessSpec access = 4;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PredictorAccessSpec}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingEnvironment.prototype.getAccess = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AccessSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec, 4));
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PredictorAccessSpec} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PredictorAccessSpec, 4));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AccessSpec|undefined} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PredictorAccessSpec|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingEnvironment} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingEnvironment.prototype.setAccess = function(value) {
@@ -32488,7 +32481,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec.toObj
     resources: (f = msg.getResources()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.toObject(includeInstance, f),
     servingsiteref: (f = msg.getServingsiteref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     dashboard: (f = jspb.Message.getBooleanField(msg, 8)) == null ? undefined : f,
-    access: (f = msg.getAccess()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec.toObject(includeInstance, f),
+    access: (f = msg.getAccess()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PredictorAccessSpec.toObject(includeInstance, f),
     replicas: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
     promotion: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f
   };
@@ -32550,8 +32543,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec.deser
       msg.setDashboard(value);
       break;
     case 9:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PredictorAccessSpec;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PredictorAccessSpec.deserializeBinaryFromReader);
       msg.setAccess(value);
       break;
     case 10:
@@ -32633,7 +32626,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec.seria
     writer.writeMessage(
       9,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PredictorAccessSpec.serializeBinaryToWriter
     );
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 10));
@@ -32836,17 +32829,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec.proto
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AccessSpec access = 9;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AccessSpec}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PredictorAccessSpec access = 9;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PredictorAccessSpec}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec.prototype.getAccess = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AccessSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec, 9));
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PredictorAccessSpec} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PredictorAccessSpec, 9));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AccessSpec|undefined} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PredictorAccessSpec|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ServingSpec.prototype.setAccess = function(value) {

@@ -1,21 +1,21 @@
 syntax = "proto3";
-option go_package = "github.com/metaprov/modelaapi/services/llm/v1";
+option go_package = "github.com/metaprov/modelaapi/services/genai/v1";
 
 import "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto";
-import "github.com/metaprov/modelaapi/pkg/apis/llm/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/genai/v1alpha1/generated.proto";
 
 
 message RefreshRequest {
     string tenant = 1;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 2;
-    github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBase knowledgeBase = 3;
+    github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KnowledgeBase knowledgeBase = 3;
 }
 
 message DocumentStatusUpdate {
     bool delete = 1;
     string name = 2;
     string error = 3;
-    github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.DocumentStatus status = 4;
+    github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.DocumentStatus status = 4;
 }
 
 message RefreshResponse {

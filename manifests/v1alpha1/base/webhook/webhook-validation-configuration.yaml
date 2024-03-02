@@ -644,12 +644,12 @@ webhooks:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingWebhookConfiguration
 metadata:
-    name: llm-validating-webhook-configuration-v1alpha1
+    name: genai-validating-webhook-configuration-v1alpha1
     namespace: modela-system
     annotations:
         cert-manager.io/inject-ca-from: modela-system/serving-cert
 webhooks:
-    - name: knowledgebases.llm.modela.ai
+    - name: knowledgebases.genai.modela.ai
       failurePolicy: Fail
       sideEffects: None
       timeoutSeconds: 5
@@ -657,7 +657,7 @@ webhooks:
         - v1
       rules:
         - apiGroups:
-            - llm.modela.ai
+            - genai.modela.ai
           apiVersions:
             - v1alpha1
           operations:
@@ -669,7 +669,7 @@ webhooks:
         service:
             namespace: modela-system
             name: modela-control-plane-webhook
-            path: /validate-llm-modela-ai-v1alpha1-knowledgebase
+            path: /validate-genai-modela-ai-v1alpha1-knowledgebase
         caBundle: CERT
 ---
 apiVersion: admissionregistration.k8s.io/v1

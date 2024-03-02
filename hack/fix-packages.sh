@@ -71,7 +71,7 @@ modela_api_files="pkg/apis/catalog/v1alpha1/generated.proto;V1alpha1;catalog; \
        pkg/apis/team/v1alpha1/generated.proto;V1alpha1;team \
        pkg/apis/training/v1alpha1/generated.proto;V1alpha1;training \
        pkg/apis/inference/v1alpha1/generated.proto;V1alpha1;inference \
-       pkg/apis/llm/v1alpha1/generated.proto;V1alpha1;llm"
+       pkg/apis/genai/v1alpha1/generated.proto;V1alpha1;genai"
 
 
 echo 'Munging proto file packages'

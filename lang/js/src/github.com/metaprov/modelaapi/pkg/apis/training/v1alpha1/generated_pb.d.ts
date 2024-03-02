@@ -3752,8 +3752,8 @@ export class ServingEnvironment extends jspb.Message {
   hasServingsiteref(): boolean;
   clearServingsiteref(): ServingEnvironment;
 
-  getAccess(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec | undefined;
-  setAccess(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec): ServingEnvironment;
+  getAccess(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PredictorAccessSpec | undefined;
+  setAccess(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PredictorAccessSpec): ServingEnvironment;
   hasAccess(): boolean;
   clearAccess(): ServingEnvironment;
 
@@ -3800,7 +3800,7 @@ export namespace ServingEnvironment {
     name?: string,
     tests?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.TestSuite.AsObject,
     servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    access?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec.AsObject,
+    access?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PredictorAccessSpec.AsObject,
     replicas?: number,
     online?: boolean,
     dashboard?: boolean,
@@ -3836,8 +3836,8 @@ export class ServingSpec extends jspb.Message {
   hasDashboard(): boolean;
   clearDashboard(): ServingSpec;
 
-  getAccess(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec | undefined;
-  setAccess(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec): ServingSpec;
+  getAccess(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PredictorAccessSpec | undefined;
+  setAccess(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PredictorAccessSpec): ServingSpec;
   hasAccess(): boolean;
   clearAccess(): ServingSpec;
 
@@ -3866,7 +3866,7 @@ export namespace ServingSpec {
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     dashboard?: boolean,
-    access?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AccessSpec.AsObject,
+    access?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PredictorAccessSpec.AsObject,
     replicas?: number,
     promotion?: string,
   }

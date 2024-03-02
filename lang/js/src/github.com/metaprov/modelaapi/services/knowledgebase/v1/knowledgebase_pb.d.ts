@@ -2,7 +2,7 @@ import * as jspb from 'google-protobuf'
 
 import * as google_protobuf_field_mask_pb from 'google-protobuf/google/protobuf/field_mask_pb';
 import * as google_api_annotations_pb from '../../../../../../google/api/annotations_pb';
-import * as github_com_metaprov_modelaapi_pkg_apis_llm_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/llm/v1alpha1/generated_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/genai/v1alpha1/generated_pb';
 
 
 export class ListKnowledgeBasesRequest extends jspb.Message {
@@ -28,8 +28,8 @@ export namespace ListKnowledgeBasesRequest {
 }
 
 export class ListKnowledgeBasesResponse extends jspb.Message {
-  getKnowledgebases(): github_com_metaprov_modelaapi_pkg_apis_llm_v1alpha1_generated_pb.KnowledgeBaseList | undefined;
-  setKnowledgebases(value?: github_com_metaprov_modelaapi_pkg_apis_llm_v1alpha1_generated_pb.KnowledgeBaseList): ListKnowledgeBasesResponse;
+  getKnowledgebases(): github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb.KnowledgeBaseList | undefined;
+  setKnowledgebases(value?: github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb.KnowledgeBaseList): ListKnowledgeBasesResponse;
   hasKnowledgebases(): boolean;
   clearKnowledgebases(): ListKnowledgeBasesResponse;
 
@@ -46,14 +46,14 @@ export class ListKnowledgeBasesResponse extends jspb.Message {
 
 export namespace ListKnowledgeBasesResponse {
   export type AsObject = {
-    knowledgebases?: github_com_metaprov_modelaapi_pkg_apis_llm_v1alpha1_generated_pb.KnowledgeBaseList.AsObject,
+    knowledgebases?: github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb.KnowledgeBaseList.AsObject,
     nextPageToken: string,
   }
 }
 
 export class CreateKnowledgeBaseRequest extends jspb.Message {
-  getKnowledgebase(): github_com_metaprov_modelaapi_pkg_apis_llm_v1alpha1_generated_pb.KnowledgeBase | undefined;
-  setKnowledgebase(value?: github_com_metaprov_modelaapi_pkg_apis_llm_v1alpha1_generated_pb.KnowledgeBase): CreateKnowledgeBaseRequest;
+  getKnowledgebase(): github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb.KnowledgeBase | undefined;
+  setKnowledgebase(value?: github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb.KnowledgeBase): CreateKnowledgeBaseRequest;
   hasKnowledgebase(): boolean;
   clearKnowledgebase(): CreateKnowledgeBaseRequest;
 
@@ -67,7 +67,7 @@ export class CreateKnowledgeBaseRequest extends jspb.Message {
 
 export namespace CreateKnowledgeBaseRequest {
   export type AsObject = {
-    knowledgebase?: github_com_metaprov_modelaapi_pkg_apis_llm_v1alpha1_generated_pb.KnowledgeBase.AsObject,
+    knowledgebase?: github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb.KnowledgeBase.AsObject,
   }
 }
 
@@ -86,8 +86,8 @@ export namespace CreateKnowledgeBaseResponse {
 }
 
 export class UpdateKnowledgeBaseRequest extends jspb.Message {
-  getKnowledgebase(): github_com_metaprov_modelaapi_pkg_apis_llm_v1alpha1_generated_pb.KnowledgeBase | undefined;
-  setKnowledgebase(value?: github_com_metaprov_modelaapi_pkg_apis_llm_v1alpha1_generated_pb.KnowledgeBase): UpdateKnowledgeBaseRequest;
+  getKnowledgebase(): github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb.KnowledgeBase | undefined;
+  setKnowledgebase(value?: github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb.KnowledgeBase): UpdateKnowledgeBaseRequest;
   hasKnowledgebase(): boolean;
   clearKnowledgebase(): UpdateKnowledgeBaseRequest;
 
@@ -106,7 +106,7 @@ export class UpdateKnowledgeBaseRequest extends jspb.Message {
 
 export namespace UpdateKnowledgeBaseRequest {
   export type AsObject = {
-    knowledgebase?: github_com_metaprov_modelaapi_pkg_apis_llm_v1alpha1_generated_pb.KnowledgeBase.AsObject,
+    knowledgebase?: github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb.KnowledgeBase.AsObject,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
@@ -148,8 +148,8 @@ export namespace GetKnowledgeBaseRequest {
 }
 
 export class GetKnowledgeBaseResponse extends jspb.Message {
-  getKnowledgebase(): github_com_metaprov_modelaapi_pkg_apis_llm_v1alpha1_generated_pb.KnowledgeBase | undefined;
-  setKnowledgebase(value?: github_com_metaprov_modelaapi_pkg_apis_llm_v1alpha1_generated_pb.KnowledgeBase): GetKnowledgeBaseResponse;
+  getKnowledgebase(): github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb.KnowledgeBase | undefined;
+  setKnowledgebase(value?: github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb.KnowledgeBase): GetKnowledgeBaseResponse;
   hasKnowledgebase(): boolean;
   clearKnowledgebase(): GetKnowledgeBaseResponse;
 
@@ -166,7 +166,7 @@ export class GetKnowledgeBaseResponse extends jspb.Message {
 
 export namespace GetKnowledgeBaseResponse {
   export type AsObject = {
-    knowledgebase?: github_com_metaprov_modelaapi_pkg_apis_llm_v1alpha1_generated_pb.KnowledgeBase.AsObject,
+    knowledgebase?: github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb.KnowledgeBase.AsObject,
     yaml: string,
   }
 }

@@ -7,7 +7,7 @@
 
 syntax = "proto2";
 
-package github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1;
+package github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1;
 
 import "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1/generated.proto";
 import "k8s.io/api/core/v1/generated.proto";
@@ -16,7 +16,7 @@ import "k8s.io/apimachinery/pkg/runtime/generated.proto";
 import "k8s.io/apimachinery/pkg/runtime/schema/generated.proto";
 
 // Package-wide variables from generator "generated".
-option go_package = "github.com/metaprov/modelaapi/pkg/apis/llm/v1alpha1";
+option go_package = "github.com/metaprov/modelaapi/pkg/apis/genai/v1alpha1";
 
 message AnswerFilteringSpec {
   // Indicates if answer filtering is enabled
@@ -25,6 +25,22 @@ message AnswerFilteringSpec {
   // The LLM to use when filtering answers. If unspecified, default to the LLM defined
   // by the response synthesizer
   optional ModelSpec model = 2;
+}
+
+// AutoVectorRetrieverSpec defines a vector retriever which automatically configures the request to a vector index
+// (top K, metadata filters, query embedding) through an LLM
+message AutoVectorRetrieverSpec {
+  // Indicates if automatic query generation is enabled
+  optional bool enabled = 1;
+
+  // The LLM to use when generating queries. If unspecified, use the default provided by the parent specification
+  optional ModelSpec model = 2;
+
+  // The maximum top K allowed. The top K set by the LLM will be clamped to this value
+  optional int64 maxTopK = 3;
+
+  // The collection of metadata key info, which the LLM will use to infer metadata filters
+  repeated MetadataKeyInfo metadataInfo = 4;
 }
 
 // CodeSplitterSpec splits code documents by their syntax trees
@@ -76,13 +92,18 @@ message ConcreteNodeParserSpec {
 // ConcreteQueryEngineSpec defines a query engine, which is used to retrieve context for a query
 // and synthesize a response. A concrete query engine may not utilize other concrete query engines
 message ConcreteQueryEngineSpec {
-  // Router chooses one or more query engine(s) to route requests to
-  optional RouterQueryEngineSpec router = 1;
+  // Retriever augments a query with context from a retriever
+  optional RetrieverQueryEngine retriever = 1;
 }
 
 // ConcreteRetrieverSpec defines a retriever, which collects text chunks relevant to a query.
-// A concrete retriever may not utilize other retrievers.
+// A concrete retriever may not utilize other retrievers
 message ConcreteRetrieverSpec {
+  // Vector retrieves nodes from a vector index
+  optional VectorRetrieverSpec vector = 1;
+
+  // DocumentSummary retrieves nodes from a document summary index
+  optional DocumentSummaryIndexSpec documentSummary = 2;
 }
 
 message DatabaseReaderSpec {
@@ -166,6 +187,21 @@ message DocumentSummaryIndexSpec {
   optional VectorIndexSpec embedding = 2;
 }
 
+// DocumentSummaryRetrieverSpec defines a retriever for a document summary index
+message DocumentSummaryRetrieverSpec {
+  // The reference to the vector store index
+  optional IndexReference index = 1;
+
+  // The embedding or large language model to use
+  optional ModelSpec embeddingModel = 2;
+
+  // The top K nodes to retrieve. If unspecified, default to 1
+  optional int64 topK = 3;
+
+  // The retriever mode. If unspecified, default to embedding
+  optional string mode = 4;
+}
+
 message EmbeddingRecencyPostProcessorSpec {
   // The embedding model to use
   optional ModelSpec embeddingModel = 1;
@@ -221,7 +257,19 @@ message FilteredNodeParser {
 
 message FixedRecencyPostProcessorSpec {
   // The top most recent nodes to return. If unspecified, default to 1
-  optional int64 topN = 1;
+  optional int64 topK = 1;
+}
+
+// FusionRetrieverSpec defines a retriever which can combine the results from multiple concrete retrievers
+message FusionRetrieverSpec {
+  // The collection of retrievers
+  repeated ConcreteRetrieverSpec retrievers = 1;
+
+  // The number of queries to generate for the input query. If unspecified, default to 4
+  optional int64 queries = 2;
+
+  // Indicates if reciprocal rank fusion will be applied. If indicates, a simple technique will be used instead
+  optional bool reciprocalRank = 3;
 }
 
 // HierarchicalSplitterSpec defines how to split text documents into a recursive hierarchy of nodes
@@ -257,10 +305,15 @@ message IndexSpec {
 }
 
 message KeywordPostProcessorSpec {
+  // The collection of keywords that must be present in the node content
+  repeated string include = 1;
+
+  // The collection of keywords which must not be present in the node content. Matching nodes will be excluded
+  repeated string exclude = 2;
 }
 
 // +kubebuilder:subresource:status
-// +kubebuilder:resource:path=knowledgebases,singular=knowledgebase,shortName=kb,categories={llm,modela}
+// +kubebuilder:resource:path=knowledgebases,singular=knowledgebase,shortName=kb,categories={genai,modela}
 // +kubebuilder:object:root=true
 // +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1
@@ -364,7 +417,7 @@ message KnowledgeGraphQueryEngine {
 }
 
 // +kubebuilder:subresource:status
-// +kubebuilder:resource:path=knowledgebases,singular=knowledgebase,shortName=kb,categories={llm,modela}
+// +kubebuilder:resource:path=llms,singular=genai,shortName=genai,categories={genai,modela}
 // +kubebuilder:object:root=true
 // +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1
@@ -487,6 +540,17 @@ message LengthFilter {
 message LongContextReorderSpec {
 }
 
+message MetadataKeyInfo {
+  // The name of the key
+  optional string model = 1;
+
+  // The key type
+  optional string type = 2;
+
+  // The key description
+  optional string description = 3;
+}
+
 // MixedNodeParserSpec defines a node parser that changes based on the document being parsed
 message MixedNodeParserSpec {
   // The collection of filtered node parsers, with each containing one or more filters and a parser definition.
@@ -546,7 +610,8 @@ message ModelSpec {
   // ConnectionName specifies the name of a connection to a foundational model provider
   optional string connectionName = 1;
 
-  // Model specifies the vendor-specific model type. If unspecified, choose the default model for the vendor
+  // Model specifies the vendor-specific model type. If unspecified, use the model provided by the
+  // `model` option of the connection, or choose the default model for the vendor
   optional string model = 2;
 }
 
@@ -615,7 +680,7 @@ message NodePostProcessor {
   // Choose the top K nodes sorted by date
   optional FixedRecencyPostProcessorSpec fixedRecency = 7;
 
-  // Sort by date and remove older nodes that are too similar to newer ones
+  // Sort by date and remove similar nodes that are older than newer ones
   optional EmbeddingRecencyPostProcessorSpec embeddingRecency = 8;
 
   // Choose the top K nodes after applying a time-weighted rerank (by creation date or last access)
@@ -625,13 +690,13 @@ message NodePostProcessor {
 // QueryEngineSpec defines a query engine, which is used to retrieve context for a query
 // and synthesize a response, or routes the request to other query engines based on the query
 message QueryEngineSpec {
-  optional ConcreteQueryEngineSpec concreteQueryEngineSpec = 3;
+  optional ConcreteQueryEngineSpec concreteQueryEngineSpec = 1;
 
   // Router chooses one or more query engine(s) to route requests to
-  optional RouterQueryEngineSpec router = 1;
+  optional RouterQueryEngineSpec router = 2;
 
   // SubQuestion routes sub-questions generated for a query to one or more query engine(s)
-  optional SubQuestionQueryEngineSpec subQuestion = 2;
+  optional SubQuestionQueryEngineSpec subQuestion = 3;
 }
 
 message QueryEngineToolSpec {
@@ -703,9 +768,26 @@ message RetrieverQueryEngine {
   repeated NodePostProcessor postProcessors = 3;
 }
 
-// RetrieverSpec defines a retriever, which collects text chunks relevant to a query.
-// A retriever may also
+// RetrieverSpec defines a retriever, which collects text chunks relevant to a query
 message RetrieverSpec {
+  optional ConcreteRetrieverSpec concreteRetrieverSpec = 1;
+
+  // Router chooses one or more retriever(s) to route requests to
+  optional RouterRetrieverSpec router = 2;
+
+  // Fusion combines the results of one or more retriever(s)
+  optional FusionRetrieverSpec fusion = 3;
+}
+
+message RetrieverToolSpec {
+  // The specification for the retriever
+  optional ConcreteRetrieverSpec retriever = 1;
+
+  // The name of the retriever
+  optional string name = 2;
+
+  // The description of the retriever
+  optional string description = 3;
 }
 
 // RouterQueryEngineSpec routes requests to one or more query engines
@@ -717,8 +799,16 @@ message RouterQueryEngineSpec {
   optional SelectorSpec selector = 2;
 }
 
+message RouterRetrieverSpec {
+  // The query engines to route requests to
+  repeated RetrieverToolSpec tools = 1;
+
+  // The selector to use when choosing retriever(s)
+  optional SelectorSpec selector = 2;
+}
+
 message SelectorSpec {
-  // The selection mode. If unspecified, default to `llm`
+  // The selection mode. If unspecified, default to `genai`
   optional string mode = 1;
 
   // The LLM or embedding model that will be used to determine the selections.
@@ -736,7 +826,7 @@ message SentenceEmbeddingOptimizerSpec {
   // The percentile cutoff, determining how many top K sentences are selected. If unspecified, the percentile cutoff will be disabled
   optional float similarityCutoff = 2;
 
-  // The threshold cutoff for similarity between. If unspecified, the threshold cutoff will be disabled
+  // The threshold cutoff for similarity. If unspecified, the threshold cutoff will be disabled
   optional float thresholdCutoff = 3;
 }
 
@@ -778,12 +868,20 @@ message SentenceWindowNodeParserSpec {
 }
 
 message SimilarityPostProcessorSpec {
+  // The threshold cutoff for similarity
+  optional float cutoff = 3;
 }
 
 // SubQuestionQueryEngineSpec breaks down a query into sub-questions that can be routed to other query engines
 message SubQuestionQueryEngineSpec {
   // The query engines to route requests to
   repeated QueryEngineToolSpec tools = 1;
+
+  // The response synthesizer to use when generating responses
+  optional ResponseSynthesizerSpec responseSynthesizer = 2;
+
+  // The large language model to use when genreating questions
+  optional ModelSpec model = 3;
 }
 
 // TextSplitterSpec defines how to split a document into sentences using a text splitter
@@ -837,6 +935,28 @@ message VectorIndexSpec {
 
   // EmbeddingModel specifies the embedding model to use when ingesting documents
   optional ModelSpec embeddingModel = 2;
+}
+
+// VectorRetrieverSpec defines a retriever for a vector index
+message VectorRetrieverSpec {
+  // The reference to the vector store index
+  optional IndexReference index = 1;
+
+  // The embedding model to use
+  optional ModelSpec embeddingModel = 2;
+
+  // The top K nodes to retrieve. If unspecified, default to 10
+  optional int64 topK = 3;
+
+  // Metadata key-value pairs that must be matched on retrieved nodes
+  map<string, string> matchMetadata = 4;
+
+  // Indicates if auto-merging of parent and child nodes will be enabled. Auto-merging should only be enabled
+  // on indexes that were constructed using a hierarchical node parser. If unspecified, default to false
+  optional bool autoMerging = 5;
+
+  // The specification to automatically configure queries to the vector index
+  optional AutoVectorRetrieverSpec auto = 6;
 }
 
 message WebReaderSpec {

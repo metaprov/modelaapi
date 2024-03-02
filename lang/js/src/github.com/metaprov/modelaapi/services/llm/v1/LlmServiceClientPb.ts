@@ -8,7 +8,7 @@
 // versions:
 // 	protoc-gen-grpc-web v1.4.2
 // 	protoc              v3.20.3
-// source: github.com/metaprov/modelaapi/services/llm/v1/llm.proto
+// source: github.com/metaprov/modelaapi/services/genai/v1/genai.proto
 
 
 /* eslint-disable */

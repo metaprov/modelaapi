@@ -5,7 +5,7 @@ package github.com.metaprov.modelaapi.services.knowledgebase.v1;
 
 import "google/protobuf/field_mask.proto";
 import "google/api/annotations.proto";
-import "github.com/metaprov/modelaapi/pkg/apis/llm/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/genai/v1alpha1/generated.proto";
 
 
 message ListKnowledgeBasesRequest {
@@ -14,20 +14,20 @@ message ListKnowledgeBasesRequest {
 }
 
 message ListKnowledgeBasesResponse {
-    github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBaseList knowledgeBases = 1;
+    github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KnowledgeBaseList knowledgeBases = 1;
     string next_page_token = 2;
 }
 
 
 message CreateKnowledgeBaseRequest {
-    github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBase knowledgeBase = 1;
+    github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KnowledgeBase knowledgeBase = 1;
 }
 
 message CreateKnowledgeBaseResponse {}
 
 
 message UpdateKnowledgeBaseRequest {
-    github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBase knowledgeBase = 1;
+    github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KnowledgeBase knowledgeBase = 1;
     google.protobuf.FieldMask field_mask = 2;
 }
 
@@ -41,7 +41,7 @@ message GetKnowledgeBaseRequest {
 }
 
 message GetKnowledgeBaseResponse {
-    github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBase knowledgeBase = 1;
+    github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KnowledgeBase knowledgeBase = 1;
     string yaml = 2;
 
 }

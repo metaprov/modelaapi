@@ -64,7 +64,7 @@ const (
 )
 
 // +kubebuilder:subresource:status
-// +kubebuilder:resource:path=knowledgebases,singular=knowledgebase,shortName=kb,categories={llm,modela}
+// +kubebuilder:resource:path=knowledgebases,singular=knowledgebase,shortName=kb,categories={genai,modela}
 // +kubebuilder:object:root=true
 // +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1

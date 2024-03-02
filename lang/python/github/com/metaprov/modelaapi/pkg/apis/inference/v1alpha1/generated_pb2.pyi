@@ -83,12 +83,12 @@ class DataAppSpec(_message.Message):
     modelClassName: str
     description: str
     modelName: str
-    access: _generated_pb2.AccessSpec
+    access: _generated_pb2.PredictorAccessSpec
     replicas: int
     resources: _generated_pb2.ResourceSpec
     servingsiteRef: _generated_pb2_1_1_1.ObjectReference
     custom: CustomAppSpec
-    def __init__(self, owner: _Optional[str] = ..., versionName: _Optional[str] = ..., modelClassName: _Optional[str] = ..., description: _Optional[str] = ..., modelName: _Optional[str] = ..., access: _Optional[_Union[_generated_pb2.AccessSpec, _Mapping]] = ..., replicas: _Optional[int] = ..., resources: _Optional[_Union[_generated_pb2.ResourceSpec, _Mapping]] = ..., servingsiteRef: _Optional[_Union[_generated_pb2_1_1_1.ObjectReference, _Mapping]] = ..., custom: _Optional[_Union[CustomAppSpec, _Mapping]] = ...) -> None: ...
+    def __init__(self, owner: _Optional[str] = ..., versionName: _Optional[str] = ..., modelClassName: _Optional[str] = ..., description: _Optional[str] = ..., modelName: _Optional[str] = ..., access: _Optional[_Union[_generated_pb2.PredictorAccessSpec, _Mapping]] = ..., replicas: _Optional[int] = ..., resources: _Optional[_Union[_generated_pb2.ResourceSpec, _Mapping]] = ..., servingsiteRef: _Optional[_Union[_generated_pb2_1_1_1.ObjectReference, _Mapping]] = ..., custom: _Optional[_Union[CustomAppSpec, _Mapping]] = ...) -> None: ...
 
 class DataAppStatus(_message.Message):
     __slots__ = ("observedGeneration", "updatedAt", "deploymentStatus", "servicetStatus", "failureReason", "failureMessage", "conditions")
@@ -533,7 +533,7 @@ class PredictorSpec(_message.Message):
     servingSiteRef: _generated_pb2_1_1_1.ObjectReference
     models: _containers.RepeatedCompositeFieldContainer[_generated_pb2.ModelDeploymentSpec]
     progressive: ProgressiveSpec
-    access: _generated_pb2.AccessSpec
+    access: _generated_pb2.PredictorAccessSpec
     replicas: int
     autoScaling: AutoScalingSpec
     owner: str
@@ -549,7 +549,7 @@ class PredictorSpec(_message.Message):
     forwardCurtain: ForwardCurtainSpec
     backwardCurtain: BackwardCurtainSpec
     fastSlow: FastSlowModelSpec
-    def __init__(self, versionName: _Optional[str] = ..., modelClassName: _Optional[str] = ..., description: _Optional[str] = ..., productRef: _Optional[_Union[_generated_pb2_1_1_1.ObjectReference, _Mapping]] = ..., template: bool = ..., servingSiteRef: _Optional[_Union[_generated_pb2_1_1_1.ObjectReference, _Mapping]] = ..., models: _Optional[_Iterable[_Union[_generated_pb2.ModelDeploymentSpec, _Mapping]]] = ..., progressive: _Optional[_Union[ProgressiveSpec, _Mapping]] = ..., access: _Optional[_Union[_generated_pb2.AccessSpec, _Mapping]] = ..., replicas: _Optional[int] = ..., autoScaling: _Optional[_Union[AutoScalingSpec, _Mapping]] = ..., owner: _Optional[str] = ..., resources: _Optional[_Union[_generated_pb2.ResourceSpec, _Mapping]] = ..., cache: _Optional[_Union[PredictionCacheSpec, _Mapping]] = ..., store: _Optional[_Union[OnlineFeatureStoreSpec, _Mapping]] = ..., serving: _Optional[_Union[ModelServingSpec, _Mapping]] = ..., task: _Optional[str] = ..., drift: _Optional[_Union[DriftDetectionSpec, _Mapping]] = ..., feedback: _Optional[_Union[FeedbackTestSpec, _Mapping]] = ..., notification: _Optional[_Union[_generated_pb2.NotificationSpec, _Mapping]] = ..., predictionLogging: _Optional[_Union[PredictionLoggingSpec, _Mapping]] = ..., forwardCurtain: _Optional[_Union[ForwardCurtainSpec, _Mapping]] = ..., backwardCurtain: _Optional[_Union[BackwardCurtainSpec, _Mapping]] = ..., fastSlow: _Optional[_Union[FastSlowModelSpec, _Mapping]] = ...) -> None: ...
+    def __init__(self, versionName: _Optional[str] = ..., modelClassName: _Optional[str] = ..., description: _Optional[str] = ..., productRef: _Optional[_Union[_generated_pb2_1_1_1.ObjectReference, _Mapping]] = ..., template: bool = ..., servingSiteRef: _Optional[_Union[_generated_pb2_1_1_1.ObjectReference, _Mapping]] = ..., models: _Optional[_Iterable[_Union[_generated_pb2.ModelDeploymentSpec, _Mapping]]] = ..., progressive: _Optional[_Union[ProgressiveSpec, _Mapping]] = ..., access: _Optional[_Union[_generated_pb2.PredictorAccessSpec, _Mapping]] = ..., replicas: _Optional[int] = ..., autoScaling: _Optional[_Union[AutoScalingSpec, _Mapping]] = ..., owner: _Optional[str] = ..., resources: _Optional[_Union[_generated_pb2.ResourceSpec, _Mapping]] = ..., cache: _Optional[_Union[PredictionCacheSpec, _Mapping]] = ..., store: _Optional[_Union[OnlineFeatureStoreSpec, _Mapping]] = ..., serving: _Optional[_Union[ModelServingSpec, _Mapping]] = ..., task: _Optional[str] = ..., drift: _Optional[_Union[DriftDetectionSpec, _Mapping]] = ..., feedback: _Optional[_Union[FeedbackTestSpec, _Mapping]] = ..., notification: _Optional[_Union[_generated_pb2.NotificationSpec, _Mapping]] = ..., predictionLogging: _Optional[_Union[PredictionLoggingSpec, _Mapping]] = ..., forwardCurtain: _Optional[_Union[ForwardCurtainSpec, _Mapping]] = ..., backwardCurtain: _Optional[_Union[BackwardCurtainSpec, _Mapping]] = ..., fastSlow: _Optional[_Union[FastSlowModelSpec, _Mapping]] = ...) -> None: ...
 
 class PredictorStatus(_message.Message):
     __slots__ = ("observedGeneration", "history", "modelStatus", "predictorletStatus", "onlineStoreStatus", "updatedAt", "failureMessage", "loadBalancerStatus", "lastPredictionDataset", "servingTestsResults", "conditions")

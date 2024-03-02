@@ -1,11 +1,11 @@
 package v1alpha1
 
-// +kubebuilder:validation:Enum="embedding";"llm"
+// +kubebuilder:validation:Enum="embedding";"genai"
 type DocumentSummaryRetrieverMode string
 
 const (
 	EmbeddingDocumentSummaryRetrieverMode DocumentSummaryRetrieverMode = "embedding"
-	LLMDocumentSummaryRetrieverMode       DocumentSummaryRetrieverMode = "llm"
+	LLMDocumentSummaryRetrieverMode       DocumentSummaryRetrieverMode = "genai"
 )
 
 // ConcreteRetrieverSpec defines a retriever, which collects text chunks relevant to a query.

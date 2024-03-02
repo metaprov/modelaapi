@@ -1,11 +1,11 @@
 package v1alpha1
 
-// +kubebuilder:validation:Enum="embedding";"llm"
+// +kubebuilder:validation:Enum="embedding";"genai"
 type SelectorMode string
 
 const (
 	EmbeddingSelectorMode SelectorMode = "embedding"
-	LLMSelectorMode       SelectorMode = "llm"
+	LLMSelectorMode       SelectorMode = "genai"
 )
 
 // ConcreteQueryEngineSpec defines a query engine, which is used to retrieve context for a query
@@ -28,7 +28,7 @@ type QueryEngineSpec struct {
 }
 
 type SelectorSpec struct {
-	// The selection mode. If unspecified, default to `llm`
+	// The selection mode. If unspecified, default to `genai`
 	Mode *SelectorMode `json:"mode,omitempty" protobuf:"bytes,1,opt,name=mode"`
 	// The LLM or embedding model that will be used to determine the selections.
 	// If unspecified, use the default LLM provided by the model server

@@ -1229,14 +1229,14 @@ class ServingEnvironment(_message.Message):
     name: str
     tests: _generated_pb2.TestSuite
     servingSiteRef: _generated_pb2_1_1.ObjectReference
-    access: _generated_pb2.AccessSpec
+    access: _generated_pb2.PredictorAccessSpec
     replicas: int
     online: bool
     dashboard: bool
     resources: _generated_pb2.ResourceSpec
     preSQL: _containers.RepeatedScalarFieldContainer[str]
     postSQL: _containers.RepeatedScalarFieldContainer[str]
-    def __init__(self, name: _Optional[str] = ..., tests: _Optional[_Union[_generated_pb2.TestSuite, _Mapping]] = ..., servingSiteRef: _Optional[_Union[_generated_pb2_1_1.ObjectReference, _Mapping]] = ..., access: _Optional[_Union[_generated_pb2.AccessSpec, _Mapping]] = ..., replicas: _Optional[int] = ..., online: bool = ..., dashboard: bool = ..., resources: _Optional[_Union[_generated_pb2.ResourceSpec, _Mapping]] = ..., preSQL: _Optional[_Iterable[str]] = ..., postSQL: _Optional[_Iterable[str]] = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., tests: _Optional[_Union[_generated_pb2.TestSuite, _Mapping]] = ..., servingSiteRef: _Optional[_Union[_generated_pb2_1_1.ObjectReference, _Mapping]] = ..., access: _Optional[_Union[_generated_pb2.PredictorAccessSpec, _Mapping]] = ..., replicas: _Optional[int] = ..., online: bool = ..., dashboard: bool = ..., resources: _Optional[_Union[_generated_pb2.ResourceSpec, _Mapping]] = ..., preSQL: _Optional[_Iterable[str]] = ..., postSQL: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class ServingSpec(_message.Message):
     __slots__ = ("enabled", "predictorName", "resources", "servingSiteRef", "dashboard", "access", "replicas", "promotion")
@@ -1253,10 +1253,10 @@ class ServingSpec(_message.Message):
     resources: _generated_pb2.ResourceSpec
     servingSiteRef: _generated_pb2_1_1.ObjectReference
     dashboard: bool
-    access: _generated_pb2.AccessSpec
+    access: _generated_pb2.PredictorAccessSpec
     replicas: int
     promotion: str
-    def __init__(self, enabled: bool = ..., predictorName: _Optional[str] = ..., resources: _Optional[_Union[_generated_pb2.ResourceSpec, _Mapping]] = ..., servingSiteRef: _Optional[_Union[_generated_pb2_1_1.ObjectReference, _Mapping]] = ..., dashboard: bool = ..., access: _Optional[_Union[_generated_pb2.AccessSpec, _Mapping]] = ..., replicas: _Optional[int] = ..., promotion: _Optional[str] = ...) -> None: ...
+    def __init__(self, enabled: bool = ..., predictorName: _Optional[str] = ..., resources: _Optional[_Union[_generated_pb2.ResourceSpec, _Mapping]] = ..., servingSiteRef: _Optional[_Union[_generated_pb2_1_1.ObjectReference, _Mapping]] = ..., dashboard: bool = ..., access: _Optional[_Union[_generated_pb2.PredictorAccessSpec, _Mapping]] = ..., replicas: _Optional[int] = ..., promotion: _Optional[str] = ...) -> None: ...
 
 class ServingStatus(_message.Message):
     __slots__ = ("predictorName", "dataAppName", "predictorEndpoint", "dashboardEndpoint", "role")

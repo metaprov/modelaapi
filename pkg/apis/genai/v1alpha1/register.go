@@ -1,9 +1,9 @@
 // +kubebuilder:object:generate=true
-// +groupName=llm.modela.ai
+// +groupName=genai.modela.ai
 package v1alpha1
 
 import (
-	"github.com/metaprov/modelaapi/pkg/apis/llm"
+	"github.com/metaprov/modelaapi/pkg/apis/genai"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	k8sruntime "k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
@@ -11,7 +11,7 @@ import (
 	"k8s.io/client-go/kubernetes/scheme"
 )
 
-var SchemeGroupVersion = schema.GroupVersion{Group: llm.GroupName, Version: "v1alpha1"}
+var SchemeGroupVersion = schema.GroupVersion{Group: genai.GroupName, Version: "v1alpha1"}
 
 func Kind(kind string) schema.GroupKind {
 	return SchemeGroupVersion.WithKind(kind).GroupKind()

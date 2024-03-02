@@ -15,7 +15,7 @@ const (
 )
 
 // +kubebuilder:subresource:status
-// +kubebuilder:resource:path=llms,singular=llm,shortName=llm,categories={llm,modela}
+// +kubebuilder:resource:path=llms,singular=genai,shortName=genai,categories={genai,modela}
 // +kubebuilder:object:root=true
 // +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1

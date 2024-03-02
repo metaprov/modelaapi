@@ -1,4 +1,4 @@
-// source: github.com/metaprov/modelaapi/services/llm/v1/llm.proto
+// source: github.com/metaprov/modelaapi/services/genai/v1/genai.proto
 /**
  * @fileoverview
  * @enhanceable
@@ -17,7 +17,7 @@ var global = (function() { return this || window || global || self || Function('
 
 var github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb = require('../../../../../../github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated_pb.js');
 goog.object.extend(proto, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb);
-var github_com_metaprov_modelaapi_pkg_apis_llm_v1alpha1_generated_pb = require('../../../../../../github.com/metaprov/modelaapi/pkg/apis/llm/v1alpha1/generated_pb.js');
+var github_com_metaprov_modelaapi_pkg_apis_llm_v1alpha1_generated_pb = require('../../../../../../github.com/metaprov/modelaapi/pkg/apis/genai/v1alpha1/generated_pb.js');
 goog.object.extend(proto, github_com_metaprov_modelaapi_pkg_apis_llm_v1alpha1_generated_pb);
 goog.exportSymbol('proto.DeleteRequest', null, global);
 goog.exportSymbol('proto.DeleteResponse', null, global);
@@ -369,8 +369,8 @@ proto.RefreshRequest.prototype.hasProduct = function() {
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBase knowledgeBase = 3;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBase}
+ * optional github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KnowledgeBase knowledgeBase = 3;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KnowledgeBase}
  */
 proto.RefreshRequest.prototype.getKnowledgebase = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.KnowledgeBase} */ (
@@ -610,8 +610,8 @@ proto.DocumentStatusUpdate.prototype.setError = function(value) {
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.DocumentStatus status = 4;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.DocumentStatus}
+ * optional github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.DocumentStatus status = 4;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.DocumentStatus}
  */
 proto.DocumentStatusUpdate.prototype.getStatus = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1.DocumentStatus} */ (

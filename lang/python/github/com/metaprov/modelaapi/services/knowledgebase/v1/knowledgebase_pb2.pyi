@@ -1,6 +1,6 @@
 from google.protobuf import field_mask_pb2 as _field_mask_pb2
 from google.api import annotations_pb2 as _annotations_pb2
-from github.com.metaprov.modelaapi.pkg.apis.llm.v1alpha1 import generated_pb2 as _generated_pb2
+from github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1 import generated_pb2 as _generated_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
