@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"github.com/gogo/protobuf/proto"
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
-	"github.com/metaprov/modelaapi/pkg/apis/data"
+	"github.com/metaprov/modelaapi/pkg/apis/genai"
 	infra "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/util"
 	v1 "k8s.io/api/core/v1"
@@ -20,9 +20,9 @@ func (kb *KnowledgeBase) SetupWebhookWithManager(mgr ctrl.Manager) error {
 		Complete()
 }
 
-func (kb *KnowledgeBase) HasFinalizer() bool { return util.HasFin(&kb.ObjectMeta, data.GroupName) }
-func (kb *KnowledgeBase) AddFinalizer()      { util.AddFin(&kb.ObjectMeta, data.GroupName) }
-func (kb *KnowledgeBase) RemoveFinalizer()   { util.RemoveFin(&kb.ObjectMeta, data.GroupName) }
+func (kb *KnowledgeBase) HasFinalizer() bool { return util.HasFin(&kb.ObjectMeta, genai.GroupName) }
+func (kb *KnowledgeBase) AddFinalizer()      { util.AddFin(&kb.ObjectMeta, genai.GroupName) }
+func (kb *KnowledgeBase) RemoveFinalizer()   { util.RemoveFin(&kb.ObjectMeta, genai.GroupName) }
 
 /////// Conditions ///////
 

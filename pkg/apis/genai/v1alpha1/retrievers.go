@@ -8,16 +8,6 @@ const (
 	LLMDocumentSummaryRetrieverMode       DocumentSummaryRetrieverMode = "genai"
 )
 
-// ConcreteRetrieverSpec defines a retriever, which collects text chunks relevant to a query.
-// A concrete retriever may not utilize other retrievers
-type ConcreteRetrieverSpec struct {
-	// Vector retrieves nodes from a vector index
-	Vector *VectorRetrieverSpec `json:"vector,omitempty" protobuf:"bytes,1,opt,name=vector"`
-
-	// DocumentSummary retrieves nodes from a document summary index
-	DocumentSummary *DocumentSummaryIndexSpec `json:"documentSummary,omitempty" protobuf:"bytes,2,opt,name=documentSummary"`
-}
-
 type MetadataKeyInfo struct {
 	// The name of the key
 	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=model"`
@@ -69,21 +59,31 @@ type DocumentSummaryRetrieverSpec struct {
 	Mode *DocumentSummaryRetrieverMode `json:"mode,omitempty" protobuf:"bytes,4,opt,name=mode"`
 }
 
-// RetrieverSpec defines a retriever, which collects text chunks relevant to a query
+// RetrieverSpec defines a retriever, which collects text chunks relevant to a query.
+// A retriever may also route queries to other retrievers
 type RetrieverSpec struct {
-	ConcreteRetrieverSpec `json:",inline" protobuf:"bytes,1,opt,name=concreteRetrieverSpec"`
+	// The unique name of the retriever
+	// +kubebuilder:validation:Required
+	// +required
+	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
+
+	// Vector retrieves nodes from a vector index
+	Vector *VectorRetrieverSpec `json:"vector,omitempty" protobuf:"bytes,2,opt,name=vector"`
+
+	// DocumentSummary retrieves nodes from a document summary index
+	DocumentSummary *DocumentSummaryIndexSpec `json:"documentSummary,omitempty" protobuf:"bytes,3,opt,name=documentSummary"`
 
 	// Router chooses one or more retriever(s) to route requests to
-	Router *RouterRetrieverSpec `json:"router,omitempty" protobuf:"bytes,2,opt,name=router"`
+	Router *RouterRetrieverSpec `json:"router,omitempty" protobuf:"bytes,4,opt,name=router"`
 
 	// Fusion combines the results of one or more retriever(s)
-	Fusion *FusionRetrieverSpec `json:"fusion,omitempty" protobuf:"bytes,3,opt,name=fusion"`
+	Fusion *FusionRetrieverSpec `json:"fusion,omitempty" protobuf:"bytes,5,opt,name=fusion"`
 }
 
 // FusionRetrieverSpec defines a retriever which can combine the results from multiple concrete retrievers
 type FusionRetrieverSpec struct {
-	// The collection of retrievers
-	Retrievers []ConcreteRetrieverSpec `json:"retrievers,omitempty" protobuf:"bytes,1,opt,name=retrievers"`
+	// The collection of retriever names
+	Retrievers []string `json:"retrievers,omitempty" protobuf:"bytes,1,opt,name=retrievers"`
 	// The number of queries to generate for the input query. If unspecified, default to 4
 	Queries *int `json:"queries,omitempty" protobuf:"bytes,2,opt,name=queries"`
 	// Indicates if reciprocal rank fusion will be applied. If indicates, a simple technique will be used instead
@@ -91,8 +91,8 @@ type FusionRetrieverSpec struct {
 }
 
 type RetrieverToolSpec struct {
-	// The specification for the retriever
-	Retriever ConcreteRetrieverSpec `json:"retriever,omitempty" protobuf:"bytes,1,opt,name=retriever"`
+	// The name of the retriever
+	Retriever string `json:"retriever,omitempty" protobuf:"bytes,1,opt,name=retriever"`
 	// The name of the retriever
 	Name *string `json:"name,omitempty" protobuf:"bytes,2,opt,name=name"`
 	// The description of the retriever

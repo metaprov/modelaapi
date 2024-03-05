@@ -105,5 +105,7 @@ GOGO_PROTOBUF_PATH=${PROJECT_ROOT}/common-protos/github.com/gogo/protobuf
          github.com/metaprov/modelaapi/services/virtualbucket/v1/virtualbucket.proto \
          github.com/metaprov/modelaapi/services/watcherd/v1/watcherd.proto \
          github.com/metaprov/modelaapi/services/knowledgebase/v1/knowledgebase.proto \
-         github.com/metaprov/modelaapi/services/genai/v1/genai.proto
+         github.com/metaprov/modelaapi/services/genai/v1/genai.proto \
+         github.com/metaprov/modelaapi/services/llm/v1/llm.proto
+
 

@@ -160,7 +160,7 @@ type IndexSpec struct {
 
 // NodeParserSpec defines how to break up a document into individual chunks of text
 type NodeParserSpec struct {
-	// The name of the node parser
+	// The unique name of the node parser
 	// +kubebuilder:validation:Required
 	// +required
 	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
@@ -425,7 +425,7 @@ type KnowledgeBaseStatus struct {
 	Documents []DocumentStatus `json:"documents,omitempty" protobuf:"bytes,5,opt,name=documents"`
 	// The last time the object was updated
 	//+kubebuilder:validation:Optional
-	UpdatedAt *metav1.Time `json:"updatedAt,omitempty" protobuf:"bytes,6,opt,name=updatedAt"`
+	UpdatedAt *metav1.Time `json:"updatexdAt,omitempty" protobuf:"bytes,6,opt,name=updatedAt"`
 	// +kubebuilder:validation:Optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge

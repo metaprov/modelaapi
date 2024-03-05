@@ -56,7 +56,18 @@ func (kb *KnowledgeBase) validate() error {
 func (kb *KnowledgeBase) validateSpec(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	allErrs = append(allErrs, kb.validateDocuments(fldPath.Child("documents"))...)
+	allErrs = append(allErrs, kb.validateNodeParsers(fldPath.Child("nodeParsers"))...)
+	return allErrs
+}
+
+func (kb *KnowledgeBase) validateNodeParsers(fldPath *field.Path) field.ErrorList {
+	var allErrs field.ErrorList
+	var nameMap = make(map[string]bool)
 	for i, parser := range kb.Spec.NodeParsers {
+		if _, ok := nameMap[parser.Name]; ok {
+			allErrs = append(allErrs, field.Duplicate(fldPath.Index(i), parser))
+		}
+		nameMap[parser.Name] = true
 		allErrs = append(allErrs, kb.validateNodeParser(fldPath.Child("nodeParsers").Index(i), parser)...)
 	}
 	return allErrs
@@ -65,16 +76,20 @@ func (kb *KnowledgeBase) validateSpec(fldPath *field.Path) field.ErrorList {
 func (kb *KnowledgeBase) validateDocuments(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	var nameMap = make(map[string]bool)
-	for _, doc := range kb.Spec.Documents {
+	for i, doc := range kb.Spec.Documents {
+		pFldPath := fldPath.Key(doc.Name)
+		if len(doc.Name) == 0 {
+			allErrs = append(allErrs, field.Invalid(fldPath.Index(i).Child("name"), doc.Name, "A name is required"))
+		}
 		if _, ok := nameMap[doc.Name]; ok {
-			allErrs = append(allErrs, field.Duplicate(fldPath, doc))
+			allErrs = append(allErrs, field.Duplicate(pFldPath, doc))
 		}
 		nameMap[doc.Name] = true
 		var specCount = 0
 		if doc.File != nil {
 			specCount++
 			if doc.File.Location != nil && doc.File.Url != nil {
-				allErrs = append(allErrs, field.Invalid(fldPath.Key(doc.Name).Child("File"),
+				allErrs = append(allErrs, field.Invalid(pFldPath.Child("file"),
 					doc.File, "Only one of location or url must be specified for a file reader"))
 			}
 		}
@@ -87,11 +102,11 @@ func (kb *KnowledgeBase) validateDocuments(fldPath *field.Path) field.ErrorList 
 		if doc.Repository != nil {
 			specCount++
 		}
-		if specCount > 1 {
-			allErrs = append(allErrs, field.Invalid(fldPath.Key(doc.Name), doc, "Exactly one reader specification must be provided"))
+		if specCount != 1 {
+			allErrs = append(allErrs, field.Invalid(pFldPath, doc, "Exactly one reader specification must be provided"))
 		}
 		if doc.NodeParser != nil && !kb.resolveNodeParser(*doc.NodeParser) {
-			allErrs = append(allErrs, field.Invalid(fldPath.Child(*doc.NodeParser), *doc.NodeParser,
+			allErrs = append(allErrs, field.Invalid(pFldPath.Child("nodeParser"), *doc.NodeParser,
 				fmt.Sprintf("The reference to the node parser \"%s\" could not be resolved", *doc.NodeParser)))
 		}
 	}

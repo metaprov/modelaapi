@@ -1,30 +1,29 @@
 package v1alpha1
 
-// +kubebuilder:validation:Enum="embedding";"genai"
+// +kubebuilder:validation:Enum="embedding";"llm"
 type SelectorMode string
 
 const (
 	EmbeddingSelectorMode SelectorMode = "embedding"
-	LLMSelectorMode       SelectorMode = "genai"
+	LLMSelectorMode       SelectorMode = "llm"
 )
 
-// ConcreteQueryEngineSpec defines a query engine, which is used to retrieve context for a query
-// and synthesize a response. A concrete query engine may not utilize other concrete query engines
-type ConcreteQueryEngineSpec struct {
-	// Retriever augments a query with context from a retriever
-	Retriever *RetrieverQueryEngine `json:"retriever,omitempty" protobuf:"bytes,1,opt,name=retriever"`
-}
-
 // QueryEngineSpec defines a query engine, which is used to retrieve context for a query
-// and synthesize a response, or routes the request to other query engines based on the query
+// and synthesize a response. A query engine may also route queries to other query engines
 type QueryEngineSpec struct {
-	ConcreteQueryEngineSpec `json:",inline" protobuf:"bytes,1,opt,name=concreteQueryEngineSpec"`
+	// The unique name of the query engine
+	// +kubebuilder:validation:Required
+	// +required
+	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
+
+	// Retriever augments a query with context from a retriever
+	Retriever *RetrieverQueryEngine `json:"retriever,omitempty" protobuf:"bytes,2,opt,name=retriever"`
 
 	// Router chooses one or more query engine(s) to route requests to
-	Router *RouterQueryEngineSpec `json:"router,omitempty" protobuf:"bytes,2,opt,name=router"`
+	Router *RouterQueryEngineSpec `json:"router,omitempty" protobuf:"bytes,3,opt,name=router"`
 
 	// SubQuestion routes sub-questions generated for a query to one or more query engine(s)
-	SubQuestion *SubQuestionQueryEngineSpec `json:"subQuestion,omitempty" protobuf:"bytes,3,opt,name=subQuestion"`
+	SubQuestion *SubQuestionQueryEngineSpec `json:"subQuestion,omitempty" protobuf:"bytes,4,opt,name=subQuestion"`
 }
 
 type SelectorSpec struct {
@@ -38,8 +37,8 @@ type SelectorSpec struct {
 }
 
 type QueryEngineToolSpec struct {
-	// The specification for the query engine
-	QueryEngine ConcreteQueryEngineSpec `json:"queryEngine,omitempty" protobuf:"bytes,1,opt,name=queryEngine"`
+	// The name of the query engine
+	QueryEngine string `json:"queryEngine,omitempty" protobuf:"bytes,1,opt,name=queryEngine"`
 	// The name of the query engine
 	Name string `json:"name,omitempty" protobuf:"bytes,2,opt,name=name"`
 	// The description of the query engine
@@ -60,7 +59,7 @@ type SubQuestionQueryEngineSpec struct {
 	Tools []QueryEngineToolSpec `json:"tools,omitempty" protobuf:"bytes,1,opt,name=tools"`
 	// The response synthesizer to use when generating responses
 	ResponseSynthesizer *ResponseSynthesizerSpec `json:"responseSynthesizer,omitempty" protobuf:"bytes,2,opt,name=responseSynthesizer"`
-	// The large language model to use when genreating questions
+	// The large language model to use when generating questions
 	Model *ModelSpec `json:"model,omitempty" protobuf:"bytes,3,opt,name=model"`
 }
 
@@ -68,8 +67,8 @@ type SubQuestionQueryEngineSpec struct {
 type RetrieverQueryEngine struct {
 	// The response synthesizer to use when generating responses
 	ResponseSynthesizer *ResponseSynthesizerSpec `json:"responseSynthesizer,omitempty" protobuf:"bytes,1,opt,name=responseSynthesizer"`
-	// The retriever to use when generating responses
-	Retriever RetrieverSpec `json:"retriever,omitempty" protobuf:"bytes,2,opt,name=retriever"`
+	// The name of the retriever to use when generating responses
+	Retriever string `json:"string,omitempty" protobuf:"bytes,2,opt,name=string"`
 	// The collection of node postprocessors
 	PostProcessors []NodePostProcessor `json:"postProcessors,omitempty" protobuf:"bytes,3,opt,name=postProcessors"`
 }
