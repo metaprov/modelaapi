@@ -63,6 +63,7 @@ const (
 	RefreshingReason = "Refreshing"
 )
 
+// +k8s:openapi-gen=true
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=knowledgebases,singular=knowledgebase,shortName=kb,categories={genai,modela}
 // +kubebuilder:object:root=true
@@ -72,7 +73,8 @@ const (
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // KnowledgeBase represents a collection of documents that are stored in one or more indexes
 type KnowledgeBase struct {
-	metav1.TypeMeta   `json:",inline"`
+	metav1.TypeMeta `json:",inline"`
+	// +k8s:openapi-gen=false
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
 	Spec              KnowledgeBaseSpec   `json:"spec,omitempty" protobuf:"bytes,2,opt,name=spec"`
 	Status            KnowledgeBaseStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
@@ -86,6 +88,7 @@ type KnowledgeBaseList struct {
 	Items           []KnowledgeBase `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
+// +k8s:openapi-gen=true
 type KnowledgeBaseSpec struct {
 	// Owner specifies the name of the Account which the object belongs to
 	// +kubebuilder:default:="no-one"
@@ -109,7 +112,7 @@ type KnowledgeBaseSpec struct {
 	// Resources specifies the resource requirements that will be allocated for refresh jobs
 	// +kubebuilder:validation:Optional
 	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,6,opt,name=resources"`
-	// MetadataDatabase specifies a connection to a database used to store document metadata and statuses.
+	// MetadataDatabaseConnectionName specifies a connection to a database used to store document metadata and statuses.
 	// When specified, any document metadata specified by Documents will be cleared and migrated to the table
 	MetadataDatabaseConnectionName *string `json:"metadataDatabaseConnectionName,omitempty" protobuf:"bytes,7,opt,name=metadataDatabaseConnectionName"`
 	// DocumentStoreConnectionName specifies the name of a Connection resource to use as a document store
@@ -118,9 +121,13 @@ type KnowledgeBaseSpec struct {
 	Indexes []IndexSpec `json:"indexes,omitempty" protobuf:"bytes,10,opt,name=indexes"`
 	// Documents specifies the collection of documents included in the Knowledge Base
 	Documents []DocumentSpec `json:"documents,omitempty" protobuf:"bytes,11,opt,name=documents"`
-	// NodeParser specifies the default node parser for all documents.
-	// The node parser defines how to split up documents into individual chunks of text
-	NodeParser NodeParserSpec `json:"nodeParser,omitempty" protobuf:"bytes,12,opt,name=nodeParser"`
+	// NodeParser defines the collection of node parsers available to documents prior to indexing.
+	// The node parsers define how to split up documents into individual chunks of text.
+	// If empty, the default node parser will be used
+	NodeParsers []NodeParserSpec `json:"nodeParsers,omitempty" protobuf:"bytes,12,opt,name=nodeParsers"`
+	// DefaultNodeParser specifies the name of the default node parser to use.
+	// If unspecified, the first node parser defined in NodeParsers will be used
+	DefaultNodeParser *string `json:"defaultNodeParser,omitempty" protobuf:"bytes,13,opt,name=defaultNodeParser"`
 }
 
 // VectorIndexSpec specifies the configuration for a vector store index
@@ -151,29 +158,26 @@ type IndexSpec struct {
 	DocumentSummary *DocumentSummaryIndexSpec `json:"documentSummary,omitempty" protobuf:"bytes,3,opt,name=documentSummary"`
 }
 
-// ConcreteNodeParserSpec defines how to break up a document into individual chunks of text
-type ConcreteNodeParserSpec struct {
+// NodeParserSpec defines how to break up a document into individual chunks of text
+type NodeParserSpec struct {
+	// The name of the node parser
+	// +kubebuilder:validation:Required
+	// +required
+	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
 	// Indicate if previous/next relationships should be included between nodes. When unspecified, default to true
-	IncludeOrderRelationship *bool `json:"includeOrderRelationship,omitempty" protobuf:"bytes,1,opt,name=includeOrderRelationship"`
+	IncludeOrderRelationship *bool `json:"includeOrderRelationship,omitempty" protobuf:"bytes,2,opt,name=includeOrderRelationship"`
 	// Indicate if metadata should be included in the nodes. When unspecified, default to true
-	IncludeMetadata *bool `json:"includeMetadata,omitempty" protobuf:"bytes,2,opt,name=includeMetadata"`
+	IncludeMetadata *bool `json:"includeMetadata,omitempty" protobuf:"bytes,3,opt,name=includeMetadata"`
 	// The type of node parser. When a specification for a text or sentence window node parser is provided, this field
 	// may be omitted. When not provided, the defaults for the specified node parser type will be used.
 	// When unspecified, default to sentence window
-	Type *NodeParserType `json:"type,omitempty" protobuf:"bytes,3,opt,name=type"`
+	Type *NodeParserType `json:"type,omitempty" protobuf:"bytes,4,opt,name=type"`
 	// The specification for the text splitter to use as a node parser
-	Text *TextSplitterSpec `json:"text,omitempty" protobuf:"bytes,4,opt,name=text"`
+	Text *TextSplitterSpec `json:"text,omitempty" protobuf:"bytes,5,opt,name=text"`
 	// The specification for the sentence window node parser
-	Sentence *SentenceWindowNodeParserSpec `json:"sentence,omitempty" protobuf:"bytes,5,opt,name=sentence"`
-}
-
-// NodeParserSpec defines how to break up a document into individual chunks of text.
-// A dynamic node parser may also specify a mixed parser, which can changes between multiple
-// concrete node parsers depending on the document being processed
-type NodeParserSpec struct {
-	ConcreteNodeParserSpec `json:",inline" protobuf:"bytes,7,opt,name=concreteNodeParserSpec"`
+	Sentence *SentenceWindowNodeParserSpec `json:"sentence,omitempty" protobuf:"bytes,6,opt,name=sentence"`
 	// The specification for a mixed node parser, which will change depending on the document being processed
-	Mixed *MixedNodeParserSpec `json:"mixed,omitempty" protobuf:"bytes,6,opt,name=mixed"`
+	Mixed *MixedNodeParserSpec `json:"mixed,omitempty" protobuf:"bytes,7,opt,name=mixed"`
 }
 
 type ExtensionFilter struct {
@@ -207,8 +211,8 @@ type FilteredNodeParser struct {
 	Name *NameFilter `json:"name,omitempty" protobuf:"bytes,3,opt,name=name"`
 	// Filter documents by their metadata
 	Metadata map[string]string `json:"metadata,omitempty" protobuf:"bytes,4,opt,name=metadata"`
-	// The node parser definition
-	Parser ConcreteNodeParserSpec `json:"parser,omitempty" protobuf:"bytes,5,opt,name=parser"`
+	// The name of the node parser to use
+	NodeParser string `json:"nodeParser,omitempty" protobuf:"bytes,5,opt,name=nodeParser"`
 }
 
 // MixedNodeParserSpec defines a node parser that changes based on the document being parsed
@@ -217,7 +221,7 @@ type MixedNodeParserSpec struct {
 	// Each parser is matched sequentially in the order that they are listed
 	Parsers []FilteredNodeParser `json:"parsers,omitempty" protobuf:"bytes,1,opt,name=parsers"`
 	// The node parser to use for documents that are not matched to any of the parsers specified in Parsers
-	Fallback *ConcreteNodeParserSpec `json:"fallback,omitempty" protobuf:"bytes,2,opt,name=fallback"`
+	FallbackNodeParser *string `json:"fallbackNodeParser,omitempty" protobuf:"bytes,2,opt,name=fallbackNodeParser"`
 }
 
 type SentenceWindowNodeParserSpec struct {
@@ -314,8 +318,8 @@ type DocumentSpec struct {
 	// Indexes specifies the collection of indexes that the document will be added to.
 	// If empty, the document will be added to all indexes defined by the Knowledge Base
 	Indexes []string `json:"indexes,omitempty" protobuf:"bytes,5,opt,name=indexes"`
-	// NodeParser specifies document-specific options for breaking up the document into nodes
-	NodeParser *NodeParserSpec `json:"nodeParser,omitempty" protobuf:"bytes,6,opt,name=nodeParser"`
+	// NodeParser specifies the name of the document-specific node parser to use
+	NodeParser *string `json:"nodeParser,omitempty" protobuf:"bytes,6,opt,name=nodeParser"`
 	// EmbeddingModel specifies a document-specific embedding model
 	EmbeddingModel *ModelSpec `json:"embeddingModel,omitempty" protobuf:"bytes,7,opt,name=embeddingModel"`
 	// File specifies the configuration to read text from an external file

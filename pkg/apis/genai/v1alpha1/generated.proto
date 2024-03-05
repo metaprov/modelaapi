@@ -69,26 +69,6 @@ message CohereRerankSpec {
   optional int64 topN = 2;
 }
 
-// ConcreteNodeParserSpec defines how to break up a document into individual chunks of text
-message ConcreteNodeParserSpec {
-  // Indicate if previous/next relationships should be included between nodes. When unspecified, default to true
-  optional bool includeOrderRelationship = 1;
-
-  // Indicate if metadata should be included in the nodes. When unspecified, default to true
-  optional bool includeMetadata = 2;
-
-  // The type of node parser. When a specification for a text or sentence window node parser is provided, this field
-  // may be omitted. When not provided, the defaults for the specified node parser type will be used.
-  // When unspecified, default to sentence window
-  optional string type = 3;
-
-  // The specification for the text splitter to use as a node parser
-  optional TextSplitterSpec text = 4;
-
-  // The specification for the sentence window node parser
-  optional SentenceWindowNodeParserSpec sentence = 5;
-}
-
 // ConcreteQueryEngineSpec defines a query engine, which is used to retrieve context for a query
 // and synthesize a response. A concrete query engine may not utilize other concrete query engines
 message ConcreteQueryEngineSpec {
@@ -140,8 +120,8 @@ message DocumentSpec {
   // If empty, the document will be added to all indexes defined by the Knowledge Base
   repeated string indexes = 5;
 
-  // NodeParser specifies document-specific options for breaking up the document into nodes
-  optional NodeParserSpec nodeParser = 6;
+  // NodeParser specifies the name of the document-specific node parser to use
+  optional string nodeParser = 6;
 
   // EmbeddingModel specifies a document-specific embedding model
   optional ModelSpec embeddingModel = 7;
@@ -251,8 +231,8 @@ message FilteredNodeParser {
   // Filter documents by their metadata
   map<string, string> metadata = 4;
 
-  // The node parser definition
-  optional ConcreteNodeParserSpec parser = 5;
+  // The name of the node parser to use
+  optional string nodeParser = 5;
 }
 
 message FixedRecencyPostProcessorSpec {
@@ -312,6 +292,7 @@ message KeywordPostProcessorSpec {
   repeated string exclude = 2;
 }
 
+// +k8s:openapi-gen=true
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=knowledgebases,singular=knowledgebase,shortName=kb,categories={genai,modela}
 // +kubebuilder:object:root=true
@@ -321,6 +302,7 @@ message KeywordPostProcessorSpec {
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // KnowledgeBase represents a collection of documents that are stored in one or more indexes
 message KnowledgeBase {
+  // +k8s:openapi-gen=false
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
   optional KnowledgeBaseSpec spec = 2;
@@ -336,6 +318,7 @@ message KnowledgeBaseList {
   repeated KnowledgeBase items = 2;
 }
 
+// +k8s:openapi-gen=true
 message KnowledgeBaseSpec {
   // Owner specifies the name of the Account which the object belongs to
   // +kubebuilder:default:="no-one"
@@ -365,7 +348,7 @@ message KnowledgeBaseSpec {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 6;
 
-  // MetadataDatabase specifies a connection to a database used to store document metadata and statuses.
+  // MetadataDatabaseConnectionName specifies a connection to a database used to store document metadata and statuses.
   // When specified, any document metadata specified by Documents will be cleared and migrated to the table
   optional string metadataDatabaseConnectionName = 7;
 
@@ -378,9 +361,14 @@ message KnowledgeBaseSpec {
   // Documents specifies the collection of documents included in the Knowledge Base
   repeated DocumentSpec documents = 11;
 
-  // NodeParser specifies the default node parser for all documents.
-  // The node parser defines how to split up documents into individual chunks of text
-  optional NodeParserSpec nodeParser = 12;
+  // NodeParser defines the collection of node parsers available to documents prior to indexing.
+  // The node parsers define how to split up documents into individual chunks of text.
+  // If empty, the default node parser will be used
+  repeated NodeParserSpec nodeParsers = 12;
+
+  // DefaultNodeParser specifies the name of the default node parser to use.
+  // If unspecified, the first node parser defined in NodeParsers will be used
+  optional string defaultNodeParser = 13;
 }
 
 message KnowledgeBaseStatus {
@@ -558,7 +546,7 @@ message MixedNodeParserSpec {
   repeated FilteredNodeParser parsers = 1;
 
   // The node parser to use for documents that are not matched to any of the parsers specified in Parsers
-  optional ConcreteNodeParserSpec fallback = 2;
+  optional string fallbackNodeParser = 2;
 }
 
 // ModelMetrics contains the metrics for a single model (collected by Prometheus)
@@ -646,14 +634,32 @@ message NameFilter {
   optional string equals = 2;
 }
 
-// NodeParserSpec defines how to break up a document into individual chunks of text.
-// A dynamic node parser may also specify a mixed parser, which can changes between multiple
-// concrete node parsers depending on the document being processed
+// NodeParserSpec defines how to break up a document into individual chunks of text
 message NodeParserSpec {
-  optional ConcreteNodeParserSpec concreteNodeParserSpec = 7;
+  // The name of the node parser
+  // +kubebuilder:validation:Required
+  // +required
+  optional string name = 1;
+
+  // Indicate if previous/next relationships should be included between nodes. When unspecified, default to true
+  optional bool includeOrderRelationship = 2;
+
+  // Indicate if metadata should be included in the nodes. When unspecified, default to true
+  optional bool includeMetadata = 3;
+
+  // The type of node parser. When a specification for a text or sentence window node parser is provided, this field
+  // may be omitted. When not provided, the defaults for the specified node parser type will be used.
+  // When unspecified, default to sentence window
+  optional string type = 4;
+
+  // The specification for the text splitter to use as a node parser
+  optional TextSplitterSpec text = 5;
+
+  // The specification for the sentence window node parser
+  optional SentenceWindowNodeParserSpec sentence = 6;
 
   // The specification for a mixed node parser, which will change depending on the document being processed
-  optional MixedNodeParserSpec mixed = 6;
+  optional MixedNodeParserSpec mixed = 7;
 }
 
 // NodePostProcessor defines a node post-processor, which mutates the nodes retrieved

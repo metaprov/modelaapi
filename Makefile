@@ -100,7 +100,6 @@ install-gen:
 	go install k8s.io/code-generator/cmd/deepcopy-gen   
 	go install k8s.io/code-generator/cmd/go-to-protobuf  
 	go install k8s.io/code-generator/cmd/informer-gen  
-	go install k8s.io/code-generator/cmd/openapi-gen   
 	go install k8s.io/code-generator/cmd/set-gen
 	go install k8s.io/code-generator/cmd/conversion-gen  
 	go install k8s.io/code-generator/cmd/defaulter-gen  

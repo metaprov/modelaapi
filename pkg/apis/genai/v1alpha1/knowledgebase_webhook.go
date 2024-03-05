@@ -1,6 +1,7 @@
 package v1alpha1
 
 import (
+	"fmt"
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/runtime"
@@ -21,6 +22,15 @@ func (kb *KnowledgeBase) Default() {
 
 var _ webhook.Validator = &KnowledgeBase{}
 
+func (kb *KnowledgeBase) resolveNodeParser(name string) bool {
+	for _, parser := range kb.Spec.NodeParsers {
+		if parser.Name == name {
+			return true
+		}
+	}
+	return false
+}
+
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
 func (kb *KnowledgeBase) ValidateCreate() error {
 	return kb.validate()
@@ -39,14 +49,16 @@ func (kb *KnowledgeBase) validate() error {
 	}
 
 	return apierrors.NewInvalid(
-		schema.GroupKind{Group: "data.modela.ai", Kind: "KnowledgeBase"},
+		schema.GroupKind{Group: "genai.modela.ai", Kind: "KnowledgeBase"},
 		kb.Name, allErrs)
 }
 
 func (kb *KnowledgeBase) validateSpec(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	allErrs = append(allErrs, kb.validateDocuments(fldPath.Child("documents"))...)
-	allErrs = append(allErrs, kb.validateNodeParser(fldPath.Child("nodeParser"), kb.Spec.NodeParser)...)
+	for i, parser := range kb.Spec.NodeParsers {
+		allErrs = append(allErrs, kb.validateNodeParser(fldPath.Child("nodeParsers").Index(i), parser)...)
+	}
 	return allErrs
 }
 
@@ -78,8 +90,9 @@ func (kb *KnowledgeBase) validateDocuments(fldPath *field.Path) field.ErrorList 
 		if specCount > 1 {
 			allErrs = append(allErrs, field.Invalid(fldPath.Key(doc.Name), doc, "Exactly one reader specification must be provided"))
 		}
-		if doc.NodeParser != nil {
-			allErrs = append(allErrs, kb.validateNodeParser(fldPath.Child("nodeParser"), *doc.NodeParser)...)
+		if doc.NodeParser != nil && !kb.resolveNodeParser(*doc.NodeParser) {
+			allErrs = append(allErrs, field.Invalid(fldPath.Child(*doc.NodeParser), *doc.NodeParser,
+				fmt.Sprintf("The reference to the node parser \"%s\" could not be resolved", *doc.NodeParser)))
 		}
 	}
 
@@ -99,6 +112,10 @@ func (kb *KnowledgeBase) validateRepositoryReader(fldPath *field.Path, spec Repo
 
 func (kb *KnowledgeBase) validateNodeParser(fldPath *field.Path, spec NodeParserSpec) field.ErrorList {
 	var allErrs field.ErrorList
+	if len(spec.Name) == 0 {
+		allErrs = append(allErrs, field.Invalid(fldPath.Child("name"), spec.Name, "A name is required"))
+	}
+
 	if spec.Mixed != nil && spec.Text != nil && spec.Sentence != nil {
 		allErrs = append(allErrs, field.Invalid(fldPath, spec, "Multiple node parser specifications must not be provided"))
 		return allErrs
@@ -107,13 +124,13 @@ func (kb *KnowledgeBase) validateNodeParser(fldPath *field.Path, spec NodeParser
 	if spec.Mixed != nil {
 		allErrs = append(allErrs, kb.validateMixedNodeParser(fldPath.Child("mixed"), *spec.Mixed)...)
 	} else {
-		allErrs = append(allErrs, kb.validateConcreteNodeParser(fldPath, spec.ConcreteNodeParserSpec)...)
+		allErrs = append(allErrs, kb.validateConcreteNodeParser(fldPath, spec)...)
 	}
 
 	return allErrs
 }
 
-func (kb *KnowledgeBase) validateConcreteNodeParser(fldPath *field.Path, spec ConcreteNodeParserSpec) field.ErrorList {
+func (kb *KnowledgeBase) validateConcreteNodeParser(fldPath *field.Path, spec NodeParserSpec) field.ErrorList {
 	var allErrs field.ErrorList
 	if spec.Text != nil && spec.Sentence != nil {
 		allErrs = append(allErrs, field.Invalid(fldPath, spec, "Multiple node parser specifications must not be provided"))
@@ -123,29 +140,34 @@ func (kb *KnowledgeBase) validateConcreteNodeParser(fldPath *field.Path, spec Co
 	if spec.Text != nil {
 		allErrs = append(allErrs, kb.validateTextSplitter(fldPath.Child("text"), *spec.Text)...)
 	}
-
 	return allErrs
 }
 
 func (kb *KnowledgeBase) validateMixedNodeParser(fldPath *field.Path, spec MixedNodeParserSpec) field.ErrorList {
 	var allErrs field.ErrorList
-	if spec.Fallback != nil {
-		allErrs = append(allErrs, kb.validateConcreteNodeParser(fldPath, *spec.Fallback)...)
+	if spec.FallbackNodeParser != nil && !kb.resolveNodeParser(*spec.FallbackNodeParser) {
+		allErrs = append(allErrs, field.Invalid(fldPath.Child("fallbackNodeParser"), *spec.FallbackNodeParser,
+			fmt.Sprintf("The reference to the node parser \"%s\" could not be resolved", *spec.FallbackNodeParser)))
 	}
+
 	for i, parser := range spec.Parsers {
+		pFldPath := fldPath.Child("parsers").Index(i)
 		if parser.Extension != nil {
 			if len(parser.Extension.Exclude) > 0 && len(parser.Extension.Include) > 0 {
-				allErrs = append(allErrs, field.Invalid(fldPath.Index(i).Child("extension"), parser.Extension,
+				allErrs = append(allErrs, field.Invalid(pFldPath.Child("extension"), parser.Extension,
 					"Only one of include or exclude may be specified"))
 			}
 		}
 		if parser.Name != nil {
 			if parser.Name.Contains != nil && parser.Name.Equals != nil {
-				allErrs = append(allErrs, field.Invalid(fldPath.Index(i).Child("name"), parser.Extension,
+				allErrs = append(allErrs, field.Invalid(pFldPath.Child("name"), parser.Name,
 					"Only one of contains or equals may be specified"))
 			}
 		}
-		allErrs = append(allErrs, kb.validateConcreteNodeParser(fldPath, parser.Parser)...)
+		if !kb.resolveNodeParser(parser.NodeParser) {
+			allErrs = append(allErrs, field.Invalid(pFldPath.Child("nodeParser"), parser.NodeParser,
+				fmt.Sprintf("The reference to the node parser \"%s\" could not be resolved", parser.NodeParser)))
+		}
 	}
 	return allErrs
 }
