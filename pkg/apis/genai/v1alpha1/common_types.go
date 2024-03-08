@@ -36,15 +36,6 @@ type ResponseSynthesizerSpec struct {
 	Mode *ResponseMode `json:"mode,omitempty" protobuf:"bytes,1,opt,name=mode"`
 	// The LLM to use when synthesizing responses. If unspecified, use the default provided by the parent specification
 	Model *ModelSpec `json:"model,omitempty" protobuf:"bytes,2,opt,name=model"`
-	// The specification for answer filtering. If unspecified, answer filtering will be disabled.
-	// Compatible only with refine and compact response modes
-	AnswerFiltering *AnswerFilteringSpec `json:"answerFiltering,omitempty" protobuf:"bytes,3,opt,name=answerFiltering"`
-}
-
-type AnswerFilteringSpec struct {
-	// Indicates if answer filtering is enabled
-	Enabled bool `json:"enabled" protobuf:"varint,1,opt,name=enabled"`
-	// The LLM to use when filtering answers. If unspecified, default to the LLM defined
-	// by the response synthesizer
-	Model *ModelSpec `json:"model,omitempty" protobuf:"bytes,2,opt,name=model"`
+	// Indicates if answer filtering is enabled. Compatible only with refine and compact response modes
+	AnswerFiltering *bool `json:"answerFiltering,omitempty" protobuf:"bytes,3,opt,name=answerFiltering"`
 }

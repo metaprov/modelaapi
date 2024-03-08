@@ -308,32 +308,9 @@ spec:
                             responses
                           properties:
                             answerFiltering:
-                              description: The specification for answer filtering.
-                                If unspecified, answer filtering will be disabled.
+                              description: Indicates if answer filtering is enabled.
                                 Compatible only with refine and compact response modes
-                              properties:
-                                enabled:
-                                  description: Indicates if answer filtering is enabled
-                                  type: boolean
-                                model:
-                                  description: The LLM to use when filtering answers.
-                                    If unspecified, default to the LLM defined by
-                                    the response synthesizer
-                                  properties:
-                                    connectionName:
-                                      description: ConnectionName specifies the name
-                                        of a connection to a foundational model provider
-                                      type: string
-                                    model:
-                                      description: Model specifies the vendor-specific
-                                        model type. If unspecified, use the model
-                                        provided by the `model` option of the connection,
-                                        or choose the default model for the vendor
-                                      type: string
-                                  type: object
-                              required:
-                              - enabled
-                              type: object
+                              type: boolean
                             mode:
                               description: The method to use when synthesizing responses.
                                 If unspecified, default to `refine`
@@ -441,32 +418,9 @@ spec:
                             responses
                           properties:
                             answerFiltering:
-                              description: The specification for answer filtering.
-                                If unspecified, answer filtering will be disabled.
+                              description: Indicates if answer filtering is enabled.
                                 Compatible only with refine and compact response modes
-                              properties:
-                                enabled:
-                                  description: Indicates if answer filtering is enabled
-                                  type: boolean
-                                model:
-                                  description: The LLM to use when filtering answers.
-                                    If unspecified, default to the LLM defined by
-                                    the response synthesizer
-                                  properties:
-                                    connectionName:
-                                      description: ConnectionName specifies the name
-                                        of a connection to a foundational model provider
-                                      type: string
-                                    model:
-                                      description: Model specifies the vendor-specific
-                                        model type. If unspecified, use the model
-                                        provided by the `model` option of the connection,
-                                        or choose the default model for the vendor
-                                      type: string
-                                  type: object
-                              required:
-                              - enabled
-                              type: object
+                              type: boolean
                             mode:
                               description: The method to use when synthesizing responses.
                                 If unspecified, default to `refine`
@@ -596,32 +550,9 @@ spec:
                             documents
                           properties:
                             answerFiltering:
-                              description: The specification for answer filtering.
-                                If unspecified, answer filtering will be disabled.
+                              description: Indicates if answer filtering is enabled.
                                 Compatible only with refine and compact response modes
-                              properties:
-                                enabled:
-                                  description: Indicates if answer filtering is enabled
-                                  type: boolean
-                                model:
-                                  description: The LLM to use when filtering answers.
-                                    If unspecified, default to the LLM defined by
-                                    the response synthesizer
-                                  properties:
-                                    connectionName:
-                                      description: ConnectionName specifies the name
-                                        of a connection to a foundational model provider
-                                      type: string
-                                    model:
-                                      description: Model specifies the vendor-specific
-                                        model type. If unspecified, use the model
-                                        provided by the `model` option of the connection,
-                                        or choose the default model for the vendor
-                                      type: string
-                                  type: object
-                              required:
-                              - enabled
-                              type: object
+                              type: boolean
                             mode:
                               description: The method to use when synthesizing responses.
                                 If unspecified, default to `refine`
