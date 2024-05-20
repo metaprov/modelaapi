@@ -17,7 +17,7 @@ type QueryEngineSpec struct {
 	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
 
 	// Retriever augments a query with context from a retriever
-	Retriever *RetrieverQueryEngine `json:"retriever,omitempty" protobuf:"bytes,2,opt,name=retriever"`
+	Retriever *RetrieverQueryEngineSpec `json:"retriever,omitempty" protobuf:"bytes,2,opt,name=retriever"`
 
 	// Router chooses one or more query engine(s) to route requests to
 	Router *RouterQueryEngineSpec `json:"router,omitempty" protobuf:"bytes,3,opt,name=router"`
@@ -59,18 +59,18 @@ type SubQuestionQueryEngineSpec struct {
 	Tools []QueryEngineToolSpec `json:"tools,omitempty" protobuf:"bytes,1,opt,name=tools"`
 	// The response synthesizer to use when generating responses
 	ResponseSynthesizer *ResponseSynthesizerSpec `json:"responseSynthesizer,omitempty" protobuf:"bytes,2,opt,name=responseSynthesizer"`
-	// The large language model to use when generating questions
+	// The model to use when generating questions
 	Model *ModelSpec `json:"model,omitempty" protobuf:"bytes,3,opt,name=model"`
 }
 
 // RetrieverQueryEngine augments a query with a retriever
-type RetrieverQueryEngine struct {
+type RetrieverQueryEngineSpec struct {
 	// The response synthesizer to use when generating responses
 	ResponseSynthesizer *ResponseSynthesizerSpec `json:"responseSynthesizer,omitempty" protobuf:"bytes,1,opt,name=responseSynthesizer"`
-	// The name of the retriever to use when generating responses
-	Retriever string `json:"string,omitempty" protobuf:"bytes,2,opt,name=string"`
+	// The name of the retriever to use when retrieving context
+	Retriever string `json:"retriever,omitempty" protobuf:"bytes,2,opt,name=retriever"`
 	// The collection of node postprocessors
-	PostProcessors []NodePostProcessor `json:"postProcessors,omitempty" protobuf:"bytes,3,opt,name=postProcessors"`
+	NodePostProcessors []NodePostProcessor `json:"nodePostProcessors,omitempty" protobuf:"bytes,3,opt,name=nodePostProcessors"`
 }
 
 // KnowledgeGraphQueryEngine augments a query with information from a knowledge graph

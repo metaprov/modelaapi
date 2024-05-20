@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for 
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modelaapi.services.llm.v1
  * @enhanceable
  * @public
  */
@@ -8,7 +8,7 @@
 // versions:
 // 	protoc-gen-grpc-web v1.4.2
 // 	protoc              v3.20.3
-// source: github.com/metaprov/modelaapi/services/genai/v1/genai.proto
+// source: github.com/metaprov/modelaapi/services/llm/v1/llm.proto
 
 
 /* eslint-disable */
@@ -39,133 +39,219 @@ export class LLMServiceClient {
     this.options_ = options;
   }
 
-  methodDescriptorRefresh = new grpcWeb.MethodDescriptor(
-    '/LLMService/Refresh',
+  methodDescriptorListLLMs = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.llm.v1.LLMService/ListLLMs',
     grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_llm_v1_llm_pb.RefreshRequest,
-    github_com_metaprov_modelaapi_services_llm_v1_llm_pb.RefreshResponse,
-    (request: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.RefreshRequest) => {
+    github_com_metaprov_modelaapi_services_llm_v1_llm_pb.ListLLMsRequest,
+    github_com_metaprov_modelaapi_services_llm_v1_llm_pb.ListLLMsResponse,
+    (request: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.ListLLMsRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modelaapi_services_llm_v1_llm_pb.RefreshResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_llm_v1_llm_pb.ListLLMsResponse.deserializeBinary
   );
 
-  refresh(
-    request: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.RefreshRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_llm_v1_llm_pb.RefreshResponse>;
+  listLLMs(
+    request: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.ListLLMsRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_llm_v1_llm_pb.ListLLMsResponse>;
 
-  refresh(
-    request: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.RefreshRequest,
+  listLLMs(
+    request: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.ListLLMsRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.RefreshResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_llm_v1_llm_pb.RefreshResponse>;
+               response: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.ListLLMsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_llm_v1_llm_pb.ListLLMsResponse>;
 
-  refresh(
-    request: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.RefreshRequest,
+  listLLMs(
+    request: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.ListLLMsRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.RefreshResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.ListLLMsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/LLMService/Refresh',
+          '/github.com.metaprov.modelaapi.services.llm.v1.LLMService/ListLLMs',
         request,
         metadata || {},
-        this.methodDescriptorRefresh,
+        this.methodDescriptorListLLMs,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/LLMService/Refresh',
+      '/github.com.metaprov.modelaapi.services.llm.v1.LLMService/ListLLMs',
     request,
     metadata || {},
-    this.methodDescriptorRefresh);
+    this.methodDescriptorListLLMs);
   }
 
-  methodDescriptorDelete = new grpcWeb.MethodDescriptor(
-    '/LLMService/Delete',
+  methodDescriptorCreateLLM = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.llm.v1.LLMService/CreateLLM',
     grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_llm_v1_llm_pb.DeleteRequest,
-    github_com_metaprov_modelaapi_services_llm_v1_llm_pb.DeleteResponse,
-    (request: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.DeleteRequest) => {
+    github_com_metaprov_modelaapi_services_llm_v1_llm_pb.CreateLLMRequest,
+    github_com_metaprov_modelaapi_services_llm_v1_llm_pb.CreateLLMResponse,
+    (request: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.CreateLLMRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modelaapi_services_llm_v1_llm_pb.DeleteResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_llm_v1_llm_pb.CreateLLMResponse.deserializeBinary
   );
 
-  delete(
-    request: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.DeleteRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_llm_v1_llm_pb.DeleteResponse>;
+  createLLM(
+    request: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.CreateLLMRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_llm_v1_llm_pb.CreateLLMResponse>;
 
-  delete(
-    request: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.DeleteRequest,
+  createLLM(
+    request: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.CreateLLMRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.DeleteResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_llm_v1_llm_pb.DeleteResponse>;
+               response: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.CreateLLMResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_llm_v1_llm_pb.CreateLLMResponse>;
 
-  delete(
-    request: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.DeleteRequest,
+  createLLM(
+    request: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.CreateLLMRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.DeleteResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.CreateLLMResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/LLMService/Delete',
+          '/github.com.metaprov.modelaapi.services.llm.v1.LLMService/CreateLLM',
         request,
         metadata || {},
-        this.methodDescriptorDelete,
+        this.methodDescriptorCreateLLM,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/LLMService/Delete',
+      '/github.com.metaprov.modelaapi.services.llm.v1.LLMService/CreateLLM',
     request,
     metadata || {},
-    this.methodDescriptorDelete);
+    this.methodDescriptorCreateLLM);
   }
 
-  methodDescriptorShutdown = new grpcWeb.MethodDescriptor(
-    '/LLMService/Shutdown',
+  methodDescriptorGetLLM = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.llm.v1.LLMService/GetLLM',
     grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_llm_v1_llm_pb.ShutdownRequest,
-    github_com_metaprov_modelaapi_services_llm_v1_llm_pb.ShutdownResponse,
-    (request: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.ShutdownRequest) => {
+    github_com_metaprov_modelaapi_services_llm_v1_llm_pb.GetLLMRequest,
+    github_com_metaprov_modelaapi_services_llm_v1_llm_pb.GetLLMResponse,
+    (request: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.GetLLMRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modelaapi_services_llm_v1_llm_pb.ShutdownResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_llm_v1_llm_pb.GetLLMResponse.deserializeBinary
   );
 
-  shutdown(
-    request: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.ShutdownRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_llm_v1_llm_pb.ShutdownResponse>;
+  getLLM(
+    request: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.GetLLMRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_llm_v1_llm_pb.GetLLMResponse>;
 
-  shutdown(
-    request: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.ShutdownRequest,
+  getLLM(
+    request: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.GetLLMRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.ShutdownResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_llm_v1_llm_pb.ShutdownResponse>;
+               response: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.GetLLMResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_llm_v1_llm_pb.GetLLMResponse>;
 
-  shutdown(
-    request: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.ShutdownRequest,
+  getLLM(
+    request: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.GetLLMRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.ShutdownResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.GetLLMResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/LLMService/Shutdown',
+          '/github.com.metaprov.modelaapi.services.llm.v1.LLMService/GetLLM',
         request,
         metadata || {},
-        this.methodDescriptorShutdown,
+        this.methodDescriptorGetLLM,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/LLMService/Shutdown',
+      '/github.com.metaprov.modelaapi.services.llm.v1.LLMService/GetLLM',
     request,
     metadata || {},
-    this.methodDescriptorShutdown);
+    this.methodDescriptorGetLLM);
+  }
+
+  methodDescriptorUpdateLLM = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.llm.v1.LLMService/UpdateLLM',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_llm_v1_llm_pb.UpdateLLMRequest,
+    github_com_metaprov_modelaapi_services_llm_v1_llm_pb.UpdateLLMResponse,
+    (request: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.UpdateLLMRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_llm_v1_llm_pb.UpdateLLMResponse.deserializeBinary
+  );
+
+  updateLLM(
+    request: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.UpdateLLMRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_llm_v1_llm_pb.UpdateLLMResponse>;
+
+  updateLLM(
+    request: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.UpdateLLMRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.UpdateLLMResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_llm_v1_llm_pb.UpdateLLMResponse>;
+
+  updateLLM(
+    request: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.UpdateLLMRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.UpdateLLMResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.llm.v1.LLMService/UpdateLLM',
+        request,
+        metadata || {},
+        this.methodDescriptorUpdateLLM,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.llm.v1.LLMService/UpdateLLM',
+    request,
+    metadata || {},
+    this.methodDescriptorUpdateLLM);
+  }
+
+  methodDescriptorDeleteLLM = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.llm.v1.LLMService/DeleteLLM',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_llm_v1_llm_pb.DeleteLLMRequest,
+    github_com_metaprov_modelaapi_services_llm_v1_llm_pb.DeleteLLMResponse,
+    (request: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.DeleteLLMRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_llm_v1_llm_pb.DeleteLLMResponse.deserializeBinary
+  );
+
+  deleteLLM(
+    request: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.DeleteLLMRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_llm_v1_llm_pb.DeleteLLMResponse>;
+
+  deleteLLM(
+    request: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.DeleteLLMRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.DeleteLLMResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_llm_v1_llm_pb.DeleteLLMResponse>;
+
+  deleteLLM(
+    request: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.DeleteLLMRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_llm_v1_llm_pb.DeleteLLMResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.llm.v1.LLMService/DeleteLLM',
+        request,
+        metadata || {},
+        this.methodDescriptorDeleteLLM,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.llm.v1.LLMService/DeleteLLM',
+    request,
+    metadata || {},
+    this.methodDescriptorDeleteLLM);
   }
 
 }

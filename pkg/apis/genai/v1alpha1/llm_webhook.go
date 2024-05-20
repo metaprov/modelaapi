@@ -105,7 +105,7 @@ func (llm *LLM) validateQueryEngines(fldPath *field.Path) field.ErrorList {
 					fmt.Sprintf("The reference to the retriever \"%s\" could not be resolved", engine.Retriever.Retriever)))
 			}
 			allErrs = append(allErrs, llm.validateNodePostProcessors(
-				fldPath.Child("retriever", "postProcessors"), engine.Retriever.PostProcessors)...)
+				fldPath.Child("retriever", "postProcessors"), engine.Retriever.NodePostProcessors)...)
 		}
 		if engine.Router != nil {
 			specCount++

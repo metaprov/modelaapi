@@ -18,22 +18,13 @@ import "k8s.io/apimachinery/pkg/runtime/schema/generated.proto";
 // Package-wide variables from generator "generated".
 option go_package = "github.com/metaprov/modelaapi/pkg/apis/genai/v1alpha1";
 
-message AnswerFilteringSpec {
-  // Indicates if answer filtering is enabled
-  optional bool enabled = 1;
-
-  // The LLM to use when filtering answers. If unspecified, default to the LLM defined
-  // by the response synthesizer
-  optional ModelSpec model = 2;
-}
-
 // AutoVectorRetrieverSpec defines a vector retriever which automatically configures the request to a vector index
 // (top K, metadata filters, query embedding) through an LLM
 message AutoVectorRetrieverSpec {
   // Indicates if automatic query generation is enabled
   optional bool enabled = 1;
 
-  // The LLM to use when generating queries. If unspecified, use the default provided by the parent specification
+  // The LLM to use when generating queries. If unspecified, use the default provided by model server
   optional ModelSpec model = 2;
 
   // The maximum top K allowed. The top K set by the LLM will be clamped to this value
@@ -67,23 +58,6 @@ message CohereRerankSpec {
 
   // The top number of nodes to return. If unspecified, default to 2
   optional int64 topN = 2;
-}
-
-// ConcreteQueryEngineSpec defines a query engine, which is used to retrieve context for a query
-// and synthesize a response. A concrete query engine may not utilize other concrete query engines
-message ConcreteQueryEngineSpec {
-  // Retriever augments a query with context from a retriever
-  optional RetrieverQueryEngine retriever = 1;
-}
-
-// ConcreteRetrieverSpec defines a retriever, which collects text chunks relevant to a query.
-// A concrete retriever may not utilize other retrievers
-message ConcreteRetrieverSpec {
-  // Vector retrieves nodes from a vector index
-  optional VectorRetrieverSpec vector = 1;
-
-  // DocumentSummary retrieves nodes from a document summary index
-  optional DocumentSummaryIndexSpec documentSummary = 2;
 }
 
 message DatabaseReaderSpec {
@@ -172,8 +146,8 @@ message DocumentSummaryRetrieverSpec {
   // The reference to the vector store index
   optional IndexReference index = 1;
 
-  // The embedding or large language model to use
-  optional ModelSpec embeddingModel = 2;
+  // The embedding or large language model to use. If unspecified, use the default provided by model server
+  optional ModelSpec model = 2;
 
   // The top K nodes to retrieve. If unspecified, default to 1
   optional int64 topK = 3;
@@ -242,14 +216,21 @@ message FixedRecencyPostProcessorSpec {
 
 // FusionRetrieverSpec defines a retriever which can combine the results from multiple concrete retrievers
 message FusionRetrieverSpec {
-  // The collection of retrievers
-  repeated ConcreteRetrieverSpec retrievers = 1;
+  // The collection of retriever names
+  repeated string retrievers = 1;
+
+  // The embedding or large language model to use when generating questions.
+  // If unspecified, use the default provided by model server
+  optional ModelSpec model = 2;
 
   // The number of queries to generate for the input query. If unspecified, default to 4
-  optional int64 queries = 2;
+  optional int64 queries = 3;
 
-  // Indicates if reciprocal rank fusion will be applied. If indicates, a simple technique will be used instead
-  optional bool reciprocalRank = 3;
+  // The top K nodes to retrieve. If unspecified, default to 1
+  optional int64 topK = 4;
+
+  // The fusion retriever mode. If unspecified, default to simple
+  optional string mode = 5;
 }
 
 // HierarchicalSplitterSpec defines how to split text documents into a recursive hierarchy of nodes
@@ -282,6 +263,19 @@ message IndexSpec {
 
   // DocumentSummary stores documents by their summaries
   optional DocumentSummaryIndexSpec documentSummary = 3;
+
+  // TreeIndex builds tree-structured index, where each node is a summary of the children nodes
+  optional TreeIndexSpec treeIndex = 4;
+}
+
+message IndexStatus {
+  // The unique name of the index
+  // +kubebuilder:validation:Required
+  // +required
+  optional string name = 1;
+
+  // The number of documents ingested in the index
+  optional int32 documents = 2;
 }
 
 message KeywordPostProcessorSpec {
@@ -390,14 +384,17 @@ message KnowledgeBaseStatus {
   // In the case that a metadata database is defined, the collection will be empty
   repeated DocumentStatus documents = 5;
 
+  // Indexes contains the collection of statuses for each index defined by the Knowledge Base
+  repeated IndexStatus indexes = 6;
+
   // The last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 6;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 7;
 
   // +kubebuilder:validation:Optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 7;
+  repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 8;
 }
 
 // KnowledgeGraphQueryEngine augments a query with information from a knowledge graph
@@ -405,7 +402,7 @@ message KnowledgeGraphQueryEngine {
 }
 
 // +kubebuilder:subresource:status
-// +kubebuilder:resource:path=llms,singular=genai,shortName=genai,categories={genai,modela}
+// +kubebuilder:resource:path=llms,singular=llm,shortName=llm,categories={llm,modela}
 // +kubebuilder:object:root=true
 // +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1
@@ -448,7 +445,7 @@ message LLMAccessSpec {
 message LLMList {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
-  repeated KnowledgeBase items = 2;
+  repeated LLM items = 2;
 }
 
 message LLMRerankSpec {
@@ -487,9 +484,15 @@ message LLMSpec {
   // The large language models served by the proxy
   repeated ModelServingSpec models = 5;
 
+  // The query engines available to the models
+  repeated QueryEngineSpec queryEngines = 6;
+
+  // The collection of retrievers available to the query engines
+  repeated RetrieverSpec retrievers = 7;
+
   // The configuration for Alerts generated by the proxy
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 6;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 8;
 }
 
 message LLMStatus {
@@ -507,14 +510,26 @@ message LLMStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time deployedAt = 4;
 
+  // The reference to the Kubernetes Deployment that manages the pods for the prediction proxy
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference deploymentRef = 5;
+
+  // The reference to the Kubernetes Service which exposes the prediction proxy
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference serviceRef = 6;
+
+  // The details of the failure that occurred while deploying the prediction proxy
+  // +kubebuilder:validation:Optional
+  optional string failureMessage = 7;
+
   // The last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 6;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 8;
 
   // +kubebuilder:validation:Optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 7;
+  repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 9;
 }
 
 message LengthFilter {
@@ -530,7 +545,7 @@ message LongContextReorderSpec {
 
 message MetadataKeyInfo {
   // The name of the key
-  optional string model = 1;
+  optional string name = 1;
 
   // The key type
   optional string type = 2;
@@ -574,9 +589,9 @@ message ModelServingSpec {
   // +required
   optional string name = 1;
 
-  // The query engine used to augment requests to the LLM.
+  // The name of the query engine used to augment requests to the LLM.
   // If unspecified, no augmentation will be performed
-  optional QueryEngineSpec queryEngine = 2;
+  optional string queryEngine = 2;
 
   // The path suffix where the model will be served.
   // If unspecified, the default suffix for the LLM provider will be used
@@ -593,7 +608,7 @@ message ModelServingSpec {
   optional ModelSpec model = 6;
 }
 
-// ModelSpec specifies the configuration for an LLM or embedding model
+// ModelSpec specifies the configuration for a language or embedding model
 message ModelSpec {
   // ConnectionName specifies the name of a connection to a foundational model provider
   optional string connectionName = 1;
@@ -609,14 +624,6 @@ message ModelStatus {
   // +kubebuilder:validation:Required
   // +required
   optional string name = 1;
-
-  // The reference to the Kubernetes Deployment that manages the pods for the prediction proxy
-  // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference deploymentRef = 2;
-
-  // The reference to the Kubernetes Service which exposes the prediction proxy externally
-  // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference serviceRef = 3;
 
   // The details of the last failure that occurred while deploying the model
   // +kubebuilder:validation:Optional
@@ -636,7 +643,7 @@ message NameFilter {
 
 // NodeParserSpec defines how to break up a document into individual chunks of text
 message NodeParserSpec {
-  // The name of the node parser
+  // The unique name of the node parser
   // +kubebuilder:validation:Required
   // +required
   optional string name = 1;
@@ -694,20 +701,26 @@ message NodePostProcessor {
 }
 
 // QueryEngineSpec defines a query engine, which is used to retrieve context for a query
-// and synthesize a response, or routes the request to other query engines based on the query
+// and synthesize a response. A query engine may also route queries to other query engines
 message QueryEngineSpec {
-  optional ConcreteQueryEngineSpec concreteQueryEngineSpec = 1;
+  // The unique name of the query engine
+  // +kubebuilder:validation:Required
+  // +required
+  optional string name = 1;
+
+  // Retriever augments a query with context from a retriever
+  optional RetrieverQueryEngineSpec retriever = 2;
 
   // Router chooses one or more query engine(s) to route requests to
-  optional RouterQueryEngineSpec router = 2;
+  optional RouterQueryEngineSpec router = 3;
 
   // SubQuestion routes sub-questions generated for a query to one or more query engine(s)
-  optional SubQuestionQueryEngineSpec subQuestion = 3;
+  optional SubQuestionQueryEngineSpec subQuestion = 4;
 }
 
 message QueryEngineToolSpec {
-  // The specification for the query engine
-  optional ConcreteQueryEngineSpec queryEngine = 1;
+  // The name of the query engine
+  optional string queryEngine = 1;
 
   // The name of the query engine
   optional string name = 2;
@@ -757,37 +770,46 @@ message ResponseSynthesizerSpec {
   // The LLM to use when synthesizing responses. If unspecified, use the default provided by the parent specification
   optional ModelSpec model = 2;
 
-  // The specification for answer filtering. If unspecified, answer filtering will be disabled.
-  // Compatible only with refine and compact response modes
-  optional AnswerFilteringSpec answerFiltering = 3;
+  // Indicates if answer filtering is enabled. Compatible only with refine and compact response modes
+  optional bool answerFiltering = 3;
 }
 
 // RetrieverQueryEngine augments a query with a retriever
-message RetrieverQueryEngine {
+message RetrieverQueryEngineSpec {
   // The response synthesizer to use when generating responses
   optional ResponseSynthesizerSpec responseSynthesizer = 1;
 
-  // The retriever to use when generating responses
-  optional RetrieverSpec retriever = 2;
+  // The name of the retriever to use when retrieving context
+  optional string retriever = 2;
 
   // The collection of node postprocessors
-  repeated NodePostProcessor postProcessors = 3;
+  repeated NodePostProcessor nodePostProcessors = 3;
 }
 
-// RetrieverSpec defines a retriever, which collects text chunks relevant to a query
+// RetrieverSpec defines a retriever, which collects text chunks relevant to a query.
+// A retriever may also route queries to other retrievers
 message RetrieverSpec {
-  optional ConcreteRetrieverSpec concreteRetrieverSpec = 1;
+  // The unique name of the retriever
+  // +kubebuilder:validation:Required
+  // +required
+  optional string name = 1;
+
+  // Vector retrieves nodes from a vector index
+  optional VectorRetrieverSpec vector = 2;
+
+  // DocumentSummary retrieves nodes from a document summary index
+  optional DocumentSummaryRetrieverSpec documentSummary = 3;
 
   // Router chooses one or more retriever(s) to route requests to
-  optional RouterRetrieverSpec router = 2;
+  optional RouterRetrieverSpec router = 4;
 
   // Fusion combines the results of one or more retriever(s)
-  optional FusionRetrieverSpec fusion = 3;
+  optional FusionRetrieverSpec fusion = 5;
 }
 
 message RetrieverToolSpec {
-  // The specification for the retriever
-  optional ConcreteRetrieverSpec retriever = 1;
+  // The name of the retriever
+  optional string retriever = 1;
 
   // The name of the retriever
   optional string name = 2;
@@ -886,7 +908,7 @@ message SubQuestionQueryEngineSpec {
   // The response synthesizer to use when generating responses
   optional ResponseSynthesizerSpec responseSynthesizer = 2;
 
-  // The large language model to use when genreating questions
+  // The model to use when generating questions
   optional ModelSpec model = 3;
 }
 
@@ -932,6 +954,15 @@ message TokenSplitterSpec {
 
   // The configuration for hierarchical splitting. When unspecified, hierarchical splitting is disabled
   optional HierarchicalSplitterSpec hierarchical = 4;
+}
+
+// TreeIndexSpec specifies the configuration for a tree index
+message TreeIndexSpec {
+  // The LLM to use when summarizing and inserting nodes
+  optional ModelSpec model = 1;
+
+  // The number of children each node should have
+  optional int64 children = 2;
 }
 
 // VectorIndexSpec specifies the configuration for a vector store index

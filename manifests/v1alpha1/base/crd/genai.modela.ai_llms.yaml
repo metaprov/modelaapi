@@ -141,7 +141,7 @@ spec:
                       description: Retriever augments a query with context from a
                         retriever
                       properties:
-                        postProcessors:
+                        nodePostProcessors:
                           description: The collection of node postprocessors
                           items:
                             description: NodePostProcessor defines a node post-processor,
@@ -339,9 +339,9 @@ spec:
                                   type: string
                               type: object
                           type: object
-                        string:
-                          description: The name of the retriever to use when generating
-                            responses
+                        retriever:
+                          description: The name of the retriever to use when retrieving
+                            context
                           type: string
                       type: object
                     router:
@@ -399,8 +399,7 @@ spec:
                         a query to one or more query engine(s)
                       properties:
                         model:
-                          description: The large language model to use when generating
-                            questions
+                          description: The model to use when generating questions
                           properties:
                             connectionName:
                               description: ConnectionName specifies the name of a
@@ -521,84 +520,88 @@ spec:
                       description: DocumentSummary retrieves nodes from a document
                         summary index
                       properties:
-                        embedding:
-                          description: The configuration to optionally embed summarized
-                            documents
+                        index:
+                          description: The reference to the vector store index
                           properties:
-                            databaseConnectionName:
-                              description: DatabaseConnectionName specifies the name
-                                of a Connection resource that provides a vector database
+                            index:
+                              description: The name of the index. If unspecified,
+                                default to the first index defined by the Knowledge
+                                Base
                               type: string
-                            embeddingModel:
-                              description: EmbeddingModel specifies the embedding
-                                model to use when ingesting documents
-                              properties:
-                                connectionName:
-                                  description: ConnectionName specifies the name of
-                                    a connection to a foundational model provider
-                                  type: string
-                                model:
-                                  description: Model specifies the vendor-specific
-                                    model type. If unspecified, use the model provided
-                                    by the `model` option of the connection, or choose
-                                    the default model for the vendor
-                                  type: string
-                              type: object
+                            knowledgeBaseName:
+                              description: The name of the Knowledge Base
+                              type: string
                           type: object
-                        responseSynthesizer:
-                          description: The response synthesizer to use when summarizing
-                            documents
+                        mode:
+                          description: The retriever mode. If unspecified, default
+                            to embedding
+                          enum:
+                          - embedding
+                          - llm
+                          type: string
+                        model:
+                          description: The embedding or large language model to use.
+                            If unspecified, use the default provided by model server
                           properties:
-                            answerFiltering:
-                              description: Indicates if answer filtering is enabled.
-                                Compatible only with refine and compact response modes
-                              type: boolean
-                            mode:
-                              description: The method to use when synthesizing responses.
-                                If unspecified, default to `refine`
-                              enum:
-                              - refine
-                              - compact
-                              - simple-summarize
-                              - tree-summarize
-                              - accumulate
-                              - compact-accumulate
+                            connectionName:
+                              description: ConnectionName specifies the name of a
+                                connection to a foundational model provider
                               type: string
                             model:
-                              description: The LLM to use when synthesizing responses.
-                                If unspecified, use the default provided by the parent
-                                specification
-                              properties:
-                                connectionName:
-                                  description: ConnectionName specifies the name of
-                                    a connection to a foundational model provider
-                                  type: string
-                                model:
-                                  description: Model specifies the vendor-specific
-                                    model type. If unspecified, use the model provided
-                                    by the `model` option of the connection, or choose
-                                    the default model for the vendor
-                                  type: string
-                              type: object
+                              description: Model specifies the vendor-specific model
+                                type. If unspecified, use the model provided by the
+                                `model` option of the connection, or choose the default
+                                model for the vendor
+                              type: string
                           type: object
+                        topK:
+                          description: The top K nodes to retrieve. If unspecified,
+                            default to 1
+                          type: integer
+                      required:
+                      - index
                       type: object
                     fusion:
                       description: Fusion combines the results of one or more retriever(s)
                       properties:
+                        mode:
+                          description: The fusion retriever mode. If unspecified,
+                            default to simple
+                          enum:
+                          - reciprocal-rerank
+                          - relative-score
+                          - distance-based-score
+                          - simple
+                          type: string
+                        model:
+                          description: The embedding or large language model to use
+                            when generating questions. If unspecified, use the default
+                            provided by model server
+                          properties:
+                            connectionName:
+                              description: ConnectionName specifies the name of a
+                                connection to a foundational model provider
+                              type: string
+                            model:
+                              description: Model specifies the vendor-specific model
+                                type. If unspecified, use the model provided by the
+                                `model` option of the connection, or choose the default
+                                model for the vendor
+                              type: string
+                          type: object
                         queries:
                           description: The number of queries to generate for the input
                             query. If unspecified, default to 4
                           type: integer
-                        reciprocalRank:
-                          description: Indicates if reciprocal rank fusion will be
-                            applied. If indicates, a simple technique will be used
-                            instead
-                          type: boolean
                         retrievers:
                           description: The collection of retriever names
                           items:
                             type: string
                           type: array
+                        topK:
+                          description: The top K nodes to retrieve. If unspecified,
+                            default to 1
+                          type: integer
                       type: object
                     name:
                       description: The unique name of the retriever
@@ -686,8 +689,8 @@ spec:
                               type: array
                             model:
                               description: The LLM to use when generating queries.
-                                If unspecified, use the default provided by the parent
-                                specification
+                                If unspecified, use the default provided by model
+                                server
                               properties:
                                 connectionName:
                                   description: ConnectionName specifies the name of

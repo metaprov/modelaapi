@@ -146,6 +146,14 @@ type DocumentSummaryIndexSpec struct {
 	Embedding *VectorIndexSpec `json:"embedding,omitempty" protobuf:"bytes,2,opt,name=embedding"`
 }
 
+// TreeIndexSpec specifies the configuration for a tree index
+type TreeIndexSpec struct {
+	// The LLM to use when summarizing and inserting nodes
+	Model ModelSpec `json:"model,omitempty" protobuf:"bytes,1,opt,name=model"`
+	// The number of children each node should have
+	Children *int `json:"children,omitempty" protobuf:"varint,2,opt,name=children"`
+}
+
 // IndexSpec specifies the configuration for a document index
 type IndexSpec struct {
 	// Name specifies the name of the index
@@ -156,6 +164,8 @@ type IndexSpec struct {
 	Vector *VectorIndexSpec `json:"vector,omitempty" protobuf:"bytes,2,opt,name=vector"`
 	// DocumentSummary stores documents by their summaries
 	DocumentSummary *DocumentSummaryIndexSpec `json:"documentSummary,omitempty" protobuf:"bytes,3,opt,name=documentSummary"`
+	// TreeIndex builds tree-structured index, where each node is a summary of the children nodes
+	TreeIndex *TreeIndexSpec `json:"treeIndex,omitempty" protobuf:"bytes,4,opt,name=treeIndex"`
 }
 
 // NodeParserSpec defines how to break up a document into individual chunks of text
@@ -409,6 +419,15 @@ type DocumentStatus struct {
 	LastRefreshAt *metav1.Time `json:"lastRefreshAt,omitempty" protobuf:"bytes,5,opt,name=lastRefreshAt"`
 }
 
+type IndexStatus struct {
+	// The unique name of the index
+	// +kubebuilder:validation:Required
+	// +required
+	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
+	// The number of documents ingested in the index
+	Documents int32 `json:"documents,omitempty" protobuf:"varint,2,opt,name=documents"`
+}
+
 type KnowledgeBaseStatus struct {
 	// ObservedGeneration specifies the last generation that was reconciled
 	//+kubebuilder:validation:Optional
@@ -423,11 +442,13 @@ type KnowledgeBaseStatus struct {
 	// Documents contains the collection of statuses for each document defined by the Knowledge Base.
 	// In the case that a metadata database is defined, the collection will be empty
 	Documents []DocumentStatus `json:"documents,omitempty" protobuf:"bytes,5,opt,name=documents"`
+	// Indexes contains the collection of statuses for each index defined by the Knowledge Base
+	Indexes []IndexStatus `json:"indexes,omitempty" protobuf:"bytes,6,opt,name=indexes"`
 	// The last time the object was updated
 	//+kubebuilder:validation:Optional
-	UpdatedAt *metav1.Time `json:"updatexdAt,omitempty" protobuf:"bytes,6,opt,name=updatedAt"`
+	UpdatedAt *metav1.Time `json:"updatedAt,omitempty" protobuf:"bytes,7,opt,name=updatedAt"`
 	// +kubebuilder:validation:Optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []metav1.Condition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,7,rep,name=conditions"`
+	Conditions []metav1.Condition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,8,rep,name=conditions"`
 }

@@ -14,39 +14,61 @@ class LLMServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.Refresh = channel.unary_unary(
-                '/LLMService/Refresh',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.RefreshRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.RefreshResponse.FromString,
+        self.ListLLMs = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.llm.v1.LLMService/ListLLMs',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.ListLLMsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.ListLLMsResponse.FromString,
                 )
-        self.Delete = channel.unary_unary(
-                '/LLMService/Delete',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.DeleteRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.DeleteResponse.FromString,
+        self.CreateLLM = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.llm.v1.LLMService/CreateLLM',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.CreateLLMRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.CreateLLMResponse.FromString,
                 )
-        self.Shutdown = channel.unary_unary(
-                '/LLMService/Shutdown',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.ShutdownRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.ShutdownResponse.FromString,
+        self.GetLLM = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.llm.v1.LLMService/GetLLM',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.GetLLMRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.GetLLMResponse.FromString,
+                )
+        self.UpdateLLM = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.llm.v1.LLMService/UpdateLLM',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.UpdateLLMRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.UpdateLLMResponse.FromString,
+                )
+        self.DeleteLLM = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.llm.v1.LLMService/DeleteLLM',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.DeleteLLMRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.DeleteLLMResponse.FromString,
                 )
 
 
 class LLMServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
-    def Refresh(self, request, context):
+    def ListLLMs(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def Delete(self, request, context):
+    def CreateLLM(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def Shutdown(self, request, context):
+    def GetLLM(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateLLM(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteLLM(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -55,24 +77,34 @@ class LLMServiceServicer(object):
 
 def add_LLMServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'Refresh': grpc.unary_unary_rpc_method_handler(
-                    servicer.Refresh,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.RefreshRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.RefreshResponse.SerializeToString,
+            'ListLLMs': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListLLMs,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.ListLLMsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.ListLLMsResponse.SerializeToString,
             ),
-            'Delete': grpc.unary_unary_rpc_method_handler(
-                    servicer.Delete,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.DeleteRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.DeleteResponse.SerializeToString,
+            'CreateLLM': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateLLM,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.CreateLLMRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.CreateLLMResponse.SerializeToString,
             ),
-            'Shutdown': grpc.unary_unary_rpc_method_handler(
-                    servicer.Shutdown,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.ShutdownRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.ShutdownResponse.SerializeToString,
+            'GetLLM': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetLLM,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.GetLLMRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.GetLLMResponse.SerializeToString,
+            ),
+            'UpdateLLM': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateLLM,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.UpdateLLMRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.UpdateLLMResponse.SerializeToString,
+            ),
+            'DeleteLLM': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteLLM,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.DeleteLLMRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.DeleteLLMResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'LLMService', rpc_method_handlers)
+            'github.com.metaprov.modelaapi.services.llm.v1.LLMService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -81,7 +113,7 @@ class LLMService(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
-    def Refresh(request,
+    def ListLLMs(request,
             target,
             options=(),
             channel_credentials=None,
@@ -91,14 +123,14 @@ class LLMService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/LLMService/Refresh',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.RefreshRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.RefreshResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.llm.v1.LLMService/ListLLMs',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.ListLLMsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.ListLLMsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def Delete(request,
+    def CreateLLM(request,
             target,
             options=(),
             channel_credentials=None,
@@ -108,14 +140,14 @@ class LLMService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/LLMService/Delete',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.DeleteRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.DeleteResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.llm.v1.LLMService/CreateLLM',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.CreateLLMRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.CreateLLMResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def Shutdown(request,
+    def GetLLM(request,
             target,
             options=(),
             channel_credentials=None,
@@ -125,8 +157,42 @@ class LLMService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/LLMService/Shutdown',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.ShutdownRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.ShutdownResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.llm.v1.LLMService/GetLLM',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.GetLLMRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.GetLLMResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateLLM(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.llm.v1.LLMService/UpdateLLM',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.UpdateLLMRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.UpdateLLMResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteLLM(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.llm.v1.LLMService/DeleteLLM',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.DeleteLLMRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llm_dot_v1_dot_llm__pb2.DeleteLLMResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

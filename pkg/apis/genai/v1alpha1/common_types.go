@@ -20,7 +20,7 @@ type IndexReference struct {
 	Index *string `json:"index,omitempty" protobuf:"bytes,2,opt,name=index"`
 }
 
-// ModelSpec specifies the configuration for an LLM or embedding model
+// ModelSpec specifies the configuration for a language or embedding model
 type ModelSpec struct {
 	// ConnectionName specifies the name of a connection to a foundational model provider
 	ConnectionName string `json:"connectionName,omitempty" protobuf:"bytes,1,opt,name=connectionName"`

@@ -316,6 +316,29 @@ spec:
                     name:
                       description: Name specifies the name of the index
                       type: string
+                    treeIndex:
+                      description: TreeIndex builds tree-structured index, where each
+                        node is a summary of the children nodes
+                      properties:
+                        children:
+                          description: The number of children each node should have
+                          type: integer
+                        model:
+                          description: The LLM to use when summarizing and inserting
+                            nodes
+                          properties:
+                            connectionName:
+                              description: ConnectionName specifies the name of a
+                                connection to a foundational model provider
+                              type: string
+                            model:
+                              description: Model specifies the vendor-specific model
+                                type. If unspecified, use the model provided by the
+                                `model` option of the connection, or choose the default
+                                model for the vendor
+                              type: string
+                          type: object
+                      type: object
                     vector:
                       description: Vector stores documents with vector embeddings
                       properties:
@@ -773,6 +796,20 @@ spec:
                       type: integer
                   type: object
                 type: array
+              indexes:
+                description: Indexes contains the collection of statuses for each
+                  index defined by the Knowledge Base
+                items:
+                  properties:
+                    documents:
+                      description: The number of documents ingested in the index
+                      format: int32
+                      type: integer
+                    name:
+                      description: The unique name of the index
+                      type: string
+                  type: object
+                type: array
               lastCompletionAt:
                 description: LastCompletionAt specifies the time at which the last
                   refresh job was completed
@@ -809,7 +846,7 @@ spec:
                   was reconciled
                 format: int64
                 type: integer
-              updatexdAt:
+              updatedAt:
                 description: The last time the object was updated
                 format: date-time
                 type: string

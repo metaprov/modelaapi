@@ -18,8 +18,15 @@ message DocumentStatusUpdate {
     github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.DocumentStatus status = 4;
 }
 
+message IndexStatusUpdate {
+    bool delete = 1;
+    string name = 2;
+    int32 documents = 3;
+}
+
 message RefreshResponse {
-    repeated DocumentStatusUpdate statuses = 1;
+    repeated DocumentStatusUpdate document_statuses = 1;
+    repeated IndexStatusUpdate index_statuses = 2;
 }
 
 message DeleteRequest {
