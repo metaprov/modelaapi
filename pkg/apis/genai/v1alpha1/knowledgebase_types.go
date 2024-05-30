@@ -5,53 +5,6 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-type (
-	FileReaderType        string
-	DatabaseReaderType    string
-	WebReaderType         string
-	RepositoryReaderType  string
-	NodeParserType        string
-	SentenceTokenizerType string
-	TextSplitterType      string
-)
-
-const (
-	DefaultFileReaderType    FileReaderType = "default"
-	FlatFileReaderType       FileReaderType = "flat"
-	PDFFileReaderType        FileReaderType = "pdf"
-	DocxFileReaderType       FileReaderType = "docx"
-	PowerPointFileReaderType FileReaderType = "powerpoint"
-	AudioFileReaderType      FileReaderType = "audio"
-	CSVFileReaderType        FileReaderType = "csv"
-	EpubFileReaderType       FileReaderType = "epub"
-	MarkdownFileReaderType   FileReaderType = "markdown"
-	NotebookFileReaderType   FileReaderType = "notebook"
-	JSONFileReaderType       FileReaderType = "json"
-
-	SQLDatabaseReaderType   DatabaseReaderType = "sql"
-	MongoDatabaseReaderType DatabaseReaderType = "mongo"
-
-	GoogleSheetsWebReaderType WebReaderType = "google-sheets"
-
-	GithubRepositoryReaderType RepositoryReaderType = "github"
-	S3RepositoryReaderType     RepositoryReaderType = "s3"
-
-	HTMLNodeParserType           NodeParserType = "html"
-	JSONNodeParserType           NodeParserType = "json"
-	MarkdownNodeParserType       NodeParserType = "markdown"
-	TextSplitterNodeParserType   NodeParserType = "text-splitter"
-	SentenceWindowNodeParserType NodeParserType = "sentence-window"
-
-	SentenceTextSplitterType TextSplitterType = "sentence"
-	TokenTextSplitterType    TextSplitterType = "token"
-	CodeTextSplitterType     TextSplitterType = "code"
-
-	PunktSentenceTokenizerType     SentenceTokenizerType = "punkt"
-	SeparatorSentenceTokenizerType SentenceTokenizerType = "separator"
-	RegexSentenceTokenizerType     SentenceTokenizerType = "regex"
-	PhraseSentenceTokenizerType    SentenceTokenizerType = "phrase"
-)
-
 type KnowledgeBaseConditionType string
 
 const (
@@ -150,9 +103,22 @@ type DocumentSummaryIndexSpec struct {
 type TreeIndexSpec struct {
 	// The LLM to use when summarizing and inserting nodes
 	Model ModelSpec `json:"model,omitempty" protobuf:"bytes,1,opt,name=model"`
-	// The number of children each node should have
+	// The number of children each node should have. If unspecified, default to 10
 	Children *int `json:"children,omitempty" protobuf:"varint,2,opt,name=children"`
 }
+
+// KeywordTableIndexSpec specifies the configuration for a keyword table index
+type KeywordTableIndexSpec struct {
+	// The index mode, which determines how keywords are extracted from nodes
+	Mode *KeywordTableIndexMode `json:"mode,omitempty" protobuf:"bytes,1,opt,name=mode"`
+	// The LLM to use when extracting keywords from nodes, required if the index is configured with the LLM mode
+	Model *ModelSpec `json:"model,omitempty" protobuf:"bytes,2,opt,name=model"`
+	// The maximum of number of keywords that can be extracted from each node. If unspecified, default to 10
+	MaxKeywordsPerNode *int `json:"maxKeywordsPerNode,omitempty" protobuf:"bytes,3,opt,name=maxKeywordsPerNode"`
+}
+
+// ListIndexSpec specifies the configuration of a list index
+type ListIndexSpec struct{}
 
 // IndexSpec specifies the configuration for a document index
 type IndexSpec struct {
@@ -164,8 +130,14 @@ type IndexSpec struct {
 	Vector *VectorIndexSpec `json:"vector,omitempty" protobuf:"bytes,2,opt,name=vector"`
 	// DocumentSummary stores documents by their summaries
 	DocumentSummary *DocumentSummaryIndexSpec `json:"documentSummary,omitempty" protobuf:"bytes,3,opt,name=documentSummary"`
-	// TreeIndex builds tree-structured index, where each node is a summary of the children nodes
-	TreeIndex *TreeIndexSpec `json:"treeIndex,omitempty" protobuf:"bytes,4,opt,name=treeIndex"`
+	// Tree builds tree-structured index, where each node is a summary of the children nodes
+	Tree *TreeIndexSpec `json:"tree,omitempty" protobuf:"bytes,4,opt,name=tree"`
+	// KeywordTable indexes documents by their keywords
+	KeywordTable *KeywordTableIndexSpec `json:"keywordTable,omitempty" protobuf:"bytes,5,opt,name=keywordTable"`
+	// SQL indexes structured data points extracted from documents
+	SQL *SQLIndexSpec `json:"sql,omitempty" protobuf:"bytes,6,opt,name=sql"`
+	// List builds an index which nodes are stored in a sequenced list
+	List *ListIndexSpec `json:"list,omitempty" protobuf:"bytes,7,opt,name=list"`
 }
 
 // NodeParserSpec defines how to break up a document into individual chunks of text

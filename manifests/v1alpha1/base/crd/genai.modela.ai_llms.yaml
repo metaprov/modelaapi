@@ -564,6 +564,10 @@ spec:
                     fusion:
                       description: Fusion combines the results of one or more retriever(s)
                       properties:
+                        defaultScore:
+                          description: The default score for nodes which were retrieved
+                            without a score. If unspecified, default to 1
+                          type: number
                         mode:
                           description: The fusion retriever mode. If unspecified,
                             default to simple
@@ -602,6 +606,103 @@ spec:
                           description: The top K nodes to retrieve. If unspecified,
                             default to 1
                           type: integer
+                      type: object
+                    keywordTable:
+                      description: KeywordTable retrieves nodes from a keyword table
+                        index
+                      properties:
+                        chunksPerQuery:
+                          description: The maximum number of chunks to retrieve per
+                            query. If unspecified, default to 10
+                          type: integer
+                        index:
+                          description: The reference to the tree index
+                          properties:
+                            index:
+                              description: The name of the index. If unspecified,
+                                default to the first index defined by the Knowledge
+                                Base
+                              type: string
+                            knowledgeBaseName:
+                              description: The name of the Knowledge Base
+                              type: string
+                          type: object
+                        keywordsPerQuery:
+                          description: The maximum number of keywords to consider
+                            per query. If unspecified, default to 10
+                          type: integer
+                        mode:
+                          description: The retriever mode. If unspecified, default
+                            to RAKE
+                          enum:
+                          - simple
+                          - llm
+                          - rake
+                          type: string
+                        model:
+                          description: The large language model to use, if using the
+                            LLM mode. If unspecified, use the default provided by
+                            model server
+                          properties:
+                            connectionName:
+                              description: ConnectionName specifies the name of a
+                                connection to a foundational model provider
+                              type: string
+                            model:
+                              description: Model specifies the vendor-specific model
+                                type. If unspecified, use the model provided by the
+                                `model` option of the connection, or choose the default
+                                model for the vendor
+                              type: string
+                          type: object
+                      required:
+                      - index
+                      type: object
+                    list:
+                      description: List retrievers nodes from a list index
+                      properties:
+                        index:
+                          description: The reference to the tree index
+                          properties:
+                            index:
+                              description: The name of the index. If unspecified,
+                                default to the first index defined by the Knowledge
+                                Base
+                              type: string
+                            knowledgeBaseName:
+                              description: The name of the Knowledge Base
+                              type: string
+                          type: object
+                        mode:
+                          description: The retriever mode. If unspecified, default
+                            to simple
+                          enum:
+                          - simple
+                          - embedding
+                          - llm
+                          type: string
+                        model:
+                          description: The large language or embedding model to use,
+                            if applicable. If unspecified, use the default provided
+                            by model server
+                          properties:
+                            connectionName:
+                              description: ConnectionName specifies the name of a
+                                connection to a foundational model provider
+                              type: string
+                            model:
+                              description: Model specifies the vendor-specific model
+                                type. If unspecified, use the model provided by the
+                                `model` option of the connection, or choose the default
+                                model for the vendor
+                              type: string
+                          type: object
+                        topK:
+                          description: The top K nodes to retrieve when using the
+                            embedding or LLM mode. If unspecified, default to 1
+                          type: integer
+                      required:
+                      - index
                       type: object
                     name:
                       description: The unique name of the retriever
@@ -656,6 +757,52 @@ spec:
                             type: object
                           type: array
                       type: object
+                    tree:
+                      description: Tree retrieves nodes from a tree index
+                      properties:
+                        childBranchFactor:
+                          description: The number of child nodes to consider traversing
+                            at each level of the tree, if applicable
+                          type: integer
+                        index:
+                          description: The reference to the tree index
+                          properties:
+                            index:
+                              description: The name of the index. If unspecified,
+                                default to the first index defined by the Knowledge
+                                Base
+                              type: string
+                            knowledgeBaseName:
+                              description: The name of the Knowledge Base
+                              type: string
+                          type: object
+                        mode:
+                          description: The retriever mode. If unspecified, default
+                            to select leaf
+                          enum:
+                          - select-leaf
+                          - select-leaf-embedding
+                          - root
+                          - all-leaf
+                          type: string
+                        model:
+                          description: The large language model to use, if applicable.
+                            If unspecified, use the default provided by model server
+                          properties:
+                            connectionName:
+                              description: ConnectionName specifies the name of a
+                                connection to a foundational model provider
+                              type: string
+                            model:
+                              description: Model specifies the vendor-specific model
+                                type. If unspecified, use the model provided by the
+                                `model` option of the connection, or choose the default
+                                model for the vendor
+                              type: string
+                          type: object
+                      required:
+                      - index
+                      type: object
                     vector:
                       description: Vector retrieves nodes from a vector index
                       properties:
@@ -683,7 +830,8 @@ spec:
                                     description: The name of the key
                                     type: string
                                   type:
-                                    description: The key type
+                                    description: The key type (integer, string, float,
+                                      etc.)
                                     type: string
                                 type: object
                               type: array

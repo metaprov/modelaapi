@@ -12,16 +12,44 @@ const (
 type FusionRetrieverMode string
 
 const (
-	ReciprocalRankFusionRetrieverMode     = "reciprocal-rerank"
-	RelativeScoreFusionRetrieverMode      = "relative-score"
-	DistanceBasedScoreFusionRetrieverMode = "distance-based-score"
-	SimpleFusionRetrieverMode             = "simple"
+	ReciprocalRankFusionRetrieverMode     FusionRetrieverMode = "reciprocal-rerank"
+	RelativeScoreFusionRetrieverMode      FusionRetrieverMode = "relative-score"
+	DistanceBasedScoreFusionRetrieverMode FusionRetrieverMode = "distance-based-score"
+	SimpleFusionRetrieverMode             FusionRetrieverMode = "simple"
+)
+
+// +kubebuilder:validation:Enum="select-leaf";"select-leaf-embedding";"root";"all-leaf"
+type TreeRetrieverMode string
+
+const (
+	SelectLeafTreeRetrieverMode          TreeRetrieverMode = "select-leaf"
+	SelectLeafEmbeddingTreeRetrieverMode TreeRetrieverMode = "select-leaf-embedding"
+	RootTreeRetrieverMode                TreeRetrieverMode = "root"
+	AllLeafTreeRetrieverMode             TreeRetrieverMode = "all-leaf"
+)
+
+// +kubebuilder:validation:Enum="simple";"embedding";"llm"
+type ListRetrieverMode string
+
+const (
+	SimpleListRetrieverMode    ListRetrieverMode = "simple"
+	EmbeddingListRetrieverMode ListRetrieverMode = "embedding"
+	LLMListRetrieverMode       ListRetrieverMode = "llm"
+)
+
+// +kubebuilder:validation:Enum="simple";"llm";"rake"
+type KeywordTableRetrieverMode string
+
+const (
+	SimpleKeywordTableRetrieverMode KeywordTableRetrieverMode = "simple"
+	LLMKeywordTableRetrieverMode    KeywordTableRetrieverMode = "llm"
+	RAKEKeywordTableRetrieverMode   KeywordTableRetrieverMode = "rake"
 )
 
 type MetadataKeyInfo struct {
 	// The name of the key
 	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
-	// The key type
+	// The key type (integer, string, float, etc.)
 	Type string `json:"type,omitempty" protobuf:"bytes,2,opt,name=type"`
 	// The key description
 	Description string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
@@ -69,6 +97,43 @@ type DocumentSummaryRetrieverSpec struct {
 	Mode *DocumentSummaryRetrieverMode `json:"mode,omitempty" protobuf:"bytes,4,opt,name=mode"`
 }
 
+// TreeRetrieverSpec defines a retriever from a tree index
+type TreeRetrieverSpec struct {
+	// The reference to the tree index
+	Index IndexReference `json:"index" protobuf:"bytes,1,opt,name=index"`
+	// The large language model to use, if applicable. If unspecified, use the default provided by model server
+	Model *ModelSpec `json:"model,omitempty" protobuf:"bytes,2,opt,name=model"`
+	// The retriever mode. If unspecified, default to select leaf
+	Mode *TreeRetrieverMode `json:"mode,omitempty" protobuf:"bytes,3,opt,name=mode"`
+	// The number of child nodes to consider traversing at each level of the tree, if applicable
+	ChildBranchFactor *int `json:"childBranchFactor,omitempty" protobuf:"bytes,4,opt,name=childBranchFactor"`
+}
+
+type KeywordTableRetrieverSpec struct {
+	// The reference to the tree index
+	Index IndexReference `json:"index" protobuf:"bytes,1,opt,name=index"`
+	// The large language model to use, if using the LLM mode. If unspecified, use the default provided by model server
+	Model *ModelSpec `json:"model,omitempty" protobuf:"bytes,2,opt,name=model"`
+	// The retriever mode. If unspecified, default to RAKE
+	Mode *KeywordTableRetrieverMode `json:"mode,omitempty" protobuf:"bytes,3,opt,name=mode"`
+	// The maximum number of keywords to consider per query. If unspecified, default to 10
+	KeywordsPerQuery *int `json:"keywordsPerQuery,omitempty" protobuf:"bytes,4,opt,name=keywordsPerQuery"`
+	// The maximum number of chunks to retrieve per query. If unspecified, default to 10
+	ChunksPerQuery *int `json:"chunksPerQuery,omitempty" protobuf:"bytes,5,opt,name=chunksPerQuery"`
+}
+
+// ListRetrieverSpec defines a retriever from a list index
+type ListRetrieverSpec struct {
+	// The reference to the tree index
+	Index IndexReference `json:"index" protobuf:"bytes,1,opt,name=index"`
+	// The large language or embedding model to use, if applicable. If unspecified, use the default provided by model server
+	Model *ModelSpec `json:"model,omitempty" protobuf:"bytes,2,opt,name=model"`
+	// The top K nodes to retrieve when using the embedding or LLM mode. If unspecified, default to 1
+	TopK *int `json:"topK,omitempty" protobuf:"bytes,3,opt,name=topK"`
+	// The retriever mode. If unspecified, default to simple
+	Mode *ListRetrieverMode `json:"mode,omitempty" protobuf:"bytes,4,opt,name=mode"`
+}
+
 // FusionRetrieverSpec defines a retriever which can combine the results from multiple concrete retrievers
 type FusionRetrieverSpec struct {
 	// The collection of retriever names
@@ -82,6 +147,8 @@ type FusionRetrieverSpec struct {
 	TopK *int `json:"topK,omitempty" protobuf:"bytes,4,opt,name=topK"`
 	// The fusion retriever mode. If unspecified, default to simple
 	Mode *FusionRetrieverMode `json:"mode,omitempty" protobuf:"varint,5,opt,name=mode"`
+	// The default score for nodes which were retrieved without a score. If unspecified, default to 1
+	DefaultScore *float32 `json:"defaultScore,omitempty" protobuf:"bytes,6,opt,name=defaultScore"`
 }
 
 type RetrieverToolSpec struct {
@@ -114,9 +181,18 @@ type RetrieverSpec struct {
 	// DocumentSummary retrieves nodes from a document summary index
 	DocumentSummary *DocumentSummaryRetrieverSpec `json:"documentSummary,omitempty" protobuf:"bytes,3,opt,name=documentSummary"`
 
+	// Tree retrieves nodes from a tree index
+	Tree *TreeRetrieverSpec `json:"tree,omitempty" protobuf:"bytes,4,opt,name=tree"`
+
+	// KeywordTable retrieves nodes from a keyword table index
+	KeywordTable *KeywordTableRetrieverSpec `json:"keywordTable,omitempty" protobuf:"bytes,5,opt,name=keywordTable"`
+
+	// List retrievers nodes from a list index
+	List *ListRetrieverSpec `json:"list,omitempty" protobuf:"bytes,6,opt,name=list"`
+
 	// Router chooses one or more retriever(s) to route requests to
-	Router *RouterRetrieverSpec `json:"router,omitempty" protobuf:"bytes,4,opt,name=router"`
+	Router *RouterRetrieverSpec `json:"router,omitempty" protobuf:"bytes,7,opt,name=router"`
 
 	// Fusion combines the results of one or more retriever(s)
-	Fusion *FusionRetrieverSpec `json:"fusion,omitempty" protobuf:"bytes,5,opt,name=fusion"`
+	Fusion *FusionRetrieverSpec `json:"fusion,omitempty" protobuf:"bytes,8,opt,name=fusion"`
 }

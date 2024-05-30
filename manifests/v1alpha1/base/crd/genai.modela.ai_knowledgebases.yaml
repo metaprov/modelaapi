@@ -313,15 +313,123 @@ spec:
                               type: object
                           type: object
                       type: object
+                    keywordTable:
+                      description: KeywordTable indexes documents by their keywords
+                      properties:
+                        maxKeywordsPerNode:
+                          description: The maximum of number of keywords that can
+                            be extracted from each node. If unspecified, default to
+                            10
+                          type: integer
+                        mode:
+                          description: The index mode, which determines how keywords
+                            are extracted from nodes
+                          type: string
+                        model:
+                          description: The LLM to use when extracting keywords from
+                            nodes, required if the index is configured with the LLM
+                            mode
+                          properties:
+                            connectionName:
+                              description: ConnectionName specifies the name of a
+                                connection to a foundational model provider
+                              type: string
+                            model:
+                              description: Model specifies the vendor-specific model
+                                type. If unspecified, use the model provided by the
+                                `model` option of the connection, or choose the default
+                                model for the vendor
+                              type: string
+                          type: object
+                      type: object
+                    list:
+                      description: List builds an index which nodes are stored in
+                        a sequenced list
+                      type: object
                     name:
                       description: Name specifies the name of the index
                       type: string
-                    treeIndex:
-                      description: TreeIndex builds tree-structured index, where each
-                        node is a summary of the children nodes
+                    sql:
+                      description: SQL indexes structured data points extracted from
+                        documents
+                      properties:
+                        databaseConnectionName:
+                          description: The name of the connection the SQL database
+                          type: string
+                        granularity:
+                          description: Granularity defines the scale at which data
+                            points are extracted from documents produced by readers.
+                            For example, the `node` granularity will extract a data
+                            point for each page in a PDF file, whilst the `document`
+                            granularity will extract a single data point for the entire
+                            file. If unspecified, default to document
+                          type: string
+                        model:
+                          description: The LLM to use when extracting data points
+                            from documents
+                          properties:
+                            connectionName:
+                              description: ConnectionName specifies the name of a
+                                connection to a foundational model provider
+                              type: string
+                            model:
+                              description: Model specifies the vendor-specific model
+                                type. If unspecified, use the model provided by the
+                                `model` option of the connection, or choose the default
+                                model for the vendor
+                              type: string
+                          type: object
+                        refDocColumn:
+                          description: The name of the required column specifying
+                            the document which the data point belongs to. If unspecified,
+                            default to `ref_doc_id`. The column will automatically
+                            be appended to created tables
+                          type: string
+                        schema:
+                          description: The schema of the table managed by the index.
+                            If present, the schema will be validated against the database
+                            table
+                          properties:
+                            columns:
+                              description: The columns of the table
+                              items:
+                                description: Column defines the schema for a single
+                                  column in a table managed by a SQL index
+                                properties:
+                                  description:
+                                    description: The description of the column, which
+                                      the LLM will use to extract the value of the
+                                      column from documents
+                                    type: string
+                                  metadataKey:
+                                    description: The metadata key of the document
+                                      being processed which will be used as a value
+                                      for the column
+                                    type: string
+                                  name:
+                                    description: The name of the column
+                                    type: string
+                                  type:
+                                    description: The data type of the column
+                                    type: string
+                                type: object
+                              type: array
+                            description:
+                              description: The description of the table
+                              type: string
+                          type: object
+                        tableName:
+                          description: The name of the table. If the table does not
+                            exist, a table schema must be provided in Schema
+                          type: string
+                      type: object
+                    tree:
+                      description: Tree builds tree-structured index, where each node
+                        is a summary of the children nodes
                       properties:
                         children:
-                          description: The number of children each node should have
+                          description: The number of children each node should have.
+                            If unspecified, default to 10
                           type: integer
                         model:
                           description: The LLM to use when summarizing and inserting

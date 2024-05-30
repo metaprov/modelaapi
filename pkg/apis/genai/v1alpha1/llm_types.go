@@ -20,7 +20,10 @@ const (
 type APIFormat string
 
 const (
-	OpenAIAPIFormat APIFormat = "openai"
+	OpenAIAPIFormat    APIFormat = "openai"
+	OllamaAPIFormat    APIFormat = "ollama"
+	VertexAIAPIFormat  APIFormat = "vertexai"
+	AnthropicAPIFormat APIFormat = "anthropic"
 )
 
 // +kubebuilder:subresource:status
