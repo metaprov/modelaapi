@@ -7,6 +7,328 @@ import * as k8s_io_apimachinery_pkg_runtime_generated_pb from '../../../../../..
 import * as k8s_io_apimachinery_pkg_runtime_schema_generated_pb from '../../../../../../../k8s.io/apimachinery/pkg/runtime/schema/generated_pb';
 
 
+export class APIKeyGroup extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): APIKeyGroup;
+  hasMetadata(): boolean;
+  clearMetadata(): APIKeyGroup;
+
+  getSpec(): APIKeyGroupSpec | undefined;
+  setSpec(value?: APIKeyGroupSpec): APIKeyGroup;
+  hasSpec(): boolean;
+  clearSpec(): APIKeyGroup;
+
+  getStatus(): APIKeyGroupStatus | undefined;
+  setStatus(value?: APIKeyGroupStatus): APIKeyGroup;
+  hasStatus(): boolean;
+  clearStatus(): APIKeyGroup;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): APIKeyGroup.AsObject;
+  static toObject(includeInstance: boolean, msg: APIKeyGroup): APIKeyGroup.AsObject;
+  static serializeBinaryToWriter(message: APIKeyGroup, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): APIKeyGroup;
+  static deserializeBinaryFromReader(message: APIKeyGroup, reader: jspb.BinaryReader): APIKeyGroup;
+}
+
+export namespace APIKeyGroup {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
+    spec?: APIKeyGroupSpec.AsObject,
+    status?: APIKeyGroupStatus.AsObject,
+  }
+}
+
+export class APIKeyGroupList extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): APIKeyGroupList;
+  hasMetadata(): boolean;
+  clearMetadata(): APIKeyGroupList;
+
+  getItemsList(): Array<APIKeyGroup>;
+  setItemsList(value: Array<APIKeyGroup>): APIKeyGroupList;
+  clearItemsList(): APIKeyGroupList;
+  addItems(value?: APIKeyGroup, index?: number): APIKeyGroup;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): APIKeyGroupList.AsObject;
+  static toObject(includeInstance: boolean, msg: APIKeyGroupList): APIKeyGroupList.AsObject;
+  static serializeBinaryToWriter(message: APIKeyGroupList, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): APIKeyGroupList;
+  static deserializeBinaryFromReader(message: APIKeyGroupList, reader: jspb.BinaryReader): APIKeyGroupList;
+}
+
+export namespace APIKeyGroupList {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.AsObject,
+    itemsList: Array<APIKeyGroup.AsObject>,
+  }
+}
+
+export class APIKeyGroupSpec extends jspb.Message {
+  getOwner(): string;
+  setOwner(value: string): APIKeyGroupSpec;
+  hasOwner(): boolean;
+  clearOwner(): APIKeyGroupSpec;
+
+  getDescription(): string;
+  setDescription(value: string): APIKeyGroupSpec;
+  hasDescription(): boolean;
+  clearDescription(): APIKeyGroupSpec;
+
+  getAllowedservernamesList(): Array<string>;
+  setAllowedservernamesList(value: Array<string>): APIKeyGroupSpec;
+  clearAllowedservernamesList(): APIKeyGroupSpec;
+  addAllowedservernames(value: string, index?: number): APIKeyGroupSpec;
+
+  getAllowedendpointnamesList(): Array<string>;
+  setAllowedendpointnamesList(value: Array<string>): APIKeyGroupSpec;
+  clearAllowedendpointnamesList(): APIKeyGroupSpec;
+  addAllowedendpointnames(value: string, index?: number): APIKeyGroupSpec;
+
+  getApikeysList(): Array<APIKeySpec>;
+  setApikeysList(value: Array<APIKeySpec>): APIKeyGroupSpec;
+  clearApikeysList(): APIKeyGroupSpec;
+  addApikeys(value?: APIKeySpec, index?: number): APIKeySpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): APIKeyGroupSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: APIKeyGroupSpec): APIKeyGroupSpec.AsObject;
+  static serializeBinaryToWriter(message: APIKeyGroupSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): APIKeyGroupSpec;
+  static deserializeBinaryFromReader(message: APIKeyGroupSpec, reader: jspb.BinaryReader): APIKeyGroupSpec;
+}
+
+export namespace APIKeyGroupSpec {
+  export type AsObject = {
+    owner?: string,
+    description?: string,
+    allowedservernamesList: Array<string>,
+    allowedendpointnamesList: Array<string>,
+    apikeysList: Array<APIKeySpec.AsObject>,
+  }
+}
+
+export class APIKeyGroupStatus extends jspb.Message {
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): APIKeyGroupStatus;
+  hasObservedgeneration(): boolean;
+  clearObservedgeneration(): APIKeyGroupStatus;
+
+  getApikeysList(): Array<APIKeyStatus>;
+  setApikeysList(value: Array<APIKeyStatus>): APIKeyGroupStatus;
+  clearApikeysList(): APIKeyGroupStatus;
+  addApikeys(value?: APIKeyStatus, index?: number): APIKeyStatus;
+
+  getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): APIKeyGroupStatus;
+  hasUpdatedat(): boolean;
+  clearUpdatedat(): APIKeyGroupStatus;
+
+  getConditionsList(): Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>;
+  setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): APIKeyGroupStatus;
+  clearConditionsList(): APIKeyGroupStatus;
+  addConditions(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition, index?: number): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): APIKeyGroupStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: APIKeyGroupStatus): APIKeyGroupStatus.AsObject;
+  static serializeBinaryToWriter(message: APIKeyGroupStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): APIKeyGroupStatus;
+  static deserializeBinaryFromReader(message: APIKeyGroupStatus, reader: jspb.BinaryReader): APIKeyGroupStatus;
+}
+
+export namespace APIKeyGroupStatus {
+  export type AsObject = {
+    observedgeneration?: number,
+    apikeysList: Array<APIKeyStatus.AsObject>,
+    updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
+  }
+}
+
+export class APIKeyMetrics extends jspb.Message {
+  getTotaltokens(): number;
+  setTotaltokens(value: number): APIKeyMetrics;
+  hasTotaltokens(): boolean;
+  clearTotaltokens(): APIKeyMetrics;
+
+  getTotalrequests(): number;
+  setTotalrequests(value: number): APIKeyMetrics;
+  hasTotalrequests(): boolean;
+  clearTotalrequests(): APIKeyMetrics;
+
+  getTotalcost(): number;
+  setTotalcost(value: number): APIKeyMetrics;
+  hasTotalcost(): boolean;
+  clearTotalcost(): APIKeyMetrics;
+
+  getAveragedailytokens(): number;
+  setAveragedailytokens(value: number): APIKeyMetrics;
+  hasAveragedailytokens(): boolean;
+  clearAveragedailytokens(): APIKeyMetrics;
+
+  getAveragedailyrequests(): number;
+  setAveragedailyrequests(value: number): APIKeyMetrics;
+  hasAveragedailyrequests(): boolean;
+  clearAveragedailyrequests(): APIKeyMetrics;
+
+  getAveragedailycost(): number;
+  setAveragedailycost(value: number): APIKeyMetrics;
+  hasAveragedailycost(): boolean;
+  clearAveragedailycost(): APIKeyMetrics;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): APIKeyMetrics.AsObject;
+  static toObject(includeInstance: boolean, msg: APIKeyMetrics): APIKeyMetrics.AsObject;
+  static serializeBinaryToWriter(message: APIKeyMetrics, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): APIKeyMetrics;
+  static deserializeBinaryFromReader(message: APIKeyMetrics, reader: jspb.BinaryReader): APIKeyMetrics;
+}
+
+export namespace APIKeyMetrics {
+  export type AsObject = {
+    totaltokens?: number,
+    totalrequests?: number,
+    totalcost?: number,
+    averagedailytokens?: number,
+    averagedailyrequests?: number,
+    averagedailycost?: number,
+  }
+}
+
+export class APIKeyQuota extends jspb.Message {
+  getTokens(): number;
+  setTokens(value: number): APIKeyQuota;
+  hasTokens(): boolean;
+  clearTokens(): APIKeyQuota;
+
+  getRequests(): number;
+  setRequests(value: number): APIKeyQuota;
+  hasRequests(): boolean;
+  clearRequests(): APIKeyQuota;
+
+  getCost(): number;
+  setCost(value: number): APIKeyQuota;
+  hasCost(): boolean;
+  clearCost(): APIKeyQuota;
+
+  getResetschedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
+  setResetschedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): APIKeyQuota;
+  hasResetschedule(): boolean;
+  clearResetschedule(): APIKeyQuota;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): APIKeyQuota.AsObject;
+  static toObject(includeInstance: boolean, msg: APIKeyQuota): APIKeyQuota.AsObject;
+  static serializeBinaryToWriter(message: APIKeyQuota, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): APIKeyQuota;
+  static deserializeBinaryFromReader(message: APIKeyQuota, reader: jspb.BinaryReader): APIKeyQuota;
+}
+
+export namespace APIKeyQuota {
+  export type AsObject = {
+    tokens?: number,
+    requests?: number,
+    cost?: number,
+    resetschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
+  }
+}
+
+export class APIKeySpec extends jspb.Message {
+  getName(): string;
+  setName(value: string): APIKeySpec;
+  hasName(): boolean;
+  clearName(): APIKeySpec;
+
+  getAllowedservernamesList(): Array<string>;
+  setAllowedservernamesList(value: Array<string>): APIKeySpec;
+  clearAllowedservernamesList(): APIKeySpec;
+  addAllowedservernames(value: string, index?: number): APIKeySpec;
+
+  getAllowedendpointnamesList(): Array<string>;
+  setAllowedendpointnamesList(value: Array<string>): APIKeySpec;
+  clearAllowedendpointnamesList(): APIKeySpec;
+  addAllowedendpointnames(value: string, index?: number): APIKeySpec;
+
+  getQuota(): APIKeyQuota | undefined;
+  setQuota(value?: APIKeyQuota): APIKeySpec;
+  hasQuota(): boolean;
+  clearQuota(): APIKeySpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): APIKeySpec.AsObject;
+  static toObject(includeInstance: boolean, msg: APIKeySpec): APIKeySpec.AsObject;
+  static serializeBinaryToWriter(message: APIKeySpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): APIKeySpec;
+  static deserializeBinaryFromReader(message: APIKeySpec, reader: jspb.BinaryReader): APIKeySpec;
+}
+
+export namespace APIKeySpec {
+  export type AsObject = {
+    name?: string,
+    allowedservernamesList: Array<string>,
+    allowedendpointnamesList: Array<string>,
+    quota?: APIKeyQuota.AsObject,
+  }
+}
+
+export class APIKeyStatus extends jspb.Message {
+  getName(): string;
+  setName(value: string): APIKeyStatus;
+  hasName(): boolean;
+  clearName(): APIKeyStatus;
+
+  getCreationdate(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setCreationdate(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): APIKeyStatus;
+  hasCreationdate(): boolean;
+  clearCreationdate(): APIKeyStatus;
+
+  getLastuseddate(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastuseddate(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): APIKeyStatus;
+  hasLastuseddate(): boolean;
+  clearLastuseddate(): APIKeyStatus;
+
+  getQuotaexceededdate(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setQuotaexceededdate(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): APIKeyStatus;
+  hasQuotaexceededdate(): boolean;
+  clearQuotaexceededdate(): APIKeyStatus;
+
+  getQuotarefresheddate(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setQuotarefresheddate(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): APIKeyStatus;
+  hasQuotarefresheddate(): boolean;
+  clearQuotarefresheddate(): APIKeyStatus;
+
+  getKeygenerated(): boolean;
+  setKeygenerated(value: boolean): APIKeyStatus;
+  hasKeygenerated(): boolean;
+  clearKeygenerated(): APIKeyStatus;
+
+  getMetrics(): APIKeyMetrics | undefined;
+  setMetrics(value?: APIKeyMetrics): APIKeyStatus;
+  hasMetrics(): boolean;
+  clearMetrics(): APIKeyStatus;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): APIKeyStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: APIKeyStatus): APIKeyStatus.AsObject;
+  static serializeBinaryToWriter(message: APIKeyStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): APIKeyStatus;
+  static deserializeBinaryFromReader(message: APIKeyStatus, reader: jspb.BinaryReader): APIKeyStatus;
+}
+
+export namespace APIKeyStatus {
+  export type AsObject = {
+    name?: string,
+    creationdate?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    lastuseddate?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    quotaexceededdate?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    quotarefresheddate?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    keygenerated?: boolean,
+    metrics?: APIKeyMetrics.AsObject,
+  }
+}
+
 export class AutoVectorRetrieverSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): AutoVectorRetrieverSpec;
@@ -42,6 +364,32 @@ export namespace AutoVectorRetrieverSpec {
     model?: ModelSpec.AsObject,
     maxtopk?: number,
     metadatainfoList: Array<MetadataKeyInfo.AsObject>,
+  }
+}
+
+export class BooleanSpec extends jspb.Message {
+  getExtractionmode(): string;
+  setExtractionmode(value: string): BooleanSpec;
+  hasExtractionmode(): boolean;
+  clearExtractionmode(): BooleanSpec;
+
+  getDefault(): boolean;
+  setDefault(value: boolean): BooleanSpec;
+  hasDefault(): boolean;
+  clearDefault(): BooleanSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BooleanSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: BooleanSpec): BooleanSpec.AsObject;
+  static serializeBinaryToWriter(message: BooleanSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BooleanSpec;
+  static deserializeBinaryFromReader(message: BooleanSpec, reader: jspb.BinaryReader): BooleanSpec;
+}
+
+export namespace BooleanSpec {
+  export type AsObject = {
+    extractionmode?: string,
+    pb_default?: boolean,
   }
 }
 
@@ -106,6 +454,68 @@ export namespace CohereRerankSpec {
   export type AsObject = {
     connectionname?: string,
     topn?: number,
+  }
+}
+
+export class Column extends jspb.Message {
+  getName(): string;
+  setName(value: string): Column;
+  hasName(): boolean;
+  clearName(): Column;
+
+  getType(): string;
+  setType(value: string): Column;
+  hasType(): boolean;
+  clearType(): Column;
+
+  getInteger(): IntegerSpec | undefined;
+  setInteger(value?: IntegerSpec): Column;
+  hasInteger(): boolean;
+  clearInteger(): Column;
+
+  getFloat(): FloatSpec | undefined;
+  setFloat(value?: FloatSpec): Column;
+  hasFloat(): boolean;
+  clearFloat(): Column;
+
+  getText(): TextSpec | undefined;
+  setText(value?: TextSpec): Column;
+  hasText(): boolean;
+  clearText(): Column;
+
+  getBoolean(): BooleanSpec | undefined;
+  setBoolean(value?: BooleanSpec): Column;
+  hasBoolean(): boolean;
+  clearBoolean(): Column;
+
+  getDescription(): string;
+  setDescription(value: string): Column;
+  hasDescription(): boolean;
+  clearDescription(): Column;
+
+  getMetadatakey(): string;
+  setMetadatakey(value: string): Column;
+  hasMetadatakey(): boolean;
+  clearMetadatakey(): Column;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Column.AsObject;
+  static toObject(includeInstance: boolean, msg: Column): Column.AsObject;
+  static serializeBinaryToWriter(message: Column, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Column;
+  static deserializeBinaryFromReader(message: Column, reader: jspb.BinaryReader): Column;
+}
+
+export namespace Column {
+  export type AsObject = {
+    name?: string,
+    type?: string,
+    integer?: IntegerSpec.AsObject,
+    pb_float?: FloatSpec.AsObject,
+    text?: TextSpec.AsObject,
+    pb_boolean?: BooleanSpec.AsObject,
+    description?: string,
+    metadatakey?: string,
   }
 }
 
@@ -357,6 +767,164 @@ export namespace EmbeddingRecencyPostProcessorSpec {
   }
 }
 
+export class EmbeddingSpec extends jspb.Message {
+  getColumnsList(): Array<string>;
+  setColumnsList(value: Array<string>): EmbeddingSpec;
+  clearColumnsList(): EmbeddingSpec;
+  addColumns(value: string, index?: number): EmbeddingSpec;
+
+  getModel(): ModelSpec | undefined;
+  setModel(value?: ModelSpec): EmbeddingSpec;
+  hasModel(): boolean;
+  clearModel(): EmbeddingSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EmbeddingSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: EmbeddingSpec): EmbeddingSpec.AsObject;
+  static serializeBinaryToWriter(message: EmbeddingSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EmbeddingSpec;
+  static deserializeBinaryFromReader(message: EmbeddingSpec, reader: jspb.BinaryReader): EmbeddingSpec;
+}
+
+export namespace EmbeddingSpec {
+  export type AsObject = {
+    columnsList: Array<string>,
+    model?: ModelSpec.AsObject,
+  }
+}
+
+export class EndpointMetrics extends jspb.Message {
+  getP50(): number;
+  setP50(value: number): EndpointMetrics;
+  hasP50(): boolean;
+  clearP50(): EndpointMetrics;
+
+  getP95(): number;
+  setP95(value: number): EndpointMetrics;
+  hasP95(): boolean;
+  clearP95(): EndpointMetrics;
+
+  getP99(): number;
+  setP99(value: number): EndpointMetrics;
+  hasP99(): boolean;
+  clearP99(): EndpointMetrics;
+
+  getTotalrequests(): number;
+  setTotalrequests(value: number): EndpointMetrics;
+  hasTotalrequests(): boolean;
+  clearTotalrequests(): EndpointMetrics;
+
+  getTotaltokens(): number;
+  setTotaltokens(value: number): EndpointMetrics;
+  hasTotaltokens(): boolean;
+  clearTotaltokens(): EndpointMetrics;
+
+  getTotalcost(): number;
+  setTotalcost(value: number): EndpointMetrics;
+  hasTotalcost(): boolean;
+  clearTotalcost(): EndpointMetrics;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EndpointMetrics.AsObject;
+  static toObject(includeInstance: boolean, msg: EndpointMetrics): EndpointMetrics.AsObject;
+  static serializeBinaryToWriter(message: EndpointMetrics, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EndpointMetrics;
+  static deserializeBinaryFromReader(message: EndpointMetrics, reader: jspb.BinaryReader): EndpointMetrics;
+}
+
+export namespace EndpointMetrics {
+  export type AsObject = {
+    p50?: number,
+    p95?: number,
+    p99?: number,
+    totalrequests?: number,
+    totaltokens?: number,
+    totalcost?: number,
+  }
+}
+
+export class EndpointSpec extends jspb.Message {
+  getName(): string;
+  setName(value: string): EndpointSpec;
+  hasName(): boolean;
+  clearName(): EndpointSpec;
+
+  getQueryengine(): string;
+  setQueryengine(value: string): EndpointSpec;
+  hasQueryengine(): boolean;
+  clearQueryengine(): EndpointSpec;
+
+  getPath(): string;
+  setPath(value: string): EndpointSpec;
+  hasPath(): boolean;
+  clearPath(): EndpointSpec;
+
+  getPathsList(): Array<string>;
+  setPathsList(value: Array<string>): EndpointSpec;
+  clearPathsList(): EndpointSpec;
+  addPaths(value: string, index?: number): EndpointSpec;
+
+  getFormat(): string;
+  setFormat(value: string): EndpointSpec;
+  hasFormat(): boolean;
+  clearFormat(): EndpointSpec;
+
+  getModel(): ModelSpec | undefined;
+  setModel(value?: ModelSpec): EndpointSpec;
+  hasModel(): boolean;
+  clearModel(): EndpointSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EndpointSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: EndpointSpec): EndpointSpec.AsObject;
+  static serializeBinaryToWriter(message: EndpointSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EndpointSpec;
+  static deserializeBinaryFromReader(message: EndpointSpec, reader: jspb.BinaryReader): EndpointSpec;
+}
+
+export namespace EndpointSpec {
+  export type AsObject = {
+    name?: string,
+    queryengine?: string,
+    path?: string,
+    pathsList: Array<string>,
+    format?: string,
+    model?: ModelSpec.AsObject,
+  }
+}
+
+export class EndpointStatus extends jspb.Message {
+  getName(): string;
+  setName(value: string): EndpointStatus;
+  hasName(): boolean;
+  clearName(): EndpointStatus;
+
+  getFailuremessage(): string;
+  setFailuremessage(value: string): EndpointStatus;
+  hasFailuremessage(): boolean;
+  clearFailuremessage(): EndpointStatus;
+
+  getMetrics(): EndpointMetrics | undefined;
+  setMetrics(value?: EndpointMetrics): EndpointStatus;
+  hasMetrics(): boolean;
+  clearMetrics(): EndpointStatus;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EndpointStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: EndpointStatus): EndpointStatus.AsObject;
+  static serializeBinaryToWriter(message: EndpointStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EndpointStatus;
+  static deserializeBinaryFromReader(message: EndpointStatus, reader: jspb.BinaryReader): EndpointStatus;
+}
+
+export namespace EndpointStatus {
+  export type AsObject = {
+    name?: string,
+    failuremessage?: string,
+    metrics?: EndpointMetrics.AsObject,
+  }
+}
+
 export class ExtensionFilter extends jspb.Message {
   getIncludeList(): Array<string>;
   setIncludeList(value: Array<string>): ExtensionFilter;
@@ -501,6 +1069,44 @@ export namespace FixedRecencyPostProcessorSpec {
   }
 }
 
+export class FloatSpec extends jspb.Message {
+  getExtractionmode(): string;
+  setExtractionmode(value: string): FloatSpec;
+  hasExtractionmode(): boolean;
+  clearExtractionmode(): FloatSpec;
+
+  getRoundingmode(): string;
+  setRoundingmode(value: string): FloatSpec;
+  hasRoundingmode(): boolean;
+  clearRoundingmode(): FloatSpec;
+
+  getPrecision(): number;
+  setPrecision(value: number): FloatSpec;
+  hasPrecision(): boolean;
+  clearPrecision(): FloatSpec;
+
+  getDefault(): number;
+  setDefault(value: number): FloatSpec;
+  hasDefault(): boolean;
+  clearDefault(): FloatSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FloatSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: FloatSpec): FloatSpec.AsObject;
+  static serializeBinaryToWriter(message: FloatSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FloatSpec;
+  static deserializeBinaryFromReader(message: FloatSpec, reader: jspb.BinaryReader): FloatSpec;
+}
+
+export namespace FloatSpec {
+  export type AsObject = {
+    extractionmode?: string,
+    roundingmode?: string,
+    precision?: number,
+    pb_default?: number,
+  }
+}
+
 export class FusionRetrieverSpec extends jspb.Message {
   getRetrieversList(): Array<string>;
   setRetrieversList(value: Array<string>): FusionRetrieverSpec;
@@ -527,6 +1133,11 @@ export class FusionRetrieverSpec extends jspb.Message {
   hasMode(): boolean;
   clearMode(): FusionRetrieverSpec;
 
+  getDefaultscore(): number;
+  setDefaultscore(value: number): FusionRetrieverSpec;
+  hasDefaultscore(): boolean;
+  clearDefaultscore(): FusionRetrieverSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FusionRetrieverSpec.AsObject;
   static toObject(includeInstance: boolean, msg: FusionRetrieverSpec): FusionRetrieverSpec.AsObject;
@@ -542,6 +1153,7 @@ export namespace FusionRetrieverSpec {
     queries?: number,
     topk?: number,
     mode?: string,
+    defaultscore?: number,
   }
 }
 
@@ -613,10 +1225,25 @@ export class IndexSpec extends jspb.Message {
   hasDocumentsummary(): boolean;
   clearDocumentsummary(): IndexSpec;
 
-  getTreeindex(): TreeIndexSpec | undefined;
-  setTreeindex(value?: TreeIndexSpec): IndexSpec;
-  hasTreeindex(): boolean;
-  clearTreeindex(): IndexSpec;
+  getTree(): TreeIndexSpec | undefined;
+  setTree(value?: TreeIndexSpec): IndexSpec;
+  hasTree(): boolean;
+  clearTree(): IndexSpec;
+
+  getKeywordtable(): KeywordTableIndexSpec | undefined;
+  setKeywordtable(value?: KeywordTableIndexSpec): IndexSpec;
+  hasKeywordtable(): boolean;
+  clearKeywordtable(): IndexSpec;
+
+  getSql(): SQLIndexSpec | undefined;
+  setSql(value?: SQLIndexSpec): IndexSpec;
+  hasSql(): boolean;
+  clearSql(): IndexSpec;
+
+  getList(): ListIndexSpec | undefined;
+  setList(value?: ListIndexSpec): IndexSpec;
+  hasList(): boolean;
+  clearList(): IndexSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): IndexSpec.AsObject;
@@ -631,7 +1258,10 @@ export namespace IndexSpec {
     name?: string,
     vector?: VectorIndexSpec.AsObject,
     documentsummary?: DocumentSummaryIndexSpec.AsObject,
-    treeindex?: TreeIndexSpec.AsObject,
+    tree?: TreeIndexSpec.AsObject,
+    keywordtable?: KeywordTableIndexSpec.AsObject,
+    sql?: SQLIndexSpec.AsObject,
+    list?: ListIndexSpec.AsObject,
   }
 }
 
@@ -661,6 +1291,38 @@ export namespace IndexStatus {
   }
 }
 
+export class IntegerSpec extends jspb.Message {
+  getExtractionmode(): string;
+  setExtractionmode(value: string): IntegerSpec;
+  hasExtractionmode(): boolean;
+  clearExtractionmode(): IntegerSpec;
+
+  getRoundingmode(): string;
+  setRoundingmode(value: string): IntegerSpec;
+  hasRoundingmode(): boolean;
+  clearRoundingmode(): IntegerSpec;
+
+  getDefault(): number;
+  setDefault(value: number): IntegerSpec;
+  hasDefault(): boolean;
+  clearDefault(): IntegerSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): IntegerSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: IntegerSpec): IntegerSpec.AsObject;
+  static serializeBinaryToWriter(message: IntegerSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): IntegerSpec;
+  static deserializeBinaryFromReader(message: IntegerSpec, reader: jspb.BinaryReader): IntegerSpec;
+}
+
+export namespace IntegerSpec {
+  export type AsObject = {
+    extractionmode?: string,
+    roundingmode?: string,
+    pb_default?: number,
+  }
+}
+
 export class KeywordPostProcessorSpec extends jspb.Message {
   getIncludeList(): Array<string>;
   setIncludeList(value: Array<string>): KeywordPostProcessorSpec;
@@ -684,6 +1346,82 @@ export namespace KeywordPostProcessorSpec {
   export type AsObject = {
     includeList: Array<string>,
     excludeList: Array<string>,
+  }
+}
+
+export class KeywordTableIndexSpec extends jspb.Message {
+  getMode(): string;
+  setMode(value: string): KeywordTableIndexSpec;
+  hasMode(): boolean;
+  clearMode(): KeywordTableIndexSpec;
+
+  getModel(): ModelSpec | undefined;
+  setModel(value?: ModelSpec): KeywordTableIndexSpec;
+  hasModel(): boolean;
+  clearModel(): KeywordTableIndexSpec;
+
+  getMaxkeywordspernode(): number;
+  setMaxkeywordspernode(value: number): KeywordTableIndexSpec;
+  hasMaxkeywordspernode(): boolean;
+  clearMaxkeywordspernode(): KeywordTableIndexSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): KeywordTableIndexSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: KeywordTableIndexSpec): KeywordTableIndexSpec.AsObject;
+  static serializeBinaryToWriter(message: KeywordTableIndexSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): KeywordTableIndexSpec;
+  static deserializeBinaryFromReader(message: KeywordTableIndexSpec, reader: jspb.BinaryReader): KeywordTableIndexSpec;
+}
+
+export namespace KeywordTableIndexSpec {
+  export type AsObject = {
+    mode?: string,
+    model?: ModelSpec.AsObject,
+    maxkeywordspernode?: number,
+  }
+}
+
+export class KeywordTableRetrieverSpec extends jspb.Message {
+  getIndex(): IndexReference | undefined;
+  setIndex(value?: IndexReference): KeywordTableRetrieverSpec;
+  hasIndex(): boolean;
+  clearIndex(): KeywordTableRetrieverSpec;
+
+  getModel(): ModelSpec | undefined;
+  setModel(value?: ModelSpec): KeywordTableRetrieverSpec;
+  hasModel(): boolean;
+  clearModel(): KeywordTableRetrieverSpec;
+
+  getMode(): string;
+  setMode(value: string): KeywordTableRetrieverSpec;
+  hasMode(): boolean;
+  clearMode(): KeywordTableRetrieverSpec;
+
+  getKeywordsperquery(): number;
+  setKeywordsperquery(value: number): KeywordTableRetrieverSpec;
+  hasKeywordsperquery(): boolean;
+  clearKeywordsperquery(): KeywordTableRetrieverSpec;
+
+  getChunksperquery(): number;
+  setChunksperquery(value: number): KeywordTableRetrieverSpec;
+  hasChunksperquery(): boolean;
+  clearChunksperquery(): KeywordTableRetrieverSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): KeywordTableRetrieverSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: KeywordTableRetrieverSpec): KeywordTableRetrieverSpec.AsObject;
+  static serializeBinaryToWriter(message: KeywordTableRetrieverSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): KeywordTableRetrieverSpec;
+  static deserializeBinaryFromReader(message: KeywordTableRetrieverSpec, reader: jspb.BinaryReader): KeywordTableRetrieverSpec;
+}
+
+export namespace KeywordTableRetrieverSpec {
+  export type AsObject = {
+    index?: IndexReference.AsObject,
+    model?: ModelSpec.AsObject,
+    mode?: string,
+    keywordsperquery?: number,
+    chunksperquery?: number,
   }
 }
 
@@ -907,96 +1645,6 @@ export namespace KnowledgeGraphQueryEngine {
   }
 }
 
-export class LLM extends jspb.Message {
-  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
-  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): LLM;
-  hasMetadata(): boolean;
-  clearMetadata(): LLM;
-
-  getSpec(): LLMSpec | undefined;
-  setSpec(value?: LLMSpec): LLM;
-  hasSpec(): boolean;
-  clearSpec(): LLM;
-
-  getStatus(): LLMStatus | undefined;
-  setStatus(value?: LLMStatus): LLM;
-  hasStatus(): boolean;
-  clearStatus(): LLM;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): LLM.AsObject;
-  static toObject(includeInstance: boolean, msg: LLM): LLM.AsObject;
-  static serializeBinaryToWriter(message: LLM, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): LLM;
-  static deserializeBinaryFromReader(message: LLM, reader: jspb.BinaryReader): LLM;
-}
-
-export namespace LLM {
-  export type AsObject = {
-    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
-    spec?: LLMSpec.AsObject,
-    status?: LLMStatus.AsObject,
-  }
-}
-
-export class LLMAccessSpec extends jspb.Message {
-  getPort(): number;
-  setPort(value: number): LLMAccessSpec;
-  hasPort(): boolean;
-  clearPort(): LLMAccessSpec;
-
-  getNodeport(): number;
-  setNodeport(value: number): LLMAccessSpec;
-  hasNodeport(): boolean;
-  clearNodeport(): LLMAccessSpec;
-
-  getAccesstype(): string;
-  setAccesstype(value: string): LLMAccessSpec;
-  hasAccesstype(): boolean;
-  clearAccesstype(): LLMAccessSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): LLMAccessSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: LLMAccessSpec): LLMAccessSpec.AsObject;
-  static serializeBinaryToWriter(message: LLMAccessSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): LLMAccessSpec;
-  static deserializeBinaryFromReader(message: LLMAccessSpec, reader: jspb.BinaryReader): LLMAccessSpec;
-}
-
-export namespace LLMAccessSpec {
-  export type AsObject = {
-    port?: number,
-    nodeport?: number,
-    accesstype?: string,
-  }
-}
-
-export class LLMList extends jspb.Message {
-  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
-  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): LLMList;
-  hasMetadata(): boolean;
-  clearMetadata(): LLMList;
-
-  getItemsList(): Array<LLM>;
-  setItemsList(value: Array<LLM>): LLMList;
-  clearItemsList(): LLMList;
-  addItems(value?: LLM, index?: number): LLM;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): LLMList.AsObject;
-  static toObject(includeInstance: boolean, msg: LLMList): LLMList.AsObject;
-  static serializeBinaryToWriter(message: LLMList, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): LLMList;
-  static deserializeBinaryFromReader(message: LLMList, reader: jspb.BinaryReader): LLMList;
-}
-
-export namespace LLMList {
-  export type AsObject = {
-    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.AsObject,
-    itemsList: Array<LLM.AsObject>,
-  }
-}
-
 export class LLMRerankSpec extends jspb.Message {
   getTopn(): number;
   setTopn(value: number): LLMRerankSpec;
@@ -1029,64 +1677,192 @@ export namespace LLMRerankSpec {
   }
 }
 
-export class LLMSpec extends jspb.Message {
+export class LLMServer extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): LLMServer;
+  hasMetadata(): boolean;
+  clearMetadata(): LLMServer;
+
+  getSpec(): LLMServerSpec | undefined;
+  setSpec(value?: LLMServerSpec): LLMServer;
+  hasSpec(): boolean;
+  clearSpec(): LLMServer;
+
+  getStatus(): LLMStatus | undefined;
+  setStatus(value?: LLMStatus): LLMServer;
+  hasStatus(): boolean;
+  clearStatus(): LLMServer;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LLMServer.AsObject;
+  static toObject(includeInstance: boolean, msg: LLMServer): LLMServer.AsObject;
+  static serializeBinaryToWriter(message: LLMServer, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LLMServer;
+  static deserializeBinaryFromReader(message: LLMServer, reader: jspb.BinaryReader): LLMServer;
+}
+
+export namespace LLMServer {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
+    spec?: LLMServerSpec.AsObject,
+    status?: LLMStatus.AsObject,
+  }
+}
+
+export class LLMServerAccessSpec extends jspb.Message {
+  getPort(): number;
+  setPort(value: number): LLMServerAccessSpec;
+  hasPort(): boolean;
+  clearPort(): LLMServerAccessSpec;
+
+  getNodeport(): number;
+  setNodeport(value: number): LLMServerAccessSpec;
+  hasNodeport(): boolean;
+  clearNodeport(): LLMServerAccessSpec;
+
+  getAccesstype(): string;
+  setAccesstype(value: string): LLMServerAccessSpec;
+  hasAccesstype(): boolean;
+  clearAccesstype(): LLMServerAccessSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LLMServerAccessSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: LLMServerAccessSpec): LLMServerAccessSpec.AsObject;
+  static serializeBinaryToWriter(message: LLMServerAccessSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LLMServerAccessSpec;
+  static deserializeBinaryFromReader(message: LLMServerAccessSpec, reader: jspb.BinaryReader): LLMServerAccessSpec;
+}
+
+export namespace LLMServerAccessSpec {
+  export type AsObject = {
+    port?: number,
+    nodeport?: number,
+    accesstype?: string,
+  }
+}
+
+export class LLMServerAuthorizationSpec extends jspb.Message {
+  getInsecure(): boolean;
+  setInsecure(value: boolean): LLMServerAuthorizationSpec;
+  hasInsecure(): boolean;
+  clearInsecure(): LLMServerAuthorizationSpec;
+
+  getAllowedkeygroupsList(): Array<string>;
+  setAllowedkeygroupsList(value: Array<string>): LLMServerAuthorizationSpec;
+  clearAllowedkeygroupsList(): LLMServerAuthorizationSpec;
+  addAllowedkeygroups(value: string, index?: number): LLMServerAuthorizationSpec;
+
+  getAllowedkeynamesList(): Array<string>;
+  setAllowedkeynamesList(value: Array<string>): LLMServerAuthorizationSpec;
+  clearAllowedkeynamesList(): LLMServerAuthorizationSpec;
+  addAllowedkeynames(value: string, index?: number): LLMServerAuthorizationSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LLMServerAuthorizationSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: LLMServerAuthorizationSpec): LLMServerAuthorizationSpec.AsObject;
+  static serializeBinaryToWriter(message: LLMServerAuthorizationSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LLMServerAuthorizationSpec;
+  static deserializeBinaryFromReader(message: LLMServerAuthorizationSpec, reader: jspb.BinaryReader): LLMServerAuthorizationSpec;
+}
+
+export namespace LLMServerAuthorizationSpec {
+  export type AsObject = {
+    insecure?: boolean,
+    allowedkeygroupsList: Array<string>,
+    allowedkeynamesList: Array<string>,
+  }
+}
+
+export class LLMServerList extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): LLMServerList;
+  hasMetadata(): boolean;
+  clearMetadata(): LLMServerList;
+
+  getItemsList(): Array<LLMServer>;
+  setItemsList(value: Array<LLMServer>): LLMServerList;
+  clearItemsList(): LLMServerList;
+  addItems(value?: LLMServer, index?: number): LLMServer;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LLMServerList.AsObject;
+  static toObject(includeInstance: boolean, msg: LLMServerList): LLMServerList.AsObject;
+  static serializeBinaryToWriter(message: LLMServerList, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LLMServerList;
+  static deserializeBinaryFromReader(message: LLMServerList, reader: jspb.BinaryReader): LLMServerList;
+}
+
+export namespace LLMServerList {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.AsObject,
+    itemsList: Array<LLMServer.AsObject>,
+  }
+}
+
+export class LLMServerSpec extends jspb.Message {
   getOwner(): string;
-  setOwner(value: string): LLMSpec;
+  setOwner(value: string): LLMServerSpec;
   hasOwner(): boolean;
-  clearOwner(): LLMSpec;
+  clearOwner(): LLMServerSpec;
 
   getDescription(): string;
-  setDescription(value: string): LLMSpec;
+  setDescription(value: string): LLMServerSpec;
   hasDescription(): boolean;
-  clearDescription(): LLMSpec;
+  clearDescription(): LLMServerSpec;
 
   getServingsitename(): string;
-  setServingsitename(value: string): LLMSpec;
+  setServingsitename(value: string): LLMServerSpec;
   hasServingsitename(): boolean;
-  clearServingsitename(): LLMSpec;
+  clearServingsitename(): LLMServerSpec;
 
   getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
-  setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): LLMSpec;
+  setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): LLMServerSpec;
   hasResources(): boolean;
-  clearResources(): LLMSpec;
+  clearResources(): LLMServerSpec;
 
-  getModelsList(): Array<ModelServingSpec>;
-  setModelsList(value: Array<ModelServingSpec>): LLMSpec;
-  clearModelsList(): LLMSpec;
-  addModels(value?: ModelServingSpec, index?: number): ModelServingSpec;
+  getEndpointsList(): Array<EndpointSpec>;
+  setEndpointsList(value: Array<EndpointSpec>): LLMServerSpec;
+  clearEndpointsList(): LLMServerSpec;
+  addEndpoints(value?: EndpointSpec, index?: number): EndpointSpec;
 
   getQueryenginesList(): Array<QueryEngineSpec>;
-  setQueryenginesList(value: Array<QueryEngineSpec>): LLMSpec;
-  clearQueryenginesList(): LLMSpec;
+  setQueryenginesList(value: Array<QueryEngineSpec>): LLMServerSpec;
+  clearQueryenginesList(): LLMServerSpec;
   addQueryengines(value?: QueryEngineSpec, index?: number): QueryEngineSpec;
 
   getRetrieversList(): Array<RetrieverSpec>;
-  setRetrieversList(value: Array<RetrieverSpec>): LLMSpec;
-  clearRetrieversList(): LLMSpec;
+  setRetrieversList(value: Array<RetrieverSpec>): LLMServerSpec;
+  clearRetrieversList(): LLMServerSpec;
   addRetrievers(value?: RetrieverSpec, index?: number): RetrieverSpec;
 
+  getAuthorization(): LLMServerAuthorizationSpec | undefined;
+  setAuthorization(value?: LLMServerAuthorizationSpec): LLMServerSpec;
+  hasAuthorization(): boolean;
+  clearAuthorization(): LLMServerSpec;
+
   getNotification(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec | undefined;
-  setNotification(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec): LLMSpec;
+  setNotification(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec): LLMServerSpec;
   hasNotification(): boolean;
-  clearNotification(): LLMSpec;
+  clearNotification(): LLMServerSpec;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): LLMSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: LLMSpec): LLMSpec.AsObject;
-  static serializeBinaryToWriter(message: LLMSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): LLMSpec;
-  static deserializeBinaryFromReader(message: LLMSpec, reader: jspb.BinaryReader): LLMSpec;
+  toObject(includeInstance?: boolean): LLMServerSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: LLMServerSpec): LLMServerSpec.AsObject;
+  static serializeBinaryToWriter(message: LLMServerSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LLMServerSpec;
+  static deserializeBinaryFromReader(message: LLMServerSpec, reader: jspb.BinaryReader): LLMServerSpec;
 }
 
-export namespace LLMSpec {
+export namespace LLMServerSpec {
   export type AsObject = {
     owner?: string,
     description?: string,
     servingsitename?: string,
     resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
-    modelsList: Array<ModelServingSpec.AsObject>,
+    endpointsList: Array<EndpointSpec.AsObject>,
     queryenginesList: Array<QueryEngineSpec.AsObject>,
     retrieversList: Array<RetrieverSpec.AsObject>,
+    authorization?: LLMServerAuthorizationSpec.AsObject,
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
   }
 }
@@ -1097,10 +1873,10 @@ export class LLMStatus extends jspb.Message {
   hasObservedgeneration(): boolean;
   clearObservedgeneration(): LLMStatus;
 
-  getDocumentsList(): Array<ModelStatus>;
-  setDocumentsList(value: Array<ModelStatus>): LLMStatus;
-  clearDocumentsList(): LLMStatus;
-  addDocuments(value?: ModelStatus, index?: number): ModelStatus;
+  getEndpointsList(): Array<EndpointStatus>;
+  setEndpointsList(value: Array<EndpointStatus>): LLMStatus;
+  clearEndpointsList(): LLMStatus;
+  addEndpoints(value?: EndpointStatus, index?: number): EndpointStatus;
 
   getEndpoint(): string;
   setEndpoint(value: string): LLMStatus;
@@ -1148,7 +1924,7 @@ export class LLMStatus extends jspb.Message {
 export namespace LLMStatus {
   export type AsObject = {
     observedgeneration?: number,
-    documentsList: Array<ModelStatus.AsObject>,
+    endpointsList: Array<EndpointStatus.AsObject>,
     endpoint?: string,
     deployedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     deploymentref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
@@ -1182,6 +1958,58 @@ export namespace LengthFilter {
   export type AsObject = {
     greaterthan?: number,
     lessthan?: number,
+  }
+}
+
+export class ListIndexSpec extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListIndexSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ListIndexSpec): ListIndexSpec.AsObject;
+  static serializeBinaryToWriter(message: ListIndexSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListIndexSpec;
+  static deserializeBinaryFromReader(message: ListIndexSpec, reader: jspb.BinaryReader): ListIndexSpec;
+}
+
+export namespace ListIndexSpec {
+  export type AsObject = {
+  }
+}
+
+export class ListRetrieverSpec extends jspb.Message {
+  getIndex(): IndexReference | undefined;
+  setIndex(value?: IndexReference): ListRetrieverSpec;
+  hasIndex(): boolean;
+  clearIndex(): ListRetrieverSpec;
+
+  getModel(): ModelSpec | undefined;
+  setModel(value?: ModelSpec): ListRetrieverSpec;
+  hasModel(): boolean;
+  clearModel(): ListRetrieverSpec;
+
+  getTopk(): number;
+  setTopk(value: number): ListRetrieverSpec;
+  hasTopk(): boolean;
+  clearTopk(): ListRetrieverSpec;
+
+  getMode(): string;
+  setMode(value: string): ListRetrieverSpec;
+  hasMode(): boolean;
+  clearMode(): ListRetrieverSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListRetrieverSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ListRetrieverSpec): ListRetrieverSpec.AsObject;
+  static serializeBinaryToWriter(message: ListRetrieverSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListRetrieverSpec;
+  static deserializeBinaryFromReader(message: ListRetrieverSpec, reader: jspb.BinaryReader): ListRetrieverSpec;
+}
+
+export namespace ListRetrieverSpec {
+  export type AsObject = {
+    index?: IndexReference.AsObject,
+    model?: ModelSpec.AsObject,
+    topk?: number,
+    mode?: string,
   }
 }
 
@@ -1257,94 +2085,6 @@ export namespace MixedNodeParserSpec {
   }
 }
 
-export class ModelMetrics extends jspb.Message {
-  getP50(): number;
-  setP50(value: number): ModelMetrics;
-  hasP50(): boolean;
-  clearP50(): ModelMetrics;
-
-  getP95(): number;
-  setP95(value: number): ModelMetrics;
-  hasP95(): boolean;
-  clearP95(): ModelMetrics;
-
-  getP99(): number;
-  setP99(value: number): ModelMetrics;
-  hasP99(): boolean;
-  clearP99(): ModelMetrics;
-
-  getTotalpredictions(): number;
-  setTotalpredictions(value: number): ModelMetrics;
-  hasTotalpredictions(): boolean;
-  clearTotalpredictions(): ModelMetrics;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ModelMetrics.AsObject;
-  static toObject(includeInstance: boolean, msg: ModelMetrics): ModelMetrics.AsObject;
-  static serializeBinaryToWriter(message: ModelMetrics, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ModelMetrics;
-  static deserializeBinaryFromReader(message: ModelMetrics, reader: jspb.BinaryReader): ModelMetrics;
-}
-
-export namespace ModelMetrics {
-  export type AsObject = {
-    p50?: number,
-    p95?: number,
-    p99?: number,
-    totalpredictions?: number,
-  }
-}
-
-export class ModelServingSpec extends jspb.Message {
-  getName(): string;
-  setName(value: string): ModelServingSpec;
-  hasName(): boolean;
-  clearName(): ModelServingSpec;
-
-  getQueryengine(): string;
-  setQueryengine(value: string): ModelServingSpec;
-  hasQueryengine(): boolean;
-  clearQueryengine(): ModelServingSpec;
-
-  getPath(): string;
-  setPath(value: string): ModelServingSpec;
-  hasPath(): boolean;
-  clearPath(): ModelServingSpec;
-
-  getPathsList(): Array<string>;
-  setPathsList(value: Array<string>): ModelServingSpec;
-  clearPathsList(): ModelServingSpec;
-  addPaths(value: string, index?: number): ModelServingSpec;
-
-  getFormat(): string;
-  setFormat(value: string): ModelServingSpec;
-  hasFormat(): boolean;
-  clearFormat(): ModelServingSpec;
-
-  getModel(): ModelSpec | undefined;
-  setModel(value?: ModelSpec): ModelServingSpec;
-  hasModel(): boolean;
-  clearModel(): ModelServingSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ModelServingSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: ModelServingSpec): ModelServingSpec.AsObject;
-  static serializeBinaryToWriter(message: ModelServingSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ModelServingSpec;
-  static deserializeBinaryFromReader(message: ModelServingSpec, reader: jspb.BinaryReader): ModelServingSpec;
-}
-
-export namespace ModelServingSpec {
-  export type AsObject = {
-    name?: string,
-    queryengine?: string,
-    path?: string,
-    pathsList: Array<string>,
-    format?: string,
-    model?: ModelSpec.AsObject,
-  }
-}
-
 export class ModelSpec extends jspb.Message {
   getConnectionname(): string;
   setConnectionname(value: string): ModelSpec;
@@ -1368,38 +2108,6 @@ export namespace ModelSpec {
   export type AsObject = {
     connectionname?: string,
     model?: string,
-  }
-}
-
-export class ModelStatus extends jspb.Message {
-  getName(): string;
-  setName(value: string): ModelStatus;
-  hasName(): boolean;
-  clearName(): ModelStatus;
-
-  getFailuremessage(): string;
-  setFailuremessage(value: string): ModelStatus;
-  hasFailuremessage(): boolean;
-  clearFailuremessage(): ModelStatus;
-
-  getModelmetrics(): ModelMetrics | undefined;
-  setModelmetrics(value?: ModelMetrics): ModelStatus;
-  hasModelmetrics(): boolean;
-  clearModelmetrics(): ModelStatus;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ModelStatus.AsObject;
-  static toObject(includeInstance: boolean, msg: ModelStatus): ModelStatus.AsObject;
-  static serializeBinaryToWriter(message: ModelStatus, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ModelStatus;
-  static deserializeBinaryFromReader(message: ModelStatus, reader: jspb.BinaryReader): ModelStatus;
-}
-
-export namespace ModelStatus {
-  export type AsObject = {
-    name?: string,
-    failuremessage?: string,
-    modelmetrics?: ModelMetrics.AsObject,
   }
 }
 
@@ -1777,6 +2485,21 @@ export class RetrieverSpec extends jspb.Message {
   hasDocumentsummary(): boolean;
   clearDocumentsummary(): RetrieverSpec;
 
+  getTree(): TreeRetrieverSpec | undefined;
+  setTree(value?: TreeRetrieverSpec): RetrieverSpec;
+  hasTree(): boolean;
+  clearTree(): RetrieverSpec;
+
+  getKeywordtable(): KeywordTableRetrieverSpec | undefined;
+  setKeywordtable(value?: KeywordTableRetrieverSpec): RetrieverSpec;
+  hasKeywordtable(): boolean;
+  clearKeywordtable(): RetrieverSpec;
+
+  getList(): ListRetrieverSpec | undefined;
+  setList(value?: ListRetrieverSpec): RetrieverSpec;
+  hasList(): boolean;
+  clearList(): RetrieverSpec;
+
   getRouter(): RouterRetrieverSpec | undefined;
   setRouter(value?: RouterRetrieverSpec): RetrieverSpec;
   hasRouter(): boolean;
@@ -1800,6 +2523,9 @@ export namespace RetrieverSpec {
     name?: string,
     vector?: VectorRetrieverSpec.AsObject,
     documentsummary?: DocumentSummaryRetrieverSpec.AsObject,
+    tree?: TreeRetrieverSpec.AsObject,
+    keywordtable?: KeywordTableRetrieverSpec.AsObject,
+    list?: ListRetrieverSpec.AsObject,
     router?: RouterRetrieverSpec.AsObject,
     fusion?: FusionRetrieverSpec.AsObject,
   }
@@ -1886,6 +2612,82 @@ export namespace RouterRetrieverSpec {
   export type AsObject = {
     toolsList: Array<RetrieverToolSpec.AsObject>,
     selector?: SelectorSpec.AsObject,
+  }
+}
+
+export class SQLIndexSpec extends jspb.Message {
+  getModel(): ModelSpec | undefined;
+  setModel(value?: ModelSpec): SQLIndexSpec;
+  hasModel(): boolean;
+  clearModel(): SQLIndexSpec;
+
+  getDatabaseconnectionname(): string;
+  setDatabaseconnectionname(value: string): SQLIndexSpec;
+  hasDatabaseconnectionname(): boolean;
+  clearDatabaseconnectionname(): SQLIndexSpec;
+
+  getTablename(): string;
+  setTablename(value: string): SQLIndexSpec;
+  hasTablename(): boolean;
+  clearTablename(): SQLIndexSpec;
+
+  getRefdoccolumn(): string;
+  setRefdoccolumn(value: string): SQLIndexSpec;
+  hasRefdoccolumn(): boolean;
+  clearRefdoccolumn(): SQLIndexSpec;
+
+  getSchema(): Schema | undefined;
+  setSchema(value?: Schema): SQLIndexSpec;
+  hasSchema(): boolean;
+  clearSchema(): SQLIndexSpec;
+
+  getGranularity(): string;
+  setGranularity(value: string): SQLIndexSpec;
+  hasGranularity(): boolean;
+  clearGranularity(): SQLIndexSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SQLIndexSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: SQLIndexSpec): SQLIndexSpec.AsObject;
+  static serializeBinaryToWriter(message: SQLIndexSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SQLIndexSpec;
+  static deserializeBinaryFromReader(message: SQLIndexSpec, reader: jspb.BinaryReader): SQLIndexSpec;
+}
+
+export namespace SQLIndexSpec {
+  export type AsObject = {
+    model?: ModelSpec.AsObject,
+    databaseconnectionname?: string,
+    tablename?: string,
+    refdoccolumn?: string,
+    schema?: Schema.AsObject,
+    granularity?: string,
+  }
+}
+
+export class Schema extends jspb.Message {
+  getDescription(): string;
+  setDescription(value: string): Schema;
+  hasDescription(): boolean;
+  clearDescription(): Schema;
+
+  getColumnsList(): Array<Column>;
+  setColumnsList(value: Array<Column>): Schema;
+  clearColumnsList(): Schema;
+  addColumns(value?: Column, index?: number): Column;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Schema.AsObject;
+  static toObject(includeInstance: boolean, msg: Schema): Schema.AsObject;
+  static serializeBinaryToWriter(message: Schema, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Schema;
+  static deserializeBinaryFromReader(message: Schema, reader: jspb.BinaryReader): Schema;
+}
+
+export namespace Schema {
+  export type AsObject = {
+    description?: string,
+    columnsList: Array<Column.AsObject>,
   }
 }
 
@@ -2107,6 +2909,44 @@ export namespace SubQuestionQueryEngineSpec {
   }
 }
 
+export class TextSpec extends jspb.Message {
+  getExtractionmode(): string;
+  setExtractionmode(value: string): TextSpec;
+  hasExtractionmode(): boolean;
+  clearExtractionmode(): TextSpec;
+
+  getSummarizationprompt(): string;
+  setSummarizationprompt(value: string): TextSpec;
+  hasSummarizationprompt(): boolean;
+  clearSummarizationprompt(): TextSpec;
+
+  getConcatenationstring(): string;
+  setConcatenationstring(value: string): TextSpec;
+  hasConcatenationstring(): boolean;
+  clearConcatenationstring(): TextSpec;
+
+  getDefault(): number;
+  setDefault(value: number): TextSpec;
+  hasDefault(): boolean;
+  clearDefault(): TextSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TextSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: TextSpec): TextSpec.AsObject;
+  static serializeBinaryToWriter(message: TextSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TextSpec;
+  static deserializeBinaryFromReader(message: TextSpec, reader: jspb.BinaryReader): TextSpec;
+}
+
+export namespace TextSpec {
+  export type AsObject = {
+    extractionmode?: string,
+    summarizationprompt?: string,
+    concatenationstring?: string,
+    pb_default?: number,
+  }
+}
+
 export class TextSplitterSpec extends jspb.Message {
   getType(): string;
   setType(value: string): TextSplitterSpec;
@@ -2238,6 +3078,44 @@ export namespace TreeIndexSpec {
   export type AsObject = {
     model?: ModelSpec.AsObject,
     children?: number,
+  }
+}
+
+export class TreeRetrieverSpec extends jspb.Message {
+  getIndex(): IndexReference | undefined;
+  setIndex(value?: IndexReference): TreeRetrieverSpec;
+  hasIndex(): boolean;
+  clearIndex(): TreeRetrieverSpec;
+
+  getModel(): ModelSpec | undefined;
+  setModel(value?: ModelSpec): TreeRetrieverSpec;
+  hasModel(): boolean;
+  clearModel(): TreeRetrieverSpec;
+
+  getMode(): string;
+  setMode(value: string): TreeRetrieverSpec;
+  hasMode(): boolean;
+  clearMode(): TreeRetrieverSpec;
+
+  getChildbranchfactor(): number;
+  setChildbranchfactor(value: number): TreeRetrieverSpec;
+  hasChildbranchfactor(): boolean;
+  clearChildbranchfactor(): TreeRetrieverSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TreeRetrieverSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: TreeRetrieverSpec): TreeRetrieverSpec.AsObject;
+  static serializeBinaryToWriter(message: TreeRetrieverSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TreeRetrieverSpec;
+  static deserializeBinaryFromReader(message: TreeRetrieverSpec, reader: jspb.BinaryReader): TreeRetrieverSpec;
+}
+
+export namespace TreeRetrieverSpec {
+  export type AsObject = {
+    index?: IndexReference.AsObject,
+    model?: ModelSpec.AsObject,
+    mode?: string,
+    childbranchfactor?: number,
   }
 }
 

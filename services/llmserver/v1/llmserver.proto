@@ -1,0 +1,83 @@
+syntax = "proto3";
+option go_package = "github.com/metaprov/modelaapi/services/llmserver/v1";
+package github.com.metaprov.modelaapi.services.llmserver.v1;
+
+
+import "google/protobuf/field_mask.proto";
+import "google/api/annotations.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/genai/v1alpha1/generated.proto";
+
+
+message ListLLMServersRequest {
+  string namespace = 1;
+  map<string, string> labels = 2;
+}
+
+message ListLLMServersResponse {
+  github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerList llmservers = 1;
+  string next_page_token = 2;
+}
+
+
+message CreateLLMServerRequest {
+  github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer llmserver = 1;
+}
+
+message CreateLLMServerResponse {}
+
+
+message UpdateLLMServerRequest {
+  github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer llmserver = 1;
+  google.protobuf.FieldMask field_mask = 2;
+}
+
+message UpdateLLMServerResponse {}
+
+
+message GetLLMServerRequest {
+  string namespace = 1;
+  string name      = 2;
+
+}
+
+message GetLLMServerResponse {
+  github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer llmserver = 1;
+  string yaml = 2;
+
+}
+
+message DeleteLLMServerRequest {
+  string namespace = 1;
+  string name      = 2;
+}
+
+message DeleteLLMServerResponse {}
+
+
+service LLMServerService {
+  rpc ListLLMServers(ListLLMServersRequest) returns (ListLLMServersResponse) {
+    option (google.api.http).get = "/v1/llmservers/{namespace}";
+  }
+
+  rpc CreateLLMServer(CreateLLMServerRequest) returns (CreateLLMServerResponse) {
+    option (google.api.http) = {
+      post: "/v1/llmservers"
+      body: "*"
+    };
+  }
+
+  rpc GetLLMServer(GetLLMServerRequest) returns (GetLLMServerResponse) {
+    option (google.api.http).get = "/v1/llmservers/{namespace}/{name}";
+  }
+
+  rpc UpdateLLMServer(UpdateLLMServerRequest) returns (UpdateLLMServerResponse) {
+    option (google.api.http) = {
+      put: "/v1/llmservers/{llmserver.metadata.namespace}/{llmserver.metadata.name}"
+      body: "*"
+    };
+  }
+
+  rpc DeleteLLMServer(DeleteLLMServerRequest) returns (DeleteLLMServerResponse) {
+    option (google.api.http).delete = "/v1/llmservers/{namespace}/{name}";
+  }
+}

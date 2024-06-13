@@ -14,19 +14,19 @@ import (
 
 /////// Finalizers ///////
 
-func (llm *LLM) SetupWebhookWithManager(mgr ctrl.Manager) error {
+func (llm *LLMServer) SetupWebhookWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewWebhookManagedBy(mgr).
 		For(llm).
 		Complete()
 }
 
-func (llm *LLM) HasFinalizer() bool { return util.HasFin(&llm.ObjectMeta, genai.GroupName) }
-func (llm *LLM) AddFinalizer()      { util.AddFin(&llm.ObjectMeta, genai.GroupName) }
-func (llm *LLM) RemoveFinalizer()   { util.RemoveFin(&llm.ObjectMeta, genai.GroupName) }
+func (llm *LLMServer) HasFinalizer() bool { return util.HasFin(&llm.ObjectMeta, genai.GroupName) }
+func (llm *LLMServer) AddFinalizer()      { util.AddFin(&llm.ObjectMeta, genai.GroupName) }
+func (llm *LLMServer) RemoveFinalizer()   { util.RemoveFin(&llm.ObjectMeta, genai.GroupName) }
 
 /////// Conditions ///////
 
-func (llm *LLM) CreateOrUpdateCondition(cond metav1.Condition) {
+func (llm *LLMServer) CreateOrUpdateCondition(cond metav1.Condition) {
 	i := llm.GetConditionIndex(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
@@ -45,7 +45,7 @@ func (llm *LLM) CreateOrUpdateCondition(cond metav1.Condition) {
 	llm.Status.Conditions[i] = current
 }
 
-func (llm *LLM) GetConditionIndex(t string) int {
+func (llm *LLMServer) GetConditionIndex(t string) int {
 	for i, v := range llm.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -54,7 +54,7 @@ func (llm *LLM) GetConditionIndex(t string) int {
 	return -1
 }
 
-func (llm *LLM) GetCondition(condType LLMConditionType) metav1.Condition {
+func (llm *LLMServer) GetCondition(condType LLMServerConditionType) metav1.Condition {
 	for _, v := range llm.Status.Conditions {
 		if v.Type == string(condType) {
 			return v
@@ -69,73 +69,73 @@ func (llm *LLM) GetCondition(condType LLMConditionType) metav1.Condition {
 	}
 }
 
-func (llm *LLM) Deleted() bool {
+func (llm *LLMServer) Deleted() bool {
 	return !llm.ObjectMeta.DeletionTimestamp.IsZero()
 }
 
-func (llm *LLM) RootURI() string {
+func (llm *LLMServer) RootURI() string {
 	return fmt.Sprintf("dataproducts/%s/llms/%s", llm.Namespace, llm.Name)
 }
 
 /////// Saved Condition ///////
 
-func (llm *LLM) Saved() bool {
-	return llm.GetCondition(LLMSaved).Status == metav1.ConditionTrue
+func (llm *LLMServer) Saved() bool {
+	return llm.GetCondition(LLMServerSaved).Status == metav1.ConditionTrue
 }
 
-func (llm *LLM) MarkNotSaved() {
+func (llm *LLMServer) MarkNotSaved() {
 	llm.CreateOrUpdateCondition(metav1.Condition{
-		Type:   string(LLMSaved),
+		Type:   string(LLMServerSaved),
 		Status: metav1.ConditionFalse,
 		Reason: string(catalog.NotSaved),
 	})
 }
 
-func (llm *LLM) MarkSaved() {
+func (llm *LLMServer) MarkSaved() {
 	llm.CreateOrUpdateCondition(metav1.Condition{
-		Type:   string(LLMSaved),
+		Type:   string(LLMServerSaved),
 		Status: metav1.ConditionTrue,
-		Reason: string(LLMSaved),
+		Reason: string(LLMServerSaved),
 	})
 }
 
 /////// Deployed Condition ///////
 
-func (llm *LLM) Deployed() bool {
-	return llm.GetCondition(LLMDeployed).Status == metav1.ConditionTrue
+func (llm *LLMServer) Deployed() bool {
+	return llm.GetCondition(LLMServerDeployed).Status == metav1.ConditionTrue
 }
 
-func (llm *LLM) Deploying() bool {
-	return llm.GetCondition(LLMDeployed).Reason == DeployingReason
+func (llm *LLMServer) Deploying() bool {
+	return llm.GetCondition(LLMServerDeployed).Reason == DeployingReason
 }
 
-func (llm *LLM) MarkNotDeployed() {
+func (llm *LLMServer) MarkNotDeployed() {
 	llm.CreateOrUpdateCondition(metav1.Condition{
-		Type:   string(LLMDeployed),
+		Type:   string(LLMServerDeployed),
 		Status: metav1.ConditionFalse,
 		Reason: DeployingReason,
 	})
 }
 
-func (llm *LLM) MarkDeployed() {
+func (llm *LLMServer) MarkDeployed() {
 	llm.CreateOrUpdateCondition(metav1.Condition{
-		Type:   string(LLMDeployed),
+		Type:   string(LLMServerDeployed),
 		Status: metav1.ConditionTrue,
-		Reason: string(LLMDeployed),
+		Reason: string(LLMServerDeployed),
 	})
 }
 
-func (llm *LLM) MarkDeploying() {
+func (llm *LLMServer) MarkDeploying() {
 	llm.CreateOrUpdateCondition(metav1.Condition{
-		Type:   string(LLMDeployed),
+		Type:   string(LLMServerDeployed),
 		Status: metav1.ConditionTrue,
 		Reason: "Deploying",
 	})
 }
 
-func (llm *LLM) MarkDeployFailed(reason string, msg string) {
+func (llm *LLMServer) MarkDeployFailed(reason string, msg string) {
 	llm.CreateOrUpdateCondition(metav1.Condition{
-		Type:    string(LLMDeployed),
+		Type:    string(LLMServerDeployed),
 		Status:  metav1.ConditionFalse,
 		Reason:  reason,
 		Message: msg,
@@ -144,9 +144,9 @@ func (llm *LLM) MarkDeployFailed(reason string, msg string) {
 
 /////// Alert Methods ///////
 
-func (llm *LLM) ErrorAlert(notification catalog.NotificationSpec, err error) *infra.Alert {
+func (llm *LLMServer) ErrorAlert(notification catalog.NotificationSpec, err error) *infra.Alert {
 	level := infra.ErrorAlertLevel
-	subject := fmt.Sprintf("LLM %s failed with error: %v", llm.Name, err.Error())
+	subject := fmt.Sprintf("LLMServer %s failed with error: %v", llm.Name, err.Error())
 	result := &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: llm.Name,
@@ -157,7 +157,7 @@ func (llm *LLM) ErrorAlert(notification catalog.NotificationSpec, err error) *in
 			Level:        &level,
 			Notification: notification,
 			EntityRef: v1.ObjectReference{
-				Kind:      "LLM",
+				Kind:      "LLMServer",
 				Name:      llm.Name,
 				Namespace: llm.Namespace,
 			},
@@ -172,22 +172,22 @@ func (llm *LLM) ErrorAlert(notification catalog.NotificationSpec, err error) *in
 
 /////// Reconciler Methods ///////
 
-func (llm *LLM) GetStatus() proto.Message {
+func (llm *LLMServer) GetStatus() proto.Message {
 	return &llm.Status
 }
 
-func (llm *LLM) GetObservedGeneration() int64 {
+func (llm *LLMServer) GetObservedGeneration() int64 {
 	return llm.Status.ObservedGeneration
 }
 
-func (llm *LLM) SetObservedGeneration(generation int64) {
+func (llm *LLMServer) SetObservedGeneration(generation int64) {
 	llm.Status.ObservedGeneration = generation
 }
 
-func (llm *LLM) SetUpdatedAt(time *metav1.Time) {
+func (llm *LLMServer) SetUpdatedAt(time *metav1.Time) {
 	llm.Status.UpdatedAt = time
 }
 
-func (llm *LLM) SetStatus(status interface{}) {
+func (llm *LLMServer) SetStatus(status interface{}) {
 	llm.Status = *status.(*LLMStatus)
 }

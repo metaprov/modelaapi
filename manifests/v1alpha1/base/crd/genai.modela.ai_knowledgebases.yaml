@@ -362,10 +362,10 @@ spec:
                             For example, the `node` granularity will extract a data
                             point for each page in a PDF file, whilst the `document`
                             granularity will extract a single data point for the entire
-                            file. If unspecified, default to document
+                            file. If unspecified, default to `document`
                           type: string
                         model:
-                          description: The LLM to use when extracting data points
+                          description: The LLMServer to use when extracting data points
                             from documents
                           properties:
                             connectionName:
@@ -396,11 +396,73 @@ spec:
                                 description: Column defines the schema for a single
                                   column in a table managed by a SQL index
                                 properties:
+                                  boolean:
+                                    description: The specification for a boolean column
+                                    properties:
+                                      default:
+                                        description: The default boolean value, if
+                                          one could not be extracted from the nodes.
+                                          If unspecified, the column will be left
+                                          null
+                                        type: boolean
+                                      extractionMode:
+                                        description: The method to use for determining
+                                          the final boolean value extracted from all
+                                          nodes. If unspecified, default to mean
+                                        type: string
+                                    type: object
                                   description:
                                     description: The description of the column, which
                                       the LLM will use to extract the value of the
                                       column from documents
                                     type: string
+                                  float:
+                                    description: The specification for a float column
+                                    properties:
+                                      default:
+                                        description: The default number, if one could
+                                          not be extracted from the nodes. If unspecified,
+                                          the column will be left null
+                                        format: int32
+                                        type: integer
+                                      extractionMode:
+                                        description: The method to use for determining
+                                          the final number extracted from all nodes.
+                                          If unspecified, default to mean
+                                        type: string
+                                      precision:
+                                        description: The maximum precision of the
+                                          extracted float. If unspecified, default
+                                          to 3
+                                        format: int32
+                                        type: integer
+                                      roundingMode:
+                                        description: The rounding mode to use when
+                                          determining the final number. If unspecified,
+                                          rounding will not be applied
+                                        type: string
+                                    type: object
+                                  integer:
+                                    description: The specification for an integer
+                                      column
+                                    properties:
+                                      default:
+                                        description: The default number, if one could
+                                          not be extracted from the nodes. If unspecified,
+                                          the column will be left null
+                                        format: int32
+                                        type: integer
+                                      extractionMode:
+                                        description: The method to use for determining
+                                          the final number extracted from all nodes.
+                                          If unspecified, default to mean
+                                        type: string
+                                      roundingMode:
+                                        description: The rounding mode to use when
+                                          determining the final number. If unspecified,
+                                          default to `round`
+                                        type: string
+                                    type: object
                                   metadataKey:
                                     description: The metadata key of the document
                                       being processed which will be used as a value
@@ -409,8 +471,39 @@ spec:
                                   name:
                                     description: The name of the column
                                     type: string
+                                  text:
+                                    description: The specification for a text column
+                                    properties:
+                                      concatenationString:
+                                        description: The string to use for concatenation.
+                                          If unspecified, default to `, `
+                                        type: string
+                                      default:
+                                        description: The default text value, if one
+                                          could not be extracted from the nodes. If
+                                          unspecified, the column will be left null
+                                        format: int32
+                                        type: integer
+                                      extractionMode:
+                                        description: The method to use for determining
+                                          the final text extracted from all nodes.
+                                          If unspecified, default to concatenation
+                                        type: string
+                                      summarizationPrompt:
+                                        description: The prompt to use when summarizing
+                                          text. The prompt must include the literal
+                                          `{texts}`, which will be filled in with
+                                          all the generated texts. The prompt may
+                                          also include the literal `{description}`,
+                                          which will be filled in with the description
+                                          of the field
+                                        type: string
+                                    type: object
                                   type:
-                                    description: The data type of the column
+                                    description: The data type of the column. When
+                                      a specification for a data type is provided,
+                                      this field may be omitted. When not provided,
+                                      the defaults for the data type will be used
                                     type: string
                                 type: object
                               type: array

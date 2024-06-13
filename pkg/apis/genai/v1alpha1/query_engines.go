@@ -63,7 +63,7 @@ type SubQuestionQueryEngineSpec struct {
 	Model *ModelSpec `json:"model,omitempty" protobuf:"bytes,3,opt,name=model"`
 }
 
-// RetrieverQueryEngine augments a query with a retriever
+// RetrieverQueryEngineSpec augments a query with a retriever
 type RetrieverQueryEngineSpec struct {
 	// The response synthesizer to use when generating responses
 	ResponseSynthesizer *ResponseSynthesizerSpec `json:"responseSynthesizer,omitempty" protobuf:"bytes,1,opt,name=responseSynthesizer"`

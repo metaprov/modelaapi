@@ -37,8 +37,10 @@ func AddKnownTypes(scheme *k8sruntime.Scheme) error {
 	scheme.AddKnownTypes(SchemeGroupVersion,
 		&KnowledgeBase{},
 		&KnowledgeBaseList{},
-		&LLM{},
-		&LLMList{},
+		&LLMServer{},
+		&LLMServerList{},
+		&APIKeyGroup{},
+		&APIKeyGroupList{},
 	)
 	metav1.AddToGroupVersion(scheme, SchemeGroupVersion)
 	return nil

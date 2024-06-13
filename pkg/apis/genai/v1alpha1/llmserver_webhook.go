@@ -10,9 +10,9 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/webhook"
 )
 
-var _ webhook.Defaulter = &KnowledgeBase{}
+var _ webhook.Defaulter = &LLMServer{}
 
-func (llm *LLM) Default() {
+func (llm *LLMServer) Default() {
 	if llm.ObjectMeta.Labels == nil {
 		llm.ObjectMeta.Labels = make(map[string]string)
 	}
@@ -22,7 +22,7 @@ func (llm *LLM) Default() {
 
 var _ webhook.Validator = &KnowledgeBase{}
 
-func (llm *LLM) resolveQueryEngine(name string) bool {
+func (llm *LLMServer) resolveQueryEngine(name string) bool {
 	for _, engine := range llm.Spec.QueryEngines {
 		if engine.Name == name {
 			return true
@@ -31,7 +31,7 @@ func (llm *LLM) resolveQueryEngine(name string) bool {
 	return false
 }
 
-func (llm *LLM) resolveRetriever(name string) bool {
+func (llm *LLMServer) resolveRetriever(name string) bool {
 	for _, retriever := range llm.Spec.Retrievers {
 		if retriever.Name == name {
 			return true
@@ -41,16 +41,16 @@ func (llm *LLM) resolveRetriever(name string) bool {
 }
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
-func (llm *LLM) ValidateCreate() error {
+func (llm *LLMServer) ValidateCreate() error {
 	return llm.validate()
 }
 
 // ValidateUpdate implements webhook.Validator so a webhook will be registered for the type
-func (llm *LLM) ValidateUpdate(old runtime.Object) error {
+func (llm *LLMServer) ValidateUpdate(old runtime.Object) error {
 	return llm.validate()
 }
 
-func (llm *LLM) validate() error {
+func (llm *LLMServer) validate() error {
 	var allErrs field.ErrorList
 	allErrs = append(allErrs, llm.validateSpec(field.NewPath("spec"))...)
 	if len(allErrs) == 0 {
@@ -58,11 +58,11 @@ func (llm *LLM) validate() error {
 	}
 
 	return apierrors.NewInvalid(
-		schema.GroupKind{Group: "genai.modela.ai", Kind: "LLM"},
+		schema.GroupKind{Group: "genai.modela.ai", Kind: "LLMServer"},
 		llm.Name, allErrs)
 }
 
-func (llm *LLM) validateSpec(fldPath *field.Path) field.ErrorList {
+func (llm *LLMServer) validateSpec(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	allErrs = append(allErrs, llm.validateModels(fldPath.Child("models"))...)
 	allErrs = append(allErrs, llm.validateQueryEngines(fldPath.Child("queryEngines"))...)
@@ -70,22 +70,22 @@ func (llm *LLM) validateSpec(fldPath *field.Path) field.ErrorList {
 	return allErrs
 }
 
-func (llm *LLM) validateModels(fldPath *field.Path) field.ErrorList {
+func (llm *LLMServer) validateModels(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	var nameMap = make(map[string]bool)
-	for i, model := range llm.Spec.Models {
-		if len(model.Name) == 0 {
-			allErrs = append(allErrs, field.Invalid(fldPath.Index(i).Child("name"), model.Name, "A name is required"))
+	for i, endpoint := range llm.Spec.Endpoints {
+		if len(endpoint.Name) == 0 {
+			allErrs = append(allErrs, field.Invalid(fldPath.Index(i).Child("name"), endpoint.Name, "A name is required"))
 		}
-		if _, ok := nameMap[model.Name]; ok {
-			allErrs = append(allErrs, field.Duplicate(fldPath.Index(i), model))
+		if _, ok := nameMap[endpoint.Name]; ok {
+			allErrs = append(allErrs, field.Duplicate(fldPath.Index(i), endpoint))
 		}
-		nameMap[model.Name] = true
+		nameMap[endpoint.Name] = true
 	}
 	return allErrs
 }
 
-func (llm *LLM) validateQueryEngines(fldPath *field.Path) field.ErrorList {
+func (llm *LLMServer) validateQueryEngines(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	var nameMap = make(map[string]bool)
 	for i, engine := range llm.Spec.QueryEngines {
@@ -134,7 +134,7 @@ func (llm *LLM) validateQueryEngines(fldPath *field.Path) field.ErrorList {
 	return allErrs
 }
 
-func (llm *LLM) validateNodePostProcessors(fldPath *field.Path, processors []NodePostProcessor) field.ErrorList {
+func (llm *LLMServer) validateNodePostProcessors(fldPath *field.Path, processors []NodePostProcessor) field.ErrorList {
 	var allErrs field.ErrorList
 	for i, processor := range processors {
 		specs := []interface{}{
@@ -164,7 +164,7 @@ func (llm *LLM) validateNodePostProcessors(fldPath *field.Path, processors []Nod
 	return allErrs
 }
 
-func (llm *LLM) validateRetrievers(fldPath *field.Path) field.ErrorList {
+func (llm *LLMServer) validateRetrievers(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	var nameMap = make(map[string]bool)
 	for i, retriever := range llm.Spec.Retrievers {
@@ -210,6 +210,6 @@ func (llm *LLM) validateRetrievers(fldPath *field.Path) field.ErrorList {
 	return allErrs
 }
 
-func (llm *LLM) ValidateDelete() error {
+func (llm *LLMServer) ValidateDelete() error {
 	return nil
 }

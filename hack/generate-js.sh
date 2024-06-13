@@ -101,5 +101,6 @@ protoc \
     github.com/metaprov/modelaapi/services/watcherd/v1/watcherd.proto \
     github.com/metaprov/modelaapi/services/knowledgebase/v1/knowledgebase.proto \
     github.com/metaprov/modelaapi/services/genai/v1/genai.proto \
-    github.com/metaprov/modelaapi/services/llm/v1/llm.proto
+    github.com/metaprov/modelaapi/services/llmserver/v1/llmserver.proto \
+    github.com/metaprov/modelaapi/services/apikeygroup/v1/apikeygroup.proto
 

@@ -10,6 +10,108 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
+class APIKeyGroup(_message.Message):
+    __slots__ = ("metadata", "spec", "status")
+    METADATA_FIELD_NUMBER: _ClassVar[int]
+    SPEC_FIELD_NUMBER: _ClassVar[int]
+    STATUS_FIELD_NUMBER: _ClassVar[int]
+    metadata: _generated_pb2_1_1.ObjectMeta
+    spec: APIKeyGroupSpec
+    status: APIKeyGroupStatus
+    def __init__(self, metadata: _Optional[_Union[_generated_pb2_1_1.ObjectMeta, _Mapping]] = ..., spec: _Optional[_Union[APIKeyGroupSpec, _Mapping]] = ..., status: _Optional[_Union[APIKeyGroupStatus, _Mapping]] = ...) -> None: ...
+
+class APIKeyGroupList(_message.Message):
+    __slots__ = ("metadata", "items")
+    METADATA_FIELD_NUMBER: _ClassVar[int]
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    metadata: _generated_pb2_1_1.ListMeta
+    items: _containers.RepeatedCompositeFieldContainer[APIKeyGroup]
+    def __init__(self, metadata: _Optional[_Union[_generated_pb2_1_1.ListMeta, _Mapping]] = ..., items: _Optional[_Iterable[_Union[APIKeyGroup, _Mapping]]] = ...) -> None: ...
+
+class APIKeyGroupSpec(_message.Message):
+    __slots__ = ("owner", "description", "allowedServerNames", "allowedEndpointNames", "apiKeys")
+    OWNER_FIELD_NUMBER: _ClassVar[int]
+    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
+    ALLOWEDSERVERNAMES_FIELD_NUMBER: _ClassVar[int]
+    ALLOWEDENDPOINTNAMES_FIELD_NUMBER: _ClassVar[int]
+    APIKEYS_FIELD_NUMBER: _ClassVar[int]
+    owner: str
+    description: str
+    allowedServerNames: _containers.RepeatedScalarFieldContainer[str]
+    allowedEndpointNames: _containers.RepeatedScalarFieldContainer[str]
+    apiKeys: _containers.RepeatedCompositeFieldContainer[APIKeySpec]
+    def __init__(self, owner: _Optional[str] = ..., description: _Optional[str] = ..., allowedServerNames: _Optional[_Iterable[str]] = ..., allowedEndpointNames: _Optional[_Iterable[str]] = ..., apiKeys: _Optional[_Iterable[_Union[APIKeySpec, _Mapping]]] = ...) -> None: ...
+
+class APIKeyGroupStatus(_message.Message):
+    __slots__ = ("observedGeneration", "apiKeys", "updatedAt", "conditions")
+    OBSERVEDGENERATION_FIELD_NUMBER: _ClassVar[int]
+    APIKEYS_FIELD_NUMBER: _ClassVar[int]
+    UPDATEDAT_FIELD_NUMBER: _ClassVar[int]
+    CONDITIONS_FIELD_NUMBER: _ClassVar[int]
+    observedGeneration: int
+    apiKeys: _containers.RepeatedCompositeFieldContainer[APIKeyStatus]
+    updatedAt: _generated_pb2_1_1.Time
+    conditions: _containers.RepeatedCompositeFieldContainer[_generated_pb2_1_1.Condition]
+    def __init__(self, observedGeneration: _Optional[int] = ..., apiKeys: _Optional[_Iterable[_Union[APIKeyStatus, _Mapping]]] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1.Condition, _Mapping]]] = ...) -> None: ...
+
+class APIKeyMetrics(_message.Message):
+    __slots__ = ("totalTokens", "totalRequests", "totalCost", "averageDailyTokens", "averageDailyRequests", "averageDailyCost")
+    TOTALTOKENS_FIELD_NUMBER: _ClassVar[int]
+    TOTALREQUESTS_FIELD_NUMBER: _ClassVar[int]
+    TOTALCOST_FIELD_NUMBER: _ClassVar[int]
+    AVERAGEDAILYTOKENS_FIELD_NUMBER: _ClassVar[int]
+    AVERAGEDAILYREQUESTS_FIELD_NUMBER: _ClassVar[int]
+    AVERAGEDAILYCOST_FIELD_NUMBER: _ClassVar[int]
+    totalTokens: int
+    totalRequests: int
+    totalCost: float
+    averageDailyTokens: int
+    averageDailyRequests: int
+    averageDailyCost: float
+    def __init__(self, totalTokens: _Optional[int] = ..., totalRequests: _Optional[int] = ..., totalCost: _Optional[float] = ..., averageDailyTokens: _Optional[int] = ..., averageDailyRequests: _Optional[int] = ..., averageDailyCost: _Optional[float] = ...) -> None: ...
+
+class APIKeyQuota(_message.Message):
+    __slots__ = ("tokens", "requests", "cost", "resetSchedule")
+    TOKENS_FIELD_NUMBER: _ClassVar[int]
+    REQUESTS_FIELD_NUMBER: _ClassVar[int]
+    COST_FIELD_NUMBER: _ClassVar[int]
+    RESETSCHEDULE_FIELD_NUMBER: _ClassVar[int]
+    tokens: int
+    requests: int
+    cost: float
+    resetSchedule: _generated_pb2.RunSchedule
+    def __init__(self, tokens: _Optional[int] = ..., requests: _Optional[int] = ..., cost: _Optional[float] = ..., resetSchedule: _Optional[_Union[_generated_pb2.RunSchedule, _Mapping]] = ...) -> None: ...
+
+class APIKeySpec(_message.Message):
+    __slots__ = ("name", "allowedServerNames", "allowedEndpointNames", "quota")
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    ALLOWEDSERVERNAMES_FIELD_NUMBER: _ClassVar[int]
+    ALLOWEDENDPOINTNAMES_FIELD_NUMBER: _ClassVar[int]
+    QUOTA_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    allowedServerNames: _containers.RepeatedScalarFieldContainer[str]
+    allowedEndpointNames: _containers.RepeatedScalarFieldContainer[str]
+    quota: APIKeyQuota
+    def __init__(self, name: _Optional[str] = ..., allowedServerNames: _Optional[_Iterable[str]] = ..., allowedEndpointNames: _Optional[_Iterable[str]] = ..., quota: _Optional[_Union[APIKeyQuota, _Mapping]] = ...) -> None: ...
+
+class APIKeyStatus(_message.Message):
+    __slots__ = ("name", "creationDate", "lastUsedDate", "quotaExceededDate", "quotaRefreshedDate", "keyGenerated", "metrics")
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    CREATIONDATE_FIELD_NUMBER: _ClassVar[int]
+    LASTUSEDDATE_FIELD_NUMBER: _ClassVar[int]
+    QUOTAEXCEEDEDDATE_FIELD_NUMBER: _ClassVar[int]
+    QUOTAREFRESHEDDATE_FIELD_NUMBER: _ClassVar[int]
+    KEYGENERATED_FIELD_NUMBER: _ClassVar[int]
+    METRICS_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    creationDate: _generated_pb2_1_1.Time
+    lastUsedDate: _generated_pb2_1_1.Time
+    quotaExceededDate: _generated_pb2_1_1.Time
+    quotaRefreshedDate: _generated_pb2_1_1.Time
+    keyGenerated: bool
+    metrics: APIKeyMetrics
+    def __init__(self, name: _Optional[str] = ..., creationDate: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., lastUsedDate: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., quotaExceededDate: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., quotaRefreshedDate: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., keyGenerated: bool = ..., metrics: _Optional[_Union[APIKeyMetrics, _Mapping]] = ...) -> None: ...
+
 class AutoVectorRetrieverSpec(_message.Message):
     __slots__ = ("enabled", "model", "maxTopK", "metadataInfo")
     ENABLED_FIELD_NUMBER: _ClassVar[int]
@@ -21,6 +123,14 @@ class AutoVectorRetrieverSpec(_message.Message):
     maxTopK: int
     metadataInfo: _containers.RepeatedCompositeFieldContainer[MetadataKeyInfo]
     def __init__(self, enabled: bool = ..., model: _Optional[_Union[ModelSpec, _Mapping]] = ..., maxTopK: _Optional[int] = ..., metadataInfo: _Optional[_Iterable[_Union[MetadataKeyInfo, _Mapping]]] = ...) -> None: ...
+
+class BooleanSpec(_message.Message):
+    __slots__ = ("extractionMode", "default")
+    EXTRACTIONMODE_FIELD_NUMBER: _ClassVar[int]
+    DEFAULT_FIELD_NUMBER: _ClassVar[int]
+    extractionMode: str
+    default: bool
+    def __init__(self, extractionMode: _Optional[str] = ..., default: bool = ...) -> None: ...
 
 class CodeSplitterSpec(_message.Message):
     __slots__ = ("language", "chunkLines", "chunkLinesOverlap", "maxChars")
@@ -41,6 +151,26 @@ class CohereRerankSpec(_message.Message):
     connectionName: str
     topN: int
     def __init__(self, connectionName: _Optional[str] = ..., topN: _Optional[int] = ...) -> None: ...
+
+class Column(_message.Message):
+    __slots__ = ("name", "type", "integer", "float", "text", "boolean", "description", "metadataKey")
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    TYPE_FIELD_NUMBER: _ClassVar[int]
+    INTEGER_FIELD_NUMBER: _ClassVar[int]
+    FLOAT_FIELD_NUMBER: _ClassVar[int]
+    TEXT_FIELD_NUMBER: _ClassVar[int]
+    BOOLEAN_FIELD_NUMBER: _ClassVar[int]
+    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
+    METADATAKEY_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    type: str
+    integer: IntegerSpec
+    float: FloatSpec
+    text: TextSpec
+    boolean: BooleanSpec
+    description: str
+    metadataKey: str
+    def __init__(self, name: _Optional[str] = ..., type: _Optional[str] = ..., integer: _Optional[_Union[IntegerSpec, _Mapping]] = ..., float: _Optional[_Union[FloatSpec, _Mapping]] = ..., text: _Optional[_Union[TextSpec, _Mapping]] = ..., boolean: _Optional[_Union[BooleanSpec, _Mapping]] = ..., description: _Optional[str] = ..., metadataKey: _Optional[str] = ...) -> None: ...
 
 class DatabaseReaderSpec(_message.Message):
     __slots__ = ("type", "connectionName", "query", "options")
@@ -136,6 +266,56 @@ class EmbeddingRecencyPostProcessorSpec(_message.Message):
     similarityCutoff: float
     def __init__(self, embeddingModel: _Optional[_Union[ModelSpec, _Mapping]] = ..., similarityCutoff: _Optional[float] = ...) -> None: ...
 
+class EmbeddingSpec(_message.Message):
+    __slots__ = ("columns", "model")
+    COLUMNS_FIELD_NUMBER: _ClassVar[int]
+    MODEL_FIELD_NUMBER: _ClassVar[int]
+    columns: _containers.RepeatedScalarFieldContainer[str]
+    model: ModelSpec
+    def __init__(self, columns: _Optional[_Iterable[str]] = ..., model: _Optional[_Union[ModelSpec, _Mapping]] = ...) -> None: ...
+
+class EndpointMetrics(_message.Message):
+    __slots__ = ("p50", "p95", "p99", "totalRequests", "totalTokens", "totalCost")
+    P50_FIELD_NUMBER: _ClassVar[int]
+    P95_FIELD_NUMBER: _ClassVar[int]
+    P99_FIELD_NUMBER: _ClassVar[int]
+    TOTALREQUESTS_FIELD_NUMBER: _ClassVar[int]
+    TOTALTOKENS_FIELD_NUMBER: _ClassVar[int]
+    TOTALCOST_FIELD_NUMBER: _ClassVar[int]
+    p50: float
+    p95: float
+    p99: float
+    totalRequests: int
+    totalTokens: int
+    totalCost: float
+    def __init__(self, p50: _Optional[float] = ..., p95: _Optional[float] = ..., p99: _Optional[float] = ..., totalRequests: _Optional[int] = ..., totalTokens: _Optional[int] = ..., totalCost: _Optional[float] = ...) -> None: ...
+
+class EndpointSpec(_message.Message):
+    __slots__ = ("name", "queryEngine", "path", "paths", "format", "model")
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    QUERYENGINE_FIELD_NUMBER: _ClassVar[int]
+    PATH_FIELD_NUMBER: _ClassVar[int]
+    PATHS_FIELD_NUMBER: _ClassVar[int]
+    FORMAT_FIELD_NUMBER: _ClassVar[int]
+    MODEL_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    queryEngine: str
+    path: str
+    paths: _containers.RepeatedScalarFieldContainer[str]
+    format: str
+    model: ModelSpec
+    def __init__(self, name: _Optional[str] = ..., queryEngine: _Optional[str] = ..., path: _Optional[str] = ..., paths: _Optional[_Iterable[str]] = ..., format: _Optional[str] = ..., model: _Optional[_Union[ModelSpec, _Mapping]] = ...) -> None: ...
+
+class EndpointStatus(_message.Message):
+    __slots__ = ("name", "failureMessage", "metrics")
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    FAILUREMESSAGE_FIELD_NUMBER: _ClassVar[int]
+    METRICS_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    failureMessage: str
+    metrics: EndpointMetrics
+    def __init__(self, name: _Optional[str] = ..., failureMessage: _Optional[str] = ..., metrics: _Optional[_Union[EndpointMetrics, _Mapping]] = ...) -> None: ...
+
 class ExtensionFilter(_message.Message):
     __slots__ = ("include", "exclude")
     INCLUDE_FIELD_NUMBER: _ClassVar[int]
@@ -196,19 +376,33 @@ class FixedRecencyPostProcessorSpec(_message.Message):
     topK: int
     def __init__(self, topK: _Optional[int] = ...) -> None: ...
 
+class FloatSpec(_message.Message):
+    __slots__ = ("extractionMode", "roundingMode", "precision", "default")
+    EXTRACTIONMODE_FIELD_NUMBER: _ClassVar[int]
+    ROUNDINGMODE_FIELD_NUMBER: _ClassVar[int]
+    PRECISION_FIELD_NUMBER: _ClassVar[int]
+    DEFAULT_FIELD_NUMBER: _ClassVar[int]
+    extractionMode: str
+    roundingMode: str
+    precision: int
+    default: int
+    def __init__(self, extractionMode: _Optional[str] = ..., roundingMode: _Optional[str] = ..., precision: _Optional[int] = ..., default: _Optional[int] = ...) -> None: ...
+
 class FusionRetrieverSpec(_message.Message):
-    __slots__ = ("retrievers", "model", "queries", "topK", "mode")
+    __slots__ = ("retrievers", "model", "queries", "topK", "mode", "defaultScore")
     RETRIEVERS_FIELD_NUMBER: _ClassVar[int]
     MODEL_FIELD_NUMBER: _ClassVar[int]
     QUERIES_FIELD_NUMBER: _ClassVar[int]
     TOPK_FIELD_NUMBER: _ClassVar[int]
     MODE_FIELD_NUMBER: _ClassVar[int]
+    DEFAULTSCORE_FIELD_NUMBER: _ClassVar[int]
     retrievers: _containers.RepeatedScalarFieldContainer[str]
     model: ModelSpec
     queries: int
     topK: int
     mode: str
-    def __init__(self, retrievers: _Optional[_Iterable[str]] = ..., model: _Optional[_Union[ModelSpec, _Mapping]] = ..., queries: _Optional[int] = ..., topK: _Optional[int] = ..., mode: _Optional[str] = ...) -> None: ...
+    defaultScore: float
+    def __init__(self, retrievers: _Optional[_Iterable[str]] = ..., model: _Optional[_Union[ModelSpec, _Mapping]] = ..., queries: _Optional[int] = ..., topK: _Optional[int] = ..., mode: _Optional[str] = ..., defaultScore: _Optional[float] = ...) -> None: ...
 
 class HierarchicalSplitterSpec(_message.Message):
     __slots__ = ("enabled", "chunkSizes")
@@ -227,16 +421,22 @@ class IndexReference(_message.Message):
     def __init__(self, knowledgeBaseName: _Optional[str] = ..., index: _Optional[str] = ...) -> None: ...
 
 class IndexSpec(_message.Message):
-    __slots__ = ("name", "vector", "documentSummary", "treeIndex")
+    __slots__ = ("name", "vector", "documentSummary", "tree", "keywordTable", "sql", "list")
     NAME_FIELD_NUMBER: _ClassVar[int]
     VECTOR_FIELD_NUMBER: _ClassVar[int]
     DOCUMENTSUMMARY_FIELD_NUMBER: _ClassVar[int]
-    TREEINDEX_FIELD_NUMBER: _ClassVar[int]
+    TREE_FIELD_NUMBER: _ClassVar[int]
+    KEYWORDTABLE_FIELD_NUMBER: _ClassVar[int]
+    SQL_FIELD_NUMBER: _ClassVar[int]
+    LIST_FIELD_NUMBER: _ClassVar[int]
     name: str
     vector: VectorIndexSpec
     documentSummary: DocumentSummaryIndexSpec
-    treeIndex: TreeIndexSpec
-    def __init__(self, name: _Optional[str] = ..., vector: _Optional[_Union[VectorIndexSpec, _Mapping]] = ..., documentSummary: _Optional[_Union[DocumentSummaryIndexSpec, _Mapping]] = ..., treeIndex: _Optional[_Union[TreeIndexSpec, _Mapping]] = ...) -> None: ...
+    tree: TreeIndexSpec
+    keywordTable: KeywordTableIndexSpec
+    sql: SQLIndexSpec
+    list: ListIndexSpec
+    def __init__(self, name: _Optional[str] = ..., vector: _Optional[_Union[VectorIndexSpec, _Mapping]] = ..., documentSummary: _Optional[_Union[DocumentSummaryIndexSpec, _Mapping]] = ..., tree: _Optional[_Union[TreeIndexSpec, _Mapping]] = ..., keywordTable: _Optional[_Union[KeywordTableIndexSpec, _Mapping]] = ..., sql: _Optional[_Union[SQLIndexSpec, _Mapping]] = ..., list: _Optional[_Union[ListIndexSpec, _Mapping]] = ...) -> None: ...
 
 class IndexStatus(_message.Message):
     __slots__ = ("name", "documents")
@@ -246,6 +446,16 @@ class IndexStatus(_message.Message):
     documents: int
     def __init__(self, name: _Optional[str] = ..., documents: _Optional[int] = ...) -> None: ...
 
+class IntegerSpec(_message.Message):
+    __slots__ = ("extractionMode", "roundingMode", "default")
+    EXTRACTIONMODE_FIELD_NUMBER: _ClassVar[int]
+    ROUNDINGMODE_FIELD_NUMBER: _ClassVar[int]
+    DEFAULT_FIELD_NUMBER: _ClassVar[int]
+    extractionMode: str
+    roundingMode: str
+    default: int
+    def __init__(self, extractionMode: _Optional[str] = ..., roundingMode: _Optional[str] = ..., default: _Optional[int] = ...) -> None: ...
+
 class KeywordPostProcessorSpec(_message.Message):
     __slots__ = ("include", "exclude")
     INCLUDE_FIELD_NUMBER: _ClassVar[int]
@@ -253,6 +463,30 @@ class KeywordPostProcessorSpec(_message.Message):
     include: _containers.RepeatedScalarFieldContainer[str]
     exclude: _containers.RepeatedScalarFieldContainer[str]
     def __init__(self, include: _Optional[_Iterable[str]] = ..., exclude: _Optional[_Iterable[str]] = ...) -> None: ...
+
+class KeywordTableIndexSpec(_message.Message):
+    __slots__ = ("mode", "model", "maxKeywordsPerNode")
+    MODE_FIELD_NUMBER: _ClassVar[int]
+    MODEL_FIELD_NUMBER: _ClassVar[int]
+    MAXKEYWORDSPERNODE_FIELD_NUMBER: _ClassVar[int]
+    mode: str
+    model: ModelSpec
+    maxKeywordsPerNode: int
+    def __init__(self, mode: _Optional[str] = ..., model: _Optional[_Union[ModelSpec, _Mapping]] = ..., maxKeywordsPerNode: _Optional[int] = ...) -> None: ...
+
+class KeywordTableRetrieverSpec(_message.Message):
+    __slots__ = ("index", "model", "mode", "keywordsPerQuery", "chunksPerQuery")
+    INDEX_FIELD_NUMBER: _ClassVar[int]
+    MODEL_FIELD_NUMBER: _ClassVar[int]
+    MODE_FIELD_NUMBER: _ClassVar[int]
+    KEYWORDSPERQUERY_FIELD_NUMBER: _ClassVar[int]
+    CHUNKSPERQUERY_FIELD_NUMBER: _ClassVar[int]
+    index: IndexReference
+    model: ModelSpec
+    mode: str
+    keywordsPerQuery: int
+    chunksPerQuery: int
+    def __init__(self, index: _Optional[_Union[IndexReference, _Mapping]] = ..., model: _Optional[_Union[ModelSpec, _Mapping]] = ..., mode: _Optional[str] = ..., keywordsPerQuery: _Optional[int] = ..., chunksPerQuery: _Optional[int] = ...) -> None: ...
 
 class KnowledgeBase(_message.Message):
     __slots__ = ("metadata", "spec", "status")
@@ -324,34 +558,6 @@ class KnowledgeGraphQueryEngine(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
-class LLM(_message.Message):
-    __slots__ = ("metadata", "spec", "status")
-    METADATA_FIELD_NUMBER: _ClassVar[int]
-    SPEC_FIELD_NUMBER: _ClassVar[int]
-    STATUS_FIELD_NUMBER: _ClassVar[int]
-    metadata: _generated_pb2_1_1.ObjectMeta
-    spec: LLMSpec
-    status: LLMStatus
-    def __init__(self, metadata: _Optional[_Union[_generated_pb2_1_1.ObjectMeta, _Mapping]] = ..., spec: _Optional[_Union[LLMSpec, _Mapping]] = ..., status: _Optional[_Union[LLMStatus, _Mapping]] = ...) -> None: ...
-
-class LLMAccessSpec(_message.Message):
-    __slots__ = ("port", "nodePort", "accessType")
-    PORT_FIELD_NUMBER: _ClassVar[int]
-    NODEPORT_FIELD_NUMBER: _ClassVar[int]
-    ACCESSTYPE_FIELD_NUMBER: _ClassVar[int]
-    port: int
-    nodePort: int
-    accessType: str
-    def __init__(self, port: _Optional[int] = ..., nodePort: _Optional[int] = ..., accessType: _Optional[str] = ...) -> None: ...
-
-class LLMList(_message.Message):
-    __slots__ = ("metadata", "items")
-    METADATA_FIELD_NUMBER: _ClassVar[int]
-    ITEMS_FIELD_NUMBER: _ClassVar[int]
-    metadata: _generated_pb2_1_1.ListMeta
-    items: _containers.RepeatedCompositeFieldContainer[LLM]
-    def __init__(self, metadata: _Optional[_Union[_generated_pb2_1_1.ListMeta, _Mapping]] = ..., items: _Optional[_Iterable[_Union[LLM, _Mapping]]] = ...) -> None: ...
-
 class LLMRerankSpec(_message.Message):
     __slots__ = ("topN", "model", "rankGPT")
     TOPN_FIELD_NUMBER: _ClassVar[int]
@@ -362,30 +568,70 @@ class LLMRerankSpec(_message.Message):
     rankGPT: bool
     def __init__(self, topN: _Optional[int] = ..., model: _Optional[_Union[ModelSpec, _Mapping]] = ..., rankGPT: bool = ...) -> None: ...
 
-class LLMSpec(_message.Message):
-    __slots__ = ("owner", "description", "servingSiteName", "resources", "models", "queryEngines", "retrievers", "notification")
+class LLMServer(_message.Message):
+    __slots__ = ("metadata", "spec", "status")
+    METADATA_FIELD_NUMBER: _ClassVar[int]
+    SPEC_FIELD_NUMBER: _ClassVar[int]
+    STATUS_FIELD_NUMBER: _ClassVar[int]
+    metadata: _generated_pb2_1_1.ObjectMeta
+    spec: LLMServerSpec
+    status: LLMStatus
+    def __init__(self, metadata: _Optional[_Union[_generated_pb2_1_1.ObjectMeta, _Mapping]] = ..., spec: _Optional[_Union[LLMServerSpec, _Mapping]] = ..., status: _Optional[_Union[LLMStatus, _Mapping]] = ...) -> None: ...
+
+class LLMServerAccessSpec(_message.Message):
+    __slots__ = ("port", "nodePort", "accessType")
+    PORT_FIELD_NUMBER: _ClassVar[int]
+    NODEPORT_FIELD_NUMBER: _ClassVar[int]
+    ACCESSTYPE_FIELD_NUMBER: _ClassVar[int]
+    port: int
+    nodePort: int
+    accessType: str
+    def __init__(self, port: _Optional[int] = ..., nodePort: _Optional[int] = ..., accessType: _Optional[str] = ...) -> None: ...
+
+class LLMServerAuthorizationSpec(_message.Message):
+    __slots__ = ("insecure", "allowedKeyGroups", "allowedKeyNames")
+    INSECURE_FIELD_NUMBER: _ClassVar[int]
+    ALLOWEDKEYGROUPS_FIELD_NUMBER: _ClassVar[int]
+    ALLOWEDKEYNAMES_FIELD_NUMBER: _ClassVar[int]
+    insecure: bool
+    allowedKeyGroups: _containers.RepeatedScalarFieldContainer[str]
+    allowedKeyNames: _containers.RepeatedScalarFieldContainer[str]
+    def __init__(self, insecure: bool = ..., allowedKeyGroups: _Optional[_Iterable[str]] = ..., allowedKeyNames: _Optional[_Iterable[str]] = ...) -> None: ...
+
+class LLMServerList(_message.Message):
+    __slots__ = ("metadata", "items")
+    METADATA_FIELD_NUMBER: _ClassVar[int]
+    ITEMS_FIELD_NUMBER: _ClassVar[int]
+    metadata: _generated_pb2_1_1.ListMeta
+    items: _containers.RepeatedCompositeFieldContainer[LLMServer]
+    def __init__(self, metadata: _Optional[_Union[_generated_pb2_1_1.ListMeta, _Mapping]] = ..., items: _Optional[_Iterable[_Union[LLMServer, _Mapping]]] = ...) -> None: ...
+
+class LLMServerSpec(_message.Message):
+    __slots__ = ("owner", "description", "servingSiteName", "resources", "endpoints", "queryEngines", "retrievers", "authorization", "notification")
     OWNER_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     SERVINGSITENAME_FIELD_NUMBER: _ClassVar[int]
     RESOURCES_FIELD_NUMBER: _ClassVar[int]
-    MODELS_FIELD_NUMBER: _ClassVar[int]
+    ENDPOINTS_FIELD_NUMBER: _ClassVar[int]
     QUERYENGINES_FIELD_NUMBER: _ClassVar[int]
     RETRIEVERS_FIELD_NUMBER: _ClassVar[int]
+    AUTHORIZATION_FIELD_NUMBER: _ClassVar[int]
     NOTIFICATION_FIELD_NUMBER: _ClassVar[int]
     owner: str
     description: str
     servingSiteName: str
     resources: _generated_pb2.ResourceSpec
-    models: _containers.RepeatedCompositeFieldContainer[ModelServingSpec]
+    endpoints: _containers.RepeatedCompositeFieldContainer[EndpointSpec]
     queryEngines: _containers.RepeatedCompositeFieldContainer[QueryEngineSpec]
     retrievers: _containers.RepeatedCompositeFieldContainer[RetrieverSpec]
+    authorization: LLMServerAuthorizationSpec
     notification: _generated_pb2.NotificationSpec
-    def __init__(self, owner: _Optional[str] = ..., description: _Optional[str] = ..., servingSiteName: _Optional[str] = ..., resources: _Optional[_Union[_generated_pb2.ResourceSpec, _Mapping]] = ..., models: _Optional[_Iterable[_Union[ModelServingSpec, _Mapping]]] = ..., queryEngines: _Optional[_Iterable[_Union[QueryEngineSpec, _Mapping]]] = ..., retrievers: _Optional[_Iterable[_Union[RetrieverSpec, _Mapping]]] = ..., notification: _Optional[_Union[_generated_pb2.NotificationSpec, _Mapping]] = ...) -> None: ...
+    def __init__(self, owner: _Optional[str] = ..., description: _Optional[str] = ..., servingSiteName: _Optional[str] = ..., resources: _Optional[_Union[_generated_pb2.ResourceSpec, _Mapping]] = ..., endpoints: _Optional[_Iterable[_Union[EndpointSpec, _Mapping]]] = ..., queryEngines: _Optional[_Iterable[_Union[QueryEngineSpec, _Mapping]]] = ..., retrievers: _Optional[_Iterable[_Union[RetrieverSpec, _Mapping]]] = ..., authorization: _Optional[_Union[LLMServerAuthorizationSpec, _Mapping]] = ..., notification: _Optional[_Union[_generated_pb2.NotificationSpec, _Mapping]] = ...) -> None: ...
 
 class LLMStatus(_message.Message):
-    __slots__ = ("observedGeneration", "documents", "endpoint", "deployedAt", "deploymentRef", "serviceRef", "failureMessage", "updatedAt", "conditions")
+    __slots__ = ("observedGeneration", "endpoints", "endpoint", "deployedAt", "deploymentRef", "serviceRef", "failureMessage", "updatedAt", "conditions")
     OBSERVEDGENERATION_FIELD_NUMBER: _ClassVar[int]
-    DOCUMENTS_FIELD_NUMBER: _ClassVar[int]
+    ENDPOINTS_FIELD_NUMBER: _ClassVar[int]
     ENDPOINT_FIELD_NUMBER: _ClassVar[int]
     DEPLOYEDAT_FIELD_NUMBER: _ClassVar[int]
     DEPLOYMENTREF_FIELD_NUMBER: _ClassVar[int]
@@ -394,7 +640,7 @@ class LLMStatus(_message.Message):
     UPDATEDAT_FIELD_NUMBER: _ClassVar[int]
     CONDITIONS_FIELD_NUMBER: _ClassVar[int]
     observedGeneration: int
-    documents: _containers.RepeatedCompositeFieldContainer[ModelStatus]
+    endpoints: _containers.RepeatedCompositeFieldContainer[EndpointStatus]
     endpoint: str
     deployedAt: _generated_pb2_1_1.Time
     deploymentRef: _generated_pb2_1.ObjectReference
@@ -402,7 +648,7 @@ class LLMStatus(_message.Message):
     failureMessage: str
     updatedAt: _generated_pb2_1_1.Time
     conditions: _containers.RepeatedCompositeFieldContainer[_generated_pb2_1_1.Condition]
-    def __init__(self, observedGeneration: _Optional[int] = ..., documents: _Optional[_Iterable[_Union[ModelStatus, _Mapping]]] = ..., endpoint: _Optional[str] = ..., deployedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., deploymentRef: _Optional[_Union[_generated_pb2_1.ObjectReference, _Mapping]] = ..., serviceRef: _Optional[_Union[_generated_pb2_1.ObjectReference, _Mapping]] = ..., failureMessage: _Optional[str] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1.Condition, _Mapping]]] = ...) -> None: ...
+    def __init__(self, observedGeneration: _Optional[int] = ..., endpoints: _Optional[_Iterable[_Union[EndpointStatus, _Mapping]]] = ..., endpoint: _Optional[str] = ..., deployedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., deploymentRef: _Optional[_Union[_generated_pb2_1.ObjectReference, _Mapping]] = ..., serviceRef: _Optional[_Union[_generated_pb2_1.ObjectReference, _Mapping]] = ..., failureMessage: _Optional[str] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1.Condition, _Mapping]]] = ...) -> None: ...
 
 class LengthFilter(_message.Message):
     __slots__ = ("greaterThan", "lessThan")
@@ -411,6 +657,22 @@ class LengthFilter(_message.Message):
     greaterThan: int
     lessThan: int
     def __init__(self, greaterThan: _Optional[int] = ..., lessThan: _Optional[int] = ...) -> None: ...
+
+class ListIndexSpec(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
+class ListRetrieverSpec(_message.Message):
+    __slots__ = ("index", "model", "topK", "mode")
+    INDEX_FIELD_NUMBER: _ClassVar[int]
+    MODEL_FIELD_NUMBER: _ClassVar[int]
+    TOPK_FIELD_NUMBER: _ClassVar[int]
+    MODE_FIELD_NUMBER: _ClassVar[int]
+    index: IndexReference
+    model: ModelSpec
+    topK: int
+    mode: str
+    def __init__(self, index: _Optional[_Union[IndexReference, _Mapping]] = ..., model: _Optional[_Union[ModelSpec, _Mapping]] = ..., topK: _Optional[int] = ..., mode: _Optional[str] = ...) -> None: ...
 
 class LongContextReorderSpec(_message.Message):
     __slots__ = ()
@@ -434,34 +696,6 @@ class MixedNodeParserSpec(_message.Message):
     fallbackNodeParser: str
     def __init__(self, parsers: _Optional[_Iterable[_Union[FilteredNodeParser, _Mapping]]] = ..., fallbackNodeParser: _Optional[str] = ...) -> None: ...
 
-class ModelMetrics(_message.Message):
-    __slots__ = ("p50", "p95", "p99", "totalPredictions")
-    P50_FIELD_NUMBER: _ClassVar[int]
-    P95_FIELD_NUMBER: _ClassVar[int]
-    P99_FIELD_NUMBER: _ClassVar[int]
-    TOTALPREDICTIONS_FIELD_NUMBER: _ClassVar[int]
-    p50: float
-    p95: float
-    p99: float
-    totalPredictions: int
-    def __init__(self, p50: _Optional[float] = ..., p95: _Optional[float] = ..., p99: _Optional[float] = ..., totalPredictions: _Optional[int] = ...) -> None: ...
-
-class ModelServingSpec(_message.Message):
-    __slots__ = ("name", "queryEngine", "path", "paths", "format", "model")
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    QUERYENGINE_FIELD_NUMBER: _ClassVar[int]
-    PATH_FIELD_NUMBER: _ClassVar[int]
-    PATHS_FIELD_NUMBER: _ClassVar[int]
-    FORMAT_FIELD_NUMBER: _ClassVar[int]
-    MODEL_FIELD_NUMBER: _ClassVar[int]
-    name: str
-    queryEngine: str
-    path: str
-    paths: _containers.RepeatedScalarFieldContainer[str]
-    format: str
-    model: ModelSpec
-    def __init__(self, name: _Optional[str] = ..., queryEngine: _Optional[str] = ..., path: _Optional[str] = ..., paths: _Optional[_Iterable[str]] = ..., format: _Optional[str] = ..., model: _Optional[_Union[ModelSpec, _Mapping]] = ...) -> None: ...
-
 class ModelSpec(_message.Message):
     __slots__ = ("connectionName", "model")
     CONNECTIONNAME_FIELD_NUMBER: _ClassVar[int]
@@ -469,16 +703,6 @@ class ModelSpec(_message.Message):
     connectionName: str
     model: str
     def __init__(self, connectionName: _Optional[str] = ..., model: _Optional[str] = ...) -> None: ...
-
-class ModelStatus(_message.Message):
-    __slots__ = ("name", "failureMessage", "modelMetrics")
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    FAILUREMESSAGE_FIELD_NUMBER: _ClassVar[int]
-    MODELMETRICS_FIELD_NUMBER: _ClassVar[int]
-    name: str
-    failureMessage: str
-    modelMetrics: ModelMetrics
-    def __init__(self, name: _Optional[str] = ..., failureMessage: _Optional[str] = ..., modelMetrics: _Optional[_Union[ModelMetrics, _Mapping]] = ...) -> None: ...
 
 class NameFilter(_message.Message):
     __slots__ = ("contains", "equals")
@@ -602,18 +826,24 @@ class RetrieverQueryEngineSpec(_message.Message):
     def __init__(self, responseSynthesizer: _Optional[_Union[ResponseSynthesizerSpec, _Mapping]] = ..., retriever: _Optional[str] = ..., nodePostProcessors: _Optional[_Iterable[_Union[NodePostProcessor, _Mapping]]] = ...) -> None: ...
 
 class RetrieverSpec(_message.Message):
-    __slots__ = ("name", "vector", "documentSummary", "router", "fusion")
+    __slots__ = ("name", "vector", "documentSummary", "tree", "keywordTable", "list", "router", "fusion")
     NAME_FIELD_NUMBER: _ClassVar[int]
     VECTOR_FIELD_NUMBER: _ClassVar[int]
     DOCUMENTSUMMARY_FIELD_NUMBER: _ClassVar[int]
+    TREE_FIELD_NUMBER: _ClassVar[int]
+    KEYWORDTABLE_FIELD_NUMBER: _ClassVar[int]
+    LIST_FIELD_NUMBER: _ClassVar[int]
     ROUTER_FIELD_NUMBER: _ClassVar[int]
     FUSION_FIELD_NUMBER: _ClassVar[int]
     name: str
     vector: VectorRetrieverSpec
     documentSummary: DocumentSummaryRetrieverSpec
+    tree: TreeRetrieverSpec
+    keywordTable: KeywordTableRetrieverSpec
+    list: ListRetrieverSpec
     router: RouterRetrieverSpec
     fusion: FusionRetrieverSpec
-    def __init__(self, name: _Optional[str] = ..., vector: _Optional[_Union[VectorRetrieverSpec, _Mapping]] = ..., documentSummary: _Optional[_Union[DocumentSummaryRetrieverSpec, _Mapping]] = ..., router: _Optional[_Union[RouterRetrieverSpec, _Mapping]] = ..., fusion: _Optional[_Union[FusionRetrieverSpec, _Mapping]] = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., vector: _Optional[_Union[VectorRetrieverSpec, _Mapping]] = ..., documentSummary: _Optional[_Union[DocumentSummaryRetrieverSpec, _Mapping]] = ..., tree: _Optional[_Union[TreeRetrieverSpec, _Mapping]] = ..., keywordTable: _Optional[_Union[KeywordTableRetrieverSpec, _Mapping]] = ..., list: _Optional[_Union[ListRetrieverSpec, _Mapping]] = ..., router: _Optional[_Union[RouterRetrieverSpec, _Mapping]] = ..., fusion: _Optional[_Union[FusionRetrieverSpec, _Mapping]] = ...) -> None: ...
 
 class RetrieverToolSpec(_message.Message):
     __slots__ = ("retriever", "name", "description")
@@ -640,6 +870,30 @@ class RouterRetrieverSpec(_message.Message):
     tools: _containers.RepeatedCompositeFieldContainer[RetrieverToolSpec]
     selector: SelectorSpec
     def __init__(self, tools: _Optional[_Iterable[_Union[RetrieverToolSpec, _Mapping]]] = ..., selector: _Optional[_Union[SelectorSpec, _Mapping]] = ...) -> None: ...
+
+class SQLIndexSpec(_message.Message):
+    __slots__ = ("model", "databaseConnectionName", "tableName", "refDocColumn", "schema", "granularity")
+    MODEL_FIELD_NUMBER: _ClassVar[int]
+    DATABASECONNECTIONNAME_FIELD_NUMBER: _ClassVar[int]
+    TABLENAME_FIELD_NUMBER: _ClassVar[int]
+    REFDOCCOLUMN_FIELD_NUMBER: _ClassVar[int]
+    SCHEMA_FIELD_NUMBER: _ClassVar[int]
+    GRANULARITY_FIELD_NUMBER: _ClassVar[int]
+    model: ModelSpec
+    databaseConnectionName: str
+    tableName: str
+    refDocColumn: str
+    schema: Schema
+    granularity: str
+    def __init__(self, model: _Optional[_Union[ModelSpec, _Mapping]] = ..., databaseConnectionName: _Optional[str] = ..., tableName: _Optional[str] = ..., refDocColumn: _Optional[str] = ..., schema: _Optional[_Union[Schema, _Mapping]] = ..., granularity: _Optional[str] = ...) -> None: ...
+
+class Schema(_message.Message):
+    __slots__ = ("description", "columns")
+    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
+    COLUMNS_FIELD_NUMBER: _ClassVar[int]
+    description: str
+    columns: _containers.RepeatedCompositeFieldContainer[Column]
+    def __init__(self, description: _Optional[str] = ..., columns: _Optional[_Iterable[_Union[Column, _Mapping]]] = ...) -> None: ...
 
 class SelectorSpec(_message.Message):
     __slots__ = ("mode", "model", "multi")
@@ -709,6 +963,18 @@ class SubQuestionQueryEngineSpec(_message.Message):
     model: ModelSpec
     def __init__(self, tools: _Optional[_Iterable[_Union[QueryEngineToolSpec, _Mapping]]] = ..., responseSynthesizer: _Optional[_Union[ResponseSynthesizerSpec, _Mapping]] = ..., model: _Optional[_Union[ModelSpec, _Mapping]] = ...) -> None: ...
 
+class TextSpec(_message.Message):
+    __slots__ = ("extractionMode", "summarizationPrompt", "concatenationString", "default")
+    EXTRACTIONMODE_FIELD_NUMBER: _ClassVar[int]
+    SUMMARIZATIONPROMPT_FIELD_NUMBER: _ClassVar[int]
+    CONCATENATIONSTRING_FIELD_NUMBER: _ClassVar[int]
+    DEFAULT_FIELD_NUMBER: _ClassVar[int]
+    extractionMode: str
+    summarizationPrompt: str
+    concatenationString: str
+    default: int
+    def __init__(self, extractionMode: _Optional[str] = ..., summarizationPrompt: _Optional[str] = ..., concatenationString: _Optional[str] = ..., default: _Optional[int] = ...) -> None: ...
+
 class TextSplitterSpec(_message.Message):
     __slots__ = ("type", "sentence", "token", "code")
     TYPE_FIELD_NUMBER: _ClassVar[int]
@@ -750,6 +1016,18 @@ class TreeIndexSpec(_message.Message):
     model: ModelSpec
     children: int
     def __init__(self, model: _Optional[_Union[ModelSpec, _Mapping]] = ..., children: _Optional[int] = ...) -> None: ...
+
+class TreeRetrieverSpec(_message.Message):
+    __slots__ = ("index", "model", "mode", "childBranchFactor")
+    INDEX_FIELD_NUMBER: _ClassVar[int]
+    MODEL_FIELD_NUMBER: _ClassVar[int]
+    MODE_FIELD_NUMBER: _ClassVar[int]
+    CHILDBRANCHFACTOR_FIELD_NUMBER: _ClassVar[int]
+    index: IndexReference
+    model: ModelSpec
+    mode: str
+    childBranchFactor: int
+    def __init__(self, index: _Optional[_Union[IndexReference, _Mapping]] = ..., model: _Optional[_Union[ModelSpec, _Mapping]] = ..., mode: _Optional[str] = ..., childBranchFactor: _Optional[int] = ...) -> None: ...
 
 class VectorIndexSpec(_message.Message):
     __slots__ = ("databaseConnectionName", "embeddingModel")

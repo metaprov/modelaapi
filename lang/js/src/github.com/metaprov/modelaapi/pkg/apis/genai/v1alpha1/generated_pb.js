@@ -25,45 +25,63 @@ var k8s_io_apimachinery_pkg_runtime_generated_pb = require('../../../../../../..
 goog.object.extend(proto, k8s_io_apimachinery_pkg_runtime_generated_pb);
 var k8s_io_apimachinery_pkg_runtime_schema_generated_pb = require('../../../../../../../k8s.io/apimachinery/pkg/runtime/schema/generated_pb.js');
 goog.object.extend(proto, k8s_io_apimachinery_pkg_runtime_schema_generated_pb);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupList', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.AutoVectorRetrieverSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.BooleanSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.CodeSplitterSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.CohereRerankSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.DatabaseReaderSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.DocumentSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.DocumentStatus', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.DocumentSummaryIndexSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.DocumentSummaryRetrieverSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EmbeddingRecencyPostProcessorSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EmbeddingSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointStatus', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ExtensionFilter', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FileLocationReaderSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FileReaderSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FilteredNodeParser', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FixedRecencyPostProcessorSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FusionRetrieverSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.HierarchicalSplitterSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexReference', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexStatus', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IntegerSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordPostProcessorSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableIndexSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KnowledgeBase', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KnowledgeBaseList', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KnowledgeBaseSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KnowledgeBaseStatus', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KnowledgeGraphQueryEngine', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLM', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMAccessSpec', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMList', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMRerankSpec', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAccessSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAuthorizationSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerList', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMStatus', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LengthFilter', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListIndexSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LongContextReorderSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.MetadataKeyInfo', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.MixedNodeParserSpec', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelStatus', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.NameFilter', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.NodeParserSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.NodePostProcessor', null, global);
@@ -77,6 +95,8 @@ goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.R
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RetrieverToolSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RouterQueryEngineSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RouterRetrieverSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Schema', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SelectorSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SentenceEmbeddingOptimizerSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SentenceSplitterSpec', null, global);
@@ -84,13 +104,183 @@ goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.S
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SentenceWindowNodeParserSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SimilarityPostProcessorSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SubQuestionQueryEngineSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSplitterSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TimeWeightedRecencyPostProcessorSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TokenSplitterSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeIndexSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.VectorIndexSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.VectorRetrieverSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.WebReaderSpec', null, global);
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupList = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupList.repeatedFields_, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupList, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupList.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupList';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec.repeatedFields_, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.repeatedFields_, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec.repeatedFields_, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus';
+}
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -111,6 +301,27 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.AutoVectorRetrieverSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.AutoVectorRetrieverSpec';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.BooleanSpec = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.BooleanSpec, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.BooleanSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.BooleanSpec';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -153,6 +364,27 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.CohereRerankSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.CohereRerankSpec';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -290,6 +522,90 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EmbeddingSpec = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EmbeddingSpec.repeatedFields_, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EmbeddingSpec, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EmbeddingSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EmbeddingSpec';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec.repeatedFields_, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointStatus = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointStatus, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointStatus.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointStatus';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
 proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ExtensionFilter = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ExtensionFilter.repeatedFields_, null);
 };
@@ -384,6 +700,27 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FixedRecencyPostProcessorSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FixedRecencyPostProcessorSpec';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -500,6 +837,27 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IntegerSpec = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IntegerSpec, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IntegerSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IntegerSpec';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
 proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordPostProcessorSpec = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordPostProcessorSpec.repeatedFields_, null);
 };
@@ -510,6 +868,48 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordPostProcessorSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordPostProcessorSpec';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableIndexSpec = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableIndexSpec, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableIndexSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableIndexSpec';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -626,69 +1026,6 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLM = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLM, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLM.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLM';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMAccessSpec = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMAccessSpec, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMAccessSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMAccessSpec';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMList = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMList.repeatedFields_, null);
-};
-goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMList, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMList.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMList';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
 proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMRerankSpec = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
@@ -710,16 +1047,100 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.repeatedFields_, null);
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec';
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAccessSpec = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAccessSpec, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAccessSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAccessSpec';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAuthorizationSpec = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAuthorizationSpec.repeatedFields_, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAuthorizationSpec, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAuthorizationSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAuthorizationSpec';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerList = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerList.repeatedFields_, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerList, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerList.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerList';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec.repeatedFields_, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -762,6 +1183,48 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LengthFilter.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LengthFilter';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListIndexSpec = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListIndexSpec, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListIndexSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListIndexSpec';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -836,48 +1299,6 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec.repeatedFields_, null);
-};
-goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
 proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
@@ -888,27 +1309,6 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelStatus = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelStatus, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelStatus.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelStatus';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1193,6 +1593,48 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Schema = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Schema.repeatedFields_, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Schema, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Schema.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Schema';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
 proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SelectorSpec = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
@@ -1340,6 +1782,27 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
 proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSplitterSpec = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
@@ -1424,6 +1887,27 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
 proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.VectorIndexSpec = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
@@ -1477,6 +1961,2574 @@ if (goog.DEBUG && !COMPILED) {
    */
   proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.WebReaderSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.WebReaderSpec';
 }
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    metadata: (f = msg.getMetadata()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.toObject(includeInstance, f),
+    spec: (f = msg.getSpec()) && proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec.toObject(includeInstance, f),
+    status: (f = msg.getStatus()) && proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.deserializeBinaryFromReader);
+      msg.setMetadata(value);
+      break;
+    case 2:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec.deserializeBinaryFromReader);
+      msg.setSpec(value);
+      break;
+    case 3:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.deserializeBinaryFromReader);
+      msg.setStatus(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getMetadata();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.serializeBinaryToWriter
+    );
+  }
+  f = message.getSpec();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec.serializeBinaryToWriter
+    );
+  }
+  f = message.getStatus();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+ * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup.prototype.getMetadata = function() {
+  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta, 1));
+};
+
+
+/**
+ * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup.prototype.setMetadata = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup.prototype.clearMetadata = function() {
+  return this.setMetadata(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup.prototype.hasMetadata = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional APIKeyGroupSpec spec = 2;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup.prototype.getSpec = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec, 2));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup.prototype.setSpec = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup.prototype.clearSpec = function() {
+  return this.setSpec(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup.prototype.hasSpec = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional APIKeyGroupStatus status = 3;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup.prototype.getStatus = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus, 3));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup.prototype.setStatus = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup.prototype.clearStatus = function() {
+  return this.setStatus(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup.prototype.hasStatus = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupList.repeatedFields_ = [2];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupList.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupList.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupList} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupList.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    metadata: (f = msg.getMetadata()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.toObject(includeInstance, f),
+    itemsList: jspb.Message.toObjectList(msg.getItemsList(),
+    proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupList}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupList.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupList;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupList.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupList} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupList}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupList.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.deserializeBinaryFromReader);
+      msg.setMetadata(value);
+      break;
+    case 2:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup.deserializeBinaryFromReader);
+      msg.addItems(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupList.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupList.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupList} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupList.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getMetadata();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.serializeBinaryToWriter
+    );
+  }
+  f = message.getItemsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+ * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupList.prototype.getMetadata = function() {
+  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta, 1));
+};
+
+
+/**
+ * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupList} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupList.prototype.setMetadata = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupList} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupList.prototype.clearMetadata = function() {
+  return this.setMetadata(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupList.prototype.hasMetadata = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * repeated APIKeyGroup items = 2;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupList.prototype.getItemsList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupList} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupList.prototype.setItemsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupList.prototype.addItems = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupList} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupList.prototype.clearItemsList = function() {
+  return this.setItemsList([]);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec.repeatedFields_ = [3,4,5];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    owner: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    description: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    allowedservernamesList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
+    allowedendpointnamesList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
+    apikeysList: jspb.Message.toObjectList(msg.getApikeysList(),
+    proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOwner(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDescription(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addAllowedservernames(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addAllowedendpointnames(value);
+      break;
+    case 5:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec.deserializeBinaryFromReader);
+      msg.addApikeys(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getAllowedservernamesList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      3,
+      f
+    );
+  }
+  f = message.getAllowedendpointnamesList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      4,
+      f
+    );
+  }
+  f = message.getApikeysList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      5,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional string owner = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec.prototype.getOwner = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec.prototype.setOwner = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec.prototype.clearOwner = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec.prototype.hasOwner = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string description = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec.prototype.getDescription = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec.prototype.setDescription = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec.prototype.clearDescription = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec.prototype.hasDescription = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * repeated string allowedServerNames = 3;
+ * @return {!Array<string>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec.prototype.getAllowedservernamesList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 3));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec.prototype.setAllowedservernamesList = function(value) {
+  return jspb.Message.setField(this, 3, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec.prototype.addAllowedservernames = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec.prototype.clearAllowedservernamesList = function() {
+  return this.setAllowedservernamesList([]);
+};
+
+
+/**
+ * repeated string allowedEndpointNames = 4;
+ * @return {!Array<string>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec.prototype.getAllowedendpointnamesList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 4));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec.prototype.setAllowedendpointnamesList = function(value) {
+  return jspb.Message.setField(this, 4, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec.prototype.addAllowedendpointnames = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 4, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec.prototype.clearAllowedendpointnamesList = function() {
+  return this.setAllowedendpointnamesList([]);
+};
+
+
+/**
+ * repeated APIKeySpec apiKeys = 5;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec.prototype.getApikeysList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec, 5));
+};
+
+
+/**
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec.prototype.setApikeysList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 5, value);
+};
+
+
+/**
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec.prototype.addApikeys = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec.prototype.clearApikeysList = function() {
+  return this.setApikeysList([]);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.repeatedFields_ = [2,4];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    observedgeneration: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    apikeysList: jspb.Message.toObjectList(msg.getApikeysList(),
+    proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus.toObject, includeInstance),
+    updatedat: (f = msg.getUpdatedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
+    k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setObservedgeneration(value);
+      break;
+    case 2:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus.deserializeBinaryFromReader);
+      msg.addApikeys(value);
+      break;
+    case 3:
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
+      msg.setUpdatedat(value);
+      break;
+    case 4:
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.deserializeBinaryFromReader);
+      msg.addConditions(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {number} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeInt64(
+      1,
+      f
+    );
+  }
+  f = message.getApikeysList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus.serializeBinaryToWriter
+    );
+  }
+  f = message.getUpdatedat();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
+    );
+  }
+  f = message.getConditionsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      4,
+      f,
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional int64 observedGeneration = 1;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.prototype.getObservedgeneration = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.prototype.setObservedgeneration = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.prototype.clearObservedgeneration = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.prototype.hasObservedgeneration = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * repeated APIKeyStatus apiKeys = 2;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.prototype.getApikeysList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.prototype.setApikeysList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.prototype.addApikeys = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.prototype.clearApikeysList = function() {
+  return this.setApikeysList([]);
+};
+
+
+/**
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 3;
+ * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.prototype.getUpdatedat = function() {
+  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 3));
+};
+
+
+/**
+ * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.prototype.setUpdatedat = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.prototype.clearUpdatedat = function() {
+  return this.setUpdatedat(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.prototype.hasUpdatedat = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 4;
+ * @return {!Array<!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.prototype.getConditionsList = function() {
+  return /** @type{!Array<!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition>} */ (
+    jspb.Message.getRepeatedWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition, 4));
+};
+
+
+/**
+ * @param {!Array<!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.prototype.setConditionsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.prototype.addConditions = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.prototype.clearConditionsList = function() {
+  return this.setConditionsList([]);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    totaltokens: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    totalrequests: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    totalcost: (f = jspb.Message.getOptionalFloatingPointField(msg, 3)) == null ? undefined : f,
+    averagedailytokens: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    averagedailyrequests: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    averagedailycost: (f = jspb.Message.getOptionalFloatingPointField(msg, 6)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setTotaltokens(value);
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setTotalrequests(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setTotalcost(value);
+      break;
+    case 4:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setAveragedailytokens(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setAveragedailyrequests(value);
+      break;
+    case 6:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setAveragedailycost(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {number} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeInt64(
+      1,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeInt64(
+      2,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeFloat(
+      3,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeInt64(
+      4,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeInt64(
+      5,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeFloat(
+      6,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional int64 totalTokens = 1;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.prototype.getTotaltokens = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.prototype.setTotaltokens = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.prototype.clearTotaltokens = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.prototype.hasTotaltokens = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional int64 totalRequests = 2;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.prototype.getTotalrequests = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.prototype.setTotalrequests = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.prototype.clearTotalrequests = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.prototype.hasTotalrequests = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional float totalCost = 3;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.prototype.getTotalcost = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 3, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.prototype.setTotalcost = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.prototype.clearTotalcost = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.prototype.hasTotalcost = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional int64 averageDailyTokens = 4;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.prototype.getAveragedailytokens = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.prototype.setAveragedailytokens = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.prototype.clearAveragedailytokens = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.prototype.hasAveragedailytokens = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional int64 averageDailyRequests = 5;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.prototype.getAveragedailyrequests = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.prototype.setAveragedailyrequests = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.prototype.clearAveragedailyrequests = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.prototype.hasAveragedailyrequests = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional float averageDailyCost = 6;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.prototype.getAveragedailycost = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 6, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.prototype.setAveragedailycost = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.prototype.clearAveragedailycost = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.prototype.hasAveragedailycost = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    tokens: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    requests: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    cost: (f = jspb.Message.getOptionalFloatingPointField(msg, 3)) == null ? undefined : f,
+    resetschedule: (f = msg.getResetschedule()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setTokens(value);
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setRequests(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setCost(value);
+      break;
+    case 4:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.deserializeBinaryFromReader);
+      msg.setResetschedule(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {number} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeInt64(
+      1,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeInt64(
+      2,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeFloat(
+      3,
+      f
+    );
+  }
+  f = message.getResetschedule();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional int64 tokens = 1;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota.prototype.getTokens = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota.prototype.setTokens = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota.prototype.clearTokens = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota.prototype.hasTokens = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional int64 requests = 2;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota.prototype.getRequests = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota.prototype.setRequests = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota.prototype.clearRequests = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota.prototype.hasRequests = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional float cost = 3;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota.prototype.getCost = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 3, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota.prototype.setCost = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota.prototype.clearCost = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota.prototype.hasCost = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule resetSchedule = 4;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota.prototype.getResetschedule = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule, 4));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota.prototype.setResetschedule = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota.prototype.clearResetschedule = function() {
+  return this.setResetschedule(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota.prototype.hasResetschedule = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec.repeatedFields_ = [2,3];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    name: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    allowedservernamesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+    allowedendpointnamesList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
+    quota: (f = msg.getQuota()) && proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addAllowedservernames(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addAllowedendpointnames(value);
+      break;
+    case 4:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota.deserializeBinaryFromReader);
+      msg.setQuota(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getAllowedservernamesList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      2,
+      f
+    );
+  }
+  f = message.getAllowedendpointnamesList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      3,
+      f
+    );
+  }
+  f = message.getQuota();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional string name = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec.prototype.setName = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec.prototype.clearName = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec.prototype.hasName = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * repeated string allowedServerNames = 2;
+ * @return {!Array<string>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec.prototype.getAllowedservernamesList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec.prototype.setAllowedservernamesList = function(value) {
+  return jspb.Message.setField(this, 2, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec.prototype.addAllowedservernames = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec.prototype.clearAllowedservernamesList = function() {
+  return this.setAllowedservernamesList([]);
+};
+
+
+/**
+ * repeated string allowedEndpointNames = 3;
+ * @return {!Array<string>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec.prototype.getAllowedendpointnamesList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 3));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec.prototype.setAllowedendpointnamesList = function(value) {
+  return jspb.Message.setField(this, 3, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec.prototype.addAllowedendpointnames = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec.prototype.clearAllowedendpointnamesList = function() {
+  return this.setAllowedendpointnamesList([]);
+};
+
+
+/**
+ * optional APIKeyQuota quota = 4;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec.prototype.getQuota = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota, 4));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyQuota|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec.prototype.setQuota = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec.prototype.clearQuota = function() {
+  return this.setQuota(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeySpec.prototype.hasQuota = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    name: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    creationdate: (f = msg.getCreationdate()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    lastuseddate: (f = msg.getLastuseddate()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    quotaexceededdate: (f = msg.getQuotaexceededdate()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    quotarefresheddate: (f = msg.getQuotarefresheddate()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    keygenerated: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f,
+    metrics: (f = msg.getMetrics()) && proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
+      break;
+    case 2:
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
+      msg.setCreationdate(value);
+      break;
+    case 3:
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
+      msg.setLastuseddate(value);
+      break;
+    case 4:
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
+      msg.setQuotaexceededdate(value);
+      break;
+    case 5:
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
+      msg.setQuotarefresheddate(value);
+      break;
+    case 6:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setKeygenerated(value);
+      break;
+    case 7:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.deserializeBinaryFromReader);
+      msg.setMetrics(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getCreationdate();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
+    );
+  }
+  f = message.getLastuseddate();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
+    );
+  }
+  f = message.getQuotaexceededdate();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
+    );
+  }
+  f = message.getQuotarefresheddate();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeBool(
+      6,
+      f
+    );
+  }
+  f = message.getMetrics();
+  if (f != null) {
+    writer.writeMessage(
+      7,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional string name = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus.prototype.setName = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus.prototype.clearName = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus.prototype.hasName = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time creationDate = 2;
+ * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus.prototype.getCreationdate = function() {
+  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 2));
+};
+
+
+/**
+ * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus.prototype.setCreationdate = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus.prototype.clearCreationdate = function() {
+  return this.setCreationdate(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus.prototype.hasCreationdate = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUsedDate = 3;
+ * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus.prototype.getLastuseddate = function() {
+  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 3));
+};
+
+
+/**
+ * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus.prototype.setLastuseddate = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus.prototype.clearLastuseddate = function() {
+  return this.setLastuseddate(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus.prototype.hasLastuseddate = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time quotaExceededDate = 4;
+ * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus.prototype.getQuotaexceededdate = function() {
+  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 4));
+};
+
+
+/**
+ * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus.prototype.setQuotaexceededdate = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus.prototype.clearQuotaexceededdate = function() {
+  return this.setQuotaexceededdate(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus.prototype.hasQuotaexceededdate = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time quotaRefreshedDate = 5;
+ * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus.prototype.getQuotarefresheddate = function() {
+  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 5));
+};
+
+
+/**
+ * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus.prototype.setQuotarefresheddate = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus.prototype.clearQuotarefresheddate = function() {
+  return this.setQuotarefresheddate(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus.prototype.hasQuotarefresheddate = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional bool keyGenerated = 6;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus.prototype.getKeygenerated = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus.prototype.setKeygenerated = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus.prototype.clearKeygenerated = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus.prototype.hasKeygenerated = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional APIKeyMetrics metrics = 7;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus.prototype.getMetrics = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics, 7));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus.prototype.setMetrics = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus.prototype.clearMetrics = function() {
+  return this.setMetrics(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus.prototype.hasMetrics = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
 
 /**
  * List of repeated fields within this message type.
@@ -1781,6 +4833,202 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.AutoVectorRetrieverS
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.AutoVectorRetrieverSpec.prototype.clearMetadatainfoList = function() {
   return this.setMetadatainfoList([]);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.BooleanSpec.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.BooleanSpec.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.BooleanSpec} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.BooleanSpec.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    extractionmode: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    pb_default: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.BooleanSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.BooleanSpec.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.BooleanSpec;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.BooleanSpec.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.BooleanSpec} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.BooleanSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.BooleanSpec.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setExtractionmode(value);
+      break;
+    case 2:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setDefault(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.BooleanSpec.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.BooleanSpec.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.BooleanSpec} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.BooleanSpec.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeBool(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string extractionMode = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.BooleanSpec.prototype.getExtractionmode = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.BooleanSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.BooleanSpec.prototype.setExtractionmode = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.BooleanSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.BooleanSpec.prototype.clearExtractionmode = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.BooleanSpec.prototype.hasExtractionmode = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional bool default = 2;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.BooleanSpec.prototype.getDefault = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.BooleanSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.BooleanSpec.prototype.setDefault = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.BooleanSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.BooleanSpec.prototype.clearDefault = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.BooleanSpec.prototype.hasDefault = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -2269,6 +5517,502 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.CohereRerankSpec.pro
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.CohereRerankSpec.prototype.hasTopn = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    name: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    type: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    integer: (f = msg.getInteger()) && proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IntegerSpec.toObject(includeInstance, f),
+    pb_float: (f = msg.getFloat()) && proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec.toObject(includeInstance, f),
+    text: (f = msg.getText()) && proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec.toObject(includeInstance, f),
+    pb_boolean: (f = msg.getBoolean()) && proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.BooleanSpec.toObject(includeInstance, f),
+    description: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
+    metadatakey: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setType(value);
+      break;
+    case 3:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IntegerSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IntegerSpec.deserializeBinaryFromReader);
+      msg.setInteger(value);
+      break;
+    case 4:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec.deserializeBinaryFromReader);
+      msg.setFloat(value);
+      break;
+    case 5:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec.deserializeBinaryFromReader);
+      msg.setText(value);
+      break;
+    case 6:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.BooleanSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.BooleanSpec.deserializeBinaryFromReader);
+      msg.setBoolean(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDescription(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMetadatakey(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getInteger();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IntegerSpec.serializeBinaryToWriter
+    );
+  }
+  f = message.getFloat();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec.serializeBinaryToWriter
+    );
+  }
+  f = message.getText();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec.serializeBinaryToWriter
+    );
+  }
+  f = message.getBoolean();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.BooleanSpec.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 7));
+  if (f != null) {
+    writer.writeString(
+      7,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 8));
+  if (f != null) {
+    writer.writeString(
+      8,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string name = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column.prototype.setName = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column.prototype.clearName = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column.prototype.hasName = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string type = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column.prototype.getType = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column.prototype.setType = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column.prototype.clearType = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column.prototype.hasType = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional IntegerSpec integer = 3;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IntegerSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column.prototype.getInteger = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IntegerSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IntegerSpec, 3));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IntegerSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column.prototype.setInteger = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column.prototype.clearInteger = function() {
+  return this.setInteger(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column.prototype.hasInteger = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional FloatSpec float = 4;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column.prototype.getFloat = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec, 4));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column.prototype.setFloat = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column.prototype.clearFloat = function() {
+  return this.setFloat(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column.prototype.hasFloat = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional TextSpec text = 5;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column.prototype.getText = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec, 5));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column.prototype.setText = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column.prototype.clearText = function() {
+  return this.setText(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column.prototype.hasText = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional BooleanSpec boolean = 6;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.BooleanSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column.prototype.getBoolean = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.BooleanSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.BooleanSpec, 6));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.BooleanSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column.prototype.setBoolean = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column.prototype.clearBoolean = function() {
+  return this.setBoolean(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column.prototype.hasBoolean = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional string description = 7;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column.prototype.getDescription = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column.prototype.setDescription = function(value) {
+  return jspb.Message.setField(this, 7, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column.prototype.clearDescription = function() {
+  return jspb.Message.setField(this, 7, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column.prototype.hasDescription = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional string metadataKey = 8;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column.prototype.getMetadatakey = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column.prototype.setMetadatakey = function(value) {
+  return jspb.Message.setField(this, 8, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column.prototype.clearMetadatakey = function() {
+  return jspb.Message.setField(this, 8, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column.prototype.hasMetadatakey = function() {
+  return jspb.Message.getField(this, 8) != null;
 };
 
 
@@ -4233,6 +7977,1247 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EmbeddingRecencyPost
  * @private {!Array<number>}
  * @const
  */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EmbeddingSpec.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EmbeddingSpec.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EmbeddingSpec.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EmbeddingSpec} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EmbeddingSpec.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    columnsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+    model: (f = msg.getModel()) && proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EmbeddingSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EmbeddingSpec.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EmbeddingSpec;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EmbeddingSpec.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EmbeddingSpec} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EmbeddingSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EmbeddingSpec.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addColumns(value);
+      break;
+    case 2:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec.deserializeBinaryFromReader);
+      msg.setModel(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EmbeddingSpec.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EmbeddingSpec.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EmbeddingSpec} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EmbeddingSpec.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getColumnsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      1,
+      f
+    );
+  }
+  f = message.getModel();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * repeated string columns = 1;
+ * @return {!Array<string>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EmbeddingSpec.prototype.getColumnsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 1));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EmbeddingSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EmbeddingSpec.prototype.setColumnsList = function(value) {
+  return jspb.Message.setField(this, 1, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EmbeddingSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EmbeddingSpec.prototype.addColumns = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EmbeddingSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EmbeddingSpec.prototype.clearColumnsList = function() {
+  return this.setColumnsList([]);
+};
+
+
+/**
+ * optional ModelSpec model = 2;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EmbeddingSpec.prototype.getModel = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec, 2));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EmbeddingSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EmbeddingSpec.prototype.setModel = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EmbeddingSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EmbeddingSpec.prototype.clearModel = function() {
+  return this.setModel(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EmbeddingSpec.prototype.hasModel = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    p50: (f = jspb.Message.getOptionalFloatingPointField(msg, 4)) == null ? undefined : f,
+    p95: (f = jspb.Message.getOptionalFloatingPointField(msg, 5)) == null ? undefined : f,
+    p99: (f = jspb.Message.getOptionalFloatingPointField(msg, 6)) == null ? undefined : f,
+    totalrequests: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
+    totaltokens: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
+    totalcost: (f = jspb.Message.getOptionalFloatingPointField(msg, 10)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 4:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setP50(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setP95(value);
+      break;
+    case 6:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setP99(value);
+      break;
+    case 8:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setTotalrequests(value);
+      break;
+    case 9:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setTotaltokens(value);
+      break;
+    case 10:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setTotalcost(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {number} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeDouble(
+      4,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeDouble(
+      5,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeDouble(
+      6,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 8));
+  if (f != null) {
+    writer.writeInt32(
+      8,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 9));
+  if (f != null) {
+    writer.writeInt32(
+      9,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 10));
+  if (f != null) {
+    writer.writeFloat(
+      10,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional double p50 = 4;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics.prototype.getP50 = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 4, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics.prototype.setP50 = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics.prototype.clearP50 = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics.prototype.hasP50 = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional double p95 = 5;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics.prototype.getP95 = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 5, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics.prototype.setP95 = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics.prototype.clearP95 = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics.prototype.hasP95 = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional double p99 = 6;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics.prototype.getP99 = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 6, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics.prototype.setP99 = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics.prototype.clearP99 = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics.prototype.hasP99 = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional int32 totalRequests = 8;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics.prototype.getTotalrequests = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics.prototype.setTotalrequests = function(value) {
+  return jspb.Message.setField(this, 8, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics.prototype.clearTotalrequests = function() {
+  return jspb.Message.setField(this, 8, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics.prototype.hasTotalrequests = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional int32 totalTokens = 9;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics.prototype.getTotaltokens = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics.prototype.setTotaltokens = function(value) {
+  return jspb.Message.setField(this, 9, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics.prototype.clearTotaltokens = function() {
+  return jspb.Message.setField(this, 9, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics.prototype.hasTotaltokens = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional float totalCost = 10;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics.prototype.getTotalcost = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 10, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics.prototype.setTotalcost = function(value) {
+  return jspb.Message.setField(this, 10, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics.prototype.clearTotalcost = function() {
+  return jspb.Message.setField(this, 10, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics.prototype.hasTotalcost = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec.repeatedFields_ = [4];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    name: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    queryengine: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    path: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    pathsList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
+    format: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    model: (f = msg.getModel()) && proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setQueryengine(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPath(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addPaths(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFormat(value);
+      break;
+    case 6:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec.deserializeBinaryFromReader);
+      msg.setModel(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getPathsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      4,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+  f = message.getModel();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional string name = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec.prototype.setName = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec.prototype.clearName = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec.prototype.hasName = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string queryEngine = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec.prototype.getQueryengine = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec.prototype.setQueryengine = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec.prototype.clearQueryengine = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec.prototype.hasQueryengine = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string path = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec.prototype.getPath = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec.prototype.setPath = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec.prototype.clearPath = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec.prototype.hasPath = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * repeated string paths = 4;
+ * @return {!Array<string>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec.prototype.getPathsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 4));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec.prototype.setPathsList = function(value) {
+  return jspb.Message.setField(this, 4, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec.prototype.addPaths = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 4, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec.prototype.clearPathsList = function() {
+  return this.setPathsList([]);
+};
+
+
+/**
+ * optional string format = 5;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec.prototype.getFormat = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec.prototype.setFormat = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec.prototype.clearFormat = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec.prototype.hasFormat = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional ModelSpec model = 6;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec.prototype.getModel = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec, 6));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec.prototype.setModel = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec.prototype.clearModel = function() {
+  return this.setModel(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec.prototype.hasModel = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointStatus.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointStatus.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointStatus} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointStatus.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    name: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    failuremessage: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    metrics: (f = msg.getMetrics()) && proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointStatus}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointStatus.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointStatus;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointStatus.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointStatus} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointStatus}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointStatus.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFailuremessage(value);
+      break;
+    case 5:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics.deserializeBinaryFromReader);
+      msg.setMetrics(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointStatus.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointStatus.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointStatus} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointStatus.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getMetrics();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional string name = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointStatus.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointStatus.prototype.setName = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointStatus.prototype.clearName = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointStatus.prototype.hasName = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string failureMessage = 4;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointStatus.prototype.getFailuremessage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointStatus.prototype.setFailuremessage = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointStatus.prototype.clearFailuremessage = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointStatus.prototype.hasFailuremessage = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional EndpointMetrics metrics = 5;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointStatus.prototype.getMetrics = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics, 5));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointMetrics|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointStatus} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointStatus.prototype.setMetrics = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointStatus.prototype.clearMetrics = function() {
+  return this.setMetrics(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointStatus.prototype.hasMetrics = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
 proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ExtensionFilter.repeatedFields_ = [1,2];
 
 
@@ -5346,6 +10331,298 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FixedRecencyPostProc
 
 
 
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    extractionmode: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    roundingmode: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    precision: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    pb_default: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setExtractionmode(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setRoundingmode(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPrecision(value);
+      break;
+    case 4:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setDefault(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeInt32(
+      3,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeInt32(
+      4,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string extractionMode = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec.prototype.getExtractionmode = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec.prototype.setExtractionmode = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec.prototype.clearExtractionmode = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec.prototype.hasExtractionmode = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string roundingMode = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec.prototype.getRoundingmode = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec.prototype.setRoundingmode = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec.prototype.clearRoundingmode = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec.prototype.hasRoundingmode = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional int32 precision = 3;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec.prototype.getPrecision = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec.prototype.setPrecision = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec.prototype.clearPrecision = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec.prototype.hasPrecision = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional int32 default = 4;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec.prototype.getDefault = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec.prototype.setDefault = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec.prototype.clearDefault = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FloatSpec.prototype.hasDefault = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+
 /**
  * List of repeated fields within this message type.
  * @private {!Array<number>}
@@ -5388,7 +10665,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FusionRetrieverSpec.
     model: (f = msg.getModel()) && proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec.toObject(includeInstance, f),
     queries: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     topk: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    mode: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
+    mode: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    defaultscore: (f = jspb.Message.getOptionalFloatingPointField(msg, 6)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -5445,6 +10723,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FusionRetrieverSpec.
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setMode(value);
+      break;
+    case 6:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setDefaultscore(value);
       break;
     default:
       reader.skipField();
@@ -5508,6 +10790,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FusionRetrieverSpec.
   if (f != null) {
     writer.writeString(
       5,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeFloat(
+      6,
       f
     );
   }
@@ -5693,6 +10982,42 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FusionRetrieverSpec.
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FusionRetrieverSpec.prototype.hasMode = function() {
   return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional float defaultScore = 6;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FusionRetrieverSpec.prototype.getDefaultscore = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 6, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FusionRetrieverSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FusionRetrieverSpec.prototype.setDefaultscore = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FusionRetrieverSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FusionRetrieverSpec.prototype.clearDefaultscore = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FusionRetrieverSpec.prototype.hasDefaultscore = function() {
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
@@ -6133,7 +11458,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexSpec.toObject =
     name: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     vector: (f = msg.getVector()) && proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.VectorIndexSpec.toObject(includeInstance, f),
     documentsummary: (f = msg.getDocumentsummary()) && proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.DocumentSummaryIndexSpec.toObject(includeInstance, f),
-    treeindex: (f = msg.getTreeindex()) && proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeIndexSpec.toObject(includeInstance, f)
+    tree: (f = msg.getTree()) && proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeIndexSpec.toObject(includeInstance, f),
+    keywordtable: (f = msg.getKeywordtable()) && proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableIndexSpec.toObject(includeInstance, f),
+    sql: (f = msg.getSql()) && proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec.toObject(includeInstance, f),
+    list: (f = msg.getList()) && proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListIndexSpec.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -6187,7 +11515,22 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexSpec.deserializ
     case 4:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeIndexSpec;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeIndexSpec.deserializeBinaryFromReader);
-      msg.setTreeindex(value);
+      msg.setTree(value);
+      break;
+    case 5:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableIndexSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableIndexSpec.deserializeBinaryFromReader);
+      msg.setKeywordtable(value);
+      break;
+    case 6:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec.deserializeBinaryFromReader);
+      msg.setSql(value);
+      break;
+    case 7:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListIndexSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListIndexSpec.deserializeBinaryFromReader);
+      msg.setList(value);
       break;
     default:
       reader.skipField();
@@ -6241,12 +11584,36 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexSpec.serializeB
       proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.DocumentSummaryIndexSpec.serializeBinaryToWriter
     );
   }
-  f = message.getTreeindex();
+  f = message.getTree();
   if (f != null) {
     writer.writeMessage(
       4,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeIndexSpec.serializeBinaryToWriter
+    );
+  }
+  f = message.getKeywordtable();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableIndexSpec.serializeBinaryToWriter
+    );
+  }
+  f = message.getSql();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec.serializeBinaryToWriter
+    );
+  }
+  f = message.getList();
+  if (f != null) {
+    writer.writeMessage(
+      7,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListIndexSpec.serializeBinaryToWriter
     );
   }
 };
@@ -6363,10 +11730,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexSpec.prototype.
 
 
 /**
- * optional TreeIndexSpec treeIndex = 4;
+ * optional TreeIndexSpec tree = 4;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeIndexSpec}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexSpec.prototype.getTreeindex = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexSpec.prototype.getTree = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeIndexSpec} */ (
     jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeIndexSpec, 4));
 };
@@ -6376,7 +11743,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexSpec.prototype.
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeIndexSpec|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexSpec} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexSpec.prototype.setTreeindex = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexSpec.prototype.setTree = function(value) {
   return jspb.Message.setWrapperField(this, 4, value);
 };
 
@@ -6385,8 +11752,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexSpec.prototype.
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexSpec.prototype.clearTreeindex = function() {
-  return this.setTreeindex(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexSpec.prototype.clearTree = function() {
+  return this.setTree(undefined);
 };
 
 
@@ -6394,8 +11761,119 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexSpec.prototype.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexSpec.prototype.hasTreeindex = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexSpec.prototype.hasTree = function() {
   return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional KeywordTableIndexSpec keywordTable = 5;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableIndexSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexSpec.prototype.getKeywordtable = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableIndexSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableIndexSpec, 5));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableIndexSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexSpec.prototype.setKeywordtable = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexSpec.prototype.clearKeywordtable = function() {
+  return this.setKeywordtable(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexSpec.prototype.hasKeywordtable = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional SQLIndexSpec sql = 6;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexSpec.prototype.getSql = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec, 6));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexSpec.prototype.setSql = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexSpec.prototype.clearSql = function() {
+  return this.setSql(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexSpec.prototype.hasSql = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional ListIndexSpec list = 7;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListIndexSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexSpec.prototype.getList = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListIndexSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListIndexSpec, 7));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListIndexSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexSpec.prototype.setList = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexSpec.prototype.clearList = function() {
+  return this.setList(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexSpec.prototype.hasList = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
@@ -6592,6 +12070,250 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexStatus.prototyp
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexStatus.prototype.hasDocuments = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IntegerSpec.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IntegerSpec.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IntegerSpec} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IntegerSpec.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    extractionmode: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    roundingmode: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    pb_default: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IntegerSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IntegerSpec.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IntegerSpec;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IntegerSpec.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IntegerSpec} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IntegerSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IntegerSpec.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setExtractionmode(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setRoundingmode(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setDefault(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IntegerSpec.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IntegerSpec.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IntegerSpec} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IntegerSpec.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeInt32(
+      3,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string extractionMode = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IntegerSpec.prototype.getExtractionmode = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IntegerSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IntegerSpec.prototype.setExtractionmode = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IntegerSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IntegerSpec.prototype.clearExtractionmode = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IntegerSpec.prototype.hasExtractionmode = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string roundingMode = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IntegerSpec.prototype.getRoundingmode = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IntegerSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IntegerSpec.prototype.setRoundingmode = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IntegerSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IntegerSpec.prototype.clearRoundingmode = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IntegerSpec.prototype.hasRoundingmode = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional int32 default = 3;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IntegerSpec.prototype.getDefault = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IntegerSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IntegerSpec.prototype.setDefault = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IntegerSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IntegerSpec.prototype.clearDefault = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IntegerSpec.prototype.hasDefault = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
@@ -6797,6 +12519,599 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordPostProcessor
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordPostProcessorSpec.prototype.clearExcludeList = function() {
   return this.setExcludeList([]);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableIndexSpec.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableIndexSpec.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableIndexSpec} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableIndexSpec.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    mode: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    model: (f = msg.getModel()) && proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec.toObject(includeInstance, f),
+    maxkeywordspernode: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableIndexSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableIndexSpec.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableIndexSpec;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableIndexSpec.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableIndexSpec} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableIndexSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableIndexSpec.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMode(value);
+      break;
+    case 2:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec.deserializeBinaryFromReader);
+      msg.setModel(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setMaxkeywordspernode(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableIndexSpec.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableIndexSpec.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableIndexSpec} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableIndexSpec.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getModel();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeInt64(
+      3,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string mode = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableIndexSpec.prototype.getMode = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableIndexSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableIndexSpec.prototype.setMode = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableIndexSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableIndexSpec.prototype.clearMode = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableIndexSpec.prototype.hasMode = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional ModelSpec model = 2;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableIndexSpec.prototype.getModel = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec, 2));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableIndexSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableIndexSpec.prototype.setModel = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableIndexSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableIndexSpec.prototype.clearModel = function() {
+  return this.setModel(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableIndexSpec.prototype.hasModel = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional int64 maxKeywordsPerNode = 3;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableIndexSpec.prototype.getMaxkeywordspernode = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableIndexSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableIndexSpec.prototype.setMaxkeywordspernode = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableIndexSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableIndexSpec.prototype.clearMaxkeywordspernode = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableIndexSpec.prototype.hasMaxkeywordspernode = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    index: (f = msg.getIndex()) && proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexReference.toObject(includeInstance, f),
+    model: (f = msg.getModel()) && proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec.toObject(includeInstance, f),
+    mode: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    keywordsperquery: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    chunksperquery: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexReference;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexReference.deserializeBinaryFromReader);
+      msg.setIndex(value);
+      break;
+    case 2:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec.deserializeBinaryFromReader);
+      msg.setModel(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMode(value);
+      break;
+    case 4:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setKeywordsperquery(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setChunksperquery(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getIndex();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexReference.serializeBinaryToWriter
+    );
+  }
+  f = message.getModel();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeInt64(
+      4,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeInt64(
+      5,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional IndexReference index = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexReference}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec.prototype.getIndex = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexReference} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexReference, 1));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexReference|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec.prototype.setIndex = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec.prototype.clearIndex = function() {
+  return this.setIndex(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec.prototype.hasIndex = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional ModelSpec model = 2;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec.prototype.getModel = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec, 2));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec.prototype.setModel = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec.prototype.clearModel = function() {
+  return this.setModel(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec.prototype.hasModel = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string mode = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec.prototype.getMode = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec.prototype.setMode = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec.prototype.clearMode = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec.prototype.hasMode = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional int64 keywordsPerQuery = 4;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec.prototype.getKeywordsperquery = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec.prototype.setKeywordsperquery = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec.prototype.clearKeywordsperquery = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec.prototype.hasKeywordsperquery = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional int64 chunksPerQuery = 5;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec.prototype.getChunksperquery = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec.prototype.setChunksperquery = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec.prototype.clearChunksperquery = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec.prototype.hasChunksperquery = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
@@ -8605,714 +14920,6 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLM.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLM.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLM} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLM.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    metadata: (f = msg.getMetadata()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.toObject(includeInstance, f),
-    spec: (f = msg.getSpec()) && proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.toObject(includeInstance, f),
-    status: (f = msg.getStatus()) && proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMStatus.toObject(includeInstance, f)
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLM}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLM.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLM;
-  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLM.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLM} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLM}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLM.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta;
-      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.deserializeBinaryFromReader);
-      msg.setMetadata(value);
-      break;
-    case 2:
-      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec;
-      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.deserializeBinaryFromReader);
-      msg.setSpec(value);
-      break;
-    case 3:
-      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMStatus;
-      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMStatus.deserializeBinaryFromReader);
-      msg.setStatus(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLM.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLM.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLM} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLM.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getMetadata();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.serializeBinaryToWriter
-    );
-  }
-  f = message.getSpec();
-  if (f != null) {
-    writer.writeMessage(
-      2,
-      f,
-      proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.serializeBinaryToWriter
-    );
-  }
-  f = message.getStatus();
-  if (f != null) {
-    writer.writeMessage(
-      3,
-      f,
-      proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMStatus.serializeBinaryToWriter
-    );
-  }
-};
-
-
-/**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
- * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLM.prototype.getMetadata = function() {
-  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta, 1));
-};
-
-
-/**
- * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLM} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLM.prototype.setMetadata = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLM} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLM.prototype.clearMetadata = function() {
-  return this.setMetadata(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLM.prototype.hasMetadata = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional LLMSpec spec = 2;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLM.prototype.getSpec = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec, 2));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLM} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLM.prototype.setSpec = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLM} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLM.prototype.clearSpec = function() {
-  return this.setSpec(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLM.prototype.hasSpec = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional LLMStatus status = 3;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMStatus}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLM.prototype.getStatus = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMStatus} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMStatus, 3));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMStatus|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLM} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLM.prototype.setStatus = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLM} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLM.prototype.clearStatus = function() {
-  return this.setStatus(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLM.prototype.hasStatus = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMAccessSpec.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMAccessSpec.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMAccessSpec} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMAccessSpec.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    port: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    nodeport: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    accesstype: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMAccessSpec}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMAccessSpec.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMAccessSpec;
-  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMAccessSpec.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMAccessSpec} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMAccessSpec}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMAccessSpec.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setPort(value);
-      break;
-    case 2:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setNodeport(value);
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setAccesstype(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMAccessSpec.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMAccessSpec.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMAccessSpec} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMAccessSpec.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = /** @type {number} */ (jspb.Message.getField(message, 1));
-  if (f != null) {
-    writer.writeInt32(
-      1,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeInt32(
-      2,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 4));
-  if (f != null) {
-    writer.writeString(
-      4,
-      f
-    );
-  }
-};
-
-
-/**
- * optional int32 port = 1;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMAccessSpec.prototype.getPort = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMAccessSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMAccessSpec.prototype.setPort = function(value) {
-  return jspb.Message.setField(this, 1, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMAccessSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMAccessSpec.prototype.clearPort = function() {
-  return jspb.Message.setField(this, 1, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMAccessSpec.prototype.hasPort = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional int32 nodePort = 2;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMAccessSpec.prototype.getNodeport = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMAccessSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMAccessSpec.prototype.setNodeport = function(value) {
-  return jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMAccessSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMAccessSpec.prototype.clearNodeport = function() {
-  return jspb.Message.setField(this, 2, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMAccessSpec.prototype.hasNodeport = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional string accessType = 4;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMAccessSpec.prototype.getAccesstype = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMAccessSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMAccessSpec.prototype.setAccesstype = function(value) {
-  return jspb.Message.setField(this, 4, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMAccessSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMAccessSpec.prototype.clearAccesstype = function() {
-  return jspb.Message.setField(this, 4, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMAccessSpec.prototype.hasAccesstype = function() {
-  return jspb.Message.getField(this, 4) != null;
-};
-
-
-
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMList.repeatedFields_ = [2];
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMList.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMList.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMList} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMList.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    metadata: (f = msg.getMetadata()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.toObject(includeInstance, f),
-    itemsList: jspb.Message.toObjectList(msg.getItemsList(),
-    proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLM.toObject, includeInstance)
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMList}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMList.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMList;
-  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMList.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMList} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMList}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMList.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta;
-      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.deserializeBinaryFromReader);
-      msg.setMetadata(value);
-      break;
-    case 2:
-      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLM;
-      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLM.deserializeBinaryFromReader);
-      msg.addItems(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMList.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMList.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMList} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMList.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getMetadata();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.serializeBinaryToWriter
-    );
-  }
-  f = message.getItemsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      2,
-      f,
-      proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLM.serializeBinaryToWriter
-    );
-  }
-};
-
-
-/**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
- * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMList.prototype.getMetadata = function() {
-  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta, 1));
-};
-
-
-/**
- * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMList} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMList.prototype.setMetadata = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMList} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMList.prototype.clearMetadata = function() {
-  return this.setMetadata(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMList.prototype.hasMetadata = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * repeated LLM items = 2;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLM>}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMList.prototype.getItemsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLM>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLM, 2));
-};
-
-
-/**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLM>} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMList} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMList.prototype.setItemsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 2, value);
-};
-
-
-/**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLM=} opt_value
- * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLM}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMList.prototype.addItems = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLM, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMList} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMList.prototype.clearItemsList = function() {
-  return this.setItemsList([]);
-};
-
-
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
 proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMRerankSpec.prototype.toObject = function(opt_includeInstance) {
   return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMRerankSpec.toObject(opt_includeInstance, this);
 };
@@ -9545,12 +15152,258 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMRerankSpec.protot
 
 
 
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.repeatedFields_ = [5,6,7];
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    metadata: (f = msg.getMetadata()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.toObject(includeInstance, f),
+    spec: (f = msg.getSpec()) && proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec.toObject(includeInstance, f),
+    status: (f = msg.getStatus()) && proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMStatus.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.deserializeBinaryFromReader);
+      msg.setMetadata(value);
+      break;
+    case 2:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec.deserializeBinaryFromReader);
+      msg.setSpec(value);
+      break;
+    case 3:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMStatus;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMStatus.deserializeBinaryFromReader);
+      msg.setStatus(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getMetadata();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.serializeBinaryToWriter
+    );
+  }
+  f = message.getSpec();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec.serializeBinaryToWriter
+    );
+  }
+  f = message.getStatus();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMStatus.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+ * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer.prototype.getMetadata = function() {
+  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta, 1));
+};
+
+
+/**
+ * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer.prototype.setMetadata = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer.prototype.clearMetadata = function() {
+  return this.setMetadata(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer.prototype.hasMetadata = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional LLMServerSpec spec = 2;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer.prototype.getSpec = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec, 2));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer.prototype.setSpec = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer.prototype.clearSpec = function() {
+  return this.setSpec(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer.prototype.hasSpec = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional LLMStatus status = 3;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMStatus}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer.prototype.getStatus = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMStatus} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMStatus, 3));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMStatus|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer.prototype.setStatus = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer.prototype.clearStatus = function() {
+  return this.setStatus(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer.prototype.hasStatus = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
 
 
 
@@ -9567,8 +15420,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAccessSpec.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAccessSpec.toObject(opt_includeInstance, this);
 };
 
 
@@ -9577,22 +15430,738 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.prototype.to
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAccessSpec} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAccessSpec.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    port: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    nodeport: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    accesstype: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAccessSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAccessSpec.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAccessSpec;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAccessSpec.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAccessSpec} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAccessSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAccessSpec.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPort(value);
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setNodeport(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAccesstype(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAccessSpec.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAccessSpec.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAccessSpec} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAccessSpec.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {number} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeInt32(
+      1,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeInt32(
+      2,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional int32 port = 1;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAccessSpec.prototype.getPort = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAccessSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAccessSpec.prototype.setPort = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAccessSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAccessSpec.prototype.clearPort = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAccessSpec.prototype.hasPort = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional int32 nodePort = 2;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAccessSpec.prototype.getNodeport = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAccessSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAccessSpec.prototype.setNodeport = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAccessSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAccessSpec.prototype.clearNodeport = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAccessSpec.prototype.hasNodeport = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string accessType = 4;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAccessSpec.prototype.getAccesstype = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAccessSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAccessSpec.prototype.setAccesstype = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAccessSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAccessSpec.prototype.clearAccesstype = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAccessSpec.prototype.hasAccesstype = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAuthorizationSpec.repeatedFields_ = [2,3];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAuthorizationSpec.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAuthorizationSpec.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAuthorizationSpec} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAuthorizationSpec.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    insecure: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
+    allowedkeygroupsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+    allowedkeynamesList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAuthorizationSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAuthorizationSpec.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAuthorizationSpec;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAuthorizationSpec.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAuthorizationSpec} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAuthorizationSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAuthorizationSpec.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setInsecure(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addAllowedkeygroups(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addAllowedkeynames(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAuthorizationSpec.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAuthorizationSpec.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAuthorizationSpec} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAuthorizationSpec.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeBool(
+      1,
+      f
+    );
+  }
+  f = message.getAllowedkeygroupsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      2,
+      f
+    );
+  }
+  f = message.getAllowedkeynamesList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      3,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional bool insecure = 1;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAuthorizationSpec.prototype.getInsecure = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAuthorizationSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAuthorizationSpec.prototype.setInsecure = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAuthorizationSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAuthorizationSpec.prototype.clearInsecure = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAuthorizationSpec.prototype.hasInsecure = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * repeated string allowedKeyGroups = 2;
+ * @return {!Array<string>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAuthorizationSpec.prototype.getAllowedkeygroupsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAuthorizationSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAuthorizationSpec.prototype.setAllowedkeygroupsList = function(value) {
+  return jspb.Message.setField(this, 2, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAuthorizationSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAuthorizationSpec.prototype.addAllowedkeygroups = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAuthorizationSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAuthorizationSpec.prototype.clearAllowedkeygroupsList = function() {
+  return this.setAllowedkeygroupsList([]);
+};
+
+
+/**
+ * repeated string allowedKeyNames = 3;
+ * @return {!Array<string>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAuthorizationSpec.prototype.getAllowedkeynamesList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 3));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAuthorizationSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAuthorizationSpec.prototype.setAllowedkeynamesList = function(value) {
+  return jspb.Message.setField(this, 3, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAuthorizationSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAuthorizationSpec.prototype.addAllowedkeynames = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAuthorizationSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAuthorizationSpec.prototype.clearAllowedkeynamesList = function() {
+  return this.setAllowedkeynamesList([]);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerList.repeatedFields_ = [2];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerList.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerList.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerList} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerList.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    metadata: (f = msg.getMetadata()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.toObject(includeInstance, f),
+    itemsList: jspb.Message.toObjectList(msg.getItemsList(),
+    proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerList}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerList.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerList;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerList.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerList} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerList}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerList.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.deserializeBinaryFromReader);
+      msg.setMetadata(value);
+      break;
+    case 2:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer.deserializeBinaryFromReader);
+      msg.addItems(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerList.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerList.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerList} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerList.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getMetadata();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.serializeBinaryToWriter
+    );
+  }
+  f = message.getItemsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+ * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerList.prototype.getMetadata = function() {
+  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta, 1));
+};
+
+
+/**
+ * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerList} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerList.prototype.setMetadata = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerList} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerList.prototype.clearMetadata = function() {
+  return this.setMetadata(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerList.prototype.hasMetadata = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * repeated LLMServer items = 2;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerList.prototype.getItemsList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerList} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerList.prototype.setItemsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerList.prototype.addItems = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerList} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerList.prototype.clearItemsList = function() {
+  return this.setItemsList([]);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec.repeatedFields_ = [5,6,7];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
     owner: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     description: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     servingsitename: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     resources: (f = msg.getResources()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.toObject(includeInstance, f),
-    modelsList: jspb.Message.toObjectList(msg.getModelsList(),
-    proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec.toObject, includeInstance),
+    endpointsList: jspb.Message.toObjectList(msg.getEndpointsList(),
+    proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec.toObject, includeInstance),
     queryenginesList: jspb.Message.toObjectList(msg.getQueryenginesList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.QueryEngineSpec.toObject, includeInstance),
     retrieversList: jspb.Message.toObjectList(msg.getRetrieversList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RetrieverSpec.toObject, includeInstance),
+    authorization: (f = msg.getAuthorization()) && proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAuthorizationSpec.toObject(includeInstance, f),
     notification: (f = msg.getNotification()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.toObject(includeInstance, f)
   };
 
@@ -9607,23 +16176,23 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.toObject = f
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec}
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec;
-  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec}
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -9648,9 +16217,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.deserializeB
       msg.setResources(value);
       break;
     case 5:
-      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec;
-      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec.deserializeBinaryFromReader);
-      msg.addModels(value);
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec.deserializeBinaryFromReader);
+      msg.addEndpoints(value);
       break;
     case 6:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.QueryEngineSpec;
@@ -9663,6 +16232,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.deserializeB
       msg.addRetrievers(value);
       break;
     case 8:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAuthorizationSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAuthorizationSpec.deserializeBinaryFromReader);
+      msg.setAuthorization(value);
+      break;
+    case 9:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.deserializeBinaryFromReader);
       msg.setNotification(value);
@@ -9680,9 +16254,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.deserializeB
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -9690,11 +16264,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.prototype.se
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec} message
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = /** @type {string} */ (jspb.Message.getField(message, 1));
   if (f != null) {
@@ -9725,12 +16299,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.serializeBin
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.serializeBinaryToWriter
     );
   }
-  f = message.getModelsList();
+  f = message.getEndpointsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       5,
       f,
-      proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec.serializeBinaryToWriter
+      proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec.serializeBinaryToWriter
     );
   }
   f = message.getQueryenginesList();
@@ -9749,10 +16323,18 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.serializeBin
       proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RetrieverSpec.serializeBinaryToWriter
     );
   }
-  f = message.getNotification();
+  f = message.getAuthorization();
   if (f != null) {
     writer.writeMessage(
       8,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAuthorizationSpec.serializeBinaryToWriter
+    );
+  }
+  f = message.getNotification();
+  if (f != null) {
+    writer.writeMessage(
+      9,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.serializeBinaryToWriter
     );
@@ -9764,25 +16346,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.serializeBin
  * optional string owner = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.prototype.getOwner = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec.prototype.getOwner = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.prototype.setOwner = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec.prototype.setOwner = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
 
 /**
  * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.prototype.clearOwner = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec.prototype.clearOwner = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -9791,7 +16373,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.prototype.cl
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.prototype.hasOwner = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec.prototype.hasOwner = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -9800,25 +16382,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.prototype.ha
  * optional string description = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.prototype.getDescription = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec.prototype.getDescription = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.prototype.setDescription = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec.prototype.setDescription = function(value) {
   return jspb.Message.setField(this, 2, value);
 };
 
 
 /**
  * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.prototype.clearDescription = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec.prototype.clearDescription = function() {
   return jspb.Message.setField(this, 2, undefined);
 };
 
@@ -9827,7 +16409,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.prototype.cl
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.prototype.hasDescription = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec.prototype.hasDescription = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
@@ -9836,25 +16418,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.prototype.ha
  * optional string servingSiteName = 3;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.prototype.getServingsitename = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec.prototype.getServingsitename = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.prototype.setServingsitename = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec.prototype.setServingsitename = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
 
 /**
  * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.prototype.clearServingsitename = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec.prototype.clearServingsitename = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -9863,7 +16445,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.prototype.cl
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.prototype.hasServingsitename = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec.prototype.hasServingsitename = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
@@ -9872,7 +16454,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.prototype.ha
  * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 4;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.prototype.getResources = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec.prototype.getResources = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec, 4));
 };
@@ -9880,18 +16462,18 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.prototype.ge
 
 /**
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.prototype.setResources = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec.prototype.setResources = function(value) {
   return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.prototype.clearResources = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec.prototype.clearResources = function() {
   return this.setResources(undefined);
 };
 
@@ -9900,46 +16482,46 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.prototype.cl
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.prototype.hasResources = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec.prototype.hasResources = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * repeated ModelServingSpec models = 5;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec>}
+ * repeated EndpointSpec endpoints = 5;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec>}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.prototype.getModelsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec, 5));
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec.prototype.getEndpointsList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec, 5));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec>} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec} returns this
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.prototype.setModelsList = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec.prototype.setEndpointsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 5, value);
 };
 
 
 /**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec=} opt_value
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec=} opt_value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec}
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.prototype.addModels = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec, opt_index);
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec.prototype.addEndpoints = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointSpec, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.prototype.clearModelsList = function() {
-  return this.setModelsList([]);
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec.prototype.clearEndpointsList = function() {
+  return this.setEndpointsList([]);
 };
 
 
@@ -9947,7 +16529,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.prototype.cl
  * repeated QueryEngineSpec queryEngines = 6;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.QueryEngineSpec>}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.prototype.getQueryenginesList = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec.prototype.getQueryenginesList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.QueryEngineSpec>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.QueryEngineSpec, 6));
 };
@@ -9955,9 +16537,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.prototype.ge
 
 /**
  * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.QueryEngineSpec>} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.prototype.setQueryenginesList = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec.prototype.setQueryenginesList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 6, value);
 };
 
@@ -9967,16 +16549,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.prototype.se
  * @param {number=} opt_index
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.QueryEngineSpec}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.prototype.addQueryengines = function(opt_value, opt_index) {
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec.prototype.addQueryengines = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.QueryEngineSpec, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.prototype.clearQueryenginesList = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec.prototype.clearQueryenginesList = function() {
   return this.setQueryenginesList([]);
 };
 
@@ -9985,7 +16567,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.prototype.cl
  * repeated RetrieverSpec retrievers = 7;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RetrieverSpec>}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.prototype.getRetrieversList = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec.prototype.getRetrieversList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RetrieverSpec>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RetrieverSpec, 7));
 };
@@ -9993,9 +16575,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.prototype.ge
 
 /**
  * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RetrieverSpec>} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.prototype.setRetrieversList = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec.prototype.setRetrieversList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 7, value);
 };
 
@@ -10005,44 +16587,81 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.prototype.se
  * @param {number=} opt_index
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RetrieverSpec}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.prototype.addRetrievers = function(opt_value, opt_index) {
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec.prototype.addRetrievers = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RetrieverSpec, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.prototype.clearRetrieversList = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec.prototype.clearRetrieversList = function() {
   return this.setRetrieversList([]);
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 8;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec}
+ * optional LLMServerAuthorizationSpec authorization = 8;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAuthorizationSpec}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.prototype.getNotification = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec, 8));
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec.prototype.getAuthorization = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAuthorizationSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAuthorizationSpec, 8));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec} returns this
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerAuthorizationSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.prototype.setNotification = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec.prototype.setAuthorization = function(value) {
   return jspb.Message.setWrapperField(this, 8, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.prototype.clearNotification = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec.prototype.clearAuthorization = function() {
+  return this.setAuthorization(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec.prototype.hasAuthorization = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 9;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec.prototype.getNotification = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec, 9));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec.prototype.setNotification = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec.prototype.clearNotification = function() {
   return this.setNotification(undefined);
 };
 
@@ -10051,8 +16670,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.prototype.cl
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMSpec.prototype.hasNotification = function() {
-  return jspb.Message.getField(this, 8) != null;
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerSpec.prototype.hasNotification = function() {
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
@@ -10096,8 +16715,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMStatus.prototype.
 proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
     observedgeneration: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    documentsList: jspb.Message.toObjectList(msg.getDocumentsList(),
-    proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelStatus.toObject, includeInstance),
+    endpointsList: jspb.Message.toObjectList(msg.getEndpointsList(),
+    proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointStatus.toObject, includeInstance),
     endpoint: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     deployedat: (f = msg.getDeployedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     deploymentref: (f = msg.getDeploymentref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
@@ -10147,9 +16766,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMStatus.deserializ
       msg.setObservedgeneration(value);
       break;
     case 2:
-      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelStatus;
-      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelStatus.deserializeBinaryFromReader);
-      msg.addDocuments(value);
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointStatus;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointStatus.deserializeBinaryFromReader);
+      msg.addEndpoints(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
@@ -10220,12 +16839,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMStatus.serializeB
       f
     );
   }
-  f = message.getDocumentsList();
+  f = message.getEndpointsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       2,
       f,
-      proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelStatus.serializeBinaryToWriter
+      proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointStatus.serializeBinaryToWriter
     );
   }
   f = /** @type {string} */ (jspb.Message.getField(message, 3));
@@ -10322,31 +16941,31 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMStatus.prototype.
 
 
 /**
- * repeated ModelStatus documents = 2;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelStatus>}
+ * repeated EndpointStatus endpoints = 2;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointStatus>}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMStatus.prototype.getDocumentsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelStatus>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelStatus, 2));
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMStatus.prototype.getEndpointsList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointStatus>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointStatus, 2));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelStatus>} value
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointStatus>} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMStatus} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMStatus.prototype.setDocumentsList = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMStatus.prototype.setEndpointsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
 /**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelStatus=} opt_value
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointStatus=} opt_value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelStatus}
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointStatus}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMStatus.prototype.addDocuments = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelStatus, opt_index);
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMStatus.prototype.addEndpoints = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.EndpointStatus, opt_index);
 };
 
 
@@ -10354,8 +16973,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMStatus.prototype.
  * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMStatus.prototype.clearDocumentsList = function() {
-  return this.setDocumentsList([]);
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMStatus.prototype.clearEndpointsList = function() {
+  return this.setEndpointsList([]);
 };
 
 
@@ -10810,6 +17429,405 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LengthFilter.prototy
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LengthFilter.prototype.hasLessthan = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListIndexSpec.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListIndexSpec.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListIndexSpec} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListIndexSpec.toObject = function(includeInstance, msg) {
+  var f, obj = {
+
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListIndexSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListIndexSpec.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListIndexSpec;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListIndexSpec.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListIndexSpec} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListIndexSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListIndexSpec.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListIndexSpec.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListIndexSpec.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListIndexSpec} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListIndexSpec.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    index: (f = msg.getIndex()) && proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexReference.toObject(includeInstance, f),
+    model: (f = msg.getModel()) && proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec.toObject(includeInstance, f),
+    topk: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    mode: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexReference;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexReference.deserializeBinaryFromReader);
+      msg.setIndex(value);
+      break;
+    case 2:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec.deserializeBinaryFromReader);
+      msg.setModel(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setTopk(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMode(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getIndex();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexReference.serializeBinaryToWriter
+    );
+  }
+  f = message.getModel();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeInt64(
+      3,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional IndexReference index = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexReference}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec.prototype.getIndex = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexReference} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexReference, 1));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexReference|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec.prototype.setIndex = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec.prototype.clearIndex = function() {
+  return this.setIndex(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec.prototype.hasIndex = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional ModelSpec model = 2;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec.prototype.getModel = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec, 2));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec.prototype.setModel = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec.prototype.clearModel = function() {
+  return this.setModel(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec.prototype.hasModel = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional int64 topK = 3;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec.prototype.getTopk = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec.prototype.setTopk = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec.prototype.clearTopk = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec.prototype.hasTopk = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional string mode = 4;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec.prototype.getMode = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec.prototype.setMode = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec.prototype.clearMode = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec.prototype.hasMode = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
@@ -11382,697 +18400,6 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    p50: (f = jspb.Message.getOptionalFloatingPointField(msg, 4)) == null ? undefined : f,
-    p95: (f = jspb.Message.getOptionalFloatingPointField(msg, 5)) == null ? undefined : f,
-    p99: (f = jspb.Message.getOptionalFloatingPointField(msg, 6)) == null ? undefined : f,
-    totalpredictions: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics;
-  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 4:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setP50(value);
-      break;
-    case 5:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setP95(value);
-      break;
-    case 6:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setP99(value);
-      break;
-    case 8:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setTotalpredictions(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = /** @type {number} */ (jspb.Message.getField(message, 4));
-  if (f != null) {
-    writer.writeDouble(
-      4,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 5));
-  if (f != null) {
-    writer.writeDouble(
-      5,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 6));
-  if (f != null) {
-    writer.writeDouble(
-      6,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 8));
-  if (f != null) {
-    writer.writeInt32(
-      8,
-      f
-    );
-  }
-};
-
-
-/**
- * optional double p50 = 4;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics.prototype.getP50 = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 4, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics.prototype.setP50 = function(value) {
-  return jspb.Message.setField(this, 4, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics.prototype.clearP50 = function() {
-  return jspb.Message.setField(this, 4, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics.prototype.hasP50 = function() {
-  return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * optional double p95 = 5;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics.prototype.getP95 = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 5, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics.prototype.setP95 = function(value) {
-  return jspb.Message.setField(this, 5, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics.prototype.clearP95 = function() {
-  return jspb.Message.setField(this, 5, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics.prototype.hasP95 = function() {
-  return jspb.Message.getField(this, 5) != null;
-};
-
-
-/**
- * optional double p99 = 6;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics.prototype.getP99 = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 6, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics.prototype.setP99 = function(value) {
-  return jspb.Message.setField(this, 6, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics.prototype.clearP99 = function() {
-  return jspb.Message.setField(this, 6, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics.prototype.hasP99 = function() {
-  return jspb.Message.getField(this, 6) != null;
-};
-
-
-/**
- * optional int32 totalPredictions = 8;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics.prototype.getTotalpredictions = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics.prototype.setTotalpredictions = function(value) {
-  return jspb.Message.setField(this, 8, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics.prototype.clearTotalpredictions = function() {
-  return jspb.Message.setField(this, 8, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics.prototype.hasTotalpredictions = function() {
-  return jspb.Message.getField(this, 8) != null;
-};
-
-
-
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec.repeatedFields_ = [4];
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    name: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    queryengine: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    path: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    pathsList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
-    format: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
-    model: (f = msg.getModel()) && proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec.toObject(includeInstance, f)
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec;
-  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setQueryengine(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPath(value);
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.addPaths(value);
-      break;
-    case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setFormat(value);
-      break;
-    case 6:
-      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec;
-      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec.deserializeBinaryFromReader);
-      msg.setModel(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = /** @type {string} */ (jspb.Message.getField(message, 1));
-  if (f != null) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 3));
-  if (f != null) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
-  f = message.getPathsList();
-  if (f.length > 0) {
-    writer.writeRepeatedString(
-      4,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 5));
-  if (f != null) {
-    writer.writeString(
-      5,
-      f
-    );
-  }
-  f = message.getModel();
-  if (f != null) {
-    writer.writeMessage(
-      6,
-      f,
-      proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec.serializeBinaryToWriter
-    );
-  }
-};
-
-
-/**
- * optional string name = 1;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec.prototype.setName = function(value) {
-  return jspb.Message.setField(this, 1, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec.prototype.clearName = function() {
-  return jspb.Message.setField(this, 1, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec.prototype.hasName = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional string queryEngine = 2;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec.prototype.getQueryengine = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec.prototype.setQueryengine = function(value) {
-  return jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec.prototype.clearQueryengine = function() {
-  return jspb.Message.setField(this, 2, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec.prototype.hasQueryengine = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional string path = 3;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec.prototype.getPath = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec.prototype.setPath = function(value) {
-  return jspb.Message.setField(this, 3, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec.prototype.clearPath = function() {
-  return jspb.Message.setField(this, 3, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec.prototype.hasPath = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * repeated string paths = 4;
- * @return {!Array<string>}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec.prototype.getPathsList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 4));
-};
-
-
-/**
- * @param {!Array<string>} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec.prototype.setPathsList = function(value) {
-  return jspb.Message.setField(this, 4, value || []);
-};
-
-
-/**
- * @param {string} value
- * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec.prototype.addPaths = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 4, value, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec.prototype.clearPathsList = function() {
-  return this.setPathsList([]);
-};
-
-
-/**
- * optional string format = 5;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec.prototype.getFormat = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec.prototype.setFormat = function(value) {
-  return jspb.Message.setField(this, 5, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec.prototype.clearFormat = function() {
-  return jspb.Message.setField(this, 5, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec.prototype.hasFormat = function() {
-  return jspb.Message.getField(this, 5) != null;
-};
-
-
-/**
- * optional ModelSpec model = 6;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec.prototype.getModel = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec, 6));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec.prototype.setModel = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec.prototype.clearModel = function() {
-  return this.setModel(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelServingSpec.prototype.hasModel = function() {
-  return jspb.Message.getField(this, 6) != null;
-};
-
-
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
 proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec.prototype.toObject = function(opt_includeInstance) {
   return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec.toObject(opt_includeInstance, this);
 };
@@ -12250,253 +18577,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec.prototype.
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec.prototype.hasModel = function() {
   return jspb.Message.getField(this, 2) != null;
-};
-
-
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelStatus.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelStatus.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelStatus} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelStatus.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    name: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    failuremessage: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    modelmetrics: (f = msg.getModelmetrics()) && proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics.toObject(includeInstance, f)
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelStatus}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelStatus.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelStatus;
-  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelStatus.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelStatus} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelStatus}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelStatus.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setFailuremessage(value);
-      break;
-    case 5:
-      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics;
-      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics.deserializeBinaryFromReader);
-      msg.setModelmetrics(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelStatus.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelStatus.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelStatus} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelStatus.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = /** @type {string} */ (jspb.Message.getField(message, 1));
-  if (f != null) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 4));
-  if (f != null) {
-    writer.writeString(
-      4,
-      f
-    );
-  }
-  f = message.getModelmetrics();
-  if (f != null) {
-    writer.writeMessage(
-      5,
-      f,
-      proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics.serializeBinaryToWriter
-    );
-  }
-};
-
-
-/**
- * optional string name = 1;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelStatus.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelStatus.prototype.setName = function(value) {
-  return jspb.Message.setField(this, 1, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelStatus.prototype.clearName = function() {
-  return jspb.Message.setField(this, 1, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelStatus.prototype.hasName = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional string failureMessage = 4;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelStatus.prototype.getFailuremessage = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelStatus.prototype.setFailuremessage = function(value) {
-  return jspb.Message.setField(this, 4, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelStatus.prototype.clearFailuremessage = function() {
-  return jspb.Message.setField(this, 4, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelStatus.prototype.hasFailuremessage = function() {
-  return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * optional ModelMetrics modelMetrics = 5;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelStatus.prototype.getModelmetrics = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics, 5));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelMetrics|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelStatus} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelStatus.prototype.setModelmetrics = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelStatus.prototype.clearModelmetrics = function() {
-  return this.setModelmetrics(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelStatus.prototype.hasModelmetrics = function() {
-  return jspb.Message.getField(this, 5) != null;
 };
 
 
@@ -15379,6 +21459,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RetrieverSpec.toObje
     name: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     vector: (f = msg.getVector()) && proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.VectorRetrieverSpec.toObject(includeInstance, f),
     documentsummary: (f = msg.getDocumentsummary()) && proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.DocumentSummaryRetrieverSpec.toObject(includeInstance, f),
+    tree: (f = msg.getTree()) && proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec.toObject(includeInstance, f),
+    keywordtable: (f = msg.getKeywordtable()) && proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec.toObject(includeInstance, f),
+    list: (f = msg.getList()) && proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec.toObject(includeInstance, f),
     router: (f = msg.getRouter()) && proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RouterRetrieverSpec.toObject(includeInstance, f),
     fusion: (f = msg.getFusion()) && proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FusionRetrieverSpec.toObject(includeInstance, f)
   };
@@ -15432,11 +21515,26 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RetrieverSpec.deseri
       msg.setDocumentsummary(value);
       break;
     case 4:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec.deserializeBinaryFromReader);
+      msg.setTree(value);
+      break;
+    case 5:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec.deserializeBinaryFromReader);
+      msg.setKeywordtable(value);
+      break;
+    case 6:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec.deserializeBinaryFromReader);
+      msg.setList(value);
+      break;
+    case 7:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RouterRetrieverSpec;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RouterRetrieverSpec.deserializeBinaryFromReader);
       msg.setRouter(value);
       break;
-    case 5:
+    case 8:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FusionRetrieverSpec;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FusionRetrieverSpec.deserializeBinaryFromReader);
       msg.setFusion(value);
@@ -15493,10 +21591,34 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RetrieverSpec.serial
       proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.DocumentSummaryRetrieverSpec.serializeBinaryToWriter
     );
   }
-  f = message.getRouter();
+  f = message.getTree();
   if (f != null) {
     writer.writeMessage(
       4,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec.serializeBinaryToWriter
+    );
+  }
+  f = message.getKeywordtable();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec.serializeBinaryToWriter
+    );
+  }
+  f = message.getList();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec.serializeBinaryToWriter
+    );
+  }
+  f = message.getRouter();
+  if (f != null) {
+    writer.writeMessage(
+      7,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RouterRetrieverSpec.serializeBinaryToWriter
     );
@@ -15504,7 +21626,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RetrieverSpec.serial
   f = message.getFusion();
   if (f != null) {
     writer.writeMessage(
-      5,
+      8,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FusionRetrieverSpec.serializeBinaryToWriter
     );
@@ -15623,12 +21745,123 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RetrieverSpec.protot
 
 
 /**
- * optional RouterRetrieverSpec router = 4;
+ * optional TreeRetrieverSpec tree = 4;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RetrieverSpec.prototype.getTree = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec, 4));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RetrieverSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RetrieverSpec.prototype.setTree = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RetrieverSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RetrieverSpec.prototype.clearTree = function() {
+  return this.setTree(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RetrieverSpec.prototype.hasTree = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional KeywordTableRetrieverSpec keywordTable = 5;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RetrieverSpec.prototype.getKeywordtable = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec, 5));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KeywordTableRetrieverSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RetrieverSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RetrieverSpec.prototype.setKeywordtable = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RetrieverSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RetrieverSpec.prototype.clearKeywordtable = function() {
+  return this.setKeywordtable(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RetrieverSpec.prototype.hasKeywordtable = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional ListRetrieverSpec list = 6;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RetrieverSpec.prototype.getList = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec, 6));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ListRetrieverSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RetrieverSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RetrieverSpec.prototype.setList = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RetrieverSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RetrieverSpec.prototype.clearList = function() {
+  return this.setList(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RetrieverSpec.prototype.hasList = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional RouterRetrieverSpec router = 7;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RouterRetrieverSpec}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RetrieverSpec.prototype.getRouter = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RouterRetrieverSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RouterRetrieverSpec, 4));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RouterRetrieverSpec, 7));
 };
 
 
@@ -15637,7 +21870,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RetrieverSpec.protot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RetrieverSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RetrieverSpec.prototype.setRouter = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+  return jspb.Message.setWrapperField(this, 7, value);
 };
 
 
@@ -15655,17 +21888,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RetrieverSpec.protot
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RetrieverSpec.prototype.hasRouter = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
 /**
- * optional FusionRetrieverSpec fusion = 5;
+ * optional FusionRetrieverSpec fusion = 8;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FusionRetrieverSpec}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RetrieverSpec.prototype.getFusion = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FusionRetrieverSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FusionRetrieverSpec, 5));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.FusionRetrieverSpec, 8));
 };
 
 
@@ -15674,7 +21907,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RetrieverSpec.protot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RetrieverSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RetrieverSpec.prototype.setFusion = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 8, value);
 };
 
 
@@ -15692,7 +21925,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RetrieverSpec.protot
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RetrieverSpec.prototype.hasFusion = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 8) != null;
 };
 
 
@@ -16359,6 +22592,608 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RouterRetrieverSpec.
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.RouterRetrieverSpec.prototype.hasSelector = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    model: (f = msg.getModel()) && proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec.toObject(includeInstance, f),
+    databaseconnectionname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    tablename: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    refdoccolumn: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    schema: (f = msg.getSchema()) && proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Schema.toObject(includeInstance, f),
+    granularity: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec.deserializeBinaryFromReader);
+      msg.setModel(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDatabaseconnectionname(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTablename(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setRefdoccolumn(value);
+      break;
+    case 5:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Schema;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Schema.deserializeBinaryFromReader);
+      msg.setSchema(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setGranularity(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getModel();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getSchema();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Schema.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional ModelSpec model = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec.prototype.getModel = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec, 1));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec.prototype.setModel = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec.prototype.clearModel = function() {
+  return this.setModel(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec.prototype.hasModel = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string databaseConnectionName = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec.prototype.getDatabaseconnectionname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec.prototype.setDatabaseconnectionname = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec.prototype.clearDatabaseconnectionname = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec.prototype.hasDatabaseconnectionname = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string tableName = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec.prototype.getTablename = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec.prototype.setTablename = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec.prototype.clearTablename = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec.prototype.hasTablename = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional string refDocColumn = 4;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec.prototype.getRefdoccolumn = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec.prototype.setRefdoccolumn = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec.prototype.clearRefdoccolumn = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec.prototype.hasRefdoccolumn = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional Schema schema = 5;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Schema}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec.prototype.getSchema = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Schema} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Schema, 5));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Schema|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec.prototype.setSchema = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec.prototype.clearSchema = function() {
+  return this.setSchema(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec.prototype.hasSchema = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional string granularity = 6;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec.prototype.getGranularity = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec.prototype.setGranularity = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec.prototype.clearGranularity = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.SQLIndexSpec.prototype.hasGranularity = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Schema.repeatedFields_ = [2];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Schema.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Schema.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Schema} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Schema.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    description: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    columnsList: jspb.Message.toObjectList(msg.getColumnsList(),
+    proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Schema}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Schema.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Schema;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Schema.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Schema} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Schema}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Schema.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDescription(value);
+      break;
+    case 2:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column.deserializeBinaryFromReader);
+      msg.addColumns(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Schema.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Schema.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Schema} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Schema.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getColumnsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional string description = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Schema.prototype.getDescription = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Schema} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Schema.prototype.setDescription = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Schema} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Schema.prototype.clearDescription = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Schema.prototype.hasDescription = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * repeated Column columns = 2;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Schema.prototype.getColumnsList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Schema} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Schema.prototype.setColumnsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Schema.prototype.addColumns = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Column, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Schema} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Schema.prototype.clearColumnsList = function() {
+  return this.setColumnsList([]);
 };
 
 
@@ -18071,6 +24906,298 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    extractionmode: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    summarizationprompt: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    concatenationstring: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    pb_default: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setExtractionmode(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSummarizationprompt(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setConcatenationstring(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setDefault(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeInt32(
+      5,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string extractionMode = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec.prototype.getExtractionmode = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec.prototype.setExtractionmode = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec.prototype.clearExtractionmode = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec.prototype.hasExtractionmode = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string summarizationPrompt = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec.prototype.getSummarizationprompt = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec.prototype.setSummarizationprompt = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec.prototype.clearSummarizationprompt = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec.prototype.hasSummarizationprompt = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string concatenationString = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec.prototype.getConcatenationstring = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec.prototype.setConcatenationstring = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec.prototype.clearConcatenationstring = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec.prototype.hasConcatenationstring = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional int32 default = 5;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec.prototype.getDefault = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec.prototype.setDefault = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec.prototype.clearDefault = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec.prototype.hasDefault = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
 proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSplitterSpec.prototype.toObject = function(opt_includeInstance) {
   return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSplitterSpec.toObject(opt_includeInstance, this);
 };
@@ -19091,6 +26218,304 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeIndexSpec.protot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeIndexSpec.prototype.hasChildren = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    index: (f = msg.getIndex()) && proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexReference.toObject(includeInstance, f),
+    model: (f = msg.getModel()) && proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec.toObject(includeInstance, f),
+    mode: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    childbranchfactor: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexReference;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexReference.deserializeBinaryFromReader);
+      msg.setIndex(value);
+      break;
+    case 2:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec.deserializeBinaryFromReader);
+      msg.setModel(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMode(value);
+      break;
+    case 4:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setChildbranchfactor(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getIndex();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexReference.serializeBinaryToWriter
+    );
+  }
+  f = message.getModel();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeInt64(
+      4,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional IndexReference index = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexReference}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec.prototype.getIndex = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexReference} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexReference, 1));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.IndexReference|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec.prototype.setIndex = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec.prototype.clearIndex = function() {
+  return this.setIndex(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec.prototype.hasIndex = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional ModelSpec model = 2;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec.prototype.getModel = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec, 2));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.ModelSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec.prototype.setModel = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec.prototype.clearModel = function() {
+  return this.setModel(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec.prototype.hasModel = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string mode = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec.prototype.getMode = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec.prototype.setMode = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec.prototype.clearMode = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec.prototype.hasMode = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional int64 childBranchFactor = 4;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec.prototype.getChildbranchfactor = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec.prototype.setChildbranchfactor = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec.prototype.clearChildbranchfactor = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TreeRetrieverSpec.prototype.hasChildbranchfactor = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 

@@ -1,0 +1,101 @@
+syntax = "proto3";
+option go_package = "github.com/metaprov/modelaapi/services/apikeygroup/v1";
+package github.com.metaprov.modelaapi.services.apikeygroup.v1;
+
+
+import "google/protobuf/field_mask.proto";
+import "google/api/annotations.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/genai/v1alpha1/generated.proto";
+
+
+message ListAPIKeyGroupsRequest {
+  string namespace = 1;
+  map<string, string> labels = 2;
+}
+
+message ListAPIKeyGroupsResponse {
+  github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupList apiKeyGroups = 1;
+  string next_page_token = 2;
+}
+
+
+message CreateAPIKeyGroupRequest {
+  github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup apiKeyGroup = 1;
+}
+
+message CreateAPIKeyGroupResponse {}
+
+
+message UpdateAPIKeyGroupRequest {
+  github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup apiKeyGroup = 1;
+  google.protobuf.FieldMask field_mask = 2;
+}
+
+message UpdateAPIKeyGroupResponse {}
+
+
+message GetAPIKeyGroupRequest {
+  string namespace = 1;
+  string name      = 2;
+
+}
+
+message GetAPIKeyGroupResponse {
+  github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroup apiKeyGroup = 1;
+  string yaml = 2;
+
+}
+
+message DeleteAPIKeyGroupRequest {
+  string namespace = 1;
+  string name      = 2;
+}
+
+message DeleteAPIKeyGroupResponse {}
+
+
+message GenerateAPIKeyRequest {
+  string namespace = 1;
+  string name      = 2;
+  string keyName   = 3;
+}
+
+message GenerateAPIKeyResponse {
+  string apiKey = 1;
+}
+
+
+service APIKeyGroupService {
+  rpc ListAPIKeyGroups(ListAPIKeyGroupsRequest) returns (ListAPIKeyGroupsResponse) {
+    option (google.api.http).get = "/v1/apikeygroups/{namespace}";
+  }
+
+  rpc CreateAPIKeyGroup(CreateAPIKeyGroupRequest) returns (CreateAPIKeyGroupResponse) {
+    option (google.api.http) = {
+      post: "/v1/apikeygroups"
+      body: "*"
+    };
+  }
+
+  rpc GetAPIKeyGroup(GetAPIKeyGroupRequest) returns (GetAPIKeyGroupResponse) {
+    option (google.api.http).get = "/v1/apikeygroups/{namespace}/{name}";
+  }
+
+  rpc UpdateAPIKeyGroup(UpdateAPIKeyGroupRequest) returns (UpdateAPIKeyGroupResponse) {
+    option (google.api.http) = {
+      put: "/v1/apikeygroups/{apikeygroup.metadata.namespace}/{apikeygroup.metadata.name}"
+      body: "*"
+    };
+  }
+
+  rpc DeleteAPIKeyGroup(DeleteAPIKeyGroupRequest) returns (DeleteAPIKeyGroupResponse) {
+    option (google.api.http).delete = "/v1/apikeygroups/{namespace}/{name}";
+  }
+
+  rpc GenerateAPIKey(CreateAPIKeyGroupRequest) returns (CreateAPIKeyGroupResponse) {
+    option (google.api.http) = {
+      post: "/v1/apikeygroups"
+      body: "*"
+    };
+  }
+}

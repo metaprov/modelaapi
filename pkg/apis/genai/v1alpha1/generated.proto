@@ -18,6 +18,153 @@ import "k8s.io/apimachinery/pkg/runtime/schema/generated.proto";
 // Package-wide variables from generator "generated".
 option go_package = "github.com/metaprov/modelaapi/pkg/apis/genai/v1alpha1";
 
+// +k8s:openapi-gen=true
+// +kubebuilder:subresource:status
+// +kubebuilder:resource:path=apikeygroups,singular=apikeygroup,shortName=akg,categories={genai,modela}
+// +kubebuilder:object:root=true
+// +kubebuilder:storageversion
+// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1
+// +kubebuilder:printcolumn:name="Last Sync",type="date",JSONPath=".status.lastSyncAt",description=""
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
+// APIKeyGroup represents a collection of physical API keys that can be used to access an LLM server
+message APIKeyGroup {
+  // +k8s:openapi-gen=false
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+
+  optional APIKeyGroupSpec spec = 2;
+
+  optional APIKeyGroupStatus status = 3;
+}
+
+// +kubebuilder:object:root=true
+// APIKeyGroupList contains a list of APIKeyGroups
+message APIKeyGroupList {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+
+  repeated APIKeyGroup items = 2;
+}
+
+message APIKeyGroupSpec {
+  // Owner specifies the name of the Account which the object belongs to
+  // +kubebuilder:default:="no-one"
+  // +kubebuilder:validation:Optional
+  optional string owner = 1;
+
+  // The user-provided description of the LLMServer
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:MaxLength=512
+  // +kubebuilder:validation:Optional
+  optional string description = 2;
+
+  // The collection of LLM servers that can be authorized through the API key group.
+  // If empty, all LLM server resources (and their respective model servers) which allow the key group may be accessed
+  repeated string allowedServerNames = 3;
+
+  // The collection of endpoint names that can be authorized through the API key group.
+  // If empty, endpoints will not be restricted by their name
+  repeated string allowedEndpointNames = 4;
+
+  // The collection of API keys belonging to the group
+  repeated APIKeySpec apiKeys = 5;
+}
+
+message APIKeyGroupStatus {
+  // ObservedGeneration specifies the last generation that was reconciled
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 1;
+
+  // The collection of statuses for all API keys associated with the group
+  repeated APIKeyStatus apiKeys = 2;
+
+  // The last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 3;
+
+  // +kubebuilder:validation:Optional
+  // +patchMergeKey=type
+  // +patchStrategy=merge
+  repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 4;
+}
+
+// APIKeyMetrics contains the metrics for a single API key, collected through Prometheus
+message APIKeyMetrics {
+  // The total amount of tokens served through the key
+  optional int64 totalTokens = 1;
+
+  // The total amount of requests served through the key
+  optional int64 totalRequests = 2;
+
+  // The total cost (in USD) served through the key
+  optional float totalCost = 3;
+
+  // The daily average amount of tokens served through the key, averaged over a month-long period
+  optional int64 averageDailyTokens = 4;
+
+  // The daily average amount of requests served through the key, averaged over a month-long period
+  optional int64 averageDailyRequests = 5;
+
+  // The daily average cost (in USD) for requests served through the key, averaged over a month-long period
+  optional float averageDailyCost = 6;
+}
+
+// APIKeyQuota defines usage limits for a single API key
+message APIKeyQuota {
+  // The maximum amount of tokens
+  optional int64 tokens = 1;
+
+  // The maximum amount of requests
+  optional int64 requests = 2;
+
+  // The maximum approximate cost (in USD)
+  optional float cost = 3;
+
+  // The schedule at which the quota will reset
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule resetSchedule = 4;
+}
+
+// APIKeySpec defines the configuration for a single API key
+message APIKeySpec {
+  // The unique name of the API key
+  // +kubebuilder:validation:Required
+  // +required
+  optional string name = 1;
+
+  // The collection of LLM servers that can be authorized through the API.
+  // If empty, all LLM server resources (and their respective model servers) which allow the key group may be accessed
+  repeated string allowedServerNames = 2;
+
+  // The collection of endpoint names that can be authorized through the API key.
+  // If empty, endpoints will not be restricted by their name
+  repeated string allowedEndpointNames = 3;
+
+  // The quota for the API key, which restricts the amount of resources it can consume
+  optional APIKeyQuota quota = 4;
+}
+
+// APIKeyStatus contains the status of a single API key
+message APIKeyStatus {
+  // The unique name of the API key
+  optional string name = 1;
+
+  // The date at which the
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time creationDate = 2;
+
+  // The date at which the API key was last used
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUsedDate = 3;
+
+  // The time at which the quota limits for the API key were reached
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time quotaExceededDate = 4;
+
+  // The time at which the quota for the key was last refreshed
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time quotaRefreshedDate = 5;
+
+  // Indicates if an key string has been generated for the API key instance
+  optional bool keyGenerated = 6;
+
+  // The metrics collected for the API key
+  optional APIKeyMetrics metrics = 7;
+}
+
 // AutoVectorRetrieverSpec defines a vector retriever which automatically configures the request to a vector index
 // (top K, metadata filters, query embedding) through an LLM
 message AutoVectorRetrieverSpec {
@@ -32,6 +179,14 @@ message AutoVectorRetrieverSpec {
 
   // The collection of metadata key info, which the LLM will use to infer metadata filters
   repeated MetadataKeyInfo metadataInfo = 4;
+}
+
+message BooleanSpec {
+  // The method to use for determining the final boolean value extracted from all nodes. If unspecified, default to mean
+  optional string extractionMode = 1;
+
+  // The default boolean value, if one could not be extracted from the nodes. If unspecified, the column will be left null
+  optional bool default = 2;
 }
 
 // CodeSplitterSpec splits code documents by their syntax trees
@@ -58,6 +213,34 @@ message CohereRerankSpec {
 
   // The top number of nodes to return. If unspecified, default to 2
   optional int64 topN = 2;
+}
+
+// Column defines the schema for a single column in a table managed by a SQL index
+message Column {
+  // The name of the column
+  optional string name = 1;
+
+  // The data type of the column. When a specification for a data type is provided, this field may be omitted.
+  // When not provided, the defaults for the data type will be used
+  optional string type = 2;
+
+  // The specification for an integer column
+  optional IntegerSpec integer = 3;
+
+  // The specification for a float column
+  optional FloatSpec float = 4;
+
+  // The specification for a text column
+  optional TextSpec text = 5;
+
+  // The specification for a boolean column
+  optional BooleanSpec boolean = 6;
+
+  // The description of the column, which the LLM will use to extract the value of the column from documents
+  optional string description = 7;
+
+  // The metadata key of the document being processed which will be used as a value for the column
+  optional string metadataKey = 8;
 }
 
 message DatabaseReaderSpec {
@@ -164,6 +347,80 @@ message EmbeddingRecencyPostProcessorSpec {
   optional float similarityCutoff = 2;
 }
 
+// EmbeddingSpec defines the configuration for an embedding column
+message EmbeddingSpec {
+  // The list of text columns to include when generating the embedding
+  repeated string columns = 1;
+
+  // The embedding model to use to generate the embedding
+  optional ModelSpec model = 2;
+}
+
+// EndpointMetrics contains the metrics for a single model endpoint (collected by Prometheus)
+message EndpointMetrics {
+  // 50% latency for requests served by the endpoint
+  // +kubebuilder:validation:Optional
+  optional double p50 = 4;
+
+  // 95% latency for requests served by the endpoint
+  // +kubebuilder:validation:Optional
+  optional double p95 = 5;
+
+  // 99% latency for requests served by the endpoint
+  // +kubebuilder:validation:Optional
+  optional double p99 = 6;
+
+  // The total number of requests served by the endpoint
+  optional int32 totalRequests = 8;
+
+  // The total number of tokens served by the endpoint
+  optional int32 totalTokens = 9;
+
+  // The total approximate cost (in USD) of tokens served by the endpoint
+  optional float totalCost = 10;
+}
+
+// EndpointSpec specifies the serving configuration for a single large language model endpoint
+message EndpointSpec {
+  // The unique name of the model
+  // +kubebuilder:validation:Required
+  // +required
+  optional string name = 1;
+
+  // The name of the query engine used to augment requests to the LLMServer.
+  // If unspecified, no augmentation will be performed
+  optional string queryEngine = 2;
+
+  // The path suffix where the model will be served.
+  // If unspecified, the default suffix for the LLMServer provider will be used
+  optional string path = 3;
+
+  // The collection of path suffixes where the model will be served
+  repeated string paths = 4;
+
+  // The API format standard that will be served for the model.
+  // If unspecified, default to the OpenAI API format
+  optional string format = 5;
+
+  // The default LLMServer to use for all internal and consumer-facing completion requests
+  optional ModelSpec model = 6;
+}
+
+// EndpointStatus describes the current state of a single model served by the LLMServer proxy
+message EndpointStatus {
+  // The unique name of the model
+  // +kubebuilder:validation:Required
+  // +required
+  optional string name = 1;
+
+  // The details of the last failure that occurred while deploying the model
+  // +kubebuilder:validation:Optional
+  optional string failureMessage = 4;
+
+  // The metrics collected for the model
+  optional EndpointMetrics metrics = 5;
+}
+
 message ExtensionFilter {
   // File extensions to include
   repeated string include = 1;
@@ -214,6 +471,20 @@ message FixedRecencyPostProcessorSpec {
   optional int64 topK = 1;
 }
 
+message FloatSpec {
+  // The method to use for determining the final number extracted from all nodes. If unspecified, default to mean
+  optional string extractionMode = 1;
+
+  // The rounding mode to use when determining the final number. If unspecified, rounding will not be applied
+  optional string roundingMode = 2;
+
+  // The maximum precision of the extracted float. If unspecified, default to 3
+  optional int32 precision = 3;
+
+  // The default number, if one could not be extracted from the nodes. If unspecified, the column will be left null
+  optional int32 default = 4;
+}
+
 // FusionRetrieverSpec defines a retriever which can combine the results from multiple concrete retrievers
 message FusionRetrieverSpec {
   // The collection of retriever names
@@ -231,6 +502,9 @@ message FusionRetrieverSpec {
 
   // The fusion retriever mode. If unspecified, default to simple
   optional string mode = 5;
+
+  // The default score for nodes which were retrieved without a score. If unspecified, default to 1
+  optional float defaultScore = 6;
 }
 
 // HierarchicalSplitterSpec defines how to split text documents into a recursive hierarchy of nodes
@@ -264,8 +538,17 @@ message IndexSpec {
   // DocumentSummary stores documents by their summaries
   optional DocumentSummaryIndexSpec documentSummary = 3;
 
-  // TreeIndex builds tree-structured index, where each node is a summary of the children nodes
-  optional TreeIndexSpec treeIndex = 4;
+  // Tree builds tree-structured index, where each node is a summary of the children nodes
+  optional TreeIndexSpec tree = 4;
+
+  // KeywordTable indexes documents by their keywords
+  optional KeywordTableIndexSpec keywordTable = 5;
+
+  // SQL indexes structured data points extracted from documents
+  optional SQLIndexSpec sql = 6;
+
+  // List builds an index which nodes are stored in a sequenced list
+  optional ListIndexSpec list = 7;
 }
 
 message IndexStatus {
@@ -278,12 +561,52 @@ message IndexStatus {
   optional int32 documents = 2;
 }
 
+message IntegerSpec {
+  // The method to use for determining the final number extracted from all nodes. If unspecified, default to mean
+  optional string extractionMode = 1;
+
+  // The rounding mode to use when determining the final number. If unspecified, default to `round`
+  optional string roundingMode = 2;
+
+  // The default number, if one could not be extracted from the nodes. If unspecified, the column will be left null
+  optional int32 default = 3;
+}
+
 message KeywordPostProcessorSpec {
   // The collection of keywords that must be present in the node content
   repeated string include = 1;
 
   // The collection of keywords which must not be present in the node content. Matching nodes will be excluded
   repeated string exclude = 2;
+}
+
+// KeywordTableIndexSpec specifies the configuration for a keyword table index
+message KeywordTableIndexSpec {
+  // The index mode, which determines how keywords are extracted from nodes
+  optional string mode = 1;
+
+  // The LLM to use when extracting keywords from nodes, required if the index is configured with the LLM mode
+  optional ModelSpec model = 2;
+
+  // The maximum of number of keywords that can be extracted from each node. If unspecified, default to 10
+  optional int64 maxKeywordsPerNode = 3;
+}
+
+message KeywordTableRetrieverSpec {
+  // The reference to the tree index
+  optional IndexReference index = 1;
+
+  // The large language model to use, if using the LLM mode. If unspecified, use the default provided by model server
+  optional ModelSpec model = 2;
+
+  // The retriever mode. If unspecified, default to RAKE
+  optional string mode = 3;
+
+  // The maximum number of keywords to consider per query. If unspecified, default to 10
+  optional int64 keywordsPerQuery = 4;
+
+  // The maximum number of chunks to retrieve per query. If unspecified, default to 10
+  optional int64 chunksPerQuery = 5;
 }
 
 // +k8s:openapi-gen=true
@@ -401,24 +724,35 @@ message KnowledgeBaseStatus {
 message KnowledgeGraphQueryEngine {
 }
 
+message LLMRerankSpec {
+  // The top number of nodes to return. If unspecified, default to 10
+  optional int64 topN = 1;
+
+  // The LLM to use for re-ranking. If unspecified, use the default provided by the parent specification
+  optional ModelSpec model = 2;
+
+  // Indicates if the RankGPT technique for re-ranking will be used
+  optional bool rankGPT = 3;
+}
+
 // +kubebuilder:subresource:status
-// +kubebuilder:resource:path=llms,singular=llm,shortName=llm,categories={llm,modela}
+// +kubebuilder:resource:path=llmservers,singular=llmserver,shortName=llms,categories={llm,modela}
 // +kubebuilder:object:root=true
 // +kubebuilder:storageversion
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1
 // +kubebuilder:printcolumn:name="Last Sync",type="date",JSONPath=".status.lastSyncAt",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
-// LLM represents a deployment of one or more large language models augmented by Knowledge Bases
-message LLM {
+// LLMServer represents a deployment of a proxy server to one or more LLMs
+message LLMServer {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
-  optional LLMSpec spec = 2;
+  optional LLMServerSpec spec = 2;
 
   optional LLMStatus status = 3;
 }
 
-message LLMAccessSpec {
-  // The port number that will be exposed by the Kubernetes Service to serve completion requests.
+message LLMServerAccessSpec {
+  // The port number that will be exposed by the Kubernetes Service to serve requests
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:Minimum=1024
   // +kubebuilder:validation:Maximum=65535
@@ -427,7 +761,7 @@ message LLMAccessSpec {
   optional int32 port = 1;
 
   // The port number that will be exposed on the external address of every node on the cluster, in the case of the
-  // AccessType being equal to NodePort. Traffic from the port will be forwarded to the LLM proxy deployment
+  // AccessType being equal to NodePort. Traffic from the port will be forwarded to the LLMServer deployment
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Maximum=65535
   // +kubebuilder:validation:Optional
@@ -440,39 +774,44 @@ message LLMAccessSpec {
   optional string accessType = 4;
 }
 
+// LLMServerAuthorizationSpec defines the configuration to authorize incoming requests to the LLMServer
+message LLMServerAuthorizationSpec {
+  // Indicates if models served by the LLMServer can be accessed without authorization (not recommended)
+  optional bool insecure = 1;
+
+  // The collection of API key groups whose API keys may be used to authorize requests to models
+  // served by the LLMServer. AllowedKeyGroups acts as a whitelist, only allowing API keys belonging to a group
+  // within the collection to be used. If empty, all API key groups will be allowed to authorize requests to the LLMServer
+  repeated string allowedKeyGroups = 2;
+
+  // The collection of API key names that may be used to authenticate requests to models served by the LLMServer.
+  // AllowedKeyNames acts as a whitelist, only allowing API keys with names within the collection to be used.
+  // If empty, API keys will not be restricted by their names
+  repeated string allowedKeyNames = 3;
+}
+
 // +kubebuilder:object:root=true
-// LLMList contains a list of LLMs
-message LLMList {
+// LLMServerList contains a list of LLMServer objects
+message LLMServerList {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
-  repeated LLM items = 2;
+  repeated LLMServer items = 2;
 }
 
-message LLMRerankSpec {
-  // The top number of nodes to return. If unspecified, default to 10
-  optional int64 topN = 1;
-
-  // The LLM to use for re-ranking. If unspecified, use the default provided by the parent specification
-  optional ModelSpec model = 2;
-
-  // Indicates if the RankGPT technique for re-ranking will be used
-  optional bool rankGPT = 3;
-}
-
-// LLMSpec specifies the configuration of the LLM proxy
-message LLMSpec {
+// LLMServerSpec specifies the configuration of the LLM server
+message LLMServerSpec {
   // Owner specifies the name of the Account which the object belongs to
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 1;
 
-  // The user-provided description of the LLM
+  // The user-provided description of the LLM Server
   // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=512
   // +kubebuilder:validation:Optional
   optional string description = 2;
 
-  // The name of the Serving Site under which the LLM proxy deployment will be created.
+  // The name of the Serving Site under which the LLM Server proxy deployment will be created.
   // If empty, default to the Data Product's default Serving Site
   // +kubebuilder:validation:Optional
   optional string servingSiteName = 3;
@@ -481,8 +820,8 @@ message LLMSpec {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 4;
 
-  // The large language models served by the proxy
-  repeated ModelServingSpec models = 5;
+  // The model endpoints served by the proxy
+  repeated EndpointSpec endpoints = 5;
 
   // The query engines available to the models
   repeated QueryEngineSpec queryEngines = 6;
@@ -490,9 +829,12 @@ message LLMSpec {
   // The collection of retrievers available to the query engines
   repeated RetrieverSpec retrievers = 7;
 
+  // The security configuration for the LLMServer, which determines how incoming requests are authorized
+  optional LLMServerAuthorizationSpec authorization = 8;
+
   // The configuration for Alerts generated by the proxy
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 8;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 9;
 }
 
 message LLMStatus {
@@ -500,13 +842,13 @@ message LLMStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 1;
 
-  // Models contains the collection of statuses for each model served by the LLM
-  repeated ModelStatus documents = 2;
+  // Endpoints contains the collection of statuses for each model served by the proxy server
+  repeated EndpointStatus endpoints = 2;
 
-  // Endpoint contains the URL where the LLM proxy service is exposed
+  // Endpoint contains the URL where the proxy server is exposed
   optional string endpoint = 3;
 
-  // DeployedAt specifies the time that the LLM proxy deployment was created
+  // DeployedAt specifies the time that the LLMServer proxy deployment was created
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time deployedAt = 4;
 
@@ -540,6 +882,25 @@ message LengthFilter {
   optional uint32 lessThan = 2;
 }
 
+// ListIndexSpec specifies the configuration of a list index
+message ListIndexSpec {
+}
+
+// ListRetrieverSpec defines a retriever from a list index
+message ListRetrieverSpec {
+  // The reference to the tree index
+  optional IndexReference index = 1;
+
+  // The large language or embedding model to use, if applicable. If unspecified, use the default provided by model server
+  optional ModelSpec model = 2;
+
+  // The top K nodes to retrieve when using the embedding or LLM mode. If unspecified, default to 1
+  optional int64 topK = 3;
+
+  // The retriever mode. If unspecified, default to simple
+  optional string mode = 4;
+}
+
 message LongContextReorderSpec {
 }
 
@@ -547,7 +908,7 @@ message MetadataKeyInfo {
   // The name of the key
   optional string name = 1;
 
-  // The key type
+  // The key type (integer, string, float, etc.)
   optional string type = 2;
 
   // The key description
@@ -564,50 +925,6 @@ message MixedNodeParserSpec {
   optional string fallbackNodeParser = 2;
 }
 
-// ModelMetrics contains the metrics for a single model (collected by Prometheus)
-message ModelMetrics {
-  // 50% latency for predictions served by the model
-  // +kubebuilder:validation:Optional
-  optional double p50 = 4;
-
-  // 95% latency for predictions served by the model
-  // +kubebuilder:validation:Optional
-  optional double p95 = 5;
-
-  // 99% latency for predictions served by the model
-  // +kubebuilder:validation:Optional
-  optional double p99 = 6;
-
-  // The total number of predictions served by the model
-  optional int32 totalPredictions = 8;
-}
-
-// ModelServingSpec specifies the serving configuration for a single LLM endpoint
-message ModelServingSpec {
-  // The unique name of the model
-  // +kubebuilder:validation:Required
-  // +required
-  optional string name = 1;
-
-  // The name of the query engine used to augment requests to the LLM.
-  // If unspecified, no augmentation will be performed
-  optional string queryEngine = 2;
-
-  // The path suffix where the model will be served.
-  // If unspecified, the default suffix for the LLM provider will be used
-  optional string path = 3;
-
-  // The collection of path suffixes where the model will be served
-  repeated string paths = 4;
-
-  // The API format standard that will be served for the model.
-  // If unspecified, default to the OpenAI API format
-  optional string format = 5;
-
-  // The default LLM to use for all internal and consumer-facing completion requests
-  optional ModelSpec model = 6;
-}
-
 // ModelSpec specifies the configuration for a language or embedding model
 message ModelSpec {
   // ConnectionName specifies the name of a connection to a foundational model provider
@@ -616,21 +933,6 @@ message ModelSpec {
   // Model specifies the vendor-specific model type. If unspecified, use the model provided by the
   // `model` option of the connection, or choose the default model for the vendor
   optional string model = 2;
-}
-
-// ModelStatus describes the current state of a single model served by the LLM proxy
-message ModelStatus {
-  // The unique name of the model
-  // +kubebuilder:validation:Required
-  // +required
-  optional string name = 1;
-
-  // The details of the last failure that occurred while deploying the model
-  // +kubebuilder:validation:Optional
-  optional string failureMessage = 4;
-
-  // Metrics for the model, applicable if Prometheus is enabled on the cluster
-  optional ModelMetrics modelMetrics = 5;
 }
 
 message NameFilter {
@@ -774,7 +1076,7 @@ message ResponseSynthesizerSpec {
   optional bool answerFiltering = 3;
 }
 
-// RetrieverQueryEngine augments a query with a retriever
+// RetrieverQueryEngineSpec augments a query with a retriever
 message RetrieverQueryEngineSpec {
   // The response synthesizer to use when generating responses
   optional ResponseSynthesizerSpec responseSynthesizer = 1;
@@ -800,11 +1102,20 @@ message RetrieverSpec {
   // DocumentSummary retrieves nodes from a document summary index
   optional DocumentSummaryRetrieverSpec documentSummary = 3;
 
+  // Tree retrieves nodes from a tree index
+  optional TreeRetrieverSpec tree = 4;
+
+  // KeywordTable retrieves nodes from a keyword table index
+  optional KeywordTableRetrieverSpec keywordTable = 5;
+
+  // List retrievers nodes from a list index
+  optional ListRetrieverSpec list = 6;
+
   // Router chooses one or more retriever(s) to route requests to
-  optional RouterRetrieverSpec router = 4;
+  optional RouterRetrieverSpec router = 7;
 
   // Fusion combines the results of one or more retriever(s)
-  optional FusionRetrieverSpec fusion = 5;
+  optional FusionRetrieverSpec fusion = 8;
 }
 
 message RetrieverToolSpec {
@@ -833,6 +1144,40 @@ message RouterRetrieverSpec {
 
   // The selector to use when choosing retriever(s)
   optional SelectorSpec selector = 2;
+}
+
+// SQLIndexSpec defines the configuration for a SQL index. A SQL index can ingest unstructured documents by
+// extracting data points that can be inserted into a SQL database
+message SQLIndexSpec {
+  // The LLMServer to use when extracting data points from documents
+  optional ModelSpec model = 1;
+
+  // The name of the connection the SQL database
+  optional string databaseConnectionName = 2;
+
+  // The name of the table. If the table does not exist, a table schema must be provided in Schema
+  optional string tableName = 3;
+
+  // The name of the required column specifying the document which the data point belongs to.
+  // If unspecified, default to `ref_doc_id`. The column will automatically be appended to created tables
+  optional string refDocColumn = 4;
+
+  // The schema of the table managed by the index. If present, the schema will be validated against the database table
+  optional Schema schema = 5;
+
+  // Granularity defines the scale at which data points are extracted from documents produced by readers.
+  // For example, the `node` granularity will extract a data point for each page in a PDF file, whilst the
+  // `document` granularity will extract a single data point for the entire file. If unspecified, default to `document`
+  optional string granularity = 6;
+}
+
+// Schema defines the schema of a table managed by a SQL index
+message Schema {
+  // The description of the table
+  optional string description = 1;
+
+  // The columns of the table
+  repeated Column columns = 2;
 }
 
 message SelectorSpec {
@@ -912,6 +1257,22 @@ message SubQuestionQueryEngineSpec {
   optional ModelSpec model = 3;
 }
 
+message TextSpec {
+  // The method to use for determining the final text extracted from all nodes. If unspecified, default to concatenation
+  optional string extractionMode = 1;
+
+  // The prompt to use when summarizing text. The prompt must include the literal `{texts}`, which will be
+  // filled in with all the generated texts. The prompt may also include the literal `{description}`, which will
+  // be filled in with the description of the field
+  optional string summarizationPrompt = 2;
+
+  // The string to use for concatenation. If unspecified, default to `, `
+  optional string concatenationString = 3;
+
+  // The default text value, if one could not be extracted from the nodes. If unspecified, the column will be left null
+  optional int32 default = 5;
+}
+
 // TextSplitterSpec defines how to split a document into sentences using a text splitter
 message TextSplitterSpec {
   // The type of text splitter. When a specification for a text splitter is provided, this field
@@ -961,8 +1322,23 @@ message TreeIndexSpec {
   // The LLM to use when summarizing and inserting nodes
   optional ModelSpec model = 1;
 
-  // The number of children each node should have
+  // The number of children each node should have. If unspecified, default to 10
   optional int64 children = 2;
+}
+
+// TreeRetrieverSpec defines a retriever from a tree index
+message TreeRetrieverSpec {
+  // The reference to the tree index
+  optional IndexReference index = 1;
+
+  // The large language model to use, if applicable. If unspecified, use the default provided by model server
+  optional ModelSpec model = 2;
+
+  // The retriever mode. If unspecified, default to select leaf
+  optional string mode = 3;
+
+  // The number of child nodes to consider traversing at each level of the tree, if applicable
+  optional int64 childBranchFactor = 4;
 }
 
 // VectorIndexSpec specifies the configuration for a vector store index

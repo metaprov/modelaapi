@@ -1,0 +1,291 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.10.0
+  creationTimestamp: null
+  name: apikeygroups.genai.modela.ai
+spec:
+  group: genai.modela.ai
+  names:
+    categories:
+    - genai
+    - modela
+    kind: APIKeyGroup
+    listKind: APIKeyGroupList
+    plural: apikeygroups
+    shortNames:
+    - akg
+    singular: apikeygroup
+  scope: Namespaced
+  versions:
+  - additionalPrinterColumns:
+    - jsonPath: .spec.owner
+      name: Owner
+      priority: 1
+      type: string
+    - jsonPath: .status.lastSyncAt
+      name: Last Sync
+      type: date
+    - jsonPath: .metadata.creationTimestamp
+      name: Age
+      type: date
+    name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: APIKeyGroup represents a collection of physical API keys that
+          can be used to access an LLM server
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            properties:
+              allowedEndpointNames:
+                description: The collection of endpoint names that can be authorized
+                  through the API key group. If empty, endpoints will not be restricted
+                  by their name
+                items:
+                  type: string
+                type: array
+              allowedServerNames:
+                description: The collection of LLM servers that can be authorized
+                  through the API key group. If empty, all LLM server resources (and
+                  their respective model servers) which allow the key group may be
+                  accessed
+                items:
+                  type: string
+                type: array
+              apiKeys:
+                description: The collection of API keys belonging to the group
+                items:
+                  description: APIKeySpec defines the configuration for a single API
+                    key
+                  properties:
+                    allowedEndpointNames:
+                      description: The collection of endpoint names that can be authorized
+                        through the API key. If empty, endpoints will not be restricted
+                        by their name
+                      items:
+                        type: string
+                      type: array
+                    allowedServerNames:
+                      description: The collection of LLM servers that can be authorized
+                        through the API. If empty, all LLM server resources (and their
+                        respective model servers) which allow the key group may be
+                        accessed
+                      items:
+                        type: string
+                      type: array
+                    name:
+                      description: The unique name of the API key
+                      type: string
+                    quota:
+                      description: The quota for the API key, which restricts the
+                        amount of resources it can consume
+                      properties:
+                        cost:
+                          description: The maximum approximate cost (in USD)
+                          type: number
+                        requests:
+                          description: The maximum amount of requests
+                          type: integer
+                        resetSchedule:
+                          description: The schedule at which the quota will reset
+                          properties:
+                            cron:
+                              description: The cron string for the schedule, applicable
+                                if the trigger type is Cron. See https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
+                                for more information
+                              type: string
+                            enabled:
+                              default: false
+                              description: Enabled indicates if the schedule is enabled.
+                                When enabled, a CronJob will be created which when
+                                triggered will initiate the creation of a run for
+                                the resource that specifies the schedule
+                              type: boolean
+                            type:
+                              description: The type of schedule, which can be a frequency
+                                interval or a cron expression
+                              enum:
+                              - hourly
+                              - daily
+                              - weekly
+                              - monthly
+                              - cron
+                              type: string
+                          type: object
+                        tokens:
+                          description: The maximum amount of tokens
+                          type: integer
+                      type: object
+                  type: object
+                type: array
+              description:
+                default: ""
+                description: The user-provided description of the LLMServer
+                maxLength: 512
+                type: string
+              owner:
+                default: no-one
+                description: Owner specifies the name of the Account which the object
+                  belongs to
+                type: string
+            type: object
+          status:
+            properties:
+              apiKeys:
+                description: The collection of statuses for all API keys associated
+                  with the group
+                items:
+                  description: APIKeyStatus contains the status of a single API key
+                  properties:
+                    creationDate:
+                      description: The date at which the
+                      format: date-time
+                      type: string
+                    keyGenerated:
+                      description: Indicates if an key string has been generated for
+                        the API key instance
+                      type: boolean
+                    lastUsedDate:
+                      description: The date at which the API key was last used
+                      format: date-time
+                      type: string
+                    metrics:
+                      description: The metrics collected for the API key
+                      properties:
+                        averageDailyCost:
+                          description: The daily average cost (in USD) for requests
+                            served through the key, averaged over a month-long period
+                          type: number
+                        averageDailyRequests:
+                          description: The daily average amount of requests served
+                            through the key, averaged over a month-long period
+                          type: integer
+                        averageDailyTokens:
+                          description: The daily average amount of tokens served through
+                            the key, averaged over a month-long period
+                          type: integer
+                        totalCost:
+                          description: The total cost (in USD) served through the
+                            key
+                          type: number
+                        totalRequests:
+                          description: The total amount of requests served through
+                            the key
+                          type: integer
+                        totalTokens:
+                          description: The total amount of tokens served through the
+                            key
+                          type: integer
+                      type: object
+                    name:
+                      description: The unique name of the API key
+                      type: string
+                    quotaExceededDate:
+                      description: The time at which the quota limits for the API
+                        key were reached
+                      format: date-time
+                      type: string
+                    quotaRefreshedDate:
+                      description: The time at which the quota for the key was last
+                        refreshed
+                      format: date-time
+                      type: string
+                  type: object
+                type: array
+              conditions:
+                items:
+                  description: "Condition contains details for one aspect of the current
+                    state of this API Resource. --- This struct is intended for direct
+                    use as an array at the field path .status.conditions.  For example,
+                    type FooStatus struct{ // Represents the observations of a foo's
+                    current state. // Known .status.conditions.type are: \"Available\",
+                    \"Progressing\", and \"Degraded\" // +patchMergeKey=type // +patchStrategy=merge
+                    // +listType=map // +listMapKey=type Conditions []metav1.Condition
+                    `json:\"conditions,omitempty\" patchStrategy:\"merge\" patchMergeKey:\"type\"
+                    protobuf:\"bytes,1,rep,name=conditions\"` \n // other fields }"
+                  properties:
+                    lastTransitionTime:
+                      description: lastTransitionTime is the last time the condition
+                        transitioned from one status to another. This should be when
+                        the underlying condition changed.  If that is not known, then
+                        using the time when the API field changed is acceptable.
+                      format: date-time
+                      type: string
+                    message:
+                      description: message is a human readable message indicating
+                        details about the transition. This may be an empty string.
+                      maxLength: 32768
+                      type: string
+                    observedGeneration:
+                      description: observedGeneration represents the .metadata.generation
+                        that the condition was set based upon. For instance, if .metadata.generation
+                        is currently 12, but the .status.conditions[x].observedGeneration
+                        is 9, the condition is out of date with respect to the current
+                        state of the instance.
+                      format: int64
+                      minimum: 0
+                      type: integer
+                    reason:
+                      description: reason contains a programmatic identifier indicating
+                        the reason for the condition's last transition. Producers
+                        of specific condition types may define expected values and
+                        meanings for this field, and whether the values are considered
+                        a guaranteed API. The value should be a CamelCase string.
+                        This field may not be empty.
+                      maxLength: 1024
+                      minLength: 1
+                      pattern: ^[A-Za-z]([A-Za-z0-9_,:]*[A-Za-z0-9_])?$
+                      type: string
+                    status:
+                      description: status of the condition, one of True, False, Unknown.
+                      enum:
+                      - "True"
+                      - "False"
+                      - Unknown
+                      type: string
+                    type:
+                      description: type of condition in CamelCase or in foo.example.com/CamelCase.
+                        --- Many .condition.type values are consistent across resources
+                        like Available, but because arbitrary conditions can be useful
+                        (see .node.status.conditions), the ability to deconflict is
+                        important. The regex it matches is (dns1123SubdomainFmt/)?(qualifiedNameFmt)
+                      maxLength: 316
+                      pattern: ^([a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*/)?(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])$
+                      type: string
+                  required:
+                  - lastTransitionTime
+                  - message
+                  - reason
+                  - status
+                  - type
+                  type: object
+                type: array
+              observedGeneration:
+                description: ObservedGeneration specifies the last generation that
+                  was reconciled
+                format: int64
+                type: integer
+              updatedAt:
+                description: The last time the object was updated
+                format: date-time
+                type: string
+            type: object
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
