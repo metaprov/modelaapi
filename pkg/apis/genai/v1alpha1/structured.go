@@ -82,7 +82,7 @@ type TextSpec struct {
 	// The string to use for concatenation. If unspecified, default to `, `
 	ConcatenationString *string `json:"concatenationString,omitempty" protobuf:"bytes,3,opt,name=concatenationString"`
 	// The default text value, if one could not be extracted from the nodes. If unspecified, the column will be left null
-	Default *int32 `json:"default,omitempty" protobuf:"bytes,5,opt,name=default"`
+	Default *string `json:"default,omitempty" protobuf:"bytes,5,opt,name=default"`
 }
 
 type BooleanSpec struct {
