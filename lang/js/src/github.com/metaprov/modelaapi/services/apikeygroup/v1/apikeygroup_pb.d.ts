@@ -208,6 +208,9 @@ export namespace DeleteAPIKeyGroupResponse {
 }
 
 export class GenerateAPIKeyRequest extends jspb.Message {
+  getTenant(): string;
+  setTenant(value: string): GenerateAPIKeyRequest;
+
   getNamespace(): string;
   setNamespace(value: string): GenerateAPIKeyRequest;
 
@@ -227,6 +230,7 @@ export class GenerateAPIKeyRequest extends jspb.Message {
 
 export namespace GenerateAPIKeyRequest {
   export type AsObject = {
+    tenant: string,
     namespace: string,
     name: string,
     keyname: string,
@@ -248,6 +252,42 @@ export class GenerateAPIKeyResponse extends jspb.Message {
 export namespace GenerateAPIKeyResponse {
   export type AsObject = {
     apikey: string,
+  }
+}
+
+export class RefreshAPIKeyGroupRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): RefreshAPIKeyGroupRequest;
+
+  getName(): string;
+  setName(value: string): RefreshAPIKeyGroupRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RefreshAPIKeyGroupRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: RefreshAPIKeyGroupRequest): RefreshAPIKeyGroupRequest.AsObject;
+  static serializeBinaryToWriter(message: RefreshAPIKeyGroupRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RefreshAPIKeyGroupRequest;
+  static deserializeBinaryFromReader(message: RefreshAPIKeyGroupRequest, reader: jspb.BinaryReader): RefreshAPIKeyGroupRequest;
+}
+
+export namespace RefreshAPIKeyGroupRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+  }
+}
+
+export class RefreshAPIKeyGroupResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RefreshAPIKeyGroupResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: RefreshAPIKeyGroupResponse): RefreshAPIKeyGroupResponse.AsObject;
+  static serializeBinaryToWriter(message: RefreshAPIKeyGroupResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RefreshAPIKeyGroupResponse;
+  static deserializeBinaryFromReader(message: RefreshAPIKeyGroupResponse, reader: jspb.BinaryReader): RefreshAPIKeyGroupResponse;
+}
+
+export namespace RefreshAPIKeyGroupResponse {
+  export type AsObject = {
   }
 }
 

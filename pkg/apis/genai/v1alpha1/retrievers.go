@@ -85,6 +85,10 @@ type VectorRetrieverSpec struct {
 	Auto *AutoVectorRetrieverSpec `json:"auto,omitempty" protobuf:"bytes,6,opt,name=auto"`
 }
 
+func (x *VectorRetrieverSpec) IndexReference() IndexReference {
+	return x.Index
+}
+
 // DocumentSummaryRetrieverSpec defines a retriever for a document summary index
 type DocumentSummaryRetrieverSpec struct {
 	// The reference to the vector store index
@@ -97,6 +101,10 @@ type DocumentSummaryRetrieverSpec struct {
 	Mode *DocumentSummaryRetrieverMode `json:"mode,omitempty" protobuf:"bytes,4,opt,name=mode"`
 }
 
+func (x *DocumentSummaryRetrieverSpec) IndexReference() IndexReference {
+	return x.Index
+}
+
 // TreeRetrieverSpec defines a retriever from a tree index
 type TreeRetrieverSpec struct {
 	// The reference to the tree index
@@ -107,6 +115,10 @@ type TreeRetrieverSpec struct {
 	Mode *TreeRetrieverMode `json:"mode,omitempty" protobuf:"bytes,3,opt,name=mode"`
 	// The number of child nodes to consider traversing at each level of the tree, if applicable
 	ChildBranchFactor *int `json:"childBranchFactor,omitempty" protobuf:"bytes,4,opt,name=childBranchFactor"`
+}
+
+func (x *TreeRetrieverSpec) IndexReference() IndexReference {
+	return x.Index
 }
 
 type KeywordTableRetrieverSpec struct {
@@ -122,6 +134,10 @@ type KeywordTableRetrieverSpec struct {
 	ChunksPerQuery *int `json:"chunksPerQuery,omitempty" protobuf:"bytes,5,opt,name=chunksPerQuery"`
 }
 
+func (x *KeywordTableRetrieverSpec) IndexReference() IndexReference {
+	return x.Index
+}
+
 // ListRetrieverSpec defines a retriever from a list index
 type ListRetrieverSpec struct {
 	// The reference to the tree index
@@ -132,6 +148,10 @@ type ListRetrieverSpec struct {
 	TopK *int `json:"topK,omitempty" protobuf:"bytes,3,opt,name=topK"`
 	// The retriever mode. If unspecified, default to simple
 	Mode *ListRetrieverMode `json:"mode,omitempty" protobuf:"bytes,4,opt,name=mode"`
+}
+
+func (x *ListRetrieverSpec) IndexReference() IndexReference {
+	return x.Index
 }
 
 // FusionRetrieverSpec defines a retriever which can combine the results from multiple concrete retrievers
@@ -195,4 +215,16 @@ type RetrieverSpec struct {
 
 	// Fusion combines the results of one or more retriever(s)
 	Fusion *FusionRetrieverSpec `json:"fusion,omitempty" protobuf:"bytes,8,opt,name=fusion"`
+}
+
+func (r *RetrieverSpec) KnowledgeBases() []string {
+	var names []string
+	for _, ret := range []interface{ IndexReference() IndexReference }{
+		r.Vector, r.DocumentSummary, r.Tree, r.KeywordTable, r.List} {
+		if ret != nil {
+			names = append(names, ret.IndexReference().KnowledgeBaseName)
+		}
+	}
+
+	return names
 }

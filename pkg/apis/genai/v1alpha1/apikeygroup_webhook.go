@@ -63,3 +63,7 @@ func (akg *APIKeyGroup) validateApiKeys(fldPath *field.Path) field.ErrorList {
 	}
 	return allErrs
 }
+
+func (akg *APIKeyGroup) ValidateDelete() error {
+	return nil
+}

@@ -128,8 +128,8 @@ func (llm *LLMServer) MarkDeployed() {
 func (llm *LLMServer) MarkDeploying() {
 	llm.CreateOrUpdateCondition(metav1.Condition{
 		Type:   string(LLMServerDeployed),
-		Status: metav1.ConditionTrue,
-		Reason: "Deploying",
+		Status: metav1.ConditionFalse,
+		Reason: DeployingReason,
 	})
 }
 
@@ -142,11 +142,54 @@ func (llm *LLMServer) MarkDeployFailed(reason string, msg string) {
 	})
 }
 
+/////// Refreshed Condition ///////
+
+func (llm *LLMServer) Refreshed() bool {
+	return llm.GetCondition(LLMServerRefreshed).Status == metav1.ConditionTrue
+}
+
+func (llm *LLMServer) Refreshing() bool {
+	return llm.GetCondition(LLMServerRefreshed).Reason == RefreshingReason
+}
+
+func (llm *LLMServer) MarkNotRefreshed() {
+	llm.CreateOrUpdateCondition(metav1.Condition{
+		Type:   string(LLMServerRefreshed),
+		Status: metav1.ConditionFalse,
+		Reason: RefreshingReason,
+	})
+}
+
+func (llm *LLMServer) MarkRefreshed() {
+	llm.CreateOrUpdateCondition(metav1.Condition{
+		Type:   string(LLMServerRefreshed),
+		Status: metav1.ConditionTrue,
+		Reason: string(LLMServerRefreshed),
+	})
+}
+
+func (llm *LLMServer) MarkRefreshing() {
+	llm.CreateOrUpdateCondition(metav1.Condition{
+		Type:   string(LLMServerRefreshed),
+		Status: metav1.ConditionTrue,
+		Reason: "Refreshing",
+	})
+}
+
+func (llm *LLMServer) MarkRefreshFailed(reason string, msg string) {
+	llm.CreateOrUpdateCondition(metav1.Condition{
+		Type:    string(LLMServerRefreshed),
+		Status:  metav1.ConditionFalse,
+		Reason:  reason,
+		Message: msg,
+	})
+}
+
 /////// Alert Methods ///////
 
 func (llm *LLMServer) ErrorAlert(notification catalog.NotificationSpec, err error) *infra.Alert {
 	level := infra.ErrorAlertLevel
-	subject := fmt.Sprintf("LLMServer %s failed with error: %v", llm.Name, err.Error())
+	subject := fmt.Sprintf("LLM Server %s failed with error: %v", llm.Name, err.Error())
 	result := &infra.Alert{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: llm.Name,
@@ -171,6 +214,10 @@ func (llm *LLMServer) ErrorAlert(notification catalog.NotificationSpec, err erro
 }
 
 /////// Reconciler Methods ///////
+
+func (llm *LLMServer) GetNamespaceBinding() *string {
+	return llm.Spec.ServingSiteName
+}
 
 func (llm *LLMServer) GetStatus() proto.Message {
 	return &llm.Status

@@ -56,16 +56,19 @@ message APIKeyGroupSpec {
   // +kubebuilder:validation:Optional
   optional string description = 2;
 
+  // The configuration for the storage of API key metadata
+  optional APIKeyGroupStorageSpec storage = 3;
+
   // The collection of LLM servers that can be authorized through the API key group.
   // If empty, all LLM server resources (and their respective model servers) which allow the key group may be accessed
-  repeated string allowedServerNames = 3;
+  repeated string allowedServerNames = 4;
 
   // The collection of endpoint names that can be authorized through the API key group.
   // If empty, endpoints will not be restricted by their name
-  repeated string allowedEndpointNames = 4;
+  repeated string allowedEndpointNames = 5;
 
   // The collection of API keys belonging to the group
-  repeated APIKeySpec apiKeys = 5;
+  repeated APIKeySpec apiKeys = 6;
 }
 
 message APIKeyGroupStatus {
@@ -73,53 +76,65 @@ message APIKeyGroupStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 1;
 
+  // The name of the connection which metadata for the API keys associated with the group are being stored
+  optional string storageConnectionName = 2;
+
   // The collection of statuses for all API keys associated with the group
-  repeated APIKeyStatus apiKeys = 2;
+  repeated APIKeyStatus apiKeys = 3;
 
   // The last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 3;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 4;
 
   // +kubebuilder:validation:Optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 4;
+  repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 5;
 }
 
-// APIKeyMetrics contains the metrics for a single API key, collected through Prometheus
+message APIKeyGroupStorageSpec {
+  // The type of storage medium. If unspecified, default to database
+  optional string type = 1;
+
+  // The name of the connection to the storage medium, applicable if using a database.
+  // If unspecified, default to the database specified by the tenant of the group
+  optional string connectionName = 2;
+}
+
+// APIKeyMetrics contains the metrics for a single API key
 message APIKeyMetrics {
+  // The usage metrics for the current quota period
+  optional Quota quota = 1;
+
   // The total amount of tokens served through the key
-  optional int64 totalTokens = 1;
+  optional int64 totalTokens = 2;
 
   // The total amount of requests served through the key
-  optional int64 totalRequests = 2;
+  optional int64 totalRequests = 3;
 
   // The total cost (in USD) served through the key
-  optional float totalCost = 3;
+  optional float totalCost = 4;
 
-  // The daily average amount of tokens served through the key, averaged over a month-long period
-  optional int64 averageDailyTokens = 4;
+  // The aggregation period (daily, weekly, monthly, etc.) over which averages will be calculated (default to daily).
+  // Prometheus must be enabled for usage metrics to be aggregated
+  optional string aggregationPeriod = 5;
 
-  // The daily average amount of requests served through the key, averaged over a month-long period
-  optional int64 averageDailyRequests = 5;
+  // The average amount of tokens served through the key
+  optional int64 averageTokens = 6;
 
-  // The daily average cost (in USD) for requests served through the key, averaged over a month-long period
-  optional float averageDailyCost = 6;
+  // The average amount of requests served through the key
+  optional int64 averageRequests = 7;
+
+  // The average cost (in USD) for requests served through the key
+  optional float averageCost = 8;
 }
 
 // APIKeyQuota defines usage limits for a single API key
 message APIKeyQuota {
-  // The maximum amount of tokens
-  optional int64 tokens = 1;
-
-  // The maximum amount of requests
-  optional int64 requests = 2;
-
-  // The maximum approximate cost (in USD)
-  optional float cost = 3;
+  optional Quota quota = 1;
 
   // The schedule at which the quota will reset
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule resetSchedule = 4;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule resetSchedule = 2;
 }
 
 // APIKeySpec defines the configuration for a single API key
@@ -146,20 +161,20 @@ message APIKeyStatus {
   // The unique name of the API key
   optional string name = 1;
 
-  // The date at which the
+  // The date at which the API key was created
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time creationDate = 2;
 
   // The date at which the API key was last used
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUsedDate = 3;
 
+  // The date at which a physical key string was last generated for the API key
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time generatedDate = 4;
+
   // The time at which the quota limits for the API key were reached
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time quotaExceededDate = 4;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time quotaExceededDate = 5;
 
-  // The time at which the quota for the key was last refreshed
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time quotaRefreshedDate = 5;
-
-  // Indicates if an key string has been generated for the API key instance
-  optional bool keyGenerated = 6;
+  // The time at which the quota for the key was last reset
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time quotaResetDate = 6;
 
   // The metrics collected for the API key
   optional APIKeyMetrics metrics = 7;
@@ -821,20 +836,22 @@ message LLMServerSpec {
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 4;
 
   // The model endpoints served by the proxy
-  repeated EndpointSpec endpoints = 5;
+  repeated EndpointSpec endpoints = 6;
 
   // The query engines available to the models
-  repeated QueryEngineSpec queryEngines = 6;
+  repeated QueryEngineSpec queryEngines = 7;
 
   // The collection of retrievers available to the query engines
-  repeated RetrieverSpec retrievers = 7;
+  repeated RetrieverSpec retrievers = 8;
+
+  // The specification for the LLM Server service to be exposed and accessed externally
+  optional LLMServerAccessSpec access = 9;
 
   // The security configuration for the LLMServer, which determines how incoming requests are authorized
-  optional LLMServerAuthorizationSpec authorization = 8;
+  optional LLMServerAuthorizationSpec authorization = 10;
 
   // The configuration for Alerts generated by the proxy
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 9;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 11;
 }
 
 message LLMStatus {
@@ -845,7 +862,8 @@ message LLMStatus {
   // Endpoints contains the collection of statuses for each model served by the proxy server
   repeated EndpointStatus endpoints = 2;
 
-  // Endpoint contains the URL where the proxy server is exposed
+  // Endpoint contains the URL where the proxy server is exposed. An endpoint will only be exposed
+  // in the case that the server is bound to an Ingress resource
   optional string endpoint = 3;
 
   // DeployedAt specifies the time that the LLMServer proxy deployment was created
@@ -1029,6 +1047,17 @@ message QueryEngineToolSpec {
 
   // The description of the query engine
   optional string description = 3;
+}
+
+message Quota {
+  // The maximum amount of tokens
+  optional int64 tokens = 1;
+
+  // The maximum amount of requests
+  optional int64 requests = 2;
+
+  // The maximum approximate cost (in USD)
+  optional float cost = 3;
 }
 
 message RepositoryFileReader {

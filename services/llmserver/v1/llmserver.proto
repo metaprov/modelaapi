@@ -14,20 +14,20 @@ message ListLLMServersRequest {
 }
 
 message ListLLMServersResponse {
-  github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerList llmservers = 1;
+  github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerList llmServers = 1;
   string next_page_token = 2;
 }
 
 
 message CreateLLMServerRequest {
-  github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer llmserver = 1;
+  github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer llmServer = 1;
 }
 
 message CreateLLMServerResponse {}
 
 
 message UpdateLLMServerRequest {
-  github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer llmserver = 1;
+  github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer llmServer = 1;
   google.protobuf.FieldMask field_mask = 2;
 }
 
@@ -41,7 +41,7 @@ message GetLLMServerRequest {
 }
 
 message GetLLMServerResponse {
-  github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer llmserver = 1;
+  github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer llmServer = 1;
   string yaml = 2;
 
 }
@@ -72,7 +72,7 @@ service LLMServerService {
 
   rpc UpdateLLMServer(UpdateLLMServerRequest) returns (UpdateLLMServerResponse) {
     option (google.api.http) = {
-      put: "/v1/llmservers/{llmserver.metadata.namespace}/{llmserver.metadata.name}"
+      put: "/v1/llmservers/{llmServer.metadata.namespace}/{llmServer.metadata.name}"
       body: "*"
     };
   }

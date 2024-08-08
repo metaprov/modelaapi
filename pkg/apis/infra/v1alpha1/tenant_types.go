@@ -8,16 +8,11 @@ package v1alpha1
 
 import (
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
-	v1 "k8s.io/api/core/v1"
-
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-type TenantType string
-
 type TenantConditionType string
 
-// / Tenant Condition
 const (
 	TenantReady               TenantConditionType = "Ready"
 	TenantMetricDatabaseReady TenantConditionType = "MetricDatabaseReady"
@@ -65,25 +60,25 @@ type TenantSpec struct {
 	// +kubebuilder:validation:Optional
 	DefaultBucketName *string `json:"defaultBucketName,omitempty" protobuf:"bytes,3,opt,name=defaultBucketName"`
 	// CacheBucketName specifies the name of the Virtual Bucket which workloads for resources under the Tenant
-	// will use internally for caching workloads. Setting CacheBucketName to a valid Virtual Bucket is highly
-	// recommended for stability and performance
+	// will use internally for caching workloads.
 	// +kubebuilder:validation:Required
 	// +required
 	CacheBucketName string `json:"cacheBucketName,omitempty" protobuf:"bytes,4,opt,name=cacheBucketName"`
+	// DatabaseConnectionName references a Connection resource to an external database that will act as a metadata store for the tenant
+	// The metric store stores metadata about resources that perform workloads (i.e. datasets, models, studies, etc.)
+	// +kubebuilder:validation:Required
+	// +required
+	DatabaseConnectionName string `json:"databaseConnectionName,omitempty" protobuf:"bytes,5,opt,name=databaseConnectionName"`
 	// Permissions defines the set of permissions applied to each Account when accessing resources within the Tenant
 	// +kubebuilder:validation:Optional
-	Permissions catalog.PermissionsSpec `json:"permissions,omitempty" protobuf:"bytes,5,opt,name=permissions"`
+	Permissions catalog.PermissionsSpec `json:"permissions,omitempty" protobuf:"bytes,6,opt,name=permissions"`
 	// The default notification specification for all resources under the tenant
 	// +kubebuilder:validation:Optional
-	Notification *catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,6,opt,name=notification"`
-	// OnlineStore references a Connection resource to an external database that the Modela online store microservice
-	// will use as an online store. The online store service must be installed through the Modela Operator
+	Notification *catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,7,opt,name=notification"`
+	// MetricsEnabled indicates if metadata about resources that perform workloads (i.e. datasets, models, studies, etc.)
+	// will be stored in the database for the Tenant
 	// +kubebuilder:validation:Optional
-	OnlineStoreConnectionRef *v1.ObjectReference `json:"onlineStoreConnection,omitempty" protobuf:"bytes,7,opt,name=onlineStoreConnection"`
-	// MetricStore references a Connection resource to an external database that will act as the metric store for the Tenant.
-	// The metric store stores metadata about resources that perform workloads (i.e. datasets, models, studies, etc.)
-	// +kubebuilder:validation:Optional
-	MetricStoreConnectionRef *v1.ObjectReference `json:"metricStoreConnection,omitempty" protobuf:"bytes,8,opt,name=metricStoreConnection"`
+	MetricsEnabled *bool `json:"metricsEnabled,omitempty" protobuf:"bytes,8,opt,name=metricsEnabled"`
 }
 
 // TenantStatus defines the actual state of a Tenant
@@ -94,10 +89,6 @@ type TenantStatus struct {
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
 	UpdatedAt *metav1.Time `json:"updatedAt,omitempty" protobuf:"bytes,2,opt,name=updatedAt"`
-	// UpdateUpdateStrategy in case of terminal failure
-	// Borrowed from cluster api controller
-	//+kubebuilder:validation:Optional
-	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,3,opt,name=failureReason"`
 	// UpdateUpdateStrategy in case of terminal failure message
 	//+kubebuilder:validation:Optional
 	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,4,opt,name=failureMessage"`

@@ -947,29 +947,29 @@ message TenantSpec {
   optional string defaultBucketName = 3;
 
   // CacheBucketName specifies the name of the Virtual Bucket which workloads for resources under the Tenant
-  // will use internally for caching workloads. Setting CacheBucketName to a valid Virtual Bucket is highly
-  // recommended for stability and performance
+  // will use internally for caching workloads.
   // +kubebuilder:validation:Required
   // +required
   optional string cacheBucketName = 4;
 
+  // DatabaseConnectionName references a Connection resource to an external database that will act as a metadata store for the tenant
+  // The metric store stores metadata about resources that perform workloads (i.e. datasets, models, studies, etc.)
+  // +kubebuilder:validation:Required
+  // +required
+  optional string databaseConnectionName = 5;
+
   // Permissions defines the set of permissions applied to each Account when accessing resources within the Tenant
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PermissionsSpec permissions = 5;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PermissionsSpec permissions = 6;
 
   // The default notification specification for all resources under the tenant
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 6;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 7;
 
-  // OnlineStore references a Connection resource to an external database that the Modela online store microservice
-  // will use as an online store. The online store service must be installed through the Modela Operator
+  // MetricsEnabled indicates if metadata about resources that perform workloads (i.e. datasets, models, studies, etc.)
+  // will be stored in the database for the Tenant
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference onlineStoreConnection = 7;
-
-  // MetricStore references a Connection resource to an external database that will act as the metric store for the Tenant.
-  // The metric store stores metadata about resources that perform workloads (i.e. datasets, models, studies, etc.)
-  // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference metricStoreConnection = 8;
+  optional bool metricsEnabled = 8;
 }
 
 // TenantStatus defines the actual state of a Tenant
@@ -981,11 +981,6 @@ message TenantStatus {
   // Last time the object was updated
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 2;
-
-  // UpdateUpdateStrategy in case of terminal failure
-  // Borrowed from cluster api controller
-  // +kubebuilder:validation:Optional
-  optional string failureReason = 3;
 
   // UpdateUpdateStrategy in case of terminal failure message
   // +kubebuilder:validation:Optional

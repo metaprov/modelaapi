@@ -24,30 +24,30 @@ class ListLLMServersRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
 class ListLLMServersResponse(_message.Message):
-    __slots__ = ("llmservers", "next_page_token")
+    __slots__ = ("llmServers", "next_page_token")
     LLMSERVERS_FIELD_NUMBER: _ClassVar[int]
     NEXT_PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
-    llmservers: _generated_pb2.LLMServerList
+    llmServers: _generated_pb2.LLMServerList
     next_page_token: str
-    def __init__(self, llmservers: _Optional[_Union[_generated_pb2.LLMServerList, _Mapping]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
+    def __init__(self, llmServers: _Optional[_Union[_generated_pb2.LLMServerList, _Mapping]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
 
 class CreateLLMServerRequest(_message.Message):
-    __slots__ = ("llmserver",)
+    __slots__ = ("llmServer",)
     LLMSERVER_FIELD_NUMBER: _ClassVar[int]
-    llmserver: _generated_pb2.LLMServer
-    def __init__(self, llmserver: _Optional[_Union[_generated_pb2.LLMServer, _Mapping]] = ...) -> None: ...
+    llmServer: _generated_pb2.LLMServer
+    def __init__(self, llmServer: _Optional[_Union[_generated_pb2.LLMServer, _Mapping]] = ...) -> None: ...
 
 class CreateLLMServerResponse(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
 class UpdateLLMServerRequest(_message.Message):
-    __slots__ = ("llmserver", "field_mask")
+    __slots__ = ("llmServer", "field_mask")
     LLMSERVER_FIELD_NUMBER: _ClassVar[int]
     FIELD_MASK_FIELD_NUMBER: _ClassVar[int]
-    llmserver: _generated_pb2.LLMServer
+    llmServer: _generated_pb2.LLMServer
     field_mask: _field_mask_pb2.FieldMask
-    def __init__(self, llmserver: _Optional[_Union[_generated_pb2.LLMServer, _Mapping]] = ..., field_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
+    def __init__(self, llmServer: _Optional[_Union[_generated_pb2.LLMServer, _Mapping]] = ..., field_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
 
 class UpdateLLMServerResponse(_message.Message):
     __slots__ = ()
@@ -62,12 +62,12 @@ class GetLLMServerRequest(_message.Message):
     def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
 
 class GetLLMServerResponse(_message.Message):
-    __slots__ = ("llmserver", "yaml")
+    __slots__ = ("llmServer", "yaml")
     LLMSERVER_FIELD_NUMBER: _ClassVar[int]
     YAML_FIELD_NUMBER: _ClassVar[int]
-    llmserver: _generated_pb2.LLMServer
+    llmServer: _generated_pb2.LLMServer
     yaml: str
-    def __init__(self, llmserver: _Optional[_Union[_generated_pb2.LLMServer, _Mapping]] = ..., yaml: _Optional[str] = ...) -> None: ...
+    def __init__(self, llmServer: _Optional[_Union[_generated_pb2.LLMServer, _Mapping]] = ..., yaml: _Optional[str] = ...) -> None: ...
 
 class DeleteLLMServerRequest(_message.Message):
     __slots__ = ("namespace", "name")

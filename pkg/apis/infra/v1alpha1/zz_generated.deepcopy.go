@@ -1404,14 +1404,9 @@ func (in *TenantSpec) DeepCopyInto(out *TenantSpec) {
 		*out = new(catalogv1alpha1.NotificationSpec)
 		(*in).DeepCopyInto(*out)
 	}
-	if in.OnlineStoreConnectionRef != nil {
-		in, out := &in.OnlineStoreConnectionRef, &out.OnlineStoreConnectionRef
-		*out = new(v1.ObjectReference)
-		**out = **in
-	}
-	if in.MetricStoreConnectionRef != nil {
-		in, out := &in.MetricStoreConnectionRef, &out.MetricStoreConnectionRef
-		*out = new(v1.ObjectReference)
+	if in.MetricsEnabled != nil {
+		in, out := &in.MetricsEnabled, &out.MetricsEnabled
+		*out = new(bool)
 		**out = **in
 	}
 }
@@ -1432,11 +1427,6 @@ func (in *TenantStatus) DeepCopyInto(out *TenantStatus) {
 	if in.UpdatedAt != nil {
 		in, out := &in.UpdatedAt, &out.UpdatedAt
 		*out = (*in).DeepCopy()
-	}
-	if in.FailureReason != nil {
-		in, out := &in.FailureReason, &out.FailureReason
-		*out = new(catalogv1alpha1.StatusError)
-		**out = **in
 	}
 	if in.FailureMessage != nil {
 		in, out := &in.FailureMessage, &out.FailureMessage

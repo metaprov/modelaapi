@@ -44,6 +44,11 @@ class APIKeyGroupServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apikeygroup_dot_v1_dot_apikeygroup__pb2.CreateAPIKeyGroupRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apikeygroup_dot_v1_dot_apikeygroup__pb2.CreateAPIKeyGroupResponse.FromString,
                 )
+        self.RefreshAPIKeyGroup = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.apikeygroup.v1.APIKeyGroupService/RefreshAPIKeyGroup',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apikeygroup_dot_v1_dot_apikeygroup__pb2.RefreshAPIKeyGroupRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apikeygroup_dot_v1_dot_apikeygroup__pb2.RefreshAPIKeyGroupResponse.FromString,
+                )
 
 
 class APIKeyGroupServiceServicer(object):
@@ -85,6 +90,12 @@ class APIKeyGroupServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def RefreshAPIKeyGroup(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_APIKeyGroupServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -117,6 +128,11 @@ def add_APIKeyGroupServiceServicer_to_server(servicer, server):
                     servicer.GenerateAPIKey,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apikeygroup_dot_v1_dot_apikeygroup__pb2.CreateAPIKeyGroupRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apikeygroup_dot_v1_dot_apikeygroup__pb2.CreateAPIKeyGroupResponse.SerializeToString,
+            ),
+            'RefreshAPIKeyGroup': grpc.unary_unary_rpc_method_handler(
+                    servicer.RefreshAPIKeyGroup,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apikeygroup_dot_v1_dot_apikeygroup__pb2.RefreshAPIKeyGroupRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apikeygroup_dot_v1_dot_apikeygroup__pb2.RefreshAPIKeyGroupResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -227,5 +243,22 @@ class APIKeyGroupService(object):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.apikeygroup.v1.APIKeyGroupService/GenerateAPIKey',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apikeygroup_dot_v1_dot_apikeygroup__pb2.CreateAPIKeyGroupRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apikeygroup_dot_v1_dot_apikeygroup__pb2.CreateAPIKeyGroupResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def RefreshAPIKeyGroup(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.apikeygroup.v1.APIKeyGroupService/RefreshAPIKeyGroup',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apikeygroup_dot_v1_dot_apikeygroup__pb2.RefreshAPIKeyGroupRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apikeygroup_dot_v1_dot_apikeygroup__pb2.RefreshAPIKeyGroupResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

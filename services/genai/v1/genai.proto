@@ -7,8 +7,7 @@ import "github.com/metaprov/modelaapi/pkg/apis/genai/v1alpha1/generated.proto";
 
 message RefreshRequest {
     string tenant = 1;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 2;
-    github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KnowledgeBase knowledgeBase = 3;
+    github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KnowledgeBase knowledgeBase = 2;
 }
 
 message DocumentStatusUpdate {
@@ -29,19 +28,18 @@ message RefreshResponse {
     repeated IndexStatusUpdate index_statuses = 2;
 }
 
-message DeleteRequest {
-    string namespace = 1;
-    string name = 2;
+message TeardownRequest {
+    string tenant = 1;
+    github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KnowledgeBase knowledgeBase = 2;
 }
 
-message DeleteResponse {}
-
+message TeardownResponse {}
 
 message ShutdownRequest {}
 message ShutdownResponse {}
 
-service LLMService {
+service GenAIService {
     rpc Refresh(RefreshRequest) returns (RefreshResponse) {}
-    rpc Delete(DeleteRequest) returns (DeleteResponse) {}
+    rpc Teardown(TeardownRequest) returns (TeardownResponse) {}
     rpc Shutdown(ShutdownRequest) returns (ShutdownResponse) {}
 }

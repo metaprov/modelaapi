@@ -142,6 +142,49 @@ func (kb *KnowledgeBase) MarkRefreshFailed(reason string, msg string) {
 	})
 }
 
+/////// Removed Condition ///////
+
+func (kb *KnowledgeBase) Removed() bool {
+	return kb.GetCondition(KnowledgeBaseRemoved).Status == metav1.ConditionTrue
+}
+
+func (kb *KnowledgeBase) Removing() bool {
+	return kb.GetCondition(KnowledgeBaseRemoved).Reason == RemovingReason
+}
+
+func (kb *KnowledgeBase) MarkNotRemoved() {
+	kb.CreateOrUpdateCondition(metav1.Condition{
+		Type:   string(KnowledgeBaseRemoved),
+		Status: metav1.ConditionFalse,
+		Reason: RemovingReason,
+	})
+}
+
+func (kb *KnowledgeBase) MarkRemoved() {
+	kb.CreateOrUpdateCondition(metav1.Condition{
+		Type:   string(KnowledgeBaseRemoved),
+		Status: metav1.ConditionTrue,
+		Reason: string(KnowledgeBaseRemoved),
+	})
+}
+
+func (kb *KnowledgeBase) MarkRemoving() {
+	kb.CreateOrUpdateCondition(metav1.Condition{
+		Type:   string(KnowledgeBaseRemoved),
+		Status: metav1.ConditionTrue,
+		Reason: "Removing",
+	})
+}
+
+func (kb *KnowledgeBase) MarkRemoveFailed(reason string, msg string) {
+	kb.CreateOrUpdateCondition(metav1.Condition{
+		Type:    string(KnowledgeBaseRemoved),
+		Status:  metav1.ConditionFalse,
+		Reason:  reason,
+		Message: msg,
+	})
+}
+
 /////// Alert Methods ///////
 
 func (kb *KnowledgeBase) ErrorAlert(notification catalog.NotificationSpec, err error) *infra.Alert {

@@ -16,7 +16,7 @@ from github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1 import generated_pb2 a
 from github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1 import generated_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_genai_dot_v1alpha1_dot_generated__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n;github.com/metaprov/modelaapi/services/genai/v1/genai.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/genai/v1alpha1/generated.proto\"\xd1\x01\n\x0eRefreshRequest\x12\x0e\n\x06tenant\x18\x01 \x01(\t\x12R\n\x07product\x18\x02 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12[\n\rknowledgeBase\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KnowledgeBase\"\x9a\x01\n\x14\x44ocumentStatusUpdate\x12\x0e\n\x06\x64\x65lete\x18\x01 \x01(\x08\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05\x65rror\x18\x03 \x01(\t\x12U\n\x06status\x18\x04 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.DocumentStatus\"D\n\x11IndexStatusUpdate\x12\x0e\n\x06\x64\x65lete\x18\x01 \x01(\x08\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x11\n\tdocuments\x18\x03 \x01(\x05\"o\n\x0fRefreshResponse\x12\x30\n\x11\x64ocument_statuses\x18\x01 \x03(\x0b\x32\x15.DocumentStatusUpdate\x12*\n\x0eindex_statuses\x18\x02 \x03(\x0b\x32\x12.IndexStatusUpdate\"0\n\rDeleteRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x10\n\x0e\x44\x65leteResponse\"\x11\n\x0fShutdownRequest\"\x12\n\x10ShutdownResponse2\x9c\x01\n\nLLMService\x12.\n\x07Refresh\x12\x0f.RefreshRequest\x1a\x10.RefreshResponse\"\x00\x12+\n\x06\x44\x65lete\x12\x0e.DeleteRequest\x1a\x0f.DeleteResponse\"\x00\x12\x31\n\x08Shutdown\x12\x10.ShutdownRequest\x1a\x11.ShutdownResponse\"\x00\x42\x31Z/github.com/metaprov/modelaapi/services/genai/v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n;github.com/metaprov/modelaapi/services/genai/v1/genai.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/genai/v1alpha1/generated.proto\"}\n\x0eRefreshRequest\x12\x0e\n\x06tenant\x18\x01 \x01(\t\x12[\n\rknowledgeBase\x18\x02 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KnowledgeBase\"\x9a\x01\n\x14\x44ocumentStatusUpdate\x12\x0e\n\x06\x64\x65lete\x18\x01 \x01(\x08\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05\x65rror\x18\x03 \x01(\t\x12U\n\x06status\x18\x04 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.DocumentStatus\"D\n\x11IndexStatusUpdate\x12\x0e\n\x06\x64\x65lete\x18\x01 \x01(\x08\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x11\n\tdocuments\x18\x03 \x01(\x05\"o\n\x0fRefreshResponse\x12\x30\n\x11\x64ocument_statuses\x18\x01 \x03(\x0b\x32\x15.DocumentStatusUpdate\x12*\n\x0eindex_statuses\x18\x02 \x03(\x0b\x32\x12.IndexStatusUpdate\"~\n\x0fTeardownRequest\x12\x0e\n\x06tenant\x18\x01 \x01(\t\x12[\n\rknowledgeBase\x18\x02 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KnowledgeBase\"\x12\n\x10TeardownResponse\"\x11\n\x0fShutdownRequest\"\x12\n\x10ShutdownResponse2\xa4\x01\n\x0cGenAIService\x12.\n\x07Refresh\x12\x0f.RefreshRequest\x1a\x10.RefreshResponse\"\x00\x12\x31\n\x08Teardown\x12\x10.TeardownRequest\x1a\x11.TeardownResponse\"\x00\x12\x31\n\x08Shutdown\x12\x10.ShutdownRequest\x1a\x11.ShutdownResponse\"\x00\x42\x31Z/github.com/metaprov/modelaapi/services/genai/v1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -24,22 +24,22 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'github.com.metaprov.modelaa
 if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['DESCRIPTOR']._options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z/github.com/metaprov/modelaapi/services/genai/v1'
-  _globals['_REFRESHREQUEST']._serialized_start=205
-  _globals['_REFRESHREQUEST']._serialized_end=414
-  _globals['_DOCUMENTSTATUSUPDATE']._serialized_start=417
-  _globals['_DOCUMENTSTATUSUPDATE']._serialized_end=571
-  _globals['_INDEXSTATUSUPDATE']._serialized_start=573
-  _globals['_INDEXSTATUSUPDATE']._serialized_end=641
-  _globals['_REFRESHRESPONSE']._serialized_start=643
-  _globals['_REFRESHRESPONSE']._serialized_end=754
-  _globals['_DELETEREQUEST']._serialized_start=756
-  _globals['_DELETEREQUEST']._serialized_end=804
-  _globals['_DELETERESPONSE']._serialized_start=806
-  _globals['_DELETERESPONSE']._serialized_end=822
-  _globals['_SHUTDOWNREQUEST']._serialized_start=824
-  _globals['_SHUTDOWNREQUEST']._serialized_end=841
-  _globals['_SHUTDOWNRESPONSE']._serialized_start=843
-  _globals['_SHUTDOWNRESPONSE']._serialized_end=861
-  _globals['_LLMSERVICE']._serialized_start=864
-  _globals['_LLMSERVICE']._serialized_end=1020
+  _globals['_REFRESHREQUEST']._serialized_start=204
+  _globals['_REFRESHREQUEST']._serialized_end=329
+  _globals['_DOCUMENTSTATUSUPDATE']._serialized_start=332
+  _globals['_DOCUMENTSTATUSUPDATE']._serialized_end=486
+  _globals['_INDEXSTATUSUPDATE']._serialized_start=488
+  _globals['_INDEXSTATUSUPDATE']._serialized_end=556
+  _globals['_REFRESHRESPONSE']._serialized_start=558
+  _globals['_REFRESHRESPONSE']._serialized_end=669
+  _globals['_TEARDOWNREQUEST']._serialized_start=671
+  _globals['_TEARDOWNREQUEST']._serialized_end=797
+  _globals['_TEARDOWNRESPONSE']._serialized_start=799
+  _globals['_TEARDOWNRESPONSE']._serialized_end=817
+  _globals['_SHUTDOWNREQUEST']._serialized_start=819
+  _globals['_SHUTDOWNREQUEST']._serialized_end=836
+  _globals['_SHUTDOWNRESPONSE']._serialized_start=838
+  _globals['_SHUTDOWNRESPONSE']._serialized_end=856
+  _globals['_GENAISERVICE']._serialized_start=859
+  _globals['_GENAISERVICE']._serialized_end=1023
 # @@protoc_insertion_point(module_scope)

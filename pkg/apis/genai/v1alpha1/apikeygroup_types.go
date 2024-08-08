@@ -11,6 +11,15 @@ const (
 	APIKeyGroupSaved APIKeyGroupConditionType = "Saved"
 )
 
+type APIKeyGroupStorageType string
+
+const (
+	// DatabaseAPIKeyGroupStorageType stores API key metadata inside a relational database
+	DatabaseAPIKeyGroupStorageType APIKeyGroupStorageType = "database"
+	// VaultAPIKeyGroupStorageType stores API key metadata within the Vault cluster used by Modela
+	VaultAPIKeyGroupStorageType APIKeyGroupStorageType = "vault"
+)
+
 // +k8s:openapi-gen=true
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=apikeygroups,singular=apikeygroup,shortName=akg,categories={genai,modela}
@@ -36,6 +45,14 @@ type APIKeyGroupList struct {
 	Items           []APIKeyGroup `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
+type APIKeyGroupStorageSpec struct {
+	// The type of storage medium. If unspecified, default to database
+	Type *APIKeyGroupStorageType `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
+	// The name of the connection to the storage medium, applicable if using a database.
+	// If unspecified, default to the database specified by the tenant of the group
+	ConnectionName *string `json:"connectionName,omitempty" protobuf:"bytes,2,opt,name=connectionName"`
+}
+
 type APIKeyGroupSpec struct {
 	// Owner specifies the name of the Account which the object belongs to
 	// +kubebuilder:default:="no-one"
@@ -46,26 +63,32 @@ type APIKeyGroupSpec struct {
 	// +kubebuilder:validation:MaxLength=512
 	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
+	// The configuration for the storage of API key metadata
+	Storage *APIKeyGroupStorageSpec `json:"storage,omitempty" protobuf:"bytes,3,opt,name=storage"`
 	// The collection of LLM servers that can be authorized through the API key group.
 	// If empty, all LLM server resources (and their respective model servers) which allow the key group may be accessed
-	AllowedServerNames []string `json:"allowedServerNames,omitempty" protobuf:"bytes,3,opt,name=allowedServerNames"`
+	AllowedServerNames []string `json:"allowedServerNames,omitempty" protobuf:"bytes,4,opt,name=allowedServerNames"`
 	// The collection of endpoint names that can be authorized through the API key group.
 	// If empty, endpoints will not be restricted by their name
-	AllowedEndpointNames []string `json:"allowedEndpointNames,omitempty" protobuf:"bytes,4,opt,name=allowedEndpointNames"`
+	AllowedEndpointNames []string `json:"allowedEndpointNames,omitempty" protobuf:"bytes,5,opt,name=allowedEndpointNames"`
 	// The collection of API keys belonging to the group
-	APIKeys []APIKeySpec `json:"apiKeys,omitempty" protobuf:"bytes,5,opt,name=apiKeys"`
+	APIKeys []APIKeySpec `json:"apiKeys,omitempty" protobuf:"bytes,6,opt,name=apiKeys"`
 }
 
-// APIKeyQuota defines usage limits for a single API key
-type APIKeyQuota struct {
+type Quota struct {
 	// The maximum amount of tokens
 	Tokens *int `json:"tokens,omitempty" protobuf:"bytes,1,opt,name=tokens"`
 	// The maximum amount of requests
 	Requests *int `json:"requests,omitempty" protobuf:"bytes,2,opt,name=requests"`
 	// The maximum approximate cost (in USD)
 	Cost *float32 `json:"cost,omitempty" protobuf:"bytes,3,opt,name=cost"`
-	// The schedule at which the quota will reset
-	ResetSchedule *catalog.RunSchedule `json:"resetSchedule,omitempty" protobuf:"bytes,4,opt,name=resetSchedule"`
+}
+
+// APIKeyQuota defines usage limits for a single API key
+type APIKeyQuota struct {
+	Quota `json:",inline" protobuf:"bytes,1,opt,name=quota"`
+	// The schedule at which usage will reset
+	ResetSchedule *catalog.RunSchedule `json:"resetSchedule,omitempty" protobuf:"bytes,2,opt,name=resetSchedule"`
 }
 
 // APIKeySpec defines the configuration for a single API key
@@ -80,40 +103,42 @@ type APIKeySpec struct {
 	// The collection of endpoint names that can be authorized through the API key.
 	// If empty, endpoints will not be restricted by their name
 	AllowedEndpointNames []string `json:"allowedEndpointNames,omitempty" protobuf:"bytes,3,opt,name=allowedEndpointNames"`
-	// The quota for the API key, which restricts the amount of resources it can consume
+	// The quota for the API key, which restricts the amount of resources it can consume in a time period
 	Quota *APIKeyQuota `json:"quota,omitempty" protobuf:"bytes,4,opt,name=quota"`
 }
 
-// APIKeyMetrics contains the metrics for a single API key, collected through Prometheus
+// APIKeyMetrics contains the metrics for a single API key
 type APIKeyMetrics struct {
+	// The usage metrics for the current quota period
+	Usage *Quota `json:"usage,omitempty" protobuf:"bytes,1,opt,name=usage"`
 	// The total amount of tokens served through the key
-	TotalTokens *int `json:"totalTokens,omitempty" protobuf:"bytes,1,opt,name=totalTokens"`
+	TotalTokens *int `json:"totalTokens,omitempty" protobuf:"bytes,2,opt,name=totalTokens"`
 	// The total amount of requests served through the key
-	TotalRequests *int `json:"totalRequests,omitempty" protobuf:"bytes,2,opt,name=totalRequests"`
+	TotalRequests *int `json:"totalRequests,omitempty" protobuf:"bytes,3,opt,name=totalRequests"`
 	// The total cost (in USD) served through the key
-	TotalCost *float32 `json:"totalCost,omitempty" protobuf:"bytes,3,opt,name=totalCost"`
-	// The daily average amount of tokens served through the key, averaged over a month-long period
-	AverageDailyTokens *int `json:"averageDailyTokens,omitempty" protobuf:"bytes,4,opt,name=averageDailyTokens"`
-	// The daily average amount of requests served through the key, averaged over a month-long period
-	AverageDailyRequests *int `json:"averageDailyRequests,omitempty" protobuf:"bytes,5,opt,name=averageDailyRequests"`
-	// The daily average cost (in USD) for requests served through the key, averaged over a month-long period
-	AverageDailyCost *float32 `json:"averageDailyCost,omitempty" protobuf:"bytes,6,opt,name=averageDailyCost"`
+	TotalCost *float32 `json:"totalCost,omitempty" protobuf:"bytes,4,opt,name=totalCost"`
+	// The average amount of tokens served through the key
+	AverageTokens *int `json:"averageTokens,omitempty" protobuf:"bytes,6,opt,name=averageTokens"`
+	// The average amount of requests served through the key
+	AverageRequests *int `json:"averageRequests,omitempty" protobuf:"bytes,7,opt,name=averageRequests"`
+	// The average cost (in USD) for requests served through the key
+	AverageCost *float32 `json:"averageCost,omitempty" protobuf:"bytes,8,opt,name=averageCost"`
 }
 
 // APIKeyStatus contains the status of a single API key
 type APIKeyStatus struct {
 	// The unique name of the API key
 	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
-	// The date at which the
+	// The date at which the API key was created
 	CreationDate metav1.Time `json:"creationDate,omitempty" protobuf:"bytes,2,opt,name=creationDate"`
 	// The date at which the API key was last used
 	LastUsedDate *metav1.Time `json:"lastUsedDate,omitempty" protobuf:"bytes,3,opt,name=lastUsedDate"`
+	// The date at which a physical key string was last generated for the API key
+	GeneratedDate *metav1.Time `json:"generatedDate,omitempty" protobuf:"bytes,4,opt,name=generatedDate"`
 	// The time at which the quota limits for the API key were reached
-	QuotaExceededDate *metav1.Time `json:"quotaExceededDate,omitempty" protobuf:"bytes,4,opt,name=quotaExceededDate"`
-	// The time at which the quota for the key was last refreshed
-	QuotaRefreshedDate *metav1.Time `json:"quotaRefreshedDate,omitempty" protobuf:"bytes,5,opt,name=quotaRefreshedDate"`
-	// Indicates if an key string has been generated for the API key instance
-	KeyGenerated *bool `json:"keyGenerated,omitempty" protobuf:"bytes,6,opt,name=keyGenerated"`
+	QuotaExceededDate *metav1.Time `json:"quotaExceededDate,omitempty" protobuf:"bytes,5,opt,name=quotaExceededDate"`
+	// The time at which the quota for the key was last reset
+	QuotaResetDate *metav1.Time `json:"quotaResetDate,omitempty" protobuf:"bytes,6,opt,name=quotaResetDate"`
 	// The metrics collected for the API key
 	Metrics *APIKeyMetrics `json:"metrics,omitempty" protobuf:"bytes,7,opt,name=metrics"`
 }
@@ -122,13 +147,15 @@ type APIKeyGroupStatus struct {
 	// ObservedGeneration specifies the last generation that was reconciled
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
+	// The name of the connection which metadata for the API keys associated with the group are being stored
+	StorageConnectionName string `json:"storageConnectionName,omitempty" protobuf:"varint,2,opt,name=storageConnectionName"`
 	// The collection of statuses for all API keys associated with the group
-	APIKeys []APIKeyStatus `json:"apiKeys,omitempty" protobuf:"bytes,2,opt,name=apiKeys"`
+	APIKeys []APIKeyStatus `json:"apiKeys,omitempty" protobuf:"bytes,3,opt,name=apiKeys"`
 	// The last time the object was updated
 	//+kubebuilder:validation:Optional
-	UpdatedAt *metav1.Time `json:"updatedAt,omitempty" protobuf:"bytes,3,opt,name=updatedAt"`
+	UpdatedAt *metav1.Time `json:"updatedAt,omitempty" protobuf:"bytes,4,opt,name=updatedAt"`
 	// +kubebuilder:validation:Optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []metav1.Condition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,4,rep,name=conditions"`
+	Conditions []metav1.Condition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,5,rep,name=conditions"`
 }

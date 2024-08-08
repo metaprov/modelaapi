@@ -33,8 +33,10 @@ const (
 	PredictorKind     KindName = "predictors"
 	DataAppKind       KindName = "dataapps"
 
-	// LLM
+	// GenAI
 	KnowledgeBaseKind KindName = "knowledgebases"
+	LLMServerKind     KindName = "llmservers"
+	APIKeyGroupKind   KindName = "apikeygroups"
 
 	// Infra
 	AccountKind       KindName = "accounts"

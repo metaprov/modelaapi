@@ -28,6 +28,7 @@ type APIKeyGroupServiceClient interface {
 	UpdateAPIKeyGroup(ctx context.Context, in *UpdateAPIKeyGroupRequest, opts ...grpc.CallOption) (*UpdateAPIKeyGroupResponse, error)
 	DeleteAPIKeyGroup(ctx context.Context, in *DeleteAPIKeyGroupRequest, opts ...grpc.CallOption) (*DeleteAPIKeyGroupResponse, error)
 	GenerateAPIKey(ctx context.Context, in *CreateAPIKeyGroupRequest, opts ...grpc.CallOption) (*CreateAPIKeyGroupResponse, error)
+	RefreshAPIKeyGroup(ctx context.Context, in *RefreshAPIKeyGroupRequest, opts ...grpc.CallOption) (*RefreshAPIKeyGroupResponse, error)
 }
 
 type aPIKeyGroupServiceClient struct {
@@ -92,6 +93,15 @@ func (c *aPIKeyGroupServiceClient) GenerateAPIKey(ctx context.Context, in *Creat
 	return out, nil
 }
 
+func (c *aPIKeyGroupServiceClient) RefreshAPIKeyGroup(ctx context.Context, in *RefreshAPIKeyGroupRequest, opts ...grpc.CallOption) (*RefreshAPIKeyGroupResponse, error) {
+	out := new(RefreshAPIKeyGroupResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.apikeygroup.v1.APIKeyGroupService/RefreshAPIKeyGroup", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // APIKeyGroupServiceServer is the server API for APIKeyGroupService service.
 // All implementations must embed UnimplementedAPIKeyGroupServiceServer
 // for forward compatibility
@@ -102,6 +112,7 @@ type APIKeyGroupServiceServer interface {
 	UpdateAPIKeyGroup(context.Context, *UpdateAPIKeyGroupRequest) (*UpdateAPIKeyGroupResponse, error)
 	DeleteAPIKeyGroup(context.Context, *DeleteAPIKeyGroupRequest) (*DeleteAPIKeyGroupResponse, error)
 	GenerateAPIKey(context.Context, *CreateAPIKeyGroupRequest) (*CreateAPIKeyGroupResponse, error)
+	RefreshAPIKeyGroup(context.Context, *RefreshAPIKeyGroupRequest) (*RefreshAPIKeyGroupResponse, error)
 	mustEmbedUnimplementedAPIKeyGroupServiceServer()
 }
 
@@ -126,6 +137,9 @@ func (UnimplementedAPIKeyGroupServiceServer) DeleteAPIKeyGroup(context.Context, 
 }
 func (UnimplementedAPIKeyGroupServiceServer) GenerateAPIKey(context.Context, *CreateAPIKeyGroupRequest) (*CreateAPIKeyGroupResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GenerateAPIKey not implemented")
+}
+func (UnimplementedAPIKeyGroupServiceServer) RefreshAPIKeyGroup(context.Context, *RefreshAPIKeyGroupRequest) (*RefreshAPIKeyGroupResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RefreshAPIKeyGroup not implemented")
 }
 func (UnimplementedAPIKeyGroupServiceServer) mustEmbedUnimplementedAPIKeyGroupServiceServer() {}
 
@@ -248,6 +262,24 @@ func _APIKeyGroupService_GenerateAPIKey_Handler(srv interface{}, ctx context.Con
 	return interceptor(ctx, in, info, handler)
 }
 
+func _APIKeyGroupService_RefreshAPIKeyGroup_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RefreshAPIKeyGroupRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(APIKeyGroupServiceServer).RefreshAPIKeyGroup(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.apikeygroup.v1.APIKeyGroupService/RefreshAPIKeyGroup",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(APIKeyGroupServiceServer).RefreshAPIKeyGroup(ctx, req.(*RefreshAPIKeyGroupRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // APIKeyGroupService_ServiceDesc is the grpc.ServiceDesc for APIKeyGroupService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -278,6 +310,10 @@ var APIKeyGroupService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GenerateAPIKey",
 			Handler:    _APIKeyGroupService_GenerateAPIKey_Handler,
+		},
+		{
+			MethodName: "RefreshAPIKeyGroup",
+			Handler:    _APIKeyGroupService_RefreshAPIKeyGroup_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

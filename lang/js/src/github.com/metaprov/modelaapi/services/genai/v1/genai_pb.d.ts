@@ -8,11 +8,6 @@ export class RefreshRequest extends jspb.Message {
   getTenant(): string;
   setTenant(value: string): RefreshRequest;
 
-  getProduct(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
-  setProduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): RefreshRequest;
-  hasProduct(): boolean;
-  clearProduct(): RefreshRequest;
-
   getKnowledgebase(): github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb.KnowledgeBase | undefined;
   setKnowledgebase(value?: github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb.KnowledgeBase): RefreshRequest;
   hasKnowledgebase(): boolean;
@@ -29,7 +24,6 @@ export class RefreshRequest extends jspb.Message {
 export namespace RefreshRequest {
   export type AsObject = {
     tenant: string,
-    product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
     knowledgebase?: github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb.KnowledgeBase.AsObject,
   }
 }
@@ -118,38 +112,40 @@ export namespace RefreshResponse {
   }
 }
 
-export class DeleteRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): DeleteRequest;
+export class TeardownRequest extends jspb.Message {
+  getTenant(): string;
+  setTenant(value: string): TeardownRequest;
 
-  getName(): string;
-  setName(value: string): DeleteRequest;
+  getKnowledgebase(): github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb.KnowledgeBase | undefined;
+  setKnowledgebase(value?: github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb.KnowledgeBase): TeardownRequest;
+  hasKnowledgebase(): boolean;
+  clearKnowledgebase(): TeardownRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DeleteRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: DeleteRequest): DeleteRequest.AsObject;
-  static serializeBinaryToWriter(message: DeleteRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DeleteRequest;
-  static deserializeBinaryFromReader(message: DeleteRequest, reader: jspb.BinaryReader): DeleteRequest;
+  toObject(includeInstance?: boolean): TeardownRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: TeardownRequest): TeardownRequest.AsObject;
+  static serializeBinaryToWriter(message: TeardownRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TeardownRequest;
+  static deserializeBinaryFromReader(message: TeardownRequest, reader: jspb.BinaryReader): TeardownRequest;
 }
 
-export namespace DeleteRequest {
+export namespace TeardownRequest {
   export type AsObject = {
-    namespace: string,
-    name: string,
+    tenant: string,
+    knowledgebase?: github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb.KnowledgeBase.AsObject,
   }
 }
 
-export class DeleteResponse extends jspb.Message {
+export class TeardownResponse extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DeleteResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: DeleteResponse): DeleteResponse.AsObject;
-  static serializeBinaryToWriter(message: DeleteResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DeleteResponse;
-  static deserializeBinaryFromReader(message: DeleteResponse, reader: jspb.BinaryReader): DeleteResponse;
+  toObject(includeInstance?: boolean): TeardownResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: TeardownResponse): TeardownResponse.AsObject;
+  static serializeBinaryToWriter(message: TeardownResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TeardownResponse;
+  static deserializeBinaryFromReader(message: TeardownResponse, reader: jspb.BinaryReader): TeardownResponse;
 }
 
-export namespace DeleteResponse {
+export namespace TeardownResponse {
   export type AsObject = {
   }
 }

@@ -1645,6 +1645,11 @@ export class TenantSpec extends jspb.Message {
   hasCachebucketname(): boolean;
   clearCachebucketname(): TenantSpec;
 
+  getDatabaseconnectionname(): string;
+  setDatabaseconnectionname(value: string): TenantSpec;
+  hasDatabaseconnectionname(): boolean;
+  clearDatabaseconnectionname(): TenantSpec;
+
   getPermissions(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PermissionsSpec | undefined;
   setPermissions(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PermissionsSpec): TenantSpec;
   hasPermissions(): boolean;
@@ -1655,15 +1660,10 @@ export class TenantSpec extends jspb.Message {
   hasNotification(): boolean;
   clearNotification(): TenantSpec;
 
-  getOnlinestoreconnection(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setOnlinestoreconnection(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): TenantSpec;
-  hasOnlinestoreconnection(): boolean;
-  clearOnlinestoreconnection(): TenantSpec;
-
-  getMetricstoreconnection(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setMetricstoreconnection(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): TenantSpec;
-  hasMetricstoreconnection(): boolean;
-  clearMetricstoreconnection(): TenantSpec;
+  getMetricsenabled(): boolean;
+  setMetricsenabled(value: boolean): TenantSpec;
+  hasMetricsenabled(): boolean;
+  clearMetricsenabled(): TenantSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TenantSpec.AsObject;
@@ -1679,10 +1679,10 @@ export namespace TenantSpec {
     defaultservingsitename?: string,
     defaultbucketname?: string,
     cachebucketname?: string,
+    databaseconnectionname?: string,
     permissions?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PermissionsSpec.AsObject,
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
-    onlinestoreconnection?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    metricstoreconnection?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    metricsenabled?: boolean,
   }
 }
 
@@ -1696,11 +1696,6 @@ export class TenantStatus extends jspb.Message {
   setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): TenantStatus;
   hasUpdatedat(): boolean;
   clearUpdatedat(): TenantStatus;
-
-  getFailurereason(): string;
-  setFailurereason(value: string): TenantStatus;
-  hasFailurereason(): boolean;
-  clearFailurereason(): TenantStatus;
 
   getFailuremessage(): string;
   setFailuremessage(value: string): TenantStatus;
@@ -1724,7 +1719,6 @@ export namespace TenantStatus {
   export type AsObject = {
     observedgeneration?: number,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    failurereason?: string,
     failuremessage?: string,
     conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }

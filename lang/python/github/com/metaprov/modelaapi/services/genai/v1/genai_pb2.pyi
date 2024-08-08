@@ -8,14 +8,12 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class RefreshRequest(_message.Message):
-    __slots__ = ("tenant", "product", "knowledgeBase")
+    __slots__ = ("tenant", "knowledgeBase")
     TENANT_FIELD_NUMBER: _ClassVar[int]
-    PRODUCT_FIELD_NUMBER: _ClassVar[int]
     KNOWLEDGEBASE_FIELD_NUMBER: _ClassVar[int]
     tenant: str
-    product: _generated_pb2.DataProduct
     knowledgeBase: _generated_pb2_1.KnowledgeBase
-    def __init__(self, tenant: _Optional[str] = ..., product: _Optional[_Union[_generated_pb2.DataProduct, _Mapping]] = ..., knowledgeBase: _Optional[_Union[_generated_pb2_1.KnowledgeBase, _Mapping]] = ...) -> None: ...
+    def __init__(self, tenant: _Optional[str] = ..., knowledgeBase: _Optional[_Union[_generated_pb2_1.KnowledgeBase, _Mapping]] = ...) -> None: ...
 
 class DocumentStatusUpdate(_message.Message):
     __slots__ = ("delete", "name", "error", "status")
@@ -47,15 +45,15 @@ class RefreshResponse(_message.Message):
     index_statuses: _containers.RepeatedCompositeFieldContainer[IndexStatusUpdate]
     def __init__(self, document_statuses: _Optional[_Iterable[_Union[DocumentStatusUpdate, _Mapping]]] = ..., index_statuses: _Optional[_Iterable[_Union[IndexStatusUpdate, _Mapping]]] = ...) -> None: ...
 
-class DeleteRequest(_message.Message):
-    __slots__ = ("namespace", "name")
-    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    namespace: str
-    name: str
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
+class TeardownRequest(_message.Message):
+    __slots__ = ("tenant", "knowledgeBase")
+    TENANT_FIELD_NUMBER: _ClassVar[int]
+    KNOWLEDGEBASE_FIELD_NUMBER: _ClassVar[int]
+    tenant: str
+    knowledgeBase: _generated_pb2_1.KnowledgeBase
+    def __init__(self, tenant: _Optional[str] = ..., knowledgeBase: _Optional[_Union[_generated_pb2_1.KnowledgeBase, _Mapping]] = ...) -> None: ...
 
-class DeleteResponse(_message.Message):
+class TeardownResponse(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 

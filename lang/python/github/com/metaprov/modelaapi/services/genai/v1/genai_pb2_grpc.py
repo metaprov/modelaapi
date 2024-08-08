@@ -5,7 +5,7 @@ import grpc
 from github.com.metaprov.modelaapi.services.genai.v1 import genai_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_genai_dot_v1_dot_genai__pb2
 
 
-class LLMServiceStub(object):
+class GenAIServiceStub(object):
     """Missing associated documentation comment in .proto file."""
 
     def __init__(self, channel):
@@ -15,23 +15,23 @@ class LLMServiceStub(object):
             channel: A grpc.Channel.
         """
         self.Refresh = channel.unary_unary(
-                '/LLMService/Refresh',
+                '/GenAIService/Refresh',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_genai_dot_v1_dot_genai__pb2.RefreshRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_genai_dot_v1_dot_genai__pb2.RefreshResponse.FromString,
                 )
-        self.Delete = channel.unary_unary(
-                '/LLMService/Delete',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_genai_dot_v1_dot_genai__pb2.DeleteRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_genai_dot_v1_dot_genai__pb2.DeleteResponse.FromString,
+        self.Teardown = channel.unary_unary(
+                '/GenAIService/Teardown',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_genai_dot_v1_dot_genai__pb2.TeardownRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_genai_dot_v1_dot_genai__pb2.TeardownResponse.FromString,
                 )
         self.Shutdown = channel.unary_unary(
-                '/LLMService/Shutdown',
+                '/GenAIService/Shutdown',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_genai_dot_v1_dot_genai__pb2.ShutdownRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_genai_dot_v1_dot_genai__pb2.ShutdownResponse.FromString,
                 )
 
 
-class LLMServiceServicer(object):
+class GenAIServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def Refresh(self, request, context):
@@ -40,7 +40,7 @@ class LLMServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def Delete(self, request, context):
+    def Teardown(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -53,17 +53,17 @@ class LLMServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
 
-def add_LLMServiceServicer_to_server(servicer, server):
+def add_GenAIServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'Refresh': grpc.unary_unary_rpc_method_handler(
                     servicer.Refresh,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_genai_dot_v1_dot_genai__pb2.RefreshRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_genai_dot_v1_dot_genai__pb2.RefreshResponse.SerializeToString,
             ),
-            'Delete': grpc.unary_unary_rpc_method_handler(
-                    servicer.Delete,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_genai_dot_v1_dot_genai__pb2.DeleteRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_genai_dot_v1_dot_genai__pb2.DeleteResponse.SerializeToString,
+            'Teardown': grpc.unary_unary_rpc_method_handler(
+                    servicer.Teardown,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_genai_dot_v1_dot_genai__pb2.TeardownRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_genai_dot_v1_dot_genai__pb2.TeardownResponse.SerializeToString,
             ),
             'Shutdown': grpc.unary_unary_rpc_method_handler(
                     servicer.Shutdown,
@@ -72,12 +72,12 @@ def add_LLMServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'LLMService', rpc_method_handlers)
+            'GenAIService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
  # This class is part of an EXPERIMENTAL API.
-class LLMService(object):
+class GenAIService(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
@@ -91,14 +91,14 @@ class LLMService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/LLMService/Refresh',
+        return grpc.experimental.unary_unary(request, target, '/GenAIService/Refresh',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_genai_dot_v1_dot_genai__pb2.RefreshRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_genai_dot_v1_dot_genai__pb2.RefreshResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def Delete(request,
+    def Teardown(request,
             target,
             options=(),
             channel_credentials=None,
@@ -108,9 +108,9 @@ class LLMService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/LLMService/Delete',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_genai_dot_v1_dot_genai__pb2.DeleteRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_genai_dot_v1_dot_genai__pb2.DeleteResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/GenAIService/Teardown',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_genai_dot_v1_dot_genai__pb2.TeardownRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_genai_dot_v1_dot_genai__pb2.TeardownResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -125,7 +125,7 @@ class LLMService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/LLMService/Shutdown',
+        return grpc.experimental.unary_unary(request, target, '/GenAIService/Shutdown',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_genai_dot_v1_dot_genai__pb2.ShutdownRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_genai_dot_v1_dot_genai__pb2.ShutdownResponse.FromString,
             options, channel_credentials,

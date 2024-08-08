@@ -79,7 +79,7 @@ service KnowledgeBaseService {
 
     rpc UpdateKnowledgeBase(UpdateKnowledgeBaseRequest) returns (UpdateKnowledgeBaseResponse) {
         option (google.api.http) = {
-            put: "/v1/knowledgebases/{knowledgebase.metadata.namespace}/{knowledgebase.metadata.name}"
+            put: "/v1/knowledgebases/{knowledgeBase.metadata.namespace}/{knowledgeBase.metadata.name}"
             body: "*"
         };
     }

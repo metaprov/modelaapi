@@ -547,38 +547,36 @@ class TenantList(_message.Message):
     def __init__(self, metadata: _Optional[_Union[_generated_pb2_1_1_1.ListMeta, _Mapping]] = ..., items: _Optional[_Iterable[_Union[Tenant, _Mapping]]] = ...) -> None: ...
 
 class TenantSpec(_message.Message):
-    __slots__ = ("defaultLabName", "defaultServingSiteName", "defaultBucketName", "cacheBucketName", "permissions", "notification", "onlineStoreConnection", "metricStoreConnection")
+    __slots__ = ("defaultLabName", "defaultServingSiteName", "defaultBucketName", "cacheBucketName", "databaseConnectionName", "permissions", "notification", "metricsEnabled")
     DEFAULTLABNAME_FIELD_NUMBER: _ClassVar[int]
     DEFAULTSERVINGSITENAME_FIELD_NUMBER: _ClassVar[int]
     DEFAULTBUCKETNAME_FIELD_NUMBER: _ClassVar[int]
     CACHEBUCKETNAME_FIELD_NUMBER: _ClassVar[int]
+    DATABASECONNECTIONNAME_FIELD_NUMBER: _ClassVar[int]
     PERMISSIONS_FIELD_NUMBER: _ClassVar[int]
     NOTIFICATION_FIELD_NUMBER: _ClassVar[int]
-    ONLINESTORECONNECTION_FIELD_NUMBER: _ClassVar[int]
-    METRICSTORECONNECTION_FIELD_NUMBER: _ClassVar[int]
+    METRICSENABLED_FIELD_NUMBER: _ClassVar[int]
     defaultLabName: str
     defaultServingSiteName: str
     defaultBucketName: str
     cacheBucketName: str
+    databaseConnectionName: str
     permissions: _generated_pb2.PermissionsSpec
     notification: _generated_pb2.NotificationSpec
-    onlineStoreConnection: _generated_pb2_1.ObjectReference
-    metricStoreConnection: _generated_pb2_1.ObjectReference
-    def __init__(self, defaultLabName: _Optional[str] = ..., defaultServingSiteName: _Optional[str] = ..., defaultBucketName: _Optional[str] = ..., cacheBucketName: _Optional[str] = ..., permissions: _Optional[_Union[_generated_pb2.PermissionsSpec, _Mapping]] = ..., notification: _Optional[_Union[_generated_pb2.NotificationSpec, _Mapping]] = ..., onlineStoreConnection: _Optional[_Union[_generated_pb2_1.ObjectReference, _Mapping]] = ..., metricStoreConnection: _Optional[_Union[_generated_pb2_1.ObjectReference, _Mapping]] = ...) -> None: ...
+    metricsEnabled: bool
+    def __init__(self, defaultLabName: _Optional[str] = ..., defaultServingSiteName: _Optional[str] = ..., defaultBucketName: _Optional[str] = ..., cacheBucketName: _Optional[str] = ..., databaseConnectionName: _Optional[str] = ..., permissions: _Optional[_Union[_generated_pb2.PermissionsSpec, _Mapping]] = ..., notification: _Optional[_Union[_generated_pb2.NotificationSpec, _Mapping]] = ..., metricsEnabled: bool = ...) -> None: ...
 
 class TenantStatus(_message.Message):
-    __slots__ = ("observedGeneration", "updatedAt", "failureReason", "failureMessage", "conditions")
+    __slots__ = ("observedGeneration", "updatedAt", "failureMessage", "conditions")
     OBSERVEDGENERATION_FIELD_NUMBER: _ClassVar[int]
     UPDATEDAT_FIELD_NUMBER: _ClassVar[int]
-    FAILUREREASON_FIELD_NUMBER: _ClassVar[int]
     FAILUREMESSAGE_FIELD_NUMBER: _ClassVar[int]
     CONDITIONS_FIELD_NUMBER: _ClassVar[int]
     observedGeneration: int
     updatedAt: _generated_pb2_1_1_1.Time
-    failureReason: str
     failureMessage: str
     conditions: _containers.RepeatedCompositeFieldContainer[_generated_pb2_1_1_1.Condition]
-    def __init__(self, observedGeneration: _Optional[int] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1_1.Time, _Mapping]] = ..., failureReason: _Optional[str] = ..., failureMessage: _Optional[str] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1_1.Condition, _Mapping]]] = ...) -> None: ...
+    def __init__(self, observedGeneration: _Optional[int] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1_1.Time, _Mapping]] = ..., failureMessage: _Optional[str] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1_1.Condition, _Mapping]]] = ...) -> None: ...
 
 class UserRoleClass(_message.Message):
     __slots__ = ("metadata", "spec")

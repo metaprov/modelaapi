@@ -82,17 +82,31 @@ class DeleteAPIKeyGroupResponse(_message.Message):
     def __init__(self) -> None: ...
 
 class GenerateAPIKeyRequest(_message.Message):
-    __slots__ = ("namespace", "name", "keyName")
+    __slots__ = ("tenant", "namespace", "name", "keyName")
+    TENANT_FIELD_NUMBER: _ClassVar[int]
     NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     KEYNAME_FIELD_NUMBER: _ClassVar[int]
+    tenant: str
     namespace: str
     name: str
     keyName: str
-    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ..., keyName: _Optional[str] = ...) -> None: ...
+    def __init__(self, tenant: _Optional[str] = ..., namespace: _Optional[str] = ..., name: _Optional[str] = ..., keyName: _Optional[str] = ...) -> None: ...
 
 class GenerateAPIKeyResponse(_message.Message):
     __slots__ = ("apiKey",)
     APIKEY_FIELD_NUMBER: _ClassVar[int]
     apiKey: str
     def __init__(self, apiKey: _Optional[str] = ...) -> None: ...
+
+class RefreshAPIKeyGroupRequest(_message.Message):
+    __slots__ = ("namespace", "name")
+    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    namespace: str
+    name: str
+    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
+
+class RefreshAPIKeyGroupResponse(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...

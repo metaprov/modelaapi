@@ -297,5 +297,48 @@ export class APIKeyGroupServiceClient {
     this.methodDescriptorGenerateAPIKey);
   }
 
+  methodDescriptorRefreshAPIKeyGroup = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.apikeygroup.v1.APIKeyGroupService/RefreshAPIKeyGroup',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_apikeygroup_v1_apikeygroup_pb.RefreshAPIKeyGroupRequest,
+    github_com_metaprov_modelaapi_services_apikeygroup_v1_apikeygroup_pb.RefreshAPIKeyGroupResponse,
+    (request: github_com_metaprov_modelaapi_services_apikeygroup_v1_apikeygroup_pb.RefreshAPIKeyGroupRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_apikeygroup_v1_apikeygroup_pb.RefreshAPIKeyGroupResponse.deserializeBinary
+  );
+
+  refreshAPIKeyGroup(
+    request: github_com_metaprov_modelaapi_services_apikeygroup_v1_apikeygroup_pb.RefreshAPIKeyGroupRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_apikeygroup_v1_apikeygroup_pb.RefreshAPIKeyGroupResponse>;
+
+  refreshAPIKeyGroup(
+    request: github_com_metaprov_modelaapi_services_apikeygroup_v1_apikeygroup_pb.RefreshAPIKeyGroupRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_apikeygroup_v1_apikeygroup_pb.RefreshAPIKeyGroupResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_apikeygroup_v1_apikeygroup_pb.RefreshAPIKeyGroupResponse>;
+
+  refreshAPIKeyGroup(
+    request: github_com_metaprov_modelaapi_services_apikeygroup_v1_apikeygroup_pb.RefreshAPIKeyGroupRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_apikeygroup_v1_apikeygroup_pb.RefreshAPIKeyGroupResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.apikeygroup.v1.APIKeyGroupService/RefreshAPIKeyGroup',
+        request,
+        metadata || {},
+        this.methodDescriptorRefreshAPIKeyGroup,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.apikeygroup.v1.APIKeyGroupService/RefreshAPIKeyGroup',
+    request,
+    metadata || {},
+    this.methodDescriptorRefreshAPIKeyGroup);
+  }
+
 }
 

@@ -120,7 +120,8 @@ const (
 	IngestFeatureGroupTask       TaskName = "ingest-feature-group"
 	GenTrainingDatasetTask       TaskName = "gen-training-dataset"
 
-	RefreshKnowledgeBaseTask TaskName = "refresh-knowledgebase"
+	RefreshKnowledgeBaseTask  TaskName = "refresh-knowledgebase"
+	TeardownKnowledgeBaseTask TaskName = "teardown-knowledgebase"
 )
 
 // SecretKeyName is the secret or in env variable
@@ -1197,6 +1198,20 @@ const (
 )
 
 //==============================================================================
+// Aggregation Period
+//==============================================================================
+
+// +kubebuilder:validation:Enum="hourly";"daily";"weekly";"monthly"
+type MetricAggregationPeriod string
+
+const (
+	HourlyMetricAggregationPeriod  MetricAggregationPeriod = "hourly"
+	DailyMetricAggregationPeriod   MetricAggregationPeriod = "daily"
+	WeeklyMetricAggregationPeriod  MetricAggregationPeriod = "weekly"
+	MonthlyMetricAggregationPeriod MetricAggregationPeriod = "monthly"
+)
+
+//==============================================================================
 // Condition Reason
 //==============================================================================
 
@@ -1822,8 +1837,10 @@ const (
 	OwnerKindLabelKey     = "modela.ai/owner-kind"
 	OwnerLabelKey         = "modela.ai/owner"
 
-	// LLM
+	// GenAI
 	KnowledgeBaseLabelKey = "modela.ai/knowledgebase"
+	LLMServerLabelKey     = "modela.ai/llmserver"
+	APIKeyGroupLabelKey   = "modela.ai/apikeygroup"
 
 	ModelRoleLabelKey    = "modela.ai/role"
 	ModelVersionLabelKey = "modela.ai/modelversion"

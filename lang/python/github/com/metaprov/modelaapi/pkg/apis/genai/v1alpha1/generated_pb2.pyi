@@ -29,58 +29,70 @@ class APIKeyGroupList(_message.Message):
     def __init__(self, metadata: _Optional[_Union[_generated_pb2_1_1.ListMeta, _Mapping]] = ..., items: _Optional[_Iterable[_Union[APIKeyGroup, _Mapping]]] = ...) -> None: ...
 
 class APIKeyGroupSpec(_message.Message):
-    __slots__ = ("owner", "description", "allowedServerNames", "allowedEndpointNames", "apiKeys")
+    __slots__ = ("owner", "description", "storage", "allowedServerNames", "allowedEndpointNames", "apiKeys")
     OWNER_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
+    STORAGE_FIELD_NUMBER: _ClassVar[int]
     ALLOWEDSERVERNAMES_FIELD_NUMBER: _ClassVar[int]
     ALLOWEDENDPOINTNAMES_FIELD_NUMBER: _ClassVar[int]
     APIKEYS_FIELD_NUMBER: _ClassVar[int]
     owner: str
     description: str
+    storage: APIKeyGroupStorageSpec
     allowedServerNames: _containers.RepeatedScalarFieldContainer[str]
     allowedEndpointNames: _containers.RepeatedScalarFieldContainer[str]
     apiKeys: _containers.RepeatedCompositeFieldContainer[APIKeySpec]
-    def __init__(self, owner: _Optional[str] = ..., description: _Optional[str] = ..., allowedServerNames: _Optional[_Iterable[str]] = ..., allowedEndpointNames: _Optional[_Iterable[str]] = ..., apiKeys: _Optional[_Iterable[_Union[APIKeySpec, _Mapping]]] = ...) -> None: ...
+    def __init__(self, owner: _Optional[str] = ..., description: _Optional[str] = ..., storage: _Optional[_Union[APIKeyGroupStorageSpec, _Mapping]] = ..., allowedServerNames: _Optional[_Iterable[str]] = ..., allowedEndpointNames: _Optional[_Iterable[str]] = ..., apiKeys: _Optional[_Iterable[_Union[APIKeySpec, _Mapping]]] = ...) -> None: ...
 
 class APIKeyGroupStatus(_message.Message):
-    __slots__ = ("observedGeneration", "apiKeys", "updatedAt", "conditions")
+    __slots__ = ("observedGeneration", "storageConnectionName", "apiKeys", "updatedAt", "conditions")
     OBSERVEDGENERATION_FIELD_NUMBER: _ClassVar[int]
+    STORAGECONNECTIONNAME_FIELD_NUMBER: _ClassVar[int]
     APIKEYS_FIELD_NUMBER: _ClassVar[int]
     UPDATEDAT_FIELD_NUMBER: _ClassVar[int]
     CONDITIONS_FIELD_NUMBER: _ClassVar[int]
     observedGeneration: int
+    storageConnectionName: str
     apiKeys: _containers.RepeatedCompositeFieldContainer[APIKeyStatus]
     updatedAt: _generated_pb2_1_1.Time
     conditions: _containers.RepeatedCompositeFieldContainer[_generated_pb2_1_1.Condition]
-    def __init__(self, observedGeneration: _Optional[int] = ..., apiKeys: _Optional[_Iterable[_Union[APIKeyStatus, _Mapping]]] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1.Condition, _Mapping]]] = ...) -> None: ...
+    def __init__(self, observedGeneration: _Optional[int] = ..., storageConnectionName: _Optional[str] = ..., apiKeys: _Optional[_Iterable[_Union[APIKeyStatus, _Mapping]]] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1.Condition, _Mapping]]] = ...) -> None: ...
+
+class APIKeyGroupStorageSpec(_message.Message):
+    __slots__ = ("type", "connectionName")
+    TYPE_FIELD_NUMBER: _ClassVar[int]
+    CONNECTIONNAME_FIELD_NUMBER: _ClassVar[int]
+    type: str
+    connectionName: str
+    def __init__(self, type: _Optional[str] = ..., connectionName: _Optional[str] = ...) -> None: ...
 
 class APIKeyMetrics(_message.Message):
-    __slots__ = ("totalTokens", "totalRequests", "totalCost", "averageDailyTokens", "averageDailyRequests", "averageDailyCost")
+    __slots__ = ("quota", "totalTokens", "totalRequests", "totalCost", "aggregationPeriod", "averageTokens", "averageRequests", "averageCost")
+    QUOTA_FIELD_NUMBER: _ClassVar[int]
     TOTALTOKENS_FIELD_NUMBER: _ClassVar[int]
     TOTALREQUESTS_FIELD_NUMBER: _ClassVar[int]
     TOTALCOST_FIELD_NUMBER: _ClassVar[int]
-    AVERAGEDAILYTOKENS_FIELD_NUMBER: _ClassVar[int]
-    AVERAGEDAILYREQUESTS_FIELD_NUMBER: _ClassVar[int]
-    AVERAGEDAILYCOST_FIELD_NUMBER: _ClassVar[int]
+    AGGREGATIONPERIOD_FIELD_NUMBER: _ClassVar[int]
+    AVERAGETOKENS_FIELD_NUMBER: _ClassVar[int]
+    AVERAGEREQUESTS_FIELD_NUMBER: _ClassVar[int]
+    AVERAGECOST_FIELD_NUMBER: _ClassVar[int]
+    quota: Quota
     totalTokens: int
     totalRequests: int
     totalCost: float
-    averageDailyTokens: int
-    averageDailyRequests: int
-    averageDailyCost: float
-    def __init__(self, totalTokens: _Optional[int] = ..., totalRequests: _Optional[int] = ..., totalCost: _Optional[float] = ..., averageDailyTokens: _Optional[int] = ..., averageDailyRequests: _Optional[int] = ..., averageDailyCost: _Optional[float] = ...) -> None: ...
+    aggregationPeriod: str
+    averageTokens: int
+    averageRequests: int
+    averageCost: float
+    def __init__(self, quota: _Optional[_Union[Quota, _Mapping]] = ..., totalTokens: _Optional[int] = ..., totalRequests: _Optional[int] = ..., totalCost: _Optional[float] = ..., aggregationPeriod: _Optional[str] = ..., averageTokens: _Optional[int] = ..., averageRequests: _Optional[int] = ..., averageCost: _Optional[float] = ...) -> None: ...
 
 class APIKeyQuota(_message.Message):
-    __slots__ = ("tokens", "requests", "cost", "resetSchedule")
-    TOKENS_FIELD_NUMBER: _ClassVar[int]
-    REQUESTS_FIELD_NUMBER: _ClassVar[int]
-    COST_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("quota", "resetSchedule")
+    QUOTA_FIELD_NUMBER: _ClassVar[int]
     RESETSCHEDULE_FIELD_NUMBER: _ClassVar[int]
-    tokens: int
-    requests: int
-    cost: float
+    quota: Quota
     resetSchedule: _generated_pb2.RunSchedule
-    def __init__(self, tokens: _Optional[int] = ..., requests: _Optional[int] = ..., cost: _Optional[float] = ..., resetSchedule: _Optional[_Union[_generated_pb2.RunSchedule, _Mapping]] = ...) -> None: ...
+    def __init__(self, quota: _Optional[_Union[Quota, _Mapping]] = ..., resetSchedule: _Optional[_Union[_generated_pb2.RunSchedule, _Mapping]] = ...) -> None: ...
 
 class APIKeySpec(_message.Message):
     __slots__ = ("name", "allowedServerNames", "allowedEndpointNames", "quota")
@@ -95,22 +107,22 @@ class APIKeySpec(_message.Message):
     def __init__(self, name: _Optional[str] = ..., allowedServerNames: _Optional[_Iterable[str]] = ..., allowedEndpointNames: _Optional[_Iterable[str]] = ..., quota: _Optional[_Union[APIKeyQuota, _Mapping]] = ...) -> None: ...
 
 class APIKeyStatus(_message.Message):
-    __slots__ = ("name", "creationDate", "lastUsedDate", "quotaExceededDate", "quotaRefreshedDate", "keyGenerated", "metrics")
+    __slots__ = ("name", "creationDate", "lastUsedDate", "generatedDate", "quotaExceededDate", "quotaResetDate", "metrics")
     NAME_FIELD_NUMBER: _ClassVar[int]
     CREATIONDATE_FIELD_NUMBER: _ClassVar[int]
     LASTUSEDDATE_FIELD_NUMBER: _ClassVar[int]
+    GENERATEDDATE_FIELD_NUMBER: _ClassVar[int]
     QUOTAEXCEEDEDDATE_FIELD_NUMBER: _ClassVar[int]
-    QUOTAREFRESHEDDATE_FIELD_NUMBER: _ClassVar[int]
-    KEYGENERATED_FIELD_NUMBER: _ClassVar[int]
+    QUOTARESETDATE_FIELD_NUMBER: _ClassVar[int]
     METRICS_FIELD_NUMBER: _ClassVar[int]
     name: str
     creationDate: _generated_pb2_1_1.Time
     lastUsedDate: _generated_pb2_1_1.Time
+    generatedDate: _generated_pb2_1_1.Time
     quotaExceededDate: _generated_pb2_1_1.Time
-    quotaRefreshedDate: _generated_pb2_1_1.Time
-    keyGenerated: bool
+    quotaResetDate: _generated_pb2_1_1.Time
     metrics: APIKeyMetrics
-    def __init__(self, name: _Optional[str] = ..., creationDate: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., lastUsedDate: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., quotaExceededDate: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., quotaRefreshedDate: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., keyGenerated: bool = ..., metrics: _Optional[_Union[APIKeyMetrics, _Mapping]] = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., creationDate: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., lastUsedDate: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., generatedDate: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., quotaExceededDate: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., quotaResetDate: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., metrics: _Optional[_Union[APIKeyMetrics, _Mapping]] = ...) -> None: ...
 
 class AutoVectorRetrieverSpec(_message.Message):
     __slots__ = ("enabled", "model", "maxTopK", "metadataInfo")
@@ -607,7 +619,7 @@ class LLMServerList(_message.Message):
     def __init__(self, metadata: _Optional[_Union[_generated_pb2_1_1.ListMeta, _Mapping]] = ..., items: _Optional[_Iterable[_Union[LLMServer, _Mapping]]] = ...) -> None: ...
 
 class LLMServerSpec(_message.Message):
-    __slots__ = ("owner", "description", "servingSiteName", "resources", "endpoints", "queryEngines", "retrievers", "authorization", "notification")
+    __slots__ = ("owner", "description", "servingSiteName", "resources", "endpoints", "queryEngines", "retrievers", "access", "authorization", "notification")
     OWNER_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     SERVINGSITENAME_FIELD_NUMBER: _ClassVar[int]
@@ -615,6 +627,7 @@ class LLMServerSpec(_message.Message):
     ENDPOINTS_FIELD_NUMBER: _ClassVar[int]
     QUERYENGINES_FIELD_NUMBER: _ClassVar[int]
     RETRIEVERS_FIELD_NUMBER: _ClassVar[int]
+    ACCESS_FIELD_NUMBER: _ClassVar[int]
     AUTHORIZATION_FIELD_NUMBER: _ClassVar[int]
     NOTIFICATION_FIELD_NUMBER: _ClassVar[int]
     owner: str
@@ -624,9 +637,10 @@ class LLMServerSpec(_message.Message):
     endpoints: _containers.RepeatedCompositeFieldContainer[EndpointSpec]
     queryEngines: _containers.RepeatedCompositeFieldContainer[QueryEngineSpec]
     retrievers: _containers.RepeatedCompositeFieldContainer[RetrieverSpec]
+    access: LLMServerAccessSpec
     authorization: LLMServerAuthorizationSpec
     notification: _generated_pb2.NotificationSpec
-    def __init__(self, owner: _Optional[str] = ..., description: _Optional[str] = ..., servingSiteName: _Optional[str] = ..., resources: _Optional[_Union[_generated_pb2.ResourceSpec, _Mapping]] = ..., endpoints: _Optional[_Iterable[_Union[EndpointSpec, _Mapping]]] = ..., queryEngines: _Optional[_Iterable[_Union[QueryEngineSpec, _Mapping]]] = ..., retrievers: _Optional[_Iterable[_Union[RetrieverSpec, _Mapping]]] = ..., authorization: _Optional[_Union[LLMServerAuthorizationSpec, _Mapping]] = ..., notification: _Optional[_Union[_generated_pb2.NotificationSpec, _Mapping]] = ...) -> None: ...
+    def __init__(self, owner: _Optional[str] = ..., description: _Optional[str] = ..., servingSiteName: _Optional[str] = ..., resources: _Optional[_Union[_generated_pb2.ResourceSpec, _Mapping]] = ..., endpoints: _Optional[_Iterable[_Union[EndpointSpec, _Mapping]]] = ..., queryEngines: _Optional[_Iterable[_Union[QueryEngineSpec, _Mapping]]] = ..., retrievers: _Optional[_Iterable[_Union[RetrieverSpec, _Mapping]]] = ..., access: _Optional[_Union[LLMServerAccessSpec, _Mapping]] = ..., authorization: _Optional[_Union[LLMServerAuthorizationSpec, _Mapping]] = ..., notification: _Optional[_Union[_generated_pb2.NotificationSpec, _Mapping]] = ...) -> None: ...
 
 class LLMStatus(_message.Message):
     __slots__ = ("observedGeneration", "endpoints", "endpoint", "deployedAt", "deploymentRef", "serviceRef", "failureMessage", "updatedAt", "conditions")
@@ -773,6 +787,16 @@ class QueryEngineToolSpec(_message.Message):
     name: str
     description: str
     def __init__(self, queryEngine: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ...) -> None: ...
+
+class Quota(_message.Message):
+    __slots__ = ("tokens", "requests", "cost")
+    TOKENS_FIELD_NUMBER: _ClassVar[int]
+    REQUESTS_FIELD_NUMBER: _ClassVar[int]
+    COST_FIELD_NUMBER: _ClassVar[int]
+    tokens: int
+    requests: int
+    cost: float
+    def __init__(self, tokens: _Optional[int] = ..., requests: _Optional[int] = ..., cost: _Optional[float] = ...) -> None: ...
 
 class RepositoryFileReader(_message.Message):
     __slots__ = ("extension", "extensions", "reader")

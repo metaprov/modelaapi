@@ -76,6 +76,11 @@ export class APIKeyGroupSpec extends jspb.Message {
   hasDescription(): boolean;
   clearDescription(): APIKeyGroupSpec;
 
+  getStorage(): APIKeyGroupStorageSpec | undefined;
+  setStorage(value?: APIKeyGroupStorageSpec): APIKeyGroupSpec;
+  hasStorage(): boolean;
+  clearStorage(): APIKeyGroupSpec;
+
   getAllowedservernamesList(): Array<string>;
   setAllowedservernamesList(value: Array<string>): APIKeyGroupSpec;
   clearAllowedservernamesList(): APIKeyGroupSpec;
@@ -103,6 +108,7 @@ export namespace APIKeyGroupSpec {
   export type AsObject = {
     owner?: string,
     description?: string,
+    storage?: APIKeyGroupStorageSpec.AsObject,
     allowedservernamesList: Array<string>,
     allowedendpointnamesList: Array<string>,
     apikeysList: Array<APIKeySpec.AsObject>,
@@ -114,6 +120,11 @@ export class APIKeyGroupStatus extends jspb.Message {
   setObservedgeneration(value: number): APIKeyGroupStatus;
   hasObservedgeneration(): boolean;
   clearObservedgeneration(): APIKeyGroupStatus;
+
+  getStorageconnectionname(): string;
+  setStorageconnectionname(value: string): APIKeyGroupStatus;
+  hasStorageconnectionname(): boolean;
+  clearStorageconnectionname(): APIKeyGroupStatus;
 
   getApikeysList(): Array<APIKeyStatus>;
   setApikeysList(value: Array<APIKeyStatus>): APIKeyGroupStatus;
@@ -141,13 +152,45 @@ export class APIKeyGroupStatus extends jspb.Message {
 export namespace APIKeyGroupStatus {
   export type AsObject = {
     observedgeneration?: number,
+    storageconnectionname?: string,
     apikeysList: Array<APIKeyStatus.AsObject>,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
   }
 }
 
+export class APIKeyGroupStorageSpec extends jspb.Message {
+  getType(): string;
+  setType(value: string): APIKeyGroupStorageSpec;
+  hasType(): boolean;
+  clearType(): APIKeyGroupStorageSpec;
+
+  getConnectionname(): string;
+  setConnectionname(value: string): APIKeyGroupStorageSpec;
+  hasConnectionname(): boolean;
+  clearConnectionname(): APIKeyGroupStorageSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): APIKeyGroupStorageSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: APIKeyGroupStorageSpec): APIKeyGroupStorageSpec.AsObject;
+  static serializeBinaryToWriter(message: APIKeyGroupStorageSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): APIKeyGroupStorageSpec;
+  static deserializeBinaryFromReader(message: APIKeyGroupStorageSpec, reader: jspb.BinaryReader): APIKeyGroupStorageSpec;
+}
+
+export namespace APIKeyGroupStorageSpec {
+  export type AsObject = {
+    type?: string,
+    connectionname?: string,
+  }
+}
+
 export class APIKeyMetrics extends jspb.Message {
+  getQuota(): Quota | undefined;
+  setQuota(value?: Quota): APIKeyMetrics;
+  hasQuota(): boolean;
+  clearQuota(): APIKeyMetrics;
+
   getTotaltokens(): number;
   setTotaltokens(value: number): APIKeyMetrics;
   hasTotaltokens(): boolean;
@@ -163,20 +206,25 @@ export class APIKeyMetrics extends jspb.Message {
   hasTotalcost(): boolean;
   clearTotalcost(): APIKeyMetrics;
 
-  getAveragedailytokens(): number;
-  setAveragedailytokens(value: number): APIKeyMetrics;
-  hasAveragedailytokens(): boolean;
-  clearAveragedailytokens(): APIKeyMetrics;
+  getAggregationperiod(): string;
+  setAggregationperiod(value: string): APIKeyMetrics;
+  hasAggregationperiod(): boolean;
+  clearAggregationperiod(): APIKeyMetrics;
 
-  getAveragedailyrequests(): number;
-  setAveragedailyrequests(value: number): APIKeyMetrics;
-  hasAveragedailyrequests(): boolean;
-  clearAveragedailyrequests(): APIKeyMetrics;
+  getAveragetokens(): number;
+  setAveragetokens(value: number): APIKeyMetrics;
+  hasAveragetokens(): boolean;
+  clearAveragetokens(): APIKeyMetrics;
 
-  getAveragedailycost(): number;
-  setAveragedailycost(value: number): APIKeyMetrics;
-  hasAveragedailycost(): boolean;
-  clearAveragedailycost(): APIKeyMetrics;
+  getAveragerequests(): number;
+  setAveragerequests(value: number): APIKeyMetrics;
+  hasAveragerequests(): boolean;
+  clearAveragerequests(): APIKeyMetrics;
+
+  getAveragecost(): number;
+  setAveragecost(value: number): APIKeyMetrics;
+  hasAveragecost(): boolean;
+  clearAveragecost(): APIKeyMetrics;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): APIKeyMetrics.AsObject;
@@ -188,30 +236,22 @@ export class APIKeyMetrics extends jspb.Message {
 
 export namespace APIKeyMetrics {
   export type AsObject = {
+    quota?: Quota.AsObject,
     totaltokens?: number,
     totalrequests?: number,
     totalcost?: number,
-    averagedailytokens?: number,
-    averagedailyrequests?: number,
-    averagedailycost?: number,
+    aggregationperiod?: string,
+    averagetokens?: number,
+    averagerequests?: number,
+    averagecost?: number,
   }
 }
 
 export class APIKeyQuota extends jspb.Message {
-  getTokens(): number;
-  setTokens(value: number): APIKeyQuota;
-  hasTokens(): boolean;
-  clearTokens(): APIKeyQuota;
-
-  getRequests(): number;
-  setRequests(value: number): APIKeyQuota;
-  hasRequests(): boolean;
-  clearRequests(): APIKeyQuota;
-
-  getCost(): number;
-  setCost(value: number): APIKeyQuota;
-  hasCost(): boolean;
-  clearCost(): APIKeyQuota;
+  getQuota(): Quota | undefined;
+  setQuota(value?: Quota): APIKeyQuota;
+  hasQuota(): boolean;
+  clearQuota(): APIKeyQuota;
 
   getResetschedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
   setResetschedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): APIKeyQuota;
@@ -228,9 +268,7 @@ export class APIKeyQuota extends jspb.Message {
 
 export namespace APIKeyQuota {
   export type AsObject = {
-    tokens?: number,
-    requests?: number,
-    cost?: number,
+    quota?: Quota.AsObject,
     resetschedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
   }
 }
@@ -289,20 +327,20 @@ export class APIKeyStatus extends jspb.Message {
   hasLastuseddate(): boolean;
   clearLastuseddate(): APIKeyStatus;
 
+  getGenerateddate(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setGenerateddate(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): APIKeyStatus;
+  hasGenerateddate(): boolean;
+  clearGenerateddate(): APIKeyStatus;
+
   getQuotaexceededdate(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setQuotaexceededdate(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): APIKeyStatus;
   hasQuotaexceededdate(): boolean;
   clearQuotaexceededdate(): APIKeyStatus;
 
-  getQuotarefresheddate(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setQuotarefresheddate(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): APIKeyStatus;
-  hasQuotarefresheddate(): boolean;
-  clearQuotarefresheddate(): APIKeyStatus;
-
-  getKeygenerated(): boolean;
-  setKeygenerated(value: boolean): APIKeyStatus;
-  hasKeygenerated(): boolean;
-  clearKeygenerated(): APIKeyStatus;
+  getQuotaresetdate(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setQuotaresetdate(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): APIKeyStatus;
+  hasQuotaresetdate(): boolean;
+  clearQuotaresetdate(): APIKeyStatus;
 
   getMetrics(): APIKeyMetrics | undefined;
   setMetrics(value?: APIKeyMetrics): APIKeyStatus;
@@ -322,9 +360,9 @@ export namespace APIKeyStatus {
     name?: string,
     creationdate?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     lastuseddate?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    generateddate?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     quotaexceededdate?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    quotarefresheddate?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    keygenerated?: boolean,
+    quotaresetdate?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     metrics?: APIKeyMetrics.AsObject,
   }
 }
@@ -1835,6 +1873,11 @@ export class LLMServerSpec extends jspb.Message {
   clearRetrieversList(): LLMServerSpec;
   addRetrievers(value?: RetrieverSpec, index?: number): RetrieverSpec;
 
+  getAccess(): LLMServerAccessSpec | undefined;
+  setAccess(value?: LLMServerAccessSpec): LLMServerSpec;
+  hasAccess(): boolean;
+  clearAccess(): LLMServerSpec;
+
   getAuthorization(): LLMServerAuthorizationSpec | undefined;
   setAuthorization(value?: LLMServerAuthorizationSpec): LLMServerSpec;
   hasAuthorization(): boolean;
@@ -1862,6 +1905,7 @@ export namespace LLMServerSpec {
     endpointsList: Array<EndpointSpec.AsObject>,
     queryenginesList: Array<QueryEngineSpec.AsObject>,
     retrieversList: Array<RetrieverSpec.AsObject>,
+    access?: LLMServerAccessSpec.AsObject,
     authorization?: LLMServerAuthorizationSpec.AsObject,
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
   }
@@ -2328,6 +2372,38 @@ export namespace QueryEngineToolSpec {
     queryengine?: string,
     name?: string,
     description?: string,
+  }
+}
+
+export class Quota extends jspb.Message {
+  getTokens(): number;
+  setTokens(value: number): Quota;
+  hasTokens(): boolean;
+  clearTokens(): Quota;
+
+  getRequests(): number;
+  setRequests(value: number): Quota;
+  hasRequests(): boolean;
+  clearRequests(): Quota;
+
+  getCost(): number;
+  setCost(value: number): Quota;
+  hasCost(): boolean;
+  clearCost(): Quota;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Quota.AsObject;
+  static toObject(includeInstance: boolean, msg: Quota): Quota.AsObject;
+  static serializeBinaryToWriter(message: Quota, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Quota;
+  static deserializeBinaryFromReader(message: Quota, reader: jspb.BinaryReader): Quota;
+}
+
+export namespace Quota {
+  export type AsObject = {
+    tokens?: number,
+    requests?: number,
+    cost?: number,
   }
 }
 

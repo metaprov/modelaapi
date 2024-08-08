@@ -10,10 +10,12 @@ type KnowledgeBaseConditionType string
 const (
 	KnowledgeBaseSaved     KnowledgeBaseConditionType = "Saved"
 	KnowledgeBaseRefreshed KnowledgeBaseConditionType = "Refreshed"
+	KnowledgeBaseRemoved   KnowledgeBaseConditionType = "Removed"
 )
 
 const (
 	RefreshingReason = "Refreshing"
+	RemovingReason   = "Removing"
 )
 
 // +k8s:openapi-gen=true

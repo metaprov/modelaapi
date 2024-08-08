@@ -52,6 +52,40 @@ spec:
           spec:
             description: LLMServerSpec specifies the configuration of the LLM server
             properties:
+              access:
+                description: The specification for the LLM Server service to be exposed
+                  and accessed externally
+                properties:
+                  accessType:
+                    default: cluster-ip
+                    description: The Kubernetes-native access method which specifies
+                      how the Kubernetes Service created by the Predictor will be
+                      exposed. See https://modela.ai/docs/docs/serving/production/#access-method
+                      for a detailed description of each access type
+                    enum:
+                    - cluster-ip
+                    - node-port
+                    - load-balancer
+                    - ingress
+                    type: string
+                  nodePort:
+                    description: The port number that will be exposed on the external
+                      address of every node on the cluster, in the case of the AccessType
+                      being equal to NodePort. Traffic from the port will be forwarded
+                      to the LLMServer deployment
+                    format: int32
+                    maximum: 65535
+                    minimum: 0
+                    type: integer
+                  port:
+                    default: 8080
+                    description: The port number that will be exposed by the Kubernetes
+                      Service to serve requests
+                    format: int32
+                    maximum: 65535
+                    minimum: 1024
+                    type: integer
+                type: object
               authorization:
                 description: The security configuration for the LLMServer, which determines
                   how incoming requests are authorized
@@ -1050,7 +1084,9 @@ spec:
                 type: object
                 x-kubernetes-map-type: atomic
               endpoint:
-                description: Endpoint contains the URL where the proxy server is exposed
+                description: Endpoint contains the URL where the proxy server is exposed.
+                  An endpoint will only be exposed in the case that the server is
+                  bound to an Ingress resource
                 type: string
               endpoints:
                 description: Endpoints contains the collection of statuses for each

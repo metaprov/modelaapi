@@ -18,158 +18,158 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// LLMServiceClient is the client API for LLMService service.
+// GenAIServiceClient is the client API for GenAIService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type LLMServiceClient interface {
+type GenAIServiceClient interface {
 	Refresh(ctx context.Context, in *RefreshRequest, opts ...grpc.CallOption) (*RefreshResponse, error)
-	Delete(ctx context.Context, in *DeleteRequest, opts ...grpc.CallOption) (*DeleteResponse, error)
+	Teardown(ctx context.Context, in *TeardownRequest, opts ...grpc.CallOption) (*TeardownResponse, error)
 	Shutdown(ctx context.Context, in *ShutdownRequest, opts ...grpc.CallOption) (*ShutdownResponse, error)
 }
 
-type lLMServiceClient struct {
+type genAIServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewLLMServiceClient(cc grpc.ClientConnInterface) LLMServiceClient {
-	return &lLMServiceClient{cc}
+func NewGenAIServiceClient(cc grpc.ClientConnInterface) GenAIServiceClient {
+	return &genAIServiceClient{cc}
 }
 
-func (c *lLMServiceClient) Refresh(ctx context.Context, in *RefreshRequest, opts ...grpc.CallOption) (*RefreshResponse, error) {
+func (c *genAIServiceClient) Refresh(ctx context.Context, in *RefreshRequest, opts ...grpc.CallOption) (*RefreshResponse, error) {
 	out := new(RefreshResponse)
-	err := c.cc.Invoke(ctx, "/LLMService/Refresh", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/GenAIService/Refresh", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *lLMServiceClient) Delete(ctx context.Context, in *DeleteRequest, opts ...grpc.CallOption) (*DeleteResponse, error) {
-	out := new(DeleteResponse)
-	err := c.cc.Invoke(ctx, "/LLMService/Delete", in, out, opts...)
+func (c *genAIServiceClient) Teardown(ctx context.Context, in *TeardownRequest, opts ...grpc.CallOption) (*TeardownResponse, error) {
+	out := new(TeardownResponse)
+	err := c.cc.Invoke(ctx, "/GenAIService/Teardown", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *lLMServiceClient) Shutdown(ctx context.Context, in *ShutdownRequest, opts ...grpc.CallOption) (*ShutdownResponse, error) {
+func (c *genAIServiceClient) Shutdown(ctx context.Context, in *ShutdownRequest, opts ...grpc.CallOption) (*ShutdownResponse, error) {
 	out := new(ShutdownResponse)
-	err := c.cc.Invoke(ctx, "/LLMService/Shutdown", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/GenAIService/Shutdown", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// LLMServiceServer is the server API for LLMService service.
-// All implementations must embed UnimplementedLLMServiceServer
+// GenAIServiceServer is the server API for GenAIService service.
+// All implementations must embed UnimplementedGenAIServiceServer
 // for forward compatibility
-type LLMServiceServer interface {
+type GenAIServiceServer interface {
 	Refresh(context.Context, *RefreshRequest) (*RefreshResponse, error)
-	Delete(context.Context, *DeleteRequest) (*DeleteResponse, error)
+	Teardown(context.Context, *TeardownRequest) (*TeardownResponse, error)
 	Shutdown(context.Context, *ShutdownRequest) (*ShutdownResponse, error)
-	mustEmbedUnimplementedLLMServiceServer()
+	mustEmbedUnimplementedGenAIServiceServer()
 }
 
-// UnimplementedLLMServiceServer must be embedded to have forward compatible implementations.
-type UnimplementedLLMServiceServer struct {
+// UnimplementedGenAIServiceServer must be embedded to have forward compatible implementations.
+type UnimplementedGenAIServiceServer struct {
 }
 
-func (UnimplementedLLMServiceServer) Refresh(context.Context, *RefreshRequest) (*RefreshResponse, error) {
+func (UnimplementedGenAIServiceServer) Refresh(context.Context, *RefreshRequest) (*RefreshResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Refresh not implemented")
 }
-func (UnimplementedLLMServiceServer) Delete(context.Context, *DeleteRequest) (*DeleteResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Delete not implemented")
+func (UnimplementedGenAIServiceServer) Teardown(context.Context, *TeardownRequest) (*TeardownResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Teardown not implemented")
 }
-func (UnimplementedLLMServiceServer) Shutdown(context.Context, *ShutdownRequest) (*ShutdownResponse, error) {
+func (UnimplementedGenAIServiceServer) Shutdown(context.Context, *ShutdownRequest) (*ShutdownResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Shutdown not implemented")
 }
-func (UnimplementedLLMServiceServer) mustEmbedUnimplementedLLMServiceServer() {}
+func (UnimplementedGenAIServiceServer) mustEmbedUnimplementedGenAIServiceServer() {}
 
-// UnsafeLLMServiceServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to LLMServiceServer will
+// UnsafeGenAIServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to GenAIServiceServer will
 // result in compilation errors.
-type UnsafeLLMServiceServer interface {
-	mustEmbedUnimplementedLLMServiceServer()
+type UnsafeGenAIServiceServer interface {
+	mustEmbedUnimplementedGenAIServiceServer()
 }
 
-func RegisterLLMServiceServer(s grpc.ServiceRegistrar, srv LLMServiceServer) {
-	s.RegisterService(&LLMService_ServiceDesc, srv)
+func RegisterGenAIServiceServer(s grpc.ServiceRegistrar, srv GenAIServiceServer) {
+	s.RegisterService(&GenAIService_ServiceDesc, srv)
 }
 
-func _LLMService_Refresh_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _GenAIService_Refresh_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(RefreshRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(LLMServiceServer).Refresh(ctx, in)
+		return srv.(GenAIServiceServer).Refresh(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/LLMService/Refresh",
+		FullMethod: "/GenAIService/Refresh",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LLMServiceServer).Refresh(ctx, req.(*RefreshRequest))
+		return srv.(GenAIServiceServer).Refresh(ctx, req.(*RefreshRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LLMService_Delete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteRequest)
+func _GenAIService_Teardown_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(TeardownRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(LLMServiceServer).Delete(ctx, in)
+		return srv.(GenAIServiceServer).Teardown(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/LLMService/Delete",
+		FullMethod: "/GenAIService/Teardown",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LLMServiceServer).Delete(ctx, req.(*DeleteRequest))
+		return srv.(GenAIServiceServer).Teardown(ctx, req.(*TeardownRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LLMService_Shutdown_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _GenAIService_Shutdown_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ShutdownRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(LLMServiceServer).Shutdown(ctx, in)
+		return srv.(GenAIServiceServer).Shutdown(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/LLMService/Shutdown",
+		FullMethod: "/GenAIService/Shutdown",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LLMServiceServer).Shutdown(ctx, req.(*ShutdownRequest))
+		return srv.(GenAIServiceServer).Shutdown(ctx, req.(*ShutdownRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// LLMService_ServiceDesc is the grpc.ServiceDesc for LLMService service.
+// GenAIService_ServiceDesc is the grpc.ServiceDesc for GenAIService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var LLMService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "LLMService",
-	HandlerType: (*LLMServiceServer)(nil),
+var GenAIService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "GenAIService",
+	HandlerType: (*GenAIServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "Refresh",
-			Handler:    _LLMService_Refresh_Handler,
+			Handler:    _GenAIService_Refresh_Handler,
 		},
 		{
-			MethodName: "Delete",
-			Handler:    _LLMService_Delete_Handler,
+			MethodName: "Teardown",
+			Handler:    _GenAIService_Teardown_Handler,
 		},
 		{
 			MethodName: "Shutdown",
-			Handler:    _LLMService_Shutdown_Handler,
+			Handler:    _GenAIService_Shutdown_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

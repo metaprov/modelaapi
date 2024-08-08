@@ -531,7 +531,7 @@ proto.github.com.metaprov.modelaapi.services.llmserver.v1.ListLLMServersResponse
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerList llmservers = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerList llmServers = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServerList}
  */
 proto.github.com.metaprov.modelaapi.services.llmserver.v1.ListLLMServersResponse.prototype.getLlmservers = function() {
@@ -700,7 +700,7 @@ proto.github.com.metaprov.modelaapi.services.llmserver.v1.CreateLLMServerRequest
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer llmserver = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer llmServer = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer}
  */
 proto.github.com.metaprov.modelaapi.services.llmserver.v1.CreateLLMServerRequest.prototype.getLlmserver = function() {
@@ -966,7 +966,7 @@ proto.github.com.metaprov.modelaapi.services.llmserver.v1.UpdateLLMServerRequest
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer llmserver = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer llmServer = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer}
  */
 proto.github.com.metaprov.modelaapi.services.llmserver.v1.UpdateLLMServerRequest.prototype.getLlmserver = function() {
@@ -1427,7 +1427,7 @@ proto.github.com.metaprov.modelaapi.services.llmserver.v1.GetLLMServerResponse.s
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer llmserver = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer llmServer = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.LLMServer}
  */
 proto.github.com.metaprov.modelaapi.services.llmserver.v1.GetLLMServerResponse.prototype.getLlmserver = function() {

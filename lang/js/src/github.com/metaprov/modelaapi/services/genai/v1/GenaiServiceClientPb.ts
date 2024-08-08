@@ -20,7 +20,7 @@ import * as grpcWeb from 'grpc-web';
 import * as github_com_metaprov_modelaapi_services_genai_v1_genai_pb from '../../../../../../github.com/metaprov/modelaapi/services/genai/v1/genai_pb';
 
 
-export class LLMServiceClient {
+export class GenAIServiceClient {
   client_: grpcWeb.AbstractClientBase;
   hostname_: string;
   credentials_: null | { [index: string]: string; };
@@ -40,7 +40,7 @@ export class LLMServiceClient {
   }
 
   methodDescriptorRefresh = new grpcWeb.MethodDescriptor(
-    '/LLMService/Refresh',
+    '/GenAIService/Refresh',
     grpcWeb.MethodType.UNARY,
     github_com_metaprov_modelaapi_services_genai_v1_genai_pb.RefreshRequest,
     github_com_metaprov_modelaapi_services_genai_v1_genai_pb.RefreshResponse,
@@ -68,7 +68,7 @@ export class LLMServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/LLMService/Refresh',
+          '/GenAIService/Refresh',
         request,
         metadata || {},
         this.methodDescriptorRefresh,
@@ -76,57 +76,57 @@ export class LLMServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/LLMService/Refresh',
+      '/GenAIService/Refresh',
     request,
     metadata || {},
     this.methodDescriptorRefresh);
   }
 
-  methodDescriptorDelete = new grpcWeb.MethodDescriptor(
-    '/LLMService/Delete',
+  methodDescriptorTeardown = new grpcWeb.MethodDescriptor(
+    '/GenAIService/Teardown',
     grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_genai_v1_genai_pb.DeleteRequest,
-    github_com_metaprov_modelaapi_services_genai_v1_genai_pb.DeleteResponse,
-    (request: github_com_metaprov_modelaapi_services_genai_v1_genai_pb.DeleteRequest) => {
+    github_com_metaprov_modelaapi_services_genai_v1_genai_pb.TeardownRequest,
+    github_com_metaprov_modelaapi_services_genai_v1_genai_pb.TeardownResponse,
+    (request: github_com_metaprov_modelaapi_services_genai_v1_genai_pb.TeardownRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modelaapi_services_genai_v1_genai_pb.DeleteResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_genai_v1_genai_pb.TeardownResponse.deserializeBinary
   );
 
-  delete(
-    request: github_com_metaprov_modelaapi_services_genai_v1_genai_pb.DeleteRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_genai_v1_genai_pb.DeleteResponse>;
+  teardown(
+    request: github_com_metaprov_modelaapi_services_genai_v1_genai_pb.TeardownRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_genai_v1_genai_pb.TeardownResponse>;
 
-  delete(
-    request: github_com_metaprov_modelaapi_services_genai_v1_genai_pb.DeleteRequest,
+  teardown(
+    request: github_com_metaprov_modelaapi_services_genai_v1_genai_pb.TeardownRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_genai_v1_genai_pb.DeleteResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_genai_v1_genai_pb.DeleteResponse>;
+               response: github_com_metaprov_modelaapi_services_genai_v1_genai_pb.TeardownResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_genai_v1_genai_pb.TeardownResponse>;
 
-  delete(
-    request: github_com_metaprov_modelaapi_services_genai_v1_genai_pb.DeleteRequest,
+  teardown(
+    request: github_com_metaprov_modelaapi_services_genai_v1_genai_pb.TeardownRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_genai_v1_genai_pb.DeleteResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_genai_v1_genai_pb.TeardownResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/LLMService/Delete',
+          '/GenAIService/Teardown',
         request,
         metadata || {},
-        this.methodDescriptorDelete,
+        this.methodDescriptorTeardown,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/LLMService/Delete',
+      '/GenAIService/Teardown',
     request,
     metadata || {},
-    this.methodDescriptorDelete);
+    this.methodDescriptorTeardown);
   }
 
   methodDescriptorShutdown = new grpcWeb.MethodDescriptor(
-    '/LLMService/Shutdown',
+    '/GenAIService/Shutdown',
     grpcWeb.MethodType.UNARY,
     github_com_metaprov_modelaapi_services_genai_v1_genai_pb.ShutdownRequest,
     github_com_metaprov_modelaapi_services_genai_v1_genai_pb.ShutdownResponse,
@@ -154,7 +154,7 @@ export class LLMServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/LLMService/Shutdown',
+          '/GenAIService/Shutdown',
         request,
         metadata || {},
         this.methodDescriptorShutdown,
@@ -162,7 +162,7 @@ export class LLMServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/LLMService/Shutdown',
+      '/GenAIService/Shutdown',
     request,
     metadata || {},
     this.methodDescriptorShutdown);

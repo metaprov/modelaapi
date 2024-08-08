@@ -55,15 +55,22 @@ message DeleteAPIKeyGroupResponse {}
 
 
 message GenerateAPIKeyRequest {
-  string namespace = 1;
-  string name      = 2;
-  string keyName   = 3;
+  string tenant    = 1;
+  string namespace = 2;
+  string name      = 3;
+  string keyName   = 4;
 }
 
 message GenerateAPIKeyResponse {
   string apiKey = 1;
 }
 
+message RefreshAPIKeyGroupRequest {
+  string namespace = 1;
+  string name      = 2;
+}
+
+message RefreshAPIKeyGroupResponse {}
 
 service APIKeyGroupService {
   rpc ListAPIKeyGroups(ListAPIKeyGroupsRequest) returns (ListAPIKeyGroupsResponse) {
@@ -94,8 +101,12 @@ service APIKeyGroupService {
 
   rpc GenerateAPIKey(CreateAPIKeyGroupRequest) returns (CreateAPIKeyGroupResponse) {
     option (google.api.http) = {
-      post: "/v1/apikeygroups"
+      post: "/v1/apikeygroups/{namespace/{name}:generate"
       body: "*"
     };
+  }
+
+  rpc RefreshAPIKeyGroup(RefreshAPIKeyGroupRequest) returns (RefreshAPIKeyGroupResponse) {
+    option (google.api.http).get = "/v1/apikeygroups/{namespace}/{name}:refresh";
   }
 }
