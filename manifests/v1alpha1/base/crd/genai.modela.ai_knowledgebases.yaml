@@ -320,6 +320,7 @@ spec:
                           description: The maximum of number of keywords that can
                             be extracted from each node. If unspecified, default to
                             10
+                          format: int64
                           type: integer
                         mode:
                           description: The index mode, which determines how keywords
@@ -482,8 +483,7 @@ spec:
                                         description: The default text value, if one
                                           could not be extracted from the nodes. If
                                           unspecified, the column will be left null
-                                        format: int32
-                                        type: integer
+                                        type: string
                                       extractionMode:
                                         description: The method to use for determining
                                           the final text extracted from all nodes.
@@ -523,6 +523,7 @@ spec:
                         children:
                           description: The number of children each node should have.
                             If unspecified, default to 10
+                          format: int64
                           type: integer
                         model:
                           description: The LLM to use when summarizing and inserting
@@ -740,6 +741,7 @@ spec:
                                     hierarchy. When unspecified, default to 2048,
                                     512, and 128
                                   items:
+                                    format: int64
                                     type: integer
                                   type: array
                                 enabled:
@@ -793,6 +795,7 @@ spec:
                                     hierarchy. When unspecified, default to 2048,
                                     512, and 128
                                   items:
+                                    format: int64
                                     type: integer
                                   type: array
                                 enabled:

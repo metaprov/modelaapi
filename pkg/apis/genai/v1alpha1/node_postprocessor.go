@@ -48,7 +48,7 @@ type SentenceEmbeddingOptimizerSpec struct {
 
 type LLMRerankSpec struct {
 	// The top number of nodes to return. If unspecified, default to 10
-	TopN *int `json:"topN,omitempty" protobuf:"bytes,1,opt,name=topN"`
+	TopN *int64 `json:"topN,omitempty" protobuf:"bytes,1,opt,name=topN"`
 	// The LLM to use for re-ranking. If unspecified, use the default provided by the parent specification
 	Model *ModelSpec `json:"model,omitempty" protobuf:"bytes,2,opt,name=model"`
 	// Indicates if the RankGPT technique for re-ranking will be used
@@ -59,12 +59,12 @@ type CohereRerankSpec struct {
 	// The connection to Cohere
 	ConnectionName string `json:"connectionName,omitempty" protobuf:"bytes,1,opt,name=connectionName"`
 	// The top number of nodes to return. If unspecified, default to 2
-	TopN *int `json:"topN,omitempty" protobuf:"bytes,2,opt,name=topN"`
+	TopN *int64 `json:"topN,omitempty" protobuf:"bytes,2,opt,name=topN"`
 }
 
 type FixedRecencyPostProcessorSpec struct {
 	// The top most recent nodes to return. If unspecified, default to 1
-	TopK *int `json:"topK,omitempty" protobuf:"bytes,1,opt,name=topK"`
+	TopK *int64 `json:"topK,omitempty" protobuf:"bytes,1,opt,name=topK"`
 }
 
 type EmbeddingRecencyPostProcessorSpec struct {
@@ -76,7 +76,7 @@ type EmbeddingRecencyPostProcessorSpec struct {
 
 type TimeWeightedRecencyPostProcessorSpec struct {
 	// The top most recent nodes to return. If unspecified, default to 1
-	TopK *int `json:"topN,omitempty" protobuf:"bytes,1,opt,name=topN"`
+	TopK *int64 `json:"topN,omitempty" protobuf:"bytes,1,opt,name=topN"`
 	// The rate at which the time similarity of a node decays. If unspecified, default 0.1
 	TimeDecay *float32 `json:"timeDecay,omitempty" protobuf:"bytes,2,opt,name=timeDecay"`
 	// Indicates if the time of last access will be weighted instead of the time of creation.

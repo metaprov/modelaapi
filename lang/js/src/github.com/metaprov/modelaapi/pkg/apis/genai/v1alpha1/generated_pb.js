@@ -2,18 +2,15 @@
 /**
  * @fileoverview
  * @enhanceable
- * @suppress {missingRequire} reports error on implicit type usages.
  * @suppress {messageConventions} JS Compiler reports an error if a variable or
  *     field starts with 'MSG_' and isn't a translatable message.
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
-/* eslint-disable */
-// @ts-nocheck
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
+var global = Function('return this')();
 
 var github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb = require('../../../../../../../github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1/generated_pb.js');
 goog.object.extend(proto, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb);
@@ -2880,7 +2877,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupSpec.prot
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.repeatedFields_ = [3,5];
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.repeatedFields_ = [6,8];
 
 
 
@@ -2915,6 +2912,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.to
   var f, obj = {
     observedgeneration: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     storageconnectionname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    totaltokens: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    totalrequests: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    totalcost: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     apikeysList: jspb.Message.toObjectList(msg.getApikeysList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus.toObject, includeInstance),
     updatedat: (f = msg.getUpdatedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
@@ -2965,16 +2965,28 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.de
       msg.setStorageconnectionname(value);
       break;
     case 3:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setTotaltokens(value);
+      break;
+    case 4:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setTotalrequests(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setTotalcost(value);
+      break;
+    case 6:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus.deserializeBinaryFromReader);
       msg.addApikeys(value);
       break;
-    case 4:
+    case 7:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
       msg.setUpdatedat(value);
       break;
-    case 5:
+    case 8:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -3022,10 +3034,31 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.se
       f
     );
   }
+  f = /** @type {number} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeInt64(
+      3,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeInt64(
+      4,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeInt64(
+      5,
+      f
+    );
+  }
   f = message.getApikeysList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      3,
+      6,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus.serializeBinaryToWriter
     );
@@ -3033,7 +3066,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.se
   f = message.getUpdatedat();
   if (f != null) {
     writer.writeMessage(
-      4,
+      7,
       f,
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
@@ -3041,7 +3074,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.se
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      5,
+      8,
       f,
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.serializeBinaryToWriter
     );
@@ -3122,12 +3155,120 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.pr
 
 
 /**
- * repeated APIKeyStatus apiKeys = 3;
+ * optional int64 totalTokens = 3;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.prototype.getTotaltokens = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.prototype.setTotaltokens = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.prototype.clearTotaltokens = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.prototype.hasTotaltokens = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional int64 totalRequests = 4;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.prototype.getTotalrequests = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.prototype.setTotalrequests = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.prototype.clearTotalrequests = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.prototype.hasTotalrequests = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional int64 totalCost = 5;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.prototype.getTotalcost = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.prototype.setTotalcost = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.prototype.clearTotalcost = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.prototype.hasTotalcost = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * repeated APIKeyStatus apiKeys = 6;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.prototype.getApikeysList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus, 3));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus, 6));
 };
 
 
@@ -3136,7 +3277,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.pr
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.prototype.setApikeysList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 3, value);
+  return jspb.Message.setRepeatedWrapperField(this, 6, value);
 };
 
 
@@ -3146,7 +3287,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.pr
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.prototype.addApikeys = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyStatus, opt_index);
 };
 
 
@@ -3160,12 +3301,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.pr
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 4;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 7;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.prototype.getUpdatedat = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 4));
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 7));
 };
 
 
@@ -3174,7 +3315,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.pr
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.prototype.setUpdatedat = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+  return jspb.Message.setWrapperField(this, 7, value);
 };
 
 
@@ -3192,17 +3333,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.pr
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.prototype.hasUpdatedat = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
 /**
- * repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 5;
+ * repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 8;
  * @return {!Array<!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition, 5));
+    jspb.Message.getRepeatedWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition, 8));
 };
 
 
@@ -3211,7 +3352,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.pr
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 5, value);
+  return jspb.Message.setRepeatedWrapperField(this, 8, value);
 };
 
 
@@ -3221,7 +3362,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.pr
  * @return {!proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyGroupStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 8, opt_value, proto.k8s.io.apimachinery.pkg.apis.meta.v1.Condition, opt_index);
 };
 
 
@@ -3462,14 +3603,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.protot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.toObject = function(includeInstance, msg) {
   var f, obj = {
-    quota: (f = msg.getQuota()) && proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Quota.toObject(includeInstance, f),
+    usage: (f = msg.getUsage()) && proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Quota.toObject(includeInstance, f),
     totaltokens: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     totalrequests: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    totalcost: (f = jspb.Message.getOptionalFloatingPointField(msg, 4)) == null ? undefined : f,
-    aggregationperiod: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
-    averagetokens: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
-    averagerequests: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
-    averagecost: (f = jspb.Message.getOptionalFloatingPointField(msg, 8)) == null ? undefined : f
+    totalcost: (f = jspb.Message.getOptionalFloatingPointField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3509,7 +3646,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.deseri
     case 1:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Quota;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Quota.deserializeBinaryFromReader);
-      msg.setQuota(value);
+      msg.setUsage(value);
       break;
     case 2:
       var value = /** @type {number} */ (reader.readInt64());
@@ -3522,22 +3659,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.deseri
     case 4:
       var value = /** @type {number} */ (reader.readFloat());
       msg.setTotalcost(value);
-      break;
-    case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setAggregationperiod(value);
-      break;
-    case 6:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setAveragetokens(value);
-      break;
-    case 7:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setAveragerequests(value);
-      break;
-    case 8:
-      var value = /** @type {number} */ (reader.readFloat());
-      msg.setAveragecost(value);
       break;
     default:
       reader.skipField();
@@ -3568,7 +3689,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.protot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getQuota();
+  f = message.getUsage();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -3597,42 +3718,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.serial
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 5));
-  if (f != null) {
-    writer.writeString(
-      5,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 6));
-  if (f != null) {
-    writer.writeInt64(
-      6,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 7));
-  if (f != null) {
-    writer.writeInt64(
-      7,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 8));
-  if (f != null) {
-    writer.writeFloat(
-      8,
-      f
-    );
-  }
 };
 
 
 /**
- * optional Quota quota = 1;
+ * optional Quota usage = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Quota}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.prototype.getQuota = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.prototype.getUsage = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Quota} */ (
     jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Quota, 1));
 };
@@ -3642,7 +3735,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.protot
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.Quota|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.prototype.setQuota = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.prototype.setUsage = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -3651,8 +3744,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.protot
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.prototype.clearQuota = function() {
-  return this.setQuota(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.prototype.clearUsage = function() {
+  return this.setUsage(undefined);
 };
 
 
@@ -3660,7 +3753,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.prototype.hasQuota = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.prototype.hasUsage = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -3770,150 +3863,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.protot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.prototype.hasTotalcost = function() {
   return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * optional string aggregationPeriod = 5;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.prototype.getAggregationperiod = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.prototype.setAggregationperiod = function(value) {
-  return jspb.Message.setField(this, 5, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.prototype.clearAggregationperiod = function() {
-  return jspb.Message.setField(this, 5, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.prototype.hasAggregationperiod = function() {
-  return jspb.Message.getField(this, 5) != null;
-};
-
-
-/**
- * optional int64 averageTokens = 6;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.prototype.getAveragetokens = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.prototype.setAveragetokens = function(value) {
-  return jspb.Message.setField(this, 6, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.prototype.clearAveragetokens = function() {
-  return jspb.Message.setField(this, 6, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.prototype.hasAveragetokens = function() {
-  return jspb.Message.getField(this, 6) != null;
-};
-
-
-/**
- * optional int64 averageRequests = 7;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.prototype.getAveragerequests = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.prototype.setAveragerequests = function(value) {
-  return jspb.Message.setField(this, 7, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.prototype.clearAveragerequests = function() {
-  return jspb.Message.setField(this, 7, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.prototype.hasAveragerequests = function() {
-  return jspb.Message.getField(this, 7) != null;
-};
-
-
-/**
- * optional float averageCost = 8;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.prototype.getAveragecost = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 8, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.prototype.setAveragecost = function(value) {
-  return jspb.Message.setField(this, 8, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.prototype.clearAveragecost = function() {
-  return jspb.Message.setField(this, 8, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.APIKeyMetrics.prototype.hasAveragecost = function() {
-  return jspb.Message.getField(this, 8) != null;
 };
 
 
@@ -11451,10 +11400,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.HierarchicalSplitter
       msg.setEnabled(value);
       break;
     case 4:
-      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt64() : [reader.readInt64()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addChunksizes(values[i]);
-      }
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.addChunksizes(value);
       break;
     default:
       reader.skipField();
@@ -25618,7 +25565,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec.deserialize
       msg.setConcatenationstring(value);
       break;
     case 5:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setDefault(value);
       break;
     default:
@@ -25671,9 +25618,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec.serializeBi
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 5));
+  f = /** @type {string} */ (jspb.Message.getField(message, 5));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeString(
       5,
       f
     );
@@ -25790,16 +25737,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec.prototype.h
 
 
 /**
- * optional int32 default = 5;
- * @return {number}
+ * optional string default = 5;
+ * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec.prototype.getDefault = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.TextSpec.prototype.setDefault = function(value) {

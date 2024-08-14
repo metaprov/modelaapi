@@ -32,10 +32,10 @@ from setuptools import find_packages
 ## Basic information
 ## Basic information
 NAME         = "modelaapi"
-DESCRIPTION  = "A suite of automatic machine learning for kubernetes"
-AUTHOR       = "The modelaapi developers"
-EMAIL        = "info@modela.ai"
-MAINTAINER   = "The modela developers"
+DESCRIPTION  = "A platform for AutoML and GenAI on Kubernetes"
+AUTHOR       = "The Modela Authors"
+EMAIL        = "liam@metaprov.com"
+MAINTAINER   = "Liam Sagi"
 LICENSE      = "Apache 2"
 REPOSITORY   = "https://github.com/metaprov/modelaapi"
 PACKAGE      = "modelaapi"

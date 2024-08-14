@@ -126,6 +126,21 @@ export class APIKeyGroupStatus extends jspb.Message {
   hasStorageconnectionname(): boolean;
   clearStorageconnectionname(): APIKeyGroupStatus;
 
+  getTotaltokens(): number;
+  setTotaltokens(value: number): APIKeyGroupStatus;
+  hasTotaltokens(): boolean;
+  clearTotaltokens(): APIKeyGroupStatus;
+
+  getTotalrequests(): number;
+  setTotalrequests(value: number): APIKeyGroupStatus;
+  hasTotalrequests(): boolean;
+  clearTotalrequests(): APIKeyGroupStatus;
+
+  getTotalcost(): number;
+  setTotalcost(value: number): APIKeyGroupStatus;
+  hasTotalcost(): boolean;
+  clearTotalcost(): APIKeyGroupStatus;
+
   getApikeysList(): Array<APIKeyStatus>;
   setApikeysList(value: Array<APIKeyStatus>): APIKeyGroupStatus;
   clearApikeysList(): APIKeyGroupStatus;
@@ -153,6 +168,9 @@ export namespace APIKeyGroupStatus {
   export type AsObject = {
     observedgeneration?: number,
     storageconnectionname?: string,
+    totaltokens?: number,
+    totalrequests?: number,
+    totalcost?: number,
     apikeysList: Array<APIKeyStatus.AsObject>,
     updatedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition.AsObject>,
@@ -186,10 +204,10 @@ export namespace APIKeyGroupStorageSpec {
 }
 
 export class APIKeyMetrics extends jspb.Message {
-  getQuota(): Quota | undefined;
-  setQuota(value?: Quota): APIKeyMetrics;
-  hasQuota(): boolean;
-  clearQuota(): APIKeyMetrics;
+  getUsage(): Quota | undefined;
+  setUsage(value?: Quota): APIKeyMetrics;
+  hasUsage(): boolean;
+  clearUsage(): APIKeyMetrics;
 
   getTotaltokens(): number;
   setTotaltokens(value: number): APIKeyMetrics;
@@ -206,26 +224,6 @@ export class APIKeyMetrics extends jspb.Message {
   hasTotalcost(): boolean;
   clearTotalcost(): APIKeyMetrics;
 
-  getAggregationperiod(): string;
-  setAggregationperiod(value: string): APIKeyMetrics;
-  hasAggregationperiod(): boolean;
-  clearAggregationperiod(): APIKeyMetrics;
-
-  getAveragetokens(): number;
-  setAveragetokens(value: number): APIKeyMetrics;
-  hasAveragetokens(): boolean;
-  clearAveragetokens(): APIKeyMetrics;
-
-  getAveragerequests(): number;
-  setAveragerequests(value: number): APIKeyMetrics;
-  hasAveragerequests(): boolean;
-  clearAveragerequests(): APIKeyMetrics;
-
-  getAveragecost(): number;
-  setAveragecost(value: number): APIKeyMetrics;
-  hasAveragecost(): boolean;
-  clearAveragecost(): APIKeyMetrics;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): APIKeyMetrics.AsObject;
   static toObject(includeInstance: boolean, msg: APIKeyMetrics): APIKeyMetrics.AsObject;
@@ -236,14 +234,10 @@ export class APIKeyMetrics extends jspb.Message {
 
 export namespace APIKeyMetrics {
   export type AsObject = {
-    quota?: Quota.AsObject,
+    usage?: Quota.AsObject,
     totaltokens?: number,
     totalrequests?: number,
     totalcost?: number,
-    aggregationperiod?: string,
-    averagetokens?: number,
-    averagerequests?: number,
-    averagecost?: number,
   }
 }
 
@@ -3001,8 +2995,8 @@ export class TextSpec extends jspb.Message {
   hasConcatenationstring(): boolean;
   clearConcatenationstring(): TextSpec;
 
-  getDefault(): number;
-  setDefault(value: number): TextSpec;
+  getDefault(): string;
+  setDefault(value: string): TextSpec;
   hasDefault(): boolean;
   clearDefault(): TextSpec;
 
@@ -3019,7 +3013,7 @@ export namespace TextSpec {
     extractionmode?: string,
     summarizationprompt?: string,
     concatenationstring?: string,
-    pb_default?: number,
+    pb_default?: string,
   }
 }
 

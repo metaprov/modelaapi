@@ -221,6 +221,7 @@ spec:
                                   topN:
                                     description: The top number of nodes to return.
                                       If unspecified, default to 2
+                                    format: int64
                                     type: integer
                                 type: object
                               embeddingOptimizer:
@@ -283,6 +284,7 @@ spec:
                                   topK:
                                     description: The top most recent nodes to return.
                                       If unspecified, default to 1
+                                    format: int64
                                     type: integer
                                 type: object
                               keyword:
@@ -330,6 +332,7 @@ spec:
                                   topN:
                                     description: The top number of nodes to return.
                                       If unspecified, default to 10
+                                    format: int64
                                     type: integer
                                 type: object
                               reorder:
@@ -362,6 +365,7 @@ spec:
                                   topN:
                                     description: The top most recent nodes to return.
                                       If unspecified, default to 1
+                                    format: int64
                                     type: integer
                                 type: object
                             type: object
@@ -620,6 +624,7 @@ spec:
                         topK:
                           description: The top K nodes to retrieve. If unspecified,
                             default to 1
+                          format: int64
                           type: integer
                       required:
                       - index
@@ -659,6 +664,7 @@ spec:
                         queries:
                           description: The number of queries to generate for the input
                             query. If unspecified, default to 4
+                          format: int64
                           type: integer
                         retrievers:
                           description: The collection of retriever names
@@ -668,6 +674,7 @@ spec:
                         topK:
                           description: The top K nodes to retrieve. If unspecified,
                             default to 1
+                          format: int64
                           type: integer
                       type: object
                     keywordTable:
@@ -677,6 +684,7 @@ spec:
                         chunksPerQuery:
                           description: The maximum number of chunks to retrieve per
                             query. If unspecified, default to 10
+                          format: int64
                           type: integer
                         index:
                           description: The reference to the tree index
@@ -693,6 +701,7 @@ spec:
                         keywordsPerQuery:
                           description: The maximum number of keywords to consider
                             per query. If unspecified, default to 10
+                          format: int64
                           type: integer
                         mode:
                           description: The retriever mode. If unspecified, default
@@ -763,6 +772,7 @@ spec:
                         topK:
                           description: The top K nodes to retrieve when using the
                             embedding or LLM mode. If unspecified, default to 1
+                          format: int64
                           type: integer
                       required:
                       - index
@@ -826,6 +836,7 @@ spec:
                         childBranchFactor:
                           description: The number of child nodes to consider traversing
                             at each level of the tree, if applicable
+                          format: int64
                           type: integer
                         index:
                           description: The reference to the tree index
@@ -880,6 +891,7 @@ spec:
                             maxTopK:
                               description: The maximum top K allowed. The top K set
                                 by the LLM will be clamped to this value
+                              format: int64
                               type: integer
                             metadataInfo:
                               description: The collection of metadata key info, which
@@ -958,6 +970,7 @@ spec:
                         topK:
                           description: The top K nodes to retrieve. If unspecified,
                             default to 10
+                          format: int64
                           type: integer
                       required:
                       - index

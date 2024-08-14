@@ -77,11 +77,11 @@ type APIKeyGroupSpec struct {
 
 type Quota struct {
 	// The maximum amount of tokens
-	Tokens *int `json:"tokens,omitempty" protobuf:"bytes,1,opt,name=tokens"`
+	Tokens int64 `json:"tokens,omitempty" protobuf:"bytes,1,opt,name=tokens"`
 	// The maximum amount of requests
-	Requests *int `json:"requests,omitempty" protobuf:"bytes,2,opt,name=requests"`
+	Requests int64 `json:"requests,omitempty" protobuf:"bytes,2,opt,name=requests"`
 	// The maximum approximate cost (in USD)
-	Cost *float32 `json:"cost,omitempty" protobuf:"bytes,3,opt,name=cost"`
+	Cost float32 `json:"cost,omitempty" protobuf:"bytes,3,opt,name=cost"`
 }
 
 // APIKeyQuota defines usage limits for a single API key
@@ -112,17 +112,11 @@ type APIKeyMetrics struct {
 	// The usage metrics for the current quota period
 	Usage *Quota `json:"usage,omitempty" protobuf:"bytes,1,opt,name=usage"`
 	// The total amount of tokens served through the key
-	TotalTokens *int `json:"totalTokens,omitempty" protobuf:"bytes,2,opt,name=totalTokens"`
+	TotalTokens int64 `json:"totalTokens,omitempty" protobuf:"bytes,2,opt,name=totalTokens"`
 	// The total amount of requests served through the key
-	TotalRequests *int `json:"totalRequests,omitempty" protobuf:"bytes,3,opt,name=totalRequests"`
+	TotalRequests int64 `json:"totalRequests,omitempty" protobuf:"bytes,3,opt,name=totalRequests"`
 	// The total cost (in USD) served through the key
-	TotalCost *float32 `json:"totalCost,omitempty" protobuf:"bytes,4,opt,name=totalCost"`
-	// The average amount of tokens served through the key
-	AverageTokens *int `json:"averageTokens,omitempty" protobuf:"bytes,6,opt,name=averageTokens"`
-	// The average amount of requests served through the key
-	AverageRequests *int `json:"averageRequests,omitempty" protobuf:"bytes,7,opt,name=averageRequests"`
-	// The average cost (in USD) for requests served through the key
-	AverageCost *float32 `json:"averageCost,omitempty" protobuf:"bytes,8,opt,name=averageCost"`
+	TotalCost float32 `json:"totalCost,omitempty" protobuf:"bytes,4,opt,name=totalCost"`
 }
 
 // APIKeyStatus contains the status of a single API key
@@ -149,13 +143,19 @@ type APIKeyGroupStatus struct {
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
 	// The name of the connection which metadata for the API keys associated with the group are being stored
 	StorageConnectionName string `json:"storageConnectionName,omitempty" protobuf:"varint,2,opt,name=storageConnectionName"`
+	// The total amount of tokens served through the group
+	TotalTokens int64 `json:"totalTokens,omitempty" protobuf:"bytes,3,opt,name=totalTokens"`
+	// The total amount of requests served through the group
+	TotalRequests int64 `json:"totalRequests,omitempty" protobuf:"bytes,4,opt,name=totalRequests"`
+	// The total cost (in USD) served through the group
+	TotalCost int64 `json:"totalCost,omitempty" protobuf:"bytes,5,opt,name=totalCost"`
 	// The collection of statuses for all API keys associated with the group
-	APIKeys []APIKeyStatus `json:"apiKeys,omitempty" protobuf:"bytes,3,opt,name=apiKeys"`
+	APIKeys []APIKeyStatus `json:"apiKeys,omitempty" protobuf:"bytes,6,opt,name=apiKeys"`
 	// The last time the object was updated
 	//+kubebuilder:validation:Optional
-	UpdatedAt *metav1.Time `json:"updatedAt,omitempty" protobuf:"bytes,4,opt,name=updatedAt"`
+	UpdatedAt *metav1.Time `json:"updatedAt,omitempty" protobuf:"bytes,7,opt,name=updatedAt"`
 	// +kubebuilder:validation:Optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []metav1.Condition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,5,rep,name=conditions"`
+	Conditions []metav1.Condition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,8,rep,name=conditions"`
 }

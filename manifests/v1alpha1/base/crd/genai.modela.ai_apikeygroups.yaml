@@ -92,16 +92,17 @@ spec:
                       type: string
                     quota:
                       description: The quota for the API key, which restricts the
-                        amount of resources it can consume
+                        amount of resources it can consume in a time period
                       properties:
                         cost:
                           description: The maximum approximate cost (in USD)
                           type: number
                         requests:
                           description: The maximum amount of requests
+                          format: int64
                           type: integer
                         resetSchedule:
-                          description: The schedule at which the quota will reset
+                          description: The schedule at which usage will reset
                           properties:
                             cron:
                               description: The cron string for the schedule, applicable
@@ -128,6 +129,7 @@ spec:
                           type: object
                         tokens:
                           description: The maximum amount of tokens
+                          format: int64
                           type: integer
                       type: object
                   type: object
@@ -180,42 +182,6 @@ spec:
                     metrics:
                       description: The metrics collected for the API key
                       properties:
-                        aggregationPeriod:
-                          description: The aggregation period (daily, weekly, monthly,
-                            etc.) over which averages will be calculated (default
-                            to daily). Prometheus must be enabled for usage metrics
-                            to be aggregated
-                          enum:
-                          - hourly
-                          - daily
-                          - weekly
-                          - monthly
-                          type: string
-                        averageCost:
-                          description: The average cost (in USD) for requests served
-                            through the key
-                          type: number
-                        averageRequests:
-                          description: The average amount of requests served through
-                            the key
-                          type: integer
-                        averageTokens:
-                          description: The average amount of tokens served through
-                            the key
-                          type: integer
-                        quota:
-                          description: The usage metrics for the current quota period
-                          properties:
-                            cost:
-                              description: The maximum approximate cost (in USD)
-                              type: number
-                            requests:
-                              description: The maximum amount of requests
-                              type: integer
-                            tokens:
-                              description: The maximum amount of tokens
-                              type: integer
-                          type: object
                         totalCost:
                           description: The total cost (in USD) served through the
                             key
@@ -223,11 +189,28 @@ spec:
                         totalRequests:
                           description: The total amount of requests served through
                             the key
+                          format: int64
                           type: integer
                         totalTokens:
                           description: The total amount of tokens served through the
                             key
+                          format: int64
                           type: integer
+                        usage:
+                          description: The usage metrics for the current quota period
+                          properties:
+                            cost:
+                              description: The maximum approximate cost (in USD)
+                              type: number
+                            requests:
+                              description: The maximum amount of requests
+                              format: int64
+                              type: integer
+                            tokens:
+                              description: The maximum amount of tokens
+                              format: int64
+                              type: integer
+                          type: object
                       type: object
                     name:
                       description: The unique name of the API key
@@ -321,6 +304,18 @@ spec:
                 description: The name of the connection which metadata for the API
                   keys associated with the group are being stored
                 type: string
+              totalCost:
+                description: The total cost (in USD) served through the group
+                format: int64
+                type: integer
+              totalRequests:
+                description: The total amount of requests served through the group
+                format: int64
+                type: integer
+              totalTokens:
+                description: The total amount of tokens served through the group
+                format: int64
+                type: integer
               updatedAt:
                 description: The last time the object was updated
                 format: date-time

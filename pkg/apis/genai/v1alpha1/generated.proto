@@ -79,17 +79,26 @@ message APIKeyGroupStatus {
   // The name of the connection which metadata for the API keys associated with the group are being stored
   optional string storageConnectionName = 2;
 
+  // The total amount of tokens served through the group
+  optional int64 totalTokens = 3;
+
+  // The total amount of requests served through the group
+  optional int64 totalRequests = 4;
+
+  // The total cost (in USD) served through the group
+  optional int64 totalCost = 5;
+
   // The collection of statuses for all API keys associated with the group
-  repeated APIKeyStatus apiKeys = 3;
+  repeated APIKeyStatus apiKeys = 6;
 
   // The last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 4;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 7;
 
   // +kubebuilder:validation:Optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 5;
+  repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 8;
 }
 
 message APIKeyGroupStorageSpec {
@@ -104,7 +113,7 @@ message APIKeyGroupStorageSpec {
 // APIKeyMetrics contains the metrics for a single API key
 message APIKeyMetrics {
   // The usage metrics for the current quota period
-  optional Quota quota = 1;
+  optional Quota usage = 1;
 
   // The total amount of tokens served through the key
   optional int64 totalTokens = 2;
@@ -114,26 +123,13 @@ message APIKeyMetrics {
 
   // The total cost (in USD) served through the key
   optional float totalCost = 4;
-
-  // The aggregation period (daily, weekly, monthly, etc.) over which averages will be calculated (default to daily).
-  // Prometheus must be enabled for usage metrics to be aggregated
-  optional string aggregationPeriod = 5;
-
-  // The average amount of tokens served through the key
-  optional int64 averageTokens = 6;
-
-  // The average amount of requests served through the key
-  optional int64 averageRequests = 7;
-
-  // The average cost (in USD) for requests served through the key
-  optional float averageCost = 8;
 }
 
 // APIKeyQuota defines usage limits for a single API key
 message APIKeyQuota {
   optional Quota quota = 1;
 
-  // The schedule at which the quota will reset
+  // The schedule at which usage will reset
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule resetSchedule = 2;
 }
 
@@ -152,7 +148,7 @@ message APIKeySpec {
   // If empty, endpoints will not be restricted by their name
   repeated string allowedEndpointNames = 3;
 
-  // The quota for the API key, which restricts the amount of resources it can consume
+  // The quota for the API key, which restricts the amount of resources it can consume in a time period
   optional APIKeyQuota quota = 4;
 }
 
@@ -1299,7 +1295,7 @@ message TextSpec {
   optional string concatenationString = 3;
 
   // The default text value, if one could not be extracted from the nodes. If unspecified, the column will be left null
-  optional int32 default = 5;
+  optional string default = 5;
 }
 
 // TextSplitterSpec defines how to split a document into sentences using a text splitter

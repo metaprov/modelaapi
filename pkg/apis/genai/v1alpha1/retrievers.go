@@ -63,7 +63,7 @@ type AutoVectorRetrieverSpec struct {
 	// The LLM to use when generating queries. If unspecified, use the default provided by model server
 	Model *ModelSpec `json:"model,omitempty" protobuf:"bytes,2,opt,name=model"`
 	// The maximum top K allowed. The top K set by the LLM will be clamped to this value
-	MaxTopK *int `json:"maxTopK,omitempty" protobuf:"bytes,3,opt,name=maxTopK"`
+	MaxTopK *int64 `json:"maxTopK,omitempty" protobuf:"bytes,3,opt,name=maxTopK"`
 	// The collection of metadata key info, which the LLM will use to infer metadata filters
 	MetadataInfo []MetadataKeyInfo `json:"metadataInfo,omitempty" protobuf:"bytes,4,opt,name=metadataInfo"`
 }
@@ -75,7 +75,7 @@ type VectorRetrieverSpec struct {
 	// The embedding model to use
 	EmbeddingModel ModelSpec `json:"embeddingModel,omitempty" protobuf:"bytes,2,opt,name=embeddingModel"`
 	// The top K nodes to retrieve. If unspecified, default to 10
-	TopK *int `json:"topK,omitempty" protobuf:"bytes,3,opt,name=topK"`
+	TopK *int64 `json:"topK,omitempty" protobuf:"bytes,3,opt,name=topK"`
 	// Metadata key-value pairs that must be matched on retrieved nodes
 	MatchMetadata map[string]string `json:"matchMetadata,omitempty" protobuf:"bytes,4,opt,name=matchMetadata"`
 	// Indicates if auto-merging of parent and child nodes will be enabled. Auto-merging should only be enabled
@@ -96,7 +96,7 @@ type DocumentSummaryRetrieverSpec struct {
 	// The embedding or large language model to use. If unspecified, use the default provided by model server
 	Model *ModelSpec `json:"model,omitempty" protobuf:"bytes,2,opt,name=model"`
 	// The top K nodes to retrieve. If unspecified, default to 1
-	TopK *int `json:"topK,omitempty" protobuf:"bytes,3,opt,name=topK"`
+	TopK *int64 `json:"topK,omitempty" protobuf:"bytes,3,opt,name=topK"`
 	// The retriever mode. If unspecified, default to embedding
 	Mode *DocumentSummaryRetrieverMode `json:"mode,omitempty" protobuf:"bytes,4,opt,name=mode"`
 }
@@ -114,7 +114,7 @@ type TreeRetrieverSpec struct {
 	// The retriever mode. If unspecified, default to select leaf
 	Mode *TreeRetrieverMode `json:"mode,omitempty" protobuf:"bytes,3,opt,name=mode"`
 	// The number of child nodes to consider traversing at each level of the tree, if applicable
-	ChildBranchFactor *int `json:"childBranchFactor,omitempty" protobuf:"bytes,4,opt,name=childBranchFactor"`
+	ChildBranchFactor *int64 `json:"childBranchFactor,omitempty" protobuf:"bytes,4,opt,name=childBranchFactor"`
 }
 
 func (x *TreeRetrieverSpec) IndexReference() IndexReference {
@@ -129,9 +129,9 @@ type KeywordTableRetrieverSpec struct {
 	// The retriever mode. If unspecified, default to RAKE
 	Mode *KeywordTableRetrieverMode `json:"mode,omitempty" protobuf:"bytes,3,opt,name=mode"`
 	// The maximum number of keywords to consider per query. If unspecified, default to 10
-	KeywordsPerQuery *int `json:"keywordsPerQuery,omitempty" protobuf:"bytes,4,opt,name=keywordsPerQuery"`
+	KeywordsPerQuery *int64 `json:"keywordsPerQuery,omitempty" protobuf:"bytes,4,opt,name=keywordsPerQuery"`
 	// The maximum number of chunks to retrieve per query. If unspecified, default to 10
-	ChunksPerQuery *int `json:"chunksPerQuery,omitempty" protobuf:"bytes,5,opt,name=chunksPerQuery"`
+	ChunksPerQuery *int64 `json:"chunksPerQuery,omitempty" protobuf:"bytes,5,opt,name=chunksPerQuery"`
 }
 
 func (x *KeywordTableRetrieverSpec) IndexReference() IndexReference {
@@ -145,7 +145,7 @@ type ListRetrieverSpec struct {
 	// The large language or embedding model to use, if applicable. If unspecified, use the default provided by model server
 	Model *ModelSpec `json:"model,omitempty" protobuf:"bytes,2,opt,name=model"`
 	// The top K nodes to retrieve when using the embedding or LLM mode. If unspecified, default to 1
-	TopK *int `json:"topK,omitempty" protobuf:"bytes,3,opt,name=topK"`
+	TopK *int64 `json:"topK,omitempty" protobuf:"bytes,3,opt,name=topK"`
 	// The retriever mode. If unspecified, default to simple
 	Mode *ListRetrieverMode `json:"mode,omitempty" protobuf:"bytes,4,opt,name=mode"`
 }
@@ -162,9 +162,9 @@ type FusionRetrieverSpec struct {
 	// If unspecified, use the default provided by model server
 	Model *ModelSpec `json:"model,omitempty" protobuf:"bytes,2,opt,name=model"`
 	// The number of queries to generate for the input query. If unspecified, default to 4
-	Queries *int `json:"queries,omitempty" protobuf:"bytes,3,opt,name=queries"`
+	Queries *int64 `json:"queries,omitempty" protobuf:"bytes,3,opt,name=queries"`
 	// The top K nodes to retrieve. If unspecified, default to 1
-	TopK *int `json:"topK,omitempty" protobuf:"bytes,4,opt,name=topK"`
+	TopK *int64 `json:"topK,omitempty" protobuf:"bytes,4,opt,name=topK"`
 	// The fusion retriever mode. If unspecified, default to simple
 	Mode *FusionRetrieverMode `json:"mode,omitempty" protobuf:"varint,5,opt,name=mode"`
 	// The default score for nodes which were retrieved without a score. If unspecified, default to 1

@@ -45,18 +45,24 @@ class APIKeyGroupSpec(_message.Message):
     def __init__(self, owner: _Optional[str] = ..., description: _Optional[str] = ..., storage: _Optional[_Union[APIKeyGroupStorageSpec, _Mapping]] = ..., allowedServerNames: _Optional[_Iterable[str]] = ..., allowedEndpointNames: _Optional[_Iterable[str]] = ..., apiKeys: _Optional[_Iterable[_Union[APIKeySpec, _Mapping]]] = ...) -> None: ...
 
 class APIKeyGroupStatus(_message.Message):
-    __slots__ = ("observedGeneration", "storageConnectionName", "apiKeys", "updatedAt", "conditions")
+    __slots__ = ("observedGeneration", "storageConnectionName", "totalTokens", "totalRequests", "totalCost", "apiKeys", "updatedAt", "conditions")
     OBSERVEDGENERATION_FIELD_NUMBER: _ClassVar[int]
     STORAGECONNECTIONNAME_FIELD_NUMBER: _ClassVar[int]
+    TOTALTOKENS_FIELD_NUMBER: _ClassVar[int]
+    TOTALREQUESTS_FIELD_NUMBER: _ClassVar[int]
+    TOTALCOST_FIELD_NUMBER: _ClassVar[int]
     APIKEYS_FIELD_NUMBER: _ClassVar[int]
     UPDATEDAT_FIELD_NUMBER: _ClassVar[int]
     CONDITIONS_FIELD_NUMBER: _ClassVar[int]
     observedGeneration: int
     storageConnectionName: str
+    totalTokens: int
+    totalRequests: int
+    totalCost: int
     apiKeys: _containers.RepeatedCompositeFieldContainer[APIKeyStatus]
     updatedAt: _generated_pb2_1_1.Time
     conditions: _containers.RepeatedCompositeFieldContainer[_generated_pb2_1_1.Condition]
-    def __init__(self, observedGeneration: _Optional[int] = ..., storageConnectionName: _Optional[str] = ..., apiKeys: _Optional[_Iterable[_Union[APIKeyStatus, _Mapping]]] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1.Condition, _Mapping]]] = ...) -> None: ...
+    def __init__(self, observedGeneration: _Optional[int] = ..., storageConnectionName: _Optional[str] = ..., totalTokens: _Optional[int] = ..., totalRequests: _Optional[int] = ..., totalCost: _Optional[int] = ..., apiKeys: _Optional[_Iterable[_Union[APIKeyStatus, _Mapping]]] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1.Condition, _Mapping]]] = ...) -> None: ...
 
 class APIKeyGroupStorageSpec(_message.Message):
     __slots__ = ("type", "connectionName")
@@ -67,24 +73,16 @@ class APIKeyGroupStorageSpec(_message.Message):
     def __init__(self, type: _Optional[str] = ..., connectionName: _Optional[str] = ...) -> None: ...
 
 class APIKeyMetrics(_message.Message):
-    __slots__ = ("quota", "totalTokens", "totalRequests", "totalCost", "aggregationPeriod", "averageTokens", "averageRequests", "averageCost")
-    QUOTA_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("usage", "totalTokens", "totalRequests", "totalCost")
+    USAGE_FIELD_NUMBER: _ClassVar[int]
     TOTALTOKENS_FIELD_NUMBER: _ClassVar[int]
     TOTALREQUESTS_FIELD_NUMBER: _ClassVar[int]
     TOTALCOST_FIELD_NUMBER: _ClassVar[int]
-    AGGREGATIONPERIOD_FIELD_NUMBER: _ClassVar[int]
-    AVERAGETOKENS_FIELD_NUMBER: _ClassVar[int]
-    AVERAGEREQUESTS_FIELD_NUMBER: _ClassVar[int]
-    AVERAGECOST_FIELD_NUMBER: _ClassVar[int]
-    quota: Quota
+    usage: Quota
     totalTokens: int
     totalRequests: int
     totalCost: float
-    aggregationPeriod: str
-    averageTokens: int
-    averageRequests: int
-    averageCost: float
-    def __init__(self, quota: _Optional[_Union[Quota, _Mapping]] = ..., totalTokens: _Optional[int] = ..., totalRequests: _Optional[int] = ..., totalCost: _Optional[float] = ..., aggregationPeriod: _Optional[str] = ..., averageTokens: _Optional[int] = ..., averageRequests: _Optional[int] = ..., averageCost: _Optional[float] = ...) -> None: ...
+    def __init__(self, usage: _Optional[_Union[Quota, _Mapping]] = ..., totalTokens: _Optional[int] = ..., totalRequests: _Optional[int] = ..., totalCost: _Optional[float] = ...) -> None: ...
 
 class APIKeyQuota(_message.Message):
     __slots__ = ("quota", "resetSchedule")
@@ -996,8 +994,8 @@ class TextSpec(_message.Message):
     extractionMode: str
     summarizationPrompt: str
     concatenationString: str
-    default: int
-    def __init__(self, extractionMode: _Optional[str] = ..., summarizationPrompt: _Optional[str] = ..., concatenationString: _Optional[str] = ..., default: _Optional[int] = ...) -> None: ...
+    default: str
+    def __init__(self, extractionMode: _Optional[str] = ..., summarizationPrompt: _Optional[str] = ..., concatenationString: _Optional[str] = ..., default: _Optional[str] = ...) -> None: ...
 
 class TextSplitterSpec(_message.Message):
     __slots__ = ("type", "sentence", "token", "code")

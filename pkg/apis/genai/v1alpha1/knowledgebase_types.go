@@ -106,7 +106,7 @@ type TreeIndexSpec struct {
 	// The LLM to use when summarizing and inserting nodes
 	Model ModelSpec `json:"model,omitempty" protobuf:"bytes,1,opt,name=model"`
 	// The number of children each node should have. If unspecified, default to 10
-	Children *int `json:"children,omitempty" protobuf:"varint,2,opt,name=children"`
+	Children *int64 `json:"children,omitempty" protobuf:"varint,2,opt,name=children"`
 }
 
 // KeywordTableIndexSpec specifies the configuration for a keyword table index
@@ -116,7 +116,7 @@ type KeywordTableIndexSpec struct {
 	// The LLM to use when extracting keywords from nodes, required if the index is configured with the LLM mode
 	Model *ModelSpec `json:"model,omitempty" protobuf:"bytes,2,opt,name=model"`
 	// The maximum of number of keywords that can be extracted from each node. If unspecified, default to 10
-	MaxKeywordsPerNode *int `json:"maxKeywordsPerNode,omitempty" protobuf:"bytes,3,opt,name=maxKeywordsPerNode"`
+	MaxKeywordsPerNode *int64 `json:"maxKeywordsPerNode,omitempty" protobuf:"bytes,3,opt,name=maxKeywordsPerNode"`
 }
 
 // ListIndexSpec specifies the configuration of a list index
@@ -234,7 +234,7 @@ type HierarchicalSplitterSpec struct {
 	// Indicates if hierarchical splitting is enabled
 	Enabled bool `json:"enabled" protobuf:"varint,1,opt,name=enabled"`
 	// The chunk sizes for each level in the hierarchy. When unspecified, default to 2048, 512, and 128
-	ChunkSizes []int `json:"chunkSizes,omitempty" protobuf:"bytes,4,opt,name=chunkSizes"`
+	ChunkSizes []int64 `json:"chunkSizes,omitempty" protobuf:"bytes,4,opt,name=chunkSizes"`
 }
 
 // TokenSplitterSpec splits text documents by their tokens
