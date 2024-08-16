@@ -10,9 +10,8 @@ from glob import glob
 sys.path.append(getcwd())
 
 
-def packagify():
+def packagify(start_dir: str):
     paths = []
-    start_dir = "github"
     pattern = "*.py"
     for dir, subdirs, files in walk(start_dir):
         # Needs to handle ignored directories
@@ -25,4 +24,5 @@ def packagify():
 
 
 
-packagify()
+packagify("github")
+packagify("protoc_gen_swagger")

@@ -158,7 +158,11 @@ config = {
     },
     "download_url": "{}/tarball/v{}".format(REPOSITORY, get_version()),
     "packages": find_packages(where=PROJECT, exclude=EXCLUDES),
-    "package_data": {"yellowbrick": ["datasets/manifest.json"], "github": ["**/*.pyi"], "google": ["**/*.pyi"], "k8s": ["**/*.pyi"]},
+    "package_data": {"yellowbrick": ["datasets/manifest.json"], "github": ["**/*.pyi"],
+                     "google": ["**/*.pyi"], "k8s": ["**/*.pyi"], "protoc_gen_swagger": ["**/*.pyi"]},
+    "data_files": [
+        ('../..', ['requirements.txt', 'DESCRIPTION.md']),
+    ],
     "zip_safe": False,
     "entry_points": {"console_scripts": []},
     "install_requires": list(get_requires()),

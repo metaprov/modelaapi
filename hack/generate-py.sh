@@ -33,6 +33,8 @@ python3 -m grpc_tools.protoc \
     k8s.io/apimachinery/pkg/api/resource/generated.proto \
     k8s.io/apimachinery/pkg/runtime/schema/generated.proto \
     k8s.io/apimachinery/pkg/runtime/generated.proto \
+    protoc-gen-swagger/options/annotations.proto \
+    protoc-gen-swagger/options/openapiv2.proto \
     github.com/gogo/protobuf/gogoproto/gogo.proto \
     github.com/metaprov/modelaapi/services/grpc/health/v1/health.proto \
     github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto \
