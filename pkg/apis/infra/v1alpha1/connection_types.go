@@ -54,9 +54,9 @@ type ConnectionSpec struct {
 	// +required
 	Provider catalog.ProviderName `json:"provider" protobuf:"bytes,3,opt,name=provider"`
 	// SecretData contains a map of sensitive parameters relevant to the connection and their values. Modela
-	// will automatically clear this map and transfer the values to Vault
+	// will transfer the values within the map to Vault. Secret data will never be sent to Etcd
 	SecretData map[catalog.SecretKeyName]string `json:"secretData,omitempty" protobuf:"bytes,4,opt,name=secretData"`
-	// Options contains non-sensitive options relevant to the Connection
+	// Options contains non-sensitive options relevant to the provider
 	Options map[string]string `json:"options,omitempty" protobuf:"bytes,5,opt,name=options"`
 }
 

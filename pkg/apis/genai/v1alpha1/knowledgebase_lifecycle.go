@@ -109,14 +109,6 @@ func (kb *KnowledgeBase) Refreshing() bool {
 	return kb.GetCondition(KnowledgeBaseRefreshed).Reason == RefreshingReason
 }
 
-func (kb *KnowledgeBase) MarkNotRefreshed() {
-	kb.CreateOrUpdateCondition(metav1.Condition{
-		Type:   string(KnowledgeBaseRefreshed),
-		Status: metav1.ConditionFalse,
-		Reason: RefreshingReason,
-	})
-}
-
 func (kb *KnowledgeBase) MarkRefreshed() {
 	kb.CreateOrUpdateCondition(metav1.Condition{
 		Type:   string(KnowledgeBaseRefreshed),
@@ -128,8 +120,8 @@ func (kb *KnowledgeBase) MarkRefreshed() {
 func (kb *KnowledgeBase) MarkRefreshing() {
 	kb.CreateOrUpdateCondition(metav1.Condition{
 		Type:   string(KnowledgeBaseRefreshed),
-		Status: metav1.ConditionTrue,
-		Reason: "Refreshing",
+		Status: metav1.ConditionFalse,
+		Reason: RefreshingReason,
 	})
 }
 
@@ -201,6 +193,35 @@ func (kb *KnowledgeBase) ErrorAlert(notification catalog.NotificationSpec, err e
 			Notification: notification,
 			EntityRef: v1.ObjectReference{
 				Kind:      "KnowledgeBase",
+				Name:      kb.Name,
+				Namespace: kb.Namespace,
+			},
+			Owner: kb.Spec.Owner,
+			Fields: map[string]string{
+				"Start Time": kb.ObjectMeta.CreationTimestamp.Format("01/2/2006 15:04:05"),
+			},
+		},
+	}
+	if kb.Status.LastCompletionAt != nil {
+		result.Spec.Fields["Completion Time"] = kb.Status.LastCompletionAt.Format("01/2/2006 15:04:05")
+	}
+	return result
+}
+
+func (kb *KnowledgeBase) CompletionAlert(notification catalog.NotificationSpec) *infra.Alert {
+	level := infra.InfoAlertLevel
+	subject := fmt.Sprintf("Knowledge Base %s refreshed successfully", kb.Name)
+	result := &infra.Alert{
+		ObjectMeta: metav1.ObjectMeta{
+			GenerateName: kb.Name,
+			Namespace:    kb.Namespace,
+		},
+		Spec: infra.AlertSpec{
+			Subject:      subject,
+			Level:        &level,
+			Notification: notification,
+			EntityRef: v1.ObjectReference{
+				Kind:      "Entity",
 				Name:      kb.Name,
 				Namespace: kb.Namespace,
 			},

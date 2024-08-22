@@ -48,18 +48,51 @@ type Webhooks struct {
 	ClientConfig            ClientConfig `yaml:"clientConfig"`
 }
 
+type resourceMeta struct {
+	name     string
+	plural   string
+	singular string
+}
+
+type GroupResources map[string]map[string][]resourceMeta
+
+func generateWebhooks(mode, group, version, groupName string, resources []resourceMeta) []Webhooks {
+	var webhooks []Webhooks
+	for _, resource := range resources {
+		webhooks = append(webhooks, Webhooks{
+			Name:                    resource.name,
+			FailurePolicy:           "Fail",
+			SideEffects:             "None",
+			TimeoutSeconds:          5,
+			AdmissionReviewVersions: []string{"v1"},
+			Rules: []Rules{
+				{
+					APIGroups:   []string{group},
+					APIVersions: []string{version},
+					Operations:  []string{"CREATE", "UPDATE"},
+					Resources:   []string{resource.plural},
+				},
+			},
+			ClientConfig: ClientConfig{
+				Service: Service{
+					Namespace: "modela-system",
+					Name:      "modela-control-plane-webhook",
+					Path:      fmt.Sprintf("/%s-%s-modela-ai-v1alpha1-%s", mode, groupName, resource.singular),
+				},
+				CaBundle: "CERT",
+			},
+		})
+	}
+	return webhooks
+}
+
 func main() {
 	path, err := filepath.Abs("./manifests")
 	if err != nil {
 		panic(err)
 	}
 
-	type resource struct {
-		name     string
-		plural   string
-		singular string
-	}
-	var groupToResources = make(map[string]map[string][]resource)
+	var groupToResources = make(GroupResources)
 
 	err = filepath.Walk(path, func(path string, f os.FileInfo, err error) error {
 		if !strings.HasSuffix(path, ".yaml") {
@@ -97,9 +130,9 @@ func main() {
 		group := spec["group"].(string)
 		name := metadata["name"].(string)
 		if _, ok := groupToResources[version]; !ok {
-			groupToResources[version] = make(map[string][]resource)
+			groupToResources[version] = make(map[string][]resourceMeta)
 		}
-		groupToResources[version][group] = append(groupToResources[version][group], resource{
+		groupToResources[version][group] = append(groupToResources[version][group], resourceMeta{
 			name:     name,
 			plural:   names["plural"].(string),
 			singular: names["singular"].(string),
@@ -116,32 +149,7 @@ func main() {
 			if groupName == "catalog" {
 				continue
 			}
-			var webhooks []Webhooks
-			for _, resource := range resources {
-				webhooks = append(webhooks, Webhooks{
-					Name:                    resource.name,
-					FailurePolicy:           "Fail",
-					SideEffects:             "None",
-					TimeoutSeconds:          5,
-					AdmissionReviewVersions: []string{"v1"},
-					Rules: []Rules{
-						{
-							APIGroups:   []string{group},
-							APIVersions: []string{version},
-							Operations:  []string{"CREATE", "UPDATE"},
-							Resources:   []string{resource.plural},
-						},
-					},
-					ClientConfig: ClientConfig{
-						Service: Service{
-							Namespace: "modela-system",
-							Name:      "modela-control-plane-webhook",
-							Path:      fmt.Sprintf("/validate-%s-modela-ai-v1alpha1-%s", groupName, resource.singular),
-						},
-						CaBundle: "CERT",
-					},
-				})
-			}
+
 			mutatingWebhook := Webhook{
 				APIVersion: "admissionregistration.k8s.io/v1",
 				Kind:       "MutatingWebhookConfiguration",
@@ -150,7 +158,7 @@ func main() {
 					Namespace:   "modela-system",
 					Annotations: Annotations{CertManagerIoInjectCaFrom: "modela-system/serving-cert"},
 				},
-				Webhooks: webhooks,
+				Webhooks: generateWebhooks("mutate", group, version, groupName, resources),
 			}
 			raw, err := yaml.Marshal(mutatingWebhook)
 			if err != nil {
@@ -166,7 +174,7 @@ func main() {
 					Namespace:   "modela-system",
 					Annotations: Annotations{CertManagerIoInjectCaFrom: "modela-system/serving-cert"},
 				},
-				Webhooks: webhooks,
+				Webhooks: generateWebhooks("validate", group, version, groupName, resources),
 			}
 			raw, err = yaml.Marshal(validatingWebhook)
 			if err != nil {

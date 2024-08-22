@@ -7,7 +7,7 @@
 package v1alpha1
 
 import (
-	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
+	"github.com/pkg/errors"
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
@@ -16,21 +16,10 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/webhook"
 )
 
-var _ webhook.Defaulter = &Connection{}
-
-func (connection *Connection) Default() {
-	if connection.Spec.Category == "" {
-		connection.Spec.Category = catalog.GeneralConnectionCategory
-	}
-}
-
-// validation
 var _ webhook.Validator = &Connection{}
 
-func (connection *Connection) SetupWebhookWithManager(mgr ctrl.Manager) error {
-	return ctrl.NewWebhookManagedBy(mgr).
-		For(connection).
-		Complete()
+func (connection *Connection) SetupWebhookWithManager(_ ctrl.Manager) error {
+	return errors.New("Connection must implement a custom webhook")
 }
 
 func (connection Connection) ValidateCreate() error {

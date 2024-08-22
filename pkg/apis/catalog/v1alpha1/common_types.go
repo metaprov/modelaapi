@@ -1143,7 +1143,7 @@ const (
 // ConnectionName Categoty Type
 //==============================================================================
 
-// +kubebuilder:validation:Enum="general";"cloud";"docker-image-registry";"database";"git";"messaging";"storage";
+// +kubebuilder:validation:Enum="general";"cloud";"docker-image-registry";"database";"git";"messaging";"storage";"vector-database";"embedding-model";"language-model"
 type ConnectionCategory string
 
 const (
@@ -1157,6 +1157,9 @@ const (
 	BrokerConnectionMessage               ConnectionCategory = "message-broker"
 	GraphDatabaseConnectionCategory       ConnectionCategory = "graph-database"
 	SocialMediaConnectionCategory         ConnectionCategory = "social-media"
+	VectorDatabaseConnectionCategory      ConnectionCategory = "vector-database"
+	EmbeddingModelConnectionCategory      ConnectionCategory = "embedding-model"
+	LanguageModelConnectionCategory       ConnectionCategory = "language-model"
 )
 
 type EnsembleType string

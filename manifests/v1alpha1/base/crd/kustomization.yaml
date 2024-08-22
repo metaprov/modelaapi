@@ -21,7 +21,6 @@ resources:
 - data.modela.ai_recipes.yaml
 - genai.modela.ai_apikeygroups.yaml
 - genai.modela.ai_knowledgebases.yaml
-- genai.modela.ai_llms.yaml
 - genai.modela.ai_llmservers.yaml
 - inference.modela.ai_dataapps.yaml
 - inference.modela.ai_predictionruns.yaml

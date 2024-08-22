@@ -100,18 +100,6 @@ func ParseConnectionYaml(content []byte) (*Connection, error) {
 	return r, nil
 }
 
-func (connection *Connection) IsReady() bool {
-	return connection.GetCond(string(ConnectionReady)).Status == metav1.ConditionTrue
-}
-
-func (connection *Connection) MarkReady() {
-	connection.CreateOrUpdateCond(metav1.Condition{
-		Type:   string(ConnectionReady),
-		Status: metav1.ConditionTrue,
-		Reason: string(ConnectionReady),
-	})
-}
-
 func (connection *Connection) GetBoolOption(key string, defaultValue bool) bool {
 	if value, ok := connection.Spec.Options[key]; ok {
 		value = strings.ToLower(value)

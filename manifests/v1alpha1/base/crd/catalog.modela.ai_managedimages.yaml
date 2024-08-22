@@ -261,9 +261,8 @@ spec:
                 - workload
                 - prediction-router
                 - dataplane
-                - publisher
+                - llmplane
                 - system
-                - batch-prediction
                 type: string
               tag:
                 description: The image tag. by default this is latest

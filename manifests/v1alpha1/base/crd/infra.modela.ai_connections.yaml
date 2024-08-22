@@ -69,12 +69,15 @@ spec:
                 - git
                 - messaging
                 - storage
+                - vector-database
+                - embedding-model
+                - language-model
                 type: string
               options:
                 additionalProperties:
                   type: string
                 description: Options contains non-sensitive options relevant to the
-                  Connection
+                  provider
                 type: object
               owner:
                 default: no-one
@@ -87,8 +90,8 @@ spec:
                 additionalProperties:
                   type: string
                 description: SecretData contains a map of sensitive parameters relevant
-                  to the connection and their values. Modela will automatically clear
-                  this map and transfer the values to Vault
+                  to the connection and their values. Modela will transfer the values
+                  within the map to Vault. Secret data will never be sent to Etcd
                 type: object
             required:
             - provider
