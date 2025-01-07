@@ -207,3 +207,39 @@ export namespace DeleteLLMServerResponse {
   }
 }
 
+export class RefreshLLMServerRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): RefreshLLMServerRequest;
+
+  getName(): string;
+  setName(value: string): RefreshLLMServerRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RefreshLLMServerRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: RefreshLLMServerRequest): RefreshLLMServerRequest.AsObject;
+  static serializeBinaryToWriter(message: RefreshLLMServerRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RefreshLLMServerRequest;
+  static deserializeBinaryFromReader(message: RefreshLLMServerRequest, reader: jspb.BinaryReader): RefreshLLMServerRequest;
+}
+
+export namespace RefreshLLMServerRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+  }
+}
+
+export class RefreshLLMServerResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RefreshLLMServerResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: RefreshLLMServerResponse): RefreshLLMServerResponse.AsObject;
+  static serializeBinaryToWriter(message: RefreshLLMServerResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RefreshLLMServerResponse;
+  static deserializeBinaryFromReader(message: RefreshLLMServerResponse, reader: jspb.BinaryReader): RefreshLLMServerResponse;
+}
+
+export namespace RefreshLLMServerResponse {
+  export type AsObject = {
+  }
+}
+

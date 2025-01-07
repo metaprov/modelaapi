@@ -5,6 +5,7 @@ import * as github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb fr
 import * as github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated_pb';
 import * as github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated_pb';
 import * as github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1/generated_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/genai/v1alpha1/generated_pb';
 import * as github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/team/v1alpha1/generated_pb';
 import * as k8s_io_api_core_v1_generated_pb from '../../../../../../k8s.io/api/core/v1/generated_pb';
 
@@ -1794,6 +1795,153 @@ export namespace WatchTodoResponse {
     export type AsObject = {
       event: EventType,
       object?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Todo.AsObject,
+    }
+  }
+
+}
+
+export class WatchKnowledgeBaseResponse extends jspb.Message {
+  getGeneration(): number;
+  setGeneration(value: number): WatchKnowledgeBaseResponse;
+
+  getEventsList(): Array<WatchKnowledgeBaseResponse.KnowledgeBaseEvent>;
+  setEventsList(value: Array<WatchKnowledgeBaseResponse.KnowledgeBaseEvent>): WatchKnowledgeBaseResponse;
+  clearEventsList(): WatchKnowledgeBaseResponse;
+  addEvents(value?: WatchKnowledgeBaseResponse.KnowledgeBaseEvent, index?: number): WatchKnowledgeBaseResponse.KnowledgeBaseEvent;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): WatchKnowledgeBaseResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: WatchKnowledgeBaseResponse): WatchKnowledgeBaseResponse.AsObject;
+  static serializeBinaryToWriter(message: WatchKnowledgeBaseResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): WatchKnowledgeBaseResponse;
+  static deserializeBinaryFromReader(message: WatchKnowledgeBaseResponse, reader: jspb.BinaryReader): WatchKnowledgeBaseResponse;
+}
+
+export namespace WatchKnowledgeBaseResponse {
+  export type AsObject = {
+    generation: number,
+    eventsList: Array<WatchKnowledgeBaseResponse.KnowledgeBaseEvent.AsObject>,
+  }
+
+  export class KnowledgeBaseEvent extends jspb.Message {
+    getEvent(): EventType;
+    setEvent(value: EventType): KnowledgeBaseEvent;
+
+    getObject(): github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb.KnowledgeBase | undefined;
+    setObject(value?: github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb.KnowledgeBase): KnowledgeBaseEvent;
+    hasObject(): boolean;
+    clearObject(): KnowledgeBaseEvent;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): KnowledgeBaseEvent.AsObject;
+    static toObject(includeInstance: boolean, msg: KnowledgeBaseEvent): KnowledgeBaseEvent.AsObject;
+    static serializeBinaryToWriter(message: KnowledgeBaseEvent, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): KnowledgeBaseEvent;
+    static deserializeBinaryFromReader(message: KnowledgeBaseEvent, reader: jspb.BinaryReader): KnowledgeBaseEvent;
+  }
+
+  export namespace KnowledgeBaseEvent {
+    export type AsObject = {
+      event: EventType,
+      object?: github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb.KnowledgeBase.AsObject,
+    }
+  }
+
+}
+
+export class WatchLLMServerResponse extends jspb.Message {
+  getGeneration(): number;
+  setGeneration(value: number): WatchLLMServerResponse;
+
+  getEventsList(): Array<WatchLLMServerResponse.LLMServerEvent>;
+  setEventsList(value: Array<WatchLLMServerResponse.LLMServerEvent>): WatchLLMServerResponse;
+  clearEventsList(): WatchLLMServerResponse;
+  addEvents(value?: WatchLLMServerResponse.LLMServerEvent, index?: number): WatchLLMServerResponse.LLMServerEvent;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): WatchLLMServerResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: WatchLLMServerResponse): WatchLLMServerResponse.AsObject;
+  static serializeBinaryToWriter(message: WatchLLMServerResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): WatchLLMServerResponse;
+  static deserializeBinaryFromReader(message: WatchLLMServerResponse, reader: jspb.BinaryReader): WatchLLMServerResponse;
+}
+
+export namespace WatchLLMServerResponse {
+  export type AsObject = {
+    generation: number,
+    eventsList: Array<WatchLLMServerResponse.LLMServerEvent.AsObject>,
+  }
+
+  export class LLMServerEvent extends jspb.Message {
+    getEvent(): EventType;
+    setEvent(value: EventType): LLMServerEvent;
+
+    getObject(): github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb.LLMServer | undefined;
+    setObject(value?: github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb.LLMServer): LLMServerEvent;
+    hasObject(): boolean;
+    clearObject(): LLMServerEvent;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): LLMServerEvent.AsObject;
+    static toObject(includeInstance: boolean, msg: LLMServerEvent): LLMServerEvent.AsObject;
+    static serializeBinaryToWriter(message: LLMServerEvent, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): LLMServerEvent;
+    static deserializeBinaryFromReader(message: LLMServerEvent, reader: jspb.BinaryReader): LLMServerEvent;
+  }
+
+  export namespace LLMServerEvent {
+    export type AsObject = {
+      event: EventType,
+      object?: github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb.LLMServer.AsObject,
+    }
+  }
+
+}
+
+export class WatchAPIKeyGroupResponse extends jspb.Message {
+  getGeneration(): number;
+  setGeneration(value: number): WatchAPIKeyGroupResponse;
+
+  getEventsList(): Array<WatchAPIKeyGroupResponse.APIKeyGroupEvent>;
+  setEventsList(value: Array<WatchAPIKeyGroupResponse.APIKeyGroupEvent>): WatchAPIKeyGroupResponse;
+  clearEventsList(): WatchAPIKeyGroupResponse;
+  addEvents(value?: WatchAPIKeyGroupResponse.APIKeyGroupEvent, index?: number): WatchAPIKeyGroupResponse.APIKeyGroupEvent;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): WatchAPIKeyGroupResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: WatchAPIKeyGroupResponse): WatchAPIKeyGroupResponse.AsObject;
+  static serializeBinaryToWriter(message: WatchAPIKeyGroupResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): WatchAPIKeyGroupResponse;
+  static deserializeBinaryFromReader(message: WatchAPIKeyGroupResponse, reader: jspb.BinaryReader): WatchAPIKeyGroupResponse;
+}
+
+export namespace WatchAPIKeyGroupResponse {
+  export type AsObject = {
+    generation: number,
+    eventsList: Array<WatchAPIKeyGroupResponse.APIKeyGroupEvent.AsObject>,
+  }
+
+  export class APIKeyGroupEvent extends jspb.Message {
+    getEvent(): EventType;
+    setEvent(value: EventType): APIKeyGroupEvent;
+
+    getObject(): github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb.APIKeyGroup | undefined;
+    setObject(value?: github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb.APIKeyGroup): APIKeyGroupEvent;
+    hasObject(): boolean;
+    clearObject(): APIKeyGroupEvent;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): APIKeyGroupEvent.AsObject;
+    static toObject(includeInstance: boolean, msg: APIKeyGroupEvent): APIKeyGroupEvent.AsObject;
+    static serializeBinaryToWriter(message: APIKeyGroupEvent, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): APIKeyGroupEvent;
+    static deserializeBinaryFromReader(message: APIKeyGroupEvent, reader: jspb.BinaryReader): APIKeyGroupEvent;
+  }
+
+  export namespace APIKeyGroupEvent {
+    export type AsObject = {
+      event: EventType,
+      object?: github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb.APIKeyGroup.AsObject,
     }
   }
 

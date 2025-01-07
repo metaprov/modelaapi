@@ -125,7 +125,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.UpdateKnowledgeBaseRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.UpdateKnowledgeBaseRequest.repeatedFields_, null);
 };
 goog.inherits(proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.UpdateKnowledgeBaseRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -879,6 +879,13 @@ proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.CreateKnowledgeBas
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.UpdateKnowledgeBaseRequest.repeatedFields_ = [3];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -911,7 +918,8 @@ proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.UpdateKnowledgeBas
 proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.UpdateKnowledgeBaseRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     knowledgebase: (f = msg.getKnowledgebase()) && github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb.KnowledgeBase.toObject(includeInstance, f),
-    fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
+    fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
+    flaggeddocumentsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -958,6 +966,10 @@ proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.UpdateKnowledgeBas
       reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
       msg.setFieldMask(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addFlaggeddocuments(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1001,6 +1013,13 @@ proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.UpdateKnowledgeBas
       2,
       f,
       google_protobuf_field_mask_pb.FieldMask.serializeBinaryToWriter
+    );
+  }
+  f = message.getFlaggeddocumentsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      3,
+      f
     );
   }
 };
@@ -1077,6 +1096,43 @@ proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.UpdateKnowledgeBas
  */
 proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.UpdateKnowledgeBaseRequest.prototype.hasFieldMask = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * repeated string flaggedDocuments = 3;
+ * @return {!Array<string>}
+ */
+proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.UpdateKnowledgeBaseRequest.prototype.getFlaggeddocumentsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 3));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.UpdateKnowledgeBaseRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.UpdateKnowledgeBaseRequest.prototype.setFlaggeddocumentsList = function(value) {
+  return jspb.Message.setField(this, 3, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.UpdateKnowledgeBaseRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.UpdateKnowledgeBaseRequest.prototype.addFlaggeddocuments = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.UpdateKnowledgeBaseRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.knowledgebase.v1.UpdateKnowledgeBaseRequest.prototype.clearFlaggeddocumentsList = function() {
+  return this.setFlaggeddocumentsList([]);
 };
 
 

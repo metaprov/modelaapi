@@ -254,8 +254,8 @@ export class KnowledgeBaseServiceClient {
     this.methodDescriptorDeleteKnowledgeBase);
   }
 
-  methodDescriptorRefresh = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.knowledgebase.v1.KnowledgeBaseService/Refresh',
+  methodDescriptorRefreshKnowledgeBase = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.knowledgebase.v1.KnowledgeBaseService/RefreshKnowledgeBase',
     grpcWeb.MethodType.UNARY,
     github_com_metaprov_modelaapi_services_knowledgebase_v1_knowledgebase_pb.RefreshKnowledgeBaseRequest,
     github_com_metaprov_modelaapi_services_knowledgebase_v1_knowledgebase_pb.RefreshKnowledgeBaseResponse,
@@ -265,17 +265,17 @@ export class KnowledgeBaseServiceClient {
     github_com_metaprov_modelaapi_services_knowledgebase_v1_knowledgebase_pb.RefreshKnowledgeBaseResponse.deserializeBinary
   );
 
-  refresh(
+  refreshKnowledgeBase(
     request: github_com_metaprov_modelaapi_services_knowledgebase_v1_knowledgebase_pb.RefreshKnowledgeBaseRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_knowledgebase_v1_knowledgebase_pb.RefreshKnowledgeBaseResponse>;
 
-  refresh(
+  refreshKnowledgeBase(
     request: github_com_metaprov_modelaapi_services_knowledgebase_v1_knowledgebase_pb.RefreshKnowledgeBaseRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_knowledgebase_v1_knowledgebase_pb.RefreshKnowledgeBaseResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_knowledgebase_v1_knowledgebase_pb.RefreshKnowledgeBaseResponse>;
 
-  refresh(
+  refreshKnowledgeBase(
     request: github_com_metaprov_modelaapi_services_knowledgebase_v1_knowledgebase_pb.RefreshKnowledgeBaseRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
@@ -283,18 +283,18 @@ export class KnowledgeBaseServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.knowledgebase.v1.KnowledgeBaseService/Refresh',
+          '/github.com.metaprov.modelaapi.services.knowledgebase.v1.KnowledgeBaseService/RefreshKnowledgeBase',
         request,
         metadata || {},
-        this.methodDescriptorRefresh,
+        this.methodDescriptorRefreshKnowledgeBase,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.knowledgebase.v1.KnowledgeBaseService/Refresh',
+      '/github.com.metaprov.modelaapi.services.knowledgebase.v1.KnowledgeBaseService/RefreshKnowledgeBase',
     request,
     metadata || {},
-    this.methodDescriptorRefresh);
+    this.methodDescriptorRefreshKnowledgeBase);
   }
 
 }

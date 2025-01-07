@@ -58,6 +58,9 @@ type WatcherdServiceClient interface {
 	WatchReview(ctx context.Context, in *WatchRequestOptions, opts ...grpc.CallOption) (*WatchReviewResponse, error)
 	WatchRunbook(ctx context.Context, in *WatchRequestOptions, opts ...grpc.CallOption) (*WatchRunbookResponse, error)
 	WatchTodo(ctx context.Context, in *WatchRequestOptions, opts ...grpc.CallOption) (*WatchTodoResponse, error)
+	WatchKnowledgeBase(ctx context.Context, in *WatchRequestOptions, opts ...grpc.CallOption) (*WatchKnowledgeBaseResponse, error)
+	WatchLLMServer(ctx context.Context, in *WatchRequestOptions, opts ...grpc.CallOption) (*WatchLLMServerResponse, error)
+	WatchAPIKeyGroup(ctx context.Context, in *WatchRequestOptions, opts ...grpc.CallOption) (*WatchAPIKeyGroupResponse, error)
 }
 
 type watcherdServiceClient struct {
@@ -392,6 +395,33 @@ func (c *watcherdServiceClient) WatchTodo(ctx context.Context, in *WatchRequestO
 	return out, nil
 }
 
+func (c *watcherdServiceClient) WatchKnowledgeBase(ctx context.Context, in *WatchRequestOptions, opts ...grpc.CallOption) (*WatchKnowledgeBaseResponse, error) {
+	out := new(WatchKnowledgeBaseResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchKnowledgeBase", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *watcherdServiceClient) WatchLLMServer(ctx context.Context, in *WatchRequestOptions, opts ...grpc.CallOption) (*WatchLLMServerResponse, error) {
+	out := new(WatchLLMServerResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchLLMServer", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *watcherdServiceClient) WatchAPIKeyGroup(ctx context.Context, in *WatchRequestOptions, opts ...grpc.CallOption) (*WatchAPIKeyGroupResponse, error) {
+	out := new(WatchAPIKeyGroupResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchAPIKeyGroup", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // WatcherdServiceServer is the server API for WatcherdService service.
 // All implementations must embed UnimplementedWatcherdServiceServer
 // for forward compatibility
@@ -432,6 +462,9 @@ type WatcherdServiceServer interface {
 	WatchReview(context.Context, *WatchRequestOptions) (*WatchReviewResponse, error)
 	WatchRunbook(context.Context, *WatchRequestOptions) (*WatchRunbookResponse, error)
 	WatchTodo(context.Context, *WatchRequestOptions) (*WatchTodoResponse, error)
+	WatchKnowledgeBase(context.Context, *WatchRequestOptions) (*WatchKnowledgeBaseResponse, error)
+	WatchLLMServer(context.Context, *WatchRequestOptions) (*WatchLLMServerResponse, error)
+	WatchAPIKeyGroup(context.Context, *WatchRequestOptions) (*WatchAPIKeyGroupResponse, error)
 	mustEmbedUnimplementedWatcherdServiceServer()
 }
 
@@ -546,6 +579,15 @@ func (UnimplementedWatcherdServiceServer) WatchRunbook(context.Context, *WatchRe
 }
 func (UnimplementedWatcherdServiceServer) WatchTodo(context.Context, *WatchRequestOptions) (*WatchTodoResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method WatchTodo not implemented")
+}
+func (UnimplementedWatcherdServiceServer) WatchKnowledgeBase(context.Context, *WatchRequestOptions) (*WatchKnowledgeBaseResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method WatchKnowledgeBase not implemented")
+}
+func (UnimplementedWatcherdServiceServer) WatchLLMServer(context.Context, *WatchRequestOptions) (*WatchLLMServerResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method WatchLLMServer not implemented")
+}
+func (UnimplementedWatcherdServiceServer) WatchAPIKeyGroup(context.Context, *WatchRequestOptions) (*WatchAPIKeyGroupResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method WatchAPIKeyGroup not implemented")
 }
 func (UnimplementedWatcherdServiceServer) mustEmbedUnimplementedWatcherdServiceServer() {}
 
@@ -1208,6 +1250,60 @@ func _WatcherdService_WatchTodo_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
+func _WatcherdService_WatchKnowledgeBase_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(WatchRequestOptions)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WatcherdServiceServer).WatchKnowledgeBase(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchKnowledgeBase",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WatcherdServiceServer).WatchKnowledgeBase(ctx, req.(*WatchRequestOptions))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WatcherdService_WatchLLMServer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(WatchRequestOptions)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WatcherdServiceServer).WatchLLMServer(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchLLMServer",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WatcherdServiceServer).WatchLLMServer(ctx, req.(*WatchRequestOptions))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WatcherdService_WatchAPIKeyGroup_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(WatchRequestOptions)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WatcherdServiceServer).WatchAPIKeyGroup(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchAPIKeyGroup",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WatcherdServiceServer).WatchAPIKeyGroup(ctx, req.(*WatchRequestOptions))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // WatcherdService_ServiceDesc is the grpc.ServiceDesc for WatcherdService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1358,6 +1454,18 @@ var WatcherdService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "WatchTodo",
 			Handler:    _WatcherdService_WatchTodo_Handler,
+		},
+		{
+			MethodName: "WatchKnowledgeBase",
+			Handler:    _WatcherdService_WatchKnowledgeBase_Handler,
+		},
+		{
+			MethodName: "WatchLLMServer",
+			Handler:    _WatcherdService_WatchLLMServer_Handler,
+		},
+		{
+			MethodName: "WatchAPIKeyGroup",
+			Handler:    _WatcherdService_WatchAPIKeyGroup_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

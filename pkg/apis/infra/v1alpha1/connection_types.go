@@ -46,15 +46,15 @@ type ConnectionSpec struct {
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
 	// The type of external system which the connection references
-	// +kubebuilder:default:="general"
-	// +kubebuilder:validation:Optional
+	// +kubebuilder:validation:Required
+	// +required
 	Category catalog.ConnectionCategory `json:"category" protobuf:"bytes,2,opt,name=category"`
 	// Provider specifies the name of the provider to the external system
 	// +kubebuilder:validation:Required
 	// +required
 	Provider catalog.ProviderName `json:"provider" protobuf:"bytes,3,opt,name=provider"`
 	// SecretData contains a map of sensitive parameters relevant to the connection and their values. Modela
-	// will transfer the values within the map to Vault. Secret data will never be sent to Etcd
+	// will transfer the values within the map to Vault.
 	SecretData map[catalog.SecretKeyName]string `json:"secretData,omitempty" protobuf:"bytes,4,opt,name=secretData"`
 	// Options contains non-sensitive options relevant to the provider
 	Options map[string]string `json:"options,omitempty" protobuf:"bytes,5,opt,name=options"`

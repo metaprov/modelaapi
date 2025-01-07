@@ -361,6 +361,32 @@ export namespace APIKeyStatus {
   }
 }
 
+export class APIRerankSpec extends jspb.Message {
+  getConnectionname(): string;
+  setConnectionname(value: string): APIRerankSpec;
+  hasConnectionname(): boolean;
+  clearConnectionname(): APIRerankSpec;
+
+  getTopn(): number;
+  setTopn(value: number): APIRerankSpec;
+  hasTopn(): boolean;
+  clearTopn(): APIRerankSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): APIRerankSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: APIRerankSpec): APIRerankSpec.AsObject;
+  static serializeBinaryToWriter(message: APIRerankSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): APIRerankSpec;
+  static deserializeBinaryFromReader(message: APIRerankSpec, reader: jspb.BinaryReader): APIRerankSpec;
+}
+
+export namespace APIRerankSpec {
+  export type AsObject = {
+    connectionname?: string,
+    topn?: number,
+  }
+}
+
 export class AutoVectorRetrieverSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): AutoVectorRetrieverSpec;
@@ -463,32 +489,6 @@ export namespace CodeSplitterSpec {
   }
 }
 
-export class CohereRerankSpec extends jspb.Message {
-  getConnectionname(): string;
-  setConnectionname(value: string): CohereRerankSpec;
-  hasConnectionname(): boolean;
-  clearConnectionname(): CohereRerankSpec;
-
-  getTopn(): number;
-  setTopn(value: number): CohereRerankSpec;
-  hasTopn(): boolean;
-  clearTopn(): CohereRerankSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CohereRerankSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: CohereRerankSpec): CohereRerankSpec.AsObject;
-  static serializeBinaryToWriter(message: CohereRerankSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CohereRerankSpec;
-  static deserializeBinaryFromReader(message: CohereRerankSpec, reader: jspb.BinaryReader): CohereRerankSpec;
-}
-
-export namespace CohereRerankSpec {
-  export type AsObject = {
-    connectionname?: string,
-    topn?: number,
-  }
-}
-
 export class Column extends jspb.Message {
   getName(): string;
   setName(value: string): Column;
@@ -552,11 +552,6 @@ export namespace Column {
 }
 
 export class DatabaseReaderSpec extends jspb.Message {
-  getType(): string;
-  setType(value: string): DatabaseReaderSpec;
-  hasType(): boolean;
-  clearType(): DatabaseReaderSpec;
-
   getConnectionname(): string;
   setConnectionname(value: string): DatabaseReaderSpec;
   hasConnectionname(): boolean;
@@ -580,7 +575,6 @@ export class DatabaseReaderSpec extends jspb.Message {
 
 export namespace DatabaseReaderSpec {
   export type AsObject = {
-    type?: string,
     connectionname?: string,
     query?: string,
     optionsMap: Array<[string, string]>,
@@ -616,10 +610,10 @@ export class DocumentSpec extends jspb.Message {
   hasNodeparser(): boolean;
   clearNodeparser(): DocumentSpec;
 
-  getEmbeddingmodel(): ModelSpec | undefined;
-  setEmbeddingmodel(value?: ModelSpec): DocumentSpec;
-  hasEmbeddingmodel(): boolean;
-  clearEmbeddingmodel(): DocumentSpec;
+  getFlagged(): boolean;
+  setFlagged(value: boolean): DocumentSpec;
+  hasFlagged(): boolean;
+  clearFlagged(): DocumentSpec;
 
   getFile(): FileLocationReaderSpec | undefined;
   setFile(value?: FileLocationReaderSpec): DocumentSpec;
@@ -657,7 +651,7 @@ export namespace DocumentSpec {
     refreshperiod?: number,
     indexesList: Array<string>,
     nodeparser?: string,
-    embeddingmodel?: ModelSpec.AsObject,
+    flagged?: boolean,
     file?: FileLocationReaderSpec.AsObject,
     database?: DatabaseReaderSpec.AsObject,
     web?: WebReaderSpec.AsObject,
@@ -681,11 +675,6 @@ export class DocumentStatus extends jspb.Message {
   hasLasterror(): boolean;
   clearLasterror(): DocumentStatus;
 
-  getFlagged(): boolean;
-  setFlagged(value: boolean): DocumentStatus;
-  hasFlagged(): boolean;
-  clearFlagged(): DocumentStatus;
-
   getLastrefreshat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLastrefreshat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DocumentStatus;
   hasLastrefreshat(): boolean;
@@ -704,7 +693,6 @@ export namespace DocumentStatus {
     name?: string,
     nodes?: number,
     lasterror?: string,
-    flagged?: boolean,
     lastrefreshat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
   }
 }
@@ -774,10 +762,10 @@ export namespace DocumentSummaryRetrieverSpec {
 }
 
 export class EmbeddingRecencyPostProcessorSpec extends jspb.Message {
-  getEmbeddingmodel(): ModelSpec | undefined;
-  setEmbeddingmodel(value?: ModelSpec): EmbeddingRecencyPostProcessorSpec;
-  hasEmbeddingmodel(): boolean;
-  clearEmbeddingmodel(): EmbeddingRecencyPostProcessorSpec;
+  getModel(): ModelSpec | undefined;
+  setModel(value?: ModelSpec): EmbeddingRecencyPostProcessorSpec;
+  hasModel(): boolean;
+  clearModel(): EmbeddingRecencyPostProcessorSpec;
 
   getSimilaritycutoff(): number;
   setSimilaritycutoff(value: number): EmbeddingRecencyPostProcessorSpec;
@@ -794,7 +782,7 @@ export class EmbeddingRecencyPostProcessorSpec extends jspb.Message {
 
 export namespace EmbeddingRecencyPostProcessorSpec {
   export type AsObject = {
-    embeddingmodel?: ModelSpec.AsObject,
+    model?: ModelSpec.AsObject,
     similaritycutoff?: number,
   }
 }
@@ -1021,6 +1009,11 @@ export class FileReaderSpec extends jspb.Message {
   hasType(): boolean;
   clearType(): FileReaderSpec;
 
+  getConnectionname(): string;
+  setConnectionname(value: string): FileReaderSpec;
+  hasConnectionname(): boolean;
+  clearConnectionname(): FileReaderSpec;
+
   getOptionsMap(): jspb.Map<string, string>;
   clearOptionsMap(): FileReaderSpec;
 
@@ -1035,6 +1028,7 @@ export class FileReaderSpec extends jspb.Message {
 export namespace FileReaderSpec {
   export type AsObject = {
     type?: string,
+    connectionname?: string,
     optionsMap: Array<[string, string]>,
   }
 }
@@ -1566,6 +1560,11 @@ export class KnowledgeBaseSpec extends jspb.Message {
   clearDocumentsList(): KnowledgeBaseSpec;
   addDocuments(value?: DocumentSpec, index?: number): DocumentSpec;
 
+  getMaxconcurrentreaders(): number;
+  setMaxconcurrentreaders(value: number): KnowledgeBaseSpec;
+  hasMaxconcurrentreaders(): boolean;
+  clearMaxconcurrentreaders(): KnowledgeBaseSpec;
+
   getNodeparsersList(): Array<NodeParserSpec>;
   setNodeparsersList(value: Array<NodeParserSpec>): KnowledgeBaseSpec;
   clearNodeparsersList(): KnowledgeBaseSpec;
@@ -1575,6 +1574,11 @@ export class KnowledgeBaseSpec extends jspb.Message {
   setDefaultnodeparser(value: string): KnowledgeBaseSpec;
   hasDefaultnodeparser(): boolean;
   clearDefaultnodeparser(): KnowledgeBaseSpec;
+
+  getNotification(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec | undefined;
+  setNotification(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec): KnowledgeBaseSpec;
+  hasNotification(): boolean;
+  clearNotification(): KnowledgeBaseSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): KnowledgeBaseSpec.AsObject;
@@ -1596,8 +1600,10 @@ export namespace KnowledgeBaseSpec {
     documentstoreconnectionname?: string,
     indexesList: Array<IndexSpec.AsObject>,
     documentsList: Array<DocumentSpec.AsObject>,
+    maxconcurrentreaders?: number,
     nodeparsersList: Array<NodeParserSpec.AsObject>,
     defaultnodeparser?: string,
+    notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
   }
 }
 
@@ -1616,6 +1622,11 @@ export class KnowledgeBaseStatus extends jspb.Message {
   setLastcompletionat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): KnowledgeBaseStatus;
   hasLastcompletionat(): boolean;
   clearLastcompletionat(): KnowledgeBaseStatus;
+
+  getFailuremessage(): string;
+  setFailuremessage(value: string): KnowledgeBaseStatus;
+  hasFailuremessage(): boolean;
+  clearFailuremessage(): KnowledgeBaseStatus;
 
   getLogsList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ContainerLog>;
   setLogsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ContainerLog>): KnowledgeBaseStatus;
@@ -1655,6 +1666,7 @@ export namespace KnowledgeBaseStatus {
     observedgeneration?: number,
     lastrefreshat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     lastcompletionat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    failuremessage?: string,
     logsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ContainerLog.AsObject>,
     documentsList: Array<DocumentStatus.AsObject>,
     indexesList: Array<IndexStatus.AsObject>,
@@ -1720,8 +1732,8 @@ export class LLMServer extends jspb.Message {
   hasSpec(): boolean;
   clearSpec(): LLMServer;
 
-  getStatus(): LLMStatus | undefined;
-  setStatus(value?: LLMStatus): LLMServer;
+  getStatus(): LLMServerStatus | undefined;
+  setStatus(value?: LLMServerStatus): LLMServer;
   hasStatus(): boolean;
   clearStatus(): LLMServer;
 
@@ -1737,7 +1749,7 @@ export namespace LLMServer {
   export type AsObject = {
     metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
     spec?: LLMServerSpec.AsObject,
-    status?: LLMStatus.AsObject,
+    status?: LLMServerStatus.AsObject,
   }
 }
 
@@ -1905,66 +1917,72 @@ export namespace LLMServerSpec {
   }
 }
 
-export class LLMStatus extends jspb.Message {
+export class LLMServerStatus extends jspb.Message {
   getObservedgeneration(): number;
-  setObservedgeneration(value: number): LLMStatus;
+  setObservedgeneration(value: number): LLMServerStatus;
   hasObservedgeneration(): boolean;
-  clearObservedgeneration(): LLMStatus;
+  clearObservedgeneration(): LLMServerStatus;
 
   getEndpointsList(): Array<EndpointStatus>;
-  setEndpointsList(value: Array<EndpointStatus>): LLMStatus;
-  clearEndpointsList(): LLMStatus;
+  setEndpointsList(value: Array<EndpointStatus>): LLMServerStatus;
+  clearEndpointsList(): LLMServerStatus;
   addEndpoints(value?: EndpointStatus, index?: number): EndpointStatus;
 
   getEndpoint(): string;
-  setEndpoint(value: string): LLMStatus;
+  setEndpoint(value: string): LLMServerStatus;
   hasEndpoint(): boolean;
-  clearEndpoint(): LLMStatus;
+  clearEndpoint(): LLMServerStatus;
 
   getDeployedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setDeployedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): LLMStatus;
+  setDeployedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): LLMServerStatus;
   hasDeployedat(): boolean;
-  clearDeployedat(): LLMStatus;
+  clearDeployedat(): LLMServerStatus;
+
+  getRefreshedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setRefreshedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): LLMServerStatus;
+  hasRefreshedat(): boolean;
+  clearRefreshedat(): LLMServerStatus;
 
   getDeploymentref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setDeploymentref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): LLMStatus;
+  setDeploymentref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): LLMServerStatus;
   hasDeploymentref(): boolean;
-  clearDeploymentref(): LLMStatus;
+  clearDeploymentref(): LLMServerStatus;
 
   getServiceref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
-  setServiceref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): LLMStatus;
+  setServiceref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): LLMServerStatus;
   hasServiceref(): boolean;
-  clearServiceref(): LLMStatus;
+  clearServiceref(): LLMServerStatus;
 
   getFailuremessage(): string;
-  setFailuremessage(value: string): LLMStatus;
+  setFailuremessage(value: string): LLMServerStatus;
   hasFailuremessage(): boolean;
-  clearFailuremessage(): LLMStatus;
+  clearFailuremessage(): LLMServerStatus;
 
   getUpdatedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): LLMStatus;
+  setUpdatedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): LLMServerStatus;
   hasUpdatedat(): boolean;
-  clearUpdatedat(): LLMStatus;
+  clearUpdatedat(): LLMServerStatus;
 
   getConditionsList(): Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>;
-  setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): LLMStatus;
-  clearConditionsList(): LLMStatus;
+  setConditionsList(value: Array<k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition>): LLMServerStatus;
+  clearConditionsList(): LLMServerStatus;
   addConditions(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition, index?: number): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Condition;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): LLMStatus.AsObject;
-  static toObject(includeInstance: boolean, msg: LLMStatus): LLMStatus.AsObject;
-  static serializeBinaryToWriter(message: LLMStatus, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): LLMStatus;
-  static deserializeBinaryFromReader(message: LLMStatus, reader: jspb.BinaryReader): LLMStatus;
+  toObject(includeInstance?: boolean): LLMServerStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: LLMServerStatus): LLMServerStatus.AsObject;
+  static serializeBinaryToWriter(message: LLMServerStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LLMServerStatus;
+  static deserializeBinaryFromReader(message: LLMServerStatus, reader: jspb.BinaryReader): LLMServerStatus;
 }
 
-export namespace LLMStatus {
+export namespace LLMServerStatus {
   export type AsObject = {
     observedgeneration?: number,
     endpointsList: Array<EndpointStatus.AsObject>,
     endpoint?: string,
     deployedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    refreshedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     deploymentref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     serviceref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     failuremessage?: string,
@@ -2134,6 +2152,9 @@ export class ModelSpec extends jspb.Message {
   hasModel(): boolean;
   clearModel(): ModelSpec;
 
+  getParametersMap(): jspb.Map<string, string>;
+  clearParametersMap(): ModelSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelSpec): ModelSpec.AsObject;
@@ -2146,6 +2167,7 @@ export namespace ModelSpec {
   export type AsObject = {
     connectionname?: string,
     model?: string,
+    parametersMap: Array<[string, string]>,
   }
 }
 
@@ -2211,6 +2233,11 @@ export class NodeParserSpec extends jspb.Message {
   hasMixed(): boolean;
   clearMixed(): NodeParserSpec;
 
+  getSemantic(): SemanticNodeParserSpec | undefined;
+  setSemantic(value?: SemanticNodeParserSpec): NodeParserSpec;
+  hasSemantic(): boolean;
+  clearSemantic(): NodeParserSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NodeParserSpec.AsObject;
   static toObject(includeInstance: boolean, msg: NodeParserSpec): NodeParserSpec.AsObject;
@@ -2228,6 +2255,7 @@ export namespace NodeParserSpec {
     text?: TextSplitterSpec.AsObject,
     sentence?: SentenceWindowNodeParserSpec.AsObject,
     mixed?: MixedNodeParserSpec.AsObject,
+    semantic?: SemanticNodeParserSpec.AsObject,
   }
 }
 
@@ -2257,10 +2285,10 @@ export class NodePostProcessor extends jspb.Message {
   hasLlmrerank(): boolean;
   clearLlmrerank(): NodePostProcessor;
 
-  getCoherererank(): CohereRerankSpec | undefined;
-  setCoherererank(value?: CohereRerankSpec): NodePostProcessor;
-  hasCoherererank(): boolean;
-  clearCoherererank(): NodePostProcessor;
+  getApirerank(): APIRerankSpec | undefined;
+  setApirerank(value?: APIRerankSpec): NodePostProcessor;
+  hasApirerank(): boolean;
+  clearApirerank(): NodePostProcessor;
 
   getFixedrecency(): FixedRecencyPostProcessorSpec | undefined;
   setFixedrecency(value?: FixedRecencyPostProcessorSpec): NodePostProcessor;
@@ -2292,7 +2320,7 @@ export namespace NodePostProcessor {
     reorder?: LongContextReorderSpec.AsObject,
     embeddingoptimizer?: SentenceEmbeddingOptimizerSpec.AsObject,
     llmrerank?: LLMRerankSpec.AsObject,
-    coherererank?: CohereRerankSpec.AsObject,
+    apirerank?: APIRerankSpec.AsObject,
     fixedrecency?: FixedRecencyPostProcessorSpec.AsObject,
     embeddingrecency?: EmbeddingRecencyPostProcessorSpec.AsObject,
     timeweightedrecency?: TimeWeightedRecencyPostProcessorSpec.AsObject,
@@ -2337,31 +2365,31 @@ export namespace QueryEngineSpec {
   }
 }
 
-export class QueryEngineToolSpec extends jspb.Message {
+export class QueryEngineTool extends jspb.Message {
   getQueryengine(): string;
-  setQueryengine(value: string): QueryEngineToolSpec;
+  setQueryengine(value: string): QueryEngineTool;
   hasQueryengine(): boolean;
-  clearQueryengine(): QueryEngineToolSpec;
+  clearQueryengine(): QueryEngineTool;
 
   getName(): string;
-  setName(value: string): QueryEngineToolSpec;
+  setName(value: string): QueryEngineTool;
   hasName(): boolean;
-  clearName(): QueryEngineToolSpec;
+  clearName(): QueryEngineTool;
 
   getDescription(): string;
-  setDescription(value: string): QueryEngineToolSpec;
+  setDescription(value: string): QueryEngineTool;
   hasDescription(): boolean;
-  clearDescription(): QueryEngineToolSpec;
+  clearDescription(): QueryEngineTool;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): QueryEngineToolSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: QueryEngineToolSpec): QueryEngineToolSpec.AsObject;
-  static serializeBinaryToWriter(message: QueryEngineToolSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): QueryEngineToolSpec;
-  static deserializeBinaryFromReader(message: QueryEngineToolSpec, reader: jspb.BinaryReader): QueryEngineToolSpec;
+  toObject(includeInstance?: boolean): QueryEngineTool.AsObject;
+  static toObject(includeInstance: boolean, msg: QueryEngineTool): QueryEngineTool.AsObject;
+  static serializeBinaryToWriter(message: QueryEngineTool, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): QueryEngineTool;
+  static deserializeBinaryFromReader(message: QueryEngineTool, reader: jspb.BinaryReader): QueryEngineTool;
 }
 
-export namespace QueryEngineToolSpec {
+export namespace QueryEngineTool {
   export type AsObject = {
     queryengine?: string,
     name?: string,
@@ -2402,15 +2430,23 @@ export namespace Quota {
 }
 
 export class RepositoryFileReader extends jspb.Message {
-  getExtension(): string;
-  setExtension(value: string): RepositoryFileReader;
+  getExtension(): ExtensionFilter | undefined;
+  setExtension(value?: ExtensionFilter): RepositoryFileReader;
   hasExtension(): boolean;
   clearExtension(): RepositoryFileReader;
 
-  getExtensionsList(): Array<string>;
-  setExtensionsList(value: Array<string>): RepositoryFileReader;
-  clearExtensionsList(): RepositoryFileReader;
-  addExtensions(value: string, index?: number): RepositoryFileReader;
+  getLength(): LengthFilter | undefined;
+  setLength(value?: LengthFilter): RepositoryFileReader;
+  hasLength(): boolean;
+  clearLength(): RepositoryFileReader;
+
+  getName(): NameFilter | undefined;
+  setName(value?: NameFilter): RepositoryFileReader;
+  hasName(): boolean;
+  clearName(): RepositoryFileReader;
+
+  getMetadataMap(): jspb.Map<string, string>;
+  clearMetadataMap(): RepositoryFileReader;
 
   getReader(): FileReaderSpec | undefined;
   setReader(value?: FileReaderSpec): RepositoryFileReader;
@@ -2427,27 +2463,24 @@ export class RepositoryFileReader extends jspb.Message {
 
 export namespace RepositoryFileReader {
   export type AsObject = {
-    extension?: string,
-    extensionsList: Array<string>,
+    extension?: ExtensionFilter.AsObject,
+    length?: LengthFilter.AsObject,
+    name?: NameFilter.AsObject,
+    metadataMap: Array<[string, string]>,
     reader?: FileReaderSpec.AsObject,
   }
 }
 
 export class RepositoryReaderSpec extends jspb.Message {
-  getType(): string;
-  setType(value: string): RepositoryReaderSpec;
-  hasType(): boolean;
-  clearType(): RepositoryReaderSpec;
-
   getConnectionname(): string;
   setConnectionname(value: string): RepositoryReaderSpec;
   hasConnectionname(): boolean;
   clearConnectionname(): RepositoryReaderSpec;
 
-  getExtensionsList(): Array<string>;
-  setExtensionsList(value: Array<string>): RepositoryReaderSpec;
-  clearExtensionsList(): RepositoryReaderSpec;
-  addExtensions(value: string, index?: number): RepositoryReaderSpec;
+  getUsedefaultreader(): boolean;
+  setUsedefaultreader(value: boolean): RepositoryReaderSpec;
+  hasUsedefaultreader(): boolean;
+  clearUsedefaultreader(): RepositoryReaderSpec;
 
   getReadersList(): Array<RepositoryFileReader>;
   setReadersList(value: Array<RepositoryFileReader>): RepositoryReaderSpec;
@@ -2467,9 +2500,8 @@ export class RepositoryReaderSpec extends jspb.Message {
 
 export namespace RepositoryReaderSpec {
   export type AsObject = {
-    type?: string,
     connectionname?: string,
-    extensionsList: Array<string>,
+    usedefaultreader?: boolean,
     readersList: Array<RepositoryFileReader.AsObject>,
     optionsMap: Array<[string, string]>,
   }
@@ -2634,10 +2666,10 @@ export namespace RetrieverToolSpec {
 }
 
 export class RouterQueryEngineSpec extends jspb.Message {
-  getToolsList(): Array<QueryEngineToolSpec>;
-  setToolsList(value: Array<QueryEngineToolSpec>): RouterQueryEngineSpec;
+  getToolsList(): Array<QueryEngineTool>;
+  setToolsList(value: Array<QueryEngineTool>): RouterQueryEngineSpec;
   clearToolsList(): RouterQueryEngineSpec;
-  addTools(value?: QueryEngineToolSpec, index?: number): QueryEngineToolSpec;
+  addTools(value?: QueryEngineTool, index?: number): QueryEngineTool;
 
   getSelector(): SelectorSpec | undefined;
   setSelector(value?: SelectorSpec): RouterQueryEngineSpec;
@@ -2654,7 +2686,7 @@ export class RouterQueryEngineSpec extends jspb.Message {
 
 export namespace RouterQueryEngineSpec {
   export type AsObject = {
-    toolsList: Array<QueryEngineToolSpec.AsObject>,
+    toolsList: Array<QueryEngineTool.AsObject>,
     selector?: SelectorSpec.AsObject,
   }
 }
@@ -2793,11 +2825,31 @@ export namespace SelectorSpec {
   }
 }
 
-export class SentenceEmbeddingOptimizerSpec extends jspb.Message {
+export class SemanticNodeParserSpec extends jspb.Message {
   getEmbeddingmodel(): ModelSpec | undefined;
-  setEmbeddingmodel(value?: ModelSpec): SentenceEmbeddingOptimizerSpec;
+  setEmbeddingmodel(value?: ModelSpec): SemanticNodeParserSpec;
   hasEmbeddingmodel(): boolean;
-  clearEmbeddingmodel(): SentenceEmbeddingOptimizerSpec;
+  clearEmbeddingmodel(): SemanticNodeParserSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SemanticNodeParserSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: SemanticNodeParserSpec): SemanticNodeParserSpec.AsObject;
+  static serializeBinaryToWriter(message: SemanticNodeParserSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SemanticNodeParserSpec;
+  static deserializeBinaryFromReader(message: SemanticNodeParserSpec, reader: jspb.BinaryReader): SemanticNodeParserSpec;
+}
+
+export namespace SemanticNodeParserSpec {
+  export type AsObject = {
+    embeddingmodel?: ModelSpec.AsObject,
+  }
+}
+
+export class SentenceEmbeddingOptimizerSpec extends jspb.Message {
+  getModel(): ModelSpec | undefined;
+  setModel(value?: ModelSpec): SentenceEmbeddingOptimizerSpec;
+  hasModel(): boolean;
+  clearModel(): SentenceEmbeddingOptimizerSpec;
 
   getSimilaritycutoff(): number;
   setSimilaritycutoff(value: number): SentenceEmbeddingOptimizerSpec;
@@ -2819,7 +2871,7 @@ export class SentenceEmbeddingOptimizerSpec extends jspb.Message {
 
 export namespace SentenceEmbeddingOptimizerSpec {
   export type AsObject = {
-    embeddingmodel?: ModelSpec.AsObject,
+    model?: ModelSpec.AsObject,
     similaritycutoff?: number,
     thresholdcutoff?: number,
   }
@@ -2948,10 +3000,10 @@ export namespace SimilarityPostProcessorSpec {
 }
 
 export class SubQuestionQueryEngineSpec extends jspb.Message {
-  getToolsList(): Array<QueryEngineToolSpec>;
-  setToolsList(value: Array<QueryEngineToolSpec>): SubQuestionQueryEngineSpec;
+  getToolsList(): Array<QueryEngineTool>;
+  setToolsList(value: Array<QueryEngineTool>): SubQuestionQueryEngineSpec;
   clearToolsList(): SubQuestionQueryEngineSpec;
-  addTools(value?: QueryEngineToolSpec, index?: number): QueryEngineToolSpec;
+  addTools(value?: QueryEngineTool, index?: number): QueryEngineTool;
 
   getResponsesynthesizer(): ResponseSynthesizerSpec | undefined;
   setResponsesynthesizer(value?: ResponseSynthesizerSpec): SubQuestionQueryEngineSpec;
@@ -2973,7 +3025,7 @@ export class SubQuestionQueryEngineSpec extends jspb.Message {
 
 export namespace SubQuestionQueryEngineSpec {
   export type AsObject = {
-    toolsList: Array<QueryEngineToolSpec.AsObject>,
+    toolsList: Array<QueryEngineTool.AsObject>,
     responsesynthesizer?: ResponseSynthesizerSpec.AsObject,
     model?: ModelSpec.AsObject,
   }

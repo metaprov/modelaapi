@@ -60,7 +60,7 @@ type MetadataKeyInfo struct {
 type AutoVectorRetrieverSpec struct {
 	// Indicates if automatic query generation is enabled
 	Enabled bool `json:"enabled" protobuf:"varint,1,opt,name=enabled"`
-	// The LLM to use when generating queries. If unspecified, use the default provided by model server
+	// The LLM to use when generating queries. If unspecified, use the default provided by the endpoint
 	Model *ModelSpec `json:"model,omitempty" protobuf:"bytes,2,opt,name=model"`
 	// The maximum top K allowed. The top K set by the LLM will be clamped to this value
 	MaxTopK *int64 `json:"maxTopK,omitempty" protobuf:"bytes,3,opt,name=maxTopK"`
@@ -93,7 +93,7 @@ func (x *VectorRetrieverSpec) IndexReference() IndexReference {
 type DocumentSummaryRetrieverSpec struct {
 	// The reference to the vector store index
 	Index IndexReference `json:"index" protobuf:"bytes,1,opt,name=index"`
-	// The embedding or large language model to use. If unspecified, use the default provided by model server
+	// The embedding or large language model to use. If unspecified, use the default provided by the endpoint
 	Model *ModelSpec `json:"model,omitempty" protobuf:"bytes,2,opt,name=model"`
 	// The top K nodes to retrieve. If unspecified, default to 1
 	TopK *int64 `json:"topK,omitempty" protobuf:"bytes,3,opt,name=topK"`
@@ -109,7 +109,7 @@ func (x *DocumentSummaryRetrieverSpec) IndexReference() IndexReference {
 type TreeRetrieverSpec struct {
 	// The reference to the tree index
 	Index IndexReference `json:"index" protobuf:"bytes,1,opt,name=index"`
-	// The large language model to use, if applicable. If unspecified, use the default provided by model server
+	// The language model to use, if applicable. If unspecified, use the default provided by the endpoint
 	Model *ModelSpec `json:"model,omitempty" protobuf:"bytes,2,opt,name=model"`
 	// The retriever mode. If unspecified, default to select leaf
 	Mode *TreeRetrieverMode `json:"mode,omitempty" protobuf:"bytes,3,opt,name=mode"`
@@ -124,7 +124,7 @@ func (x *TreeRetrieverSpec) IndexReference() IndexReference {
 type KeywordTableRetrieverSpec struct {
 	// The reference to the tree index
 	Index IndexReference `json:"index" protobuf:"bytes,1,opt,name=index"`
-	// The large language model to use, if using the LLM mode. If unspecified, use the default provided by model server
+	// The language model to use, if using the LLM mode. If unspecified, use the default provided by the endpoint
 	Model *ModelSpec `json:"model,omitempty" protobuf:"bytes,2,opt,name=model"`
 	// The retriever mode. If unspecified, default to RAKE
 	Mode *KeywordTableRetrieverMode `json:"mode,omitempty" protobuf:"bytes,3,opt,name=mode"`
@@ -142,7 +142,7 @@ func (x *KeywordTableRetrieverSpec) IndexReference() IndexReference {
 type ListRetrieverSpec struct {
 	// The reference to the tree index
 	Index IndexReference `json:"index" protobuf:"bytes,1,opt,name=index"`
-	// The large language or embedding model to use, if applicable. If unspecified, use the default provided by model server
+	// The large language or embedding model to use, if applicable. If unspecified, use the default provided by the endpoint
 	Model *ModelSpec `json:"model,omitempty" protobuf:"bytes,2,opt,name=model"`
 	// The top K nodes to retrieve when using the embedding or LLM mode. If unspecified, default to 1
 	TopK *int64 `json:"topK,omitempty" protobuf:"bytes,3,opt,name=topK"`
@@ -159,7 +159,7 @@ type FusionRetrieverSpec struct {
 	// The collection of retriever names
 	Retrievers []string `json:"retrievers,omitempty" protobuf:"bytes,1,opt,name=retrievers"`
 	// The embedding or large language model to use when generating questions.
-	// If unspecified, use the default provided by model server
+	// If unspecified, use the default provided by the endpoint
 	Model *ModelSpec `json:"model,omitempty" protobuf:"bytes,2,opt,name=model"`
 	// The number of queries to generate for the input query. If unspecified, default to 4
 	Queries *int64 `json:"queries,omitempty" protobuf:"bytes,3,opt,name=queries"`

@@ -80,3 +80,15 @@ class DeleteLLMServerRequest(_message.Message):
 class DeleteLLMServerResponse(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
+
+class RefreshLLMServerRequest(_message.Message):
+    __slots__ = ("namespace", "name")
+    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    namespace: str
+    name: str
+    def __init__(self, namespace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
+
+class RefreshLLMServerResponse(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...

@@ -27,7 +27,7 @@ type QueryEngineSpec struct {
 }
 
 type SelectorSpec struct {
-	// The selection mode. If unspecified, default to `genai`
+	// The selection mode. If unspecified, default to `llm`
 	Mode *SelectorMode `json:"mode,omitempty" protobuf:"bytes,1,opt,name=mode"`
 	// The LLM or embedding model that will be used to determine the selections.
 	// If unspecified, use the default LLM provided by the model server
@@ -36,7 +36,7 @@ type SelectorSpec struct {
 	Multi *bool `json:"multi,omitempty" protobuf:"bytes,3,opt,name=multi"`
 }
 
-type QueryEngineToolSpec struct {
+type QueryEngineTool struct {
 	// The name of the query engine
 	QueryEngine string `json:"queryEngine,omitempty" protobuf:"bytes,1,opt,name=queryEngine"`
 	// The name of the query engine
@@ -48,7 +48,7 @@ type QueryEngineToolSpec struct {
 // RouterQueryEngineSpec routes requests to one or more query engines
 type RouterQueryEngineSpec struct {
 	// The query engines to route requests to
-	Tools []QueryEngineToolSpec `json:"tools,omitempty" protobuf:"bytes,1,opt,name=tools"`
+	Tools []QueryEngineTool `json:"tools,omitempty" protobuf:"bytes,1,opt,name=tools"`
 	// The selector to use when choosing query engine(s)
 	Selector *SelectorSpec `json:"selector,omitempty" protobuf:"bytes,2,opt,name=selector"`
 }
@@ -56,7 +56,7 @@ type RouterQueryEngineSpec struct {
 // SubQuestionQueryEngineSpec breaks down a query into sub-questions that can be routed to other query engines
 type SubQuestionQueryEngineSpec struct {
 	// The query engines to route requests to
-	Tools []QueryEngineToolSpec `json:"tools,omitempty" protobuf:"bytes,1,opt,name=tools"`
+	Tools []QueryEngineTool `json:"tools,omitempty" protobuf:"bytes,1,opt,name=tools"`
 	// The response synthesizer to use when generating responses
 	ResponseSynthesizer *ResponseSynthesizerSpec `json:"responseSynthesizer,omitempty" protobuf:"bytes,2,opt,name=responseSynthesizer"`
 	// The model to use when generating questions

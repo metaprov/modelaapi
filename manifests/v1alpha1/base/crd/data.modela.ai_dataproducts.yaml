@@ -119,8 +119,6 @@ spec:
               defaultBucketName:
                 description: The name of the Virtual Bucket that resources under the
                   Data Product will use by default
-                maxLength: 63
-                pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
               defaultLabName:
                 description: The name of the Lab which will be used by all training
@@ -133,8 +131,6 @@ spec:
                 description: The name of the Serving Site which will be used by all
                   inference-related workloads, in the case that the resource creating
                   the workload does not specify a Serving Site
-                maxLength: 63
-                pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
               description:
                 default: ""

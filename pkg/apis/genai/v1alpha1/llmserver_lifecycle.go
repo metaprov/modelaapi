@@ -171,7 +171,7 @@ func (llm *LLMServer) MarkRefreshed() {
 func (llm *LLMServer) MarkRefreshing() {
 	llm.CreateOrUpdateCondition(metav1.Condition{
 		Type:   string(LLMServerRefreshed),
-		Status: metav1.ConditionTrue,
+		Status: metav1.ConditionFalse,
 		Reason: "Refreshing",
 	})
 }
@@ -223,6 +223,10 @@ func (llm *LLMServer) GetStatus() proto.Message {
 	return &llm.Status
 }
 
+func (llm *LLMServer) GetSpec() proto.Message {
+	return &llm.Spec
+}
+
 func (llm *LLMServer) GetObservedGeneration() int64 {
 	return llm.Status.ObservedGeneration
 }
@@ -236,5 +240,5 @@ func (llm *LLMServer) SetUpdatedAt(time *metav1.Time) {
 }
 
 func (llm *LLMServer) SetStatus(status interface{}) {
-	llm.Status = *status.(*LLMStatus)
+	llm.Status = *status.(*LLMServerStatus)
 }

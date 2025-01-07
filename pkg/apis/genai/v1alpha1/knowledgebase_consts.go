@@ -44,6 +44,7 @@ const (
 	MarkdownNodeParserType       NodeParserType = "markdown"
 	TextSplitterNodeParserType   NodeParserType = "text-splitter"
 	SentenceWindowNodeParserType NodeParserType = "sentence-window"
+	RawNodeParserType            NodeParserType = "raw"
 )
 
 type TextSplitterType string

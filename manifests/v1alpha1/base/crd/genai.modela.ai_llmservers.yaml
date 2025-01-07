@@ -59,8 +59,8 @@ spec:
                   accessType:
                     default: cluster-ip
                     description: The Kubernetes-native access method which specifies
-                      how the Kubernetes Service created by the Predictor will be
-                      exposed. See https://modela.ai/docs/docs/serving/production/#access-method
+                      how the Kubernetes Service created by the LLM Serveraaaa will
+                      be exposed. See https://modela.ai/docs/docs/serving/production/#access-method
                       for a detailed description of each access type
                     enum:
                     - cluster-ip
@@ -69,13 +69,14 @@ spec:
                     - ingress
                     type: string
                   nodePort:
+                    default: 30000
                     description: The port number that will be exposed on the external
-                      address of every node on the cluster, in the case of the AccessType
-                      being equal to NodePort. Traffic from the port will be forwarded
-                      to the LLMServer deployment
+                      address of every node on the cluster, in the case of the Access
+                      Type being NodePort. Traffic from the port will be forwarded
+                      to the LLM Server deployment
                     format: int32
-                    maximum: 65535
-                    minimum: 0
+                    maximum: 32767
+                    minimum: 30000
                     type: integer
                   port:
                     default: 8080
@@ -83,12 +84,13 @@ spec:
                       Service to serve requests
                     format: int32
                     maximum: 65535
-                    minimum: 1024
+                    minimum: 1
                     type: integer
                 type: object
               authorization:
-                description: The security configuration for the LLMServer, which determines
-                  how incoming requests are authorized
+                description: The security configuration for the LLM Server, which
+                  determines how incoming requests are authorized. If unspecified,
+                  the LLM Server will be exposed with no authorization
                 properties:
                   allowedKeyGroups:
                     description: The collection of API key groups whose API keys may
@@ -126,12 +128,16 @@ spec:
                     a single large language model endpoint
                   properties:
                     format:
-                      description: The API format standard that will be served for
-                        the model. If unspecified, default to the OpenAI API format
+                      description: The API format that will be required for all requests
+                        to the endpoint. When unspecified, defaults to the OpenAI
+                        API format.
                       type: string
                     model:
-                      description: The default LLMServer to use for all internal and
-                        consumer-facing completion requests
+                      description: The default language model to use for all internal
+                        and consumer-facing chat completion requests. The specified
+                        model may not always be used to generate a response. The final
+                        response synthesizer which generates the response may be overridden
+                        to use a different model.
                       properties:
                         connectionName:
                           description: ConnectionName specifies the name of a connection
@@ -139,34 +145,42 @@ spec:
                           type: string
                         model:
                           description: Model specifies the vendor-specific model type.
-                            If unspecified, use the model provided by the `model`
-                            option of the connection, or choose the default model
-                            for the vendor
+                            If unspecified, the model provided by the `model` option
+                            of the connection or the default model for the vendor
+                            will be used.
                           type: string
+                        parameters:
+                          additionalProperties:
+                            type: string
+                          description: Parameters contains a mapping for model-specific
+                            parameters. Common parameters for language models include
+                            `max_tokens`, `temperature`, `request_timeout` and `max_retries`
+                          type: object
                       type: object
                     name:
                       description: The unique name of the model
                       type: string
                     path:
-                      description: The path suffix where the model will be served.
-                        If unspecified, the default suffix for the LLMServer provider
-                        will be used
+                      description: The path suffix where the endpoint will be served.
+                        If unspecified, the default suffix for the format will be
+                        used. The path "/query" will be enabled by default for all
+                        endpoints
                       type: string
                     paths:
-                      description: The collection of path suffixes where the model
-                        will be served
+                      description: The collection of path suffixes where the endpoint
+                        will be served.
                       items:
                         type: string
                       type: array
                     queryEngine:
                       description: The name of the query engine used to augment requests
-                        to the LLMServer. If unspecified, no augmentation will be
-                        performed
+                        to the LLM Server. If unspecified, no augmentation will be
+                        performed.
                       type: string
                   type: object
                 type: array
               notification:
-                description: The configuration for Alerts generated by the proxy
+                description: The configuration for Alerts generated by the LLM Server
                 properties:
                   notifierName:
                     description: NotifierName specifies the name of a single Notifier
@@ -211,12 +225,12 @@ spec:
                               which mutates the nodes retrieved by a query engine
                               prior to synthesizing a response
                             properties:
-                              cohereRerank:
+                              apiRerank:
                                 description: Rerank the nodes through a specialized
-                                  Cohere model
+                                  API
                                 properties:
                                   connectionName:
-                                    description: The connection to Cohere
+                                    description: The connection to a reranking API
                                     type: string
                                   topN:
                                     description: The top number of nodes to return.
@@ -228,7 +242,7 @@ spec:
                                 description: Optimize the content of nodes by extracting
                                   the most relevant sentences
                                 properties:
-                                  embeddingModel:
+                                  model:
                                     description: The embedding model to use
                                     properties:
                                       connectionName:
@@ -238,10 +252,19 @@ spec:
                                         type: string
                                       model:
                                         description: Model specifies the vendor-specific
-                                          model type. If unspecified, use the model
-                                          provided by the `model` option of the connection,
-                                          or choose the default model for the vendor
+                                          model type. If unspecified, the model provided
+                                          by the `model` option of the connection
+                                          or the default model for the vendor will
+                                          be used.
                                         type: string
+                                      parameters:
+                                        additionalProperties:
+                                          type: string
+                                        description: Parameters contains a mapping
+                                          for model-specific parameters. Common parameters
+                                          for language models include `max_tokens`,
+                                          `temperature`, `request_timeout` and `max_retries`
+                                        type: object
                                     type: object
                                   similarityCutoff:
                                     description: The percentile cutoff, determining
@@ -258,7 +281,7 @@ spec:
                                 description: Sort by date and remove similar nodes
                                   that are older than newer ones
                                 properties:
-                                  embeddingModel:
+                                  model:
                                     description: The embedding model to use
                                     properties:
                                       connectionName:
@@ -268,10 +291,19 @@ spec:
                                         type: string
                                       model:
                                         description: Model specifies the vendor-specific
-                                          model type. If unspecified, use the model
-                                          provided by the `model` option of the connection,
-                                          or choose the default model for the vendor
+                                          model type. If unspecified, the model provided
+                                          by the `model` option of the connection
+                                          or the default model for the vendor will
+                                          be used.
                                         type: string
+                                      parameters:
+                                        additionalProperties:
+                                          type: string
+                                        description: Parameters contains a mapping
+                                          for model-specific parameters. Common parameters
+                                          for language models include `max_tokens`,
+                                          `temperature`, `request_timeout` and `max_retries`
+                                        type: object
                                     type: object
                                   similarityCutoff:
                                     description: The similarity cutoff. If unspecified,
@@ -320,10 +352,19 @@ spec:
                                         type: string
                                       model:
                                         description: Model specifies the vendor-specific
-                                          model type. If unspecified, use the model
-                                          provided by the `model` option of the connection,
-                                          or choose the default model for the vendor
+                                          model type. If unspecified, the model provided
+                                          by the `model` option of the connection
+                                          or the default model for the vendor will
+                                          be used.
                                         type: string
+                                      parameters:
+                                        additionalProperties:
+                                          type: string
+                                        description: Parameters contains a mapping
+                                          for model-specific parameters. Common parameters
+                                          for language models include `max_tokens`,
+                                          `temperature`, `request_timeout` and `max_retries`
+                                        type: object
                                     type: object
                                   rankGPT:
                                     description: Indicates if the RankGPT technique
@@ -400,10 +441,18 @@ spec:
                                   type: string
                                 model:
                                   description: Model specifies the vendor-specific
-                                    model type. If unspecified, use the model provided
-                                    by the `model` option of the connection, or choose
-                                    the default model for the vendor
+                                    model type. If unspecified, the model provided
+                                    by the `model` option of the connection or the
+                                    default model for the vendor will be used.
                                   type: string
+                                parameters:
+                                  additionalProperties:
+                                    type: string
+                                  description: Parameters contains a mapping for model-specific
+                                    parameters. Common parameters for language models
+                                    include `max_tokens`, `temperature`, `request_timeout`
+                                    and `max_retries`
+                                  type: object
                               type: object
                           type: object
                         retriever:
@@ -420,7 +469,7 @@ spec:
                           properties:
                             mode:
                               description: The selection mode. If unspecified, default
-                                to `genai`
+                                to `llm`
                               enum:
                               - embedding
                               - llm
@@ -436,10 +485,18 @@ spec:
                                   type: string
                                 model:
                                   description: Model specifies the vendor-specific
-                                    model type. If unspecified, use the model provided
-                                    by the `model` option of the connection, or choose
-                                    the default model for the vendor
+                                    model type. If unspecified, the model provided
+                                    by the `model` option of the connection or the
+                                    default model for the vendor will be used.
                                   type: string
+                                parameters:
+                                  additionalProperties:
+                                    type: string
+                                  description: Parameters contains a mapping for model-specific
+                                    parameters. Common parameters for language models
+                                    include `max_tokens`, `temperature`, `request_timeout`
+                                    and `max_retries`
+                                  type: object
                               type: object
                             multi:
                               description: Indicates if multiple options may be selected
@@ -474,10 +531,18 @@ spec:
                               type: string
                             model:
                               description: Model specifies the vendor-specific model
-                                type. If unspecified, use the model provided by the
-                                `model` option of the connection, or choose the default
-                                model for the vendor
+                                type. If unspecified, the model provided by the `model`
+                                option of the connection or the default model for
+                                the vendor will be used.
                               type: string
+                            parameters:
+                              additionalProperties:
+                                type: string
+                              description: Parameters contains a mapping for model-specific
+                                parameters. Common parameters for language models
+                                include `max_tokens`, `temperature`, `request_timeout`
+                                and `max_retries`
+                              type: object
                           type: object
                         responseSynthesizer:
                           description: The response synthesizer to use when generating
@@ -509,10 +574,18 @@ spec:
                                   type: string
                                 model:
                                   description: Model specifies the vendor-specific
-                                    model type. If unspecified, use the model provided
-                                    by the `model` option of the connection, or choose
-                                    the default model for the vendor
+                                    model type. If unspecified, the model provided
+                                    by the `model` option of the connection or the
+                                    default model for the vendor will be used.
                                   type: string
+                                parameters:
+                                  additionalProperties:
+                                    type: string
+                                  description: Parameters contains a mapping for model-specific
+                                    parameters. Common parameters for language models
+                                    include `max_tokens`, `temperature`, `request_timeout`
+                                    and `max_retries`
+                                  type: object
                               type: object
                           type: object
                         tools:
@@ -608,7 +681,7 @@ spec:
                           type: string
                         model:
                           description: The embedding or large language model to use.
-                            If unspecified, use the default provided by model server
+                            If unspecified, use the default provided by the endpoint
                           properties:
                             connectionName:
                               description: ConnectionName specifies the name of a
@@ -616,10 +689,18 @@ spec:
                               type: string
                             model:
                               description: Model specifies the vendor-specific model
-                                type. If unspecified, use the model provided by the
-                                `model` option of the connection, or choose the default
-                                model for the vendor
+                                type. If unspecified, the model provided by the `model`
+                                option of the connection or the default model for
+                                the vendor will be used.
                               type: string
+                            parameters:
+                              additionalProperties:
+                                type: string
+                              description: Parameters contains a mapping for model-specific
+                                parameters. Common parameters for language models
+                                include `max_tokens`, `temperature`, `request_timeout`
+                                and `max_retries`
+                              type: object
                           type: object
                         topK:
                           description: The top K nodes to retrieve. If unspecified,
@@ -648,7 +729,7 @@ spec:
                         model:
                           description: The embedding or large language model to use
                             when generating questions. If unspecified, use the default
-                            provided by model server
+                            provided by the endpoint
                           properties:
                             connectionName:
                               description: ConnectionName specifies the name of a
@@ -656,10 +737,18 @@ spec:
                               type: string
                             model:
                               description: Model specifies the vendor-specific model
-                                type. If unspecified, use the model provided by the
-                                `model` option of the connection, or choose the default
-                                model for the vendor
+                                type. If unspecified, the model provided by the `model`
+                                option of the connection or the default model for
+                                the vendor will be used.
                               type: string
+                            parameters:
+                              additionalProperties:
+                                type: string
+                              description: Parameters contains a mapping for model-specific
+                                parameters. Common parameters for language models
+                                include `max_tokens`, `temperature`, `request_timeout`
+                                and `max_retries`
+                              type: object
                           type: object
                         queries:
                           description: The number of queries to generate for the input
@@ -712,9 +801,9 @@ spec:
                           - rake
                           type: string
                         model:
-                          description: The large language model to use, if using the
-                            LLM mode. If unspecified, use the default provided by
-                            model server
+                          description: The language model to use, if using the LLM
+                            mode. If unspecified, use the default provided by the
+                            endpoint
                           properties:
                             connectionName:
                               description: ConnectionName specifies the name of a
@@ -722,10 +811,18 @@ spec:
                               type: string
                             model:
                               description: Model specifies the vendor-specific model
-                                type. If unspecified, use the model provided by the
-                                `model` option of the connection, or choose the default
-                                model for the vendor
+                                type. If unspecified, the model provided by the `model`
+                                option of the connection or the default model for
+                                the vendor will be used.
                               type: string
+                            parameters:
+                              additionalProperties:
+                                type: string
+                              description: Parameters contains a mapping for model-specific
+                                parameters. Common parameters for language models
+                                include `max_tokens`, `temperature`, `request_timeout`
+                                and `max_retries`
+                              type: object
                           type: object
                       required:
                       - index
@@ -756,7 +853,7 @@ spec:
                         model:
                           description: The large language or embedding model to use,
                             if applicable. If unspecified, use the default provided
-                            by model server
+                            by the endpoint
                           properties:
                             connectionName:
                               description: ConnectionName specifies the name of a
@@ -764,10 +861,18 @@ spec:
                               type: string
                             model:
                               description: Model specifies the vendor-specific model
-                                type. If unspecified, use the model provided by the
-                                `model` option of the connection, or choose the default
-                                model for the vendor
+                                type. If unspecified, the model provided by the `model`
+                                option of the connection or the default model for
+                                the vendor will be used.
                               type: string
+                            parameters:
+                              additionalProperties:
+                                type: string
+                              description: Parameters contains a mapping for model-specific
+                                parameters. Common parameters for language models
+                                include `max_tokens`, `temperature`, `request_timeout`
+                                and `max_retries`
+                              type: object
                           type: object
                         topK:
                           description: The top K nodes to retrieve when using the
@@ -789,7 +894,7 @@ spec:
                           properties:
                             mode:
                               description: The selection mode. If unspecified, default
-                                to `genai`
+                                to `llm`
                               enum:
                               - embedding
                               - llm
@@ -805,10 +910,18 @@ spec:
                                   type: string
                                 model:
                                   description: Model specifies the vendor-specific
-                                    model type. If unspecified, use the model provided
-                                    by the `model` option of the connection, or choose
-                                    the default model for the vendor
+                                    model type. If unspecified, the model provided
+                                    by the `model` option of the connection or the
+                                    default model for the vendor will be used.
                                   type: string
+                                parameters:
+                                  additionalProperties:
+                                    type: string
+                                  description: Parameters contains a mapping for model-specific
+                                    parameters. Common parameters for language models
+                                    include `max_tokens`, `temperature`, `request_timeout`
+                                    and `max_retries`
+                                  type: object
                               type: object
                             multi:
                               description: Indicates if multiple options may be selected
@@ -860,8 +973,8 @@ spec:
                           - all-leaf
                           type: string
                         model:
-                          description: The large language model to use, if applicable.
-                            If unspecified, use the default provided by model server
+                          description: The language model to use, if applicable. If
+                            unspecified, use the default provided by the endpoint
                           properties:
                             connectionName:
                               description: ConnectionName specifies the name of a
@@ -869,10 +982,18 @@ spec:
                               type: string
                             model:
                               description: Model specifies the vendor-specific model
-                                type. If unspecified, use the model provided by the
-                                `model` option of the connection, or choose the default
-                                model for the vendor
+                                type. If unspecified, the model provided by the `model`
+                                option of the connection or the default model for
+                                the vendor will be used.
                               type: string
+                            parameters:
+                              additionalProperties:
+                                type: string
+                              description: Parameters contains a mapping for model-specific
+                                parameters. Common parameters for language models
+                                include `max_tokens`, `temperature`, `request_timeout`
+                                and `max_retries`
+                              type: object
                           type: object
                       required:
                       - index
@@ -912,8 +1033,7 @@ spec:
                               type: array
                             model:
                               description: The LLM to use when generating queries.
-                                If unspecified, use the default provided by model
-                                server
+                                If unspecified, use the default provided by the endpoint
                               properties:
                                 connectionName:
                                   description: ConnectionName specifies the name of
@@ -921,10 +1041,18 @@ spec:
                                   type: string
                                 model:
                                   description: Model specifies the vendor-specific
-                                    model type. If unspecified, use the model provided
-                                    by the `model` option of the connection, or choose
-                                    the default model for the vendor
+                                    model type. If unspecified, the model provided
+                                    by the `model` option of the connection or the
+                                    default model for the vendor will be used.
                                   type: string
+                                parameters:
+                                  additionalProperties:
+                                    type: string
+                                  description: Parameters contains a mapping for model-specific
+                                    parameters. Common parameters for language models
+                                    include `max_tokens`, `temperature`, `request_timeout`
+                                    and `max_retries`
+                                  type: object
                               type: object
                           required:
                           - enabled
@@ -944,10 +1072,18 @@ spec:
                               type: string
                             model:
                               description: Model specifies the vendor-specific model
-                                type. If unspecified, use the model provided by the
-                                `model` option of the connection, or choose the default
-                                model for the vendor
+                                type. If unspecified, the model provided by the `model`
+                                option of the connection or the default model for
+                                the vendor will be used.
                               type: string
+                            parameters:
+                              additionalProperties:
+                                type: string
+                              description: Parameters contains a mapping for model-specific
+                                parameters. Common parameters for language models
+                                include `max_tokens`, `temperature`, `request_timeout`
+                                and `max_retries`
+                              type: object
                           type: object
                         index:
                           description: The reference to the vector store index
@@ -1054,7 +1190,7 @@ spec:
                   type: object
                 type: array
               deployedAt:
-                description: DeployedAt specifies the time that the LLMServer proxy
+                description: DeployedAt specifies the time that the LLM Server proxy
                   deployment was created
                 format: date-time
                 type: string
@@ -1152,6 +1288,11 @@ spec:
                   was reconciled
                 format: int64
                 type: integer
+              refreshedAt:
+                description: RefreshedAt specifies the time that the LLM Server was
+                  refreshed
+                format: date-time
+                type: string
               serviceRef:
                 description: The reference to the Kubernetes Service which exposes
                   the prediction proxy

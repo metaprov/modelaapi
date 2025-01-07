@@ -27,6 +27,7 @@ type LLMServerServiceClient interface {
 	GetLLMServer(ctx context.Context, in *GetLLMServerRequest, opts ...grpc.CallOption) (*GetLLMServerResponse, error)
 	UpdateLLMServer(ctx context.Context, in *UpdateLLMServerRequest, opts ...grpc.CallOption) (*UpdateLLMServerResponse, error)
 	DeleteLLMServer(ctx context.Context, in *DeleteLLMServerRequest, opts ...grpc.CallOption) (*DeleteLLMServerResponse, error)
+	RefreshLLMServer(ctx context.Context, in *DeleteLLMServerRequest, opts ...grpc.CallOption) (*RefreshLLMServerResponse, error)
 }
 
 type lLMServerServiceClient struct {
@@ -82,6 +83,15 @@ func (c *lLMServerServiceClient) DeleteLLMServer(ctx context.Context, in *Delete
 	return out, nil
 }
 
+func (c *lLMServerServiceClient) RefreshLLMServer(ctx context.Context, in *DeleteLLMServerRequest, opts ...grpc.CallOption) (*RefreshLLMServerResponse, error) {
+	out := new(RefreshLLMServerResponse)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.llmserver.v1.LLMServerService/RefreshLLMServer", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // LLMServerServiceServer is the server API for LLMServerService service.
 // All implementations must embed UnimplementedLLMServerServiceServer
 // for forward compatibility
@@ -91,6 +101,7 @@ type LLMServerServiceServer interface {
 	GetLLMServer(context.Context, *GetLLMServerRequest) (*GetLLMServerResponse, error)
 	UpdateLLMServer(context.Context, *UpdateLLMServerRequest) (*UpdateLLMServerResponse, error)
 	DeleteLLMServer(context.Context, *DeleteLLMServerRequest) (*DeleteLLMServerResponse, error)
+	RefreshLLMServer(context.Context, *DeleteLLMServerRequest) (*RefreshLLMServerResponse, error)
 	mustEmbedUnimplementedLLMServerServiceServer()
 }
 
@@ -112,6 +123,9 @@ func (UnimplementedLLMServerServiceServer) UpdateLLMServer(context.Context, *Upd
 }
 func (UnimplementedLLMServerServiceServer) DeleteLLMServer(context.Context, *DeleteLLMServerRequest) (*DeleteLLMServerResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteLLMServer not implemented")
+}
+func (UnimplementedLLMServerServiceServer) RefreshLLMServer(context.Context, *DeleteLLMServerRequest) (*RefreshLLMServerResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RefreshLLMServer not implemented")
 }
 func (UnimplementedLLMServerServiceServer) mustEmbedUnimplementedLLMServerServiceServer() {}
 
@@ -216,6 +230,24 @@ func _LLMServerService_DeleteLLMServer_Handler(srv interface{}, ctx context.Cont
 	return interceptor(ctx, in, info, handler)
 }
 
+func _LLMServerService_RefreshLLMServer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteLLMServerRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LLMServerServiceServer).RefreshLLMServer(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/github.com.metaprov.modelaapi.services.llmserver.v1.LLMServerService/RefreshLLMServer",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LLMServerServiceServer).RefreshLLMServer(ctx, req.(*DeleteLLMServerRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // LLMServerService_ServiceDesc is the grpc.ServiceDesc for LLMServerService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -242,6 +274,10 @@ var LLMServerService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteLLMServer",
 			Handler:    _LLMServerService_DeleteLLMServer_Handler,
+		},
+		{
+			MethodName: "RefreshLLMServer",
+			Handler:    _LLMServerService_RefreshLLMServer_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

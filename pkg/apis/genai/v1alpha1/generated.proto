@@ -176,13 +176,21 @@ message APIKeyStatus {
   optional APIKeyMetrics metrics = 7;
 }
 
+message APIRerankSpec {
+  // The connection to a reranking API
+  optional string connectionName = 1;
+
+  // The top number of nodes to return. If unspecified, default to 2
+  optional int64 topN = 2;
+}
+
 // AutoVectorRetrieverSpec defines a vector retriever which automatically configures the request to a vector index
 // (top K, metadata filters, query embedding) through an LLM
 message AutoVectorRetrieverSpec {
   // Indicates if automatic query generation is enabled
   optional bool enabled = 1;
 
-  // The LLM to use when generating queries. If unspecified, use the default provided by model server
+  // The LLM to use when generating queries. If unspecified, use the default provided by the endpoint
   optional ModelSpec model = 2;
 
   // The maximum top K allowed. The top K set by the LLM will be clamped to this value
@@ -218,14 +226,6 @@ message CodeSplitterSpec {
   optional int32 maxChars = 4;
 }
 
-message CohereRerankSpec {
-  // The connection to Cohere
-  optional string connectionName = 1;
-
-  // The top number of nodes to return. If unspecified, default to 2
-  optional int64 topN = 2;
-}
-
 // Column defines the schema for a single column in a table managed by a SQL index
 message Column {
   // The name of the column
@@ -255,10 +255,7 @@ message Column {
 }
 
 message DatabaseReaderSpec {
-  // The type of database reader
-  optional string type = 1;
-
-  // The name of the connection to the database
+  // The name of the connection to the database. The type of database which the connection references will determine the reader type
   optional string connectionName = 2;
 
   // The query to execute on the database
@@ -285,14 +282,15 @@ message DocumentSpec {
   optional int32 refreshPeriod = 4;
 
   // Indexes specifies the collection of indexes that the document will be added to.
-  // If empty, the document will be added to all indexes defined by the Knowledge Base
+  // If empty, the document will be added to all indexes defined by the Knowledge Base.
+  // A document must be bound to at least one valid index
   repeated string indexes = 5;
 
   // NodeParser specifies the name of the document-specific node parser to use
   optional string nodeParser = 6;
 
-  // EmbeddingModel specifies a document-specific embedding model
-  optional ModelSpec embeddingModel = 7;
+  // Indicates if the document is manually flagged for refresh
+  optional bool flagged = 7;
 
   // File specifies the configuration to read text from an external file
   optional FileLocationReaderSpec file = 8;
@@ -319,9 +317,6 @@ message DocumentStatus {
   // The last error that occurred while processing the document
   optional string lastError = 3;
 
-  // Indicates if the document is manually flagged for refresh
-  optional bool flagged = 4;
-
   // The time at which the document was last refreshed
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRefreshAt = 5;
 }
@@ -340,7 +335,7 @@ message DocumentSummaryRetrieverSpec {
   // The reference to the vector store index
   optional IndexReference index = 1;
 
-  // The embedding or large language model to use. If unspecified, use the default provided by model server
+  // The embedding or large language model to use. If unspecified, use the default provided by the endpoint
   optional ModelSpec model = 2;
 
   // The top K nodes to retrieve. If unspecified, default to 1
@@ -352,7 +347,7 @@ message DocumentSummaryRetrieverSpec {
 
 message EmbeddingRecencyPostProcessorSpec {
   // The embedding model to use
-  optional ModelSpec embeddingModel = 1;
+  optional ModelSpec model = 1;
 
   // The similarity cutoff. If unspecified, default to 0.7
   optional float similarityCutoff = 2;
@@ -398,22 +393,25 @@ message EndpointSpec {
   // +required
   optional string name = 1;
 
-  // The name of the query engine used to augment requests to the LLMServer.
-  // If unspecified, no augmentation will be performed
+  // The name of the query engine used to augment requests to the LLM Server.
+  // If unspecified, no augmentation will be performed.
   optional string queryEngine = 2;
 
-  // The path suffix where the model will be served.
-  // If unspecified, the default suffix for the LLMServer provider will be used
+  // The path suffix where the endpoint will be served.
+  // If unspecified, the default suffix for the format will be used.
+  // The path "/query" will be enabled by default for all endpoints
   optional string path = 3;
 
-  // The collection of path suffixes where the model will be served
+  // The collection of path suffixes where the endpoint will be served.
   repeated string paths = 4;
 
-  // The API format standard that will be served for the model.
-  // If unspecified, default to the OpenAI API format
+  // The API format that will be required for all requests to the endpoint.
+  // When unspecified, defaults to the OpenAI API format.
   optional string format = 5;
 
-  // The default LLMServer to use for all internal and consumer-facing completion requests
+  // The default language model to use for all internal and consumer-facing chat completion requests.
+  // The specified model may not always be used to generate a response. The final response synthesizer
+  // which generates the response may be overridden to use a different model.
   optional ModelSpec model = 6;
 }
 
@@ -454,6 +452,9 @@ message FileReaderSpec {
   // The type of file reader
   // +kubebuilder:default:="default"
   optional string type = 1;
+
+  // The name of the connection that provides authorization details to the reader, if applicable
+  optional string connectionName = 2;
 
   // Reader-specific options
   map<string, string> options = 4;
@@ -502,7 +503,7 @@ message FusionRetrieverSpec {
   repeated string retrievers = 1;
 
   // The embedding or large language model to use when generating questions.
-  // If unspecified, use the default provided by model server
+  // If unspecified, use the default provided by the endpoint
   optional ModelSpec model = 2;
 
   // The number of queries to generate for the input query. If unspecified, default to 4
@@ -607,7 +608,7 @@ message KeywordTableRetrieverSpec {
   // The reference to the tree index
   optional IndexReference index = 1;
 
-  // The large language model to use, if using the LLM mode. If unspecified, use the default provided by model server
+  // The language model to use, if using the LLM mode. If unspecified, use the default provided by the endpoint
   optional ModelSpec model = 2;
 
   // The retriever mode. If unspecified, default to RAKE
@@ -689,14 +690,20 @@ message KnowledgeBaseSpec {
   // Documents specifies the collection of documents included in the Knowledge Base
   repeated DocumentSpec documents = 11;
 
-  // NodeParser defines the collection of node parsers available to documents prior to indexing.
+  // MaxConcurrentReaders specifies how many documents can be read simultaneously. If unspecified, default to 1
+  optional int32 maxConcurrentReaders = 12;
+
+  // NodeParsers defines the collection of node parsers available to documents prior to indexing.
   // The node parsers define how to split up documents into individual chunks of text.
   // If empty, the default node parser will be used
-  repeated NodeParserSpec nodeParsers = 12;
+  repeated NodeParserSpec nodeParsers = 13;
 
   // DefaultNodeParser specifies the name of the default node parser to use.
   // If unspecified, the first node parser defined in NodeParsers will be used
-  optional string defaultNodeParser = 13;
+  optional string defaultNodeParser = 14;
+
+  // The configuration for Alerts generated by the Knowledge Base
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 15;
 }
 
 message KnowledgeBaseStatus {
@@ -710,25 +717,28 @@ message KnowledgeBaseStatus {
   // LastCompletionAt specifies the time at which the last refresh job was completed
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastCompletionAt = 3;
 
+  // FailureMessage is set to a failure message in the case that an error occurred during a refresh of the Knowledge Base
+  optional string failureMessage = 4;
+
   // Logs contains the location of the logs produced by the last refresh job
   // +kubebuilder:validation:Optional
-  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog logs = 4;
+  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ContainerLog logs = 5;
 
   // Documents contains the collection of statuses for each document defined by the Knowledge Base.
   // In the case that a metadata database is defined, the collection will be empty
-  repeated DocumentStatus documents = 5;
+  repeated DocumentStatus documents = 6;
 
   // Indexes contains the collection of statuses for each index defined by the Knowledge Base
-  repeated IndexStatus indexes = 6;
+  repeated IndexStatus indexes = 7;
 
   // The last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 7;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time updatedAt = 8;
 
   // +kubebuilder:validation:Optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 8;
+  repeated k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 9;
 }
 
 // KnowledgeGraphQueryEngine augments a query with information from a knowledge graph
@@ -759,26 +769,27 @@ message LLMServer {
 
   optional LLMServerSpec spec = 2;
 
-  optional LLMStatus status = 3;
+  optional LLMServerStatus status = 3;
 }
 
 message LLMServerAccessSpec {
   // The port number that will be exposed by the Kubernetes Service to serve requests
   // +kubebuilder:validation:Optional
-  // +kubebuilder:validation:Minimum=1024
+  // +kubebuilder:validation:Minimum=1
   // +kubebuilder:validation:Maximum=65535
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:=8080
   optional int32 port = 1;
 
   // The port number that will be exposed on the external address of every node on the cluster, in the case of the
-  // AccessType being equal to NodePort. Traffic from the port will be forwarded to the LLMServer deployment
-  // +kubebuilder:validation:Minimum=0
-  // +kubebuilder:validation:Maximum=65535
+  // Access Type being NodePort. Traffic from the port will be forwarded to the LLM Server deployment
+  // +kubebuilder:validation:Minimum=30000
+  // +kubebuilder:validation:Maximum=32767
+  // +kubebuilder:default:=30000
   // +kubebuilder:validation:Optional
   optional int32 nodePort = 2;
 
-  // The Kubernetes-native access method which specifies how the Kubernetes Service created by the Predictor will be exposed.
+  // The Kubernetes-native access method which specifies how the Kubernetes Service created by the LLM Serveraaaa will be exposed.
   // See https://modela.ai/docs/docs/serving/production/#access-method for a detailed description of each access type
   // +kubebuilder:default:="cluster-ip"
   // +kubebuilder:validation:Optional
@@ -843,14 +854,15 @@ message LLMServerSpec {
   // The specification for the LLM Server service to be exposed and accessed externally
   optional LLMServerAccessSpec access = 9;
 
-  // The security configuration for the LLMServer, which determines how incoming requests are authorized
+  // The security configuration for the LLM Server, which determines how incoming requests are authorized.
+  // If unspecified, the LLM Server will be exposed with no authorization
   optional LLMServerAuthorizationSpec authorization = 10;
 
-  // The configuration for Alerts generated by the proxy
+  // The configuration for Alerts generated by the LLM Server
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 11;
 }
 
-message LLMStatus {
+message LLMServerStatus {
   // ObservedGeneration specifies the last generation that was reconciled
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 1;
@@ -862,9 +874,13 @@ message LLMStatus {
   // in the case that the server is bound to an Ingress resource
   optional string endpoint = 3;
 
-  // DeployedAt specifies the time that the LLMServer proxy deployment was created
+  // DeployedAt specifies the time that the LLM Server proxy deployment was created
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time deployedAt = 4;
+
+  // RefreshedAt specifies the time that the LLM Server was refreshed
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time refreshedAt = 10;
 
   // The reference to the Kubernetes Deployment that manages the pods for the prediction proxy
   // +kubebuilder:validation:Optional
@@ -905,7 +921,7 @@ message ListRetrieverSpec {
   // The reference to the tree index
   optional IndexReference index = 1;
 
-  // The large language or embedding model to use, if applicable. If unspecified, use the default provided by model server
+  // The large language or embedding model to use, if applicable. If unspecified, use the default provided by the endpoint
   optional ModelSpec model = 2;
 
   // The top K nodes to retrieve when using the embedding or LLM mode. If unspecified, default to 1
@@ -935,7 +951,8 @@ message MixedNodeParserSpec {
   // Each parser is matched sequentially in the order that they are listed
   repeated FilteredNodeParser parsers = 1;
 
-  // The node parser to use for documents that are not matched to any of the parsers specified in Parsers
+  // The node parser to use for documents that are not matched to any of the parsers specified in Parsers.
+  // If a node parser cannot be found for a document, it will be skipped
   optional string fallbackNodeParser = 2;
 }
 
@@ -944,9 +961,13 @@ message ModelSpec {
   // ConnectionName specifies the name of a connection to a foundational model provider
   optional string connectionName = 1;
 
-  // Model specifies the vendor-specific model type. If unspecified, use the model provided by the
-  // `model` option of the connection, or choose the default model for the vendor
+  // Model specifies the vendor-specific model type. If unspecified, the model provided by the
+  // `model` option of the connection or the default model for the vendor will be used.
   optional string model = 2;
+
+  // Parameters contains a mapping for model-specific parameters.
+  // Common parameters for language models include `max_tokens`, `temperature`, `request_timeout` and `max_retries`
+  map<string, string> parameters = 3;
 }
 
 message NameFilter {
@@ -978,11 +999,14 @@ message NodeParserSpec {
   // The specification for the text splitter to use as a node parser
   optional TextSplitterSpec text = 5;
 
-  // The specification for the sentence window node parser
+  // The specification for a sentence window node parser
   optional SentenceWindowNodeParserSpec sentence = 6;
 
   // The specification for a mixed node parser, which will change depending on the document being processed
   optional MixedNodeParserSpec mixed = 7;
+
+  // The specification for a semantic node parser
+  optional SemanticNodeParserSpec semantic = 8;
 }
 
 // NodePostProcessor defines a node post-processor, which mutates the nodes retrieved
@@ -1003,8 +1027,8 @@ message NodePostProcessor {
   // Rerank the nodes through an LLM
   optional LLMRerankSpec llmRerank = 5;
 
-  // Rerank the nodes through a specialized Cohere model
-  optional CohereRerankSpec cohereRerank = 6;
+  // Rerank the nodes through a specialized API
+  optional APIRerankSpec apiRerank = 6;
 
   // Choose the top K nodes sorted by date
   optional FixedRecencyPostProcessorSpec fixedRecency = 7;
@@ -1034,7 +1058,7 @@ message QueryEngineSpec {
   optional SubQuestionQueryEngineSpec subQuestion = 4;
 }
 
-message QueryEngineToolSpec {
+message QueryEngineTool {
   // The name of the query engine
   optional string queryEngine = 1;
 
@@ -1057,30 +1081,34 @@ message Quota {
 }
 
 message RepositoryFileReader {
-  // The file extension supported by the reader. Only one of Extension or Extensions may be specified
-  optional string extension = 1;
+  // Filter files by their extension
+  optional ExtensionFilter extension = 1;
 
-  // The collection of extensions supported by the reader
-  // +kubebuilder:validation:Optional
-  repeated string extensions = 2;
+  // Filter files by their length
+  optional LengthFilter length = 2;
+
+  // Filter files by their name
+  optional NameFilter name = 3;
+
+  // Additional metadata to add to files matched by the reader
+  map<string, string> metadata = 4;
 
   // The file reader to use for the specified extensions
-  optional FileReaderSpec reader = 3;
+  optional FileReaderSpec reader = 5;
 }
 
 message RepositoryReaderSpec {
-  // The type of repository reader
-  optional string type = 1;
-
-  // The name of the connection that provides authorization details for the repository
+  // The name of the connection that provides authorization details for the repository.
+  // The type of repository which the connection references will determine the reader type
   optional string connectionName = 2;
 
-  // The collection of supported file extensions to read. File extensions supported by Modela will
-  // automatically be read by their supported reader, if not already mapped to a reader in Readers.
-  // Unsupported extensions will be read as plain-text
-  repeated string extensions = 3;
+  // UseDefaultReader indicates if all files in the repository be read, regardless if they are matched with a
+  // reader specified in Readers. Files with extensions supported by Modela will be read by their respective reader
+  // and files with unknown extensions will be read as plain-text.
+  optional bool useDefaultReader = 3;
 
-  // The readers to use for individual file extensions
+  // The collection of filtered file readers, with each containing optional filters and a file reader specification.
+  // Each reader is matched sequentially in the order that they are listed.
   // +kubebuilder:validation:Optional
   repeated RepositoryFileReader readers = 4;
 
@@ -1157,7 +1185,7 @@ message RetrieverToolSpec {
 // RouterQueryEngineSpec routes requests to one or more query engines
 message RouterQueryEngineSpec {
   // The query engines to route requests to
-  repeated QueryEngineToolSpec tools = 1;
+  repeated QueryEngineTool tools = 1;
 
   // The selector to use when choosing query engine(s)
   optional SelectorSpec selector = 2;
@@ -1206,7 +1234,7 @@ message Schema {
 }
 
 message SelectorSpec {
-  // The selection mode. If unspecified, default to `genai`
+  // The selection mode. If unspecified, default to `llm`
   optional string mode = 1;
 
   // The LLM or embedding model that will be used to determine the selections.
@@ -1217,9 +1245,15 @@ message SelectorSpec {
   optional bool multi = 3;
 }
 
+// SemanticNodeParserSpec specifies a node parser which splits a document into groups of nodes that are semantically related
+message SemanticNodeParserSpec {
+  // EmbeddingModel specifies the embedding model to use for determining the similarity between nodes
+  optional ModelSpec embeddingModel = 1;
+}
+
 message SentenceEmbeddingOptimizerSpec {
   // The embedding model to use
-  optional ModelSpec embeddingModel = 1;
+  optional ModelSpec model = 1;
 
   // The percentile cutoff, determining how many top K sentences are selected. If unspecified, the percentile cutoff will be disabled
   optional float similarityCutoff = 2;
@@ -1273,7 +1307,7 @@ message SimilarityPostProcessorSpec {
 // SubQuestionQueryEngineSpec breaks down a query into sub-questions that can be routed to other query engines
 message SubQuestionQueryEngineSpec {
   // The query engines to route requests to
-  repeated QueryEngineToolSpec tools = 1;
+  repeated QueryEngineTool tools = 1;
 
   // The response synthesizer to use when generating responses
   optional ResponseSynthesizerSpec responseSynthesizer = 2;
@@ -1356,7 +1390,7 @@ message TreeRetrieverSpec {
   // The reference to the tree index
   optional IndexReference index = 1;
 
-  // The large language model to use, if applicable. If unspecified, use the default provided by model server
+  // The language model to use, if applicable. If unspecified, use the default provided by the endpoint
   optional ModelSpec model = 2;
 
   // The retriever mode. If unspecified, default to select leaf

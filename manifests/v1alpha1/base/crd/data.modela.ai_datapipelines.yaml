@@ -293,10 +293,9 @@ spec:
                     type: string
                   enabled:
                     default: false
-                    description: Enabled indicates if the schedule is enabled. When
-                      enabled, a CronJob will be created which when triggered will
-                      initiate the creation of a run for the resource that specifies
-                      the schedule
+                    description: Indicates if the schedule is enabled. When enabled,
+                      a Cron Job will be created that will trigger the periodic execution
+                      of the task
                     type: boolean
                   type:
                     description: The type of schedule, which can be a frequency interval

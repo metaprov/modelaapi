@@ -66,8 +66,8 @@ class APIKeyGroupServiceStub(object):
                 _registered_method=True)
         self.GenerateAPIKey = channel.unary_unary(
                 '/github.com.metaprov.modelaapi.services.apikeygroup.v1.APIKeyGroupService/GenerateAPIKey',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apikeygroup_dot_v1_dot_apikeygroup__pb2.CreateAPIKeyGroupRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apikeygroup_dot_v1_dot_apikeygroup__pb2.CreateAPIKeyGroupResponse.FromString,
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apikeygroup_dot_v1_dot_apikeygroup__pb2.GenerateAPIKeyRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apikeygroup_dot_v1_dot_apikeygroup__pb2.GenerateAPIKeyResponse.FromString,
                 _registered_method=True)
         self.RefreshAPIKeyGroup = channel.unary_unary(
                 '/github.com.metaprov.modelaapi.services.apikeygroup.v1.APIKeyGroupService/RefreshAPIKeyGroup',
@@ -151,8 +151,8 @@ def add_APIKeyGroupServiceServicer_to_server(servicer, server):
             ),
             'GenerateAPIKey': grpc.unary_unary_rpc_method_handler(
                     servicer.GenerateAPIKey,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apikeygroup_dot_v1_dot_apikeygroup__pb2.CreateAPIKeyGroupRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apikeygroup_dot_v1_dot_apikeygroup__pb2.CreateAPIKeyGroupResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apikeygroup_dot_v1_dot_apikeygroup__pb2.GenerateAPIKeyRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apikeygroup_dot_v1_dot_apikeygroup__pb2.GenerateAPIKeyResponse.SerializeToString,
             ),
             'RefreshAPIKeyGroup': grpc.unary_unary_rpc_method_handler(
                     servicer.RefreshAPIKeyGroup,
@@ -320,8 +320,8 @@ class APIKeyGroupService(object):
             request,
             target,
             '/github.com.metaprov.modelaapi.services.apikeygroup.v1.APIKeyGroupService/GenerateAPIKey',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apikeygroup_dot_v1_dot_apikeygroup__pb2.CreateAPIKeyGroupRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apikeygroup_dot_v1_dot_apikeygroup__pb2.CreateAPIKeyGroupResponse.FromString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apikeygroup_dot_v1_dot_apikeygroup__pb2.GenerateAPIKeyRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apikeygroup_dot_v1_dot_apikeygroup__pb2.GenerateAPIKeyResponse.FromString,
             options,
             channel_credentials,
             insecure,

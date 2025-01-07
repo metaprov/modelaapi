@@ -27,7 +27,7 @@ type KnowledgeBaseServiceClient interface {
 	GetKnowledgeBase(ctx context.Context, in *GetKnowledgeBaseRequest, opts ...grpc.CallOption) (*GetKnowledgeBaseResponse, error)
 	UpdateKnowledgeBase(ctx context.Context, in *UpdateKnowledgeBaseRequest, opts ...grpc.CallOption) (*UpdateKnowledgeBaseResponse, error)
 	DeleteKnowledgeBase(ctx context.Context, in *DeleteKnowledgeBaseRequest, opts ...grpc.CallOption) (*DeleteKnowledgeBaseResponse, error)
-	Refresh(ctx context.Context, in *RefreshKnowledgeBaseRequest, opts ...grpc.CallOption) (*RefreshKnowledgeBaseResponse, error)
+	RefreshKnowledgeBase(ctx context.Context, in *RefreshKnowledgeBaseRequest, opts ...grpc.CallOption) (*RefreshKnowledgeBaseResponse, error)
 }
 
 type knowledgeBaseServiceClient struct {
@@ -83,9 +83,9 @@ func (c *knowledgeBaseServiceClient) DeleteKnowledgeBase(ctx context.Context, in
 	return out, nil
 }
 
-func (c *knowledgeBaseServiceClient) Refresh(ctx context.Context, in *RefreshKnowledgeBaseRequest, opts ...grpc.CallOption) (*RefreshKnowledgeBaseResponse, error) {
+func (c *knowledgeBaseServiceClient) RefreshKnowledgeBase(ctx context.Context, in *RefreshKnowledgeBaseRequest, opts ...grpc.CallOption) (*RefreshKnowledgeBaseResponse, error) {
 	out := new(RefreshKnowledgeBaseResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.knowledgebase.v1.KnowledgeBaseService/Refresh", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.knowledgebase.v1.KnowledgeBaseService/RefreshKnowledgeBase", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -101,7 +101,7 @@ type KnowledgeBaseServiceServer interface {
 	GetKnowledgeBase(context.Context, *GetKnowledgeBaseRequest) (*GetKnowledgeBaseResponse, error)
 	UpdateKnowledgeBase(context.Context, *UpdateKnowledgeBaseRequest) (*UpdateKnowledgeBaseResponse, error)
 	DeleteKnowledgeBase(context.Context, *DeleteKnowledgeBaseRequest) (*DeleteKnowledgeBaseResponse, error)
-	Refresh(context.Context, *RefreshKnowledgeBaseRequest) (*RefreshKnowledgeBaseResponse, error)
+	RefreshKnowledgeBase(context.Context, *RefreshKnowledgeBaseRequest) (*RefreshKnowledgeBaseResponse, error)
 	mustEmbedUnimplementedKnowledgeBaseServiceServer()
 }
 
@@ -124,8 +124,8 @@ func (UnimplementedKnowledgeBaseServiceServer) UpdateKnowledgeBase(context.Conte
 func (UnimplementedKnowledgeBaseServiceServer) DeleteKnowledgeBase(context.Context, *DeleteKnowledgeBaseRequest) (*DeleteKnowledgeBaseResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteKnowledgeBase not implemented")
 }
-func (UnimplementedKnowledgeBaseServiceServer) Refresh(context.Context, *RefreshKnowledgeBaseRequest) (*RefreshKnowledgeBaseResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Refresh not implemented")
+func (UnimplementedKnowledgeBaseServiceServer) RefreshKnowledgeBase(context.Context, *RefreshKnowledgeBaseRequest) (*RefreshKnowledgeBaseResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RefreshKnowledgeBase not implemented")
 }
 func (UnimplementedKnowledgeBaseServiceServer) mustEmbedUnimplementedKnowledgeBaseServiceServer() {}
 
@@ -230,20 +230,20 @@ func _KnowledgeBaseService_DeleteKnowledgeBase_Handler(srv interface{}, ctx cont
 	return interceptor(ctx, in, info, handler)
 }
 
-func _KnowledgeBaseService_Refresh_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _KnowledgeBaseService_RefreshKnowledgeBase_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(RefreshKnowledgeBaseRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(KnowledgeBaseServiceServer).Refresh(ctx, in)
+		return srv.(KnowledgeBaseServiceServer).RefreshKnowledgeBase(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.knowledgebase.v1.KnowledgeBaseService/Refresh",
+		FullMethod: "/github.com.metaprov.modelaapi.services.knowledgebase.v1.KnowledgeBaseService/RefreshKnowledgeBase",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(KnowledgeBaseServiceServer).Refresh(ctx, req.(*RefreshKnowledgeBaseRequest))
+		return srv.(KnowledgeBaseServiceServer).RefreshKnowledgeBase(ctx, req.(*RefreshKnowledgeBaseRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -276,8 +276,8 @@ var KnowledgeBaseService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _KnowledgeBaseService_DeleteKnowledgeBase_Handler,
 		},
 		{
-			MethodName: "Refresh",
-			Handler:    _KnowledgeBaseService_Refresh_Handler,
+			MethodName: "RefreshKnowledgeBase",
+			Handler:    _KnowledgeBaseService_RefreshKnowledgeBase_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

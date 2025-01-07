@@ -860,14 +860,10 @@ message DataProductSpec {
 
   // The name of the Serving Site which will be used by all inference-related workloads, in the case
   // that the resource creating the workload does not specify a Serving Site
-  // +kubebuilder:validation:MaxLength=63
-  // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +kubebuilder:validation:Optional
   optional string defaultServingSiteName = 8;
 
   // The name of the Virtual Bucket that resources under the Data Product will use by default
-  // +kubebuilder:validation:MaxLength=63
-  // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +kubebuilder:validation:Optional
   optional string defaultBucketName = 9;
 

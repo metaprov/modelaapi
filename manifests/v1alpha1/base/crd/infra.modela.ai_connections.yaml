@@ -59,19 +59,17 @@ spec:
             description: ConnectionSpec defines the desired state of a Connection
             properties:
               category:
-                default: general
                 description: The type of external system which the connection references
                 enum:
-                - general
-                - cloud
-                - docker-image-registry
-                - database
-                - git
-                - messaging
                 - storage
+                - messaging
+                - database
                 - vector-database
+                - graph-database
                 - embedding-model
                 - language-model
+                - retrieval-api
+                - document-processor
                 type: string
               options:
                 additionalProperties:
@@ -91,9 +89,10 @@ spec:
                   type: string
                 description: SecretData contains a map of sensitive parameters relevant
                   to the connection and their values. Modela will transfer the values
-                  within the map to Vault. Secret data will never be sent to Etcd
+                  within the map to Vault.
                 type: object
             required:
+            - category
             - provider
             type: object
           status:

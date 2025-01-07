@@ -107,13 +107,9 @@ type DataProductSpec struct {
 	DefaultLabName *string `json:"defaultLabName" protobuf:"bytes,7,opt,name=defaultLabName"`
 	// The name of the Serving Site which will be used by all inference-related workloads, in the case
 	// that the resource creating the workload does not specify a Serving Site
-	// +kubebuilder:validation:MaxLength=63
-	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +kubebuilder:validation:Optional
 	DefaultServingSiteName *string `json:"defaultServingSiteName" protobuf:"bytes,8,opt,name=defaultServingSiteName"`
 	// The name of the Virtual Bucket that resources under the Data Product will use by default
-	// +kubebuilder:validation:MaxLength=63
-	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +kubebuilder:validation:Optional
 	DefaultBucketName *string `json:"defaultBucketName,omitempty" protobuf:"bytes,9,opt,name=defaultBucketName"`
 	// Task specifies the default machine learning task of the Data Product (classification, regression, etc.)

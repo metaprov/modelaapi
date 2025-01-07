@@ -29,6 +29,7 @@ message CreateKnowledgeBaseResponse {}
 message UpdateKnowledgeBaseRequest {
     github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1.KnowledgeBase knowledgeBase = 1;
     google.protobuf.FieldMask field_mask = 2;
+    repeated string flaggedDocuments = 3;
 }
 
 message UpdateKnowledgeBaseResponse {}
@@ -88,7 +89,7 @@ service KnowledgeBaseService {
         option (google.api.http).delete = "/v1/knowledgebases/{namespace}/{name}";
     }
 
-    rpc Refresh(RefreshKnowledgeBaseRequest) returns (RefreshKnowledgeBaseResponse) {
+    rpc RefreshKnowledgeBase(RefreshKnowledgeBaseRequest) returns (RefreshKnowledgeBaseResponse) {
         option (google.api.http).get = "/v1/knowledgebases/{namespace}/{name}:refresh";
     }
 }

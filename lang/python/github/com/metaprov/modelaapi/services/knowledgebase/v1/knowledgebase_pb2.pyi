@@ -4,7 +4,7 @@ from github.com.metaprov.modelaapi.pkg.apis.genai.v1alpha1 import generated_pb2 
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Optional, Union as _Union
+from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
@@ -42,12 +42,14 @@ class CreateKnowledgeBaseResponse(_message.Message):
     def __init__(self) -> None: ...
 
 class UpdateKnowledgeBaseRequest(_message.Message):
-    __slots__ = ("knowledgeBase", "field_mask")
+    __slots__ = ("knowledgeBase", "field_mask", "flaggedDocuments")
     KNOWLEDGEBASE_FIELD_NUMBER: _ClassVar[int]
     FIELD_MASK_FIELD_NUMBER: _ClassVar[int]
+    FLAGGEDDOCUMENTS_FIELD_NUMBER: _ClassVar[int]
     knowledgeBase: _generated_pb2.KnowledgeBase
     field_mask: _field_mask_pb2.FieldMask
-    def __init__(self, knowledgeBase: _Optional[_Union[_generated_pb2.KnowledgeBase, _Mapping]] = ..., field_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
+    flaggedDocuments: _containers.RepeatedScalarFieldContainer[str]
+    def __init__(self, knowledgeBase: _Optional[_Union[_generated_pb2.KnowledgeBase, _Mapping]] = ..., field_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ..., flaggedDocuments: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class UpdateKnowledgeBaseResponse(_message.Message):
     __slots__ = ()

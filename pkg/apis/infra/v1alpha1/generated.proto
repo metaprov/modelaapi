@@ -367,8 +367,8 @@ message ConnectionSpec {
   optional string owner = 1;
 
   // The type of external system which the connection references
-  // +kubebuilder:default:="general"
-  // +kubebuilder:validation:Optional
+  // +kubebuilder:validation:Required
+  // +required
   optional string category = 2;
 
   // Provider specifies the name of the provider to the external system
@@ -377,10 +377,10 @@ message ConnectionSpec {
   optional string provider = 3;
 
   // SecretData contains a map of sensitive parameters relevant to the connection and their values. Modela
-  // will automatically clear this map and transfer the values to Vault
+  // will transfer the values within the map to Vault.
   map<string, string> secretData = 4;
 
-  // Options contains non-sensitive options relevant to the Connection
+  // Options contains non-sensitive options relevant to the provider
   map<string, string> options = 5;
 }
 

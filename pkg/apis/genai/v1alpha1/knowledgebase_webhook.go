@@ -116,12 +116,6 @@ func (kb *KnowledgeBase) validateDocuments(fldPath *field.Path) field.ErrorList 
 
 func (kb *KnowledgeBase) validateRepositoryReader(fldPath *field.Path, spec RepositoryReaderSpec) field.ErrorList {
 	var allErrs field.ErrorList
-	for i, reader := range spec.Readers {
-		if reader.Extension != nil && len(reader.Extensions) > 0 {
-			allErrs = append(allErrs, field.Invalid(fldPath.Child("readers").Index(i), reader,
-				"Only one of extension or extensions may be specified"))
-		}
-	}
 	return allErrs
 }
 

@@ -64,8 +64,8 @@ class KnowledgeBaseServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_knowledgebase_dot_v1_dot_knowledgebase__pb2.DeleteKnowledgeBaseRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_knowledgebase_dot_v1_dot_knowledgebase__pb2.DeleteKnowledgeBaseResponse.FromString,
                 _registered_method=True)
-        self.Refresh = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.knowledgebase.v1.KnowledgeBaseService/Refresh',
+        self.RefreshKnowledgeBase = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.knowledgebase.v1.KnowledgeBaseService/RefreshKnowledgeBase',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_knowledgebase_dot_v1_dot_knowledgebase__pb2.RefreshKnowledgeBaseRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_knowledgebase_dot_v1_dot_knowledgebase__pb2.RefreshKnowledgeBaseResponse.FromString,
                 _registered_method=True)
@@ -104,7 +104,7 @@ class KnowledgeBaseServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def Refresh(self, request, context):
+    def RefreshKnowledgeBase(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -138,8 +138,8 @@ def add_KnowledgeBaseServiceServicer_to_server(servicer, server):
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_knowledgebase_dot_v1_dot_knowledgebase__pb2.DeleteKnowledgeBaseRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_knowledgebase_dot_v1_dot_knowledgebase__pb2.DeleteKnowledgeBaseResponse.SerializeToString,
             ),
-            'Refresh': grpc.unary_unary_rpc_method_handler(
-                    servicer.Refresh,
+            'RefreshKnowledgeBase': grpc.unary_unary_rpc_method_handler(
+                    servicer.RefreshKnowledgeBase,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_knowledgebase_dot_v1_dot_knowledgebase__pb2.RefreshKnowledgeBaseRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_knowledgebase_dot_v1_dot_knowledgebase__pb2.RefreshKnowledgeBaseResponse.SerializeToString,
             ),
@@ -290,7 +290,7 @@ class KnowledgeBaseService(object):
             _registered_method=True)
 
     @staticmethod
-    def Refresh(request,
+    def RefreshKnowledgeBase(request,
             target,
             options=(),
             channel_credentials=None,
@@ -303,7 +303,7 @@ class KnowledgeBaseService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/github.com.metaprov.modelaapi.services.knowledgebase.v1.KnowledgeBaseService/Refresh',
+            '/github.com.metaprov.modelaapi.services.knowledgebase.v1.KnowledgeBaseService/RefreshKnowledgeBase',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_knowledgebase_dot_v1_dot_knowledgebase__pb2.RefreshKnowledgeBaseRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_knowledgebase_dot_v1_dot_knowledgebase__pb2.RefreshKnowledgeBaseResponse.FromString,
             options,

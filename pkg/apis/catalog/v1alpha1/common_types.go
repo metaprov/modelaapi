@@ -1143,23 +1143,19 @@ const (
 // ConnectionName Categoty Type
 //==============================================================================
 
-// +kubebuilder:validation:Enum="general";"cloud";"docker-image-registry";"database";"git";"messaging";"storage";"vector-database";"embedding-model";"language-model"
+// +kubebuilder:validation:Enum="storage";"messaging";"database";"vector-database";"graph-database";"embedding-model";"language-model";"retrieval-api";"document-processor"
 type ConnectionCategory string
 
 const (
-	GeneralConnectionCategory             ConnectionCategory = "general"
-	StorageConnectionCategory             ConnectionCategory = "storage"
-	CloudProviderConnectionCategory       ConnectionCategory = "cloud"
-	DockerImageRegistryConnectionCategory ConnectionCategory = "docker-image-registry"
-	DatabaseConnectionCategory            ConnectionCategory = "database"
-	GitConnectionCategory                 ConnectionCategory = "git"
-	MessagingConnectionCategory           ConnectionCategory = "messaging"
-	BrokerConnectionMessage               ConnectionCategory = "message-broker"
-	GraphDatabaseConnectionCategory       ConnectionCategory = "graph-database"
-	SocialMediaConnectionCategory         ConnectionCategory = "social-media"
-	VectorDatabaseConnectionCategory      ConnectionCategory = "vector-database"
-	EmbeddingModelConnectionCategory      ConnectionCategory = "embedding-model"
-	LanguageModelConnectionCategory       ConnectionCategory = "language-model"
+	StorageConnectionCategory           ConnectionCategory = "storage"
+	DatabaseConnectionCategory          ConnectionCategory = "database"
+	MessagingConnectionCategory         ConnectionCategory = "messaging"
+	GraphDatabaseConnectionCategory     ConnectionCategory = "graph-database"
+	VectorDatabaseConnectionCategory    ConnectionCategory = "vector-database"
+	EmbeddingModelConnectionCategory    ConnectionCategory = "embedding-model"
+	LanguageModelConnectionCategory     ConnectionCategory = "language-model"
+	RetrievalAPIConnectionCategory      ConnectionCategory = "retrieval-api"
+	DocumentProcessorConnectionCategory ConnectionCategory = "document-processor"
 )
 
 type EnsembleType string
@@ -1336,8 +1332,8 @@ func (spec *RunSpec) Get() RunSpec {
 
 // RunSchedule specifies the schedule for a run to be executed
 type RunSchedule struct {
-	// Enabled indicates if the schedule is enabled. When enabled, a CronJob will be created which when triggered
-	// will initiate the creation of a run for the resource that specifies the schedule
+	// Indicates if the schedule is enabled. When enabled, a Cron Job will be created that will trigger
+	// the periodic execution of the task
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
@@ -1829,16 +1825,17 @@ const (
 	TodoLabelKey       = "modela.ai/todo"
 
 	// Training
-	ModelLabelKey         = "modela.ai/model"
-	ReportLabelKey        = "modela.ai/report"
-	StudyLabelKey         = "modela.ai/study"
-	StudyRunLabelKey      = "modela.ai/studyrun"
-	TaskLabelKey          = "modela.ai/task"
-	ModelClassLabelKey    = "modela.ai/modelclass"
-	ModelClassRunLabelKey = "modela.ai/modelclassrun"
-	JobLabelKey           = "kubernetes.io/job"
-	OwnerKindLabelKey     = "modela.ai/owner-kind"
-	OwnerLabelKey         = "modela.ai/owner"
+	ModelLabelKey          = "modela.ai/model"
+	ReportLabelKey         = "modela.ai/report"
+	StudyLabelKey          = "modela.ai/study"
+	StudyRunLabelKey       = "modela.ai/studyrun"
+	TaskLabelKey           = "modela.ai/task"
+	ModelClassLabelKey     = "modela.ai/modelclass"
+	ModelClassRunLabelKey  = "modela.ai/modelclassrun"
+	JobLabelKey            = "kubernetes.io/job"
+	OwnerKindLabelKey      = "modela.ai/owner-kind"
+	OwnerLabelKey          = "modela.ai/owner"
+	OwnerNamespaceLabelKey = "modela.ai/owner-namespace"
 
 	// GenAI
 	KnowledgeBaseLabelKey = "modela.ai/knowledgebase"
@@ -2147,7 +2144,7 @@ type LastRunStatus struct {
 }
 
 type PredictorAccessSpec struct {
-	// The port number that will be exposed on the Predictor's Pods to serve prediction traffic through the GRPCInferenceService API.
+	// The port number that will be exposed on the Predictor's Pods to serve prediction traffic.
 	// The Kubernetes Service created by the Predictor will expose the port and forward GRPC traffic to the backend pods
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:Minimum=1024

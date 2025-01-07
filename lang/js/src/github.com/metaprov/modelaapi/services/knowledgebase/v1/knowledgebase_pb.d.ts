@@ -96,6 +96,11 @@ export class UpdateKnowledgeBaseRequest extends jspb.Message {
   hasFieldMask(): boolean;
   clearFieldMask(): UpdateKnowledgeBaseRequest;
 
+  getFlaggeddocumentsList(): Array<string>;
+  setFlaggeddocumentsList(value: Array<string>): UpdateKnowledgeBaseRequest;
+  clearFlaggeddocumentsList(): UpdateKnowledgeBaseRequest;
+  addFlaggeddocuments(value: string, index?: number): UpdateKnowledgeBaseRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateKnowledgeBaseRequest.AsObject;
   static toObject(includeInstance: boolean, msg: UpdateKnowledgeBaseRequest): UpdateKnowledgeBaseRequest.AsObject;
@@ -108,6 +113,7 @@ export namespace UpdateKnowledgeBaseRequest {
   export type AsObject = {
     knowledgebase?: github_com_metaprov_modelaapi_pkg_apis_genai_v1alpha1_generated_pb.KnowledgeBase.AsObject,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+    flaggeddocumentsList: Array<string>,
   }
 }
 

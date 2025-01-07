@@ -122,6 +122,14 @@ class APIKeyStatus(_message.Message):
     metrics: APIKeyMetrics
     def __init__(self, name: _Optional[str] = ..., creationDate: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., lastUsedDate: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., generatedDate: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., quotaExceededDate: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., quotaResetDate: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., metrics: _Optional[_Union[APIKeyMetrics, _Mapping]] = ...) -> None: ...
 
+class APIRerankSpec(_message.Message):
+    __slots__ = ("connectionName", "topN")
+    CONNECTIONNAME_FIELD_NUMBER: _ClassVar[int]
+    TOPN_FIELD_NUMBER: _ClassVar[int]
+    connectionName: str
+    topN: int
+    def __init__(self, connectionName: _Optional[str] = ..., topN: _Optional[int] = ...) -> None: ...
+
 class AutoVectorRetrieverSpec(_message.Message):
     __slots__ = ("enabled", "model", "maxTopK", "metadataInfo")
     ENABLED_FIELD_NUMBER: _ClassVar[int]
@@ -154,14 +162,6 @@ class CodeSplitterSpec(_message.Message):
     maxChars: int
     def __init__(self, language: _Optional[str] = ..., chunkLines: _Optional[int] = ..., chunkLinesOverlap: _Optional[int] = ..., maxChars: _Optional[int] = ...) -> None: ...
 
-class CohereRerankSpec(_message.Message):
-    __slots__ = ("connectionName", "topN")
-    CONNECTIONNAME_FIELD_NUMBER: _ClassVar[int]
-    TOPN_FIELD_NUMBER: _ClassVar[int]
-    connectionName: str
-    topN: int
-    def __init__(self, connectionName: _Optional[str] = ..., topN: _Optional[int] = ...) -> None: ...
-
 class Column(_message.Message):
     __slots__ = ("name", "type", "integer", "float", "text", "boolean", "description", "metadataKey")
     NAME_FIELD_NUMBER: _ClassVar[int]
@@ -183,7 +183,7 @@ class Column(_message.Message):
     def __init__(self, name: _Optional[str] = ..., type: _Optional[str] = ..., integer: _Optional[_Union[IntegerSpec, _Mapping]] = ..., float: _Optional[_Union[FloatSpec, _Mapping]] = ..., text: _Optional[_Union[TextSpec, _Mapping]] = ..., boolean: _Optional[_Union[BooleanSpec, _Mapping]] = ..., description: _Optional[str] = ..., metadataKey: _Optional[str] = ...) -> None: ...
 
 class DatabaseReaderSpec(_message.Message):
-    __slots__ = ("type", "connectionName", "query", "options")
+    __slots__ = ("connectionName", "query", "options")
     class OptionsEntry(_message.Message):
         __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
@@ -191,18 +191,16 @@ class DatabaseReaderSpec(_message.Message):
         key: str
         value: str
         def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
-    TYPE_FIELD_NUMBER: _ClassVar[int]
     CONNECTIONNAME_FIELD_NUMBER: _ClassVar[int]
     QUERY_FIELD_NUMBER: _ClassVar[int]
     OPTIONS_FIELD_NUMBER: _ClassVar[int]
-    type: str
     connectionName: str
     query: str
     options: _containers.ScalarMap[str, str]
-    def __init__(self, type: _Optional[str] = ..., connectionName: _Optional[str] = ..., query: _Optional[str] = ..., options: _Optional[_Mapping[str, str]] = ...) -> None: ...
+    def __init__(self, connectionName: _Optional[str] = ..., query: _Optional[str] = ..., options: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
 class DocumentSpec(_message.Message):
-    __slots__ = ("name", "description", "metadata", "refreshPeriod", "indexes", "nodeParser", "embeddingModel", "file", "database", "web", "repository")
+    __slots__ = ("name", "description", "metadata", "refreshPeriod", "indexes", "nodeParser", "flagged", "file", "database", "web", "repository")
     class MetadataEntry(_message.Message):
         __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
@@ -216,7 +214,7 @@ class DocumentSpec(_message.Message):
     REFRESHPERIOD_FIELD_NUMBER: _ClassVar[int]
     INDEXES_FIELD_NUMBER: _ClassVar[int]
     NODEPARSER_FIELD_NUMBER: _ClassVar[int]
-    EMBEDDINGMODEL_FIELD_NUMBER: _ClassVar[int]
+    FLAGGED_FIELD_NUMBER: _ClassVar[int]
     FILE_FIELD_NUMBER: _ClassVar[int]
     DATABASE_FIELD_NUMBER: _ClassVar[int]
     WEB_FIELD_NUMBER: _ClassVar[int]
@@ -227,26 +225,24 @@ class DocumentSpec(_message.Message):
     refreshPeriod: int
     indexes: _containers.RepeatedScalarFieldContainer[str]
     nodeParser: str
-    embeddingModel: ModelSpec
+    flagged: bool
     file: FileLocationReaderSpec
     database: DatabaseReaderSpec
     web: WebReaderSpec
     repository: RepositoryReaderSpec
-    def __init__(self, name: _Optional[str] = ..., description: _Optional[str] = ..., metadata: _Optional[_Mapping[str, str]] = ..., refreshPeriod: _Optional[int] = ..., indexes: _Optional[_Iterable[str]] = ..., nodeParser: _Optional[str] = ..., embeddingModel: _Optional[_Union[ModelSpec, _Mapping]] = ..., file: _Optional[_Union[FileLocationReaderSpec, _Mapping]] = ..., database: _Optional[_Union[DatabaseReaderSpec, _Mapping]] = ..., web: _Optional[_Union[WebReaderSpec, _Mapping]] = ..., repository: _Optional[_Union[RepositoryReaderSpec, _Mapping]] = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., description: _Optional[str] = ..., metadata: _Optional[_Mapping[str, str]] = ..., refreshPeriod: _Optional[int] = ..., indexes: _Optional[_Iterable[str]] = ..., nodeParser: _Optional[str] = ..., flagged: bool = ..., file: _Optional[_Union[FileLocationReaderSpec, _Mapping]] = ..., database: _Optional[_Union[DatabaseReaderSpec, _Mapping]] = ..., web: _Optional[_Union[WebReaderSpec, _Mapping]] = ..., repository: _Optional[_Union[RepositoryReaderSpec, _Mapping]] = ...) -> None: ...
 
 class DocumentStatus(_message.Message):
-    __slots__ = ("name", "nodes", "lastError", "flagged", "lastRefreshAt")
+    __slots__ = ("name", "nodes", "lastError", "lastRefreshAt")
     NAME_FIELD_NUMBER: _ClassVar[int]
     NODES_FIELD_NUMBER: _ClassVar[int]
     LASTERROR_FIELD_NUMBER: _ClassVar[int]
-    FLAGGED_FIELD_NUMBER: _ClassVar[int]
     LASTREFRESHAT_FIELD_NUMBER: _ClassVar[int]
     name: str
     nodes: int
     lastError: str
-    flagged: bool
     lastRefreshAt: _generated_pb2_1_1.Time
-    def __init__(self, name: _Optional[str] = ..., nodes: _Optional[int] = ..., lastError: _Optional[str] = ..., flagged: bool = ..., lastRefreshAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., nodes: _Optional[int] = ..., lastError: _Optional[str] = ..., lastRefreshAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ...) -> None: ...
 
 class DocumentSummaryIndexSpec(_message.Message):
     __slots__ = ("responseSynthesizer", "embedding")
@@ -269,12 +265,12 @@ class DocumentSummaryRetrieverSpec(_message.Message):
     def __init__(self, index: _Optional[_Union[IndexReference, _Mapping]] = ..., model: _Optional[_Union[ModelSpec, _Mapping]] = ..., topK: _Optional[int] = ..., mode: _Optional[str] = ...) -> None: ...
 
 class EmbeddingRecencyPostProcessorSpec(_message.Message):
-    __slots__ = ("embeddingModel", "similarityCutoff")
-    EMBEDDINGMODEL_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("model", "similarityCutoff")
+    MODEL_FIELD_NUMBER: _ClassVar[int]
     SIMILARITYCUTOFF_FIELD_NUMBER: _ClassVar[int]
-    embeddingModel: ModelSpec
+    model: ModelSpec
     similarityCutoff: float
-    def __init__(self, embeddingModel: _Optional[_Union[ModelSpec, _Mapping]] = ..., similarityCutoff: _Optional[float] = ...) -> None: ...
+    def __init__(self, model: _Optional[_Union[ModelSpec, _Mapping]] = ..., similarityCutoff: _Optional[float] = ...) -> None: ...
 
 class EmbeddingSpec(_message.Message):
     __slots__ = ("columns", "model")
@@ -345,7 +341,7 @@ class FileLocationReaderSpec(_message.Message):
     def __init__(self, fileReaderSpec: _Optional[_Union[FileReaderSpec, _Mapping]] = ..., location: _Optional[_Union[_generated_pb2.FileLocation, _Mapping]] = ..., url: _Optional[str] = ...) -> None: ...
 
 class FileReaderSpec(_message.Message):
-    __slots__ = ("type", "options")
+    __slots__ = ("type", "connectionName", "options")
     class OptionsEntry(_message.Message):
         __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
@@ -354,10 +350,12 @@ class FileReaderSpec(_message.Message):
         value: str
         def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
     TYPE_FIELD_NUMBER: _ClassVar[int]
+    CONNECTIONNAME_FIELD_NUMBER: _ClassVar[int]
     OPTIONS_FIELD_NUMBER: _ClassVar[int]
     type: str
+    connectionName: str
     options: _containers.ScalarMap[str, str]
-    def __init__(self, type: _Optional[str] = ..., options: _Optional[_Mapping[str, str]] = ...) -> None: ...
+    def __init__(self, type: _Optional[str] = ..., connectionName: _Optional[str] = ..., options: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
 class FilteredNodeParser(_message.Message):
     __slots__ = ("extension", "length", "name", "metadata", "nodeParser")
@@ -517,7 +515,7 @@ class KnowledgeBaseList(_message.Message):
     def __init__(self, metadata: _Optional[_Union[_generated_pb2_1_1.ListMeta, _Mapping]] = ..., items: _Optional[_Iterable[_Union[KnowledgeBase, _Mapping]]] = ...) -> None: ...
 
 class KnowledgeBaseSpec(_message.Message):
-    __slots__ = ("owner", "description", "refreshSchedule", "artifactBucketName", "labName", "resources", "metadataDatabaseConnectionName", "documentStoreConnectionName", "indexes", "documents", "nodeParsers", "defaultNodeParser")
+    __slots__ = ("owner", "description", "refreshSchedule", "artifactBucketName", "labName", "resources", "metadataDatabaseConnectionName", "documentStoreConnectionName", "indexes", "documents", "maxConcurrentReaders", "nodeParsers", "defaultNodeParser", "notification")
     OWNER_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     REFRESHSCHEDULE_FIELD_NUMBER: _ClassVar[int]
@@ -528,8 +526,10 @@ class KnowledgeBaseSpec(_message.Message):
     DOCUMENTSTORECONNECTIONNAME_FIELD_NUMBER: _ClassVar[int]
     INDEXES_FIELD_NUMBER: _ClassVar[int]
     DOCUMENTS_FIELD_NUMBER: _ClassVar[int]
+    MAXCONCURRENTREADERS_FIELD_NUMBER: _ClassVar[int]
     NODEPARSERS_FIELD_NUMBER: _ClassVar[int]
     DEFAULTNODEPARSER_FIELD_NUMBER: _ClassVar[int]
+    NOTIFICATION_FIELD_NUMBER: _ClassVar[int]
     owner: str
     description: str
     refreshSchedule: _generated_pb2.RunSchedule
@@ -540,15 +540,18 @@ class KnowledgeBaseSpec(_message.Message):
     documentStoreConnectionName: str
     indexes: _containers.RepeatedCompositeFieldContainer[IndexSpec]
     documents: _containers.RepeatedCompositeFieldContainer[DocumentSpec]
+    maxConcurrentReaders: int
     nodeParsers: _containers.RepeatedCompositeFieldContainer[NodeParserSpec]
     defaultNodeParser: str
-    def __init__(self, owner: _Optional[str] = ..., description: _Optional[str] = ..., refreshSchedule: _Optional[_Union[_generated_pb2.RunSchedule, _Mapping]] = ..., artifactBucketName: _Optional[str] = ..., labName: _Optional[str] = ..., resources: _Optional[_Union[_generated_pb2.ResourceSpec, _Mapping]] = ..., metadataDatabaseConnectionName: _Optional[str] = ..., documentStoreConnectionName: _Optional[str] = ..., indexes: _Optional[_Iterable[_Union[IndexSpec, _Mapping]]] = ..., documents: _Optional[_Iterable[_Union[DocumentSpec, _Mapping]]] = ..., nodeParsers: _Optional[_Iterable[_Union[NodeParserSpec, _Mapping]]] = ..., defaultNodeParser: _Optional[str] = ...) -> None: ...
+    notification: _generated_pb2.NotificationSpec
+    def __init__(self, owner: _Optional[str] = ..., description: _Optional[str] = ..., refreshSchedule: _Optional[_Union[_generated_pb2.RunSchedule, _Mapping]] = ..., artifactBucketName: _Optional[str] = ..., labName: _Optional[str] = ..., resources: _Optional[_Union[_generated_pb2.ResourceSpec, _Mapping]] = ..., metadataDatabaseConnectionName: _Optional[str] = ..., documentStoreConnectionName: _Optional[str] = ..., indexes: _Optional[_Iterable[_Union[IndexSpec, _Mapping]]] = ..., documents: _Optional[_Iterable[_Union[DocumentSpec, _Mapping]]] = ..., maxConcurrentReaders: _Optional[int] = ..., nodeParsers: _Optional[_Iterable[_Union[NodeParserSpec, _Mapping]]] = ..., defaultNodeParser: _Optional[str] = ..., notification: _Optional[_Union[_generated_pb2.NotificationSpec, _Mapping]] = ...) -> None: ...
 
 class KnowledgeBaseStatus(_message.Message):
-    __slots__ = ("observedGeneration", "lastRefreshAt", "lastCompletionAt", "logs", "documents", "indexes", "updatedAt", "conditions")
+    __slots__ = ("observedGeneration", "lastRefreshAt", "lastCompletionAt", "failureMessage", "logs", "documents", "indexes", "updatedAt", "conditions")
     OBSERVEDGENERATION_FIELD_NUMBER: _ClassVar[int]
     LASTREFRESHAT_FIELD_NUMBER: _ClassVar[int]
     LASTCOMPLETIONAT_FIELD_NUMBER: _ClassVar[int]
+    FAILUREMESSAGE_FIELD_NUMBER: _ClassVar[int]
     LOGS_FIELD_NUMBER: _ClassVar[int]
     DOCUMENTS_FIELD_NUMBER: _ClassVar[int]
     INDEXES_FIELD_NUMBER: _ClassVar[int]
@@ -557,12 +560,13 @@ class KnowledgeBaseStatus(_message.Message):
     observedGeneration: int
     lastRefreshAt: _generated_pb2_1_1.Time
     lastCompletionAt: _generated_pb2_1_1.Time
+    failureMessage: str
     logs: _containers.RepeatedCompositeFieldContainer[_generated_pb2.ContainerLog]
     documents: _containers.RepeatedCompositeFieldContainer[DocumentStatus]
     indexes: _containers.RepeatedCompositeFieldContainer[IndexStatus]
     updatedAt: _generated_pb2_1_1.Time
     conditions: _containers.RepeatedCompositeFieldContainer[_generated_pb2_1_1.Condition]
-    def __init__(self, observedGeneration: _Optional[int] = ..., lastRefreshAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., lastCompletionAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., logs: _Optional[_Iterable[_Union[_generated_pb2.ContainerLog, _Mapping]]] = ..., documents: _Optional[_Iterable[_Union[DocumentStatus, _Mapping]]] = ..., indexes: _Optional[_Iterable[_Union[IndexStatus, _Mapping]]] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1.Condition, _Mapping]]] = ...) -> None: ...
+    def __init__(self, observedGeneration: _Optional[int] = ..., lastRefreshAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., lastCompletionAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., failureMessage: _Optional[str] = ..., logs: _Optional[_Iterable[_Union[_generated_pb2.ContainerLog, _Mapping]]] = ..., documents: _Optional[_Iterable[_Union[DocumentStatus, _Mapping]]] = ..., indexes: _Optional[_Iterable[_Union[IndexStatus, _Mapping]]] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1.Condition, _Mapping]]] = ...) -> None: ...
 
 class KnowledgeGraphQueryEngine(_message.Message):
     __slots__ = ()
@@ -585,8 +589,8 @@ class LLMServer(_message.Message):
     STATUS_FIELD_NUMBER: _ClassVar[int]
     metadata: _generated_pb2_1_1.ObjectMeta
     spec: LLMServerSpec
-    status: LLMStatus
-    def __init__(self, metadata: _Optional[_Union[_generated_pb2_1_1.ObjectMeta, _Mapping]] = ..., spec: _Optional[_Union[LLMServerSpec, _Mapping]] = ..., status: _Optional[_Union[LLMStatus, _Mapping]] = ...) -> None: ...
+    status: LLMServerStatus
+    def __init__(self, metadata: _Optional[_Union[_generated_pb2_1_1.ObjectMeta, _Mapping]] = ..., spec: _Optional[_Union[LLMServerSpec, _Mapping]] = ..., status: _Optional[_Union[LLMServerStatus, _Mapping]] = ...) -> None: ...
 
 class LLMServerAccessSpec(_message.Message):
     __slots__ = ("port", "nodePort", "accessType")
@@ -640,12 +644,13 @@ class LLMServerSpec(_message.Message):
     notification: _generated_pb2.NotificationSpec
     def __init__(self, owner: _Optional[str] = ..., description: _Optional[str] = ..., servingSiteName: _Optional[str] = ..., resources: _Optional[_Union[_generated_pb2.ResourceSpec, _Mapping]] = ..., endpoints: _Optional[_Iterable[_Union[EndpointSpec, _Mapping]]] = ..., queryEngines: _Optional[_Iterable[_Union[QueryEngineSpec, _Mapping]]] = ..., retrievers: _Optional[_Iterable[_Union[RetrieverSpec, _Mapping]]] = ..., access: _Optional[_Union[LLMServerAccessSpec, _Mapping]] = ..., authorization: _Optional[_Union[LLMServerAuthorizationSpec, _Mapping]] = ..., notification: _Optional[_Union[_generated_pb2.NotificationSpec, _Mapping]] = ...) -> None: ...
 
-class LLMStatus(_message.Message):
-    __slots__ = ("observedGeneration", "endpoints", "endpoint", "deployedAt", "deploymentRef", "serviceRef", "failureMessage", "updatedAt", "conditions")
+class LLMServerStatus(_message.Message):
+    __slots__ = ("observedGeneration", "endpoints", "endpoint", "deployedAt", "refreshedAt", "deploymentRef", "serviceRef", "failureMessage", "updatedAt", "conditions")
     OBSERVEDGENERATION_FIELD_NUMBER: _ClassVar[int]
     ENDPOINTS_FIELD_NUMBER: _ClassVar[int]
     ENDPOINT_FIELD_NUMBER: _ClassVar[int]
     DEPLOYEDAT_FIELD_NUMBER: _ClassVar[int]
+    REFRESHEDAT_FIELD_NUMBER: _ClassVar[int]
     DEPLOYMENTREF_FIELD_NUMBER: _ClassVar[int]
     SERVICEREF_FIELD_NUMBER: _ClassVar[int]
     FAILUREMESSAGE_FIELD_NUMBER: _ClassVar[int]
@@ -655,12 +660,13 @@ class LLMStatus(_message.Message):
     endpoints: _containers.RepeatedCompositeFieldContainer[EndpointStatus]
     endpoint: str
     deployedAt: _generated_pb2_1_1.Time
+    refreshedAt: _generated_pb2_1_1.Time
     deploymentRef: _generated_pb2_1.ObjectReference
     serviceRef: _generated_pb2_1.ObjectReference
     failureMessage: str
     updatedAt: _generated_pb2_1_1.Time
     conditions: _containers.RepeatedCompositeFieldContainer[_generated_pb2_1_1.Condition]
-    def __init__(self, observedGeneration: _Optional[int] = ..., endpoints: _Optional[_Iterable[_Union[EndpointStatus, _Mapping]]] = ..., endpoint: _Optional[str] = ..., deployedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., deploymentRef: _Optional[_Union[_generated_pb2_1.ObjectReference, _Mapping]] = ..., serviceRef: _Optional[_Union[_generated_pb2_1.ObjectReference, _Mapping]] = ..., failureMessage: _Optional[str] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1.Condition, _Mapping]]] = ...) -> None: ...
+    def __init__(self, observedGeneration: _Optional[int] = ..., endpoints: _Optional[_Iterable[_Union[EndpointStatus, _Mapping]]] = ..., endpoint: _Optional[str] = ..., deployedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., refreshedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., deploymentRef: _Optional[_Union[_generated_pb2_1.ObjectReference, _Mapping]] = ..., serviceRef: _Optional[_Union[_generated_pb2_1.ObjectReference, _Mapping]] = ..., failureMessage: _Optional[str] = ..., updatedAt: _Optional[_Union[_generated_pb2_1_1.Time, _Mapping]] = ..., conditions: _Optional[_Iterable[_Union[_generated_pb2_1_1.Condition, _Mapping]]] = ...) -> None: ...
 
 class LengthFilter(_message.Message):
     __slots__ = ("greaterThan", "lessThan")
@@ -709,12 +715,21 @@ class MixedNodeParserSpec(_message.Message):
     def __init__(self, parsers: _Optional[_Iterable[_Union[FilteredNodeParser, _Mapping]]] = ..., fallbackNodeParser: _Optional[str] = ...) -> None: ...
 
 class ModelSpec(_message.Message):
-    __slots__ = ("connectionName", "model")
+    __slots__ = ("connectionName", "model", "parameters")
+    class ParametersEntry(_message.Message):
+        __slots__ = ("key", "value")
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: str
+        def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
     CONNECTIONNAME_FIELD_NUMBER: _ClassVar[int]
     MODEL_FIELD_NUMBER: _ClassVar[int]
+    PARAMETERS_FIELD_NUMBER: _ClassVar[int]
     connectionName: str
     model: str
-    def __init__(self, connectionName: _Optional[str] = ..., model: _Optional[str] = ...) -> None: ...
+    parameters: _containers.ScalarMap[str, str]
+    def __init__(self, connectionName: _Optional[str] = ..., model: _Optional[str] = ..., parameters: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
 class NameFilter(_message.Message):
     __slots__ = ("contains", "equals")
@@ -725,7 +740,7 @@ class NameFilter(_message.Message):
     def __init__(self, contains: _Optional[str] = ..., equals: _Optional[str] = ...) -> None: ...
 
 class NodeParserSpec(_message.Message):
-    __slots__ = ("name", "includeOrderRelationship", "includeMetadata", "type", "text", "sentence", "mixed")
+    __slots__ = ("name", "includeOrderRelationship", "includeMetadata", "type", "text", "sentence", "mixed", "semantic")
     NAME_FIELD_NUMBER: _ClassVar[int]
     INCLUDEORDERRELATIONSHIP_FIELD_NUMBER: _ClassVar[int]
     INCLUDEMETADATA_FIELD_NUMBER: _ClassVar[int]
@@ -733,6 +748,7 @@ class NodeParserSpec(_message.Message):
     TEXT_FIELD_NUMBER: _ClassVar[int]
     SENTENCE_FIELD_NUMBER: _ClassVar[int]
     MIXED_FIELD_NUMBER: _ClassVar[int]
+    SEMANTIC_FIELD_NUMBER: _ClassVar[int]
     name: str
     includeOrderRelationship: bool
     includeMetadata: bool
@@ -740,16 +756,17 @@ class NodeParserSpec(_message.Message):
     text: TextSplitterSpec
     sentence: SentenceWindowNodeParserSpec
     mixed: MixedNodeParserSpec
-    def __init__(self, name: _Optional[str] = ..., includeOrderRelationship: bool = ..., includeMetadata: bool = ..., type: _Optional[str] = ..., text: _Optional[_Union[TextSplitterSpec, _Mapping]] = ..., sentence: _Optional[_Union[SentenceWindowNodeParserSpec, _Mapping]] = ..., mixed: _Optional[_Union[MixedNodeParserSpec, _Mapping]] = ...) -> None: ...
+    semantic: SemanticNodeParserSpec
+    def __init__(self, name: _Optional[str] = ..., includeOrderRelationship: bool = ..., includeMetadata: bool = ..., type: _Optional[str] = ..., text: _Optional[_Union[TextSplitterSpec, _Mapping]] = ..., sentence: _Optional[_Union[SentenceWindowNodeParserSpec, _Mapping]] = ..., mixed: _Optional[_Union[MixedNodeParserSpec, _Mapping]] = ..., semantic: _Optional[_Union[SemanticNodeParserSpec, _Mapping]] = ...) -> None: ...
 
 class NodePostProcessor(_message.Message):
-    __slots__ = ("similarity", "keyword", "reorder", "embeddingOptimizer", "llmRerank", "cohereRerank", "fixedRecency", "embeddingRecency", "timeWeightedRecency")
+    __slots__ = ("similarity", "keyword", "reorder", "embeddingOptimizer", "llmRerank", "apiRerank", "fixedRecency", "embeddingRecency", "timeWeightedRecency")
     SIMILARITY_FIELD_NUMBER: _ClassVar[int]
     KEYWORD_FIELD_NUMBER: _ClassVar[int]
     REORDER_FIELD_NUMBER: _ClassVar[int]
     EMBEDDINGOPTIMIZER_FIELD_NUMBER: _ClassVar[int]
     LLMRERANK_FIELD_NUMBER: _ClassVar[int]
-    COHERERERANK_FIELD_NUMBER: _ClassVar[int]
+    APIRERANK_FIELD_NUMBER: _ClassVar[int]
     FIXEDRECENCY_FIELD_NUMBER: _ClassVar[int]
     EMBEDDINGRECENCY_FIELD_NUMBER: _ClassVar[int]
     TIMEWEIGHTEDRECENCY_FIELD_NUMBER: _ClassVar[int]
@@ -758,11 +775,11 @@ class NodePostProcessor(_message.Message):
     reorder: LongContextReorderSpec
     embeddingOptimizer: SentenceEmbeddingOptimizerSpec
     llmRerank: LLMRerankSpec
-    cohereRerank: CohereRerankSpec
+    apiRerank: APIRerankSpec
     fixedRecency: FixedRecencyPostProcessorSpec
     embeddingRecency: EmbeddingRecencyPostProcessorSpec
     timeWeightedRecency: TimeWeightedRecencyPostProcessorSpec
-    def __init__(self, similarity: _Optional[_Union[SimilarityPostProcessorSpec, _Mapping]] = ..., keyword: _Optional[_Union[KeywordPostProcessorSpec, _Mapping]] = ..., reorder: _Optional[_Union[LongContextReorderSpec, _Mapping]] = ..., embeddingOptimizer: _Optional[_Union[SentenceEmbeddingOptimizerSpec, _Mapping]] = ..., llmRerank: _Optional[_Union[LLMRerankSpec, _Mapping]] = ..., cohereRerank: _Optional[_Union[CohereRerankSpec, _Mapping]] = ..., fixedRecency: _Optional[_Union[FixedRecencyPostProcessorSpec, _Mapping]] = ..., embeddingRecency: _Optional[_Union[EmbeddingRecencyPostProcessorSpec, _Mapping]] = ..., timeWeightedRecency: _Optional[_Union[TimeWeightedRecencyPostProcessorSpec, _Mapping]] = ...) -> None: ...
+    def __init__(self, similarity: _Optional[_Union[SimilarityPostProcessorSpec, _Mapping]] = ..., keyword: _Optional[_Union[KeywordPostProcessorSpec, _Mapping]] = ..., reorder: _Optional[_Union[LongContextReorderSpec, _Mapping]] = ..., embeddingOptimizer: _Optional[_Union[SentenceEmbeddingOptimizerSpec, _Mapping]] = ..., llmRerank: _Optional[_Union[LLMRerankSpec, _Mapping]] = ..., apiRerank: _Optional[_Union[APIRerankSpec, _Mapping]] = ..., fixedRecency: _Optional[_Union[FixedRecencyPostProcessorSpec, _Mapping]] = ..., embeddingRecency: _Optional[_Union[EmbeddingRecencyPostProcessorSpec, _Mapping]] = ..., timeWeightedRecency: _Optional[_Union[TimeWeightedRecencyPostProcessorSpec, _Mapping]] = ...) -> None: ...
 
 class QueryEngineSpec(_message.Message):
     __slots__ = ("name", "retriever", "router", "subQuestion")
@@ -776,7 +793,7 @@ class QueryEngineSpec(_message.Message):
     subQuestion: SubQuestionQueryEngineSpec
     def __init__(self, name: _Optional[str] = ..., retriever: _Optional[_Union[RetrieverQueryEngineSpec, _Mapping]] = ..., router: _Optional[_Union[RouterQueryEngineSpec, _Mapping]] = ..., subQuestion: _Optional[_Union[SubQuestionQueryEngineSpec, _Mapping]] = ...) -> None: ...
 
-class QueryEngineToolSpec(_message.Message):
+class QueryEngineTool(_message.Message):
     __slots__ = ("queryEngine", "name", "description")
     QUERYENGINE_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
@@ -797,17 +814,28 @@ class Quota(_message.Message):
     def __init__(self, tokens: _Optional[int] = ..., requests: _Optional[int] = ..., cost: _Optional[float] = ...) -> None: ...
 
 class RepositoryFileReader(_message.Message):
-    __slots__ = ("extension", "extensions", "reader")
+    __slots__ = ("extension", "length", "name", "metadata", "reader")
+    class MetadataEntry(_message.Message):
+        __slots__ = ("key", "value")
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: str
+        def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
     EXTENSION_FIELD_NUMBER: _ClassVar[int]
-    EXTENSIONS_FIELD_NUMBER: _ClassVar[int]
+    LENGTH_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    METADATA_FIELD_NUMBER: _ClassVar[int]
     READER_FIELD_NUMBER: _ClassVar[int]
-    extension: str
-    extensions: _containers.RepeatedScalarFieldContainer[str]
+    extension: ExtensionFilter
+    length: LengthFilter
+    name: NameFilter
+    metadata: _containers.ScalarMap[str, str]
     reader: FileReaderSpec
-    def __init__(self, extension: _Optional[str] = ..., extensions: _Optional[_Iterable[str]] = ..., reader: _Optional[_Union[FileReaderSpec, _Mapping]] = ...) -> None: ...
+    def __init__(self, extension: _Optional[_Union[ExtensionFilter, _Mapping]] = ..., length: _Optional[_Union[LengthFilter, _Mapping]] = ..., name: _Optional[_Union[NameFilter, _Mapping]] = ..., metadata: _Optional[_Mapping[str, str]] = ..., reader: _Optional[_Union[FileReaderSpec, _Mapping]] = ...) -> None: ...
 
 class RepositoryReaderSpec(_message.Message):
-    __slots__ = ("type", "connectionName", "extensions", "readers", "options")
+    __slots__ = ("connectionName", "useDefaultReader", "readers", "options")
     class OptionsEntry(_message.Message):
         __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
@@ -815,17 +843,15 @@ class RepositoryReaderSpec(_message.Message):
         key: str
         value: str
         def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
-    TYPE_FIELD_NUMBER: _ClassVar[int]
     CONNECTIONNAME_FIELD_NUMBER: _ClassVar[int]
-    EXTENSIONS_FIELD_NUMBER: _ClassVar[int]
+    USEDEFAULTREADER_FIELD_NUMBER: _ClassVar[int]
     READERS_FIELD_NUMBER: _ClassVar[int]
     OPTIONS_FIELD_NUMBER: _ClassVar[int]
-    type: str
     connectionName: str
-    extensions: _containers.RepeatedScalarFieldContainer[str]
+    useDefaultReader: bool
     readers: _containers.RepeatedCompositeFieldContainer[RepositoryFileReader]
     options: _containers.ScalarMap[str, str]
-    def __init__(self, type: _Optional[str] = ..., connectionName: _Optional[str] = ..., extensions: _Optional[_Iterable[str]] = ..., readers: _Optional[_Iterable[_Union[RepositoryFileReader, _Mapping]]] = ..., options: _Optional[_Mapping[str, str]] = ...) -> None: ...
+    def __init__(self, connectionName: _Optional[str] = ..., useDefaultReader: bool = ..., readers: _Optional[_Iterable[_Union[RepositoryFileReader, _Mapping]]] = ..., options: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
 class ResponseSynthesizerSpec(_message.Message):
     __slots__ = ("mode", "model", "answerFiltering")
@@ -881,9 +907,9 @@ class RouterQueryEngineSpec(_message.Message):
     __slots__ = ("tools", "selector")
     TOOLS_FIELD_NUMBER: _ClassVar[int]
     SELECTOR_FIELD_NUMBER: _ClassVar[int]
-    tools: _containers.RepeatedCompositeFieldContainer[QueryEngineToolSpec]
+    tools: _containers.RepeatedCompositeFieldContainer[QueryEngineTool]
     selector: SelectorSpec
-    def __init__(self, tools: _Optional[_Iterable[_Union[QueryEngineToolSpec, _Mapping]]] = ..., selector: _Optional[_Union[SelectorSpec, _Mapping]] = ...) -> None: ...
+    def __init__(self, tools: _Optional[_Iterable[_Union[QueryEngineTool, _Mapping]]] = ..., selector: _Optional[_Union[SelectorSpec, _Mapping]] = ...) -> None: ...
 
 class RouterRetrieverSpec(_message.Message):
     __slots__ = ("tools", "selector")
@@ -927,15 +953,21 @@ class SelectorSpec(_message.Message):
     multi: bool
     def __init__(self, mode: _Optional[str] = ..., model: _Optional[_Union[ModelSpec, _Mapping]] = ..., multi: bool = ...) -> None: ...
 
-class SentenceEmbeddingOptimizerSpec(_message.Message):
-    __slots__ = ("embeddingModel", "similarityCutoff", "thresholdCutoff")
+class SemanticNodeParserSpec(_message.Message):
+    __slots__ = ("embeddingModel",)
     EMBEDDINGMODEL_FIELD_NUMBER: _ClassVar[int]
+    embeddingModel: ModelSpec
+    def __init__(self, embeddingModel: _Optional[_Union[ModelSpec, _Mapping]] = ...) -> None: ...
+
+class SentenceEmbeddingOptimizerSpec(_message.Message):
+    __slots__ = ("model", "similarityCutoff", "thresholdCutoff")
+    MODEL_FIELD_NUMBER: _ClassVar[int]
     SIMILARITYCUTOFF_FIELD_NUMBER: _ClassVar[int]
     THRESHOLDCUTOFF_FIELD_NUMBER: _ClassVar[int]
-    embeddingModel: ModelSpec
+    model: ModelSpec
     similarityCutoff: float
     thresholdCutoff: float
-    def __init__(self, embeddingModel: _Optional[_Union[ModelSpec, _Mapping]] = ..., similarityCutoff: _Optional[float] = ..., thresholdCutoff: _Optional[float] = ...) -> None: ...
+    def __init__(self, model: _Optional[_Union[ModelSpec, _Mapping]] = ..., similarityCutoff: _Optional[float] = ..., thresholdCutoff: _Optional[float] = ...) -> None: ...
 
 class SentenceSplitterSpec(_message.Message):
     __slots__ = ("chunkSize", "chunkOverlap", "wordSeparator", "paragraphSeparator", "splitter", "hierarchical")
@@ -980,10 +1012,10 @@ class SubQuestionQueryEngineSpec(_message.Message):
     TOOLS_FIELD_NUMBER: _ClassVar[int]
     RESPONSESYNTHESIZER_FIELD_NUMBER: _ClassVar[int]
     MODEL_FIELD_NUMBER: _ClassVar[int]
-    tools: _containers.RepeatedCompositeFieldContainer[QueryEngineToolSpec]
+    tools: _containers.RepeatedCompositeFieldContainer[QueryEngineTool]
     responseSynthesizer: ResponseSynthesizerSpec
     model: ModelSpec
-    def __init__(self, tools: _Optional[_Iterable[_Union[QueryEngineToolSpec, _Mapping]]] = ..., responseSynthesizer: _Optional[_Union[ResponseSynthesizerSpec, _Mapping]] = ..., model: _Optional[_Union[ModelSpec, _Mapping]] = ...) -> None: ...
+    def __init__(self, tools: _Optional[_Iterable[_Union[QueryEngineTool, _Mapping]]] = ..., responseSynthesizer: _Optional[_Union[ResponseSynthesizerSpec, _Mapping]] = ..., model: _Optional[_Union[ModelSpec, _Mapping]] = ...) -> None: ...
 
 class TextSpec(_message.Message):
     __slots__ = ("extractionMode", "summarizationPrompt", "concatenationString", "default")

@@ -53,6 +53,13 @@ message DeleteLLMServerRequest {
 
 message DeleteLLMServerResponse {}
 
+message RefreshLLMServerRequest {
+  string namespace = 1;
+  string name      = 2;
+}
+
+message RefreshLLMServerResponse {}
+
 
 service LLMServerService {
   rpc ListLLMServers(ListLLMServersRequest) returns (ListLLMServersResponse) {
@@ -78,6 +85,10 @@ service LLMServerService {
   }
 
   rpc DeleteLLMServer(DeleteLLMServerRequest) returns (DeleteLLMServerResponse) {
+    option (google.api.http).delete = "/v1/llmservers/{namespace}/{name}";
+  }
+
+  rpc RefreshLLMServer(DeleteLLMServerRequest) returns (RefreshLLMServerResponse) {
     option (google.api.http).delete = "/v1/llmservers/{namespace}/{name}";
   }
 }

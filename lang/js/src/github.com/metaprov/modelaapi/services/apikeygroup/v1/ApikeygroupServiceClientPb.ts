@@ -257,29 +257,29 @@ export class APIKeyGroupServiceClient {
   methodDescriptorGenerateAPIKey = new grpcWeb.MethodDescriptor(
     '/github.com.metaprov.modelaapi.services.apikeygroup.v1.APIKeyGroupService/GenerateAPIKey',
     grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_apikeygroup_v1_apikeygroup_pb.CreateAPIKeyGroupRequest,
-    github_com_metaprov_modelaapi_services_apikeygroup_v1_apikeygroup_pb.CreateAPIKeyGroupResponse,
-    (request: github_com_metaprov_modelaapi_services_apikeygroup_v1_apikeygroup_pb.CreateAPIKeyGroupRequest) => {
+    github_com_metaprov_modelaapi_services_apikeygroup_v1_apikeygroup_pb.GenerateAPIKeyRequest,
+    github_com_metaprov_modelaapi_services_apikeygroup_v1_apikeygroup_pb.GenerateAPIKeyResponse,
+    (request: github_com_metaprov_modelaapi_services_apikeygroup_v1_apikeygroup_pb.GenerateAPIKeyRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modelaapi_services_apikeygroup_v1_apikeygroup_pb.CreateAPIKeyGroupResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_apikeygroup_v1_apikeygroup_pb.GenerateAPIKeyResponse.deserializeBinary
   );
 
   generateAPIKey(
-    request: github_com_metaprov_modelaapi_services_apikeygroup_v1_apikeygroup_pb.CreateAPIKeyGroupRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_apikeygroup_v1_apikeygroup_pb.CreateAPIKeyGroupResponse>;
+    request: github_com_metaprov_modelaapi_services_apikeygroup_v1_apikeygroup_pb.GenerateAPIKeyRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_apikeygroup_v1_apikeygroup_pb.GenerateAPIKeyResponse>;
 
   generateAPIKey(
-    request: github_com_metaprov_modelaapi_services_apikeygroup_v1_apikeygroup_pb.CreateAPIKeyGroupRequest,
+    request: github_com_metaprov_modelaapi_services_apikeygroup_v1_apikeygroup_pb.GenerateAPIKeyRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_apikeygroup_v1_apikeygroup_pb.CreateAPIKeyGroupResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_apikeygroup_v1_apikeygroup_pb.CreateAPIKeyGroupResponse>;
+               response: github_com_metaprov_modelaapi_services_apikeygroup_v1_apikeygroup_pb.GenerateAPIKeyResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_apikeygroup_v1_apikeygroup_pb.GenerateAPIKeyResponse>;
 
   generateAPIKey(
-    request: github_com_metaprov_modelaapi_services_apikeygroup_v1_apikeygroup_pb.CreateAPIKeyGroupRequest,
+    request: github_com_metaprov_modelaapi_services_apikeygroup_v1_apikeygroup_pb.GenerateAPIKeyRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_apikeygroup_v1_apikeygroup_pb.CreateAPIKeyGroupResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_apikeygroup_v1_apikeygroup_pb.GenerateAPIKeyResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +

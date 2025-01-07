@@ -163,7 +163,7 @@ func (kb *KnowledgeBase) MarkRemoved() {
 func (kb *KnowledgeBase) MarkRemoving() {
 	kb.CreateOrUpdateCondition(metav1.Condition{
 		Type:   string(KnowledgeBaseRemoved),
-		Status: metav1.ConditionTrue,
+		Status: metav1.ConditionFalse,
 		Reason: "Removing",
 	})
 }

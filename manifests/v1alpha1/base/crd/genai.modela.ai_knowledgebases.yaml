@@ -82,7 +82,9 @@ spec:
                         from a database query
                       properties:
                         connectionName:
-                          description: The name of the connection to the database
+                          description: The name of the connection to the database.
+                            The type of database which the connection references will
+                            determine the reader type
                           type: string
                         options:
                           additionalProperties:
@@ -92,33 +94,19 @@ spec:
                         query:
                           description: The query to execute on the database
                           type: string
-                        type:
-                          description: The type of database reader
-                          type: string
                       type: object
                     description:
                       description: Description specifies an optional description for
                         the document
                       type: string
-                    embeddingModel:
-                      description: EmbeddingModel specifies a document-specific embedding
-                        model
-                      properties:
-                        connectionName:
-                          description: ConnectionName specifies the name of a connection
-                            to a foundational model provider
-                          type: string
-                        model:
-                          description: Model specifies the vendor-specific model type.
-                            If unspecified, use the model provided by the `model`
-                            option of the connection, or choose the default model
-                            for the vendor
-                          type: string
-                      type: object
                     file:
                       description: File specifies the configuration to read text from
                         an external file
                       properties:
+                        connectionName:
+                          description: The name of the connection that provides authorization
+                            details to the reader, if applicable
+                          type: string
                         location:
                           description: The location of the file
                           properties:
@@ -140,10 +128,15 @@ spec:
                           description: The URL to download the file
                           type: string
                       type: object
+                    flagged:
+                      description: Indicates if the document is manually flagged for
+                        refresh
+                      type: boolean
                     indexes:
                       description: Indexes specifies the collection of indexes that
                         the document will be added to. If empty, the document will
-                        be added to all indexes defined by the Knowledge Base
+                        be added to all indexes defined by the Knowledge Base. A document
+                        must be bound to at least one valid index
                       items:
                         type: string
                       type: array
@@ -173,40 +166,76 @@ spec:
                       properties:
                         connectionName:
                           description: The name of the connection that provides authorization
-                            details for the repository
+                            details for the repository. The type of repository which
+                            the connection references will determine the reader type
                           type: string
-                        extensions:
-                          description: The collection of supported file extensions
-                            to read. File extensions supported by Modela will automatically
-                            be read by their supported reader, if not already mapped
-                            to a reader in Readers. Unsupported extensions will be
-                            read as plain-text
-                          items:
-                            type: string
-                          type: array
                         options:
                           additionalProperties:
                             type: string
                           description: Reader-specific options
                           type: object
                         readers:
-                          description: The readers to use for individual file extensions
+                          description: The collection of filtered file readers, with
+                            each containing optional filters and a file reader specification.
+                            Each reader is matched sequentially in the order that
+                            they are listed.
                           items:
                             properties:
                               extension:
-                                description: The file extension supported by the reader.
-                                  Only one of Extension or Extensions may be specified
-                                type: string
-                              extensions:
-                                description: The collection of extensions supported
-                                  by the reader
-                                items:
+                                description: Filter files by their extension
+                                properties:
+                                  exclude:
+                                    description: File extensions to exclude. All extensions
+                                      excluding the collection will be matched
+                                    items:
+                                      type: string
+                                    type: array
+                                  include:
+                                    description: File extensions to include
+                                    items:
+                                      type: string
+                                    type: array
+                                type: object
+                              length:
+                                description: Filter files by their length
+                                properties:
+                                  greaterThan:
+                                    description: Match if the document length is greater
+                                      than the specified value
+                                    format: int32
+                                    type: integer
+                                  lessThan:
+                                    description: Match if the document length is less
+                                      than the specified value
+                                    format: int32
+                                    type: integer
+                                type: object
+                              metadata:
+                                additionalProperties:
                                   type: string
-                                type: array
+                                description: Additional metadata to add to files matched
+                                  by the reader
+                                type: object
+                              name:
+                                description: Filter files by their name
+                                properties:
+                                  contains:
+                                    description: Match documents whose name contains
+                                      the specified string
+                                    type: string
+                                  equals:
+                                    description: Match documents whose name equals
+                                      the specified string
+                                    type: string
+                                type: object
                               reader:
                                 description: The file reader to use for the specified
                                   extensions
                                 properties:
+                                  connectionName:
+                                    description: The name of the connection that provides
+                                      authorization details to the reader, if applicable
+                                    type: string
                                   options:
                                     additionalProperties:
                                       type: string
@@ -219,9 +248,13 @@ spec:
                                 type: object
                             type: object
                           type: array
-                        type:
-                          description: The type of repository reader
-                          type: string
+                        useDefaultReader:
+                          description: UseDefaultReader indicates if all files in
+                            the repository be read, regardless if they are matched
+                            with a reader specified in Readers. Files with extensions
+                            supported by Modela will be read by their respective reader
+                            and files with unknown extensions will be read as plain-text.
+                          type: boolean
                       type: object
                     web:
                       description: Web specifies the configuration to read text from
@@ -270,10 +303,18 @@ spec:
                                   type: string
                                 model:
                                   description: Model specifies the vendor-specific
-                                    model type. If unspecified, use the model provided
-                                    by the `model` option of the connection, or choose
-                                    the default model for the vendor
+                                    model type. If unspecified, the model provided
+                                    by the `model` option of the connection or the
+                                    default model for the vendor will be used.
                                   type: string
+                                parameters:
+                                  additionalProperties:
+                                    type: string
+                                  description: Parameters contains a mapping for model-specific
+                                    parameters. Common parameters for language models
+                                    include `max_tokens`, `temperature`, `request_timeout`
+                                    and `max_retries`
+                                  type: object
                               type: object
                           type: object
                         responseSynthesizer:
@@ -306,10 +347,18 @@ spec:
                                   type: string
                                 model:
                                   description: Model specifies the vendor-specific
-                                    model type. If unspecified, use the model provided
-                                    by the `model` option of the connection, or choose
-                                    the default model for the vendor
+                                    model type. If unspecified, the model provided
+                                    by the `model` option of the connection or the
+                                    default model for the vendor will be used.
                                   type: string
+                                parameters:
+                                  additionalProperties:
+                                    type: string
+                                  description: Parameters contains a mapping for model-specific
+                                    parameters. Common parameters for language models
+                                    include `max_tokens`, `temperature`, `request_timeout`
+                                    and `max_retries`
+                                  type: object
                               type: object
                           type: object
                       type: object
@@ -337,10 +386,18 @@ spec:
                               type: string
                             model:
                               description: Model specifies the vendor-specific model
-                                type. If unspecified, use the model provided by the
-                                `model` option of the connection, or choose the default
-                                model for the vendor
+                                type. If unspecified, the model provided by the `model`
+                                option of the connection or the default model for
+                                the vendor will be used.
                               type: string
+                            parameters:
+                              additionalProperties:
+                                type: string
+                              description: Parameters contains a mapping for model-specific
+                                parameters. Common parameters for language models
+                                include `max_tokens`, `temperature`, `request_timeout`
+                                and `max_retries`
+                              type: object
                           type: object
                       type: object
                     list:
@@ -375,10 +432,18 @@ spec:
                               type: string
                             model:
                               description: Model specifies the vendor-specific model
-                                type. If unspecified, use the model provided by the
-                                `model` option of the connection, or choose the default
-                                model for the vendor
+                                type. If unspecified, the model provided by the `model`
+                                option of the connection or the default model for
+                                the vendor will be used.
                               type: string
+                            parameters:
+                              additionalProperties:
+                                type: string
+                              description: Parameters contains a mapping for model-specific
+                                parameters. Common parameters for language models
+                                include `max_tokens`, `temperature`, `request_timeout`
+                                and `max_retries`
+                              type: object
                           type: object
                         refDocColumn:
                           description: The name of the required column specifying
@@ -535,10 +600,18 @@ spec:
                               type: string
                             model:
                               description: Model specifies the vendor-specific model
-                                type. If unspecified, use the model provided by the
-                                `model` option of the connection, or choose the default
-                                model for the vendor
+                                type. If unspecified, the model provided by the `model`
+                                option of the connection or the default model for
+                                the vendor will be used.
                               type: string
+                            parameters:
+                              additionalProperties:
+                                type: string
+                              description: Parameters contains a mapping for model-specific
+                                parameters. Common parameters for language models
+                                include `max_tokens`, `temperature`, `request_timeout`
+                                and `max_retries`
+                              type: object
                           type: object
                       type: object
                     vector:
@@ -558,10 +631,18 @@ spec:
                               type: string
                             model:
                               description: Model specifies the vendor-specific model
-                                type. If unspecified, use the model provided by the
-                                `model` option of the connection, or choose the default
-                                model for the vendor
+                                type. If unspecified, the model provided by the `model`
+                                option of the connection or the default model for
+                                the vendor will be used.
                               type: string
+                            parameters:
+                              additionalProperties:
+                                type: string
+                              description: Parameters contains a mapping for model-specific
+                                parameters. Common parameters for language models
+                                include `max_tokens`, `temperature`, `request_timeout`
+                                and `max_retries`
+                              type: object
                           type: object
                       type: object
                   type: object
@@ -571,6 +652,11 @@ spec:
                   Base will be executed. If empty, default to the Data Product's default
                   Lab
                 type: string
+              maxConcurrentReaders:
+                description: MaxConcurrentReaders specifies how many documents can
+                  be read simultaneously. If unspecified, default to 1
+                format: int32
+                type: integer
               metadataDatabaseConnectionName:
                 description: MetadataDatabaseConnectionName specifies a connection
                   to a database used to store document metadata and statuses. When
@@ -578,7 +664,7 @@ spec:
                   cleared and migrated to the table
                 type: string
               nodeParsers:
-                description: NodeParser defines the collection of node parsers available
+                description: NodeParsers defines the collection of node parsers available
                   to documents prior to indexing. The node parsers define how to split
                   up documents into individual chunks of text. If empty, the default
                   node parser will be used
@@ -600,7 +686,9 @@ spec:
                       properties:
                         fallbackNodeParser:
                           description: The node parser to use for documents that are
-                            not matched to any of the parsers specified in Parsers
+                            not matched to any of the parsers specified in Parsers.
+                            If a node parser cannot be found for a document, it will
+                            be skipped
                           type: string
                         parsers:
                           description: The collection of filtered node parsers, with
@@ -666,9 +754,35 @@ spec:
                     name:
                       description: The unique name of the node parser
                       type: string
+                    semantic:
+                      description: The specification for a semantic node parser
+                      properties:
+                        embeddingModel:
+                          description: EmbeddingModel specifies the embedding model
+                            to use for determining the similarity between nodes
+                          properties:
+                            connectionName:
+                              description: ConnectionName specifies the name of a
+                                connection to a foundational model provider
+                              type: string
+                            model:
+                              description: Model specifies the vendor-specific model
+                                type. If unspecified, the model provided by the `model`
+                                option of the connection or the default model for
+                                the vendor will be used.
+                              type: string
+                            parameters:
+                              additionalProperties:
+                                type: string
+                              description: Parameters contains a mapping for model-specific
+                                parameters. Common parameters for language models
+                                include `max_tokens`, `temperature`, `request_timeout`
+                                and `max_retries`
+                              type: object
+                          type: object
+                      type: object
                     sentence:
-                      description: The specification for the sentence window node
-                        parser
+                      description: The specification for a sentence window node parser
                       properties:
                         splitter:
                           description: The function to split documents into sentences.
@@ -827,6 +941,27 @@ spec:
                       type: string
                   type: object
                 type: array
+              notification:
+                description: The configuration for Alerts generated by the Knowledge
+                  Base
+                properties:
+                  notifierName:
+                    description: NotifierName specifies the name of a single Notifier
+                      resource which the Alert will be forwarded to
+                    type: string
+                  selector:
+                    additionalProperties:
+                      type: string
+                    description: Selector defines a map of labels that will be matched
+                      to find multiple Notifier resource to forward alerts to
+                    type: object
+                  ttl:
+                    default: 3600
+                    description: TTL defines the time-to-live for Alerts, in seconds,
+                      after which they will be deleted
+                    format: int32
+                    type: integer
+                type: object
               owner:
                 default: no-one
                 description: Owner specifies the name of the Account which the object
@@ -843,10 +978,9 @@ spec:
                     type: string
                   enabled:
                     default: false
-                    description: Enabled indicates if the schedule is enabled. When
-                      enabled, a CronJob will be created which when triggered will
-                      initiate the creation of a run for the resource that specifies
-                      the schedule
+                    description: Indicates if the schedule is enabled. When enabled,
+                      a Cron Job will be created that will trigger the periodic execution
+                      of the task
                     type: boolean
                   type:
                     description: The type of schedule, which can be a frequency interval
@@ -979,10 +1113,6 @@ spec:
                   database is defined, the collection will be empty
                 items:
                   properties:
-                    flagged:
-                      description: Indicates if the document is manually flagged for
-                        refresh
-                      type: boolean
                     lastError:
                       description: The last error that occurred while processing the
                         document
@@ -1000,6 +1130,10 @@ spec:
                       type: integer
                   type: object
                 type: array
+              failureMessage:
+                description: FailureMessage is set to a failure message in the case
+                  that an error occurred during a refresh of the Knowledge Base
+                type: string
               indexes:
                 description: Indexes contains the collection of statuses for each
                   index defined by the Knowledge Base

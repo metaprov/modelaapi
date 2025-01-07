@@ -458,6 +458,13 @@ func (servingsite ServingSite) ServingSiteClusterRole() *rbacv1.ClusterRole {
 				ResourceNames:   []string{},
 				NonResourceURLs: []string{},
 			},
+			{
+				Verbs:           []string{"get", "list", "update"},
+				APIGroups:       []string{"genai.modela.ai"},
+				Resources:       []string{"*"},
+				ResourceNames:   []string{},
+				NonResourceURLs: []string{},
+			},
 		},
 	}
 }

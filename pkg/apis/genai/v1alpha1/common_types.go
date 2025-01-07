@@ -24,9 +24,12 @@ type IndexReference struct {
 type ModelSpec struct {
 	// ConnectionName specifies the name of a connection to a foundational model provider
 	ConnectionName string `json:"connectionName,omitempty" protobuf:"bytes,1,opt,name=connectionName"`
-	// Model specifies the vendor-specific model type. If unspecified, use the model provided by the
-	// `model` option of the connection, or choose the default model for the vendor
+	// Model specifies the vendor-specific model type. If unspecified, the model provided by the
+	// `model` option of the connection or the default model for the vendor will be used.
 	Model *string `json:"model,omitempty" protobuf:"bytes,2,opt,name=model"`
+	// Parameters contains a mapping for model-specific parameters.
+	// Common parameters for language models include `max_tokens`, `temperature`, `request_timeout` and `max_retries`
+	Parameters map[string]string `json:"parameters,omitempty" protobuf:"bytes,3,opt,name=parameters"`
 }
 
 // ResponseSynthesizerSpec defines the configuration for a response synthesizer, which

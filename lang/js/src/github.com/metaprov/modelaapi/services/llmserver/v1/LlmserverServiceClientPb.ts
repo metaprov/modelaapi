@@ -254,5 +254,48 @@ export class LLMServerServiceClient {
     this.methodDescriptorDeleteLLMServer);
   }
 
+  methodDescriptorRefreshLLMServer = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.llmserver.v1.LLMServerService/RefreshLLMServer',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_llmserver_v1_llmserver_pb.DeleteLLMServerRequest,
+    github_com_metaprov_modelaapi_services_llmserver_v1_llmserver_pb.RefreshLLMServerResponse,
+    (request: github_com_metaprov_modelaapi_services_llmserver_v1_llmserver_pb.DeleteLLMServerRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_llmserver_v1_llmserver_pb.RefreshLLMServerResponse.deserializeBinary
+  );
+
+  refreshLLMServer(
+    request: github_com_metaprov_modelaapi_services_llmserver_v1_llmserver_pb.DeleteLLMServerRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_llmserver_v1_llmserver_pb.RefreshLLMServerResponse>;
+
+  refreshLLMServer(
+    request: github_com_metaprov_modelaapi_services_llmserver_v1_llmserver_pb.DeleteLLMServerRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_llmserver_v1_llmserver_pb.RefreshLLMServerResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_llmserver_v1_llmserver_pb.RefreshLLMServerResponse>;
+
+  refreshLLMServer(
+    request: github_com_metaprov_modelaapi_services_llmserver_v1_llmserver_pb.DeleteLLMServerRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_llmserver_v1_llmserver_pb.RefreshLLMServerResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.llmserver.v1.LLMServerService/RefreshLLMServer',
+        request,
+        metadata || {},
+        this.methodDescriptorRefreshLLMServer,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.llmserver.v1.LLMServerService/RefreshLLMServer',
+    request,
+    metadata || {},
+    this.methodDescriptorRefreshLLMServer);
+  }
+
 }
 

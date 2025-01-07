@@ -27,7 +27,7 @@ type APIKeyGroupServiceClient interface {
 	GetAPIKeyGroup(ctx context.Context, in *GetAPIKeyGroupRequest, opts ...grpc.CallOption) (*GetAPIKeyGroupResponse, error)
 	UpdateAPIKeyGroup(ctx context.Context, in *UpdateAPIKeyGroupRequest, opts ...grpc.CallOption) (*UpdateAPIKeyGroupResponse, error)
 	DeleteAPIKeyGroup(ctx context.Context, in *DeleteAPIKeyGroupRequest, opts ...grpc.CallOption) (*DeleteAPIKeyGroupResponse, error)
-	GenerateAPIKey(ctx context.Context, in *CreateAPIKeyGroupRequest, opts ...grpc.CallOption) (*CreateAPIKeyGroupResponse, error)
+	GenerateAPIKey(ctx context.Context, in *GenerateAPIKeyRequest, opts ...grpc.CallOption) (*GenerateAPIKeyResponse, error)
 	RefreshAPIKeyGroup(ctx context.Context, in *RefreshAPIKeyGroupRequest, opts ...grpc.CallOption) (*RefreshAPIKeyGroupResponse, error)
 }
 
@@ -84,8 +84,8 @@ func (c *aPIKeyGroupServiceClient) DeleteAPIKeyGroup(ctx context.Context, in *De
 	return out, nil
 }
 
-func (c *aPIKeyGroupServiceClient) GenerateAPIKey(ctx context.Context, in *CreateAPIKeyGroupRequest, opts ...grpc.CallOption) (*CreateAPIKeyGroupResponse, error) {
-	out := new(CreateAPIKeyGroupResponse)
+func (c *aPIKeyGroupServiceClient) GenerateAPIKey(ctx context.Context, in *GenerateAPIKeyRequest, opts ...grpc.CallOption) (*GenerateAPIKeyResponse, error) {
+	out := new(GenerateAPIKeyResponse)
 	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.apikeygroup.v1.APIKeyGroupService/GenerateAPIKey", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -111,7 +111,7 @@ type APIKeyGroupServiceServer interface {
 	GetAPIKeyGroup(context.Context, *GetAPIKeyGroupRequest) (*GetAPIKeyGroupResponse, error)
 	UpdateAPIKeyGroup(context.Context, *UpdateAPIKeyGroupRequest) (*UpdateAPIKeyGroupResponse, error)
 	DeleteAPIKeyGroup(context.Context, *DeleteAPIKeyGroupRequest) (*DeleteAPIKeyGroupResponse, error)
-	GenerateAPIKey(context.Context, *CreateAPIKeyGroupRequest) (*CreateAPIKeyGroupResponse, error)
+	GenerateAPIKey(context.Context, *GenerateAPIKeyRequest) (*GenerateAPIKeyResponse, error)
 	RefreshAPIKeyGroup(context.Context, *RefreshAPIKeyGroupRequest) (*RefreshAPIKeyGroupResponse, error)
 	mustEmbedUnimplementedAPIKeyGroupServiceServer()
 }
@@ -135,7 +135,7 @@ func (UnimplementedAPIKeyGroupServiceServer) UpdateAPIKeyGroup(context.Context, 
 func (UnimplementedAPIKeyGroupServiceServer) DeleteAPIKeyGroup(context.Context, *DeleteAPIKeyGroupRequest) (*DeleteAPIKeyGroupResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteAPIKeyGroup not implemented")
 }
-func (UnimplementedAPIKeyGroupServiceServer) GenerateAPIKey(context.Context, *CreateAPIKeyGroupRequest) (*CreateAPIKeyGroupResponse, error) {
+func (UnimplementedAPIKeyGroupServiceServer) GenerateAPIKey(context.Context, *GenerateAPIKeyRequest) (*GenerateAPIKeyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GenerateAPIKey not implemented")
 }
 func (UnimplementedAPIKeyGroupServiceServer) RefreshAPIKeyGroup(context.Context, *RefreshAPIKeyGroupRequest) (*RefreshAPIKeyGroupResponse, error) {
@@ -245,7 +245,7 @@ func _APIKeyGroupService_DeleteAPIKeyGroup_Handler(srv interface{}, ctx context.
 }
 
 func _APIKeyGroupService_GenerateAPIKey_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateAPIKeyGroupRequest)
+	in := new(GenerateAPIKeyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -257,7 +257,7 @@ func _APIKeyGroupService_GenerateAPIKey_Handler(srv interface{}, ctx context.Con
 		FullMethod: "/github.com.metaprov.modelaapi.services.apikeygroup.v1.APIKeyGroupService/GenerateAPIKey",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(APIKeyGroupServiceServer).GenerateAPIKey(ctx, req.(*CreateAPIKeyGroupRequest))
+		return srv.(APIKeyGroupServiceServer).GenerateAPIKey(ctx, req.(*GenerateAPIKeyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }

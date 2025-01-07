@@ -64,6 +64,11 @@ class LLMServerServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llmserver_dot_v1_dot_llmserver__pb2.DeleteLLMServerRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llmserver_dot_v1_dot_llmserver__pb2.DeleteLLMServerResponse.FromString,
                 _registered_method=True)
+        self.RefreshLLMServer = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.llmserver.v1.LLMServerService/RefreshLLMServer',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llmserver_dot_v1_dot_llmserver__pb2.DeleteLLMServerRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llmserver_dot_v1_dot_llmserver__pb2.RefreshLLMServerResponse.FromString,
+                _registered_method=True)
 
 
 class LLMServerServiceServicer(object):
@@ -99,6 +104,12 @@ class LLMServerServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def RefreshLLMServer(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_LLMServerServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -126,6 +137,11 @@ def add_LLMServerServiceServicer_to_server(servicer, server):
                     servicer.DeleteLLMServer,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llmserver_dot_v1_dot_llmserver__pb2.DeleteLLMServerRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llmserver_dot_v1_dot_llmserver__pb2.DeleteLLMServerResponse.SerializeToString,
+            ),
+            'RefreshLLMServer': grpc.unary_unary_rpc_method_handler(
+                    servicer.RefreshLLMServer,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llmserver_dot_v1_dot_llmserver__pb2.DeleteLLMServerRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llmserver_dot_v1_dot_llmserver__pb2.RefreshLLMServerResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -263,6 +279,33 @@ class LLMServerService(object):
             '/github.com.metaprov.modelaapi.services.llmserver.v1.LLMServerService/DeleteLLMServer',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llmserver_dot_v1_dot_llmserver__pb2.DeleteLLMServerRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llmserver_dot_v1_dot_llmserver__pb2.DeleteLLMServerResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def RefreshLLMServer(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/github.com.metaprov.modelaapi.services.llmserver.v1.LLMServerService/RefreshLLMServer',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llmserver_dot_v1_dot_llmserver__pb2.DeleteLLMServerRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_llmserver_dot_v1_dot_llmserver__pb2.RefreshLLMServerResponse.FromString,
             options,
             channel_credentials,
             insecure,

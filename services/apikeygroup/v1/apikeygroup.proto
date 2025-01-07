@@ -99,7 +99,7 @@ service APIKeyGroupService {
     option (google.api.http).delete = "/v1/apikeygroups/{namespace}/{name}";
   }
 
-  rpc GenerateAPIKey(CreateAPIKeyGroupRequest) returns (CreateAPIKeyGroupResponse) {
+  rpc GenerateAPIKey(GenerateAPIKeyRequest) returns (GenerateAPIKeyResponse) {
     option (google.api.http) = {
       post: "/v1/apikeygroups/{namespace/{name}:generate"
       body: "*"

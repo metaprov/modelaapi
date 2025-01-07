@@ -1587,5 +1587,134 @@ export class WatcherdServiceClient {
     this.methodDescriptorWatchTodo);
   }
 
+  methodDescriptorWatchKnowledgeBase = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchKnowledgeBase',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchRequestOptions,
+    github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchKnowledgeBaseResponse,
+    (request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchRequestOptions) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchKnowledgeBaseResponse.deserializeBinary
+  );
+
+  watchKnowledgeBase(
+    request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchRequestOptions,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchKnowledgeBaseResponse>;
+
+  watchKnowledgeBase(
+    request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchRequestOptions,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchKnowledgeBaseResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchKnowledgeBaseResponse>;
+
+  watchKnowledgeBase(
+    request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchRequestOptions,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchKnowledgeBaseResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchKnowledgeBase',
+        request,
+        metadata || {},
+        this.methodDescriptorWatchKnowledgeBase,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchKnowledgeBase',
+    request,
+    metadata || {},
+    this.methodDescriptorWatchKnowledgeBase);
+  }
+
+  methodDescriptorWatchLLMServer = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchLLMServer',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchRequestOptions,
+    github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchLLMServerResponse,
+    (request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchRequestOptions) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchLLMServerResponse.deserializeBinary
+  );
+
+  watchLLMServer(
+    request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchRequestOptions,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchLLMServerResponse>;
+
+  watchLLMServer(
+    request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchRequestOptions,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchLLMServerResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchLLMServerResponse>;
+
+  watchLLMServer(
+    request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchRequestOptions,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchLLMServerResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchLLMServer',
+        request,
+        metadata || {},
+        this.methodDescriptorWatchLLMServer,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchLLMServer',
+    request,
+    metadata || {},
+    this.methodDescriptorWatchLLMServer);
+  }
+
+  methodDescriptorWatchAPIKeyGroup = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchAPIKeyGroup',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchRequestOptions,
+    github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchAPIKeyGroupResponse,
+    (request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchRequestOptions) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchAPIKeyGroupResponse.deserializeBinary
+  );
+
+  watchAPIKeyGroup(
+    request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchRequestOptions,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchAPIKeyGroupResponse>;
+
+  watchAPIKeyGroup(
+    request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchRequestOptions,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchAPIKeyGroupResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchAPIKeyGroupResponse>;
+
+  watchAPIKeyGroup(
+    request: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchRequestOptions,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_watcherd_v1_watcherd_pb.WatchAPIKeyGroupResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchAPIKeyGroup',
+        request,
+        metadata || {},
+        this.methodDescriptorWatchAPIKeyGroup,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.watcherd.v1.WatcherdService/WatchAPIKeyGroup',
+    request,
+    metadata || {},
+    this.methodDescriptorWatchAPIKeyGroup);
+  }
+
 }
 
